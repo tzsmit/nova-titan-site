@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-08-07T12:01:04-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nova Titan Systems</title><entry><title type="html">How to Secure Your Home Wi-Fi in 3 Steps</title><link href="http://localhost:4000/blog/wifi-security" rel="alternate" type="text/html" title="How to Secure Your Home Wi-Fi in 3 Steps" /><published>2025-08-07T00:00:00-05:00</published><updated>2025-08-07T00:00:00-05:00</updated><id>http://localhost:4000/blog/wifi-security</id><content type="html" xml:base="http://localhost:4000/blog/wifi-security"><![CDATA[<p>Learn how to protect your Wi-Fi from intruders with these simple steps.</p>
+
+<ol>
+  <li><strong>Change Default Router Credentials</strong>: Update your router’s admin username and password to something strong and unique.</li>
+  <li><strong>Enable WPA3 Encryption</strong>: Use the latest encryption standard for secure connections.</li>
+  <li><strong>Disable Remote Management</strong>: Prevent external access to your router’s settings.</li>
+</ol>
+
+<p>For professional Wi-Fi security audits, <a href="/book-now">book a service call</a>.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Learn how to protect your Wi-Fi from intruders with these simple steps.]]></summary></entry></feed>

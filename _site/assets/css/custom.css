@@ -1,0 +1,68 @@
+.rounded-full { border-radius: 9999px; }
+header img {
+  max-height: 48px;
+  box-shadow: 0 0 15px #00b7b7;
+  transition: transform 0.3s ease;
+}
+header img:hover {
+  transform: scale(1.1);
+}
+.glow-button {
+  background: linear-gradient(45deg, #00b7b7, #00e0e0);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px #00b7b7, 0 0 25px #00e0e0;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+.glow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00b7b7, 0 0 35px #00e0e0;
+  background: linear-gradient(45deg, #00e0e0, #00b7b7);
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px #00b7b7, 0 0 25px #00e0e0; }
+  50% { box-shadow: 0 0 25px #00b7b7, 0 0 35px #00e0e0; }
+  100% { box-shadow: 0 0 15px #00b7b7, 0 0 25px #00e0e0; }
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#00b7b7, #00e0e0);
+  border-radius: 6px;
+  box-shadow: 0 0 10px #00e0e0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#00e0e0, #00b7b7);
+}
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+  background: url('/assets/img/cyber-bg.png') no-repeat center center fixed;
+  background-size: cover;
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00b7b7;
+}
