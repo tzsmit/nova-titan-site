@@ -1,0 +1,30 @@
+title: Nova Titan Systems
+url: 'https://novatitan.net'
+baseurl: ''
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title
+netlify_cms:
+  collections:
+    - label: 'Pages'
+      name: 'pages'
+      files:
+        - file: '_data/home.yml'
+          label: 'Home Page'
+          name: 'home'
+          fields:
+            - { label: 'Hero Headline', name: 'hero_headline', widget: 'string' }
+            - { label: 'Subheadline', name: 'subheadline', widget: 'text' }
+    - label: 'Blog Posts'
+      name: 'posts'
+      folder: '_posts'
+      create: true
+      fields:
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: 'Body', name: 'body', widget: 'markdown' }
