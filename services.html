@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Titan Services</title>
+  <title>Cybersecurity & IT Services - Nova Titan Systems</title>
+  <meta name="description" content="Explore Nova Titan Systems’ cybersecurity, networking, and cloud solutions for homes and businesses. Secure your tech with expert services.">
+  <meta name="keywords" content="cybersecurity services, small business IT support, cloud solutions, network setup">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -35,6 +37,42 @@
     .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 183, 235, 0.3); }
     .glow { text-shadow: 0 0 8px rgba(0, 183, 235, 0.6); }
     #particles-js { position: absolute; width: 100%; height: 100%; z-index: 0; }
+    .hamburger { cursor: pointer; width: 24px; height: 24px; position: relative; }
+    .hamburger span { 
+      background: #00b7eb; 
+      height: 3px; 
+      width: 100%; 
+      position: absolute; 
+      left: 0; 
+      transition: all 0.3s ease; 
+    }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 8px; }
+    .hamburger span:nth-child(3) { top: 16px; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+    .nav-menu { 
+      transform: translateX(100%); 
+      transition: transform 0.5s ease; 
+      background: #1a202c; 
+      position: fixed; 
+      top: 0; 
+      right: 0; 
+      height: 100vh; 
+      width: 75%; 
+      max-width: 300px; 
+      z-index: 30; 
+      padding-top: 4rem; 
+    }
+    .nav-menu.open { transform: translateX(0); }
+    @media (min-width: 640px) {
+      .nav-menu { width: 50%; max-width: 400px; }
+    }
+    @media (max-width: 640px) {
+      .hero-content h1 { font-size: 1.5rem; } /* text-2xl */
+      .hero-content p { font-size: 1rem; } /* text-base */
+    }
   </style>
 </head>
 <body class="text-white">
@@ -46,10 +84,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <img src="assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-12 w-auto animate-pulse">
-          <span class="ml-3 text-2xl font-bold text-cyan-400 glow">Nova Titan</span>
+          <a href="index.html" class="flex items-center">
+            <img src="assets/img/logo-rounded.png" alt="Nova Titan Systems Logo" class="h-12 w-auto animate-pulse">
+            <span class="ml-3 text-2xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
+          </a>
         </div>
-        <div class="flex space-x-6">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-menu flex flex-col space-y-4 px-6 sm:px-8" id="nav-menu">
           <a href="index.html" class="nav-link text-gray-200 text-lg font-medium">Home</a>
           <a href="about.html" class="nav-link text-gray-200 text-lg font-medium">About</a>
           <a href="services.html" class="nav-link text-gray-200 text-lg font-medium">Services</a>
@@ -63,33 +108,27 @@
   </nav>
 
   <!-- Services Section -->
-  <section id="services" class="py-20 bg-gray-900/80 relative min-h-screen">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl sm:text-5xl font-bold text-center text-cyan-400 glow mb-12 animate-fade-in">Our Services</h1>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+  <section id="services" class="py-20 bg-gray-900/80 relative min-h-screen flex items-center">
+    <div class="hero-content max-w-3xl mx-auto px-6 w-full">
+      <h1 class="text-3xl sm:text-4xl font-bold text-center text-cyan-400 glow mb-8 animate-fade-in leading-tight">My Tech Services</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
           <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Cybersecurity Solutions</h3>
-          <p class="text-gray-300 mb-4">Our cybersecurity services include real-time threat monitoring, penetration testing, and compliance audits to protect your data and ensure regulatory adherence.</p>
-          <p class="text-gray-300 mb-4">We offer tailored solutions for industries like finance, healthcare, and e-commerce, safeguarding your assets against evolving threats.</p>
-          <a href="book-now.html" class="btn-gradient text-white font-semibold py-2 px-4 rounded-lg">Get Started</a>
+          <p class="text-gray-300 mb-4">Keep your home or business safe with Wi-Fi audits, cybersecurity checks, and cloud security for AWS and Azure.</p>
+          <p class="text-gray-300 mb-4">I ensure your data stays protected from cyber threats.</p>
+          <a href="book-now.html" class="btn-gradient text-white font-semibold py-2 px-4 rounded-lg">Secure Your Tech</a>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">IT Consulting</h3>
-          <p class="text-gray-300 mb-4">We provide strategic IT consulting, including network optimization, system integration, and cloud migration, to enhance operational efficiency.</p>
-          <p class="text-gray-300 mb-4">Our experts work closely with you to align technology with your business goals, delivering measurable results.</p>
-          <a href="book-now.html" class="btn-gradient text-white font-semibold py-2 px-4 rounded-lg">Get Started</a>
+          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Networking & IT Services</h3>
+          <p class="text-gray-300 mb-4">Set up smart home devices or troubleshoot business networks with my reliable, remote IT support.</p>
+          <p class="text-gray-300 mb-4">Get fast, tailored connectivity solutions.</p>
+          <a href="book-now.html" class="btn-gradient text-white font-semibold py-2 px-4 rounded-lg">Optimize Your Network</a>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Digital Transformation</h3>
-          <p class="text-gray-300 mb-4">Transform your business with custom software, AI-driven analytics, and cloud-based solutions designed to streamline processes and drive innovation.</p>
-          <p class="text-gray-300 mb-4">From automation to data-driven decision-making, we help you stay competitive in a digital-first world.</p>
-          <a href="book-now.html" class="btn-gradient text-white font-semibold py-2 px-4 rounded-lg">Get Started</a>
-        </div>
-        <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Installations</h3>
-          <p class="text-gray-300 mb-4">We offer expert installation of secure IT infrastructure, including cloud environments, network systems, and OT/ICS setups for industrial applications.</p>
-          <p class="text-gray-300 mb-4">Our team ensures seamless deployment with a focus on security and performance optimization.</p>
-          <a href="book-now.html" class="btn-gradient text-white font-semibold py-2 px-4 rounded-lg">Get Started</a>
+          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Cloud Solutions</h3>
+          <p class="text-gray-300 mb-4">Migrate to the cloud with expert AWS and Azure setup and support.</p>
+          <p class="text-gray-300 mb-4">Simplify your operations with secure cloud services.</p>
+          <a href="book-now.html" class="btn-gradient text-white font-semibold py-2 px-4 rounded-lg">Transform Your Business</a>
         </div>
       </div>
       <div class="text-center mt-12">
@@ -101,11 +140,11 @@
   <!-- Footer -->
   <footer class="bg-gray-900/90 py-8 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-gray-400 text-lg">&copy; 2025 Nova Titan. All rights reserved.</p>
+      <p class="text-gray-400 text-lg">&copy; 2025 Nova Titan Systems. All rights reserved.</p>
       <div class="mt-4 flex justify-center space-x-4">
         <a href="blog.html" class="text-gray-400 hover:text-cyan-400">Blog</a>
         <a href="faqs.html" class="text-gray-400 hover:text-cyan-400">FAQs</a>
-        <a href="contact.html" class="text-gray-400 hover:text-cyan-400">Contact</a>
+        <a href="contact.html" class="text-gray-400 hover:text-cyan-300">Contact</a>
       </div>
       <div class="mt-4 text-gray-400 text-lg">
         <p>Email: <a href="mailto:traivonesmith@novatitan.net" class="text-cyan-400 hover:text-cyan-300">traivonesmith@novatitan.net</a></p>
@@ -139,6 +178,24 @@
       retina_detect: true
     });
     gsap.from(".animate-fade-in", { opacity: 0, y: 50, duration: 1, ease: "power2.out" });
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      if (navMenu.classList.contains('open')) {
+        gsap.to(navMenu, { x: 0, duration: 0.5, ease: "power2.out" });
+      } else {
+        gsap.to(navMenu, { x: '100%', duration: 0.5, ease: "power2.out" });
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        gsap.to(navMenu, { x: '100%', duration: 0.5, ease: "power2.out" });
+      }
+    });
   </script>
 </body>
 </html>
