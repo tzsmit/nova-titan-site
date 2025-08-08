@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Titan - Secure. Optimize. Innovate.</title>
+  <title>Nova Titan Systems - West Texas Cybersecurity & IT Solutions</title>
+  <meta name="description" content="Nova Titan Systems offers expert cybersecurity, networking, and cloud solutions for homes and businesses in West Texas and beyond. Secure your tech today.">
+  <meta name="keywords" content="West Texas cybersecurity, small business IT services, cloud security solutions, network setup, industrial cybersecurity">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -14,9 +16,11 @@
       background-image: url('assets/img/hero-bg.png'); 
       background-size: cover; 
       background-position: center; 
-      background-attachment: fixed; 
       position: relative;
       overflow: hidden;
+    }
+    @media (max-width: 640px) {
+      .hero-bg { background-attachment: scroll; }
     }
     .hero-bg::before {
       content: '';
@@ -86,6 +90,10 @@
     @media (min-width: 640px) {
       .nav-menu { width: 50%; max-width: 400px; }
     }
+    @media (max-width: 640px) {
+      .hero-content h1 { font-size: 1.875rem; } /* text-3xl */
+      .hero-content p { font-size: 1rem; } /* text-base */
+    }
   </style>
 </head>
 <body class="text-white">
@@ -98,8 +106,8 @@
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
           <a href="index.html" class="flex items-center">
-            <img src="assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-12 w-auto animate-pulse">
-            <span class="ml-3 text-2xl font-bold text-cyan-400 glow">Nova Titan</span>
+            <img src="assets/img/logo-rounded.png" alt="Nova Titan Systems Logo" class="h-12 w-auto animate-pulse">
+            <span class="ml-3 text-2xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
           </a>
         </div>
         <div class="hamburger" id="hamburger">
@@ -122,12 +130,12 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero-bg h-screen flex items-center justify-center text-center">
-    <div class="hero-content max-w-4xl mx-auto px-4">
-      <h1 class="text-5xl sm:text-6xl font-bold mb-6 text-cyan-400 glow animate-fade-in">Secure. Optimize. Innovate.</h1>
-      <p class="text-xl sm:text-2xl text-gray-200 mb-8 animate-fade-in-delay">Partner with Nova Titan to transform your business with cutting-edge IT, cybersecurity, and digital solutions. Stay ahead in a dynamic digital world with tailored strategies and innovative technology.</p>
+    <div class="hero-content max-w-3xl mx-auto px-6 w-full">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-cyan-400 glow animate-fade-in leading-tight">Secure Your Future with Nova Titan Systems</h1>
+      <p class="text-lg sm:text-xl text-gray-200 mb-6 animate-fade-in-delay leading-relaxed">Based in West Texas, we deliver top-tier cybersecurity, networking, and cloud solutions for homes and businesses. Protect your tech with our hybrid on-site and remote services. Let’s build a secure digital world together.</p>
       <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-        <a href="book-now.html" class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg text-lg animate-pulse">Book a Consultation</a>
-        <a href="services.html" class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg text-lg animate-pulse">Explore Services</a>
+        <a href="book-now.html" class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg text-lg animate-pulse">Book a Free Consultation</a>
+        <a href="services.html" class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg text-lg animate-pulse">Explore Our Services</a>
       </div>
     </div>
   </section>
@@ -135,21 +143,21 @@
   <!-- Services Preview -->
   <section id="services-preview" class="py-20 bg-gray-900/80 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center text-cyan-400 glow mb-12 animate-fade-in">Our Core Services</h2>
+      <h2 class="text-4xl font-bold text-center text-cyan-400 glow mb-12 animate-fade-in">Our West Texas Tech Solutions</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Cybersecurity</h3>
-          <p class="text-gray-300 mb-4">Protect your business with advanced threat detection, encryption, and compliance solutions, ensuring robust security tailored to your industry.</p>
+          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Cybersecurity Solutions</h3>
+          <p class="text-gray-300 mb-4">Safeguard your home or business with our West Texas cybersecurity services, including Wi-Fi audits, vulnerability scans, and cloud security for AWS, Azure, and GCP.</p>
           <a href="services.html" class="text-cyan-400 hover:text-cyan-300">Learn More</a>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">IT Consulting</h3>
-          <p class="text-gray-300 mb-4">Optimize your infrastructure with expert guidance, system integration, and performance enhancements for seamless operations.</p>
+          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Networking & IT Services</h3>
+          <p class="text-gray-300 mb-4">From smart home setups to small business network troubleshooting, our hybrid IT support ensures fast, reliable connectivity in West Texas and beyond.</p>
           <a href="services.html" class="text-cyan-400 hover:text-cyan-300">Learn More</a>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Digital Solutions</h3>
-          <p class="text-gray-300 mb-4">Drive growth with custom software, cloud integrations, and AI-driven solutions designed to innovate your business.</p>
+          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Cloud & Automation</h3>
+          <p class="text-gray-300 mb-4">Streamline your operations with cloud migration, AWS/Azure optimization, and custom tools like CloudWarden for secure automation.</p>
           <a href="services.html" class="text-cyan-400 hover:text-cyan-300">Learn More</a>
         </div>
       </div>
@@ -162,19 +170,19 @@
   <!-- Why Choose Us -->
   <section id="why-us" class="py-20 bg-gray-900/80 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center text-cyan-400 glow mb-12 animate-fade-in">Why Choose Nova Titan?</h2>
+      <h2 class="text-4xl font-bold text-center text-cyan-400 glow mb-12 animate-fade-in">Why Nova Titan Systems?</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-xl font-semibold text-cyan-400 glow mb-4">Innovative Technology</h3>
-          <p class="text-gray-300">We harness AI, cloud computing, and cybersecurity advancements to deliver future-ready solutions for your business.</p>
+          <h3 class="text-xl font-semibold text-cyan-400 glow mb-4">West Texas Expertise</h3>
+          <p class="text-gray-300">As a local West Texas company, we understand your unique needs and deliver personalized tech solutions with a neighborly touch.</p>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-xl font-semibold text-cyan-400 glow mb-4">Client-Centric Approach</h3>
-          <p class="text-gray-300">Our tailored strategies prioritize your unique needs, ensuring personalized and effective solutions.</p>
+          <h3 class="text-xl font-semibold text-cyan-400 glow mb-4">Hybrid Support</h3>
+          <p class="text-gray-300">Our on-site and remote services offer flexibility, ensuring fast, reliable support for homes, businesses, and industrial clients.</p>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-xl font-semibold text-cyan-400 glow mb-4">Proven Expertise</h3>
-          <p class="text-gray-300">With years of experience, our team delivers reliable, high-impact results across industries.</p>
+          <h3 class="text-xl font-semibold text-cyan-400 glow mb-4">Future-Ready Solutions</h3>
+          <p class="text-gray-300">From cloud security to industrial cybersecurity, we provide cutting-edge tools to keep you ahead in a digital world.</p>
         </div>
       </div>
     </div>
@@ -183,7 +191,7 @@
   <!-- Footer -->
   <footer class="bg-gray-900/90 py-8 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-gray-400 text-lg">&copy; 2025 Nova Titan. All rights reserved.</p>
+      <p class="text-gray-400 text-lg">&copy; 2025 Nova Titan Systems. All rights reserved.</p>
       <div class="mt-4 flex justify-center space-x-4">
         <a href="blog.html" class="text-gray-400 hover:text-cyan-400">Blog</a>
         <a href="faqs.html" class="text-gray-400 hover:text-cyan-400">FAQs</a>
