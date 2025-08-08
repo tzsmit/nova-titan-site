@@ -1,97 +1,137 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>FAQs | Nova Titan Systems</title>
-  <link href='https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap' rel='stylesheet'>
-  <link rel='stylesheet' href='/assets/css/custom.css'>
-  <link rel='icon' href='/assets/img/favicon.ico'>
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>FAQs | Nova Titan Systems</title>
-<meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="FAQs" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/faqs.html" />
-<meta property="og:url" content="http://localhost:4000/faqs.html" />
-<meta property="og:site_name" content="Nova Titan Systems" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="FAQs" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"FAQs","url":"http://localhost:4000/faqs.html"}</script>
-<!-- End Jekyll SEO tag -->
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Titan FAQs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Orbitron', sans-serif; background: linear-gradient(135deg, #0d1a26 0%, #16213e 100%); }
+    .nav-link { transition: color 0.3s ease, transform 0.3s ease; position: relative; }
+    .nav-link:hover { color: #00b7eb; transform: scale(1.1); }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #00b7eb;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .btn-gradient { 
+      background: linear-gradient(45deg, #00b7eb, #00cc66); 
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 183, 235, 0.4); }
+    .card { 
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+      border: 1px solid rgba(0, 183, 235, 0.2);
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 183, 235, 0.3); }
+    .glow { text-shadow: 0 0 8px rgba(0, 183, 235, 0.6); }
+    #particles-js { position: absolute; width: 100%; height: 100%; z-index: 0; }
+    .accordion-toggle { display: none; }
+    .accordion-toggle:checked ~ .accordion-content { display: block; }
+    .accordion-content { display: none; }
+    .accordion-label { cursor: pointer; }
+  </style>
 </head>
-<body class='bg-gray-900 text-white font-montserrat'>
-  <header class='bg-black bg-opacity-90 sticky top-0 z-50 p-4 shadow-lg shadow-cyan-500/50'>
-    <div class='container mx-auto flex justify-between items-center'>
-      <div class='flex items-center'>
-        <img src='/assets/img/logo-rounded.png' alt='Nova Titan Logo' class='h-12 rounded-full transition-transform duration-300 hover:scale-110'>
-        <h1 class='text-2xl font-bold font-orbitron ml-4'>Nova Titan Systems</h1>
+<body class="text-white">
+  <!-- Particles Background -->
+  <div id="particles-js" class="absolute inset-0"></div>
+
+  <!-- Navigation -->
+  <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <img src="assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-12 w-auto animate-pulse">
+          <span class="ml-3 text-2xl font-bold text-cyan-400 glow">Nova Titan</span>
+        </div>
+        <div class="flex space-x-6">
+          <a href="index.html" class="nav-link text-gray-200 text-lg font-medium">Home</a>
+          <a href="about.html" class="nav-link text-gray-200 text-lg font-medium">About</a>
+          <a href="services.html" class="nav-link text-gray-200 text-lg font-medium">Services</a>
+          <a href="blog.html" class="nav-link text-gray-200 text-lg font-medium">Blog</a>
+          <a href="faqs.html" class="nav-link text-gray-200 text-lg font-medium">FAQs</a>
+          <a href="contact.html" class="nav-link text-gray-200 text-lg font-medium">Contact</a>
+          <a href="book-now.html" class="nav-link text-gray-200 text-lg font-medium">Book Now</a>
+        </div>
       </div>
-      <nav>
-        <ul class='flex space-x-4 font-orbitron'>
-          <li><a href='/' class='hover:text-cyan-300 transition-colors duration-200'>Home</a></li>
-          <li><a href='/services' class='hover:text-cyan-300 transition-colors duration-200'>Services</a></li>
-          <li><a href='/book-now' class='hover:text-cyan-300 transition-colors duration-200'>Book Now</a></li>
-          <li><a href='/about' class='hover:text-cyan-300 transition-colors duration-200'>About</a></li>
-          <li><a href='/contact' class='hover:text-cyan-300 transition-colors duration-200'>Contact</a></li>
-          <li><a href='/faqs' class='hover:text-cyan-300 transition-colors duration-200'>FAQs</a></li>
-          <li><a href='/blog' class='hover:text-cyan-300 transition-colors duration-200'>Blog</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
-  <main class='container mx-auto p-4'>
-    <section class='py-12 bg-gray-800 bg-opacity-90 rounded-lg'>
-  <h2 class='text-3xl font-bold text-center text-cyan-300 font-orbitron'>Frequently Asked Questions</h2>
-  <div class='mt-8 space-y-6 max-w-2xl mx-auto'>
-    <div class='p-4 bg-gray-900 rounded-lg shadow-lg shadow-cyan-500/50 card'>
-      <h3 class='text-lg font-semibold text-cyan-300 font-orbitron'>Do I need to be tech-savvy to hire you?</h3>
-      <p class='text-gray-400 mt-2'>Nope. I break everything down in plain English.</p>
+  </nav>
+
+  <!-- FAQs Section -->
+  <section id="faqs" class="py-20 bg-gray-900/80 relative min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl font-bold text-center text-cyan-400 glow mb-12 animate-fade-in">Frequently Asked Questions</h1>
+      <p class="text-xl text-gray-300 text-center mb-12 animate-fade-in-delay">Find answers to common questions about our services and how we can help your business.</p>
+      <div class="space-y-4">
+        <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
+          <input type="checkbox" id="faq1" class="accordion-toggle hidden">
+          <label for="faq1" class="accordion-label text-xl font-semibold text-cyan-400 glow">What industries do you serve?</label>
+          <div class="accordion-content text-gray-300 mt-2">
+            <p>We provide solutions for industries including finance, healthcare, e-commerce, manufacturing, and more, tailoring our services to meet specific sector needs.</p>
+          </div>
+        </div>
+        <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
+          <input type="checkbox" id="faq2" class="accordion-toggle hidden">
+          <label for="faq2" class="accordion-label text-xl font-semibold text-cyan-400 glow">How do you ensure data security?</label>
+          <div class="accordion-content text-gray-300 mt-2">
+            <p>Our cybersecurity services include advanced threat detection, encryption, and regular audits to ensure your data remains secure and compliant.</p>
+          </div>
+        </div>
+        <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
+          <input type="checkbox" id="faq3" class="accordion-toggle hidden">
+          <label for="faq3" class="accordion-label text-xl font-semibold text-cyan-400 glow">What is the consultation process like?</label>
+          <div class="accordion-content text-gray-300 mt-2">
+            <p>We start with a discovery call to understand your needs, followed by a detailed assessment and a tailored proposal to address your goals.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="contact.html" class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg text-lg">Ask a Question</a>
+      </div>
     </div>
-    <div class='p-4 bg-gray-900 rounded-lg shadow-lg shadow-cyan-500/50 card'>
-      <h3 class='text-lg font-semibold text-cyan-300 font-orbitron'>Can you help remotely?</h3>
-      <p class='text-gray-400 mt-2'>Yes. I offer virtual support and consulting nationwide.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900/90 py-8 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gray-400 text-lg">&copy; 2025 Nova Titan. All rights reserved.</p>
+      <div class="mt-4 flex justify-center space-x-4">
+        <a href="blog.html" class="text-gray-400 hover:text-cyan-400">Blog</a>
+        <a href="faqs.html" class="text-gray-400 hover:text-cyan-400">FAQs</a>
+        <a href="contact.html" class="text-gray-400 hover:text-cyan-400">Contact</a>
+      </div>
     </div>
-    <div class='p-4 bg-gray-900 rounded-lg shadow-lg shadow-cyan-500/50 card'>
-      <h3 class='text-lg font-semibold text-cyan-300 font-orbitron'>Are your services affordable?</h3>
-      <p class='text-gray-400 mt-2'>I price based on value, not hype. No hourly surprises.</p>
-    </div>
-    <div class='p-4 bg-gray-900 rounded-lg shadow-lg shadow-cyan-500/50 card'>
-      <h3 class='text-lg font-semibold text-cyan-300 font-orbitron'>Can you secure my smart home?</h3>
-      <p class='text-gray-400 mt-2'>Absolutely — I specialize in IoT security.</p>
-    </div>
-    <div class='p-4 bg-gray-900 rounded-lg shadow-lg shadow-cyan-500/50 card'>
-      <h3 class='text-lg font-semibold text-cyan-300 font-orbitron'>What areas do you serve?</h3>
-      <p class='text-gray-400 mt-2'>Primarily West Texas and remote clients across the U.S.</p>
-    </div>
-  </div>
-</section>
-  </main>
-  <footer class='bg-black bg-opacity-90 p-4 text-center font-montserrat'>
-    <p>Nova Titan Systems | Lubbock, TX</p>
-    <p><a href='mailto:traivonesmith@novatitan.net' class='hover:text-cyan-300'>traivonesmith@novatitan.net</a> | <a href='tel:+18061234567' class='hover:text-cyan-300'>806-123-4567</a></p>
-    <p>
-      <a href='https://www.linkedin.com/in/traivone-smith-969b60327' target='_blank' class='hover:text-cyan-300'>LinkedIn</a> |
-      <a href='https://www.tiktok.com/@novatitan1' target='_blank' class='hover:text-cyan-300'>TikTok</a> |
-      <a href='https://github.com/tzsmit' target='_blank' class='hover:text-cyan-300'>GitHub</a> |
-      <a href='https://www.youtube.com/@TraisCyberJourney' target='_blank' class='hover:text-cyan-300'>YouTube</a>
-    </p>
-    <p>© 2025 Nova Titan. All Rights Reserved.</p>
   </footer>
+
   <script>
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: ['#00b7eb', '#00cc66'] },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 120, color: '#00b7eb', opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2, direction: 'none', random: true }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+        modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
     });
+    gsap.from(".animate-fade-in", { opacity: 0, y: 50, duration: 1, ease: "power2.out" });
+    gsap.from(".animate-fade-in-delay", { opacity: 0, y: 50, duration: 1, delay: 0.5, ease: "power2.out" });
   </script>
 </body>
 </html>
