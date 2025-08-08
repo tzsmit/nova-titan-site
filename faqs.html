@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Titan FAQs</title>
+  <title>FAQs - Nova Titan Systems</title>
+  <meta name="description" content="Find answers to common questions about Nova Titan Systems’ cybersecurity, networking, and cloud solutions. Contact me for more details.">
+  <meta name="keywords" content="cybersecurity FAQs, IT support FAQs, cloud solutions, gaming network optimization, remote work IT solutions">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -35,10 +37,42 @@
     .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 183, 235, 0.3); }
     .glow { text-shadow: 0 0 8px rgba(0, 183, 235, 0.6); }
     #particles-js { position: absolute; width: 100%; height: 100%; z-index: 0; }
-    .accordion-toggle { display: none; }
-    .accordion-toggle:checked ~ .accordion-content { display: block; }
-    .accordion-content { display: none; }
-    .accordion-label { cursor: pointer; }
+    .hamburger { cursor: pointer; width: 24px; height: 24px; position: relative; }
+    .hamburger span { 
+      background: #00b7eb; 
+      height: 3px; 
+      width: 100%; 
+      position: absolute; 
+      left: 0; 
+      transition: all 0.3s ease; 
+    }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 8px; }
+    .hamburger span:nth-child(3) { top: 16px; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+    .nav-menu { 
+      transform: translateX(100%); 
+      transition: transform 0.5s ease; 
+      background: #1a202c; 
+      position: fixed; 
+      top: 0; 
+      right: 0; 
+      height: 100vh; 
+      width: 75%; 
+      max-width: 300px; 
+      z-index: 30; 
+      padding-top: 4rem; 
+    }
+    .nav-menu.open { transform: translateX(0); }
+    @media (min-width: 640px) {
+      .nav-menu { width: 50%; max-width: 400px; }
+    }
+    @media (max-width: 640px) {
+      .hero-content h1 { font-size: 1.5rem; } /* text-2xl */
+      .hero-content p { font-size: 1rem; } /* text-base */
+    }
   </style>
 </head>
 <body class="text-white">
@@ -50,10 +84,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <img src="assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-12 w-auto animate-pulse">
-          <span class="ml-3 text-2xl font-bold text-cyan-400 glow">Nova Titan</span>
+          <a href="index.html" class="flex items-center">
+            <img src="assets/img/logo-rounded.png" alt="Nova Titan Systems Logo" class="h-12 w-auto animate-pulse">
+            <span class="ml-3 text-2xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
+          </a>
         </div>
-        <div class="flex space-x-6">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-menu flex flex-col space-y-4 px-6 sm:px-8" id="nav-menu">
           <a href="index.html" class="nav-link text-gray-200 text-lg font-medium">Home</a>
           <a href="about.html" class="nav-link text-gray-200 text-lg font-medium">About</a>
           <a href="services.html" class="nav-link text-gray-200 text-lg font-medium">Services</a>
@@ -67,63 +108,33 @@
   </nav>
 
   <!-- FAQs Section -->
-  <section id="faqs" class="py-20 bg-gray-900/80 relative min-h-screen">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl sm:text-5xl font-bold text-center text-cyan-400 glow mb-12 animate-fade-in">Frequently Asked Questions</h1>
-      <p class="text-xl text-gray-300 text-center mb-12 animate-fade-in-delay">Find answers to common questions about our services and how we can help your business.</p>
-      <div class="space-y-4">
+  <section id="faqs" class="py-20 bg-gray-900/80 relative min-h-screen flex items-center">
+    <div class="hero-content max-w-3xl mx-auto px-6 w-full">
+      <h1 class="text-3xl sm:text-4xl font-bold text-center text-cyan-400 glow mb-8 animate-fade-in leading-tight">Frequently Asked Questions</h1>
+      <div class="space-y-6">
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <input type="checkbox" id="faq1" class="accordion-toggle hidden">
-          <label for="faq1" class="accordion-label text-xl font-semibold text-cyan-400 glow">What industries do you serve?</label>
-          <div class="accordion-content text-gray-300 mt-2">
-            <p>We provide solutions for industries including finance, healthcare, e-commerce, manufacturing, and more, tailoring our services to meet specific sector needs.</p>
-          </div>
+          <h3 class="text-xl font-semibold text-cyan-400 glow mb-2">What services do you offer?</h3>
+          <p class="text-gray-300">I provide cybersecurity solutions, networking and IT support, cloud setup for AWS and Azure, and specialized services for gamers and remote workers to optimize performance and security.</p>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <input type="checkbox" id="faq2" class="accordion-toggle hidden">
-          <label for="faq2" class="accordion-label text-xl font-semibold text-cyan-400 glow">How do you ensure data security?</label>
-          <div class="accordion-content text-gray-300 mt-2">
-            <p>Our cybersecurity services include advanced threat detection, encryption, and regular audits to ensure your data remains secure and compliant.</p>
-          </div>
+          <h3 class="text-xl font-semibold text-cyan-400 glow mb-2">How can I book a consultation?</h3>
+          <p class="text-gray-300">Visit my <a href="book-now.html" class="text-cyan-400 hover:text-cyan-300">Book Now</a> page to schedule a free consultation. You can also contact me directly via email or phone.</p>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <input type="checkbox" id="faq3" class="accordion-toggle hidden">
-          <label for="faq3" class="accordion-label text-xl font-semibold text-cyan-400 glow">What is the consultation process like?</label>
-          <div class="accordion-content text-gray-300 mt-2">
-            <p>We start with a discovery call to understand your needs, followed by a detailed assessment and a tailored proposal to address your goals.</p>
-          </div>
+          <h3 class="text-xl font-semibold text-cyan-400 glow mb-2">Do you serve clients outside of West Texas?</h3>
+          <p class="text-gray-300">Yes! While I started in West Texas, I offer both on-site and remote services to clients anywhere, ensuring secure and reliable tech solutions.</p>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <input type="checkbox" id="faq4" class="accordion-toggle hidden">
-          <label for="faq4" class="accordion-label text-xl font-semibold text-cyan-400 glow">Can you secure cloud environments like AWS?</label>
-          <div class="accordion-content text-gray-300 mt-2">
-            <p>Yes, we specialize in hardening AWS infrastructures using tools like IAM, GuardDuty, and CloudTrail to ensure secure and compliant cloud setups.</p>
-          </div>
+          <h3 class="text-xl font-semibold text-cyan-400 glow mb-2">How do I optimize my gaming or remote work setup?</h3>
+          <p class="text-gray-300">I offer tailored solutions to reduce gaming latency and secure remote work environments with fast networks, VPNs, and productivity tools. Book a consultation to get started.</p>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <input type="checkbox" id="faq5" class="accordion-toggle hidden">
-          <label for="faq5" class="accordion-label text-xl font-semibold text-cyan-400 glow">Do you offer OT/ICS cybersecurity for industrial systems?</label>
-          <div class="accordion-content text-gray-300 mt-2">
-            <p>We provide tailored OT/ICS security solutions, including protocol hardening for Modbus and MQTT, to protect industrial networks and SCADA systems.</p>
-          </div>
-        </div>
-        <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <input type="checkbox" id="faq6" class="accordion-toggle hidden">
-          <label for="faq6" class="accordion-label text-xl font-semibold text-cyan-400 glow">What does your installation service include?</label>
-          <div class="accordion-content text-gray-300 mt-2">
-            <p>Our installation service covers secure setup of cloud environments, network infrastructure, and OT/ICS systems, ensuring performance and security.</p>
-          </div>
-        </div>
-        <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <input type="checkbox" id="faq7" class="accordion-toggle hidden">
-          <label for="faq7" class="accordion-label text-xl font-semibold text-cyan-400 glow">How do you integrate security into DevOps?</label>
-          <div class="accordion-content text-gray-300 mt-2">
-            <p>We implement DevSecOps practices, integrating security scanning and monitoring into CI/CD pipelines to ensure secure software development.</p>
-          </div>
+          <h3 class="text-xl font-semibold text-cyan-400 glow mb-2">What makes your services unique?</h3>
+          <p class="text-gray-300">As a solo expert, I provide personalized, hands-on support, focusing on your specific needs with flexible and innovative tech solutions.</p>
         </div>
       </div>
       <div class="text-center mt-12">
-        <a href="contact.html" class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg text-lg">Ask a Question</a>
+        <a href="contact.html" class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg text-lg">Have More Questions? Contact Me</a>
       </div>
     </div>
   </section>
@@ -131,11 +142,11 @@
   <!-- Footer -->
   <footer class="bg-gray-900/90 py-8 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-gray-400 text-lg">&copy; 2025 Nova Titan. All rights reserved.</p>
+      <p class="text-gray-400 text-lg">&copy; 2025 Nova Titan Systems. All rights reserved.</p>
       <div class="mt-4 flex justify-center space-x-4">
         <a href="blog.html" class="text-gray-400 hover:text-cyan-400">Blog</a>
         <a href="faqs.html" class="text-gray-400 hover:text-cyan-400">FAQs</a>
-        <a href="contact.html" class="text-gray-400 hover:text-cyan-400">Contact</a>
+        <a href="contact.html" class="text-gray-400 hover:text-cyan-300">Contact</a>
       </div>
       <div class="mt-4 text-gray-400 text-lg">
         <p>Email: <a href="mailto:traivonesmith@novatitan.net" class="text-cyan-400 hover:text-cyan-300">traivonesmith@novatitan.net</a></p>
@@ -169,7 +180,24 @@
       retina_detect: true
     });
     gsap.from(".animate-fade-in", { opacity: 0, y: 50, duration: 1, ease: "power2.out" });
-    gsap.from(".animate-fade-in-delay", { opacity: 0, y: 50, duration: 1, delay: 0.5, ease: "power2.out" });
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      if (navMenu.classList.contains('open')) {
+        gsap.to(navMenu, { x: 0, duration: 0.5, ease: "power2.out" });
+      } else {
+        gsap.to(navMenu, { x: '100%', duration: 0.5, ease: "power2.out" });
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        gsap.to(navMenu, { x: '100%', duration: 0.5, ease: "power2.out" });
+      }
+    });
   </script>
 </body>
 </html>
