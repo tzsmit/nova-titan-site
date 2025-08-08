@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Titan Blog</title>
+  <title>Blog - Nova Titan Systems</title>
+  <meta name="description" content="Read the latest tech tips and insights on cybersecurity, networking, cloud solutions, and gaming/remote work setups from Nova Titan Systems.">
+  <meta name="keywords" content="cybersecurity tips, IT support blog, cloud migration, gaming network optimization, remote work IT solutions">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -35,18 +37,41 @@
     .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 183, 235, 0.3); }
     .glow { text-shadow: 0 0 8px rgba(0, 183, 235, 0.6); }
     #particles-js { position: absolute; width: 100%; height: 100%; z-index: 0; }
+    .hamburger { cursor: pointer; width: 24px; height: 24px; position: relative; }
+    .hamburger span { 
+      background: #00b7eb; 
+      height: 3px; 
+      width: 100%; 
+      position: absolute; 
+      left: 0; 
+      transition: all 0.3s ease; 
+    }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 8px; }
+    .hamburger span:nth-child(3) { top: 16px; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+    .nav-menu { 
+      transform: translateX(100%); 
+      transition: transform 0.5s ease; 
+      background: #1a202c; 
+      position: fixed; 
+      top: 0; 
+      right: 0; 
+      height: 100vh; 
+      width: 75%; 
+      max-width: 300px; 
+      z-index: 30; 
+      padding-top: 4rem; 
+    }
+    .nav-menu.open { transform: translateX(0); }
+    @media (min-width: 640px) {
+      .nav-menu { width: 50%; max-width: 400px; }
+    }
     @media (max-width: 640px) {
-      .nav-link { font-size: 0.9rem; }
-      .nav-link:hover { transform: none; }
-      .nav-link::after { display: none; }
-      .btn-gradient { font-size: 0.9rem; padding: 0.5rem 1rem; }
-      .card { padding: 1rem; }
-      h1 { font-size: 2rem; }
-      h3 { font-size: 1.25rem; }
-      p { font-size: 0.9rem; }
-      .flex { flex-direction: column; align-items: center; }
-      .space-x-6 > * + * { margin-left: 0; margin-top: 0.5rem; }
-      .space-x-4 > * + * { margin-left: 0; margin-top: 0.5rem; }
+      .hero-content h1 { font-size: 1.5rem; } /* text-2xl */
+      .hero-content p { font-size: 1rem; } /* text-base */
     }
   </style>
 </head>
@@ -57,51 +82,55 @@
   <!-- Navigation -->
   <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row justify-between items-center h-auto sm:h-16 py-4 sm:py-0">
+      <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <img src="assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-12 w-auto animate-pulse">
-          <span class="ml-3 text-2xl font-bold text-cyan-400 glow">Nova Titan</span>
+          <a href="index.html" class="flex items-center">
+            <img src="assets/img/logo-rounded.png" alt="Nova Titan Systems Logo" class="h-12 w-auto animate-pulse">
+            <span class="ml-3 text-2xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
+          </a>
         </div>
-        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 mt-2 sm:mt-0">
-          <a href="index.html" class="nav-link text-gray-200 text-lg sm:text-base font-medium">Home</a>
-          <a href="about.html" class="nav-link text-gray-200 text-lg sm:text-base font-medium">About</a>
-          <a href="services.html" class="nav-link text-gray-200 text-lg sm:text-base font-medium">Services</a>
-          <a href="blog.html" class="nav-link text-gray-200 text-lg sm:text-base font-medium">Blog</a>
-          <a href="faqs.html" class="nav-link text-gray-200 text-lg sm:text-base font-medium">FAQs</a>
-          <a href="contact.html" class="nav-link text-gray-200 text-lg sm:text-base font-medium">Contact</a>
-          <a href="book-now.html" class="nav-link text-gray-200 text-lg sm:text-base font-medium">Book Now</a>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-menu flex flex-col space-y-4 px-6 sm:px-8" id="nav-menu">
+          <a href="index.html" class="nav-link text-gray-200 text-lg font-medium">Home</a>
+          <a href="about.html" class="nav-link text-gray-200 text-lg font-medium">About</a>
+          <a href="services.html" class="nav-link text-gray-200 text-lg font-medium">Services</a>
+          <a href="blog.html" class="nav-link text-gray-200 text-lg font-medium">Blog</a>
+          <a href="faqs.html" class="nav-link text-gray-200 text-lg font-medium">FAQs</a>
+          <a href="contact.html" class="nav-link text-gray-200 text-lg font-medium">Contact</a>
+          <a href="book-now.html" class="nav-link text-gray-200 text-lg font-medium">Book Now</a>
         </div>
       </div>
     </div>
   </nav>
 
   <!-- Blog Section -->
-  <section id="blog" class="py-20 bg-gray-900/80 relative min-h-screen">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl sm:text-5xl font-bold text-center text-cyan-400 glow mb-12 animate-fade-in">Nova Titan Blog</h1>
-      <p class="text-xl sm:text-2xl text-gray-300 text-center mb-12 animate-fade-in-delay">Stay updated with the latest insights on cybersecurity, IT trends, and digital transformation.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <section id="blog" class="py-20 bg-gray-900/80 relative min-h-screen flex items-center">
+    <div class="hero-content max-w-3xl mx-auto px-6 w-full">
+      <h1 class="text-3xl sm:text-4xl font-bold text-center text-cyan-400 glow mb-8 animate-fade-in leading-tight">Tech Insights & Tips</h1>
+      <p class="text-lg sm:text-xl text-gray-200 mb-6 animate-fade-in-delay leading-relaxed">Stay updated with the latest tips on cybersecurity, networking, cloud solutions, and gaming/remote work setups.</p>
+      <div class="space-y-8">
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">The Future of Cybersecurity in 2025</h3>
-          <p class="text-gray-400 mb-2">January 15, 2025</p>
-          <p class="text-gray-300 mb-4">Explore emerging threats and how AI-driven security solutions are shaping the future of data protection.</p>
+          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">5 Ways to Secure Your Home Wi-Fi</h3>
+          <p class="text-gray-300 mb-4">Learn simple steps to protect your home network from cyber threats, including strong passwords and encryption.</p>
           <a href="#" class="text-cyan-400 hover:text-cyan-300">Read More</a>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Why Cloud Migration Matters</h3>
-          <p class="text-gray-400 mb-2">February 10, 2025</p>
-          <p class="text-gray-300 mb-4">Learn how cloud solutions can boost efficiency and scalability for your business.</p>
+          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Optimizing Your Network for Gaming</h3>
+          <p class="text-gray-300 mb-4">Discover how to reduce lag and boost performance for a seamless gaming experience at home.</p>
           <a href="#" class="text-cyan-400 hover:text-cyan-300">Read More</a>
         </div>
         <div class="card bg-gray-800/90 p-6 rounded-xl backdrop-blur-sm">
-          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">AI in Business: Opportunities & Challenges</h3>
-          <p class="text-gray-400 mb-2">March 5, 2025</p>
-          <p class="text-gray-300 mb-4">Discover how AI can transform your operations and the key considerations for implementation.</p>
+          <h3 class="text-2xl font-semibold text-cyan-400 glow mb-4">Why Small Businesses Need Cloud Solutions</h3>
+          <p class="text-gray-300 mb-4">Explore the benefits of moving to AWS or Azure for scalability, security, and efficiency.</p>
           <a href="#" class="text-cyan-400 hover:text-cyan-300">Read More</a>
         </div>
       </div>
       <div class="text-center mt-12">
-        <a href="contact.html" class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg text-lg">Subscribe for Updates</a>
+        <a href="contact.html" class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg text-lg">Get More Tech Tips</a>
       </div>
     </div>
   </section>
@@ -109,17 +138,17 @@
   <!-- Footer -->
   <footer class="bg-gray-900/90 py-8 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-gray-400 text-lg">&copy; 2025 Nova Titan. All rights reserved.</p>
-      <div class="mt-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+      <p class="text-gray-400 text-lg">&copy; 2025 Nova Titan Systems. All rights reserved.</p>
+      <div class="mt-4 flex justify-center space-x-4">
         <a href="blog.html" class="text-gray-400 hover:text-cyan-400">Blog</a>
         <a href="faqs.html" class="text-gray-400 hover:text-cyan-400">FAQs</a>
-        <a href="contact.html" class="text-gray-400 hover:text-cyan-400">Contact</a>
+        <a href="contact.html" class="text-gray-400 hover:text-cyan-300">Contact</a>
       </div>
       <div class="mt-4 text-gray-400 text-lg">
         <p>Email: <a href="mailto:traivonesmith@novatitan.net" class="text-cyan-400 hover:text-cyan-300">traivonesmith@novatitan.net</a></p>
         <p>Phone: <a href="tel:+18067017934" class="text-cyan-400 hover:text-cyan-300">806-701-7934</a></p>
       </div>
-      <div class="mt-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+      <div class="mt-4 flex justify-center space-x-4">
         <a href="https://linkedin.com/in/traivone-smith-969b60327" class="text-gray-400 hover:text-cyan-400">LinkedIn</a>
         <a href="https://www.tiktok.com/@novatitan1" class="text-gray-400 hover:text-cyan-400">TikTok</a>
         <a href="https://www.youtube.com/@TraisCyberJourney" class="text-gray-400 hover:text-cyan-400">YouTube</a>
@@ -131,7 +160,7 @@
   <script>
     particlesJS('particles-js', {
       particles: {
-        number: { value: window.innerWidth < 640 ? 40 : 80, density: { enable: true, value_area: 800 } },
+        number: { value: 80, density: { enable: true, value_area: 800 } },
         color: { value: ['#00b7eb', '#00cc66'] },
         shape: { type: 'circle' },
         opacity: { value: 0.5, random: true },
@@ -148,6 +177,24 @@
     });
     gsap.from(".animate-fade-in", { opacity: 0, y: 50, duration: 1, ease: "power2.out" });
     gsap.from(".animate-fade-in-delay", { opacity: 0, y: 50, duration: 1, delay: 0.5, ease: "power2.out" });
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      if (navMenu.classList.contains('open')) {
+        gsap.to(navMenu, { x: 0, duration: 0.5, ease: "power2.out" });
+      } else {
+        gsap.to(navMenu, { x: '100%', duration: 0.5, ease: "power2.out" });
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        gsap.to(navMenu, { x: '100%', duration: 0.5, ease: "power2.out" });
+      }
+    });
   </script>
 </body>
 </html>
