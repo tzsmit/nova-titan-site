@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Now - Nova Titan Systems</title>
-  <meta name="description" content="Book a free consultation with Nova Titan Systems for cybersecurity, networking, and cloud solutions. Secure your business today.">
-  <meta name="keywords" content="IT consultation, cybersecurity consultation, cloud migration, book IT services">
+  <meta name="description" content="Schedule a free consultation with Nova Titan Systems for cybersecurity, networking, cloud solutions, or gaming/remote work setups.">
+  <meta name="keywords" content="book consultation, cybersecurity consultation, IT support, cloud solutions, gaming network optimization, remote work IT solutions">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -28,6 +28,7 @@
     .btn-gradient { 
       background: linear-gradient(45deg, #00b7eb, #00cc66); 
       transition: transform 0.3s ease, box-shadow 0.3s ease; 
+      display: inline-block;
     }
     .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 183, 235, 0.4); }
     .card { 
@@ -72,6 +73,7 @@
     @media (max-width: 640px) {
       .hero-content h1 { font-size: 1.5rem; } /* text-2xl */
       .hero-content p { font-size: 1rem; } /* text-base */
+      .btn-gradient { font-size: 1rem; } /* text-base */
     }
   </style>
 </head>
@@ -109,23 +111,13 @@
 
   <!-- Book Now Section -->
   <section id="book-now" class="py-20 bg-gray-900/80 relative min-h-screen flex items-center">
-    <div class="hero-content max-w-3xl mx-auto px-6 w-full text-center">
-      <h1 class="text-3xl sm:text-4xl font-bold text-cyan-400 glow mb-8 animate-fade-in leading-tight">Book a Free Consultation</h1>
-      <p class="text-lg sm:text-xl text-gray-200 mb-6 animate-fade-in-delay leading-relaxed">Schedule a consultation with me to secure your home or business with tailored cybersecurity, networking, or cloud solutions.</p>
-      <div class="card bg-gray-800/90 p-8 rounded-xl backdrop-blur-sm">
-        <div class="flex flex-col space-y-4">
-          <input type="text" placeholder="Your Name" class="p-3 rounded-lg bg-gray-700 text-white border-none focus:ring-2 focus:ring-cyan-400">
-          <input type="email" placeholder="Your Email" class="p-3 rounded-lg bg-gray-700 text-white border-none focus:ring-2 focus:ring-cyan-400">
-          <select class="p-3 rounded-lg bg-gray-700 text-white border-none focus:ring-2 focus:ring-cyan-400">
-            <option value="" disabled selected>Select Service</option>
-            <option value="cybersecurity">Cybersecurity Solutions</option>
-            <option value="it-consulting">Networking & IT Services</option>
-            <option value="digital-solutions">Cloud Solutions</option>
-          </select>
-          <input type="date" class="p-3 rounded-lg bg-gray-700 text-white border-none focus:ring-2 focus:ring-cyan-400">
-          <button class="btn-gradient text-white font-semibold py-3 px-8 rounded-lg">Schedule Now</button>
-        </div>
-      </div>
+    <div class="hero-content max-w-3xl mx-auto px-6 w-full">
+      <h1 class="text-3xl sm:text-4xl font-bold text-center text-cyan-400 glow mb-8 animate-fade-in leading-tight">Book a Free Consultation</h1>
+      <p class="text-lg sm:text-xl text-gray-200 mb-6 animate-fade-in-delay leading-relaxed">Schedule a consultation to discuss your cybersecurity, networking, cloud, or gaming/remote work needs.</p>
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
     </div>
   </section>
 
@@ -172,4 +164,23 @@
     gsap.from(".animate-fade-in", { opacity: 0, y: 50, duration: 1, ease: "power2.out" });
     gsap.from(".animate-fade-in-delay", { opacity: 0, y: 50, duration: 1, delay: 0.5, ease: "power2.out" });
     const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      if (navMenu.classList.contains('open')) {
+        gsap.to(navMenu, { x: 0, duration: 0.5, ease: "power2.out" });
+      } else {
+        gsap.to(navMenu, { x: '100%', duration: 0.5, ease: "power2.out" });
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        gsap.to(navMenu, { x: '100%', duration: 0.5, ease: "power2.out" });
+      }
+    });
+  </script>
+</body>
+</html>
