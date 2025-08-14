@@ -4,11 +4,11 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services — Nova Titan</title>
   <meta name="description" content="Clear, outcome-focused service packages with deliverables and starting prices.">
-  <link rel="canonical" href="https://novatitan.net/services.html">
-  <meta property="og:title" content="Services — Nova Titan"><meta property="og:image" content="assets/img/logo-rounded.png">
+  <link rel="canonical" href="https://novatitan.net/services/">
+  <meta property="og:title" content="Services — Nova Titan"><meta property="og:image" content="/assets/img/logo-rounded.png">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -23,7 +23,8 @@
     .footer-contact a{ text-shadow:0 0 10px rgba(0,183,235,.55) }
     /* wrap safety */
     .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
-    /* Hamburger styles (matched to index) */
+
+    /* Hamburger styles (matched) */
     .hamburger { width: 36px; height: 28px; position: relative; }
     .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
     .hamburger span:nth-child(1){ top:4px; } .hamburger span:nth-child(2){ top:12px; } .hamburger span:nth-child(3){ top:20px; }
@@ -40,14 +41,14 @@
   <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20 content">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center"><img src="assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-9 w-9 rounded-md"/><span class="ml-3 text-xl text-cyan-400">Nova Titan</span></a>
+        <a href="/" class="flex items-center"><img src="/assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-9 w-9"/><span class="ml-3 text-xl text-cyan-400">Nova Titan</span></a>
         <div class="hidden sm:flex items-center space-x-6 text-sm">
-          <a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="services.html" class="nav-link">Services</a><a href="blog.html" class="nav-link">Blog</a><a href="faqs.html" class="nav-link">FAQs</a><a href="contact.html" class="nav-link">Contact</a><a href="book-now.html" class="nav-link">Book Now</a>
+          <a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a>
         </div>
         <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
       <div id="mobileMenu" class="sm:hidden hidden pb-4">
-        <div class="flex flex-col space-y-2"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="services.html" class="nav-link">Services</a><a href="blog.html" class="nav-link">Blog</a><a href="faqs.html" class="nav-link">FAQs</a><a href="contact.html" class="nav-link">Contact</a><a href="book-now.html" class="nav-link">Book Now</a></div>
+        <div class="flex flex-col space-y-2"><a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a></div>
       </div>
     </div>
   </nav>
@@ -65,7 +66,7 @@
           <li><strong>You get:</strong> PDF report + quick wins checklist</li>
         </ul>
         <p class="text-xs text-gray-400 mt-3">Starts at $149</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="book-now.html">Book Now</a>
+        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
       </section>
 
       <section id="smb-network" class="card rounded-xl p-6">
@@ -77,7 +78,7 @@
           <li><strong>You get:</strong> Network diagram + admin handoff</li>
         </ul>
         <p class="text-xs text-gray-400 mt-3">Starts at $499</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="book-now.html">Book Now</a>
+        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
       </section>
 
       <section id="cloud-security" class="card rounded-xl p-6">
@@ -89,9 +90,10 @@
           <li><strong>You get:</strong> Findings report + remediation steps</li>
         </ul>
         <p class="text-xs text-gray-400 mt-3">Starts at $399</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="book-now.html">Book Now</a>
+        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
       </section>
 
+      <!-- Simplified Installations (concise) -->
       <section id="installations" class="card rounded-xl p-6 md:col-span-3">
         <h3 class="text-xl font-semibold text-cyan-300">Installations & Hardware Setup</h3>
         <p class="text-gray-300 mt-1"><strong>Problem:</strong> New gear piling up or not set up right.</p>
@@ -101,7 +103,7 @@
           <li>Network hardware installs: routers, switches, access points, mesh systems</li>
         </ul>
         <p class="text-xs text-gray-400 mt-3">Contact for quote</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="book-now.html">Book Now</a>
+        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
       </section>
     </div>
   </main>
@@ -118,10 +120,10 @@
 
   <script>
     particlesJS('particles-js',{particles:{number:{value:60,density:{enable:true,value_area:900}},color:{value:['#00b7eb','#00cc66','#c084fc']},shape:{type:'circle'},opacity:{value:.5,random:true},size:{value:3,random:true},line_linked:{enable:true,distance:120,color:'#00b7eb',opacity:.35,width:1},move:{enable:true,speed:1.4}},interactivity:{events:{onhover:{enable:true,mode:'repulse'}},modes:{repulse:{distance:100}}},retina_detect:true});
-    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu');
-    btn.addEventListener('click',()=>{btn.classList.toggle('active'); const open=menu.classList.contains('hidden'); menu.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',String(open));});
+    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu'); btn.addEventListener('click',()=>{btn.classList.toggle('active'); const open=menu.classList.contains('hidden'); menu.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',String(open));});
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
