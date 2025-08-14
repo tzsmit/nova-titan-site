@@ -6,10 +6,9 @@
   <meta name="description" content="Guides and case studies on cybersecurity, networking, cloud, and smart installs — coming soon.">
   <link rel="canonical" href="https://novatitan.net/blog.html">
   <meta property="og:title" content="Nova Titan Blog — Coming Soon"><meta property="og:image" content="assets/img/logo-rounded.png">
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png?v=2">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png?v=2">
-  <link rel="shortcut icon" href="favicon.ico?v=2">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -21,9 +20,19 @@
     .btn-grad{background:linear-gradient(45deg,var(--cy),var(--gr))}
     .card{border:1px solid rgba(0,183,235,.25);background:rgba(17,25,40,.78);backdrop-filter:blur(6px)}
     #particles-js{position:fixed;inset:0;z-index:0}.content{position:relative;z-index:1}
-    .glow{ text-shadow:0 0 8px rgba(0,183,235,.6); }
     .footer-contact a{ text-shadow:0 0 10px rgba(0,183,235,.55) }
+    /* wrap safety */
     .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
+    /* Hamburger styles (matched to index) */
+    .hamburger { width: 36px; height: 28px; position: relative; }
+    .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
+    .hamburger span:nth-child(1){ top:4px; } .hamburger span:nth-child(2){ top:12px; } .hamburger span:nth-child(3){ top:20px; }
+    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
+
+    /* Unified glow for main titles & subtitles */
+    h1, h2, h3 { text-shadow: 0 0 10px rgba(0,183,235,.55); }
   </style>
 </head>
 <body class="text-white">
@@ -31,11 +40,11 @@
   <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20 content">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center"><img src="assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-9 w-9"/><span class="ml-3 text-xl text-cyan-400 glow">Nova Titan</span></a>
+        <a href="index.html" class="flex items-center"><img src="assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-9 w-9 rounded-md"/><span class="ml-3 text-xl text-cyan-400">Nova Titan</span></a>
         <div class="hidden sm:flex items-center space-x-6 text-sm">
           <a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="services.html" class="nav-link">Services</a><a href="blog.html" class="nav-link text-cyan-300">Blog</a><a href="faqs.html" class="nav-link">FAQs</a><a href="contact.html" class="nav-link">Contact</a><a href="book-now.html" class="nav-link">Book Now</a>
         </div>
-        <button id="menuBtn" class="sm:hidden relative w-9 h-7" aria-label="Open menu" aria-expanded="false"><span class="absolute inset-x-0 top-1 h-[3px] bg-gray-200"></span><span class="absolute inset-x-0 top-3 h-[3px] bg-gray-200"></span><span class="absolute inset-x-0 top-5 h-[3px] bg-gray-200"></span></button>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
       <div id="mobileMenu" class="sm:hidden hidden pb-4">
         <div class="flex flex-col space-y-2"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="services.html" class="nav-link">Services</a><a href="blog.html" class="nav-link">Blog</a><a href="faqs.html" class="nav-link">FAQs</a><a href="contact.html" class="nav-link">Contact</a><a href="book-now.html" class="nav-link">Book Now</a></div>
@@ -45,7 +54,7 @@
 
   <main class="content pt-28 pb-16 max-w-7xl mx-auto px-6">
     <section class="card rounded-2xl p-8 sm:p-10 text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-cyan-300 glow">Blog — Coming Soon</h1>
+      <h1 class="text-4xl sm:text-5xl font-bold text-cyan-300">Blog — Coming Soon</h1>
       <p class="mt-3 text-gray-300 max-w-2xl mx-auto">I’m crafting practical guides, case studies, and checklists on cybersecurity, networking, cloud, and smart installs.</p>
       <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
         <span class="px-3 py-1 rounded-full text-sm text-cyan-200 border border-cyan-400/40">Home & SMB</span>
@@ -59,20 +68,20 @@
     </section>
 
     <section class="mt-10">
-      <h2 class="text-2xl font-semibold text-cyan-300 glow">Planned Topics</h2>
+      <h2 class="text-2xl font-semibold text-cyan-300">Planned Topics</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
         <article class="card rounded-xl p-5">
-          <h3 class="text-xl font-semibold text-cyan-200 glow">Secure Your Home Router in 10 Minutes</h3>
+          <h3 class="text-xl font-semibold text-cyan-200">Secure Your Home Router in 10 Minutes</h3>
           <p class="text-gray-300 mt-2">A quick checklist to kill default creds, tighten Wi-Fi, and block risky admin access.</p>
           <span class="text-xs text-gray-400 mt-3 inline-block">Guide</span>
         </article>
         <article class="card rounded-xl p-5">
-          <h3 class="text-xl font-semibold text-cyan-200 glow">Small Business Network: Starter VLANs</h3>
+          <h3 class="text-xl font-semibold text-cyan-200">Small Business Network: Starter VLANs</h3>
           <p class="text-gray-300 mt-2">Simple segmentation for POS, staff, and guests without the headache.</p>
           <span class="text-xs text-gray-400 mt-3 inline-block">How-to</span>
         </article>
         <article class="card rounded-xl p-5">
-          <h3 class="text-xl font-semibold text-cyan-200 glow">Cloud MFA: Quick Wins That Matter</h3>
+          <h3 class="text-xl font-semibold text-cyan-200">Cloud MFA: Quick Wins That Matter</h3>
           <p class="text-gray-300 mt-2">Enable MFA the right way and avoid lockouts, recovery chaos, and shadow accounts.</p>
           <span class="text-xs text-gray-400 mt-3 inline-block">Checklist</span>
         </article>
@@ -92,8 +101,9 @@
 
   <script>
     particlesJS('particles-js',{particles:{number:{value:60,density:{enable:true,value_area:900}},color:{value:['#00b7eb','#00cc66','#c084fc']},shape:{type:'circle'},opacity:{value:.5,random:true},size:{value:3,random:true},line_linked:{enable:true,distance:120,color:'#00b7eb',opacity:.35,width:1},move:{enable:true,speed:1.4}},interactivity:{events:{onhover:{enable:true,mode:'repulse'}},modes:{repulse:{distance:100}}},retina_detect:true});
-    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu'); btn.addEventListener('click',()=>{const open=menu.classList.contains('hidden');menu.classList.toggle('hidden',!open);btn.setAttribute('aria-expanded',String(open));});
+    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu'); btn.addEventListener('click',()=>{btn.classList.toggle('active'); const open=menu.classList.contains('hidden'); menu.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',String(open));});
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
+
