@@ -21,8 +21,15 @@
     .card{border:1px solid rgba(0,183,235,.25);background:rgba(17,25,40,.78);backdrop-filter:blur(6px)}
     #particles-js{position:fixed;inset:0;z-index:0}.content{position:relative;z-index:1}
     .footer-contact a{ text-shadow:0 0 10px rgba(0,183,235,.55) }
-    /* wrap safety */
     .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
+
+    /* Unified burger */
+    .hamburger { width: 36px; height: 28px; position: relative; }
+    .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
+    .hamburger span:nth-child(1){ top:4px; } .hamburger span:nth-child(2){ top:12px; } .hamburger span:nth-child(3){ top:20px; }
+    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
 
     /* Unified glow for main titles & subtitles */
     h1, h2, h3 { text-shadow: 0 0 10px rgba(0,183,235,.55); }
@@ -37,7 +44,7 @@
         <div class="hidden sm:flex items-center space-x-6 text-sm">
           <a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link text-cyan-300">Book Now</a>
         </div>
-        <button id="menuBtn" class="sm:hidden relative w-9 h-7" aria-label="Open menu" aria-expanded="false"><span class="absolute inset-x-0 top-1 h-[3px] bg-gray-200"></span><span class="absolute inset-x-0 top-3 h-[3px] bg-gray-200"></span><span class="absolute inset-x-0 top-5 h-[3px] bg-gray-200"></span></button>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
       <div id="mobileMenu" class="sm:hidden hidden pb-4">
         <div class="flex flex-col space-y-2"><a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a></div>
@@ -79,7 +86,8 @@
 
   <script>
     particlesJS('particles-js',{particles:{number:{value:60,density:{enable:true,value_area:900}},color:{value:['#00b7eb','#00cc66','#c084fc']},shape:{type:'circle'},opacity:{value:.5,random:true},size:{value:3,random:true},line_linked:{enable:true,distance:120,color:'#00b7eb',opacity:.35,width:1},move:{enable:true,speed:1.4}},interactivity:{events:{onhover:{enable:true,mode:'repulse'}},modes:{repulse:{distance:100}}},retina_detect:true});
-    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu'); btn.addEventListener('click',()=>{const open=menu.classList.contains('hidden');menu.classList.toggle('hidden',!open);btn.setAttribute('aria-expanded',String(open));});
+    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu');
+    btn.addEventListener('click',()=>{btn.classList.toggle('active'); const open=menu.classList.contains('hidden'); menu.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',String(open));});
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>

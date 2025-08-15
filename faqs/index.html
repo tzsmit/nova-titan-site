@@ -23,7 +23,7 @@
     /* wrap safety */
     .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
 
-    /* Hamburger styles (matched) */
+    /* Unified burger */
     .hamburger { width: 36px; height: 28px; position: relative; }
     .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
     .hamburger span:nth-child(1){ top:4px; } .hamburger span:nth-child(2){ top:12px; } .hamburger span:nth-child(3){ top:20px; }
@@ -105,7 +105,8 @@
 
   <script>
     particlesJS('particles-js',{particles:{number:{value:50,density:{enable:true,value_area:900}},color:{value:['#00b7eb','#00cc66','#c084fc']},shape:{type:'circle'},opacity:{value:.5,random:true},size:{value:3,random:true},line_linked:{enable:true,distance:120,color:'#00b7eb',opacity:.35,width:1},move:{enable:true,speed:1.4}},interactivity:{events:{onhover:{enable:true,mode:'repulse'}},modes:{repulse:{distance:100}}},retina_detect:true});
-    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu'); btn.addEventListener('click',()=>{btn.classList.toggle('active'); const open=menu.classList.contains('hidden'); menu.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',String(open));});
+    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu');
+    btn.addEventListener('click',()=>{btn.classList.toggle('active'); const open=menu.classList.contains('hidden'); menu.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',String(open));});
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>

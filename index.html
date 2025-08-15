@@ -13,6 +13,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+  <!-- Assets -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -31,13 +32,16 @@
     .glow { text-shadow: 0 0 10px rgba(0,183,235,.55); }
     #particles-js { position: fixed; inset: 0; z-index: 0; }
     .content { position: relative; z-index: 1; }
+
+    /* Unified burger across site */
     .hamburger { width: 36px; height: 28px; position: relative; }
     .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
     .hamburger span:nth-child(1){ top:4px; } .hamburger span:nth-child(2){ top:12px; } .hamburger span:nth-child(3){ top:20px; }
     .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
     .hamburger.active span:nth-child(2){ opacity:0; }
     .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
-    /* Fix for long text overflowing cards */
+
+    /* Wrap safety */
     .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
     .footer-contact a{ text-shadow:0 0 10px rgba(0,183,235,.55) }
 
@@ -123,7 +127,7 @@
     </div>
   </section>
 
-  <!-- RECENT RATINGS -->
+  <!-- RECENT RATINGS (with short brand-aligned review blurbs) -->
   <section class="content py-12">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-cyan-300 glow mb-6">Recent Client Ratings</h2>
@@ -132,16 +136,19 @@
           <h3 class="text-cyan-300 font-semibold">Printronix P7220 — Control Panel & Shuttle Clean</h3>
           <p class="text-gray-400 text-sm">ABA Moriah Corporation • 07/21/2025</p>
           <p class="mt-1"><strong>Overall:</strong> Excellent <span class="text-sm text-gray-400">• Quality/Professionalism/Communication: Excellent</span></p>
+          <p class="mt-2 text-gray-300 italic">“Dialed-in, documented, and done right the first time.”</p>
         </article>
         <article class="card rounded-xl p-5">
           <h3 class="text-cyan-300 font-semibold">MS5 Keycafe Unit Install — Hobbs</h3>
           <p class="text-gray-400 text-sm">Velociti • 07/18/2025</p>
           <p class="mt-1"><strong>Overall:</strong> Excellent <span class="text-sm text-gray-400">• Quality/Professionalism/Communication: Excellent</span></p>
+          <p class="mt-2 text-gray-300 italic">“Clean install, clear handoff — zero surprises.”</p>
         </article>
         <article class="card rounded-xl p-5">
           <h3 class="text-cyan-300 font-semibold">Site Survey — 10 MB Ethernet Extension</h3>
           <p class="text-gray-400 text-sm">Concert Technologies • 07/16/2025</p>
           <p class="mt-1"><strong>Overall:</strong> Satisfied <span class="text-sm text-gray-400">• Quality/Professionalism/Communication: Satisfied</span></p>
+          <p class="mt-2 text-gray-300 italic">“On time, on spec, and easy to work with.”</p>
         </article>
       </div>
     </div>
@@ -171,8 +178,15 @@
     });
     gsap.from("h1",{opacity:0,y:20,duration:0.8,ease:"power2.out"});
     gsap.from(".card",{opacity:0,y:18,stagger:0.06,duration:0.7,delay:0.2});
-    const btn=document.getElementById('menuBtn');const menu=document.getElementById('mobileMenu');
-    btn.addEventListener('click',()=>{btn.classList.toggle('active');const open=menu.classList.contains('hidden');menu.classList.toggle('hidden',!open);btn.setAttribute('aria-expanded',String(open));});
+
+    const btn=document.getElementById('menuBtn');
+    const menu=document.getElementById('mobileMenu');
+    btn.addEventListener('click',()=>{
+      btn.classList.toggle('active');
+      const open=menu.classList.contains('hidden');
+      menu.classList.toggle('hidden',!open);
+      btn.setAttribute('aria-expanded',String(open));
+    });
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>

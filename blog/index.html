@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Nova Titan</title>
-  <meta name="description" content="Clear, outcome-focused service packages with deliverables and starting prices.">
-  <link rel="canonical" href="https://novatitan.net/services/">
-  <meta property="og:title" content="Services — Nova Titan"><meta property="og:image" content="/assets/img/logo-rounded.png">
+  <title>Nova Titan Blog — Coming Soon</title>
+  <meta name="description" content="Guides and case studies on cybersecurity, networking, cloud, and smart installs — coming soon.">
+  <link rel="canonical" href="https://novatitan.net/blog/">
+  <meta property="og:title" content="Nova Titan Blog — Coming Soon"><meta property="og:image" content="/assets/img/logo-rounded.png">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
@@ -24,7 +24,7 @@
     /* wrap safety */
     .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
 
-    /* Hamburger styles (matched) */
+    /* Hamburger (match index) */
     .hamburger { width: 36px; height: 28px; position: relative; }
     .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
     .hamburger span:nth-child(1){ top:4px; } .hamburger span:nth-child(2){ top:12px; } .hamburger span:nth-child(3){ top:20px; }
@@ -43,7 +43,7 @@
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center"><img src="/assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-9 w-9"/><span class="ml-3 text-xl text-cyan-400">Nova Titan</span></a>
         <div class="hidden sm:flex items-center space-x-6 text-sm">
-          <a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a>
+          <a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link text-cyan-300">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a>
         </div>
         <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
@@ -54,58 +54,40 @@
   </nav>
 
   <main class="content pt-28 pb-16 max-w-7xl mx-auto px-6">
-    <h1 class="text-4xl font-bold text-cyan-300">Services</h1>
+    <section class="card rounded-2xl p-8 sm:p-10 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold text-cyan-300">Blog — Coming Soon</h1>
+      <p class="mt-3 text-gray-300 max-w-2xl mx-auto">I’m crafting practical guides, case studies, and checklists on cybersecurity, networking, cloud, and smart installs.</p>
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+        <span class="px-3 py-1 rounded-full text-sm text-cyan-200 border border-cyan-400/40">Home & SMB</span>
+        <span class="px-3 py-1 rounded-full text-sm text-cyan-200 border border-cyan-400/40">Wi-Fi & Networks</span>
+        <span class="px-3 py-1 rounded-full text-sm text-cyan-200 border border-cyan-400/40">Cloud Security</span>
+        <span class="px-3 py-1 rounded-full text-sm text-cyan-200 border border-cyan-400/40">Smart Installs</span>
+      </div>
+      <div class="mt-7">
+        <a href="/contact/" class="btn-grad inline-block text-gray-900 font-semibold px-6 py-3 rounded-lg">Notify me when it’s live</a>
+      </div>
+    </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-      <section id="home-audit" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Home Wi-Fi Security Audit</h3>
-        <p class="text-gray-300 mt-1"><strong>Problem:</strong> Weak passwords, dead zones, and unknown devices.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li><strong>What I do:</strong> Router hardening, password policy, device inventory</li>
-          <li><strong>Result:</strong> Faster, safer Wi-Fi with fewer drop-offs</li>
-          <li><strong>You get:</strong> PDF report + quick wins checklist</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">Starts at $149</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-      </section>
-
-      <section id="smb-network" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Small Business Network Setup</h3>
-        <p class="text-gray-300 mt-1"><strong>Problem:</strong> Unstable Wi-Fi, insecure switching, and no segmentation.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li><strong>What I do:</strong> Secure switching, VLANs, AP placement, guest networks</li>
-          <li><strong>Result:</strong> Reliable connectivity for POS, staff, and guests</li>
-          <li><strong>You get:</strong> Network diagram + admin handoff</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">Starts at $499</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-      </section>
-
-      <section id="cloud-security" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Cloud Security Checkup</h3>
-        <p class="text-gray-300 mt-1"><strong>Problem:</strong> IAM sprawl, missing MFA, risky permissions.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li><strong>What I do:</strong> IAM audit, MFA enforcement, misconfiguration fixes</li>
-          <li><strong>Result:</strong> Tighter access and safer cloud accounts</li>
-          <li><strong>You get:</strong> Findings report + remediation steps</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">Starts at $399</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-      </section>
-
-      <!-- Simplified Installations (concise) -->
-      <section id="installations" class="card rounded-xl p-6 md:col-span-3">
-        <h3 class="text-xl font-semibold text-cyan-300">Installations & Hardware Setup</h3>
-        <p class="text-gray-300 mt-1"><strong>Problem:</strong> New gear piling up or not set up right.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li>TV mounting & equipment installs with clean cable management</li>
-          <li>Smart home setup: cameras, doorbells, locks, thermostats, sensors, automations</li>
-          <li>Network hardware installs: routers, switches, access points, mesh systems</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">Contact for quote</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-      </section>
-    </div>
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold text-cyan-300">Planned Topics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+        <article class="card rounded-xl p-5">
+          <h3 class="text-xl font-semibold text-cyan-200">Secure Your Home Router in 10 Minutes</h3>
+          <p class="text-gray-300 mt-2">A quick checklist to kill default creds, tighten Wi-Fi, and block risky admin access.</p>
+          <span class="text-xs text-gray-400 mt-3 inline-block">Guide</span>
+        </article>
+        <article class="card rounded-xl p-5">
+          <h3 class="text-xl font-semibold text-cyan-200">Small Business Network: Starter VLANs</h3>
+          <p class="text-gray-300 mt-2">Simple segmentation for POS, staff, and guests without the headache.</p>
+          <span class="text-xs text-gray-400 mt-3 inline-block">How-to</span>
+        </article>
+        <article class="card rounded-xl p-5">
+          <h3 class="text-xl font-semibold text-cyan-200">Cloud MFA: Quick Wins That Matter</h3>
+          <p class="text-gray-300 mt-2">Enable MFA the right way and avoid lockouts, recovery chaos, and shadow accounts.</p>
+          <span class="text-xs text-gray-400 mt-3 inline-block">Checklist</span>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer class="content bg-gray-900/90 py-8">
@@ -125,5 +107,6 @@
   </script>
 </body>
 </html>
+
 
 
