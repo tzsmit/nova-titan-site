@@ -23,19 +23,38 @@
     #particles-js { position: fixed; inset: 0; z-index: 0; }
     .content { position: relative; z-index: 1; }
     .footer-contact a{ text-shadow:0 0 10px rgba(0,183,235,.55) }
+    /* wrap safety */
     .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
-
-    /* Unified burger */
+    /* Hamburger (unified) */
     .hamburger { width: 36px; height: 28px; position: relative; }
     .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
     .hamburger span:nth-child(1){ top:4px; } .hamburger span:nth-child(2){ top:12px; } .hamburger span:nth-child(3){ top:20px; }
     .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
     .hamburger.active span:nth-child(2){ opacity:0; }
     .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
-
     /* Unified glow for main titles & subtitles */
     h1, h2, h3 { text-shadow: 0 0 10px rgba(0,183,235,.55); }
   </style>
+
+  <!-- LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Nova Titan Systems",
+    "@id":"https://novatitan.net/",
+    "url":"https://novatitan.net/",
+    "image":"https://novatitan.net/assets/img/logo-rounded.png",
+    "telephone":"+1-806-370-0624",
+    "priceRange":"$$",
+    "address":{"@type":"PostalAddress","addressLocality":"Lubbock","addressRegion":"TX","postalCode":"79401","addressCountry":"US"},
+    "areaServed":"West Texas",
+    "geo":{"@type":"GeoCoordinates","latitude":33.5779,"longitude":-101.8552},
+    "sameAs":[],
+    "hasMap":"https://www.google.com/maps/place/Lubbock,+TX",
+    "urlTemplate":"https://novatitan.net/book-now/"
+  }
+  </script>
 </head>
 <body class="text-white">
   <div id="particles-js"></div>
@@ -43,7 +62,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center">
-          <img src="/assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-10 w-10"/>
+          <img src="/assets/img/logo-rounded.png" alt="Nova Titan Systems logo" class="h-10 w-10"/>
           <span class="ml-3 text-xl text-cyan-400">Nova Titan</span>
         </a>
         <div class="hidden sm:flex items-center space-x-6">
@@ -83,20 +102,22 @@
         <p class="mb-2">📞 <a href="tel:+18063700624" class="hover:text-cyan-300">(806) 370-0624</a></p>
         <p class="mb-4">📧 <a href="mailto:info@novatitan.net" class="hover:text-cyan-300">info@novatitan.net</a></p>
         <p class="mb-6">💬 Book a consultation directly:</p>
+        <!-- Calendly inline widget -->
         <div class="calendly-inline-widget" data-url="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" style="min-width:320px;height:600px;"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
 
       <div class="card rounded-xl p-6">
         <h3 class="text-xl font-semibold text-cyan-300 mb-4">Send a Message</h3>
+        <!-- Web3Forms wired with your access key -->
         <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4" id="contactForm">
           <input type="hidden" name="access_key" value="71cab758-b049-4e87-bf7a-fb4026ec74ca">
-          <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:border-cyan-400 outline-none">
-          <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:border-cyan-400 outline-none">
-          <textarea name="message" rows="5" placeholder="Your Message" required class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:border-cyan-400 outline-none"></textarea>
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+          <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:border-cyan-400 outline-none" aria-label="Your Name">
+          <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:border-cyan-400 outline-none" aria-label="Your Email">
+          <textarea name="message" rows="5" placeholder="Your Message" required class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:border-cyan-400 outline-none" aria-label="Your Message"></textarea>
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;" aria-hidden="true">
           <button type="submit" class="w-full btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg">Send</button>
-          <p id="formStatus" class="text-sm mt-2 text-gray-300"></p>
+          <p id="formStatus" class="text-sm mt-2 text-gray-300" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -123,14 +144,13 @@
       retina_detect: true
     });
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const btn=document.getElementById('menuBtn');
-    const menu=document.getElementById('mobileMenu');
-    btn.addEventListener('click',()=>{
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
       btn.classList.toggle('active');
-      const open=menu.classList.contains('hidden');
-      menu.classList.toggle('hidden',!open);
-      btn.setAttribute('aria-expanded',String(open));
+      const open = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !open);
+      btn.setAttribute('aria-expanded', String(open));
     });
 
     // Inline success/fail feedback for Web3Forms
@@ -149,4 +169,3 @@
   </script>
 </body>
 </html>
-

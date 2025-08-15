@@ -1,160 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nova Titan — Cybersecurity • Networking • Cloud</title>
-  <meta name="description" content="Stop outages, slow Wi-Fi, and security gaps—fast. Serving Lubbock & West Texas. Remote services available nationwide.">
-  <link rel="canonical" href="https://novatitan.net/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Nova Titan Systems">
-  <meta property="og:title" content="Nova Titan — Cybersecurity • Networking • Cloud">
-  <meta property="og:description" content="Stop outages, slow Wi-Fi, and security gaps—fast.">
-  <meta property="og:image" content="/assets/img/logo-rounded.png">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Nova Titan</title>
+  <meta name="description" content="Experience, credentials, and trusted clients of Nova Titan Systems, born in West Texas.">
+  <link rel="canonical" href="https://novatitan.net/about/">
+  <meta property="og:title" content="About — Nova Titan Systems"><meta property="og:description" content="Experienced, reliable, and trusted by leading organizations."><meta property="og:image" content="/assets/img/logo-rounded.png">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
-  <!-- Assets -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root { --cy: #00b7eb; --gr: #00cc66; }
-    body { font-family: 'Orbitron', sans-serif; background: linear-gradient(135deg,#0d1a26 0%,#16213e 100%); }
-    .nav-link { transition: color .3s ease, transform .3s ease; position: relative; }
-    .nav-link:hover { color: var(--cy); transform: scale(1.06); }
-    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; height:2px; width:0; background:var(--cy); transition:width .3s ease; }
-    .nav-link:hover::after { width:100%; }
-    .btn-grad { background: linear-gradient(45deg,var(--cy),var(--gr)); transition: transform .3s, box-shadow .3s; }
-    .btn-grad:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,183,235,.35); }
-    .card { border: 1px solid rgba(0,183,235,.25); transition: transform .25s, box-shadow .25s; background: rgba(17,25,40,.78); backdrop-filter: blur(6px); }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,183,235,.25); }
-    .glow { text-shadow: 0 0 10px rgba(0,183,235,.55); }
-    #particles-js { position: fixed; inset: 0; z-index: 0; }
-    .content { position: relative; z-index: 1; }
-
-    /* Unified burger across site */
-    .hamburger { width: 36px; height: 28px; position: relative; }
-    .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
-    .hamburger span:nth-child(1){ top:4px; } .hamburger span:nth-child(2){ top:12px; } .hamburger span:nth-child(3){ top:20px; }
-    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
-    .hamburger.active span:nth-child(2){ opacity:0; }
-    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
-
-    /* Wrap safety */
-    .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
+    :root { --cy:#00b7eb; --gr:#00cc66; }
+    body { font-family:'Orbitron',sans-serif; background:linear-gradient(135deg,#0d1a26,#16213e); }
+    .nav-link{transition:color .3s, transform .3s; position:relative;}
+    .nav-link:hover{color:var(--cy); transform:scale(1.06);}
+    .btn-grad{background:linear-gradient(45deg,var(--cy),var(--gr))}
+    .card{border:1px solid rgba(0,183,235,.25); background:rgba(17,25,40,.78); backdrop-filter:blur(6px)}
+    #particles-js{position:fixed; inset:0; z-index:0} .content{position:relative; z-index:1}
     .footer-contact a{ text-shadow:0 0 10px rgba(0,183,235,.55) }
-
-    /* Unified glow for main titles & subtitles */
-    h1, h2, h3 { text-shadow: 0 0 10px rgba(0,183,235,.55); }
+    /* wrap safety */ .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
+    /* Hamburger */ .hamburger { width:36px; height:28px; position:relative; }
+    .hamburger span{position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s,opacity .3s, top .3s}
+    .hamburger span:nth-child(1){top:4px}.hamburger span:nth-child(2){top:12px}.hamburger span:nth-child(3){top:20px}
+    .hamburger.active span:nth-child(1){top:12px; transform:rotate(45deg)} .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){top:12px; transform:rotate(-45deg)}
+    /* unified glow */ h1,h2,h3{ text-shadow:0 0 10px rgba(0,183,235,.55) }
   </style>
+
+  <!-- LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Nova Titan Systems",
+    "image":"https://novatitan.net/assets/img/logo-rounded.png",
+    "@id":"https://novatitan.net/",
+    "url":"https://novatitan.net/",
+    "telephone":"+1-806-370-0624",
+    "priceRange":"$$",
+    "address":{"@type":"PostalAddress","addressLocality":"Lubbock","addressRegion":"TX","addressCountry":"US"},
+    "areaServed":[{"@type":"AdministrativeArea","name":"West Texas"}],
+    "geo":{"@type":"GeoCoordinates","latitude":33.5779,"longitude":-101.8552},
+    "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}],
+    "description":"Nova Titan Systems provides cybersecurity, networking, and cloud solutions for homes and businesses in Lubbock and West Texas."
+  }
+  </script>
 </head>
 <body class="text-white">
-  <div id="particles-js"></div>
-
-  <!-- NAV -->
+  <div id="particles-js" aria-hidden="true"></div>
   <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20 content">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center">
-          <img src="/assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-10 w-10 rounded-md"/>
-          <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
-        </a>
+        <a href="/" class="flex items-center"><img src="/assets/img/logo-rounded.png" alt="Nova Titan Systems logo" class="h-10 w-10 rounded-md"/><span class="ml-3 text-xl text-cyan-400">Nova Titan</span></a>
         <div class="hidden sm:flex items-center space-x-6">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Services</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/faqs/" class="nav-link">FAQs</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="/book-now/" class="nav-link">Book Now</a>
+          <a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a>
         </div>
-        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
-      <div id="mobileMenu" class="sm:hidden hidden pb-4">
-        <div class="flex flex-col space-y-2">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Services</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/faqs/" class="nav-link">FAQs</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="/book-now/" class="nav-link">Book Now</a>
-        </div>
+      <div id="mobileMenu" class="sm:hidden hidden pb-4" aria-label="Mobile menu">
+        <div class="flex flex-col space-y-2"><a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a></div>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="content pt-28 pb-14">
-    <div class="max-w-7xl mx-auto px-6">
-      <span class="inline-block px-3 py-1 rounded-full border border-cyan-400/40 text-cyan-300 text-sm glow">Cybersecurity • Networking • Cloud</span>
-      <h1 class="mt-4 text-4xl sm:text-6xl font-bold text-cyan-300 glow">Fast, secure tech for your home & business.</h1>
-      <p class="mt-3 text-gray-300 text-lg">Stop outages, slow Wi-Fi, and security gaps—fast. Serving Lubbock & West Texas. Remote services available nationwide.</p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg">Book Free Consult</a>
-        <a href="/services/" class="px-6 py-3 rounded-lg border border-cyan-400/40">See Packages</a>
+  <main class="content pt-28 pb-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+      <img src="/assets/img/headshot-placeholder.jpg" alt="Owner headshot at Nova Titan Systems" class="rounded-xl border border-cyan-400/30">
+      <div>
+        <h1 class="text-4xl font-bold text-cyan-300">About Nova Titan</h1>
+        <p class="text-gray-300 mt-3">
+          Nova Titan Systems is a tech solutions provider born in the heart of <strong>West Texas</strong>, driven by a mission to keep homes and small businesses fast, secure, and future-ready. 
+          We blend practical cybersecurity, reliable networking, and optimized cloud setups—delivered with personal, hands-on service.
+        </p>
+        <p class="text-gray-300 mt-3">
+          We’ve supported retail, healthcare, industrial, and SMB environments—solving issues quickly and implementing solutions that last. Whether tightening security, improving network performance, or standing up cloud services, we protect what matters most.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-cyan-300 mt-6">Credentials</h3>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>Background-checked field technician with multi-vendor experience</li>
+          <li>Hands-on networking & troubleshooting across retail, healthcare, and SMB</li>
+          <li>Experienced with Cisco, Ubiquiti, Netgear, Zebra, HP, Lexmark, Keycafe, and more</li>
+        </ul>
+
+        <a href="/book-now/" class="inline-block mt-5 px-6 py-3 rounded-lg btn-grad text-gray-900 font-semibold">Book a Free Consultation</a>
       </div>
     </div>
-  </section>
 
-  <!-- FEATURED SERVICES -->
-  <section class="content py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-cyan-300 glow mb-6">Featured Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <article class="card rounded-xl p-6">
-          <h3 class="text-xl font-semibold text-cyan-300 mb-2">Home Wi-Fi Security Audit</h3>
-          <p class="text-gray-300">Harden your router, fix dead zones, and lock down weak passwords.</p>
-          <p class="text-sm text-gray-400 mt-3">Starts at $149</p>
-          <a class="mt-4 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/services/#home-audit">Learn More</a>
-        </article>
-        <article class="card rounded-xl p-6">
-          <h3 class="text-xl font-semibold text-cyan-300 mb-2">Small Business Network Setup</h3>
-          <p class="text-gray-300">Secure switching, VLANs, and rock-solid Wi-Fi for teams and POS.</p>
-          <p class="text-sm text-gray-400 mt-3">Starts at $499</p>
-          <a class="mt-4 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/services/#smb-network">Learn More</a>
-        </article>
-        <article class="card rounded-xl p-6">
-          <h3 class="text-xl font-semibold text-cyan-300 mb-2">Cloud Security Checkup</h3>
-          <p class="text-gray-300">IAM cleanup, MFA enforcement, and misconfiguration fixes.</p>
-          <p class="text-sm text-gray-400 mt-3">Starts at $399</p>
-          <a class="mt-4 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/services/#cloud-security">Learn More</a>
-        </article>
+    <section class="mt-14 max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-cyan-300">Trusted by</h2>
+      <p class="text-gray-400 mt-1">Select organizations we’ve supported on projects and onsite engagements.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+        <div class="card rounded-xl p-4 text-center">ABA Moriah Corporation</div>
+        <div class="card rounded-xl p-4 text-center">Velociti</div>
+        <div class="card rounded-xl p-4 text-center">Concert Technologies</div>
+        <div class="card rounded-xl p-4 text-center">CSA Solutions</div>
+        <div class="card rounded-xl p-4 text-center">ASD</div>
+        <div class="card rounded-xl p-4 text-center">AVASO Technology</div>
+        <div class="card rounded-xl p-4 text-center">Geeks On Site</div>
+        <div class="card rounded-xl p-4 text-center">Logical Maintenance Solutions</div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- RECENT RATINGS (with short brand-aligned review blurbs) -->
-  <section class="content py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-cyan-300 glow mb-6">Recent Client Ratings</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <article class="card rounded-xl p-5">
-          <h3 class="text-cyan-300 font-semibold">Printronix P7220 — Control Panel & Shuttle Clean</h3>
-          <p class="text-gray-400 text-sm">ABA Moriah Corporation • 07/21/2025</p>
-          <p class="mt-1"><strong>Overall:</strong> Excellent <span class="text-sm text-gray-400">• Quality/Professionalism/Communication: Excellent</span></p>
-          <p class="mt-2 text-gray-300 italic">“Dialed-in, documented, and done right the first time.”</p>
-        </article>
-        <article class="card rounded-xl p-5">
-          <h3 class="text-cyan-300 font-semibold">MS5 Keycafe Unit Install — Hobbs</h3>
-          <p class="text-gray-400 text-sm">Velociti • 07/18/2025</p>
-          <p class="mt-1"><strong>Overall:</strong> Excellent <span class="text-sm text-gray-400">• Quality/Professionalism/Communication: Excellent</span></p>
-          <p class="mt-2 text-gray-300 italic">“Clean install, clear handoff — zero surprises.”</p>
-        </article>
-        <article class="card rounded-xl p-5">
-          <h3 class="text-cyan-300 font-semibold">Site Survey — 10 MB Ethernet Extension</h3>
-          <p class="text-gray-400 text-sm">Concert Technologies • 07/16/2025</p>
-          <p class="mt-1"><strong>Overall:</strong> Satisfied <span class="text-sm text-gray-400">• Quality/Professionalism/Communication: Satisfied</span></p>
-          <p class="mt-2 text-gray-300 italic">“On time, on spec, and easy to work with.”</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="content bg-gray-900/90 py-8">
     <div class="max-w-7xl mx-auto px-6 text-center">
       <p class="text-gray-300">&copy; <span id="year"></span> Nova Titan Systems. All rights reserved.</p>
@@ -165,28 +117,10 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    particlesJS('particles-js',{
-      particles:{ number:{ value:80, density:{enable:true,value_area:900}},
-      color:{value:['#00b7eb','#00cc66','#c084fc']}, shape:{type:'circle'},
-      opacity:{value:.5,random:true}, size:{value:3,random:true},
-      line_linked:{enable:true,distance:120,color:'#00b7eb',opacity:.35,width:1},
-      move:{enable:true,speed:1.6} },
-      interactivity:{ events:{onhover:{enable:true,mode:'repulse'}}, modes:{repulse:{distance:100}} },
-      retina_detect:true
-    });
-    gsap.from("h1",{opacity:0,y:20,duration:0.8,ease:"power2.out"});
-    gsap.from(".card",{opacity:0,y:18,stagger:0.06,duration:0.7,delay:0.2});
-
-    const btn=document.getElementById('menuBtn');
-    const menu=document.getElementById('mobileMenu');
-    btn.addEventListener('click',()=>{
-      btn.classList.toggle('active');
-      const open=menu.classList.contains('hidden');
-      menu.classList.toggle('hidden',!open);
-      btn.setAttribute('aria-expanded',String(open));
-    });
+    particlesJS('particles-js',{particles:{number:{value:60,density:{enable:true,value_area:900}},color:{value:['#00b7eb','#00cc66','#c084fc']},shape:{type:'circle'},opacity:{value:.5,random:true},size:{value:3,random:true},line_linked:{enable:true,distance:120,color:'#00b7eb',opacity:.35,width:1},move:{enable:true,speed:1.5}},interactivity:{events:{onhover:{enable:true,mode:'repulse'}},modes:{repulse:{distance:100}}},retina_detect:true});
+    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu'); 
+    btn.addEventListener('click',()=>{btn.classList.toggle('active'); const open=menu.classList.contains('hidden'); menu.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',String(open));});
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>

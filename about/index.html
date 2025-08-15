@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Nova Titan</title>
-  <meta name="description" content="Experience, credentials, and trusted clients of Nova Titan Systems.">
+  <meta name="description" content="Experience, credentials, and trusted clients of Nova Titan Systems, born in West Texas.">
   <link rel="canonical" href="https://novatitan.net/about/">
-  <meta property="og:title" content="About — Nova Titan Systems">
-  <meta property="og:description" content="Experienced, reliable, and trusted by leading organizations.">
-  <meta property="og:image" content="/assets/img/logo-rounded.png">
+  <meta property="og:title" content="About — Nova Titan Systems"><meta property="og:description" content="Experienced, reliable, and trusted by leading organizations."><meta property="og:image" content="/assets/img/logo-rounded.png">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
@@ -22,70 +20,64 @@
     .nav-link:hover{color:var(--cy); transform:scale(1.06);}
     .btn-grad{background:linear-gradient(45deg,var(--cy),var(--gr))}
     .card{border:1px solid rgba(0,183,235,.25); background:rgba(17,25,40,.78); backdrop-filter:blur(6px)}
-    #particles-js{position:fixed; inset:0; z-index:0} 
-    .content{position:relative; z-index:1}
+    #particles-js{position:fixed; inset:0; z-index:0} .content{position:relative; z-index:1}
     .footer-contact a{ text-shadow:0 0 10px rgba(0,183,235,.55) }
-    /* Wrap safety */
-    .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
-    /* Hamburger styles */
-    .hamburger { width: 36px; height: 28px; position: relative; }
-    .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
-    .hamburger span:nth-child(1){ top:4px; } 
-    .hamburger span:nth-child(2){ top:12px; } 
-    .hamburger span:nth-child(3){ top:20px; }
-    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
-    .hamburger.active span:nth-child(2){ opacity:0; }
-    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
-    /* Unified glow for main titles & subtitles */
-    h1, h2, h3 { text-shadow: 0 0 10px rgba(0,183,235,.55); }
+    /* wrap safety */ .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
+    /* Hamburger */ .hamburger { width:36px; height:28px; position:relative; }
+    .hamburger span{position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s,opacity .3s, top .3s}
+    .hamburger span:nth-child(1){top:4px}.hamburger span:nth-child(2){top:12px}.hamburger span:nth-child(3){top:20px}
+    .hamburger.active span:nth-child(1){top:12px; transform:rotate(45deg)} .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){top:12px; transform:rotate(-45deg)}
+    /* unified glow */ h1,h2,h3{ text-shadow:0 0 10px rgba(0,183,235,.55) }
   </style>
+
+  <!-- LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Nova Titan Systems",
+    "image":"https://novatitan.net/assets/img/logo-rounded.png",
+    "@id":"https://novatitan.net/",
+    "url":"https://novatitan.net/",
+    "telephone":"+1-806-370-0624",
+    "priceRange":"$$",
+    "address":{"@type":"PostalAddress","addressLocality":"Lubbock","addressRegion":"TX","addressCountry":"US"},
+    "areaServed":[{"@type":"AdministrativeArea","name":"West Texas"}],
+    "geo":{"@type":"GeoCoordinates","latitude":33.5779,"longitude":-101.8552},
+    "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}],
+    "description":"Nova Titan Systems provides cybersecurity, networking, and cloud solutions for homes and businesses in Lubbock and West Texas."
+  }
+  </script>
 </head>
 <body class="text-white">
-  <div id="particles-js"></div>
+  <div id="particles-js" aria-hidden="true"></div>
   <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20 content">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center">
-          <img src="/assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-10 w-10 rounded-md"/>
-          <span class="ml-3 text-xl text-cyan-400">Nova Titan</span>
-        </a>
+        <a href="/" class="flex items-center"><img src="/assets/img/logo-rounded.png" alt="Nova Titan Systems logo" class="h-10 w-10 rounded-md"/><span class="ml-3 text-xl text-cyan-400">Nova Titan</span></a>
         <div class="hidden sm:flex items-center space-x-6">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Services</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/faqs/" class="nav-link">FAQs</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="/book-now/" class="nav-link">Book Now</a>
+          <a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a>
         </div>
         <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
-      <div id="mobileMenu" class="sm:hidden hidden pb-4">
-        <div class="flex flex-col space-y-2">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Services</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/faqs/" class="nav-link">FAQs</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="/book-now/" class="nav-link">Book Now</a>
-        </div>
+      <div id="mobileMenu" class="sm:hidden hidden pb-4" aria-label="Mobile menu">
+        <div class="flex flex-col space-y-2"><a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a></div>
       </div>
     </div>
   </nav>
 
   <main class="content pt-28 pb-16">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
-      <img src="/assets/img/headshot-placeholder.jpg" alt="Owner headshot" class="rounded-xl border border-cyan-400/30">
+      <img src="/assets/img/headshot-placeholder.jpg" alt="Owner headshot at Nova Titan Systems" class="rounded-xl border border-cyan-400/30">
       <div>
         <h1 class="text-4xl font-bold text-cyan-300">About Nova Titan</h1>
         <p class="text-gray-300 mt-3">
           Nova Titan Systems is a tech solutions provider born in the heart of <strong>West Texas</strong>, driven by a mission to keep homes and small businesses fast, secure, and future-ready. 
-          Our approach blends practical cybersecurity, reliable networking, and optimized cloud setups—delivered with the kind of personal, hands-on service that’s hard to find in the corporate world.
+          We blend practical cybersecurity, reliable networking, and optimized cloud setups—delivered with personal, hands-on service.
         </p>
         <p class="text-gray-300 mt-3">
-          We’ve worked with clients across retail, healthcare, industrial, and SMB environments—solving problems quickly and implementing solutions that stand the test of time. 
-          Whether it’s tightening security, improving network performance, or setting up cloud-based systems, we bring proven expertise and a dedication to protecting what matters most.
+          We’ve supported retail, healthcare, industrial, and SMB environments—solving issues quickly and implementing solutions that last. Whether tightening security, improving network performance, or standing up cloud services, we protect what matters most.
         </p>
 
         <h3 class="text-2xl font-semibold text-cyan-300 mt-6">Credentials</h3>
@@ -127,13 +119,8 @@
 
   <script>
     particlesJS('particles-js',{particles:{number:{value:60,density:{enable:true,value_area:900}},color:{value:['#00b7eb','#00cc66','#c084fc']},shape:{type:'circle'},opacity:{value:.5,random:true},size:{value:3,random:true},line_linked:{enable:true,distance:120,color:'#00b7eb',opacity:.35,width:1},move:{enable:true,speed:1.5}},interactivity:{events:{onhover:{enable:true,mode:'repulse'}},modes:{repulse:{distance:100}}},retina_detect:true});
-    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu');
-    btn.addEventListener('click',()=>{
-      btn.classList.toggle('active'); 
-      const open=menu.classList.contains('hidden'); 
-      menu.classList.toggle('hidden',!open); 
-      btn.setAttribute('aria-expanded',String(open));
-    });
+    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu'); 
+    btn.addEventListener('click',()=>{btn.classList.toggle('active'); const open=menu.classList.contains('hidden'); menu.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',String(open));});
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
