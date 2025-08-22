@@ -34,7 +34,7 @@
     h1, h2, h3 { text-shadow: 0 0 10px rgba(0,183,235,.55); }
   </style>
 
-  <!-- LocalBusiness JSON-LD -->
+  <!-- LocalBusiness JSON-LD (offers updated) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,9 +56,20 @@
     "geo": { "@type": "GeoCoordinates", "latitude": 33.5779, "longitude": -101.8552 },
     "sameAs": [],
     "makesOffer": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Wi-Fi Security Audit" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Small Business Network Setup" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Security Checkup" } }
+      { "@type": "Offer", "priceCurrency": "USD", "price": "149", "url": "https://novatitan.net/book-now/", "availability": "https://schema.org/InStock",
+        "itemOffered": { "@type": "Service", "name": "Home Wi-Fi Security Audit", "description": "Router hardening, password policy, device inventory. PDF report + quick wins checklist." } },
+      { "@type": "Offer", "priceCurrency": "USD", "price": "499", "url": "https://novatitan.net/book-now/", "availability": "https://schema.org/InStock",
+        "itemOffered": { "@type": "Service", "name": "Small Business Network Setup", "description": "Secure switching, VLANs, AP placement, guest networks. Network diagram + admin handoff." } },
+      { "@type": "Offer", "priceCurrency": "USD", "price": "399", "url": "https://novatitan.net/book-now/", "availability": "https://schema.org/InStock",
+        "itemOffered": { "@type": "Service", "name": "Cloud Security Checkup", "description": "IAM audit, MFA enforcement, misconfiguration fixes. Findings report + remediation steps." } },
+      { "@type": "Offer", "priceCurrency": "USD", "price": "199", "url": "https://novatitan.net/book-now/", "availability": "https://schema.org/InStock",
+        "itemOffered": { "@type": "Service", "name": "Installations & Hardware Setup", "description": "Install networking gear, cameras, smart devices; clean cable management. Price varies by complexity." } },
+      { "@type": "Offer", "priceCurrency": "USD", "price": "75", "url": "https://novatitan.net/book-now/", "availability": "https://schema.org/InStock",
+        "itemOffered": { "@type": "Service", "name": "Remote Tech Support / Troubleshooting", "description": "One remote session for network/device issues or cybersecurity fixes." } },
+      { "@type": "Offer", "priceCurrency": "USD", "price": "199", "url": "https://novatitan.net/book-now/", "availability": "https://schema.org/InStock",
+        "itemOffered": { "@type": "Service", "name": "Website Security Scan & Hardening", "description": "Site scan for vulnerabilities and hardening best practices." } },
+      { "@type": "Offer", "priceCurrency": "USD", "price": "249", "url": "https://novatitan.net/book-now/", "availability": "https://schema.org/InStock",
+        "itemOffered": { "@type": "Service", "name": "Business Cybersecurity Awareness Training", "description": "Remote session for small teams: phishing, password hygiene, cyber basics." } }
     ]
   }
   </script>
@@ -86,6 +97,7 @@
   <main class="content pt-28 pb-16 max-w-7xl mx-auto px-6">
     <h1 class="text-4xl font-bold text-cyan-300">Services</h1>
 
+    <!-- Core Services -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
       <section id="home-audit" class="card rounded-xl p-6">
         <h3 class="text-xl font-semibold text-cyan-300">Home Wi-Fi Security Audit</h3>
@@ -109,6 +121,7 @@
         </ul>
         <p class="text-xs text-gray-400 mt-3">Starts at $499</p>
         <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
+        <p class="text-[11px] text-gray-400 mt-2">For onsite installs over $200, a 50% deposit is collected at booking.</p>
       </section>
 
       <section id="cloud-security" class="card rounded-xl p-6">
@@ -123,18 +136,66 @@
         <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
       </section>
 
-      <!-- Simplified Installations (concise) -->
-      <section id="installations" class="card rounded-xl p-6 md:col-span-3">
+      <section id="installations" class="card rounded-xl p-6">
         <h3 class="text-xl font-semibold text-cyan-300">Installations & Hardware Setup</h3>
         <p class="text-gray-300 mt-1"><strong>Problem:</strong> New gear piling up or not set up right.</p>
         <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
           <li>TV mounting & equipment installs with clean cable management</li>
           <li>Smart home setup: cameras, doorbells, locks, thermostats, sensors, automations</li>
-          <li>Network hardware installs: routers, switches, access points, mesh systems</li>
+          <li>Network gear installs: routers, switches, access points, mesh systems</li>
         </ul>
-        <p class="text-xs text-gray-400 mt-3">Contact for quote</p>
+        <p class="text-xs text-gray-400 mt-3">Starting at $99</p>
+        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
+        <p class="text-[11px] text-gray-400 mt-2">For onsite installs over $200, a 50% deposit is collected at booking.</p>
+      </section>
+    </div>
+
+    <!-- Add-On Services -->
+    <h2 class="text-2xl font-semibold text-cyan-300 mt-12">Add-On Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+      <section id="remote-support" class="card rounded-xl p-6">
+        <h3 class="text-xl font-semibold text-cyan-300">Remote Tech Support / Troubleshooting</h3>
+        <p class="text-gray-300 mt-1">Quick remote help for network issues, device setup, or security fixes.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>One remote session (screen share)</li>
+          <li>Most issues resolved within 30–60 minutes</li>
+          <li>Follow-up notes provided</li>
+        </ul>
+        <p class="text-xs text-gray-400 mt-3">$75 per session</p>
         <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
       </section>
+
+      <section id="web-security" class="card rounded-xl p-6">
+        <h3 class="text-xl font-semibold text-cyan-300">Website Security Scan & Hardening</h3>
+        <p class="text-gray-300 mt-1">Scan for vulnerabilities and apply best-practice hardening.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>Baseline scan & risk summary</li>
+          <li>Core hardening recommendations</li>
+          <li>Quick-wins checklist</li>
+        </ul>
+        <p class="text-xs text-gray-400 mt-3">$199 one-time</p>
+        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
+      </section>
+
+      <section id="awareness-training" class="card rounded-xl p-6">
+        <h3 class="text-xl font-semibold text-cyan-300">Business Cybersecurity Awareness Training</h3>
+        <p class="text-gray-300 mt-1">Remote session for small teams: phishing, passwords, cyber hygiene.</p>
+        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+          <li>Live Zoom session (45–60 min)</li>
+          <li>Printable do’s & don’ts handout</li>
+          <li>Q&A and recap email</li>
+        </ul>
+        <p class="text-xs text-gray-400 mt-3">$249 per small team (remote)</p>
+        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
+      </section>
+    </div>
+
+    <!-- Payment Terms -->
+    <div class="mt-10">
+      <p class="text-[11px] text-gray-400">
+        <strong>Payment Terms:</strong> For onsite work over $200 (e.g., Installations & Hardware Setup, Small Business Network Setup),
+        a 50% deposit is collected at booking. Remaining balance due upon completion.
+      </p>
     </div>
   </main>
 
@@ -156,4 +217,3 @@
   </script>
 </body>
 </html>
-
