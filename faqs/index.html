@@ -35,21 +35,178 @@
 
   <!-- LocalBusiness JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Nova Titan Systems",
-    "@id":"https://novatitan.net/",
-    "url":"https://novatitan.net/",
-    "image":"https://novatitan.net/assets/img/logo-rounded.png",
-    "telephone":"+1-806-370-0624",
-    "priceRange":"$$",
-    "address":{"@type":"PostalAddress","addressLocality":"Lubbock","addressRegion":"TX","postalCode":"79401","addressCountry":"US"},
-    "areaServed":"West Texas",
-    "geo":{"@type":"GeoCoordinates","latitude":33.5779,"longitude":-101.8552},
-    "sameAs":[]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization","LocalBusiness"],
+      "@id": "https://novatitan.net/#org",
+      "name": "Nova Titan Systems",
+      "url": "https://novatitan.net/",
+      "logo": "https://novatitan.net/assets/img/logo-rounded.png",
+      "image": "https://novatitan.net/assets/img/logo-rounded.png",
+      "telephone": "+1-806-370-0624",
+      "email": "info@novatitan.net",
+      "priceRange": "$$",
+      "areaServed": "West Texas",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lubbock",
+        "addressRegion": "TX",
+        "postalCode": "79401",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/traivone-smith-969b60327",
+        "https://www.tiktok.com/@novatitan1",
+        "https://github.com/tzsmit",
+        "https://www.facebook.com/share/1GNBbSRT4b/"
+      ],
+      "paymentAccepted": ["Credit Card","PayPal"],
+      "founder": {
+        "@type": "Person",
+        "name": "Traivone Smith"
+      }
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://novatitan.net/#website",
+      "url": "https://novatitan.net/",
+      "name": "Nova Titan Systems",
+      "publisher": { "@id": "https://novatitan.net/#org" }
+    },
+
+    {
+      "@type": "ItemList",
+      "@id": "https://novatitan.net/#services",
+      "name": "Nova Titan Core Services",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "@id": "https://novatitan.net/services/#home-audit",
+          "name": "Home Wi-Fi Security Audit",
+          "serviceType": "Home Network Security",
+          "provider": { "@id": "https://novatitan.net/#org" },
+          "areaServed": "West Texas",
+          "description": "Router hardening, password policy, device inventory for safer home networks.",
+          "keywords": "wifi security, home network audit, router hardening, password security, smart home protection",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "149",
+            "availability": "https://schema.org/InStock",
+            "url": "https://novatitan.net/payments/"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://novatitan.net/services/#smb-network",
+          "name": "Small Business Network Setup",
+          "serviceType": "Business Networking",
+          "provider": { "@id": "https://novatitan.net/#org" },
+          "areaServed": "West Texas",
+          "description": "Secure switching, VLANs, AP placement, and guest networks for small businesses.",
+          "keywords": "small business IT, vlan setup, secure wifi, pos network, lubbock tech support",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "499",
+            "availability": "https://schema.org/InStock",
+            "url": "https://novatitan.net/payments/"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://novatitan.net/services/#cloud-security",
+          "name": "Cloud Security Checkup",
+          "serviceType": "Cloud Security Audit",
+          "provider": { "@id": "https://novatitan.net/#org" },
+          "areaServed": "Remote",
+          "description": "IAM audit, MFA enforcement, and misconfiguration fixes for AWS, Azure, or OCI.",
+          "keywords": "cloud security audit, aws security, azure security, oci security, iam checkup",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "399",
+            "availability": "https://schema.org/InStock",
+            "url": "https://novatitan.net/payments/"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://novatitan.net/services/#installations",
+          "name": "Installations & Hardware Setup",
+          "serviceType": "Device & Network Installation",
+          "provider": { "@id": "https://novatitan.net/#org" },
+          "areaServed": "West Texas",
+          "description": "TVs, smart cams/locks/thermostats; routers, switches, and access points with clean cable management.",
+          "keywords": "tv mounting, smart home setup, router install, wifi access points, network cabling",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "199",
+            "availability": "https://schema.org/InStock",
+            "url": "https://novatitan.net/payments/"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://novatitan.net/services/#remote-support",
+          "name": "Remote Tech Support Session",
+          "serviceType": "Remote IT Support",
+          "provider": { "@id": "https://novatitan.net/#org" },
+          "areaServed": "United States",
+          "description": "Secure remote troubleshooting for devices, networks, and cybersecurity issues.",
+          "keywords": "remote tech support, online troubleshooting, it help, device repair, network fix",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "75",
+            "availability": "https://schema.org/InStock",
+            "url": "https://novatitan.net/payments/"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://novatitan.net/services/#web-hardening",
+          "name": "Website Security Scan & Hardening",
+          "serviceType": "Web Security",
+          "provider": { "@id": "https://novatitan.net/#org" },
+          "areaServed": "Remote",
+          "description": "Website vulnerability scan and security hardening with quick-wins checklist.",
+          "keywords": "website security, wordpress hardening, website scan, malware removal, site audit",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "199",
+            "availability": "https://schema.org/InStock",
+            "url": "https://novatitan.net/payments/"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://novatitan.net/services/#training",
+          "name": "Cybersecurity Awareness Training (Remote)",
+          "serviceType": "Security Training",
+          "provider": { "@id": "https://novatitan.net/#org" },
+          "areaServed": "Remote",
+          "description": "Live Zoom training for small teams covering phishing, passwords, and security hygiene.",
+          "keywords": "cybersecurity training, awareness course, phishing training, small business training, remote security workshop",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "249",
+            "availability": "https://schema.org/InStock",
+            "url": "https://novatitan.net/payments/"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 </head>
 <body class="text-white">
   <div id="particles-js"></div>
