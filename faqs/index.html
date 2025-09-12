@@ -200,7 +200,7 @@
         linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
       background-size: 50px 50px;
-      animation: matrix-move 20s linear infinite;
+      animation: matrix-move 60s linear infinite; /* slowed from 20s */
       z-index: 0;
     }
     
@@ -846,7 +846,7 @@
       icon.classList.toggle('rotate');
     }
 
-    // Particles.js configuration
+    // Particles.js configuration (slowed movement)
     particlesJS("particles-js", {
       "particles": {
         "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
@@ -876,7 +876,7 @@
         },
         "move": {
           "enable": true,
-          "speed": 6,
+          "speed": 1, /* slowed from 6 */
           "direction": "none",
           "random": false,
           "straight": false,
