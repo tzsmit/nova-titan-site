@@ -1,392 +1,1068 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Nova Titan</title>
-  <meta name="description" content="Clear, outcome-focused service packages with deliverables and starting prices.">
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cybersecurity Services - Network Security & Cloud Protection | Nova Titan</title>
+  <meta name="description" content="Professional cybersecurity services: Home Wi-Fi security audits ($149), business network setup ($499), cloud security checkups ($399), installations ($99+), and security training in Lubbock, West Texas.">
   <link rel="canonical" href="https://novatitan.net/services/">
-  <meta property="og:title" content="Services — Nova Titan"><meta property="og:image" content="/assets/img/logo-rounded.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nova Titan Systems">
+  <meta property="og:title" content="Cybersecurity Services - Network Security & Cloud Protection">
+  <meta property="og:description" content="Professional cybersecurity and networking services for homes and businesses across West Texas. OCI certified specialist.">
+  <meta property="og:image" content="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <!-- Assets -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
   <style>
-    :root{--cy:#00b7eb;--gr:#00cc66}
-    body{font-family:'Orbitron',sans-serif;background:linear-gradient(135deg,#0d1a26,#16213e)}
-    .nav-link{transition:color .3s,transform .3s}.nav-link:hover{color:var(--cy);transform:scale(1.04)}
-    .btn-grad{background:linear-gradient(45deg,var(--cy),var(--gr))}
-    .card{border:1px solid rgba(0,183,235,.25);background:rgba(17,25,40,.78);backdrop-filter:blur(6px)}
-    #particles-js{position:fixed;inset:0;z-index:0}.content{position:relative;z-index:1}
-    .footer-contact a{ text-shadow:0 0 10px rgba(0,183,235,.55) }
-    /* wrap safety */
-    .card, .card * { overflow-wrap:anywhere; word-break:break-word; }
-    /* Hamburger (unified) */
-    .hamburger { width: 36px; height: 28px; position: relative; }
-    .hamburger span { position:absolute; left:0; right:0; height:3px; background:#e5e7eb; transition:transform .3s, opacity .3s, top .3s; }
-    .hamburger span:nth-child(1){ top:4px; } .hamburger span:nth-child(2){ top:12px; } .hamburger span:nth-child(3){ top:20px; }
+    :root { 
+      --cy: #00d4ff; 
+      --gr: #00ff88; 
+      --purple: #b300ff;
+      --red: #ff0066;
+      --orange: #ff8800;
+    }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); 
+      min-height: 100vh;
+    }
+    
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    
+    /* Navigation (matching other pages) */
+    .nav-link { 
+      transition: all .3s ease; 
+      position: relative; 
+      padding: 0.5rem 0;
+    }
+    .nav-link:hover { 
+      color: var(--cy); 
+      transform: scale(1.05); 
+    }
+    .nav-link::after { 
+      content:''; 
+      position:absolute; 
+      bottom:-2px; 
+      left:0; 
+      height:2px; 
+      width:0; 
+      background: linear-gradient(90deg, var(--cy), var(--gr)); 
+      transition:width .3s ease; 
+    }
+    .nav-link:hover::after { width:100%; }
+    
+    /* Enhanced Buttons */
+    .btn-grad { 
+      background: linear-gradient(45deg,var(--cy),var(--gr)); 
+      transition: all .3s ease; 
+      box-shadow: 0 4px 15px rgba(0,212,255,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-grad:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 25px rgba(0,212,255,.5); 
+    }
+    .btn-grad::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    .btn-grad:hover::before {
+      left: 100%;
+    }
+    
+    /* Enhanced Cards */
+    .card { 
+      border: 1px solid rgba(0,212,255,.25); 
+      transition: all .4s ease; 
+      background: rgba(26,26,46,.85); 
+      backdrop-filter: blur(12px); 
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cy), var(--gr), var(--purple));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    .card:hover { 
+      transform: translateY(-8px) scale(1.02); 
+      box-shadow: 0 20px 40px rgba(0,212,255,.3), 0 0 20px rgba(0,255,136,0.2); 
+      border-color: rgba(0,212,255,0.6);
+    }
+    
+    /* Service Card Specific */
+    .service-card {
+      border: 1px solid rgba(0,212,255,.25);
+      transition: all .4s ease;
+      background: rgba(26,26,46,.85);
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card.featured {
+      border: 1px solid rgba(0,255,136,.4);
+      box-shadow: 0 0 20px rgba(0,255,136,.2);
+    }
+    
+    .service-card.featured::before {
+      background: linear-gradient(90deg, var(--gr), var(--cy), var(--gr));
+    }
+    
+    /* Glow Effects */
+    .glow { 
+      text-shadow: 0 0 20px rgba(0,212,255,.6); 
+    }
+    .glow-green { 
+      text-shadow: 0 0 20px rgba(0,255,136,.6); 
+    }
+    .glow-purple { 
+      text-shadow: 0 0 20px rgba(179,0,255,.6); 
+    }
+    
+    /* Particle Background */
+    #particles-js { 
+      position: fixed; 
+      inset: 0; 
+      z-index: 0; 
+    }
+    .content { 
+      position: relative; 
+      z-index: 1; 
+    }
+
+    /* Matrix Effect */
+    .matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: matrix-move 20s linear infinite;
+      z-index: 0;
+    }
+    
+    @keyframes matrix-move {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    /* Hamburger */
+    .hamburger { 
+      width: 36px; 
+      height: 28px; 
+      position: relative; 
+      cursor: pointer;
+    }
+    .hamburger span { 
+      position:absolute; 
+      left:0; 
+      right:0; 
+      height:3px; 
+      background: linear-gradient(90deg, var(--cy), var(--gr)); 
+      transition:transform .3s, opacity .3s, top .3s; 
+      border-radius: 2px;
+    }
+    .hamburger span:nth-child(1){ top:4px; } 
+    .hamburger span:nth-child(2){ top:12px; } 
+    .hamburger span:nth-child(3){ top:20px; }
     .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
     .hamburger.active span:nth-child(2){ opacity:0; }
     .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
-    /* Unified glow for main titles & subtitles */
-    h1, h2, h3 { text-shadow: 0 0 10px rgba(0,183,235,.55); }
+
+    /* Typography Enhancements */
+    h1, h2, h3 { 
+      text-shadow: 0 0 20px rgba(0,212,255,.6); 
+    }
+    
+    /* Service Icons */
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 25px rgba(0,212,255,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-icon.home {
+      background: linear-gradient(135deg, var(--cy), var(--gr));
+    }
+    
+    .service-icon.business {
+      background: linear-gradient(135deg, var(--gr), var(--purple));
+    }
+    
+    .service-icon.cloud {
+      background: linear-gradient(135deg, var(--purple), var(--red));
+    }
+    
+    .service-icon.install {
+      background: linear-gradient(135deg, var(--orange), var(--cy));
+    }
+    
+    .service-icon.remote {
+      background: linear-gradient(135deg, var(--red), var(--orange));
+    }
+    
+    .service-icon.web {
+      background: linear-gradient(135deg, var(--cy), var(--purple));
+    }
+    
+    .service-icon.training {
+      background: linear-gradient(135deg, var(--gr), var(--cy));
+    }
+    
+    /* Price Display */
+    .price-display {
+      background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(0,255,136,0.1));
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .price-amount {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gr);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .price-label {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+    }
+    
+    /* Feature Lists */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(0,212,255,0.1);
+    }
+    
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .feature-list li i {
+      color: var(--gr);
+      margin-right: 0.75rem;
+      width: 16px;
+      text-align: center;
+    }
+    
+    /* Social Icons */
+    .social-icon {
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 0 5px rgba(0,212,255,0.3));
+    }
+    .social-icon:hover {
+      transform: scale(1.2) rotate(5deg);
+      filter: drop-shadow(0 0 15px rgba(0,212,255,0.8));
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .service-icon {
+        width: 60px;
+        height: 60px;
+      }
+      .price-amount {
+        font-size: 1.5rem;
+      }
+    }
+    
+    /* Loading Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Process Steps */
+    .process-step {
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .process-number {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--cy), var(--gr));
+      color: var(--primary-bg);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
   </style>
 
-  <!-- LocalBusiness JSON-LD (offers updated) -->
+  <!-- Enhanced JSON-LD for Services -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["Organization","LocalBusiness"],
-      "@id": "https://novatitan.net/#org",
-      "name": "Nova Titan Systems",
-      "url": "https://novatitan.net/",
-      "logo": "https://novatitan.net/assets/img/logo-rounded.png",
-      "image": "https://novatitan.net/assets/img/logo-rounded.png",
-      "telephone": "+1-806-370-0624",
-      "email": "info@novatitan.net",
-      "priceRange": "$$",
-      "areaServed": "West Texas",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Lubbock",
-        "addressRegion": "TX",
-        "postalCode": "79401",
-        "addressCountry": "US"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/traivone-smith-969b60327",
-        "https://www.tiktok.com/@novatitan1",
-        "https://github.com/tzsmit",
-        "https://www.facebook.com/share/1GNBbSRT4b/"
-      ],
-      "paymentAccepted": ["Credit Card","PayPal"],
-      "founder": {
-        "@type": "Person",
-        "name": "Traivone Smith"
-      }
-    },
-
-    {
-      "@type": "WebSite",
-      "@id": "https://novatitan.net/#website",
-      "url": "https://novatitan.net/",
-      "name": "Nova Titan Systems",
-      "publisher": { "@id": "https://novatitan.net/#org" }
-    },
-
-    {
-      "@type": "ItemList",
-      "@id": "https://novatitan.net/#services",
-      "name": "Nova Titan Core Services",
-      "itemListElement": [
-        {
+  "@type": "LocalBusiness",
+  "@id": "https://novatitan.net/services/#services",
+  "name": "Nova Titan Systems - Cybersecurity Services",
+  "description": "Professional cybersecurity and networking services for homes and businesses in West Texas",
+  "url": "https://novatitan.net/services/",
+  "telephone": "+1-806-370-0624",
+  "email": "info@novatitan.net",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lubbock",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "areaServed": ["West Texas", "Lubbock", "Remote Nationwide"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Cybersecurity Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
           "@type": "Service",
-          "@id": "https://novatitan.net/services/#home-audit",
           "name": "Home Wi-Fi Security Audit",
-          "serviceType": "Home Network Security",
-          "provider": { "@id": "https://novatitan.net/#org" },
-          "areaServed": "West Texas",
-          "description": "Router hardening, password policy, device inventory for safer home networks.",
-          "keywords": "wifi security, home network audit, router hardening, password security, smart home protection",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": "149",
-            "availability": "https://schema.org/InStock",
-            "url": "https://novatitan.net/payments/"
-          }
+          "description": "Comprehensive router hardening, password policy enforcement, and smart device inventory"
         },
-        {
+        "price": "149",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
           "@type": "Service",
-          "@id": "https://novatitan.net/services/#smb-network",
           "name": "Small Business Network Setup",
-          "serviceType": "Business Networking",
-          "provider": { "@id": "https://novatitan.net/#org" },
-          "areaServed": "West Texas",
-          "description": "Secure switching, VLANs, AP placement, and guest networks for small businesses.",
-          "keywords": "small business IT, vlan setup, secure wifi, pos network, lubbock tech support",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": "499",
-            "availability": "https://schema.org/InStock",
-            "url": "https://novatitan.net/payments/"
-          }
+          "description": "Enterprise-grade secure switching, VLANs, and robust Wi-Fi infrastructure"
         },
-        {
-          "@type": "Service",
-          "@id": "https://novatitan.net/services/#cloud-security",
+        "price": "499",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
           "name": "Cloud Security Checkup",
-          "serviceType": "Cloud Security Audit",
-          "provider": { "@id": "https://novatitan.net/#org" },
-          "areaServed": "Remote",
-          "description": "IAM audit, MFA enforcement, and misconfiguration fixes for AWS, Azure, or OCI.",
-          "keywords": "cloud security audit, aws security, azure security, oci security, iam checkup",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": "399",
-            "availability": "https://schema.org/InStock",
-            "url": "https://novatitan.net/payments/"
-          }
+          "description": "OCI-certified cloud security audit with IAM cleanup and MFA enforcement"
         },
-        {
+        "price": "399",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
           "@type": "Service",
-          "@id": "https://novatitan.net/services/#installations",
-          "name": "Installations & Hardware Setup",
-          "serviceType": "Device & Network Installation",
-          "provider": { "@id": "https://novatitan.net/#org" },
-          "areaServed": "West Texas",
-          "description": "TVs, smart cams/locks/thermostats; routers, switches, and access points with clean cable management.",
-          "keywords": "tv mounting, smart home setup, router install, wifi access points, network cabling",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": "199",
-            "availability": "https://schema.org/InStock",
-            "url": "https://novatitan.net/payments/"
-          }
+          "name": "Installations & Hardware Setup", 
+          "description": "TV mounting, smart home setup, and network equipment installation"
         },
-        {
-          "@type": "Service",
-          "@id": "https://novatitan.net/services/#remote-support",
-          "name": "Remote Tech Support Session",
-          "serviceType": "Remote IT Support",
-          "provider": { "@id": "https://novatitan.net/#org" },
-          "areaServed": "United States",
-          "description": "Secure remote troubleshooting for devices, networks, and cybersecurity issues.",
-          "keywords": "remote tech support, online troubleshooting, it help, device repair, network fix",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": "75",
-            "availability": "https://schema.org/InStock",
-            "url": "https://novatitan.net/payments/"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://novatitan.net/services/#web-hardening",
-          "name": "Website Security Scan & Hardening",
-          "serviceType": "Web Security",
-          "provider": { "@id": "https://novatitan.net/#org" },
-          "areaServed": "Remote",
-          "description": "Website vulnerability scan and security hardening with quick-wins checklist.",
-          "keywords": "website security, wordpress hardening, website scan, malware removal, site audit",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": "199",
-            "availability": "https://schema.org/InStock",
-            "url": "https://novatitan.net/payments/"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://novatitan.net/services/#training",
-          "name": "Cybersecurity Awareness Training (Remote)",
-          "serviceType": "Security Training",
-          "provider": { "@id": "https://novatitan.net/#org" },
-          "areaServed": "Remote",
-          "description": "Live Zoom training for small teams covering phishing, passwords, and security hygiene.",
-          "keywords": "cybersecurity training, awareness course, phishing training, small business training, remote security workshop",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": "249",
-            "availability": "https://schema.org/InStock",
-            "url": "https://novatitan.net/payments/"
-          }
-        }
-      ]
-    }
-  ]
+        "price": "99",
+        "priceCurrency": "USD"
+      }
+    ]
+  }
 }
 </script>
 
 </head>
 <body class="text-white">
   <div id="particles-js"></div>
+  <div class="matrix-bg"></div>
+
+  <!-- NAV -->
   <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20 content">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center">
-          <img src="/assets/img/logo-rounded.png" alt="Nova Titan Systems logo" class="h-9 w-9"/>
-          <span class="ml-3 text-xl text-cyan-400">Nova Titan</span>
+        <a href="/" class="flex items-center group">
+          <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
+          <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
         </a>
-        <div class="hidden sm:flex items-center space-x-6 text-sm">
-          <a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a>
+        <div class="hidden sm:flex items-center space-x-6">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link text-cyan-400">Services</a>
+          <a href="/portfolio/" class="nav-link">Portfolio</a>
+          <a href="/blog/" class="nav-link">Blog</a>
+          <a href="/faqs/" class="nav-link">FAQ</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
+            <i class="fas fa-calendar-check mr-1"></i>Book Now
+          </a>
         </div>
-        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
       <div id="mobileMenu" class="sm:hidden hidden pb-4">
-        <div class="flex flex-col space-y-2"><a href="/" class="nav-link">Home</a><a href="/about/" class="nav-link">About</a><a href="/services/" class="nav-link">Services</a><a href="/blog/" class="nav-link">Blog</a><a href="/faqs/" class="nav-link">FAQs</a><a href="/contact/" class="nav-link">Contact</a><a href="/book-now/" class="nav-link">Book Now</a></div>
+        <div class="flex flex-col space-y-2">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link text-cyan-400">Services</a>
+          <a href="/portfolio/" class="nav-link">Portfolio</a>
+          <a href="/blog/" class="nav-link">Blog</a>
+          <a href="/faqs/" class="nav-link">FAQ</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="nav-link">Book Now</a>
+        </div>
       </div>
     </div>
   </nav>
 
-  <main class="content pt-28 pb-16 max-w-7xl mx-auto px-6">
-    <h1 class="text-4xl font-bold text-cyan-300">Services</h1>
-
-    <!-- Core Services -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-      <section id="home-audit" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Home Wi-Fi Security Audit</h3>
-        <p class="text-gray-300 mt-1"><strong>Problem:</strong> Weak passwords, dead zones, and unknown devices.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li><strong>What I do:</strong> Router hardening, password policy, device inventory</li>
-          <li><strong>Result:</strong> Faster, safer Wi-Fi with fewer drop-offs</li>
-          <li><strong>You get:</strong> PDF report + quick wins checklist</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">Starts at $149</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-      </section>
-
-      <section id="smb-network" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Small Business Network Setup</h3>
-        <p class="text-gray-300 mt-1"><strong>Problem:</strong> Unstable Wi-Fi, insecure switching, and no segmentation.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li><strong>What I do:</strong> Secure switching, VLANs, AP placement, guest networks</li>
-          <li><strong>Result:</strong> Reliable connectivity for POS, staff, and guests</li>
-          <li><strong>You get:</strong> Network diagram + admin handoff</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">Starts at $499</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-        <p class="text-[11px] text-gray-400 mt-2">For onsite installs over $200, a 50% deposit is collected at booking.</p>
-      </section>
-
-      <section id="cloud-security" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Cloud Security Checkup</h3>
-        <p class="text-gray-300 mt-1"><strong>Problem:</strong> IAM sprawl, missing MFA, risky permissions.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li><strong>What I do:</strong> IAM audit, MFA enforcement, misconfiguration fixes</li>
-          <li><strong>Result:</strong> Tighter access and safer cloud accounts</li>
-          <li><strong>You get:</strong> Findings report + remediation steps</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">Starts at $399</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-      </section>
-
-      <section id="installations" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Installations & Hardware Setup</h3>
-        <p class="text-gray-300 mt-1"><strong>Problem:</strong> New gear piling up or not set up right.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li>TV mounting & equipment installs with clean cable management</li>
-          <li>Smart home setup: cameras, doorbells, locks, thermostats, sensors, automations</li>
-          <li>Network gear installs: routers, switches, access points, mesh systems</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">Starting at $99</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-        <p class="text-[11px] text-gray-400 mt-2">For onsite installs over $200, a 50% deposit is collected at booking.</p>
-      </section>
+  <!-- HERO -->
+  <section class="content pt-28 pb-14">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-6xl font-bold glow mb-6 fade-in">
+          <span class="text-cyan-300">Cybersecurity</span> 
+          <span class="glow-green">Services</span>
+        </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-6 fade-in">
+          Professional cybersecurity and networking solutions for homes and businesses across 
+          <strong class="text-green-300">West Texas</strong>. 
+          <strong class="text-cyan-300">OCI certified specialist</strong> with expertise in 
+          cloud security, network architecture, and comprehensive security audits.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 fade-in">
+          <a href="#home-audit" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center">
+            <i class="fas fa-shield-check mr-2"></i>
+            Start with Security Audit
+          </a>
+          <a href="tel:+18063700624" class="px-6 py-3 rounded-lg border border-cyan-400/40 hover:bg-cyan-400/10 transition-all inline-flex items-center">
+            <i class="fas fa-phone mr-2"></i>
+            Call (806) 370-0624
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Add-On Services -->
-    <h2 class="text-2xl font-semibold text-cyan-300 mt-12">Add-On Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-      <section id="remote-support" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Remote Tech Support / Troubleshooting</h3>
-        <p class="text-gray-300 mt-1">Quick remote help for network issues, device setup, or security fixes.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li>One remote session (screen share)</li>
-          <li>Most issues resolved within 30–60 minutes</li>
-          <li>Follow-up notes provided</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">$75 per session</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-      </section>
+  <!-- CORE SERVICES -->
+  <section class="content py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold glow mb-4">Core Security Services</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">Comprehensive cybersecurity solutions tailored for your specific needs</p>
+      </div>
 
-      <section id="web-security" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Website Security Scan & Hardening</h3>
-        <p class="text-gray-300 mt-1">Scan for vulnerabilities and apply best-practice hardening.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li>Baseline scan & risk summary</li>
-          <li>Core hardening recommendations</li>
-          <li>Quick-wins checklist</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">$199 one-time</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-      </section>
+      <div class="grid lg:grid-cols-3 gap-8 mb-16">
+        <!-- Home Wi-Fi Security Audit -->
+        <div id="home-audit" class="service-card featured rounded-2xl p-8 fade-in">
+          <div class="service-icon home">
+            <i class="fas fa-home text-3xl text-gray-900"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">Home Wi-Fi Security Audit</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Comprehensive security assessment and hardening for your home network. 
+            Protect your family's devices, smart home systems, and personal data from cyber threats.
+          </p>
+          
+          <div class="price-display">
+            <div class="price-amount">$149</div>
+            <div class="price-label">Starting Price</div>
+          </div>
 
-      <section id="awareness-training" class="card rounded-xl p-6">
-        <h3 class="text-xl font-semibold text-cyan-300">Business Cybersecurity Awareness Training</h3>
-        <p class="text-gray-300 mt-1">Remote session for small teams: phishing, passwords, cyber hygiene.</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
-          <li>Live Zoom session (45–60 min)</li>
-          <li>Printable do’s & don’ts handout</li>
-          <li>Q&A and recap email</li>
-        </ul>
-        <p class="text-xs text-gray-400 mt-3">$249 per small team (remote)</p>
-        <a class="mt-3 inline-block btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg" href="/book-now/">Book Now</a>
-      </section>
+          <ul class="feature-list mb-6 text-sm">
+            <li><i class="fas fa-router"></i> Router security configuration & firmware updates</li>
+            <li><i class="fas fa-wifi"></i> Wi-Fi coverage optimization & dead zone elimination</li>
+            <li><i class="fas fa-lock"></i> Password policy enforcement & WPA3 setup</li>
+            <li><i class="fas fa-mobile-alt"></i> Smart device inventory & IoT security review</li>
+            <li><i class="fas fa-shield-alt"></i> Firewall configuration & intrusion detection</li>
+            <li><i class="fas fa-file-pdf"></i> Detailed security report & recommendations</li>
+          </ul>
+
+          <div class="flex flex-col gap-3">
+            <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
+              <i class="fas fa-calendar-check mr-2"></i>
+              Schedule Audit
+            </a>
+            <p class="text-xs text-gray-400 text-center">
+              <i class="fas fa-clock mr-1"></i>
+              Typical completion: 2-3 hours onsite
+            </p>
+          </div>
+        </div>
+
+        <!-- Small Business Network Setup -->
+        <div id="smb-network" class="service-card rounded-2xl p-8 fade-in">
+          <div class="service-icon business">
+            <i class="fas fa-building text-3xl text-gray-900"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-green-300 mb-4">Small Business Network Setup</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Enterprise-grade network architecture for small businesses. Secure, scalable, 
+            and optimized for POS systems, employee devices, and guest access.
+          </p>
+          
+          <div class="price-display">
+            <div class="price-amount">$499</div>
+            <div class="price-label">Starting Price</div>
+          </div>
+
+          <ul class="feature-list mb-6 text-sm">
+            <li><i class="fas fa-network-wired"></i> Secure switching & VLAN segmentation</li>
+            <li><i class="fas fa-broadcast-tower"></i> Professional access point placement</li>
+            <li><i class="fas fa-users"></i> Guest network isolation & captive portal</li>
+            <li><i class="fas fa-cash-register"></i> POS system network optimization</li>
+            <li><i class="fas fa-shield-virus"></i> Network security monitoring setup</li>
+            <li><i class="fas fa-diagram-project"></i> Network diagram & documentation</li>
+          </ul>
+
+          <div class="flex flex-col gap-3">
+            <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
+              <i class="fas fa-calendar-check mr-2"></i>
+              Schedule Setup
+            </a>
+            <p class="text-xs text-gray-400 text-center">
+              <i class="fas fa-tools mr-1"></i>
+              Includes professional installation & handoff
+            </p>
+          </div>
+        </div>
+
+        <!-- Cloud Security Checkup -->
+        <div id="cloud-security" class="service-card rounded-2xl p-8 fade-in">
+          <div class="service-icon cloud">
+            <i class="fas fa-cloud-shield text-3xl text-gray-900"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-purple-300 mb-4">Cloud Security Checkup</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            OCI-certified cloud security assessment for AWS, Azure, and Oracle Cloud. 
+            Identify misconfigurations, enforce security policies, and ensure compliance.
+          </p>
+          
+          <div class="price-display">
+            <div class="price-amount">$399</div>
+            <div class="price-label">Starting Price</div>
+          </div>
+
+          <ul class="feature-list mb-6 text-sm">
+            <li><i class="fas fa-user-shield"></i> IAM security audit & cleanup</li>
+            <li><i class="fas fa-key"></i> Multi-factor authentication enforcement</li>
+            <li><i class="fas fa-cloud-download-alt"></i> Security group & firewall review</li>
+            <li><i class="fas fa-database"></i> Data encryption & backup validation</li>
+            <li><i class="fas fa-clipboard-check"></i> Compliance framework assessment</li>
+            <li><i class="fas fa-chart-line"></i> Security posture scoring & roadmap</li>
+          </ul>
+
+          <div class="flex flex-col gap-3">
+            <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
+              <i class="fas fa-calendar-check mr-2"></i>
+              Schedule Checkup
+            </a>
+            <p class="text-xs text-gray-400 text-center">
+              <i class="fas fa-globe mr-1"></i>
+              Available remotely nationwide
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Payment Terms -->
-    <div class="mt-10">
-      <p class="text-[11px] text-gray-400">
-        <strong>Payment Terms:</strong> For onsite work over $200 (e.g., Installations & Hardware Setup, Small Business Network Setup),
-        a 50% deposit is collected at booking. Remaining balance due upon completion.
+  <!-- ADDITIONAL SERVICES -->
+  <section class="content py-12 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold glow mb-4">Additional Services</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">Supporting services to complete your cybersecurity and technology needs</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Installations -->
+        <div id="installations" class="service-card rounded-xl p-6 fade-in">
+          <div class="service-icon install mx-auto">
+            <i class="fas fa-tv text-2xl text-gray-900"></i>
+          </div>
+          <h3 class="text-xl font-bold text-orange-300 mb-3">Installations & Hardware Setup</h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Professional installation of TVs, smart home devices, and network equipment with clean cable management.
+          </p>
+          
+          <div class="price-display mb-4">
+            <div class="price-amount text-lg">$99</div>
+            <div class="price-label">Starting At</div>
+          </div>
+
+          <ul class="text-xs text-gray-400 mb-4 space-y-1">
+            <li>• TV mounting & setup</li>
+            <li>• Smart cameras & doorbells</li>
+            <li>• Network equipment install</li>
+            <li>• Clean cable management</li>
+          </ul>
+
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm w-full text-center inline-block">
+            Book Install
+          </a>
+        </div>
+
+        <!-- Remote Support -->
+        <div id="remote-support" class="service-card rounded-xl p-6 fade-in">
+          <div class="service-icon remote mx-auto">
+            <i class="fas fa-laptop-code text-2xl text-gray-900"></i>
+          </div>
+          <h3 class="text-xl font-bold text-red-300 mb-3">Remote Tech Support</h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Secure remote troubleshooting for network issues, device setup, and cybersecurity problems.
+          </p>
+          
+          <div class="price-display mb-4">
+            <div class="price-amount text-lg">$75</div>
+            <div class="price-label">Per Session</div>
+          </div>
+
+          <ul class="text-xs text-gray-400 mb-4 space-y-1">
+            <li>• Network troubleshooting</li>
+            <li>• Device configuration</li>
+            <li>• Security issue resolution</li>
+            <li>• Software installation</li>
+          </ul>
+
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm w-full text-center inline-block">
+            Get Support
+          </a>
+        </div>
+
+        <!-- Website Security -->
+        <div id="web-hardening" class="service-card rounded-xl p-6 fade-in">
+          <div class="service-icon web mx-auto">
+            <i class="fas fa-globe text-2xl text-gray-900"></i>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-300 mb-3">Website Security Scan</h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Comprehensive website vulnerability assessment with security hardening and protection recommendations.
+          </p>
+          
+          <div class="price-display mb-4">
+            <div class="price-amount text-lg">$199</div>
+            <div class="price-label">One-Time</div>
+          </div>
+
+          <ul class="text-xs text-gray-400 mb-4 space-y-1">
+            <li>• Vulnerability scanning</li>
+            <li>• Security hardening</li>
+            <li>• Malware detection</li>
+            <li>• Performance optimization</li>
+          </ul>
+
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm w-full text-center inline-block">
+            Scan Site
+          </a>
+        </div>
+
+        <!-- Security Training -->
+        <div id="training" class="service-card rounded-xl p-6 fade-in">
+          <div class="service-icon training mx-auto">
+            <i class="fas fa-graduation-cap text-2xl text-gray-900"></i>
+          </div>
+          <h3 class="text-xl font-bold text-green-300 mb-3">Security Training</h3>
+          <p class="text-gray-300 text-sm mb-4">
+            Live cybersecurity awareness training for small teams covering phishing, passwords, and security best practices.
+          </p>
+          
+          <div class="price-display mb-4">
+            <div class="price-amount text-lg">$249</div>
+            <div class="price-label">Per Team</div>
+          </div>
+
+          <ul class="text-xs text-gray-400 mb-4 space-y-1">
+            <li>• Phishing awareness</li>
+            <li>• Password security</li>
+            <li>• Social engineering</li>
+            <li>• Incident response</li>
+          </ul>
+
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm w-full text-center inline-block">
+            Book Training
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="content py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold glow mb-4">Our Security Process</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">A systematic approach to securing your technology infrastructure</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="process-step fade-in">
+          <div class="process-number">1</div>
+          <div class="mt-6">
+            <h3 class="text-lg font-semibold text-cyan-300 mb-3">Assessment</h3>
+            <p class="text-gray-300 text-sm">
+              Comprehensive evaluation of your current security posture, identifying vulnerabilities and risks.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-number">2</div>
+          <div class="mt-6">
+            <h3 class="text-lg font-semibold text-green-300 mb-3">Planning</h3>
+            <p class="text-gray-300 text-sm">
+              Custom security strategy development based on your specific needs, budget, and compliance requirements.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-number">3</div>
+          <div class="mt-6">
+            <h3 class="text-lg font-semibold text-purple-300 mb-3">Implementation</h3>
+            <p class="text-gray-300 text-sm">
+              Professional deployment of security solutions with minimal disruption to your operations.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-step fade-in">
+          <div class="process-number">4</div>
+          <div class="mt-6">
+            <h3 class="text-lg font-semibold text-orange-300 mb-3">Monitoring</h3>
+            <p class="text-gray-300 text-sm">
+              Ongoing security monitoring, maintenance, and support to ensure continued protection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="content py-16 bg-gradient-to-r from-cyan-900/30 via-green-900/30 to-purple-900/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold glow mb-6">
+        Ready to Secure Your Technology?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Get started with a free security consultation. We'll assess your current setup and recommend 
+        the best security solutions for your specific needs and budget.
       </p>
+      <div class="flex flex-wrap gap-4 justify-center mb-6">
+        <a href="/book-now/" class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center">
+          <i class="fas fa-calendar-check mr-3"></i>
+          Schedule Free Consultation
+        </a>
+        <a href="tel:+18063700624" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition-all text-lg inline-flex items-center">
+          <i class="fas fa-phone mr-3"></i>
+          Call (806) 370-0624
+        </a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-400">
+        <div class="flex items-center justify-center">
+          <i class="fas fa-shield-check text-green-400 mr-2"></i>
+          Same-day response guaranteed
+        </div>
+        <div class="flex items-center justify-center">
+          <i class="fas fa-clock text-blue-400 mr-2"></i>
+          No long-term contracts required
+        </div>
+        <div class="flex items-center justify-center">
+          <i class="fas fa-award text-yellow-400 mr-2"></i>
+          100% satisfaction guarantee
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <footer class="content bg-gray-900/90 py-8">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <p class="text-gray-300">&copy; <span id="year"></span> Nova Titan Systems. All rights reserved.</p>
-      <p class="mt-2 footer-contact text-sm">
-  <a href="tel:+18063700624" class="text-cyan-300 hover:text-cyan-200">(806) 370-0624</a> •
-  <a href="mailto:info@novatitan.net" class="text-cyan-300 hover:text-cyan-200">info@novatitan.net</a>
-  <a href="/terms/" class="text-cyan-300 hover:text-cyan-200">Terms</a> •
-  <a href="/refunds/" class="text-cyan-300 hover:text-cyan-200">Refund</a> •
-  <a href="/privacy/" class="text-cyan-300 hover:text-cyan-200">Privacy</a>
-</p>
+  <!-- FOOTER -->
+  <footer class="content bg-gray-900/90 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <!-- Brand -->
+        <div class="col-span-1 md:col-span-2">
+          <div class="flex items-center mb-4">
+            <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md mr-3"/>
+            <span class="text-xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
+          </div>
+          <p class="text-gray-300 mb-4 max-w-md">
+            Professional cybersecurity and networking services for West Texas. 
+            Protecting homes and businesses with enterprise-grade security solutions 
+            and personalized service.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 rounded text-xs">
+              <i class="fas fa-certificate mr-1"></i>OCI Foundations
+            </span>
+            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">
+              <i class="fas fa-graduation-cap mr-1"></i>CS Student
+            </span>
+          </div>
+        </div>
 
-<!-- Social icons: real brand marks (inline SVG) -->
-<div class="mt-4 flex justify-center items-center space-x-6">
-  <!-- GitHub -->
-  <a href="https://github.com/tzsmit" target="_blank" rel="noopener noreferrer me" aria-label="GitHub" class="text-gray-300 hover:text-cyan-300 transition">
-    <svg class="w-6 h-6" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <title>GitHub</title>
-      <path d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.111.82-.261.82-.58 0-.286-.011-1.044-.017-2.05-3.338.726-4.042-1.61-4.042-1.61-.546-1.389-1.333-1.759-1.333-1.759-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.833 2.809 1.304 3.494.997.108-.775.419-1.304.762-1.603-2.665-.303-5.467-1.333-5.467-5.932 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.51 11.51 0 0 1 3.003-.403c1.02.005 2.046.137 3.003.403 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.48 5.921.43.37.815 1.102.815 2.222 0 1.604-.015 2.896-.015 3.29 0 .321.217.697.826.579C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12Z"/>
-    </svg>
-  </a>
+        <!-- Services -->
+        <div>
+          <h4 class="text-cyan-300 font-semibold mb-4">Core Services</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#home-audit" class="text-gray-300 hover:text-cyan-300 transition">Home Wi-Fi Security</a></li>
+            <li><a href="#smb-network" class="text-gray-300 hover:text-cyan-300 transition">Business Networks</a></li>
+            <li><a href="#cloud-security" class="text-gray-300 hover:text-cyan-300 transition">Cloud Security</a></li>
+            <li><a href="#installations" class="text-gray-300 hover:text-cyan-300 transition">Installations</a></li>
+            <li><a href="#training" class="text-gray-300 hover:text-cyan-300 transition">Security Training</a></li>
+          </ul>
+        </div>
 
-  <!-- TikTok -->
-  <a href="https://www.tiktok.com/@novatitan1" target="_blank" rel="noopener noreferrer me" aria-label="TikTok" class="text-gray-300 hover:text-cyan-300 transition">
-    <svg class="w-6 h-6" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <title>TikTok</title>
-      <path d="M12.667 0h3.043a7.727 7.727 0 0 0 2.215 4.76c1.365 1.35 3.09 2.226 5.075 2.405v3.1c-1.86.17-3.603-.33-5.391-1.22v6.88c0 7.74-8.39 10.3-12.73 5.08-2.82-3.41-2.05-8.94 2.08-11.04 1.01-.53 2.17-.78 3.31-.71v3.2c-.43-.04-.87.02-1.28.19-2.01.84-2.4 3.58-.75 5.01 2.57 2.2 6.6.34 6.6-2.86V0z"/>
-    </svg>
-  </a>
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-cyan-300 font-semibold mb-4">Get In Touch</h4>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center">
+              <i class="fas fa-phone text-cyan-400 w-4 mr-3"></i>
+              <a href="tel:+18063700624" class="text-gray-300 hover:text-cyan-300 transition">(806) 370-0624</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-envelope text-cyan-400 w-4 mr-3"></i>
+              <a href="mailto:info@novatitan.net" class="text-gray-300 hover:text-cyan-300 transition">info@novatitan.net</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-map-marker-alt text-cyan-400 w-4 mr-3"></i>
+              <span class="text-gray-300">Lubbock, TX & West Texas</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-globe text-cyan-400 w-4 mr-3"></i>
+              <span class="text-gray-300">Remote services nationwide</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/traivone-smith-969b60327" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" class="text-gray-300 hover:text-cyan-300 transition">
-    <svg class="w-6 h-6" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <title>LinkedIn</title>
-      <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.603 0 4.268 2.372 4.268 5.457v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.114 20.451H3.559V9h3.555v11.451zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-    </svg>
-  </a>
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-300 text-sm mb-4 md:mb-0">
+            &copy; <span id="year"></span> Nova Titan Systems. All rights reserved.
+          </p>
+          
+          <div class="flex items-center space-x-4 mb-4 md:mb-0">
+            <a href="/terms/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Terms</a>
+            <a href="/privacy/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Privacy</a>
+            <a href="/refunds/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Refunds</a>
+          </div>
 
-  <!-- Facebook -->
-  <a href="https://www.facebook.com/share/1GNBbSRT4b/" target="_blank" rel="noopener noreferrer me" aria-label="Facebook" class="text-gray-300 hover:text-cyan-300 transition">
-    <svg class="w-6 h-6" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <title>Facebook</title>
-      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078V12.07h3.047V9.412c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.963h-1.513c-1.49 0-1.953.93-1.953 1.887v2.242h3.328l-.532 3.493h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-    </svg>
-  </a>
-</div>
+          <!-- Social Icons -->
+          <div class="flex items-center space-x-4">
+            <a href="https://github.com/tzsmit" target="_blank" rel="noopener noreferrer me" aria-label="GitHub" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.111.82-.261.82-.58 0-.286-.011-1.044-.017-2.05-3.338.726-4.042-1.61-4.042-1.61-.546-1.389-1.333-1.759-1.333-1.759-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.833 2.809 1.304 3.494.997.108-.775.419-1.304.762-1.603-2.665-.303-5.467-1.333-5.467-5.932 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.51 11.51 0 0 1 3.003-.403c1.02.005 2.046.137 3.003.403 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.48 5.921.43.37.815 1.102.815 2.222 0 1.604-.015 2.896-.015 3.29 0 .321.217.697.826.579C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12Z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@novatitan1" target="_blank" rel="noopener noreferrer me" aria-label="TikTok" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.667 0h3.043a7.727 7.727 0 0 0 2.215 4.76c1.365 1.35 3.09 2.226 5.075 2.405v3.1c-1.86.17-3.603-.33-5.391-1.22v6.88c0 7.74-8.39 10.3-12.73 5.08-2.82-3.41-2.05-8.94 2.08-11.04 1.01-.53 2.17-.78 3.31-.71v3.2c-.43-.04-.87.02-1.28.19-2.01.84-2.4 3.58-.75 5.01 2.57 2.2 6.6.34 6.6-2.86V0z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/traivone-smith-969b60327" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.603 0 4.268 2.372 4.268 5.457v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.114 20.451H3.559V9h3.555v11.451zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/share/1GNBbSRT4b/" target="_blank" rel="noopener noreferrer me" aria-label="Facebook" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078V12.07h3.047V9.412c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.963h-1.513c-1.49 0-1.953.93-1.953 1.887v2.242h3.328l-.532 3.493h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    particlesJS('particles-js',{particles:{number:{value:60,density:{enable:true,value_area:900}},color:{value:['#00b7eb','#00cc66','#c084fc']},shape:{type:'circle'},opacity:{value:.5,random:true},size:{value:3,random:true},line_linked:{enable:true,distance:120,color:'#00b7eb',opacity:.35,width:1},move:{enable:true,speed:1.4}},interactivity:{events:{onhover:{enable:true,mode:'repulse'}},modes:{repulse:{distance:100}}},retina_detect:true});
-    const btn=document.getElementById('menuBtn'), menu=document.getElementById('mobileMenu');
-    btn.addEventListener('click',()=>{btn.classList.toggle('active'); const open=menu.classList.contains('hidden'); menu.classList.toggle('hidden',!open); btn.setAttribute('aria-expanded',String(open));});
-    document.getElementById('year').textContent=new Date().getFullYear();
+    // Particle.js Configuration
+    particlesJS('particles-js',{
+      particles:{ 
+        number:{ value:100, density:{enable:true,value_area:1100}},
+        color:{value:['#00d4ff','#00ff88','#b300ff','#ff0066']}, 
+        shape:{type:'circle'},
+        opacity:{value:.35,random:true}, 
+        size:{value:3,random:true},
+        line_linked:{enable:true,distance:130,color:'#00d4ff',opacity:.25,width:1},
+        move:{enable:true,speed:2,direction:'none',random:false,straight:false,out_mode:'out',bounce:false} 
+      },
+      interactivity:{ 
+        detect_on:'canvas',
+        events:{onhover:{enable:true,mode:'repulse'},onclick:{enable:true,mode:'push'}}, 
+        modes:{repulse:{distance:90,duration:0.4},push:{particles_nb:3}} 
+      },
+      retina_detect:true
+    });
+
+    // GSAP Animations
+    gsap.registerPlugin();
+    
+    // Hero animations
+    gsap.timeline()
+      .from("h1", {opacity:0, y:30, duration:0.8, ease:"power2.out"})
+      .from("h1 + p", {opacity:0, y:20, duration:0.8, ease:"power2.out"}, "-=0.4")
+      .from("h1 + p + div", {opacity:0, y:20, duration:0.8, ease:"power2.out"}, "-=0.4");
+
+    // Service card animations with stagger
+    gsap.from(".service-card", {
+      opacity: 0,
+      y: 40,
+      stagger: 0.15,
+      duration: 0.8,
+      delay: 0.3,
+      ease: "power2.out"
+    });
+
+    // Process step animations
+    gsap.from(".process-step", {
+      opacity: 0,
+      y: 30,
+      stagger: 0.1,
+      duration: 0.7,
+      delay: 0.6,
+      ease: "power2.out"
+    });
+
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      const isOpen = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', !isOpen);
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-gray-900/98');
+        navbar.classList.remove('bg-gray-900/95');
+      } else {
+        navbar.classList.add('bg-gray-900/95');
+        navbar.classList.remove('bg-gray-900/98');
+      }
+    });
+
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Enhanced card hover effects
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          scale: 1.02,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+
+    // Fade-in animation for elements with intersection observer
+    const observeElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          gsap.from(entry.target, {
+            opacity: 0,
+            y: 30,
+            duration: 0.6,
+            ease: "power2.out"
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observeElements.forEach(el => observer.observe(el));
+
+    // Console branding
+    console.log('%c🔐 Nova Titan Cybersecurity Services', 'color: #00d4ff; font-size: 18px; font-weight: bold;');
+    console.log('%cProfessional Security Solutions for West Texas', 'color: #00ff88; font-size: 14px;');
+    console.log('%c(806) 370-0624 - info@novatitan.net', 'color: #b300ff; font-size: 12px;');
   </script>
 </body>
 </html>
