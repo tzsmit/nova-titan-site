@@ -86,7 +86,7 @@
       left: 100%;
     }
     
-    /* Enhanced Cards */
+    /* Enhanced Cards - EXACTLY FROM INDEX.HTML */
     .card { 
       border: 1px solid rgba(0,212,255,.25); 
       transition: all .4s ease; 
@@ -115,70 +115,56 @@
       border-color: rgba(0,212,255,0.6);
     }
     
-    /* FAQ Specific Styles */
+    /* FAQ Items - Simple and Clean */
     .faq-item {
-      border: 1px solid rgba(0,212,255,.25); 
-      transition: all .4s ease; 
-      background: rgba(26,26,46,.85); 
-      backdrop-filter: blur(12px); 
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
+      background: rgba(26,26,46,.85);
+      border: 1px solid rgba(0,212,255,.25);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(12px);
     }
-    .faq-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--cy), var(--gr), var(--purple));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    .faq-item:hover::before {
-      transform: scaleX(1);
-    }
-    .faq-item:hover { 
-      transform: translateY(-8px) scale(1.02); 
-      box-shadow: 0 20px 40px rgba(0,212,255,.3), 0 0 20px rgba(0,255,136,0.2); 
-      border-color: rgba(0,212,255,0.6);
-    }
-    .faq-item.active {
-      border-color: var(--gr);
-      background: rgba(0,255,136,0.1);
-      box-shadow: 0 0 30px rgba(0,255,136,0.4);
-    }
-    .faq-item.active::before {
-      transform: scaleX(1);
-    }
-
+    
     .faq-question {
+      padding: 1.5rem;
+      cursor: pointer;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem;
-      cursor: pointer;
+      border-bottom: 1px solid rgba(0,212,255,.15);
     }
-
+    
+    .faq-question h3 {
+      color: white;
+      margin: 0;
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+    
     .faq-answer {
-      padding: 0 1.5rem;
+      padding: 0;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
+      transition: all 0.3s ease;
     }
-
-    .faq-item.active .faq-answer {
+    
+    .faq-answer.active {
+      padding: 1.5rem;
       max-height: 500px;
-      padding: 0 1.5rem 1.5rem;
     }
-
+    
+    .faq-answer p, .faq-answer li {
+      color: #d1d5db;
+      line-height: 1.6;
+    }
+    
     .faq-icon {
+      color: var(--cy);
       transition: transform 0.3s ease;
     }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
+    
+    .faq-icon.rotate {
+      transform: rotate(180deg);
     }
     
     /* Glow Effects */
@@ -190,9 +176,6 @@
     }
     .glow-purple { 
       text-shadow: 0 0 20px rgba(179,0,255,.6); 
-    }
-    .glow-red { 
-      text-shadow: 0 0 20px rgba(255,0,102,.6); 
     }
     
     /* Particle Background */
@@ -206,7 +189,7 @@
       z-index: 1; 
     }
 
-    /* Matrix Effect Enhancement - EXACT SAME AS INDEX */
+    /* Matrix Effect Enhancement */
     .matrix-bg {
       position: fixed;
       top: 0;
@@ -266,530 +249,667 @@
       0%, 100% { box-shadow: 0 0 5px rgba(0,212,255,0.3); }
       50% { box-shadow: 0 0 20px rgba(0,212,255,0.6), 0 0 30px rgba(0,255,136,0.3); }
     }
-
-    /* Mobile Navigation */
-    .mobile-nav { 
-      position:fixed; 
-      inset:0; 
-      background:rgba(10,10,15,.95); 
-      backdrop-filter:blur(20px); 
-      z-index:50; 
-      transform:translateX(100%); 
-      transition:transform .3s ease; 
+    
+    /* Service Card Icons */
+    .service-icon {
+      background: linear-gradient(135deg, var(--cy), var(--gr));
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 20px rgba(0,212,255,0.3);
     }
-    .mobile-nav.active { 
-      transform:translateX(0); 
+    
+    /* Pricing Enhancement */
+    .price-tag {
+      background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,255,136,0.1));
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+    }
+    
+    /* Certification Badge */
+    .cert-badge {
+      background: linear-gradient(135deg, var(--orange), var(--red));
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(255,136,0,0.3);
+      animation: cert-glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes cert-glow {
+      0% { box-shadow: 0 4px 10px rgba(255,136,0,0.3); }
+      100% { box-shadow: 0 6px 20px rgba(255,136,0,0.6), 0 0 15px rgba(255,0,102,0.4); }
+    }
+    
+    /* Security Status Indicator */
+    .status-indicator {
+      width: 12px;
+      height: 12px;
+      background: var(--gr);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 10px var(--gr);
+      animation: status-pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes status-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    
+    /* Loading Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Enhanced Social Icons */
+    .social-icon {
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 0 5px rgba(0,212,255,0.3));
+    }
+    .social-icon:hover {
+      transform: scale(1.2) rotate(5deg);
+      filter: drop-shadow(0 0 15px rgba(0,212,255,0.8));
+    }
+    
+    /* Responsive Enhancements */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .card {
+        margin-bottom: 1.5rem;
+      }
     }
   </style>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What areas do you serve?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "On-site services: Lubbock and surrounding West Texas areas. Remote services: Available nationwide for cloud security audits, vulnerability assessments, security training, and remote troubleshooting."
-        }
-      }
-    ]
-  }
-  </script>
 </head>
-
-<body>
-  <!-- Particle Background -->
+<body class="text-white">
   <div id="particles-js"></div>
-  
-  <!-- Matrix Background -->
   <div class="matrix-bg"></div>
-  
-  <div class="content">
-    
-    <!-- NAVIGATION -->
-    <nav class="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-md border-b border-cyan-500/20 z-50">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="flex items-center justify-between h-20">
-          <!-- Logo -->
-          <a href="/" class="flex items-center group">
-            <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md group-hover:scale-110 transition-transform duration-300"/>
-            <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
+
+  <!-- NAV -->
+  <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20 content">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center group">
+          <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
+          <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-6">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link">Services</a>
+          <a href="/portfolio/" class="nav-link">Portfolio</a>
+          <a href="/blogs/" class="nav-link">Blog</a>
+          <a href="/faqs/" class="nav-link text-cyan-400">FAQ</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
+            <i class="fas fa-calendar-check mr-1"></i>Book Now
           </a>
-
-          <!-- Desktop Navigation -->
-          <div class="hidden lg:flex items-center space-x-8">
-            <a href="/" class="nav-link text-gray-300 hover:text-cyan-400">Home</a>
-            <a href="/about/" class="nav-link text-gray-300 hover:text-cyan-400">About</a>
-            <a href="/services/" class="nav-link text-gray-300 hover:text-cyan-400">Services</a>
-            <a href="/portfolio/" class="nav-link text-gray-300 hover:text-cyan-400">Portfolio</a>
-            <a href="/blogs/" class="nav-link text-gray-300 hover:text-cyan-400">Blog</a>
-            <a href="/faqs/" class="nav-link text-cyan-400">FAQ</a>
-            <a href="/contact/" class="nav-link text-gray-300 hover:text-cyan-400">Contact</a>
-            <a href="/book-now/" class="btn-grad text-black font-bold px-6 py-2 rounded-lg">Book Now</a>
-          </div>
-
-          <!-- Mobile Menu Button -->
-          <div class="lg:hidden">
-            <div class="hamburger" onclick="toggleMobileMenu()">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
-
-    <!-- Mobile Navigation Menu -->
-    <div id="mobileNav" class="mobile-nav">
-      <div class="flex flex-col justify-center items-center h-full space-y-8">
-        <a href="/" class="text-3xl font-bold text-gray-300 hover:text-cyan-400 transition-colors">Home</a>
-        <a href="/about/" class="text-3xl font-bold text-gray-300 hover:text-cyan-400 transition-colors">About</a>
-        <a href="/services/" class="text-3xl font-bold text-gray-300 hover:text-cyan-400 transition-colors">Services</a>
-        <a href="/portfolio/" class="text-3xl font-bold text-gray-300 hover:text-cyan-400 transition-colors">Portfolio</a>
-        <a href="/blogs/" class="text-3xl font-bold text-gray-300 hover:text-cyan-400 transition-colors">Blog</a>
-        <a href="/faqs/" class="text-3xl font-bold text-cyan-400 transition-colors">FAQ</a>
-        <a href="/contact/" class="text-3xl font-bold text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
-        <a href="/book-now/" class="btn-grad text-black font-bold px-8 py-4 rounded-lg text-xl">Book Now</a>
+      <div id="mobileMenu" class="sm:hidden hidden pb-4">
+        <div class="flex flex-col space-y-2">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link">Services</a>
+          <a href="/portfolio/" class="nav-link">Portfolio</a>
+          <a href="/blogs/" class="nav-link">Blog</a>
+          <a href="/faqs/" class="nav-link text-cyan-400">FAQ</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="nav-link">Book Now</a>
+        </div>
       </div>
     </div>
+  </nav>
 
-    <!-- HERO SECTION -->
-    <section class="pt-32 pb-16">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <h1 class="text-5xl lg:text-7xl font-bold mb-6">
-            <span class="text-cyan-400 glow">Frequently Asked</span><br>
-            <span class="text-green-400 glow-green">Questions</span>
-          </h1>
-          <p class="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Get answers to common questions about Nova Titan's cybersecurity services, pricing, and support. 
-            Can't find what you're looking for? <a href="/contact/" class="text-cyan-400 hover:text-cyan-300 transition">Contact us</a> directly.
-          </p>
-        </div>
+  <!-- HERO -->
+  <section class="content pt-28 pb-14">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="hero-badge inline-block px-3 py-1 rounded-full text-cyan-300 text-sm glow font-mono">
+          <span class="status-indicator mr-2"></span>
+          Frequently Asked Questions
+        </span>
+        <span class="cert-badge">
+          <i class="fas fa-question-circle mr-1"></i>Get Answers Fast
+        </span>
       </div>
-    </section>
-
-    <!-- FAQ CATEGORIES -->
-    <section class="py-16">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-green-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-shield-alt text-2xl text-black"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Security Services</h3>
-            <p class="text-gray-400 text-sm">Audits, assessments, and protection</p>
-          </div>
-
-          <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-dollar-sign text-2xl text-black"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Pricing & Payment</h3>
-            <p class="text-gray-400 text-sm">Costs, billing, and payment options</p>
-          </div>
-
-          <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-r from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-phone text-2xl text-black"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Emergency Support</h3>
-            <p class="text-gray-400 text-sm">24/7 incident response</p>
-          </div>
-
-          <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-calendar-check text-2xl text-black"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-white mb-2">Booking & Scheduling</h3>
-            <p class="text-gray-400 text-sm">Appointments and consultations</p>
-          </div>
-        </div>
+      
+      <h1 class="hero-title mt-4 text-4xl sm:text-6xl font-bold text-cyan-300 glow fade-in">
+        Common questions about 
+        <span class="glow-green">cybersecurity services</span>.
+      </h1>
+      
+      <p class="mt-4 text-gray-300 text-lg max-w-2xl fade-in">
+        Get quick answers to questions about our cybersecurity services, pricing, emergency support, and security consultations. 
+        <strong class="text-cyan-300">Serving Lubbock & West Texas</strong> with 
+        <strong class="text-green-300">remote services nationwide</strong>.
+      </p>
+      
+      <div class="mt-8 flex flex-wrap gap-4 fade-in">
+        <a href="/contact/" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg flex items-center">
+          <i class="fas fa-comments mr-2"></i>
+          Ask a Question
+        </a>
+        <a href="/book-now/" class="px-6 py-3 rounded-lg border border-cyan-400/40 hover:bg-cyan-400/10 transition-all flex items-center">
+          <i class="fas fa-calendar-check mr-2"></i>
+          Schedule Free Consultation
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- GENERAL FAQs -->
-    <section class="py-16">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-4xl lg:text-5xl font-bold text-cyan-400 glow mb-12 text-center">General Questions</h2>
+  <!-- FAQ CONTENT -->
+  <section class="content py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <!-- General Questions -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-cyan-400 glow mb-8">
+          <i class="fas fa-info-circle mr-3"></i>General Questions
+        </h2>
         
-        <div class="space-y-6">
-          <!-- FAQ 1 -->
-          <div class="faq-item rounded-2xl active" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">What areas do you serve?</h3>
-              <i class="fas fa-plus faq-icon text-cyan-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p><strong class="text-cyan-300">On-site services:</strong> Lubbock and surrounding West Texas areas including Plainview, Levelland, Brownfield, Post, and Slaton.</p>
-                <p><strong class="text-cyan-300">Remote services:</strong> Available nationwide for cloud security audits, vulnerability assessments, security training, and remote troubleshooting.</p>
-                <p>Travel fees may apply for locations more than 30 miles from Lubbock. <a href="/contact/" class="text-cyan-400 hover:text-cyan-300">Contact us</a> for specific coverage details.</p>
-              </div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>What areas do you serve?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
           </div>
-
-          <!-- FAQ 2 -->
-          <div class="faq-item rounded-2xl" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">What makes Nova Titan different from other IT companies?</h3>
-              <i class="fas fa-plus faq-icon text-cyan-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p><strong class="text-cyan-300">Specialized Focus:</strong> We specialize exclusively in cybersecurity and network security, not general IT support.</p>
-                <p><strong class="text-cyan-300">OCI Certification:</strong> Oracle Cloud Infrastructure certified specialist - rare expertise in West Texas.</p>
-                <p><strong class="text-cyan-300">Custom Tools:</strong> We develop proprietary security tools like CloudWarden for advanced monitoring.</p>
-                <p><strong class="text-cyan-300">Transparent Pricing:</strong> Clear, upfront pricing with no hidden fees or long-term contracts.</p>
-                <p><strong class="text-cyan-300">Local + Remote:</strong> Personal local service with enterprise-grade remote capabilities.</p>
-              </div>
-            </div>
+          <div class="faq-answer">
+            <p><strong style="color: #00d4ff;">On-site services:</strong> Lubbock and surrounding West Texas areas including Plainview, Levelland, Brownfield, and Slaton.</p>
+            <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Remote services:</strong> Available nationwide for cloud security audits, vulnerability assessments, security training, and remote troubleshooting. No geographic limitations for remote work.</p>
           </div>
+        </div>
 
-          <!-- FAQ 3 -->
-          <div class="faq-item rounded-2xl" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">Do you work with small businesses or just large enterprises?</h3>
-              <i class="fas fa-plus faq-icon text-cyan-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p>We specialize in <strong class="text-cyan-300">small to medium businesses</strong> and residential customers. Our services are specifically designed for:</p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li>Family homes and home offices</li>
-                  <li>Small retail and restaurants</li>
-                  <li>Professional offices (legal, medical, accounting)</li>
-                  <li>Manufacturing and warehouse facilities</li>
-                  <li>Startups and growing companies</li>
-                </ul>
-                <p>We believe every business deserves enterprise-grade security, not just Fortune 500 companies.</p>
-              </div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>How quickly can you respond to emergencies?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
           </div>
+          <div class="faq-answer">
+            <p><strong style="color: #ff0066;">Emergency Response Times:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Same-day response for emergency calls in Lubbock area</li>
+              <li>Remote emergency support available 24/7 nationwide</li>
+              <li>Critical security incidents prioritized with immediate response</li>
+              <li>Non-emergency requests typically handled within 24-48 hours</li>
+            </ul>
+          </div>
+        </div>
 
-          <!-- FAQ 4 -->
-          <div class="faq-item rounded-2xl" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">What certifications and credentials do you have?</h3>
-              <i class="fas fa-plus faq-icon text-cyan-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p><strong class="text-cyan-300">Current Certifications:</strong></p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li><strong>Oracle Cloud Infrastructure Foundations Certified</strong> - Cloud security specialist</li>
-                  <li>Computer Science Student (Information Security Concentration)</li>
-                  <li>50+ completed security audits and implementations</li>
-                </ul>
-                <p><strong class="text-cyan-300">Continuing Education:</strong> Actively pursuing additional industry certifications in cloud security and network defense.</p>
-              </div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>Do you offer free consultations?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We offer <strong style="color: #00ff88;">free 30-minute security consultations</strong> to assess your current security posture and recommend improvements.</p>
+            <p style="margin-top: 1rem;"><strong style="color: #00d4ff;">This includes:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Basic security assessment</li>
+              <li>Identification of immediate vulnerabilities</li>
+              <li>Customized recommendations</li>
+              <li>Service planning and pricing discussion</li>
+            </ul>
+            <p style="margin-top: 1rem;">Schedule online at <a href="/book-now/" style="color: #00d4ff; text-decoration: underline;">novatitan.net/book-now</a> or call <a href="tel:8063700624" style="color: #00d4ff;">(806) 370-0624</a>.</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- PRICING FAQs -->
-    <section class="py-16">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-4xl lg:text-5xl font-bold text-purple-400 glow-purple mb-12 text-center">Pricing & Payment</h2>
+      <!-- Services & Pricing -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-green-400 glow-green mb-8">
+          <i class="fas fa-dollar-sign mr-3"></i>Services & Pricing
+        </h2>
         
-        <div class="space-y-6">
-          <!-- Pricing FAQ 1 -->
-          <div class="faq-item rounded-2xl" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">What are your service rates?</h3>
-              <i class="fas fa-plus faq-icon text-purple-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p><strong class="text-purple-300">Fixed-Price Services:</strong></p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li>Home Wi-Fi Security Audit: <strong class="text-green-300">$149</strong></li>
-                  <li>Small Business Network Setup: <strong class="text-green-300">$499+</strong></li>
-                  <li>Cloud Security Checkup: <strong class="text-green-300">$399</strong></li>
-                  <li>Installations & Hardware Setup: <strong class="text-green-300">$99+</strong></li>
-                  <li>Remote Tech Support: <strong class="text-green-300">$75/session</strong></li>
-                  <li>Website Security Scan: <strong class="text-green-300">$199</strong></li>
-                  <li>Security Training: <strong class="text-green-300">$249/team session</strong></li>
-                </ul>
-                <p><strong class="text-purple-300">Free Services:</strong> Initial consultation and security assessment (up to 30 minutes)</p>
-              </div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>What cybersecurity services do you offer?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
           </div>
+          <div class="faq-answer">
+            <p><strong style="color: #00d4ff;">Core Services:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Network Security Audits ($299)</li>
+              <li>Cloud Security Checkups ($399)</li>
+              <li>Website Security Scans ($199)</li>
+              <li>Cybersecurity Training ($249)</li>
+              <li>TV/Smart Home Installations ($99+)</li>
+              <li>Remote Tech Support ($75/hour)</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Specialized Services:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Incident response and forensics</li>
+              <li>Firewall configuration and management</li>
+              <li>Vulnerability assessments</li>
+              <li>Security policy development</li>
+              <li>Ongoing security monitoring</li>
+            </ul>
+          </div>
+        </div>
 
-          <!-- Pricing FAQ 2 -->
-          <div class="faq-item rounded-2xl" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">Do you require long-term contracts?</h3>
-              <i class="fas fa-plus faq-icon text-purple-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p><strong class="text-green-300">No long-term contracts required!</strong> We believe in earning your business through quality work, not contractual obligations.</p>
-                <p><strong class="text-purple-300">Service Options:</strong></p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li>One-time projects and assessments</li>
-                  <li>Monthly retainer agreements (optional, cancel anytime)</li>
-                  <li>Emergency support packages (no commitment)</li>
-                  <li>Training sessions and workshops</li>
-                </ul>
-                <p>All services can be scheduled and paid for individually as needed.</p>
-              </div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>How much do your services cost?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p><strong style="color: #00d4ff;">Service Pricing:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Network Security Audit: <span style="color: #00ff88;">$299</span></li>
+              <li>Cloud Security Checkup: <span style="color: #00ff88;">$399</span></li>
+              <li>Website Security Scan: <span style="color: #00ff88;">$199</span></li>
+              <li>Cybersecurity Training: <span style="color: #00ff88;">$249</span></li>
+              <li>TV/Device Installation: <span style="color: #00ff88;">$99+</span></li>
+              <li>Remote Support: <span style="color: #00ff88;">$75/hour</span></li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong style="color: #ff8800;">Additional Information:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Emergency services: Premium rates apply</li>
+              <li>Multiple service discounts available</li>
+              <li>Payment: Cash, check, or card</li>
+              <li>Payment due upon completion</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>Do you provide ongoing support contracts?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Currently, we focus on project-based services and don't offer traditional MSP (Managed Service Provider) contracts. However, we do provide:</p>
+            <ul style="margin-top: 1rem; margin-left: 1rem;">
+              <li>Follow-up support for completed projects</li>
+              <li>Quarterly security check-ins</li>
+              <li>Priority scheduling for existing clients</li>
+              <li>Discounted rates for repeat services</li>
+            </ul>
+            <p style="margin-top: 1rem;">For businesses needing ongoing support, we can discuss custom arrangements based on your specific needs.</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- EMERGENCY SUPPORT FAQs -->
-    <section class="py-16">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-4xl lg:text-5xl font-bold text-red-400 glow-red mb-12 text-center">Emergency Support</h2>
+      <!-- Technical Questions -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-purple-400 glow-purple mb-8">
+          <i class="fas fa-cogs mr-3"></i>Technical Questions
+        </h2>
         
-        <div class="space-y-6">
-          <!-- Emergency FAQ 1 -->
-          <div class="faq-item rounded-2xl" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">Do you provide 24/7 emergency support?</h3>
-              <i class="fas fa-plus faq-icon text-red-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p><strong class="text-green-300">Yes!</strong> Emergency cybersecurity support is available 24/7.</p>
-                <p><strong class="text-red-300">What qualifies as an emergency:</strong></p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li>Active security breach or malware infection</li>
-                  <li>Complete network outage affecting business operations</li>
-                  <li>Suspected data theft or unauthorized access</li>
-                  <li>Ransomware attacks</li>
-                  <li>Critical system compromises</li>
-                </ul>
-                <p><strong class="text-red-300">Emergency Contact:</strong> Call <strong>(806) 370-0624</strong> directly - calls are monitored 24/7.</p>
-              </div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>What cloud platforms do you support?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
           </div>
+          <div class="faq-answer">
+            <p><strong style="color: #ff8800;">Primary Cloud Platforms:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li><strong style="color: #ff8800;">Oracle Cloud Infrastructure (OCI)</strong> - Certified specialist</li>
+              <li>Amazon Web Services (AWS)</li>
+              <li>Microsoft Azure</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong style="color: #00d4ff;">Services Include:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>IAM (Identity & Access Management) audits</li>
+              <li>Multi-factor authentication setup</li>
+              <li>Security configuration reviews</li>
+              <li>Compliance assessments</li>
+              <li>Cost optimization recommendations</li>
+            </ul>
+          </div>
+        </div>
 
-          <!-- Emergency FAQ 2 -->
-          <div class="faq-item rounded-2xl" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">What should I do if I think I've been hacked?</h3>
-              <i class="fas fa-plus faq-icon text-red-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p><strong class="text-red-300">Immediate Steps:</strong></p>
-                <ol class="list-decimal list-inside space-y-2 ml-4">
-                  <li><strong>Stay calm</strong> - Don't panic or shut everything down immediately</li>
-                  <li><strong>Call (806) 370-0624</strong> for immediate guidance</li>
-                  <li><strong>Document what happened</strong> - Note any unusual behavior</li>
-                  <li><strong>Isolate affected systems</strong> - Disconnect from internet if advised</li>
-                  <li><strong>Don't delete anything</strong> - Evidence may be needed</li>
-                </ol>
-                <p><strong class="text-orange-300">What NOT to do:</strong></p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li>Don't pay ransomware demands without consultation</li>
-                  <li>Don't use compromised systems for sensitive work</li>
-                  <li>Don't attempt DIY fixes that might destroy evidence</li>
-                </ul>
-              </div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>Can you help with home network security?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely! Home network security is a key focus area.</p>
+            <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Home Network Services:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Router security configuration</li>
+              <li>Wi-Fi security optimization</li>
+              <li>Smart home device security</li>
+              <li>Network monitoring setup</li>
+              <li>VPN configuration for remote work</li>
+              <li>Guest network isolation</li>
+            </ul>
+            <p style="margin-top: 1rem;">Most home network issues can be resolved in a single visit, typically 1-3 hours depending on complexity.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>Do you handle malware removal and incident response?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we provide comprehensive incident response services:</p>
+            
+            <p style="margin-top: 1rem;"><strong style="color: #ff0066;">Malware & Incident Response:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Malware detection and removal</li>
+              <li>Ransomware recovery assistance</li>
+              <li>Forensic analysis of security incidents</li>
+              <li>System hardening post-incident</li>
+              <li>Evidence preservation if needed</li>
+              <li>Recovery planning and implementation</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong style="color: #ff8800;">Emergency Response:</strong> Available 24/7 for critical security incidents. Contact us immediately if you suspect a breach.</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- BOOKING FAQs -->
-    <section class="py-16">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-4xl lg:text-5xl font-bold text-green-400 glow-green mb-12 text-center">Booking & Scheduling</h2>
+      <!-- Emergency Support -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-red-400 mb-8" style="text-shadow: 0 0 20px rgba(255,0,102,.6);">
+          <i class="fas fa-exclamation-triangle mr-3"></i>Emergency Support
+        </h2>
         
-        <div class="space-y-6">
-          <!-- Booking FAQ 1 -->
-          <div class="faq-item rounded-2xl" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">How do I schedule a security consultation?</h3>
-              <i class="fas fa-plus faq-icon text-green-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p><strong class="text-green-300">Multiple Ways to Schedule:</strong></p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li><strong>Online:</strong> Use our <a href="/book-now/" class="text-cyan-400 hover:text-cyan-300">Book Now</a> page for instant scheduling</li>
-                  <li><strong>Phone:</strong> Call <strong>(806) 370-0624</strong> to speak directly</li>
-                  <li><strong>Email:</strong> Send details to <strong>info@novatitan.net</strong></li>
-                  <li><strong>Contact Form:</strong> Use our <a href="/contact/" class="text-cyan-400 hover:text-cyan-300">contact page</a> form</li>
-                </ul>
-                <p><strong class="text-green-300">Free Consultation Includes:</strong></p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li>Security needs assessment (30 minutes)</li>
-                  <li>Detailed service recommendations</li>
-                  <li>Transparent pricing quote</li>
-                  <li>Timeline and next steps</li>
-                </ul>
-              </div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>What constitutes a cybersecurity emergency?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
           </div>
+          <div class="faq-answer">
+            <p><strong style="color: #ff0066;">Cybersecurity Emergencies Include:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Active ransomware or malware attacks</li>
+              <li>Suspected data breaches or unauthorized access</li>
+              <li>Business-critical systems down due to security issues</li>
+              <li>Confirmed network intrusions</li>
+              <li>DDoS attacks affecting operations</li>
+              <li>Loss of access to critical systems or data</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong style="color: #ff8800;">Response Protocol:</strong></p>
+            <ol style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Call <a href="tel:8063700624" style="color: #00d4ff;">(806) 370-0624</a> immediately</li>
+              <li>Do NOT turn off affected systems unless instructed</li>
+              <li>Disconnect from internet if safe to do so</li>
+              <li>Document what happened and when</li>
+              <li>Preserve any evidence or suspicious emails</li>
+            </ol>
+          </div>
+        </div>
 
-          <!-- Booking FAQ 2 -->
-          <div class="faq-item rounded-2xl" onclick="toggleFAQ(this)">
-            <div class="faq-question">
-              <h3 class="text-xl font-bold text-white">What are your business hours?</h3>
-              <i class="fas fa-plus faq-icon text-green-400 text-xl"></i>
-            </div>
-            <div class="faq-answer">
-              <div class="space-y-4 text-gray-200">
-                <p><strong class="text-green-300">Regular Business Hours:</strong></p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM CST</li>
-                  <li><strong>Saturday:</strong> 9:00 AM - 3:00 PM CST</li>
-                  <li><strong>Sunday:</strong> Emergency support only</li>
-                </ul>
-                <p><strong class="text-green-300">Extended Hours Available:</strong></p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                  <li>Evening appointments by arrangement</li>
-                  <li>Weekend service for businesses</li>
-                  <li>24/7 emergency support always available</li>
-                </ul>
-              </div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <h3>How do I reach you for emergency support?</h3>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            <p><strong style="color: #ff0066;">Emergency Contact Methods:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li><strong>Primary:</strong> <a href="tel:8063700624" style="color: #00d4ff;">(806) 370-0624</a> - Available 24/7</li>
+              <li><strong>Email:</strong> <a href="mailto:emergency@novatitan.net" style="color: #00d4ff;">emergency@novatitan.net</a></li>
+              <li><strong>Secure:</strong> Client portal messaging</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Response Times:</strong></p>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+              <li>Critical emergencies: Immediate</li>
+              <li>Business hours: Within 1 hour</li>
+              <li>After hours: Within 2-4 hours</li>
+              <li>Remote support: Available immediately</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong style="color: #ff8800;">Note:</strong> Emergency rates apply for after-hours and weekend calls.</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- STILL HAVE QUESTIONS -->
-    <section class="py-16 bg-gradient-to-r from-cyan-900/30 via-purple-900/30 to-green-900/30">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-4xl lg:text-5xl font-bold glow mb-8">
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="content py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="card p-8 text-center">
+        <h2 class="text-4xl font-bold text-white glow mb-6">
           Still Have Questions?
         </h2>
-        <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-          Can't find the answer you're looking for? Get in touch with us directly for personalized assistance with your cybersecurity needs.
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Our cybersecurity experts are here to help. Get personalized answers to your security questions with a free consultation.
         </p>
-        <div class="flex flex-wrap gap-6 justify-center">
-          <a href="/contact/" class="btn-grad text-black font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center">
-            <i class="fas fa-envelope mr-3"></i>
-            Contact Us
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact/" class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg flex items-center justify-center">
+            <i class="fas fa-phone mr-2"></i>Contact Us
           </a>
-          <a href="tel:+18063700624" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition-all text-lg inline-flex items-center text-white">
-            <i class="fas fa-phone mr-3"></i>
-            Call (806) 370-0624
-          </a>
-          <a href="/book-now/" class="px-8 py-4 rounded-lg border-2 border-green-400/40 hover:bg-green-400/10 transition-all text-lg inline-flex items-center text-white">
-            <i class="fas fa-calendar-check mr-3"></i>
-            Book Free Consultation
+          <a href="/book-now/" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all flex items-center justify-center">
+            <i class="fas fa-calendar-check mr-2"></i>Schedule Free Consultation
           </a>
         </div>
-        <p class="text-sm text-gray-400 mt-8">
-          <i class="fas fa-shield-check mr-2"></i>
-          Free 30-minute consultation • Same-day response • No obligation
-        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-black/60 backdrop-blur-md border-t border-cyan-500/20 py-16">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <!-- Brand -->
-          <div class="col-span-1 md:col-span-2">
-            <div class="flex items-center mb-4">
-              <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md mr-3"/>
-              <span class="text-xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
-            </div>
-            <p class="text-gray-300 mb-4">
-              Professional cybersecurity services for West Texas. Expert answers to your security questions and immediate support when you need it most.
-            </p>
+  <!-- FOOTER -->
+  <footer class="content bg-gray-900/90 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <!-- Brand -->
+        <div class="col-span-1 md:col-span-2">
+          <div class="flex items-center mb-4">
+            <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md mr-3"/>
+            <span class="text-xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
           </div>
-
-          <!-- Contact Info -->
-          <div>
-            <h4 class="text-cyan-400 font-semibold mb-4">Contact</h4>
-            <div class="space-y-2 text-gray-300">
-              <div class="flex items-center">
-                <i class="fas fa-phone text-cyan-400 mr-2"></i>
-                <a href="tel:+18063700624" class="hover:text-cyan-400 transition-colors">(806) 370-0624</a>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-envelope text-cyan-400 mr-2"></i>
-                <a href="mailto:info@novatitan.net" class="hover:text-cyan-400 transition-colors">info@novatitan.net</a>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-map-marker-alt text-cyan-400 mr-2"></i>
-                <span>Lubbock, TX</span>
-              </div>
-            </div>
+          <p class="text-gray-300 mb-4 max-w-md">
+            Professional cybersecurity and networking solutions for West Texas. 
+            OCI-certified cloud security specialist with a focus on practical, 
+            results-driven security implementations.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="cert-badge text-xs">
+              <i class="fas fa-certificate mr-1"></i>OCI Foundations
+            </span>
+            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">
+              <i class="fas fa-graduation-cap mr-1"></i>CS Student
+            </span>
           </div>
         </div>
 
-        <div class="border-t border-gray-700 pt-8 text-center">
-          <p class="text-gray-300">
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-cyan-300 font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/services/" class="text-gray-300 hover:text-cyan-300 transition">All Services</a></li>
+            <li><a href="/portfolio/" class="text-gray-300 hover:text-cyan-300 transition">Portfolio</a></li>
+            <li><a href="/about/" class="text-gray-300 hover:text-cyan-300 transition">About</a></li>
+            <li><a href="/blogs/" class="text-gray-300 hover:text-cyan-300 transition">Security Blog</a></li>
+            <li><a href="/faqs/" class="text-gray-300 hover:text-cyan-300 transition">FAQ</a></li>
+            <li><a href="/contact/" class="text-gray-300 hover:text-cyan-300 transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-cyan-300 font-semibold mb-4">Get In Touch</h4>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center">
+              <i class="fas fa-phone text-cyan-400 w-4 mr-3"></i>
+              <a href="tel:+18063700624" class="text-gray-300 hover:text-cyan-300 transition">(806) 370-0624</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-envelope text-cyan-400 w-4 mr-3"></i>
+              <a href="mailto:info@novatitan.net" class="text-gray-300 hover:text-cyan-300 transition">info@novatitan.net</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-map-marker-alt text-cyan-400 w-4 mr-3"></i>
+              <span class="text-gray-300">Lubbock, TX & West Texas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-300 text-sm mb-4 md:mb-0">
             &copy; <span id="year"></span> Nova Titan Systems. All rights reserved.
           </p>
+          
+          <div class="flex items-center space-x-4 mb-4 md:mb-0">
+            <a href="/terms/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Terms</a>
+            <a href="/privacy/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Privacy</a>
+            <a href="/refunds/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Refunds</a>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="flex items-center space-x-4">
+            <a href="https://github.com/tzsmit" target="_blank" rel="noopener noreferrer me" aria-label="GitHub" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.111.82-.261.82-.58 0-.286-.011-1.044-.017-2.05-3.338.726-4.042-1.61-4.042-1.61-.546-1.389-1.333-1.759-1.333-1.759-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.833 2.809 1.304 3.494.997.108-.775.419-1.304.762-1.603-2.665-.303-5.467-1.333-5.467-5.932 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.51 11.51 0 0 1 3.003-.403c1.02.005 2.046.137 3.003.403 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.48 5.921.43.37.815 1.102.815 2.222 0 1.604-.015 2.896-.015 3.29 0 .321.217.697.826.579C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12Z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@novatitan1" target="_blank" rel="noopener noreferrer me" aria-label="TikTok" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.667 0h3.043a7.727 7.727 0 0 0 2.215 4.76c1.365 1.35 3.09 2.226 5.075 2.405v3.1c-1.86.17-3.603-.33-5.391-1.22v6.88c0 7.74-8.39 10.3-12.73 5.08-2.82-3.41-2.05-8.94 2.08-11.04 1.01-.53 2.17-.78 3.31-.71v3.2c-.43-.04-.87.02-1.28.19-2.01.84-2.4 3.58-.75 5.01 2.57 2.2 6.6.34 6.6-2.86V0z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/traivone-smith-969b60327" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.603 0 4.268 2.372 4.268 5.457v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.114 20.451H3.559V9h3.555v11.451zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/share/1GNBbSRT4b/" target="_blank" rel="noopener noreferrer me" aria-label="Facebook" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078V12.07h3.047V9.412c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.963h-1.513c-1.49 0-1.953.93-1.953 1.887v2.242h3.328l-.532 3.493h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-  </div>
-
+  <!-- SCRIPTS -->
   <script>
-    // Initialize Particles - EXACT SAME AS INDEX
-    if(typeof particlesJS !== 'undefined') {
-      particlesJS("particles-js", {
-        "particles": {
-          "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-          "color": { "value": "#00d4ff" },
-          "shape": { "type": "circle" },
-          "opacity": { "value": 0.5, "random": false },
-          "size": { "value": 3, "random": true },
-          "line_linked": { "enable": true, "distance": 150, "color": "#00d4ff", "opacity": 0.4, "width": 1 },
-          "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-        },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-          "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } }
-        },
-        "retina_detect": true
-      });
-    }
-
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Mobile menu toggle
-    function toggleMobileMenu() {
-      const hamburger = document.querySelector('.hamburger');
-      const mobileNav = document.getElementById('mobileNav');
-      
-      hamburger.classList.toggle('active');
-      mobileNav.classList.toggle('active');
-    }
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-    // FAQ Toggle Function
-    function toggleFAQ(element) {
-      // Close all other open FAQs
-      const allFAQs = document.querySelectorAll('.faq-item');
-      allFAQs.forEach(faq => {
-        if (faq !== element && faq.classList.contains('active')) {
-          faq.classList.remove('active');
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      menuBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // FAQ toggle function - Simple and clean
+    function toggleFaq(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('.faq-icon');
+      
+      // Close all other FAQs
+      document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+        if (otherAnswer !== answer) {
+          otherAnswer.classList.remove('active');
+          otherAnswer.parentElement.querySelector('.faq-icon').classList.remove('rotate');
         }
       });
-
+      
       // Toggle current FAQ
-      element.classList.toggle('active');
+      answer.classList.toggle('active');
+      icon.classList.toggle('rotate');
     }
+
+    // Particles.js configuration
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
+        "color": {"value": "#00d4ff"},
+        "shape": {
+          "type": "circle",
+          "stroke": {"width": 0, "color": "#000000"},
+          "polygon": {"nb_sides": 5},
+          "image": {"src": "img/github.svg", "width": 100, "height": 100}
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {"enable": false, "speed": 1, "opacity_min": 0.1, "sync": false}
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00d4ff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {"enable": true, "mode": "repulse"},
+          "onclick": {"enable": true, "mode": "push"},
+          "resize": true
+        },
+        "modes": {
+          "grab": {"distance": 400, "line_linked": {"opacity": 1}},
+          "bubble": {"distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3},
+          "repulse": {"distance": 200, "duration": 0.4},
+          "push": {"particles_nb": 4},
+          "remove": {"particles_nb": 2}
+        }
+      },
+      "retina_detect": true
+    });
 
     // GSAP Animations
-    if(typeof gsap !== 'undefined') {
-      gsap.fromTo(".glow", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, stagger: 0.2 });
-      gsap.fromTo(".faq-item", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, delay: 0.3 });
-    }
+    gsap.from(".fade-in", {
+      duration: 0.6,
+      y: 20,
+      opacity: 0,
+      ease: "power2.out"
+    });
   </script>
 </body>
 </html>
