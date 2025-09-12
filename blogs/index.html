@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Security Blog - Coming Soon | Nova Titan Systems</title>
+  <meta name="description" content="Nova Titan Systems security blog launching soon. Expert cybersecurity insights, practical security tips, and industry analysis for West Texas businesses and home users.">
+  <link rel="canonical" href="https://novatitan.net/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nova Titan Systems">
+  <meta property="og:title" content="Security Blog - Coming Soon">
+  <meta property="og:description" content="Professional cybersecurity blog launching soon with expert content for West Texas businesses and families.">
+  <meta property="og:image" content="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <!-- Assets -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+  <style>
+    :root { 
+      --cy: #00d4ff; 
+      --gr: #00ff88; 
+      --purple: #b300ff;
+      --red: #ff0066;
+      --orange: #ff8800;
+    }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); 
+      min-height: 100vh;
+    }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .nav-link { transition: all .3s ease; position: relative; padding: 0.5rem 0; }
+    .nav-link:hover { color: var(--cy); transform: scale(1.05); }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; height:2px; width:0; background: linear-gradient(90deg, var(--cy), var(--gr)); transition:width .3s ease; }
+    .nav-link:hover::after { width:100%; }
+    .btn-grad { background: linear-gradient(45deg,var(--cy),var(--gr)); transition: all .3s ease; box-shadow: 0 4px 15px rgba(0,212,255,0.3); position: relative; overflow: hidden; }
+    .btn-grad:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,212,255,.5); }
+    .card { border: 1px solid rgba(0,212,255,.35); transition: all .4s ease; background: rgba(26,26,46,.95); backdrop-filter: blur(12px); position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--cy), var(--gr), var(--purple)); transform: scaleX(0); transition: transform 0.3s ease; }
+    .card:hover::before { transform: scaleX(1); }
+    .card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 40px rgba(0,212,255,.3), 0 0 20px rgba(0,255,136,0.2); }
+    #particles-js { position: fixed; inset: 0; z-index: 0; }
+    .content { position: relative; z-index: 1; }
+    .matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px); background-size: 20px 20px; z-index: 0; }
+    .hamburger { display: flex; flex-direction: column; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 25px; height: 3px; background: var(--cy); margin: 3px 0; transition:transform .3s, opacity .3s, top .3s; }
+    .hamburger.active span:nth-child(1){ transform:rotate(-45deg) translate(-5px,6px); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ transform:rotate(45deg) translate(-5px,-6px); }
+    .glow { text-shadow: 0 0 20px rgba(0,212,255,.8); }
+    .glow-green { text-shadow: 0 0 20px rgba(0,255,136,.8); }
+    .glow-purple { text-shadow: 0 0 20px rgba(179,0,255,.8); }
+    .social-icon { transition: all .3s ease; }
+    .social-icon:hover { transform: translateY(-3px) scale(1.1); text-shadow: 0 0 20px rgba(0,212,255,.6); }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="text-white">
+  <div id="particles-js"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="content fixed top-0 left-0 right-0 bg-black/20 backdrop-blur-md border-b border-cyan-500/20 z-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-20">
+        <a href="/" class="flex items-center group">
+          <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
+          <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-6">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link">Services</a>
+          <a href="/portfolio/" class="nav-link">Portfolio</a>
+          <a href="/blog/" class="nav-link text-cyan-400">Blog</a>
+          <a href="/faqs/" class="nav-link">FAQ</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
+            <i class="fas fa-calendar-check mr-1"></i>Book Now
+          </a>
+        </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div id="mobileMenu" class="sm:hidden hidden pb-4">
+        <div class="flex flex-col space-y-2">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link">Services</a>
+          <a href="/portfolio/" class="nav-link">Portfolio</a>
+          <a href="/blog/" class="nav-link text-cyan-400">Blog</a>
+          <a href="/faqs/" class="nav-link">FAQ</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="nav-link">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="content pt-28 pb-14">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-6xl font-bold glow mb-4 fade-in">
+          <span class="text-cyan-300">Security</span> 
+          <span class="glow-green">Insights</span>
+        </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in mb-8">
+          Expert cybersecurity insights, practical security tips, and industry analysis from Nova Titan Systems. 
+          Stay ahead of threats with actionable security knowledge tailored for 
+          <strong class="text-cyan-300">West Texas businesses and home users</strong>.
+        </p>
+
+        <!-- Coming Soon Notice -->
+        <div class="max-w-2xl mx-auto">
+          <div class="card rounded-xl p-8 text-center fade-in">
+            <div class="mb-6">
+              <i class="fas fa-rocket text-6xl text-cyan-300 mb-4"></i>
+              <h2 class="text-3xl font-bold text-cyan-300 glow mb-4">Coming Soon</h2>
+            </div>
+            
+            <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+              Our security blog is currently under development! We're preparing comprehensive guides, 
+              threat analysis, and practical cybersecurity content specifically for West Texas businesses and home users.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+              <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-lg p-4 border border-cyan-500/20">
+                <i class="fas fa-shield-alt text-2xl text-cyan-300 mb-2"></i>
+                <h3 class="text-lg font-semibold text-white mb-2">Security Guides</h3>
+                <p class="text-gray-300 text-sm">Step-by-step security implementations</p>
+              </div>
+              
+              <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg p-4 border border-green-500/20">
+                <i class="fas fa-chart-line text-2xl text-green-300 mb-2"></i>
+                <h3 class="text-lg font-semibold text-white mb-2">Threat Analysis</h3>
+                <p class="text-gray-300 text-sm">Current cybersecurity landscape insights</p>
+              </div>
+              
+              <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-purple-500/20">
+                <i class="fas fa-cloud text-2xl text-purple-300 mb-2"></i>
+                <h3 class="text-lg font-semibold text-white mb-2">Cloud Security</h3>
+                <p class="text-gray-300 text-sm">OCI, AWS, and Azure security tips</p>
+              </div>
+              
+              <div class="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-lg p-4 border border-orange-500/20">
+                <i class="fas fa-home text-2xl text-orange-300 mb-2"></i>
+                <h3 class="text-lg font-semibold text-white mb-2">Home Security</h3>
+                <p class="text-gray-300 text-sm">Practical tips for home networks</p>
+              </div>
+            </div>
+            
+            <div class="bg-green-900/20 border border-green-500/30 rounded-lg p-4 mb-6">
+              <div class="flex items-center justify-center mb-2">
+                <i class="fas fa-bell text-green-400 mr-2"></i>
+                <span class="text-green-300 font-semibold">Get Notified</span>
+              </div>
+              <p class="text-green-200 text-sm">
+                Want early access to our security content? Contact us for updates on new articles and exclusive insights.
+              </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/contact/" class="btn-grad text-gray-900 font-bold py-3 px-6 rounded-lg inline-flex items-center justify-center">
+                <i class="fas fa-envelope mr-2"></i>
+                Get Updates
+              </a>
+              <a href="/services/" class="border border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/10 font-semibold py-3 px-6 rounded-lg inline-flex items-center justify-center transition-all">
+                <i class="fas fa-shield-alt mr-2"></i>
+                Our Services
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SIGNUP -->
+  <section class="content py-16 bg-gradient-to-r from-cyan-900/30 via-blue-900/30 to-purple-900/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold glow mb-6">
+        Stay Ahead of Security Threats
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Get security insights and updates when our blog launches. 
+        Be the first to access expert cybersecurity content tailored for West Texas.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+        <input 
+          type="email" 
+          placeholder="Enter your email for blog updates" 
+          class="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none"
+        />
+        <button class="btn-grad text-gray-900 font-bold py-3 px-8 rounded-lg whitespace-nowrap">
+          <i class="fas fa-envelope mr-2"></i>
+          Get Notified
+        </button>
+      </div>
+      <p class="text-sm text-gray-400 mt-4">
+        <i class="fas fa-shield-check mr-2"></i>
+        No spam • First access to security content • West Texas focused
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="content bg-gray-900/90 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <!-- Brand -->
+        <div class="col-span-1 md:col-span-2">
+          <div class="flex items-center mb-4">
+            <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md mr-3"/>
+            <span class="text-xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
+          </div>
+          <p class="text-gray-300 mb-4 max-w-md">
+            Professional cybersecurity insights and practical security guidance for West Texas. 
+            Blog launching soon with expert content for businesses and families.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 rounded text-xs">
+              <i class="fas fa-certificate mr-1"></i>OCI Certified
+            </span>
+            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">
+              <i class="fas fa-graduation-cap mr-1"></i>CS Student
+            </span>
+          </div>
+        </div>
+
+        <!-- Coming Topics -->
+        <div>
+          <h4 class="text-cyan-300 font-semibold mb-4">Coming Topics</h4>
+          <ul class="space-y-2 text-sm">
+            <li><span class="text-gray-300">Cloud Security</span></li>
+            <li><span class="text-gray-300">Network Security</span></li>
+            <li><span class="text-gray-300">Small Business</span></li>
+            <li><span class="text-gray-300">Home Security</span></li>
+            <li><span class="text-gray-300">Threat Analysis</span></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-cyan-300 font-semibold mb-4">Get In Touch</h4>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center">
+              <i class="fas fa-phone text-cyan-400 w-4 mr-3"></i>
+              <a href="tel:+18063700624" class="text-gray-300 hover:text-cyan-300 transition">(806) 370-0624</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-envelope text-cyan-400 w-4 mr-3"></i>
+              <a href="mailto:info@novatitan.net" class="text-gray-300 hover:text-cyan-300 transition">info@novatitan.net</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-map-marker-alt text-cyan-400 w-4 mr-3"></i>
+              <span class="text-gray-300">Lubbock, TX & West Texas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-300 text-sm mb-4 md:mb-0">
+            &copy; <span id="year"></span> Nova Titan Systems. All rights reserved.
+          </p>
+          <div class="flex items-center space-x-4 mb-4 md:mb-0">
+            <a href="/terms/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Terms</a>
+            <a href="/privacy/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Privacy</a>
+            <a href="/refunds/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Refunds</a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a href="https://github.com/tzsmit" target="_blank" rel="noopener noreferrer me" aria-label="GitHub" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.111.82-.261.82-.58 0-.286-.011-1.044-.017-2.05-3.338.726-4.042-1.61-4.042-1.61-.546-1.389-1.333-1.759-1.333-1.759-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.833 2.809 1.304 3.494.997.108-.775.419-1.304.762-1.603-2.665-.303-5.467-1.333-5.467-5.932 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.51 11.51 0 0 1 3.003-.403c1.02.005 2.046.137 3.003.403 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.48 5.921.43.37.815 1.102.815 2.222 0 1.604-.015 2.896-.015 3.29 0 .321.217.697.826.579C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12Z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@novatitan1" target="_blank" rel="noopener noreferrer me" aria-label="TikTok" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor"><path d="M12.667 0h3.043a7.727 7.727 0 0 0 2.215 4.76c1.365 1.35 3.09 2.226 5.075 2.405v3.1c-1.86.17-3.603-.33-5.391-1.22v6.88c0 7.74-8.39 10.3-12.73 5.08-2.82-3.41-2.05-8.94 2.08-11.04 1.01-.53 2.17-.78 3.31-.71v3.2c-.43-.04-.87.02-1.28.19-2.01.84-2.4 3.58-.75 5.01 2.57 2.2 6.6.34 6.6-2.86V0z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/traivone-smith-969b60327" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor"><path d="M20.451 20.451h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.603 0 4.268 2.372 4.268 5.457v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.114 20.451H3.559V9h3.555v11.451zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1GNBbSRT4b/" target="_blank" rel="noopener noreferrer me" aria-label="Facebook" class="social-icon text-gray-300 hover:text-cyan-300 transition">
+              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078V12.07h3.047V9.412c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.963h-1.513c-1.49 0-1.953.93-1.953 1.887v2.242h3.328l-.532 3.493h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Logic  
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        const isOpen = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden', !isOpen);
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    // Particle Background
+    if (typeof particlesJS !== 'undefined') {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 50, density: { enable: true, value_area: 800 } },
+          color: { value: '#00d4ff' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.3, random: true },
+          size: { value: 2, random: true },
+          line_linked: { enable: true, distance: 150, color: '#00d4ff', opacity: 0.2, width: 1 },
+          move: { enable: true, speed: 1, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+          modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+        },
+        retina_detect: true
+      });
+    }
+  </script>
+</body>
+</html>
+
