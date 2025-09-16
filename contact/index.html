@@ -28,6 +28,8 @@
       --purple: #b300ff;
       --red: #ff0066;
       --orange: #ff8800;
+      --text-primary: #ffffff;
+      --font-primary: 'Inter', sans-serif;
     }
     
     body { 
@@ -259,6 +261,23 @@
       color: var(--text-primary);
       font-family: var(--font-primary);
       transition: all 0.3s ease;
+    }
+
+    /* Dropdown option styling for visibility */
+    .form-select option {
+      background: #1a1a2e;
+      color: #ffffff;
+      padding: 8px 12px;
+    }
+
+    .form-select option:hover, .form-select option:focus {
+      background: rgba(0,212,255,0.2);
+      color: #ffffff;
+    }
+
+    .form-select option:checked {
+      background: rgba(0,212,255,0.3);
+      color: #ffffff;
     }
     
     .form-input:focus, .form-select:focus, .form-textarea:focus {
@@ -561,8 +580,8 @@
           </div>
           <h3 class="text-xl font-semibold text-green-300 mb-2">Email</h3>
           <p class="text-gray-300 mb-4">Detailed inquiries and documentation</p>
-          <a href="mailto:info@novatitan.net" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg inline-block">
-            info@novatitan.net
+          <a href="/cdn-cgi/l/email-protection#0861666e674866677e697c617c696626666d7c" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg inline-block">
+            <span class="__cf_email__" data-cfemail="650c0b030a250b0a1304110c11040b4b0b0011">[email&#160;protected]</span>
           </a>
           <p class="text-xs text-gray-400 mt-2">Response within 4 hours</p>
         </div>
@@ -642,6 +661,8 @@
                   <option value="home-audit">Home Wi-Fi Security Audit ($149)</option>
                   <option value="business-network">Business Network Setup ($499+)</option>
                   <option value="cloud-security">Cloud Security Checkup ($399)</option>
+                  <option value="commercial-setup">Commercial Business Setup ($2,999+)</option>
+                  <option value="tech-implementation">Technology Implementation & Integration ($1,499+)</option>
                   <option value="installations">Installations & Setup ($99+)</option>
                   <option value="remote-support">Remote Tech Support ($75)</option>
                   <option value="web-security">Website Security Scan ($199)</option>
@@ -909,7 +930,7 @@
           <h4 class="text-cyan-300 font-semibold mb-4">Quick Contact</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="tel:+18063700624" class="text-gray-300 hover:text-cyan-300 transition">(806) 370-0624</a></li>
-            <li><a href="mailto:info@novatitan.net" class="text-gray-300 hover:text-cyan-300 transition">info@novatitan.net</a></li>
+            <li><a href="/cdn-cgi/l/email-protection#d1b8bfb7be91bfbea7b0a5b8a5b0bfffbfb4a5" class="text-gray-300 hover:text-cyan-300 transition"><span class="__cf_email__" data-cfemail="f49d9a929bb49a9b8295809d80959ada9a9180">[email&#160;protected]</span></a></li>
             <li><a href="/book-now/" class="text-gray-300 hover:text-cyan-300 transition">Schedule Online</a></li>
             <li><span class="text-gray-400">Mon-Fri 8AM-6PM CST</span></li>
             <li><span class="text-orange-300">24/7 Emergency Support</span></li>
@@ -966,7 +987,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Particle.js Configuration
     particlesJS('particles-js',{
       particles:{ 
@@ -1151,12 +1172,4 @@
       });
     }, { threshold: 0.1 });
 
-    observeElements.forEach(el => observer.observe(el));
-
-    // Console branding
-    console.log('%c📞 Nova Titan Contact Center', 'color: #00d4ff; font-size: 18px; font-weight: bold;');
-    console.log('%c(806) 370-0624 - Same Day Response Guaranteed', 'color: #00ff88; font-size: 14px;');
-    console.log('%cSecure your technology today!', 'color: #b300ff; font-size: 12px;');
-  </script>
-</body>
-</html>
+    observeElements.forEach(el => ob
