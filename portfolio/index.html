@@ -354,7 +354,7 @@
     }
   </style>
 
-  <!-- JSON-LD for Portfolio -->
+  <!-- JSON-LD for Portfolio (unchanged) -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -473,7 +473,7 @@
     </div>
   </section>
 
-  <!-- CLOUDWARDEN HERO -->
+  <!-- CLOUDWARDEN v3 HERO (UPDATED) -->
   <section class="content py-16">
     <div class="max-w-7xl mx-auto px-6">
       <div class="cloudwarden-hero card rounded-2xl p-8 md:p-12">
@@ -484,40 +484,38 @@
                 <i class="fas fa-shield-virus text-2xl text-white"></i>
               </div>
               <div>
-                <h2 class="text-4xl font-bold glow-purple">CloudWarden</h2>
-                <p class="text-purple-300 font-mono">Advanced Cloud Security Monitor</p>
+                <h2 class="text-4xl font-bold glow-purple">CloudWarden v3</h2>
+                <p class="text-purple-300 font-mono">AI-Powered Cloud Security Platform</p>
               </div>
             </div>
             
             <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-              My flagship cloud security monitoring tool that continuously watches your 
-              <strong class="text-cyan-300">AWS, Azure, and OCI</strong> environments for 
-              security misconfigurations, policy violations, and potential threats. 
-              Built for security professionals who need <strong class="text-green-300">real-time visibility</strong> 
-              and automated compliance reporting.
+              The latest generation of CloudWarden combines <strong class="text-cyan-300">local AI via Ollama</strong> for private analysis,
+              <strong class="text-green-300">attack-path discovery</strong> with validation, integrated <strong class="text-cyan-300">IoT/OT security</strong>,
+              <strong class="text-fuchsia-300">quantum-safe cryptography analysis</strong>, an executive dashboard, and <strong class="text-cyan-300">remediation-as-code</strong>.
             </p>
 
             <div class="grid grid-cols-2 gap-4 mb-8">
               <div class="metric-card">
-                <div class="metric-value">24/7</div>
-                <div class="metric-label">Real-Time Monitoring</div>
+                <div class="metric-value">4</div>
+                <div class="metric-label">Core Modules</div>
               </div>
               <div class="metric-card">
                 <div class="metric-value">3</div>
-                <div class="metric-label">Cloud Platforms</div>
+                <div class="metric-label">AI Models</div>
               </div>
               <div class="metric-card">
-                <div class="metric-value">500+</div>
-                <div class="metric-label">Security Rules</div>
+                <div class="metric-value">3</div>
+                <div class="metric-label">Compliance Frameworks</div>
               </div>
               <div class="metric-card">
-                <div class="metric-value">99.9%</div>
-                <div class="metric-label">Uptime SLA</div>
+                <div class="metric-value">0</div>
+                <div class="metric-label">Cloud AI Costs</div>
               </div>
             </div>
 
             <div class="flex flex-wrap gap-4">
-              <a href="https://github.com/tzsmit" target="_blank" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center">
+              <a href="https://github.com/tzsmit/cloudwarden-v3" target="_blank" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center">
                 <i class="fab fa-github mr-2"></i>
                 View on GitHub
               </a>
@@ -534,15 +532,15 @@
                 <div class="terminal-dot red"></div>
                 <div class="terminal-dot yellow"></div>
                 <div class="terminal-dot green"></div>
-                <span class="text-gray-400 text-sm ml-3">CloudWarden Security Monitor</span>
+                <span class="text-gray-400 text-sm ml-3">CloudWarden v3 Console</span>
               </div>
               <div class="terminal-content">
-                <div class="terminal-line text-green-400">$ cloudwarden --scan --all-environments</div>
-                <div class="terminal-line text-cyan-400">→ Initializing multi-cloud security scan...</div>
-                <div class="terminal-line text-yellow-300">⚡ AWS: 247 resources | Azure: 89 resources | OCI: 156 resources</div>
-                <div class="terminal-line text-green-400">✓ All systems secure - 0 critical vulnerabilities</div>
-                <div class="terminal-line text-purple-300">📊 Compliance: SOC2 ✓ | PCI-DSS ✓ | HIPAA ✓</div>
-                <div class="terminal-line text-cyan-400">🛡️ CloudWarden monitoring active<span class="typing-cursor">|</span></div>
+                <div class="terminal-line text-green-400">$ cloudwarden scan --comprehensive --with-ai</div>
+                <div class="terminal-line text-cyan-400">→ AI model: llama3.1:8b (Ollama) • confidence: 0.92</div>
+                <div class="terminal-line text-yellow-300">✓ Attack paths validated (SimulatePrincipalPolicy)</div>
+                <div class="terminal-line text-green-400">📡 IoT/OT audit: Greengrass ✓ • certs expiring: 2</div>
+                <div class="terminal-line text-purple-300">🔐 Quantum scan: RSA/ECDSA migration plan generated</div>
+                <div class="terminal-line text-cyan-400">📊 Executive report saved → ./reports/security-report.pdf<span class="typing-cursor">|</span></div>
               </div>
             </div>
           </div>
@@ -582,76 +580,73 @@
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- FEATURES (UPDATED FOR v3) -->
   <section class="content py-12 bg-gray-900/50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold glow mb-4">CloudWarden Features</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">Comprehensive cloud security monitoring with enterprise-grade capabilities</p>
+        <h2 class="text-3xl font-bold glow mb-4">CloudWarden v3 Features</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">Revolutionary capabilities built for modern cloud & industrial environments</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="card rounded-xl p-6 fade-in">
           <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-eye text-xl text-white"></i>
+            <i class="fas fa-robot text-xl text-white"></i>
           </div>
-          <h3 class="text-xl font-semibold text-cyan-300 mb-3">Real-Time Monitoring</h3>
+          <h3 class="text-xl font-semibold text-cyan-300 mb-3">AI Security Intelligence</h3>
           <p class="text-gray-300 mb-4">
-            Continuous security posture monitoring across all your cloud environments with 
-            instant alerts for policy violations and security misconfigurations.
+            Local LLMs via <span class="font-mono">Ollama</span> keep analysis private and cost-efficient, with
+            business-impact translation and confidence scoring.
           </p>
           <ul class="text-sm text-gray-400 space-y-2">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>24/7 automated scanning</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Instant Slack/email alerts</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Custom rule configuration</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Multi-model support (primary & fallback)</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Executive-ready explanations</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>No cloud AI spend</li>
           </ul>
         </div>
 
         <div class="card rounded-xl p-6 fade-in">
           <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-clipboard-check text-xl text-white"></i>
+            <i class="fas fa-project-diagram text-xl text-white"></i>
           </div>
-          <h3 class="text-xl font-semibold text-green-300 mb-3">Compliance Automation</h3>
+          <h3 class="text-xl font-semibold text-green-300 mb-3">Attack Path Discovery</h3>
           <p class="text-gray-300 mb-4">
-            Automated compliance reporting for SOC 2, PCI-DSS, HIPAA, and custom frameworks. 
-            Generate audit-ready reports with a single command.
+            Graph analytics map IAM privilege escalation paths with evidence-based validation using AWS simulation.
           </p>
           <ul class="text-sm text-gray-400 space-y-2">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>SOC 2 Type II reporting</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>PCI-DSS compliance checks</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Custom policy frameworks</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Risk scoring (0-100)</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>AI attack simulation</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Exportable attack chain visuals</li>
           </ul>
         </div>
 
         <div class="card rounded-xl p-6 fade-in">
           <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-cloud text-xl text-white"></i>
+            <i class="fas fa-microchip text-xl text-white"></i>
           </div>
-          <h3 class="text-xl font-semibold text-purple-300 mb-3">Multi-Cloud Support</h3>
+          <h3 class="text-xl font-semibold text-purple-300 mb-3">IoT & OT Security</h3>
           <p class="text-gray-300 mb-4">
-            Native support for AWS, Microsoft Azure, and Oracle Cloud Infrastructure with 
-            unified security dashboards and cross-cloud correlation.
+            AWS IoT Core audits, Greengrass edge checks, and industrial protocols (Modbus, OPC UA, DNP3, BACnet).
           </p>
           <ul class="text-sm text-gray-400 space-y-2">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>AWS Security Hub integration</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Azure Security Center API</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>OCI Cloud Guard connector</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Device policy analysis</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Certificate lifecycle monitoring</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Industrial network assessment</li>
           </ul>
         </div>
 
         <div class="card rounded-xl p-6 fade-in">
           <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-shield-alt text-xl text-white"></i>
+            <i class="fas fa-user-shield text-xl text-white"></i>
           </div>
-          <h3 class="text-xl font-semibold text-red-300 mb-3">Threat Detection</h3>
+          <h3 class="text-xl font-semibold text-red-300 mb-3">Quantum-Safe Analysis</h3>
           <p class="text-gray-300 mb-4">
-            Advanced threat detection using machine learning algorithms to identify suspicious 
-            activities, unusual access patterns, and potential security breaches.
+            Identify quantum-vulnerable crypto and auto-generate migration roadmaps and timeline predictions.
           </p>
           <ul class="text-sm text-gray-400 space-y-2">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Anomaly detection</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Behavioral analysis</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Threat intelligence feeds</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Algorithm vulnerability assessment</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Standards-aligned recommendations</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Exportable migration plans</li>
           </ul>
         </div>
 
@@ -659,38 +654,36 @@
           <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mb-4">
             <i class="fas fa-chart-line text-xl text-white"></i>
           </div>
-          <h3 class="text-xl font-semibold text-blue-300 mb-3">Analytics Dashboard</h3>
+          <h3 class="text-xl font-semibold text-blue-300 mb-3">Executive Dashboard</h3>
           <p class="text-gray-300 mb-4">
-            Comprehensive security analytics with interactive dashboards, trend analysis, 
-            and executive reporting capabilities for stakeholder communication.
+            Live posture scoring, AI-generated summaries, and auto-mapping to CIS AWS, NIST CSF, IEC 62443.
           </p>
           <ul class="text-sm text-gray-400 space-y-2">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Interactive visualizations</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Executive summaries</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Trend analysis</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Real-time metrics & trends</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Mobile-responsive UI</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Compliance automation</li>
           </ul>
         </div>
 
         <div class="card rounded-xl p-6 fade-in">
           <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-cogs text-xl text-white"></i>
+            <i class="fas fa-tools text-xl text-white"></i>
           </div>
-          <h3 class="text-xl font-semibold text-yellow-300 mb-3">API Integration</h3>
+          <h3 class="text-xl font-semibold text-yellow-300 mb-3">Remediation-as-Code</h3>
           <p class="text-gray-300 mb-4">
-            RESTful API for integration with existing security tools, SIEM platforms, 
-            and DevOps workflows. Webhook support for real-time event streaming.
+            Auto-generate Terraform fixes, bundle change packs, and simulate effects before rollout.
           </p>
           <ul class="text-sm text-gray-400 space-y-2">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>RESTful API endpoints</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Webhook notifications</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>SIEM integrations</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Terraform generation</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Fix pack export</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Change validation</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- OTHER PROJECTS -->
+  <!-- OTHER PROJECTS (unchanged from your last version) -->
   <section class="content py-12">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
@@ -759,7 +752,7 @@
           </div>
         </div>
 
-        <!-- NEW: Security AI project (Designing) -->
+        <!-- Security AI project (Designing) -->
         <div class="card rounded-xl p-6 fade-in">
           <div class="w-12 h-12 bg-gradient-to-br from-fuchsia-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
             <i class="fas fa-brain text-xl text-white"></i>
@@ -777,7 +770,7 @@
           </div>
         </div>
 
-        <!-- NEW: Completed project -->
+        <!-- Completed project -->
         <div class="card rounded-xl p-6 fade-in">
           <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
             <i class="fas fa-key text-xl text-white"></i>
@@ -1056,8 +1049,8 @@
     observeElements.forEach(el => observer.observe(el));
 
     // Console branding
-    console.log('%c🛡️ CloudWarden Security Monitor', 'color: #b300ff; font-size: 18px; font-weight: bold;');
-    console.log('%cAdvanced Cloud Security Portfolio', 'color: #00d4ff; font-size: 14px;');
+    console.log('%c🛡️ CloudWarden v3', 'color: #b300ff; font-size: 18px; font-weight: bold;');
+    console.log('%cAI • Attack Paths • IoT/OT • Quantum-Safe • Remediation-as-Code', 'color: #00d4ff; font-size: 14px;');
     console.log('%cNova Titan Systems - Professional Cybersecurity', 'color: #00ff88; font-size: 12px;');
   </script>
 </body>
