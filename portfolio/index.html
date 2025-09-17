@@ -328,6 +328,34 @@
       filter: drop-shadow(0 0 15px rgba(0,212,255,0.8));
     }
     
+    /* Project Status Badges */
+    .status-badge {
+      padding: 0.375rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .status-completed {
+      background: linear-gradient(135deg, rgba(0,255,136,0.2), rgba(0,255,136,0.1));
+      color: #00ff88;
+      border: 1px solid rgba(0,255,136,0.4);
+    }
+    
+    .status-active {
+      background: linear-gradient(135deg, rgba(255,136,0,0.2), rgba(255,136,0,0.1));
+      color: #ff8800;
+      border: 1px solid rgba(255,136,0,0.4);
+    }
+    
+    .status-designing {
+      background: linear-gradient(135deg, rgba(179,0,255,0.2), rgba(179,0,255,0.1));
+      color: #b300ff;
+      border: 1px solid rgba(179,0,255,0.4);
+    }
+    
     /* Responsive */
     @media (max-width: 768px) {
       .hero-title {
@@ -485,7 +513,7 @@
               </div>
               <div>
                 <h2 class="text-4xl font-bold glow-purple">CloudWarden v3</h2>
-                <p class="text-purple-300 font-mono">AI-Powered Cloud Security Platform</p>
+                <p class="text-purple-300 font-mono">Revolutionary AI-Powered Cloud Security Platform</p>
               </div>
             </div>
             
@@ -497,12 +525,12 @@
 
             <div class="grid grid-cols-2 gap-4 mb-8">
               <div class="metric-card">
-                <div class="metric-value">4</div>
-                <div class="metric-label">Core Modules</div>
+                <div class="metric-value">6</div>
+                <div class="metric-label">Revolutionary Features</div>
               </div>
               <div class="metric-card">
                 <div class="metric-value">3</div>
-                <div class="metric-label">AI Models</div>
+                <div class="metric-label">AI Models Supported</div>
               </div>
               <div class="metric-card">
                 <div class="metric-value">3</div>
@@ -683,106 +711,186 @@
     </div>
   </section>
 
-  <!-- OTHER PROJECTS (unchanged from your last version) -->
+  <!-- OTHER PROJECTS (STRUCTURED) -->
   <section class="content py-12">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold glow mb-4">Other Security Projects</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">Additional cybersecurity implementations and network security projects</p>
+        <p class="text-gray-300 max-w-2xl mx-auto">Additional cybersecurity implementations and network security projects showcasing expertise across diverse domains</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Network Security Implementation -->
         <div class="card rounded-xl p-6 fade-in">
-          <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-network-wired text-xl text-white"></i>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center">
+              <i class="fas fa-network-wired text-xl text-white"></i>
+            </div>
+            <span class="status-badge status-completed">✓ Completed</span>
           </div>
           <h3 class="text-xl font-semibold text-emerald-300 mb-3">Enterprise VLAN Segmentation</h3>
           <p class="text-gray-300 mb-4">
             Designed and implemented secure network segmentation for a 200+ employee 
             manufacturing company with POS systems, guest networks, and IoT device isolation.
           </p>
-          <div class="flex items-center justify-between text-sm">
-            <span class="text-gray-400">Client: Manufacturing Co.</span>
-            <span class="text-emerald-400">✓ Completed</span>
+          <div class="space-y-2 mb-4">
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-building mr-2 text-emerald-400"></i>
+              <span>Client: Manufacturing Company</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-users mr-2 text-emerald-400"></i>
+              <span>Scale: 200+ employees</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-shield-alt mr-2 text-emerald-400"></i>
+              <span>Scope: Network Security</span>
+            </div>
           </div>
         </div>
 
+        <!-- Identity & Access Management -->
         <div class="card rounded-xl p-6 fade-in">
-          <div class="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-lock text-xl text-white"></i>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-500 rounded-lg flex items-center justify-center">
+              <i class="fas fa-lock text-xl text-white"></i>
+            </div>
+            <span class="status-badge status-completed">✓ Completed</span>
           </div>
           <h3 class="text-xl font-semibold text-violet-300 mb-3">Multi-Factor Authentication Rollout</h3>
           <p class="text-gray-300 mb-4">
             Deployed enterprise MFA solution across cloud and on-premise systems for a 
             healthcare organization, achieving 100% compliance with HIPAA requirements.
           </p>
-          <div class="flex items-center justify-between text-sm">
-            <span class="text-gray-400">Client: Healthcare Provider</span>
-            <span class="text-violet-400">✓ Completed</span>
+          <div class="space-y-2 mb-4">
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-hospital mr-2 text-violet-400"></i>
+              <span>Client: Healthcare Provider</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-certificate mr-2 text-violet-400"></i>
+              <span>Compliance: HIPAA</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-key mr-2 text-violet-400"></i>
+              <span>Scope: Identity Security</span>
+            </div>
           </div>
         </div>
 
+        <!-- AI Security Supply Chain Scanner (REPLACING Supply Chain Exposure Graph) -->
         <div class="card rounded-xl p-6 fade-in">
-          <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-bug text-xl text-white"></i>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-fuchsia-500 to-cyan-500 rounded-lg flex items-center justify-center">
+              <i class="fas fa-brain text-xl text-white"></i>
+            </div>
+            <span class="status-badge status-designing">🧪 Designing</span>
           </div>
-          <h3 class="text-xl font-semibold text-amber-300 mb-3">Vulnerability Assessment Tool</h3>
+          <h3 class="text-xl font-semibold text-fuchsia-300 mb-3">AI Security Supply Chain Scanner</h3>
           <p class="text-gray-300 mb-4">
-            Custom Python-based vulnerability scanner for web applications and network infrastructure. 
-            Automated reporting with CVSS scoring and remediation recommendations.
+            Revolutionary AI model supply chain security platform. Generates AI BOMs (Bills of Materials), 
+            tracks model provenance, detects compromised models, and maps AI supply chain attack paths.
           </p>
-          <div class="flex items-center justify-between text-sm">
-            <span class="text-gray-400">Type: Custom Tool</span>
-            <span class="text-amber-400">🔄 Active Development</span>
+          <div class="space-y-2 mb-4">
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-robot mr-2 text-fuchsia-400"></i>
+              <span>Type: AI Security Research</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-link mr-2 text-fuchsia-400"></i>
+              <span>Innovation: AI Model Provenance</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-shield-virus mr-2 text-fuchsia-400"></i>
+              <span>Scope: ML Supply Chain Security</span>
+            </div>
           </div>
         </div>
 
+        <!-- Firewall Policy Audit -->
         <div class="card rounded-xl p-6 fade-in">
-          <div class="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-fire text-xl text-white"></i>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg flex items-center justify-center">
+              <i class="fas fa-fire text-xl text-white"></i>
+            </div>
+            <span class="status-badge status-completed">✓ Completed</span>
           </div>
-          <h3 class="text-xl font-semibold text-rose-300 mb-3">Firewall Policy Audit</h3>
+          <h3 class="text-xl font-semibold text-rose-300 mb-3">Firewall Policy Optimization</h3>
           <p class="text-gray-300 mb-4">
             Comprehensive firewall rule analysis and optimization for a financial services firm. 
             Reduced rule complexity by 40% while maintaining security posture.
           </p>
-          <div class="flex items-center justify-between text-sm">
-            <span class="text-gray-400">Client: Financial Services</span>
-            <span class="text-rose-400">✓ Completed</span>
+          <div class="space-y-2 mb-4">
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-university mr-2 text-rose-400"></i>
+              <span>Client: Financial Services</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-chart-line mr-2 text-rose-400"></i>
+              <span>Improvement: 40% rule reduction</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-fire-alt mr-2 text-rose-400"></i>
+              <span>Scope: Firewall Security</span>
+            </div>
           </div>
         </div>
 
-        <!-- Security AI project (Designing) -->
+        <!-- CloudWarden v3 Development -->
         <div class="card rounded-xl p-6 fade-in">
-          <div class="w-12 h-12 bg-gradient-to-br from-fuchsia-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-brain text-xl text-white"></i>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+              <i class="fas fa-shield-virus text-xl text-white"></i>
+            </div>
+            <span class="status-badge status-active">🔄 Active Development</span>
           </div>
-          <h3 class="text-xl font-semibold text-fuchsia-300 mb-3">CloudWarden-V3: Supply Chain Exposure Graph</h3>
+          <h3 class="text-xl font-semibold text-purple-300 mb-3">CloudWarden v3 Development</h3>
           <p class="text-gray-300 mb-4">
-            AI that builds a <span class="font-mono">Trust-Graph</span> across cloud & SaaS to map transitive risk 
-            (OAuth grants, webhooks, service accounts, cross-account roles). 
-            Unique focus: <strong class="text-cyan-300">SaaS-to-SaaS “shadow” integrations</strong> and a generated 
-            <span class="font-mono">TBOM</span> (Trust Bill of Materials) for audit & least-privilege remediation.
+            Revolutionary AI-powered cloud security platform combining local AI, attack path discovery, 
+            IoT/OT security, and quantum-safe analysis in active development.
           </p>
-          <div class="flex items-center justify-between text-sm">
-            <span class="text-gray-400">Type: Security AI</span>
-            <span class="text-fuchsia-400">🧪 Designing</span>
+          <div class="space-y-2 mb-4">
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fab fa-github mr-2 text-purple-400"></i>
+              <span>Type: Open Source Security Tool</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-robot mr-2 text-purple-400"></i>
+              <span>AI: Local Ollama Integration</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-cloud mr-2 text-purple-400"></i>
+              <span>Scope: Multi-Cloud Security</span>
+            </div>
           </div>
         </div>
 
-        <!-- Completed project -->
+        <!-- Phishing-Resistant Access -->
         <div class="card rounded-xl p-6 fade-in">
-          <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
-            <i class="fas fa-key text-xl text-white"></i>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-lg flex items-center justify-center">
+              <i class="fas fa-key text-xl text-white"></i>
+            </div>
+            <span class="status-badge status-completed">✓ Completed</span>
           </div>
-          <h3 class="text-xl font-semibold text-teal-300 mb-3">Phishing-Resistant Access Program (Passkeys + FIDO2)</h3>
+          <h3 class="text-xl font-semibold text-teal-300 mb-3">Phishing-Resistant Access Program</h3>
           <p class="text-gray-300 mb-4">
             Organization-wide rollout of passkeys & hardware security keys with SSO. 
             Reduced account takeover risk, simplified login UX, and enforced step-up auth for privileged actions.
           </p>
-          <div class="flex items-center justify-between text-sm">
-            <span class="text-gray-400">Client: Multi-site Retailer</span>
-            <span class="text-teal-400">✓ Completed</span>
+          <div class="space-y-2 mb-4">
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-store mr-2 text-teal-400"></i>
+              <span>Client: Multi-site Retailer</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-fingerprint mr-2 text-teal-400"></i>
+              <span>Tech: Passkeys + FIDO2</span>
+            </div>
+            <div class="flex items-center text-sm text-gray-400">
+              <i class="fas fa-shield-check mr-2 text-teal-400"></i>
+              <span>Scope: Authentication Security</span>
+            </div>
           </div>
         </div>
       </div>
