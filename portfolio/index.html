@@ -190,6 +190,16 @@
       background: linear-gradient(135deg, rgba(179,0,255,0.25), rgba(255,0,102,0.15), rgba(0,212,255,0.15));
       border: 1px solid rgba(179,0,255,0.4);
     }
+
+    /* FIX: prevent CloudWarden hero from being cut off on mobile */
+    .cloudwarden-hero { overflow: visible; }
+
+    /* Ensure terminal text wraps instead of causing horizontal overflow */
+    .cloudwarden-hero .terminal-content {
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
     
     .terminal-window {
       background: #1f1f1f;
@@ -750,7 +760,7 @@
         </div>
 
         <div class="card rounded-xl p-6 fade-in">
-          <div class="w-12 h-12 bg-gradient-to-br from-sky-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+          <div class="W-12 h-12 bg-gradient-to-br from-sky-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
             <i class="fas fa-satellite-dish text-xl text-white"></i>
           </div>
           <h3 class="text-xl font-semibold text-sky-300 mb-3">Wireless Security Assessment</h3>
