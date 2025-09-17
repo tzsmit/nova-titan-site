@@ -930,7 +930,8 @@
           <h4 class="text-cyan-300 font-semibold mb-4">Quick Contact</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="tel:+18063700624" class="text-gray-300 hover:text-cyan-300 transition">(806) 370-0624</a></li>
-            <li><a href="/cdn-cgi/l/email-protection#d1b8bfb7be91bfbea7b0a5b8a5b0bfffbfb4a5" class="text-gray-300 hover:text-cyan-300 transition"><span class="__cf_email__" data-cfemail="f49d9a929bb49a9b8295809d80959ada9a9180">[email&#160;protected]</span></a></li>
+            <!-- FIXED: email displays and links correctly -->
+            <li><a href="mailto:info@novatitan.net" class="text-gray-300 hover:text-cyan-300 transition">info@novatitan.net</a></li>
             <li><a href="/book-now/" class="text-gray-300 hover:text-cyan-300 transition">Schedule Online</a></li>
             <li><span class="text-gray-400">Mon-Fri 8AM-6PM CST</span></li>
             <li><span class="text-orange-300">24/7 Emergency Support</span></li>
@@ -987,7 +988,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
     // Particle.js Configuration
     particlesJS('particles-js',{
       particles:{ 
@@ -1172,4 +1174,11 @@
       });
     }, { threshold: 0.1 });
 
-    observeElements.forEach(el => ob
+    observeElements.forEach(el => observer.observe(el));
+
+    // Console branding
+    console.log('%c📞 Nova Titan Contact', 'color:#00d4ff;font-size:16px;font-weight:bold;');
+    console.log('%cSame-day response • West Texas & Remote', 'color:#00ff88;font-size:12px;');
+  </script>
+</body>
+</html>
