@@ -296,6 +296,10 @@
     .text-gray-300 {
       color: #d1d5db !important;
     }
+  /* Keep the calendar tidy within your card */
+  .tidycal-embed { width: 100%; display: block; }
+  /* optional: ensure a consistent area while it loads */
+  .tidycal-embed { min-height: 720px; }
   </style>
 
   <script type="application/ld+json">
@@ -532,6 +536,18 @@
     </div>
   </section>
 
+  <!-- SCHEDULER (TidyCal) -->
+  <section class="content py-6">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="card rounded-xl p-8">
+        <h2 class="text-3xl font-bold text-cyan-300 glow mb-6 text-center">Book on My Calendar</h2>
+        <p class="text-gray-300 mb-6 text-center">Instant booking with confirmations & calendar invites.</p>
+        <div class="tidycal-embed" data-path="traivonesmith"></div>
+        <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
+      </div>
+    </div>
+  </section>
+
   <!-- BOOKING FORM -->
   <section class="content py-12">
     <div class="max-w-4xl mx-auto px-6">
@@ -572,6 +588,16 @@
               <i class="fas fa-mouse-pointer text-3xl text-cyan-400 mb-4"></i>
               <p class="text-lg text-white">Select a service above to continue</p>
             </div>
+          </div>
+
+          <!-- Consent + Honeypot + Source -->
+          <div class="mb-6">
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="consent" required class="mr-2">
+              <span class="text-sm text-gray-300">I agree to the <a href="/privacy/" class="text-cyan-300 underline">Privacy Policy</a>.</span>
+            </label>
+            <input type="text" id="company" name="company" style="display:none"> <!-- honeypot -->
+            <input type="hidden" id="source" name="source" value="book-now-page">
           </div>
           
           <button type="submit" class="btn-grad text-gray-900 font-semibold py-4 px-8 rounded-lg text-lg w-full">
@@ -790,12 +816,19 @@
       `;
     }
 
-    // Form Submission
-    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    // Form Submission (Formspree + consent + honeypot + source)
+    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       
       if (!selectedServiceType) {
         alert('Please select a service first.');
+        return;
+      }
+
+      // Honeypot & consent checks
+      if (document.getElementById('company').value) return; // bot
+      if (!document.getElementById('consent').checked) {
+        alert('Please agree to the Privacy Policy.');
         return;
       }
       
@@ -806,11 +839,41 @@
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
         location: document.getElementById('location').value,
-        details: document.getElementById('projectDetails').value
+        details: document.getElementById('projectDetails').value,
+        source: document.getElementById('source').value || "book-now-page",
+        _subject: "New booking request (novatitan.net)",
+        _to: "traivonesmith@novatitan.net"
       };
-      
-      console.log('Booking submitted:', formData);
-      alert('Thank you! Your consultation request has been submitted. We\'ll contact you within 24 hours.');
+
+      try {
+        const res = await fetch("https://formspree.io/f/xldpbapp", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        if (!res.ok) throw new Error('Network or endpoint error');
+
+        alert('Thanks! We received your request and will reach out shortly.');
+        document.getElementById('bookingForm').reset();
+        document.getElementById('selectedService').innerHTML = `
+          <div class="text-center">
+            <i class="fas fa-mouse-pointer text-3xl text-cyan-400 mb-4"></i>
+            <p class="text-lg text-white">Select a service above to continue</p>
+          </div>`;
+        selectedServiceType = null; 
+        selectedServicePrice = 0;
+
+        // === Enhancement: scroll user to the calendar (3 lines) ===
+        const cal = document.querySelector('.tidycal-embed');
+        if (cal) {
+          cal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          cal.style.outline = '2px solid #00d4ff';
+          setTimeout(() => cal.style.outline = 'none', 1500);
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Sorry—could not send just now. Please call (806) 370-0624 or email info@novatitan.net.');
+      }
     });
 
     // GSAP Animations
