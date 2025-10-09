@@ -70,7 +70,7 @@ class NovaCheckout {
       const customerName = this.getCustomerName();
       
       // Create checkout session
-      const response = await fetch('https://your-server.vercel.app/create-checkout-session', {
+      const response = await fetch('nova-titan-api.vercel.app', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
