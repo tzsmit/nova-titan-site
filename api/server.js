@@ -6,7 +6,7 @@ const app = express();
 // Load environment variables
 require('dotenv').config();
 
-// Updated CORS configuration to handle the issues
+// Updated CORS configuration
 app.use(cors({
   origin: [
     'https://novatitan.net',
@@ -142,13 +142,14 @@ app.post('/create-checkout-session', async (req, res) => {
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
+      // Removed customer_email to make it optional
       line_items: [{
         price_data: {
           currency: 'usd',
           product_data: {
             name: service.name,
             description: service.description,
-            images: ['https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2']
+            images: ['https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2'] // Fixed logo
           },
           unit_amount: service.price,
         },
