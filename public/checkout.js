@@ -30,6 +30,14 @@ class NovaCheckout {
         return;
       }
       
+      // Check if parent already has a pay button
+      const parentCard = button.closest('.card, .service-card, article, section, div');
+      if (parentCard && parentCard.querySelector('.pay-now-btn, a[href="#"]:not([href*="book-now"])')) {
+        console.log(`Parent of button ${index} already has pay button, skipping`);
+        this.processedElements.add(button);
+        return;
+      }
+      
       // Create payment button
       const payButton = this.createPayButton(button);
       
@@ -37,6 +45,7 @@ class NovaCheckout {
       if (button.parentNode) {
         button.parentNode.insertBefore(payButton, button.nextSibling);
         this.processedElements.add(button); // Mark as processed
+        if (parentCard) this.processedElements.add(parentCard); // Mark parent as processed
         console.log('Added pay button after book button');
       }
     });
@@ -77,8 +86,8 @@ class NovaCheckout {
       return;
     }
 
-    // Check if button already exists
-    if (card.querySelector('.pay-now-btn')) {
+    // Check if button already exists (ANY payment button)
+    if (card.querySelector('.pay-now-btn, a[href="#"]:not([href*="book-now"])')) {
       console.log(`Pay button already exists in ${cardSelector}`);
       return;
     }
@@ -93,6 +102,11 @@ class NovaCheckout {
     if (!existingButton) {
       console.log(`No existing button found in ${cardSelector}`);
       return;
+    }
+
+    // Mark the existing book button as processed to prevent Method 1 from processing it
+    if (existingButton.href && existingButton.href.includes('book-now')) {
+      this.processedElements.add(existingButton);
     }
 
     const payButton = document.createElement('button');
@@ -119,8 +133,11 @@ class NovaCheckout {
     console.log('Found service cards:', serviceCards.length);
 
     serviceCards.forEach((card, index) => {
-      // Skip if already has pay button
-      if (card.querySelector('.pay-now-btn')) return;
+      // Skip if already has ANY pay button
+      if (card.querySelector('.pay-now-btn, a[href="#"]:not([href*="book-now"])')) {
+        console.log(`Card ${index} already has pay button, skipping`);
+        return;
+      }
 
       // Check if this card was already processed
       if (this.processedElements.has(card)) {
@@ -129,7 +146,7 @@ class NovaCheckout {
       }
 
       const bookButton = card.querySelector('a[href*="book-now"]');
-      if (bookButton && !card.querySelector('.pay-now-btn')) {
+      if (bookButton) {
         // Check if the book button was already processed
         if (this.processedElements.has(bookButton)) {
           console.log(`Book button in card ${index} already processed, skipping`);
