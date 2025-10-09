@@ -1,6 +1,6 @@
 class NovaCheckout {
   constructor() {
-    this.stripe = Stripe('pk_test_51RPkR6P6s5s5Dxw3scSmWcCwZvXUnY3VZQNrTsGQacdyZBmnumdvEZA00AITwKZ7z0oUNMVQ7xiAF5vhqeI40cCP002HXwZh4r');
+    this.stripe = Stripe('pk_live_51RPkR6P6s5s5Dxw3R3akhAJ3ovdGWucciIlwZLh21J0GOzVQrupRp0ShljOdCDKvlgGl8PXPTJRA5UMGvDKjXEO100yHvs5E9S');
     this.processedElements = new Set(); // Track processed elements to prevent duplicates
     this.init();
   }
