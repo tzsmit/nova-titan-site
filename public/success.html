@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful - Nova Titan Systems</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen">
+  <div class="container mx-auto px-6 py-16 text-center">
+    <div class="max-w-md mx-auto bg-gray-800 rounded-lg p-8 border border-green-400">
+      <div class="text-6xl text-green-400 mb-6">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h1 class="text-3xl font-bold text-green-400 mb-4">Payment Successful!</h1>
+      <p class="text-gray-300 mb-6">
+        Thank you for choosing Nova Titan Systems. Your payment has been processed successfully.
+      </p>
+      <div id="order-details" class="bg-gray-700 rounded p-4 mb-6 text-left"></div>
+      <div class="space-y-4">
+        <a href="/" class="block btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg">
+          Return to Home
+        </a>
+        <p class="text-sm text-gray-400">
+          We'll contact you within 24 hours to schedule your service.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get session ID and display order details
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+    
+    if (sessionId) {
+      document.getElementById('order-details').innerHTML = `
+        <p class="text-sm text-gray-300">Order confirmation: <span class="font-mono text-green-400">${sessionId.substring(0, 20)}...</span></p>
+        <p class="text-sm text-gray-300 mt-2">A confirmation email has been sent to your email address.</p>
+      `;
+    }
+  </script>
+</body>
+</html>
