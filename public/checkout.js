@@ -1,230 +1,275 @@
-// Stripe Checkout Integration for Nova Titan Systems
-// Fixed version to prevent duplicate buttons
+class NovaCheckout {
+  constructor() {
+    this.stripe = Stripe('pk_test_51RPkR6P6s5s5Dxw3scSmWcCwZvXUnY3VZQNrTsGQacdyZBmnumdvEZA00AITwKZ7z0oUNMVQ7xiAF5vhqeI40cCP002HXwZh4r');
+    this.processedElements = new Set(); // Track processed elements to prevent duplicates
+    this.init();
+  }
 
-const API_BASE_URL = 'https://nova-titan-api.vercel.app';
-
-// Service configurations with prices and Stripe price IDs
-const serviceConfig = {
-    'home-wifi-audit': {
-        name: 'Home Wi-Fi Security Audit',
-        price: 149,
-        priceId: 'price_home_wifi_audit'
-    },
-    'business-network': {
-        name: 'Business Network Security Setup',
-        price: 499,
-        priceId: 'price_business_network'
-    },
-    'cloud-security': {
-        name: 'Cloud Security Assessment',
-        price: 399,
-        priceId: 'price_cloud_security'
-    },
-    'penetration-testing': {
-        name: 'Penetration Testing',
-        price: 799,
-        priceId: 'price_penetration_testing'
-    },
-    'security-training': {
-        name: 'Cybersecurity Training Workshop',
-        price: 299,
-        priceId: 'price_security_training'
-    },
-    'incident-response': {
-        name: '24/7 Incident Response',
-        price: 1299,
-        priceId: 'price_incident_response'
+  init() {
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => this.addPaymentButtons());
+    } else {
+      this.addPaymentButtons();
     }
-};
+  }
 
-// Track processed elements to prevent duplicates
-const processedElements = new Set();
-
-function createPaymentButton(serviceKey, config, targetElement) {
-    // Create unique identifier for this element
-    const elementId = targetElement.id || targetElement.className || Math.random().toString(36);
-    const uniqueKey = `${serviceKey}-${elementId}`;
+  addPaymentButtons() {
+    console.log('Adding payment buttons...');
     
-    // Skip if already processed
-    if (processedElements.has(uniqueKey)) {
-        console.log(`Skipping duplicate button for ${serviceKey} on element:`, targetElement);
+    // Method 1: Look for existing "Book Now" buttons
+    const bookButtons = document.querySelectorAll('a[href*="book-now"]');
+    console.log('Found book buttons:', bookButtons.length);
+    
+    bookButtons.forEach((button, index) => {
+      console.log(`Processing button ${index}:`, button);
+      
+      // Check if this button was already processed
+      if (this.processedElements.has(button)) {
+        console.log(`Button ${index} already processed, skipping`);
         return;
+      }
+      
+      // Create payment button
+      const payButton = this.createPayButton(button);
+      
+      // Insert after the book button
+      if (button.parentNode) {
+        button.parentNode.insertBefore(payButton, button.nextSibling);
+        this.processedElements.add(button); // Mark as processed
+        console.log('Added pay button after book button');
+      }
+    });
+
+    // Method 2: Add to specific service cards by ID
+    this.addServiceButton('#home-audit', 'home-wifi-audit', '$149');
+    this.addServiceButton('#smb-network', 'business-network-setup', '$499');
+    this.addServiceButton('#cloud-security', 'cloud-security-checkup', '$399');
+    this.addServiceButton('#installations', 'installations', '$99');
+    this.addServiceButton('#remote-support', 'remote-support', '$75');
+    this.addServiceButton('#web-hardening', 'website-security', '$199');
+    this.addServiceButton('#training', 'security-training', '$249');
+
+    // Method 3: Add to cards with specific class names
+    this.addToCards();
+  }
+
+  createPayButton(originalButton) {
+    const payButton = document.createElement('a');
+    payButton.href = '#';
+    payButton.className = 'bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg inline-flex items-center transition-all mt-2';
+    payButton.innerHTML = '<i class="fas fa-credit-card mr-2"></i>Pay Now';
+    
+    payButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      const serviceId = this.getServiceFromButton(originalButton);
+      console.log('Pay button clicked, service:', serviceId);
+      this.handlePayment(serviceId);
+    });
+
+    return payButton;
+  }
+
+  addServiceButton(cardSelector, serviceId, price) {
+    const card = document.querySelector(cardSelector);
+    if (!card) {
+      console.log(`Card not found: ${cardSelector}`);
+      return;
     }
-    
-    // Mark as processed
-    processedElements.add(uniqueKey);
-    
-    console.log(`Creating payment button for ${serviceKey}:`, config);
-    
-    // Create the payment button
+
+    // Check if button already exists
+    if (card.querySelector('.pay-now-btn')) {
+      console.log(`Pay button already exists in ${cardSelector}`);
+      return;
+    }
+
+    // Check if this card was already processed
+    if (this.processedElements.has(card)) {
+      console.log(`Card ${cardSelector} already processed, skipping`);
+      return;
+    }
+
+    const existingButton = card.querySelector('.btn-grad, a[href*="book-now"]');
+    if (!existingButton) {
+      console.log(`No existing button found in ${cardSelector}`);
+      return;
+    }
+
     const payButton = document.createElement('button');
-    payButton.className = 'stripe-pay-button';
-    payButton.innerHTML = `Pay Now - $${config.price}`;
-    payButton.style.cssText = `
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 6px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        margin: 10px 0;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        width: 100%;
-        max-width: 200px;
-    `;
+    payButton.className = 'pay-now-btn bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg inline-flex items-center justify-center transition w-full mt-3';
+    payButton.innerHTML = `<i class="fas fa-credit-card mr-2"></i>Pay Now - ${price}`;
     
-    // Add hover effects
-    payButton.addEventListener('mouseenter', () => {
-        payButton.style.transform = 'translateY(-2px)';
-        payButton.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.4)';
+    payButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('Service button clicked:', serviceId);
+      this.handlePayment(serviceId);
     });
-    
-    payButton.addEventListener('mouseleave', () => {
-        payButton.style.transform = 'translateY(0)';
-        payButton.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.3)';
-    });
-    
-    // Add click handler
-    payButton.addEventListener('click', async (e) => {
-        e.preventDefault();
-        console.log(`Payment button clicked for ${serviceKey}`);
-        
-        // Disable button and show loading
-        payButton.disabled = true;
-        payButton.innerHTML = 'Processing...';
-        
-        try {
-            const response = await fetch(`${API_BASE_URL}/api/create-checkout-session`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    priceId: config.priceId,
-                    serviceName: config.name,
-                    amount: config.price * 100 // Convert to cents
-                })
-            });
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const session = await response.json();
-            console.log('Checkout session created:', session);
-            
-            // Redirect to Stripe Checkout
-            if (session.url) {
-                window.location.href = session.url;
-            } else {
-                throw new Error('No checkout URL received');
-            }
-            
-        } catch (error) {
-            console.error('Payment error:', error);
-            alert('Payment setup failed. Please try again or contact support.');
-            
-            // Re-enable button
-            payButton.disabled = false;
-            payButton.innerHTML = `Pay Now - $${config.price}`;
-        }
-    });
-    
-    // Insert the button after the target element
-    targetElement.insertAdjacentElement('afterend', payButton);
-    console.log(`Payment button inserted for ${serviceKey}`);
-}
 
-function initializeStripeButtons() {
-    console.log('Initializing Stripe payment buttons...');
-    console.log('Service configurations:', serviceConfig);
-    
-    // Clear processed elements set on each initialization
-    processedElements.clear();
-    
-    // Method 1: Look for service cards with data attributes or IDs
-    Object.keys(serviceConfig).forEach(serviceKey => {
-        const config = serviceConfig[serviceKey];
-        
-        // Try to find elements by ID first
-        let targetElements = document.querySelectorAll(`#${serviceKey}, [data-service="${serviceKey}"]`);
-        
-        if (targetElements.length === 0) {
-            // Fallback: look for elements containing service name in text
-            const allElements = document.querySelectorAll('div, section, article');
-            targetElements = Array.from(allElements).filter(el => {
-                const text = el.textContent.toLowerCase();
-                const serviceName = config.name.toLowerCase();
-                return text.includes(serviceName) || text.includes(serviceKey.replace('-', ' '));
-            });
-        }
-        
-        console.log(`Found ${targetElements.length} elements for ${serviceKey}:`, targetElements);
-        
-        targetElements.forEach(element => {
-            createPaymentButton(serviceKey, config, element);
-        });
-    });
-    
-    // Method 2: Generic fallback for any remaining "Book Now" buttons without payment buttons
-    const bookNowButtons = document.querySelectorAll('button, a, .btn');
-    console.log(`Found ${bookNowButtons.length} potential booking buttons`);
-    
-    bookNowButtons.forEach((button, index) => {
-        const buttonText = button.textContent.toLowerCase().trim();
-        
-        // Only process "Book Now" or similar buttons that don't already have payment buttons nearby
-        if (buttonText.includes('book') || buttonText.includes('get started') || buttonText.includes('order')) {
-            
-            // Check if there's already a payment button nearby
-            const hasPaymentButton = button.parentElement?.querySelector('.stripe-pay-button') || 
-                                   button.nextElementSibling?.classList.contains('stripe-pay-button');
-            
-            if (!hasPaymentButton) {
-                // Try to determine which service this button belongs to
-                let matchedService = null;
-                const parentText = button.closest('div, section, article')?.textContent.toLowerCase() || '';
-                
-                for (const [serviceKey, config] of Object.entries(serviceConfig)) {
-                    if (parentText.includes(config.name.toLowerCase()) || 
-                        parentText.includes(serviceKey.replace('-', ' '))) {
-                        matchedService = { key: serviceKey, config };
-                        break;
-                    }
-                }
-                
-                // If no specific service matched, use a default or skip
-                if (matchedService) {
-                    console.log(`Generic button ${index} matched to ${matchedService.key}`);
-                    createPaymentButton(matchedService.key, matchedService.config, button);
-                } else {
-                    console.log(`Generic button ${index} could not be matched to a service, skipping`);
-                }
-            }
-        }
-    });
-    
-    console.log('Stripe button initialization complete');
-    console.log(`Total processed elements: ${processedElements.size}`);
-}
-
-// Initialize when DOM is loaded
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeStripeButtons);
-} else {
-    initializeStripeButtons();
-}
-
-// Also initialize on window load as backup
-window.addEventListener('load', () => {
-    // Only run if no buttons were created yet
-    if (processedElements.size === 0) {
-        console.log('Backup initialization running...');
-        initializeStripeButtons();
+    // Insert after existing button
+    if (existingButton.parentNode) {
+      existingButton.parentNode.insertBefore(payButton, existingButton.nextSibling);
+      this.processedElements.add(card); // Mark card as processed
+      console.log(`Added pay button to ${cardSelector}`);
     }
-});
+  }
 
-console.log('Stripe checkout script loaded successfully');
+  addToCards() {
+    // Look for service cards
+    const serviceCards = document.querySelectorAll('.card, .service-card, article');
+    console.log('Found service cards:', serviceCards.length);
+
+    serviceCards.forEach((card, index) => {
+      // Skip if already has pay button
+      if (card.querySelector('.pay-now-btn')) return;
+
+      // Check if this card was already processed
+      if (this.processedElements.has(card)) {
+        console.log(`Card ${index} already processed, skipping`);
+        return;
+      }
+
+      const bookButton = card.querySelector('a[href*="book-now"]');
+      if (bookButton && !card.querySelector('.pay-now-btn')) {
+        // Check if the book button was already processed
+        if (this.processedElements.has(bookButton)) {
+          console.log(`Book button in card ${index} already processed, skipping`);
+          return;
+        }
+
+        const payButton = this.createPayButton(bookButton);
+        payButton.classList.add('mt-3', 'w-full', 'justify-center');
+        
+        if (bookButton.parentNode) {
+          bookButton.parentNode.insertBefore(payButton, bookButton.nextSibling);
+          this.processedElements.add(card); // Mark card as processed
+          this.processedElements.add(bookButton); // Mark button as processed
+          console.log(`Added pay button to card ${index}`);
+        }
+      }
+    });
+  }
+
+  getServiceFromButton(button) {
+    // Try to find service from card context
+    const serviceCard = button.closest('.card, .service-card, article, section');
+    if (!serviceCard) return 'home-wifi-audit';
+
+    // Check for ID first
+    const cardId = serviceCard.id;
+    if (cardId) {
+      console.log('Found card ID:', cardId);
+      switch(cardId) {
+        case 'home-audit': return 'home-wifi-audit';
+        case 'smb-network': return 'business-network-setup';
+        case 'cloud-security': return 'cloud-security-checkup';
+        case 'installations': return 'installations';
+        case 'remote-support': return 'remote-support';
+        case 'web-hardening': return 'website-security';
+        case 'training': return 'security-training';
+      }
+    }
+
+    // Fallback to text content matching
+    const serviceTitle = serviceCard.querySelector('h3, h2, h1')?.textContent?.toLowerCase() || '';
+    console.log('Service title:', serviceTitle);
+    
+    if (serviceTitle.includes('wifi') || serviceTitle.includes('home')) {
+      return 'home-wifi-audit';
+    } else if (serviceTitle.includes('business network')) {
+      return 'business-network-setup';
+    } else if (serviceTitle.includes('cloud')) {
+      return 'cloud-security-checkup';
+    } else if (serviceTitle.includes('installation')) {
+      return 'installations';
+    } else if (serviceTitle.includes('remote')) {
+      return 'remote-support';
+    } else if (serviceTitle.includes('website')) {
+      return 'website-security';
+    } else if (serviceTitle.includes('training')) {
+      return 'security-training';
+    } else if (serviceTitle.includes('commercial')) {
+      return 'commercial-setup';
+    } else if (serviceTitle.includes('implementation')) {
+      return 'tech-implementation';
+    }
+    
+    return 'home-wifi-audit'; // Default
+  }
+
+  async handlePayment(serviceId) {
+    console.log('Handling payment for service:', serviceId);
+    this.showLoadingModal();
+    
+    try {
+      const customerEmail = this.getCustomerEmail();
+      const customerName = this.getCustomerName();
+      
+      console.log('Making API request to create checkout session...');
+      const response = await fetch('https://nova-titan-api.vercel.app/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          serviceId,
+          customerEmail,
+          customerName
+        })
+      });
+      
+      console.log('API response status:', response.status);
+      const session = await response.json();
+      console.log('API response:', session);
+      
+      if (!response.ok) {
+        throw new Error(session.error || `HTTP ${response.status}`);
+      }
+      
+      console.log('Redirecting to Stripe checkout...');
+      window.location.href = session.url;
+      
+    } catch (error) {
+      console.error('Payment Error:', error);
+      this.showError(`Payment failed: ${error.message}`);
+    } finally {
+      this.hideLoadingModal();
+    }
+  }
+
+  getCustomerEmail() {
+    return localStorage.getItem('customer_email') || '';
+  }
+
+  getCustomerName() {
+    return localStorage.getItem('customer_name') || '';
+  }
+
+  showLoadingModal() {
+    // Remove existing modal
+    this.hideLoadingModal();
+    
+    const modal = document.createElement('div');
+    modal.id = 'loading-modal';
+    modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
+    modal.innerHTML = `
+      <div class="bg-gray-800 p-8 rounded-lg text-center">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400 mx-auto mb-4"></div>
+        <p class="text-white">Preparing secure payment...</p>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  hideLoadingModal() {
+    const modal = document.getElementById('loading-modal');
+    if (modal) modal.remove();
+  }
+
+  showError(message) {
+    alert(`Error: ${message}\n\nPlease try again or contact us at (806) 370-0624`);
+  }
+}
+
+// Initialize immediately
+console.log('Initializing NovaCheckout...');
+new NovaCheckout();
