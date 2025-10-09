@@ -1,1 +1,16 @@
+# Environment variables
+.env
 api/.env
+.env.local
+.env.development
+.env.production
+
+# Node modules
+node_modules/
+api/node_modules/
+
+# Vercel
+.vercel/
+
+# Logs
+*.log
