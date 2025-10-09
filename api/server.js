@@ -148,7 +148,7 @@ app.post('/create-checkout-session', async (req, res) => {
           product_data: {
             name: service.name,
             description: service.description,
-            images: ['https://novatitan.net/favicon-32x32.png']
+            images: ['https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2']
           },
           unit_amount: service.price,
         },

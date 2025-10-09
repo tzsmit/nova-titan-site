@@ -9,48 +9,33 @@ class NovaCheckout {
   }
 
   addPaymentButtons() {
-    const bookButtons = document.querySelectorAll('a[href*="book-now"]');
-    
-    bookButtons.forEach(button => {
-      const payButton = button.cloneNode(true);
-      payButton.innerHTML = '<i class="fas fa-credit-card mr-2"></i>Pay Now';
-      payButton.classList.add('pay-now-btn');
-      payButton.href = '#';
-      
-      button.parentNode.insertBefore(payButton, button.nextSibling);
-      
-      payButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.handlePayment(this.getServiceFromButton(button));
-      });
-    });
+    // Manual button addition for specific services
+    this.addServiceButton('#home-audit', 'home-wifi-audit', '$149');
+    this.addServiceButton('#smb-network', 'business-network-setup', '$499');
+    this.addServiceButton('#cloud-security', 'cloud-security-checkup', '$399');
+    this.addServiceButton('#installations', 'installations', '$99');
+    this.addServiceButton('#remote-support', 'remote-support', '$75');
+    this.addServiceButton('#web-hardening', 'website-security', '$199');
+    this.addServiceButton('#training', 'security-training', '$249');
   }
 
-  getServiceFromButton(button) {
-    const serviceCard = button.closest('.card, article, section');
-    const serviceTitle = serviceCard?.querySelector('h3, h2')?.textContent?.toLowerCase() || '';
+  addServiceButton(cardSelector, serviceId, price) {
+    const card = document.querySelector(cardSelector);
+    if (!card) return;
+
+    const existingButton = card.querySelector('.btn-grad');
+    if (!existingButton) return;
+
+    const payButton = document.createElement('button');
+    payButton.className = 'bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg inline-flex items-center justify-center transition w-full';
+    payButton.innerHTML = `<i class="fas fa-credit-card mr-2"></i>Pay Now - ${price}`;
     
-    if (serviceTitle.includes('wifi') || serviceTitle.includes('home')) {
-      return 'home-wifi-audit';
-    } else if (serviceTitle.includes('business network')) {
-      return 'business-network-setup';
-    } else if (serviceTitle.includes('cloud')) {
-      return 'cloud-security-checkup';
-    } else if (serviceTitle.includes('installation')) {
-      return 'installations';
-    } else if (serviceTitle.includes('remote')) {
-      return 'remote-support';
-    } else if (serviceTitle.includes('website')) {
-      return 'website-security';
-    } else if (serviceTitle.includes('training')) {
-      return 'security-training';
-    } else if (serviceTitle.includes('commercial')) {
-      return 'commercial-setup';
-    } else if (serviceTitle.includes('implementation')) {
-      return 'tech-implementation';
-    }
-    
-    return 'home-wifi-audit';
+    payButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.handlePayment(serviceId);
+    });
+
+    existingButton.parentNode.insertBefore(payButton, existingButton.nextSibling);
   }
 
   async handlePayment(serviceId) {
