@@ -3,10 +3,35 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const cors = require('cors');
 const app = express();
 
+// Load environment variables
+require('dotenv').config();
+
 app.use(cors({
-  origin: ['https://novatitan.net', 'https://tzsmit.github.io']
+  origin: ['https://novatitan.net', 'https://tzsmit.github.io', 'http://localhost:3000']
 }));
 app.use(express.json());
+
+// Add a root route to test if server is working
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Nova Titan Payment API is running!',
+    status: 'healthy',
+    endpoints: {
+      'POST /create-checkout-session': 'Create Stripe checkout session',
+      'POST /webhook': 'Handle Stripe webhooks'
+    },
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ 
+    status: 'ok', 
+    stripe_configured: !!process.env.STRIPE_SECRET_KEY,
+    timestamp: new Date().toISOString()
+  });
+});
 
 // Service configurations
 const services = {
@@ -57,14 +82,40 @@ const services = {
   }
 };
 
+// List all available services
+app.get('/services', (req, res) => {
+  res.json({
+    services: Object.keys(services).map(key => ({
+      id: key,
+      ...services[key],
+      price_display: `$${(services[key].price / 100).toFixed(2)}`
+    }))
+  });
+});
+
 // Create checkout session
 app.post('/create-checkout-session', async (req, res) => {
   try {
+    console.log('Creating checkout session for:', req.body);
+    
     const { serviceId, customerEmail, customerName } = req.body;
+    
+    // Validate required fields
+    if (!serviceId) {
+      return res.status(400).json({ error: 'Service ID is required' });
+    }
     
     const service = services[serviceId];
     if (!service) {
-      return res.status(400).json({ error: 'Invalid service selected' });
+      return res.status(400).json({ 
+        error: 'Invalid service selected',
+        available_services: Object.keys(services)
+      });
+    }
+
+    // Check if Stripe is configured
+    if (!process.env.STRIPE_SECRET_KEY) {
+      return res.status(500).json({ error: 'Stripe not configured' });
     }
 
     const session = await stripe.checkout.sessions.create({
@@ -83,8 +134,8 @@ app.post('/create-checkout-session', async (req, res) => {
         quantity: 1,
       }],
       mode: 'payment',
-      success_url: `https://novatitan.net/success.html?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `https://novatitan.net/cancel.html`,
+      success_url: `https://novatitan.net/public/success.html?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `https://novatitan.net/public/cancel.html`,
       metadata: {
         service_id: serviceId,
         customer_name: customerName || '',
@@ -96,10 +147,15 @@ app.post('/create-checkout-session', async (req, res) => {
       }
     });
 
-    res.json({ url: session.url });
+    console.log('Checkout session created:', session.id);
+    res.json({ url: session.url, session_id: session.id });
+
   } catch (error) {
     console.error('Error creating checkout session:', error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ 
+      error: error.message,
+      type: error.type || 'api_error'
+    });
   }
 });
 
@@ -115,10 +171,14 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
+  console.log('Received webhook event:', event.type);
+
   switch (event.type) {
     case 'checkout.session.completed':
       const session = event.data.object;
       console.log('Payment succeeded for:', session.metadata.service_id);
+      console.log('Customer email:', session.customer_details?.email);
+      console.log('Amount paid:', session.amount_total);
       
       // Here you can:
       // - Send confirmation email to customer
@@ -134,7 +194,27 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
   res.json({received: true});
 });
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error('Server error:', err);
+  res.status(500).json({ 
+    error: 'Internal server error',
+    message: process.env.NODE_ENV === 'development' ? err.message : 'Something went wrong'
+  });
+});
+
+// Handle 404s
+app.use('*', (req, res) => {
+  res.status(404).json({
+    error: 'Not found',
+    path: req.originalUrl,
+    available_endpoints: ['/', '/health', '/services', '/create-checkout-session', '/webhook']
+  });
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Nova Titan API server running on port ${port}`);
+  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`Stripe configured: ${!!process.env.STRIPE_SECRET_KEY}`);
 });
