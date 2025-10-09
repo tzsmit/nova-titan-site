@@ -6,9 +6,25 @@ const app = express();
 // Load environment variables
 require('dotenv').config();
 
+// Updated CORS configuration to handle the issues
 app.use(cors({
-  origin: ['https://novatitan.net', 'https://tzsmit.github.io', 'http://localhost:3000']
+  origin: [
+    'https://novatitan.net',
+    'https://www.novatitan.net', 
+    'https://tzsmit.github.io',
+    'https://nova-titan-site.pages.dev',
+    'http://localhost:3000',
+    'http://127.0.0.1:5500',
+    'http://localhost:5500'
+  ],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
+
+// Handle preflight requests
+app.options('*', cors());
+
 app.use(express.json());
 
 // Add a root route to test if server is working
@@ -29,6 +45,11 @@ app.get('/health', (req, res) => {
   res.json({ 
     status: 'ok', 
     stripe_configured: !!process.env.STRIPE_SECRET_KEY,
+    cors_origins: [
+      'https://novatitan.net',
+      'https://www.novatitan.net', 
+      'https://tzsmit.github.io'
+    ],
     timestamp: new Date().toISOString()
   });
 });
@@ -96,6 +117,7 @@ app.get('/services', (req, res) => {
 // Create checkout session
 app.post('/create-checkout-session', async (req, res) => {
   try {
+    console.log('Request origin:', req.headers.origin);
     console.log('Creating checkout session for:', req.body);
     
     const { serviceId, customerEmail, customerName } = req.body;
@@ -147,14 +169,15 @@ app.post('/create-checkout-session', async (req, res) => {
       }
     });
 
-    console.log('Checkout session created:', session.id);
+    console.log('Checkout session created successfully:', session.id);
     res.json({ url: session.url, session_id: session.id });
 
   } catch (error) {
     console.error('Error creating checkout session:', error);
     res.status(500).json({ 
       error: error.message,
-      type: error.type || 'api_error'
+      type: error.type || 'api_error',
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 });
@@ -208,6 +231,7 @@ app.use('*', (req, res) => {
   res.status(404).json({
     error: 'Not found',
     path: req.originalUrl,
+    method: req.method,
     available_endpoints: ['/', '/health', '/services', '/create-checkout-session', '/webhook']
   });
 });
@@ -217,4 +241,9 @@ app.listen(port, () => {
   console.log(`Nova Titan API server running on port ${port}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`Stripe configured: ${!!process.env.STRIPE_SECRET_KEY}`);
+  console.log('CORS enabled for origins:', [
+    'https://novatitan.net',
+    'https://www.novatitan.net', 
+    'https://tzsmit.github.io'
+  ]);
 });

@@ -1,30 +1,25 @@
 // Stripe Checkout Integration for Nova Titan
 class NovaCheckout {
   constructor() {
-    this.stripe = Stripe('pk_test_51RPkR6P6s5s5Dxw3scSmWcCwZvXUnY3VZQNrTsGQacdyZBmnumdvEZA00AITwKZ7z0oUNMVQ7xiAF5vhqeI40cCP002HXwZh4r'); // Replace with your key
+    this.stripe = Stripe('pk_test_51RPkR6P6s5s5Dxw3scSmWcCwZvXUnY3VZQNrTsGQacdyZBmnumdvEZA00AITwKZ7z0oUNMVQ7xiAF5vhqeI40cCP002HXwZh4r');
     this.init();
   }
 
   init() {
-    // Add payment buttons to service cards
     this.addPaymentButtons();
   }
 
   addPaymentButtons() {
-    // Find all "Book Now" buttons and add payment functionality
     const bookButtons = document.querySelectorAll('a[href*="book-now"]');
     
     bookButtons.forEach(button => {
-      // Create new payment button
       const payButton = button.cloneNode(true);
       payButton.innerHTML = '<i class="fas fa-credit-card mr-2"></i>Pay Now';
       payButton.classList.add('pay-now-btn');
       payButton.href = '#';
       
-      // Insert payment button next to book button
       button.parentNode.insertBefore(payButton, button.nextSibling);
       
-      // Add event listener
       payButton.addEventListener('click', (e) => {
         e.preventDefault();
         this.handlePayment(this.getServiceFromButton(button));
@@ -33,7 +28,6 @@ class NovaCheckout {
   }
 
   getServiceFromButton(button) {
-    // Determine service based on button context
     const serviceCard = button.closest('.card, article, section');
     const serviceTitle = serviceCard?.querySelector('h3, h2')?.textContent?.toLowerCase() || '';
     
@@ -57,20 +51,18 @@ class NovaCheckout {
       return 'tech-implementation';
     }
     
-    return 'home-wifi-audit'; // Default service
+    return 'home-wifi-audit';
   }
 
   async handlePayment(serviceId) {
-    // Show loading state
     this.showLoadingModal();
     
     try {
-      // Get customer info (optional - can be collected in Stripe Checkout)
       const customerEmail = this.getCustomerEmail();
       const customerName = this.getCustomerName();
       
-      // Create checkout session
-      const response = await fetch('nova-titan-api.vercel.app', {
+      // FIXED: Added https:// and correct endpoint
+      const response = await fetch('https://nova-titan-api.vercel.app/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,6 +76,11 @@ class NovaCheckout {
       
       const session = await response.json();
       
+      // IMPROVED: Better error handling
+      if (!response.ok) {
+        throw new Error(session.error || `HTTP ${response.status}: ${response.statusText}`);
+      }
+      
       if (session.error) {
         throw new Error(session.error);
       }
@@ -92,20 +89,18 @@ class NovaCheckout {
       window.location.href = session.url;
       
     } catch (error) {
-      console.error('Error:', error);
-      this.showError('Payment initialization failed. Please try again or contact us directly.');
+      console.error('Payment Error:', error);
+      this.showError(`Payment initialization failed: ${error.message}. Please try again or contact us directly.`);
     } finally {
       this.hideLoadingModal();
     }
   }
 
   getCustomerEmail() {
-    // Try to get email from contact form or user input
     return localStorage.getItem('customer_email') || '';
   }
 
   getCustomerName() {
-    // Try to get name from contact form or user input  
     return localStorage.getItem('customer_name') || '';
   }
 
@@ -128,11 +123,33 @@ class NovaCheckout {
   }
 
   showError(message) {
-    alert(message); // Replace with better error modal
+    // Improved error display
+    const errorModal = document.createElement('div');
+    errorModal.id = 'error-modal';
+    errorModal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
+    errorModal.innerHTML = `
+      <div class="bg-gray-800 p-8 rounded-lg text-center max-w-md mx-4">
+        <div class="text-6xl text-red-400 mb-4">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h3 class="text-xl font-bold text-red-400 mb-4">Payment Error</h3>
+        <p class="text-white mb-6">${message}</p>
+        <div class="space-y-3">
+          <button onclick="document.getElementById('error-modal').remove()" 
+                  class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition">
+            Try Again
+          </button>
+          <a href="/contact/" 
+             class="block bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-2 rounded-lg transition">
+            Contact Support
+          </a>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(errorModal);
   }
 }
 
-// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new NovaCheckout();
 });
