@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow private internal documents
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://novatitan.net/sitemap.xml

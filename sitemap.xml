@@ -2,37 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://novatitan.net/</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://novatitan.net/about/</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://novatitan.net/services/</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://novatitan.net/blog/</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://novatitan.net/faqs/</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://novatitan.net/contact/</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://novatitan.net/book-now/</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-10-30</lastmod>
     <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://novatitan.net/resources/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://novatitan.net/capability-statement/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://novatitan.net/cybersecurity/basic-security-assessment/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://novatitan.net/cybersecurity/compliance-readiness-review/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://novatitan.net/cybersecurity/security-awareness-training/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <priority>0.85</priority>
   </url>
 </urlset>

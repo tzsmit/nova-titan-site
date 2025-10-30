@@ -14,3 +14,9 @@ api/node_modules/
 
 # Logs
 *.log
+
+# Private internal documents (not for public deployment)
+/private/
+
+# Temp files
+/temp_uploads/
