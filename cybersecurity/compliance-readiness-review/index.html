@@ -28,6 +28,61 @@
   
   <style>
     body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); min-height: 100vh; }
+    
+    /* Navigation */
+    .nav-link { 
+      transition: all .3s ease; 
+      position: relative; 
+      padding: 0.5rem 0;
+    }
+    .nav-link:hover { 
+      color: var(--cy); 
+      transform: scale(1.05); 
+    }
+    .nav-link::after { 
+      content:''; 
+      position:absolute; 
+      bottom:-2px; 
+      left:0; 
+      height:2px; 
+      width:0; 
+      background: linear-gradient(90deg, var(--cy), var(--gr)); 
+      transition:width .3s ease; 
+    }
+    .nav-link:hover::after { width:100%; }
+    
+    .btn-grad { 
+      background: linear-gradient(45deg,var(--cy),var(--gr)); 
+      transition: all .3s ease; 
+      box-shadow: 0 4px 15px rgba(0,212,255,0.3);
+    }
+    .btn-grad:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 25px rgba(0,212,255,.5); 
+    }
+    
+    /* Hamburger */
+    .hamburger { 
+      width: 36px; 
+      height: 28px; 
+      position: relative; 
+      cursor: pointer;
+    }
+    .hamburger span { 
+      position:absolute; 
+      left:0; 
+      right:0; 
+      height:3px; 
+      background: linear-gradient(90deg, var(--cy), var(--gr)); 
+      transition:transform .3s, opacity .3s, top .3s; 
+      border-radius: 2px;
+    }
+    .hamburger span:nth-child(1){ top:4px; } 
+    .hamburger span:nth-child(2){ top:12px; } 
+    .hamburger span:nth-child(3){ top:20px; }
+    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
     .glow { text-shadow: 0 0 20px rgba(0,212,255,.6); }
     .card { border: 1px solid rgba(0,212,255,.25); background: rgba(26,26,46,.85); backdrop-filter: blur(12px); transition: all .3s ease; }
     .card:hover { border-color: rgba(0,212,255,0.6); box-shadow: 0 10px 30px rgba(0,212,255,.2); }
@@ -63,8 +118,17 @@
           <a href="/resources/" class="text-gray-300 hover:text-cyan-400">Resources</a>
           <a href="/book-now/" class="bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-2 px-4 rounded-lg"><i class="fas fa-calendar-check mr-1"></i>Book Now</a>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </nav>
 
   <!-- HERO -->
@@ -76,9 +140,18 @@
         </span>
         <h1 class="text-4xl sm:text-5xl font-bold text-cyan-300 glow mb-6">Compliance Readiness Review</h1>
         <div class="price-badge inline-block mb-6">$2,500</div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto">Comprehensive regulatory compliance gap analysis and remediation roadmap for HIPAA, PCI-DSS, SOX, and NIST frameworks</p>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- FRAMEWORK COVERAGE -->
@@ -88,36 +161,78 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl text-cyan-400 mb-4"><i class="fas fa-hospital"></i></div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <h3 class="text-xl font-bold text-cyan-300 mb-2">HIPAA</h3>
           <p class="text-gray-400 text-sm">Health Insurance Portability & Accountability Act</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl text-green-400 mb-4"><i class="fas fa-credit-card"></i></div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <h3 class="text-xl font-bold text-green-300 mb-2">PCI-DSS</h3>
           <p class="text-gray-400 text-sm">Payment Card Industry Data Security Standard</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-shield-alt"></i></div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <h3 class="text-xl font-bold text-purple-300 mb-2">NIST CSF</h3>
           <p class="text-gray-400 text-sm">NIST Cybersecurity Framework</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl text-yellow-400 mb-4"><i class="fas fa-chart-line"></i></div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <h3 class="text-xl font-bold text-yellow-300 mb-2">SOX</h3>
           <p class="text-gray-400 text-sm">Sarbanes-Oxley Act Compliance</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl text-red-400 mb-4"><i class="fas fa-landmark"></i></div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <h3 class="text-xl font-bold text-red-300 mb-2">State Regulations</h3>
           <p class="text-gray-400 text-sm">CCPA, State-Specific Data Protection</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl text-cyan-400 mb-4"><i class="fas fa-industry"></i></div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <h3 class="text-xl font-bold text-cyan-300 mb-2">Industry Standards</h3>
           <p class="text-gray-400 text-sm">Sector-Specific Compliance Requirements</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- WHAT'S INCLUDED -->
@@ -130,23 +245,41 @@
           <h3 class="text-xl font-bold text-cyan-300 mb-2">Framework Gap Analysis</h3>
           <p class="text-gray-400">Detailed assessment against chosen compliance framework with control-by-control evaluation</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/20">
           <i class="fas fa-file-alt text-green-400 text-2xl mb-3"></i>
           <h3 class="text-xl font-bold text-green-300 mb-2">Policy & Documentation Review</h3>
           <p class="text-gray-400">Comprehensive review of existing policies, procedures, and documentation</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/20">
           <i class="fas fa-cogs text-purple-400 text-2xl mb-3"></i>
           <h3 class="text-xl font-bold text-purple-300 mb-2">Technical Controls Assessment</h3>
           <p class="text-gray-400">Evaluation of technical safeguards, access controls, and security configurations</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/20">
           <i class="fas fa-map-signs text-yellow-400 text-2xl mb-3"></i>
           <h3 class="text-xl font-bold text-yellow-300 mb-2">Remediation Roadmap</h3>
           <p class="text-gray-400">Prioritized action plan with timelines and resource requirements</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- IDEAL FOR -->
@@ -161,7 +294,13 @@
           <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>Businesses seeking cyber insurance or contract requirements</span></li>
         </ul>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- CTA -->
@@ -173,7 +312,13 @@
         <a href="/book-now/" class="bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg"><i class="fas fa-calendar-check mr-3"></i>Book Review Now</a>
         <a href="tel:+18063700624" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition text-lg"><i class="fas fa-phone mr-3"></i>Call (806) 370-0624</a>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- FOOTER -->
@@ -182,6 +327,23 @@
       <p class="text-gray-300 text-sm">&copy; 2025 Nova Titan Systems LLC. All rights reserved.</p>
       <p class="text-gray-400 text-xs mt-2">Lubbock, TX | (806) 370-0624 | info@novatitan.net</p>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </footer>
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        const isOpen = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden', !isOpen);
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+  </script>
 </body>
 </html>

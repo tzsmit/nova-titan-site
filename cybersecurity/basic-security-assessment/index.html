@@ -38,6 +38,61 @@
       --purple: #b300ff;
     }
     body { 
+    
+    /* Navigation */
+    .nav-link { 
+      transition: all .3s ease; 
+      position: relative; 
+      padding: 0.5rem 0;
+    }
+    .nav-link:hover { 
+      color: var(--cy); 
+      transform: scale(1.05); 
+    }
+    .nav-link::after { 
+      content:''; 
+      position:absolute; 
+      bottom:-2px; 
+      left:0; 
+      height:2px; 
+      width:0; 
+      background: linear-gradient(90deg, var(--cy), var(--gr)); 
+      transition:width .3s ease; 
+    }
+    .nav-link:hover::after { width:100%; }
+    
+    .btn-grad { 
+      background: linear-gradient(45deg,var(--cy),var(--gr)); 
+      transition: all .3s ease; 
+      box-shadow: 0 4px 15px rgba(0,212,255,0.3);
+    }
+    .btn-grad:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 25px rgba(0,212,255,.5); 
+    }
+    
+    /* Hamburger */
+    .hamburger { 
+      width: 36px; 
+      height: 28px; 
+      position: relative; 
+      cursor: pointer;
+    }
+    .hamburger span { 
+      position:absolute; 
+      left:0; 
+      right:0; 
+      height:3px; 
+      background: linear-gradient(90deg, var(--cy), var(--gr)); 
+      transition:transform .3s, opacity .3s, top .3s; 
+      border-radius: 2px;
+    }
+    .hamburger span:nth-child(1){ top:4px; } 
+    .hamburger span:nth-child(2){ top:12px; } 
+    .hamburger span:nth-child(3){ top:20px; }
+    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
       font-family: 'Inter', sans-serif; 
       background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); 
       min-height: 100vh;
@@ -123,16 +178,28 @@
           <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
         </a>
         <div class="hidden sm:flex items-center space-x-6">
-          <a href="/" class="text-gray-300 hover:text-cyan-400 transition">Home</a>
-          <a href="/services/" class="text-gray-300 hover:text-cyan-400 transition">Services</a>
-          <a href="/resources/" class="text-gray-300 hover:text-cyan-400 transition">Resources</a>
-          <a href="/contact/" class="text-gray-300 hover:text-cyan-400 transition">Contact</a>
-          <a href="/book-now/" class="bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm hover:shadow-lg transition">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/services/" class="nav-link">Services</a>
+          <a href="/resources/" class="nav-link">Resources</a>
+          <a href="/portfolio/" class="nav-link">Portfolio</a>
+          <a href="/blogs/" class="nav-link">Blog</a>
+          <a href="/faqs/" class="nav-link">FAQ</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
             <i class="fas fa-calendar-check mr-1"></i>Book Now
           </a>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </nav>
 
   <!-- HERO -->
@@ -148,11 +215,20 @@
         <div class="price-badge inline-block mb-6">
           $1,500
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto">
           Professional cybersecurity audit designed to identify hidden vulnerabilities, quantify risk exposure, and fortify your digital perimeter.
         </p>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- OVERVIEW -->
@@ -174,8 +250,17 @@
                 <h3 class="text-xl font-bold text-cyan-300 mb-2">Complete IT Asset Inventory</h3>
                 <p class="text-gray-400">Comprehensive catalog of up to 20 devices including servers, workstations, network infrastructure, and IoT endpoints with software licensing review</p>
               </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
             </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
           <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/20">
             <div class="flex items-start">
@@ -184,8 +269,17 @@
                 <h3 class="text-xl font-bold text-green-300 mb-2">Automated Vulnerability Scanning</h3>
                 <p class="text-gray-400">Industry-standard tools (Nessus/OpenVAS) identifying unpatched systems with risk-rated findings: Critical | High | Medium | Low</p>
               </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
             </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
           <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/20">
             <div class="flex items-start">
@@ -194,8 +288,17 @@
                 <h3 class="text-xl font-bold text-purple-300 mb-2">Network Security Configuration Review</h3>
                 <p class="text-gray-400">Firewall rule analysis, WiFi security assessment, router/switch hardening recommendations</p>
               </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
             </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
           <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/20">
             <div class="flex items-start">
@@ -204,8 +307,17 @@
                 <h3 class="text-xl font-bold text-yellow-300 mb-2">Security Policy Gap Analysis</h3>
                 <p class="text-gray-400">Password policy evaluation, user access controls, data backup procedures, incident response readiness</p>
               </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
             </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
           <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/20">
             <div class="flex items-start">
@@ -214,8 +326,17 @@
                 <h3 class="text-xl font-bold text-red-300 mb-2">Executive-Ready Findings Report</h3>
                 <p class="text-gray-400">Professional PDF with executive summary, technical evidence, and board-presentation materials</p>
               </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
             </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
           <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/20">
             <div class="flex items-start">
@@ -224,8 +345,17 @@
                 <h3 class="text-xl font-bold text-cyan-300 mb-2">Risk-Prioritized Remediation Roadmap</h3>
                 <p class="text-gray-400">Actionable steps with implementation timelines and cost-benefit analysis</p>
               </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
             </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
           <div class="bg-gray-800/50 rounded-lg p-6 border border-cyan-400/20 md:col-span-2">
             <div class="flex items-start">
@@ -234,11 +364,29 @@
                 <h3 class="text-xl font-bold text-green-300 mb-2">Findings Presentation & Consultation</h3>
                 <p class="text-gray-400">1-hour virtual or in-person session with Q&A and strategic implementation guidance</p>
               </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
             </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- TIMELINE -->
@@ -250,21 +398,45 @@
       <div class="grid md:grid-cols-3 gap-6">
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl text-cyan-400 mb-4"><i class="fas fa-calendar-day"></i></div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <h3 class="text-xl font-bold text-cyan-300 mb-3">Day 1-2</h3>
           <p class="text-gray-400">Asset discovery & scanning</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl text-green-400 mb-4"><i class="fas fa-chart-line"></i></div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <h3 class="text-xl font-bold text-green-300 mb-3">Day 3-4</h3>
           <p class="text-gray-400">Analysis & report generation</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-user-tie"></i></div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <h3 class="text-xl font-bold text-purple-300 mb-3">Day 5</h3>
           <p class="text-gray-400">Executive presentation</p>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- IDEAL FOR -->
@@ -293,7 +465,13 @@
           </li>
         </ul>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- PERFORMANCE METRICS -->
@@ -305,22 +483,64 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl font-bold text-cyan-400 mb-2">50+</div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <div class="text-gray-400">Audits Completed</div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl font-bold text-yellow-400 mb-2">5.0⭐</div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <div class="text-gray-400">Client Rating</div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl font-bold text-green-400 mb-2">100%</div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <div class="text-gray-400">On-Time Delivery</div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="card rounded-xl p-6 text-center">
           <div class="text-4xl font-bold text-purple-400 mb-2">$25K+</div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
           <div class="text-gray-400">Revenue Generated</div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- CTA -->
@@ -338,10 +558,16 @@
           <i class="fas fa-phone mr-3"></i>Call (806) 370-0624
         </a>
       </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       <p class="text-sm text-gray-400 mt-6">
         <i class="fas fa-shield-check mr-2"></i>30 Days of Email Support Included
       </p>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </section>
 
   <!-- FOOTER -->
@@ -354,6 +580,23 @@
         Lubbock, TX | (806) 370-0624 | info@novatitan.net
       </p>
     </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
   </footer>
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        const isOpen = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden', !isOpen);
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+  </script>
 </body>
 </html>
