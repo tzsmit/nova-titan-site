@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology & Security Blog | Nova Titan Systems - Lubbock TX</title>
+  <meta name="description" content="Expert insights on cybersecurity, network optimization, cloud security, and IT support for West Texas businesses. Practical tech tips from Lubbock's trusted technology consultants.">
+  <!--
+    LSI Keywords: IT blog West Texas, cybersecurity tips Lubbock, network security articles, 
+    technology consulting insights, cloud computing guides, small business IT advice,
+    managed services best practices, tech support tutorials, security awareness content,
+    infrastructure optimization tips, field IT service knowledge base
+  -->
+  <link rel="canonical" href="https://novatitan.net/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nova Titan Technology Blog - Expert IT Insights">
+  <meta property="og:description" content="Stay informed with practical technology insights, security tips, and IT best practices for West Texas businesses.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+  <style>
+    :root { --cy: #00d4ff; --gr: #00ff88; --purple: #b300ff; }
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); min-height: 100vh; }
+    .nav-link { transition: all .3s ease; position: relative; padding: 0.5rem 0; }
+    .nav-link:hover { color: var(--cy); transform: scale(1.05); }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; height:2px; width:0; background: linear-gradient(90deg, var(--cy), var(--gr)); transition:width .3s ease; }
+    .nav-link:hover::after { width:100%; }
+    .btn-grad { background: linear-gradient(45deg,var(--cy),var(--gr)); transition: all .3s ease; box-shadow: 0 4px 15px rgba(0,212,255,0.3); }
+    .btn-grad:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,212,255,.5); }
+    .card { border: 1px solid rgba(0,212,255,.25); transition: all .4s ease; background: rgba(26,26,46,.85); backdrop-filter: blur(12px); position: relative; overflow: hidden; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,212,255,.25); border-color: rgba(0,212,255,0.5); }
+    .glow { text-shadow: 0 0 20px rgba(0,212,255,.6); }
+    #particles-js { position: fixed; inset: 0; z-index: 0; }
+    .content { position: relative; z-index: 1; }
+    .matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px); background-size: 50px 50px; animation: matrix-move 20s linear infinite; z-index: 0; }
+    @keyframes matrix-move { 0% { transform: translate(0, 0); } 100% { transform: translate(50px, 50px); } }
+    .hamburger { width: 36px; height: 28px; position: relative; cursor: pointer; }
+    .hamburger span { position:absolute; left:0; right:0; height:3px; background: linear-gradient(90deg, var(--cy), var(--gr)); transition:transform .3s, opacity .3s, top .3s; border-radius: 2px; }
+    .hamburger span:nth-child(1){ top:4px; } 
+    .hamburger span:nth-child(2){ top:12px; } 
+    .hamburger span:nth-child(3){ top:20px; }
+    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
+    .tag { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; margin: 0.25rem; cursor: pointer; transition: all 0.3s ease; }
+    .tag:hover { transform: scale(1.05); }
+    .tag.active { box-shadow: 0 0 15px currentColor; }
+    .blog-post { opacity: 0; transform: translateY(20px); }
+  </style>
+
+  <!-- JSON-LD Blog Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Nova Titan Technology Blog",
+    "description": "Expert insights on cybersecurity, IT support, and technology solutions for businesses in West Texas",
+    "url": "https://novatitan.net/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nova Titan Systems",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2"
+      }
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Cybersecurity Essentials for Small Businesses in West Texas",
+        "datePublished": "2025-11-15",
+        "author": {"@type": "Organization", "name": "Nova Titan Systems"},
+        "articleSection": "Cybersecurity",
+        "keywords": ["cybersecurity", "small business", "West Texas", "Lubbock", "IT support"]
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Plausible Analytics (Privacy-Friendly) -->
+  <script defer data-domain="novatitan.net" src="https://plausible.io/js/script.js"></script>
+</head>
+<body class="text-white">
+  <div id="particles-js"></div>
+  <div class="matrix-bg"></div>
+
+  <!-- NAV -->
+  <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20 content">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center group">
+          <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
+          <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-6">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link">Solutions</a>
+          <a href="/plans/" class="nav-link">Plans</a>
+          <a href="/blog/" class="nav-link text-cyan-400">Blog</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">Book Now</a>
+        </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+      <div id="mobileMenu" class="sm:hidden hidden pb-4">
+        <div class="flex flex-col space-y-2">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link">Solutions</a>
+          <a href="/plans/" class="nav-link">Plans</a>
+          <a href="/blog/" class="nav-link text-cyan-400">Blog</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="nav-link">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="content pt-28 pb-14">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-6xl font-bold glow mb-6">
+          <span class="text-cyan-300">Technology Insights</span><br>
+          <span class="text-3xl text-green-300">From West Texas IT Experts</span>
+        </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          Practical advice on cybersecurity, network optimization, cloud solutions, and IT management for businesses in Lubbock, Midland, Odessa, and beyond.
+        </p>
+
+        <!-- Tag Filter -->
+        <div class="flex flex-wrap justify-center gap-2 mb-6">
+          <span class="tag bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 active" data-tag="all">
+            <i class="fas fa-th mr-1"></i>All Posts
+          </span>
+          <span class="tag bg-green-500/20 text-green-300 border border-green-400/40" data-tag="cybersecurity">
+            <i class="fas fa-shield-alt mr-1"></i>Cybersecurity
+          </span>
+          <span class="tag bg-purple-500/20 text-purple-300 border border-purple-400/40" data-tag="cloud">
+            <i class="fas fa-cloud mr-1"></i>Cloud
+          </span>
+          <span class="tag bg-orange-500/20 text-orange-300 border border-orange-400/40" data-tag="networking">
+            <i class="fas fa-network-wired mr-1"></i>Networking
+          </span>
+          <span class="tag bg-blue-500/20 text-blue-300 border border-blue-400/40" data-tag="support">
+            <i class="fas fa-headset mr-1"></i>IT Support
+          </span>
+          <span class="tag bg-red-500/20 text-red-300 border border-red-400/40" data-tag="west-texas">
+            <i class="fas fa-map-marker-alt mr-1"></i>West Texas
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG POSTS GRID -->
+  <section class="content py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div id="blogGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Blog Post 1 -->
+        <article class="card blog-post rounded-xl overflow-hidden" data-tags="cybersecurity,small-business,west-texas">
+          <div class="p-8">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/20 text-green-300">Cybersecurity</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-red-500/20 text-red-300">West Texas</span>
+            </div>
+            <h2 class="text-2xl font-bold text-cyan-300 mb-3 hover:text-green-300 transition">
+              <a href="/2025/11/15/cybersecurity-essentials-for-small-businesses">
+                Cybersecurity Essentials for Small Businesses in West Texas
+              </a>
+            </h2>
+            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+              Essential cybersecurity practices every small business in Lubbock and West Texas should implement to protect against cyber threats.
+            </p>
+            <div class="flex items-center justify-between text-sm text-gray-400 mb-4">
+              <span><i class="fas fa-calendar mr-2"></i>Nov 15, 2025</span>
+              <span><i class="fas fa-clock mr-2"></i>8 min read</span>
+            </div>
+            <a href="/2025/11/15/cybersecurity-essentials-for-small-businesses" class="text-cyan-400 hover:text-green-400 transition text-sm font-semibold">
+              Read Article <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Placeholder for future posts -->
+        <article class="card blog-post rounded-xl overflow-hidden opacity-50" data-tags="networking,lubbock">
+          <div class="p-8">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs px-2 py-1 rounded-full bg-orange-500/20 text-orange-300">Networking</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/20 text-cyan-300">Lubbock</span>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-400 mb-3">
+              Network Optimization Tips for Retail Stores
+            </h2>
+            <p class="text-gray-500 mb-4 text-sm">
+              Coming soon: Best practices for optimizing POS systems, guest Wi-Fi, and employee networks in retail environments.
+            </p>
+            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+              <span><i class="fas fa-calendar mr-2"></i>Coming Soon</span>
+              <span><i class="fas fa-clock mr-2"></i>6 min read</span>
+            </div>
+            <span class="text-gray-500 text-sm font-semibold">
+              Coming Soon
+            </span>
+          </div>
+        </article>
+
+        <article class="card blog-post rounded-xl overflow-hidden opacity-50" data-tags="cloud,support">
+          <div class="p-8">
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20 text-purple-300">Cloud</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-300">IT Support</span>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-400 mb-3">
+              Cloud Migration Strategies for Small Businesses
+            </h2>
+            <p class="text-gray-500 mb-4 text-sm">
+              Coming soon: Step-by-step guide to migrating your business to cloud infrastructure safely and cost-effectively.
+            </p>
+            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+              <span><i class="fas fa-calendar mr-2"></i>Coming Soon</span>
+              <span><i class="fas fa-clock mr-2"></i>10 min read</span>
+            </div>
+            <span class="text-gray-500 text-sm font-semibold">
+              Coming Soon
+            </span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- No Results Message -->
+      <div id="noResults" class="hidden text-center py-12">
+        <i class="fas fa-search text-6xl text-gray-600 mb-4"></i>
+        <p class="text-xl text-gray-400">No posts found for this tag</p>
+        <button onclick="filterPosts('all')" class="mt-4 btn-grad text-gray-900 font-semibold py-2 px-6 rounded-lg">
+          View All Posts
+        </button>
+      </div>
+
+      <!-- Newsletter CTA -->
+      <div class="mt-16 card rounded-xl p-8 text-center">
+        <h3 class="text-2xl font-bold glow mb-4">Stay Updated</h3>
+        <p class="text-gray-300 mb-6">Get notified when we publish new technology insights and security tips</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/contact/" class="btn-grad text-gray-900 font-semibold py-3 px-8 rounded-lg">Contact Us for Updates</a>
+          <a href="/services/" class="px-8 py-3 rounded-lg border border-cyan-400/40 hover:bg-cyan-400/10 transition-all">Explore Our Solutions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="content bg-gray-900/90 py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-gray-300 text-sm">&copy; <span id="year"></span> Nova Titan Systems. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    particlesJS('particles-js',{ particles:{ number:{ value:100, density:{enable:true,value_area:1100}}, color:{value:['#00d4ff','#00ff88','#b300ff']}, shape:{type:'circle'}, opacity:{value:.35,random:true}, size:{value:3,random:true}, line_linked:{enable:true,distance:130,color:'#00d4ff',opacity:.25,width:1}, move:{enable:true,speed:2,direction:'none',random:false,straight:false,out_mode:'out',bounce:false} }, interactivity:{ detect_on:'canvas', events:{onhover:{enable:true,mode:'repulse'},onclick:{enable:true,mode:'push'}}, modes:{repulse:{distance:90,duration:0.4},push:{particles_nb:3}} }, retina_detect:true });
+
+    // GSAP Blog Post Animations
+    gsap.from('.blog-post', {
+      opacity: 0,
+      y: 30,
+      stagger: 0.15,
+      duration: 0.6,
+      delay: 0.2,
+      ease: 'power2.out'
+    });
+
+    // Tag Filtering
+    function filterPosts(tag) {
+      const posts = document.querySelectorAll('.blog-post');
+      const tags = document.querySelectorAll('.tag');
+      const noResults = document.getElementById('noResults');
+      let visibleCount = 0;
+
+      // Update active tag
+      tags.forEach(t => {
+        t.classList.remove('active');
+        if (t.dataset.tag === tag) t.classList.add('active');
+      });
+
+      // Filter posts
+      posts.forEach(post => {
+        const postTags = post.dataset.tags;
+        if (tag === 'all' || postTags.includes(tag)) {
+          post.style.display = 'block';
+          visibleCount++;
+        } else {
+          post.style.display = 'none';
+        }
+      });
+
+      // Show/hide no results message
+      noResults.classList.toggle('hidden', visibleCount > 0);
+    }
+
+    // Add click handlers to tags
+    document.querySelectorAll('.tag').forEach(tag => {
+      tag.addEventListener('click', () => filterPosts(tag.dataset.tag));
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
