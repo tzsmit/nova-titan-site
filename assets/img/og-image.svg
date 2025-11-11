@@ -1,0 +1,71 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+  
+  <!-- Grid Pattern -->
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#00d4ff" stroke-width="0.5" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Main Title -->
+  <text x="600" y="220" font-family="Inter, sans-serif" font-size="72" font-weight="bold" 
+        fill="url(#text-gradient)" text-anchor="middle" filter="url(#glow)">
+    Nova Titan Systems
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="290" font-family="Inter, sans-serif" font-size="32" 
+        fill="#ffffff" opacity="0.9" text-anchor="middle">
+    IT Consulting · Network Security · Cloud Services
+  </text>
+  
+  <!-- Tagline -->
+  <text x="600" y="360" font-family="Inter, sans-serif" font-size="24" 
+        fill="#00ff88" text-anchor="middle" opacity="0.8">
+    Secure. Optimize. Innovate.
+  </text>
+  
+  <!-- Location Badge -->
+  <rect x="450" y="420" width="300" height="60" rx="30" 
+        fill="#00d4ff" opacity="0.1" stroke="#00d4ff" stroke-width="2"/>
+  <text x="600" y="458" font-family="Inter, sans-serif" font-size="20" 
+        fill="#00d4ff" text-anchor="middle" font-weight="600">
+    Lubbock &amp; West Texas
+  </text>
+  
+  <!-- Tech Icons -->
+  <circle cx="400" cy="540" r="25" fill="#00d4ff" opacity="0.2"/>
+  <text x="400" y="550" font-family="Arial" font-size="20" fill="#00d4ff" text-anchor="middle">🛡️</text>
+  
+  <circle cx="500" cy="540" r="25" fill="#00ff88" opacity="0.2"/>
+  <text x="500" y="550" font-family="Arial" font-size="20" fill="#00ff88" text-anchor="middle">☁️</text>
+  
+  <circle cx="600" cy="540" r="25" fill="#b300ff" opacity="0.2"/>
+  <text x="600" y="550" font-family="Arial" font-size="20" fill="#b300ff" text-anchor="middle">🔧</text>
+  
+  <circle cx="700" cy="540" r="25" fill="#ff8800" opacity="0.2"/>
+  <text x="700" y="550" font-family="Arial" font-size="20" fill="#ff8800" text-anchor="middle">🚀</text>
+  
+  <circle cx="800" cy="540" r="25" fill="#ff0066" opacity="0.2"/>
+  <text x="800" y="550" font-family="Arial" font-size="20" fill="#ff0066" text-anchor="middle">💻</text>
+</svg>

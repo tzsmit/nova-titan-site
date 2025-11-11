@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root { 
+  --cy: #00d4ff; 
+  --gr: #00ff88; 
+  --purple: #b300ff;
+  --red: #ff0066;
+  --orange: #ff8800;
+}
+
+/* Base Styles */
+body { 
+  font-family: 'Inter', sans-serif; 
+  background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); 
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Matrix Background */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: matrix-move 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes matrix-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* Particle Background */
+#particles-js { 
+  position: fixed; 
+  inset: 0; 
+  z-index: 0; 
+}
+
+.content { 
+  position: relative; 
+  z-index: 1; 
+}
+
+/* Glow Effects */
+.glow { 
+  text-shadow: 0 0 20px rgba(0,212,255,.6); 
+}
+.glow-green { 
+  text-shadow: 0 0 20px rgba(0,255,136,.6); 
+}
+.glow-purple { 
+  text-shadow: 0 0 20px rgba(179,0,255,.6); 
+}
+
+/* Card Styles */
+.card {
+  background: linear-gradient(135deg, rgba(20,25,45,0.9), rgba(15,20,35,0.95));
+  border: 1px solid rgba(0,212,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(0,212,255,0.5);
+  box-shadow: 0 8px 32px rgba(0,212,255,0.2);
+  transform: translateY(-4px);
+}
+
+/* Service Icon Styles */
+.service-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--cy), var(--gr));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Hero Badge */
+.hero-badge {
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.3);
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ff88;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Cert Badge */
+.cert-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(255,136,0,0.2), rgba(255,0,102,0.2));
+  border: 1px solid rgba(255,136,0,0.4);
+  color: #ff8800;
+  font-size: 0.875rem;
+}
+
+/* Hero Title */
+.hero-title {
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Price Tag */
+.price-tag {
+  padding: 0.5rem 1rem;
+  background: rgba(0,255,136,0.1);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0,255,136,0.2);
+}
+
+/* Portfolio Preview */
+.portfolio-preview {
+  border: 2px solid rgba(179,0,255,0.3);
+}
+
+.portfolio-preview:hover {
+  border-color: rgba(179,0,255,0.6);
+  box-shadow: 0 0 32px rgba(179,0,255,0.3);
+}
+
+/* Profile Image */
+.profile-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 3px solid rgba(0,212,255,0.3);
+  box-shadow: 0 8px 32px rgba(0,212,255,0.2);
+}
+
+/* Skill Bars */
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cy), var(--gr));
+  border-radius: 4px;
+  transition: width 1s ease-out;
+  width: 0;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cy), var(--purple), var(--gr));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cy);
+  border: 2px solid #0a0a0f;
+  box-shadow: 0 0 10px var(--cy);
+}
+
+/* Value Cards */
+.value-card {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(20,25,45,0.9), rgba(15,20,35,0.95));
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,212,255,0.5);
+  box-shadow: 0 8px 32px rgba(0,212,255,0.2);
+}
+
+.value-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.value-icon.integrity {
+  background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(0,212,255,0.1));
+  color: var(--cy);
+  border: 2px solid rgba(0,212,255,0.3);
+}
+
+.value-icon.excellence {
+  background: linear-gradient(135deg, rgba(0,255,136,0.2), rgba(0,255,136,0.1));
+  color: var(--gr);
+  border: 2px solid rgba(0,255,136,0.3);
+}
+
+.value-icon.innovation {
+  background: linear-gradient(135deg, rgba(179,0,255,0.2), rgba(179,0,255,0.1));
+  color: var(--purple);
+  border: 2px solid rgba(179,0,255,0.3);
+}
+
+/* Quote Block */
+.quote-block {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-left: 4px solid var(--cy);
+  background: rgba(0,212,255,0.05);
+  border-radius: 0.5rem;
+}
+
+/* Utility Classes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}

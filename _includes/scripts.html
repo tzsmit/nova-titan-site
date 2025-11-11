@@ -6,27 +6,29 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <!-- 2. Particle.js Configuration -->
-<script>
-  // Initialize Particles
-  if (typeof particlesJS !== 'undefined') {
-    particlesJS('particles-js', {
-      particles: { 
-        number: { value: 80, density: { enable: true, value_area: 1000 } },
-        color: { value: ['#00d4ff', '#00ff88', '#b300ff', '#ff0066'] }, 
-        shape: { type: 'circle' },
-        opacity: { value: .3, random: true }, 
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 120, color: '#00d4ff', opacity: .25, width: 1 },
-        move: { enable: true, speed: 1.8, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false } 
-      },
-      interactivity: { 
-        detect_on: 'canvas',
-        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } }, 
-        modes: { repulse: { distance: 80, duration: 0.4 }, push: { particles_nb: 3 } } 
-      },
-      retina_detect: true
-    });
-  }
+<script defer>
+  // Initialize Particles on load
+  window.addEventListener('load', function() {
+    if (typeof particlesJS !== 'undefined') {
+      particlesJS('particles-js', {
+        particles: { 
+          number: { value: 80, density: { enable: true, value_area: 1000 } },
+          color: { value: ['#00d4ff', '#00ff88', '#b300ff', '#ff0066'] }, 
+          shape: { type: 'circle' },
+          opacity: { value: .3, random: true }, 
+          size: { value: 3, random: true },
+          line_linked: { enable: true, distance: 120, color: '#00d4ff', opacity: .25, width: 1 },
+          move: { enable: true, speed: 1.8, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false } 
+        },
+        interactivity: { 
+          detect_on: 'canvas',
+          events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } }, 
+          modes: { repulse: { distance: 80, duration: 0.4 }, push: { particles_nb: 3 } } 
+        },
+        retina_detect: true
+      });
+    }
+  });
 </script>
 
 <!-- 3. GSAP Animations -->
@@ -35,38 +37,64 @@
   window.addEventListener('load', function() {
     // Initialize GSAP animations
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-      
-      // Card animations
-      const cards = document.querySelectorAll('.card');
-      if (cards.length > 0) {
-        gsap.from('.card', {
-          opacity: 0,
-          y: 30,
-          stagger: 0.08,
-          duration: 0.7,
-          delay: 0.2,
-          ease: "power2.out"
-        });
-      }
-
-      // Fade-in elements with ScrollTrigger
-      const fadeElements = document.querySelectorAll('.fade-in');
-      if (fadeElements.length > 0) {
-        fadeElements.forEach(el => {
-          gsap.from(el, {
+      try {
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Card animations (initial load only)
+        const cards = document.querySelectorAll('.card');
+        if (cards.length > 0) {
+          gsap.from('.card', {
             opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: el,
-              start: "top 80%",
-              once: true
-            }
+            y: 30,
+            stagger: 0.08,
+            duration: 0.7,
+            delay: 0.2,
+            ease: "power2.out"
           });
-        });
+        }
+
+        // Fade-in elements with ScrollTrigger (trigger once)
+        const fadeElements = document.querySelectorAll('.fade-in');
+        if (fadeElements.length > 0) {
+          fadeElements.forEach(el => {
+            gsap.from(el, {
+              opacity: 0,
+              y: 20,
+              duration: 0.6,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 85%",
+                end: "top 60%",
+                once: true,
+                toggleActions: "play none none none"
+              }
+            });
+          });
+        }
+        
+        // Portfolio preview animation
+        const portfolioCards = document.querySelectorAll('.portfolio-preview');
+        if (portfolioCards.length > 0) {
+          portfolioCards.forEach(card => {
+            gsap.from(card, {
+              opacity: 0,
+              scale: 0.95,
+              duration: 0.8,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                once: true
+              }
+            });
+          });
+        }
+      } catch (error) {
+        console.error('GSAP initialization error:', error);
       }
+    } else {
+      console.warn('GSAP or ScrollTrigger not loaded');
     }
   });
 </script>

@@ -9,7 +9,10 @@ description: "Meet Traivone Smith, your trusted business technology partner in W
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
           <div class="mb-6 fade-in">
-            <img src="https://page.gensparksite.com/v1/base64_upload/697bd1dfe1fe27cc7b860b5ad999c96d" alt="Traivone Smith - Business Technology Partner" class="profile-image mx-auto lg:mx-0" />
+            <img src="https://page.gensparksite.com/v1/base64_upload/697bd1dfe1fe27cc7b860b5ad999c96d" 
+                 alt="Traivone Smith - Business Technology Partner" 
+                 loading="lazy"
+                 class="profile-image mx-auto lg:mx-0" />
           </div>
         </div>
         
@@ -62,25 +65,25 @@ description: "Meet Traivone Smith, your trusted business technology partner in W
     </div>
   </section>
 
-  <!-- STATS -->
+  <!-- ACHIEVEMENT HIGHLIGHTS -->
   <section class="content py-12 bg-gray-900/50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="stat-card fade-in">
-          <span class="stat-number" data-target="75">0</span>
-          <div class="stat-label">Technology Projects</div>
+        <div class="card rounded-xl p-6 text-center fade-in">
+          <div class="text-4xl font-bold text-cyan-300 mb-2">75+</div>
+          <div class="text-gray-400 text-sm">Technology Projects</div>
         </div>
-        <div class="stat-card fade-in">
-          <span class="stat-number" data-target="150">0</span>
-          <div class="stat-label">Systems Deployed</div>
+        <div class="card rounded-xl p-6 text-center fade-in">
+          <div class="text-4xl font-bold text-green-300 mb-2">150+</div>
+          <div class="text-gray-400 text-sm">Systems Deployed</div>
         </div>
-        <div class="stat-card fade-in">
-          <span class="stat-number" data-target="24">0</span>
-          <div class="stat-label">Hour Response</div>
+        <div class="card rounded-xl p-6 text-center fade-in">
+          <div class="text-4xl font-bold text-purple-300 mb-2">&lt;24hr</div>
+          <div class="text-gray-400 text-sm">Response Time</div>
         </div>
-        <div class="stat-card fade-in">
-          <span class="stat-number" data-target="99.8">0</span>
-          <div class="stat-label">% Project Success</div>
+        <div class="card rounded-xl p-6 text-center fade-in">
+          <div class="text-4xl font-bold text-orange-300 mb-2">99%+</div>
+          <div class="text-gray-400 text-sm">Success Rate</div>
         </div>
       </div>
     </div>
@@ -360,4 +363,24 @@ description: "Meet Traivone Smith, your trusted business technology partner in W
       </p>
     </div>
   </section>
+
+  <!-- Skill Bar Animation Script -->
+  <script>
+    // Animate skill bars when they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      const skillBars = document.querySelectorAll('.skill-progress');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const width = entry.target.getAttribute('data-width');
+            entry.target.style.width = width + '%';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      skillBars.forEach(bar => observer.observe(bar));
+    });
+  </script>
 
