@@ -35,14 +35,22 @@
 <script defer>
   // Wait for all scripts to load before initializing
   window.addEventListener('load', function() {
+    // Fallback: Ensure all content is visible even if GSAP fails
+    setTimeout(function() {
+      document.querySelectorAll('.fade-in, .card').forEach(function(el) {
+        el.style.opacity = '1';
+      });
+    }, 100);
+    
     // Initialize GSAP animations
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       try {
         gsap.registerPlugin(ScrollTrigger);
         
-        // Card animations (initial load only)
+        // Card animations (initial load only) - with immediate visibility fallback
         const cards = document.querySelectorAll('.card');
         if (cards.length > 0) {
+          cards.forEach(card => card.style.opacity = '1'); // Ensure visible
           gsap.from('.card', {
             opacity: 0,
             y: 30,
@@ -57,6 +65,7 @@
         const fadeElements = document.querySelectorAll('.fade-in');
         if (fadeElements.length > 0) {
           fadeElements.forEach(el => {
+            el.style.opacity = '1'; // Ensure visible immediately
             gsap.from(el, {
               opacity: 0,
               y: 20,
@@ -77,6 +86,7 @@
         const portfolioCards = document.querySelectorAll('.portfolio-preview');
         if (portfolioCards.length > 0) {
           portfolioCards.forEach(card => {
+            card.style.opacity = '1'; // Ensure visible
             gsap.from(card, {
               opacity: 0,
               scale: 0.95,
@@ -92,9 +102,17 @@
         }
       } catch (error) {
         console.error('GSAP initialization error:', error);
+        // Ensure everything is visible on error
+        document.querySelectorAll('.fade-in, .card').forEach(function(el) {
+          el.style.opacity = '1';
+        });
       }
     } else {
-      console.warn('GSAP or ScrollTrigger not loaded');
+      console.warn('GSAP or ScrollTrigger not loaded - showing all content');
+      // Ensure everything is visible when GSAP not loaded
+      document.querySelectorAll('.fade-in, .card').forEach(function(el) {
+        el.style.opacity = '1';
+      });
     }
   });
 </script>

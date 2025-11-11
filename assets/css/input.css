@@ -262,10 +262,28 @@ body {
 
 /* Utility Classes */
 .fade-in {
-  opacity: 0;
+  opacity: 1; /* Changed from 0 to 1 - always visible even without JS */
   animation: fadeIn 0.6s ease-out forwards;
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure text is always visible with good contrast */
+.text-gray-300 {
+  color: #d1d5db !important;
+  opacity: 1 !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+  opacity: 1 !important;
 }

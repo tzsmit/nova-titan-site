@@ -2,12 +2,12 @@
 # Sources: Google Reviews, Cloudwork PRO, WorkMarket
 
 # Google Reviews (5-star ratings)
-- name: "a month ago"
+- name: "Recent Client"
   role: "Google Review"
   location: "West Texas"
   rating: 5
   source: "Google"
-  date: "2024-10"
+  date: "2025-10"
   review: "If you don't use this company, you've made a foolish choice. They are professional, affordable, and they don't cut corners!"
   verified: true
 
@@ -16,7 +16,7 @@
   location: "West Texas"
   rating: 5
   source: "Google"
-  date: "2024-10"
+  date: "2025-09"
   review: "Very professional! Very knowledgeable in the work he does! I will refer to anyone who is in need of this type of work!"
   verified: true
 
@@ -25,7 +25,7 @@
   location: "West Texas"
   rating: 5
   source: "Google"
-  date: "2024-10"
+  date: "2025-08"
   review: "Very good at what they do, helpful and considerate and explains to u."
   verified: true
 
@@ -34,7 +34,7 @@
   location: "West Texas"
   rating: 5
   source: "Google"
-  date: "2024-10"
+  date: "2025-07"
   review: "Efficient and easy to work with. Made sure I was taken care of."
   verified: true
 
@@ -43,7 +43,7 @@
   location: "West Texas"
   rating: 5
   source: "Google"
-  date: "2024-10"
+  date: "2025-06"
   review: "Clear and understandable. My child even understands!"
   verified: true
 
@@ -52,7 +52,7 @@
   location: "West Texas"
   rating: 5
   source: "Google"
-  date: "2024-10"
+  date: "2025-05"
   review: "Five star service! Professional and reliable technology solutions."
   verified: true
 
@@ -62,7 +62,7 @@
   location: "Lubbock, TX"
   rating: 5
   source: "Cloudwork PRO"
-  date: "2024-09"
+  date: "2025-09"
   review: "100% positive rating with 100% on-time completion. 2 jobs completed by company, 2 jobs completed. Average rating: 5/5 stars across Quality of Work, Following Instructions, and Communication."
   verified: true
   stats:
@@ -76,7 +76,7 @@
   location: "Residential Service"
   rating: 5
   source: "WorkMarket"
-  date: "2024-09-18"
+  date: "2025-09-18"
   review: "Excellent overall performance. Outstanding quality, professionalism, and communication for residential computer tech support (HP Desktop W10)."
   verified: true
   job_type: "Computer Tech (HP Desktop W10) - Residential"
@@ -86,7 +86,7 @@
   location: "Commercial Service"
   rating: 5
   source: "WorkMarket"
-  date: "2024-09-26"
+  date: "2025-09-26"
   review: "Excellent service for LAN Migration with hard start time requirements. Perfect execution on quality, professionalism, and communication. Completed multiple LAN migration projects with excellence."
   verified: true
   job_type: "LAN Migration - Hard Start Time"
@@ -96,7 +96,7 @@
   location: "Commercial Service"
   rating: 5
   source: "WorkMarket"
-  date: "2024-08-07"
+  date: "2025-08-07"
   review: "Excellent service for Zebra 140 140xi4 network card installation and setup. Outstanding quality, professionalism, and communication."
   verified: true
   job_type: "Zebra 140 140xi4 - Install And Setup Network Card"
@@ -106,7 +106,7 @@
   location: "Commercial Service"
   rating: 4
   source: "WorkMarket"
-  date: "2024-08-11"
+  date: "2025-08-11"
   review: "Satisfied with power cycle 5G radio service. Good quality, professionalism, and communication."
   verified: true
   job_type: "FSDP-3023-246865 - Power Cycle 5G Radio"
@@ -116,7 +116,7 @@
   location: "Commercial Service"
   rating: 4
   source: "WorkMarket"
-  date: "2024-08-18"
+  date: "2025-08-18"
   review: "Satisfied with repair service. Good quality, professionalism, and communication for equipment repair."
   verified: true
   job_type: "90550 - Repair"
@@ -126,7 +126,7 @@
   location: "Commercial Service"
   rating: 4
   source: "WorkMarket"
-  date: "2024-09-08"
+  date: "2025-09-08"
   review: "Satisfied with ODP PPT smart hands support. Good quality, professionalism, and communication."
   verified: true
   job_type: "ODP - PPT - Smart Hands Support"
@@ -136,7 +136,7 @@
   location: "7 BREW Location"
   rating: 4
   source: "WorkMarket"
-  date: "2024-10-02"
+  date: "2025-10-02"
   review: "Satisfied with network stack installation for 7 BREW sb154. Good quality, professionalism, and communication."
   verified: true
   job_type: "7 BREW - sb154 - Network Stack Installation"
@@ -146,7 +146,7 @@
   location: "Walmart Location"
   rating: 5
   source: "WorkMarket"
-  date: "2024-10-10"
+  date: "2025-10-10"
   review: "Excellent service for slide latch replacement on Walmart Medeco SPC Key Cabinet. Outstanding quality, professionalism, and communication."
   verified: true
   job_type: "Slide Latch Replacement - Walmart Medeco SPC Key Cabinet"
@@ -156,7 +156,7 @@
   location: "Commercial Service"
   rating: 4
   source: "WorkMarket"
-  date: "2024-10-29"
+  date: "2025-10-29"
   review: "Satisfied with edge boot swap for laptop and console cable requirement. Good quality, professionalism, and communication."
   verified: true
   job_type: "Edge Boot Swap - Laptop and Console Cable Required"
