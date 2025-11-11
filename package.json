@@ -1,0 +1,19 @@
+{
+  "name": "nova-titan-site",
+  "version": "1.0.0",
+  "description": "A professional technology solutions provider specializing in IT consulting, network setup, smart home integration, hardware installations, and cybersecurity services.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18"
+  }
+}

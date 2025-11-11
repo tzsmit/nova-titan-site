@@ -7,7 +7,7 @@ baseurl: ""   # root - no subdirectory
 # Author/Business Info
 author: "Traivone Smith"
 phone: "(806) 370-0624"
-email: "traivonesmith@novatitan.net"
+email: "info@novatitan.net"
 
 # Build Settings
 markdown: kramdown
@@ -54,6 +54,11 @@ exclude:
   - deployment-summary.md
   - DEPLOYMENT_SUMMARY.md
   - SEO_ENHANCEMENTS_V3.1.md
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - postcss.config.js
+  - "*.md"
 
 # Include
 include:
