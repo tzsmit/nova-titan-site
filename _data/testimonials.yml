@@ -161,14 +161,6 @@
   verified: true
   job_type: "Edge Boot Swap - Laptop and Console Cable Required"
 
-# Aggregate Statistics
-aggregate:
-  total_reviews: 15
-  average_rating: 4.8
-  five_star: 10
-  four_star: 5
-  google_reviews: 6
-  cloudwork_pro_reviews: 1
-  workmarket_reviews: 8
-  verified_reviews: 15
-  satisfaction_rate: 100
+# Aggregate Statistics (stored separately to avoid YAML list/map mixing)
+# Note: These stats are calculated from the reviews above
+# To use in templates, access via site.data.testimonials_stats instead
