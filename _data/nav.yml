@@ -1,0 +1,34 @@
+# Main Navigation Menu Items
+# Order matters - items appear in this sequence
+
+- name: Home
+  url: /
+  icon: fas fa-home
+
+- name: About
+  url: /about/
+  icon: fas fa-user
+
+- name: Solutions
+  url: /services/
+  icon: fas fa-tools
+
+- name: Plans
+  url: /plans/
+  icon: fas fa-clipboard-list
+
+- name: Portfolio
+  url: /portfolio/
+  icon: fas fa-briefcase
+
+- name: Blog
+  url: /blog/
+  icon: fas fa-blog
+
+- name: Testimonials
+  url: /testimonials/
+  icon: fas fa-star
+
+- name: Contact
+  url: /contact/
+  icon: fas fa-envelope
