@@ -16,15 +16,15 @@ description: "Read authentic reviews from satisfied clients across West Texas. E
         </p>
         <div class="flex justify-center items-center gap-8 text-sm">
           <div>
-            <div class="text-4xl font-bold text-green-300 mb-1">4.9<span class="text-2xl">/5</span></div>
+            <div class="text-4xl font-bold text-green-300 mb-1">{{ site.data.testimonials.aggregate.average_rating }}<span class="text-2xl">/5</span></div>
             <div class="text-gray-400">Average Rating</div>
           </div>
           <div>
-            <div class="text-4xl font-bold text-cyan-300 mb-1">47+</div>
-            <div class="text-gray-400">Happy Clients</div>
+            <div class="text-4xl font-bold text-cyan-300 mb-1">{{ site.data.testimonials.aggregate.total_reviews }}+</div>
+            <div class="text-gray-400">Verified Reviews</div>
           </div>
           <div>
-            <div class="text-4xl font-bold text-purple-300 mb-1">100%</div>
+            <div class="text-4xl font-bold text-purple-300 mb-1">{{ site.data.testimonials.aggregate.satisfaction_rate }}%</div>
             <div class="text-gray-400">Satisfaction</div>
           </div>
         </div>
@@ -35,59 +35,57 @@ description: "Read authentic reviews from satisfied clients across West Texas. E
   <!-- TESTIMONIALS GRID -->
   <section class="content py-12">
     <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Review Source Tabs -->
+      <div class="flex justify-center gap-4 mb-8 flex-wrap">
+        <span class="px-4 py-2 bg-cyan-400/10 border border-cyan-400/30 rounded-lg text-cyan-300 text-sm">
+          <i class="fab fa-google mr-2"></i>Google Reviews ({{ site.data.testimonials.aggregate.google_reviews }})
+        </span>
+        <span class="px-4 py-2 bg-purple-400/10 border border-purple-400/30 rounded-lg text-purple-300 text-sm">
+          <i class="fas fa-briefcase mr-2"></i>WorkMarket ({{ site.data.testimonials.aggregate.workmarket_reviews }})
+        </span>
+        <span class="px-4 py-2 bg-green-400/10 border border-green-400/30 rounded-lg text-green-300 text-sm">
+          <i class="fas fa-cloud mr-2"></i>Cloudwork PRO ({{ site.data.testimonials.aggregate.cloudwork_pro_reviews }})
+        </span>
+      </div>
+
       <div class="grid md:grid-cols-3 gap-8">
-        
-        <!-- Testimonial 1 -->
+        {% for testimonial in site.data.testimonials limit:12 %}
+          {% if testimonial.name %}
+        <!-- {{ testimonial.source }} Review -->
         <article class="card testimonial-card rounded-xl p-8">
           <div class="stars mb-4">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            {% if testimonial.rating == 5 %}
+              <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+            {% elsif testimonial.rating == 4 %}
+              <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="far fa-star text-gray-400"></i>
+            {% else %}
+              <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="far fa-star text-gray-400"></i><i class="far fa-star text-gray-400"></i>
+            {% endif %}
           </div>
           <blockquote class="text-gray-300 mb-6 leading-relaxed italic">
-            "Nova Titan completely transformed our retail network infrastructure. Professional installation, excellent communication, and ongoing support. Our POS systems have never been more reliable."
+            "{{ testimonial.review }}"
           </blockquote>
           <div class="border-t border-gray-700 pt-4">
-            <div class="font-semibold text-cyan-300">Sarah Martinez</div>
-            <div class="text-sm text-gray-400">Retail Store Manager, Lubbock TX</div>
-            <div class="text-xs text-gray-500 mt-2">
-              <i class="fas fa-check-circle text-green-400 mr-1"></i>Verified Client
+            <div class="font-semibold {% cycle 'text-cyan-300', 'text-green-300', 'text-purple-300' %}">{{ testimonial.name }}</div>
+            <div class="text-sm text-gray-400">{{ testimonial.role }}{% if testimonial.location %}, {{ testimonial.location }}{% endif %}</div>
+            {% if testimonial.job_type %}
+            <div class="text-xs text-gray-500 mt-1">{{ testimonial.job_type }}</div>
+            {% endif %}
+            <div class="text-xs text-gray-500 mt-2 flex items-center justify-between">
+              <span>
+                {% if testimonial.verified %}
+                <i class="fas fa-check-circle text-green-400 mr-1"></i>Verified {{ testimonial.source }}
+                {% endif %}
+              </span>
+              {% if testimonial.date %}
+              <span class="text-gray-600">{{ testimonial.date }}</span>
+              {% endif %}
             </div>
           </div>
         </article>
-
-        <!-- Testimonial 2 -->
-        <article class="card testimonial-card rounded-xl p-8">
-          <div class="stars mb-4">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <blockquote class="text-gray-300 mb-6 leading-relaxed italic">
-            "Best tech decision we made for our small business. Remote support is incredibly responsive, and the managed IT plan saves us thousands in downtime. Highly recommend for any Lubbock business."
-          </blockquote>
-          <div class="border-t border-gray-700 pt-4">
-            <div class="font-semibold text-green-300">Michael Chen</div>
-            <div class="text-sm text-gray-400">Business Owner, Midland TX</div>
-            <div class="text-xs text-gray-500 mt-2">
-              <i class="fas fa-check-circle text-green-400 mr-1"></i>Verified Client
-            </div>
-          </div>
-        </article>
-
-        <!-- Testimonial 3 -->
-        <article class="card testimonial-card rounded-xl p-8">
-          <div class="stars mb-4">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <blockquote class="text-gray-300 mb-6 leading-relaxed italic">
-            "Smart home installation exceeded expectations. Security cameras, network optimization, and IoT device management - all seamless. Feel much safer knowing everything is properly secured."
-          </blockquote>
-          <div class="border-t border-gray-700 pt-4">
-            <div class="font-semibold text-purple-300">Jennifer Rodriguez</div>
-            <div class="text-sm text-gray-400">Homeowner, Odessa TX</div>
-            <div class="text-xs text-gray-500 mt-2">
-              <i class="fas fa-check-circle text-green-400 mr-1"></i>Verified Client
-            </div>
-          </div>
-        </article>
-
+          {% endif %}
+        {% endfor %}
       </div>
 
       <!-- See More CTA -->
