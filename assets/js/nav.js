@@ -89,15 +89,11 @@
     window.addEventListener('scroll', function() {
       const currentScroll = window.pageYOffset;
       
-      // Add shadow on scroll
+      // Add shadow on scroll (background color is handled inline)
       if (currentScroll > 50) {
         nav.classList.add('shadow-2xl');
-        nav.classList.add('bg-gray-900/98');
-        nav.classList.remove('bg-gray-900/95');
       } else {
         nav.classList.remove('shadow-2xl');
-        nav.classList.add('bg-gray-900/95');
-        nav.classList.remove('bg-gray-900/98');
       }
       
       lastScroll = currentScroll;
