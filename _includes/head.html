@@ -42,67 +42,95 @@
     gtag('config', 'G-R8DZFXDCNV');
   </script>
 
-  <!-- LocalBusiness JSON-LD Schema -->
+  <!-- Organization & LocalBusiness JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "{{ site.title }}",
-    "description": "{{ site.description }}",
-    "url": "{{ site.url }}",
-    "telephone": "{{ site.phone }}",
-    "email": "{{ site.email }}",
-    "image": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lubbock",
-      "addressRegion": "TX",
-      "postalCode": "79401",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "33.5779",
-      "longitude": "-101.8552"
-    },
-    "areaServed": [
+    "@graph": [
       {
-        "@type": "City",
-        "name": "Lubbock",
-        "containedInPlace": {"@type": "State", "name": "Texas"}
-      },
-      {
-        "@type": "City",
-        "name": "Midland",
-        "containedInPlace": {"@type": "State", "name": "Texas"}
-      },
-      {
-        "@type": "City",
-        "name": "Odessa",
-        "containedInPlace": {"@type": "State", "name": "Texas"}
-      },
-      {
-        "@type": "State",
-        "name": "Texas"
-      },
-      {
-        "@type": "Country",
-        "name": "United States"
+        "@type": ["Organization", "LocalBusiness"],
+        "@id": "{{ site.url }}/#organization",
+        "name": "{{ site.title }}",
+        "alternateName": "Nova Titan",
+        "description": "{{ site.description }}",
+        "url": "{{ site.url }}",
+        "telephone": "{{ site.phone }}",
+        "email": "{{ site.email }}",
+        "logo": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
+        "image": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lubbock",
+          "addressRegion": "TX",
+          "postalCode": "79401",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "33.5779",
+          "longitude": "-101.8552"
+        },
+        "areaServed": [
+          "Lubbock",
+          "Midland",
+          "Odessa",
+          "West Texas",
+          "United States"
+        ],
+        "priceRange": "$$",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "sameAs": [
+          "https://github.com/tzsmit",
+          "https://www.linkedin.com/in/traivone-smith-969b60327",
+          "https://www.tiktok.com/@novatitan1"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Technology Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cybersecurity Consulting",
+                "description": "Comprehensive cybersecurity assessments, cloud security audits, and vulnerability testing",
+                "provider": {
+                  "@id": "{{ site.url }}/#organization"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Network Installation & Setup",
+                "description": "Professional network infrastructure installation, WiFi optimization, and hardware setup",
+                "provider": {
+                  "@id": "{{ site.url }}/#organization"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "IT Consulting & Support",
+                "description": "Managed IT support, remote assistance, and technology strategy consulting",
+                "provider": {
+                  "@id": "{{ site.url }}/#organization"
+                }
+              }
+            }
+          ]
+        }
       }
-    ],
-    "priceRange": "$$",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    ],
-    "sameAs": [
-      "https://github.com/tzsmit",
-      "https://www.linkedin.com/in/traivone-smith-969b60327",
-      "https://www.tiktok.com/@novatitan1"
     ]
   }
   </script>
