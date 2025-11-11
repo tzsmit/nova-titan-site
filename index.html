@@ -304,6 +304,19 @@
     }
   </style>
 
+  <!-- LSI Keywords for SEO Crawler Discovery -->
+  <!--
+    LSI Keywords: IT consulting Lubbock TX, network security West Texas, managed IT services Midland Odessa,
+    cybersecurity consultant Texas, small business IT support Lubbock, cloud security audit, network installation,
+    technology solutions provider, enterprise network setup, Wi-Fi security assessment, firewall configuration,
+    smart home technology installation, remote tech support nationwide, OCI certified cloud consultant,
+    network infrastructure deployment, security hardening services, MFA implementation, penetration testing,
+    compliance consulting HIPAA PCI, incident response Texas, vulnerability assessment, IT infrastructure audit,
+    managed security services, technology consulting West Texas, network monitoring 24/7, device management,
+    patch management services, endpoint protection, email security solutions, backup disaster recovery,
+    business continuity planning, IT strategic planning, digital transformation consulting, cloud migration services
+  -->
+
   <!-- Enhanced JSON-LD with CloudWarden and certifications -->
   <script type="application/ld+json">
 {
@@ -320,7 +333,28 @@
       "telephone": "+1-806-370-0624",
       "email": "info@novatitan.net",
       "priceRange": "$$",
-      "areaServed": ["West Texas", "Lubbock", "Remote Nationwide"],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lubbock",
+          "containedInPlace": {"@type": "State", "name": "Texas"}
+        },
+        {
+          "@type": "City",
+          "name": "Midland",
+          "containedInPlace": {"@type": "State", "name": "Texas"}
+        },
+        {
+          "@type": "City",
+          "name": "Odessa",
+          "containedInPlace": {"@type": "State", "name": "Texas"}
+        },
+        {
+          "@type": "State",
+          "name": "Texas"
+        },
+        "United States"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Lubbock",
@@ -328,16 +362,31 @@
         "postalCode": "79401",
         "addressCountry": "US"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.5779",
+        "longitude": "-101.8552"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
       "sameAs": [
         "https://www.linkedin.com/in/traivone-smith-969b60327",
         "https://www.tiktok.com/@novatitan1",
         "https://github.com/tzsmit",
         "https://www.facebook.com/share/1GNBbSRT4b/"
       ],
-      "paymentAccepted": ["Credit Card","PayPal"],
+      "paymentAccepted": ["Credit Card","PayPal","Zelle","Cash"],
+      "currenciesAccepted": "USD",
       "founder": {
         "@type": "Person",
         "name": "Traivone Smith",
+        "jobTitle": "Chief Technology Officer & Founder",
         "hasCredential": [
           {
             "@type": "EducationalOccupationalCredential",
@@ -351,7 +400,8 @@
           }
         ]
       },
-      "knowsAbout": ["Cloud Security", "Network Security", "Cybersecurity", "Oracle Cloud Infrastructure", "AWS", "Azure"]
+      "knowsAbout": ["Cloud Security", "Network Security", "Cybersecurity", "Oracle Cloud Infrastructure", "AWS", "Azure", "Network Engineering", "Firewall Configuration", "Penetration Testing", "Compliance Auditing"],
+      "slogan": "Your All-in-One Technology Partner - Infrastructure, Support, Security"
     },
     {
       "@type": "WebSite",
@@ -500,6 +550,9 @@
 
   gtag('config', 'G-R8DZFXDCNV');
 </script>
+  
+  <!-- Plausible Analytics (Privacy-Friendly) -->
+  <script defer data-domain="novatitan.net" src="https://plausible.io/js/script.js"></script>
 <body class="text-white">
   <div id="particles-js"></div>
   <div class="matrix-bg"></div>
@@ -509,17 +562,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center group">
-          <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
+          <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Systems - IT Consulting Lubbock TX" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110" loading="eager"/>
           <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
         </a>
         <div class="hidden sm:flex items-center space-x-6">
           <a href="/" class="nav-link">Home</a>
           <a href="/about/" class="nav-link">About</a>
           <a href="/services/" class="nav-link">Solutions</a>
-          <a href="/resources/" class="nav-link">Resources</a>
+          <a href="/plans/" class="nav-link">Plans</a>
           <a href="/portfolio/" class="nav-link">Portfolio</a>
-          <a href="/blogs/" class="nav-link">Blog</a>
-          <a href="/faqs/" class="nav-link">FAQ</a>
+          <a href="/blog/" class="nav-link">Blog</a>
+          <a href="/testimonials/" class="nav-link">Testimonials</a>
           <a href="/contact/" class="nav-link">Contact</a>
           <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
             <i class="fas fa-calendar-check mr-1"></i>Book Now
@@ -534,10 +587,10 @@
           <a href="/" class="nav-link">Home</a>
           <a href="/about/" class="nav-link">About</a>
           <a href="/services/" class="nav-link">Solutions</a>
-          <a href="/resources/" class="nav-link">Resources</a>
+          <a href="/plans/" class="nav-link">Plans</a>
           <a href="/portfolio/" class="nav-link">Portfolio</a>
-          <a href="/blogs/" class="nav-link">Blog</a>
-          <a href="/faqs/" class="nav-link">FAQ</a>
+          <a href="/blog/" class="nav-link">Blog</a>
+          <a href="/testimonials/" class="nav-link">Testimonials</a>
           <a href="/contact/" class="nav-link">Contact</a>
           <a href="/book-now/" class="nav-link">Book Now</a>
         </div>
@@ -938,10 +991,11 @@
           <h4 class="text-cyan-300 font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="/services/" class="text-gray-300 hover:text-cyan-300 transition">All Services</a></li>
+            <li><a href="/plans/" class="text-gray-300 hover:text-cyan-300 transition">Support Plans</a></li>
+            <li><a href="/testimonials/" class="text-gray-300 hover:text-cyan-300 transition">Testimonials</a></li>
             <li><a href="/portfolio/" class="text-gray-300 hover:text-cyan-300 transition">Portfolio</a></li>
             <li><a href="/about/" class="text-gray-300 hover:text-cyan-300 transition">About</a></li>
-            <li><a href="/blogs/" class="text-gray-300 hover:text-cyan-300 transition">Security Blog</a></li>
-            <li><a href="/faqs/" class="text-gray-300 hover:text-cyan-300 transition">FAQ</a></li>
+            <li><a href="/blog/" class="text-gray-300 hover:text-cyan-300 transition">Security Blog</a></li>
             <li><a href="/contact/" class="text-gray-300 hover:text-cyan-300 transition">Contact</a></li>
           </ul>
         </div>
