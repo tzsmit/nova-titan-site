@@ -16,15 +16,15 @@ description: "Read authentic reviews from satisfied clients across West Texas. E
         </p>
         <div class="flex justify-center items-center gap-8 text-sm">
           <div>
-            <div class="text-4xl font-bold text-green-300 mb-1">{{ site.data.testimonials.aggregate.average_rating }}<span class="text-2xl">/5</span></div>
+            <div class="text-4xl font-bold text-green-300 mb-1">{{ site.data.testimonials_stats.average_rating }}<span class="text-2xl">/5</span></div>
             <div class="text-gray-400">Average Rating</div>
           </div>
           <div>
-            <div class="text-4xl font-bold text-cyan-300 mb-1">{{ site.data.testimonials.aggregate.total_reviews }}+</div>
+            <div class="text-4xl font-bold text-cyan-300 mb-1">{{ site.data.testimonials_stats.total_reviews }}+</div>
             <div class="text-gray-400">Verified Reviews</div>
           </div>
           <div>
-            <div class="text-4xl font-bold text-purple-300 mb-1">{{ site.data.testimonials.aggregate.satisfaction_rate }}%</div>
+            <div class="text-4xl font-bold text-purple-300 mb-1">{{ site.data.testimonials_stats.satisfaction_rate }}%</div>
             <div class="text-gray-400">Satisfaction</div>
           </div>
         </div>
@@ -39,13 +39,13 @@ description: "Read authentic reviews from satisfied clients across West Texas. E
       <!-- Review Source Tabs -->
       <div class="flex justify-center gap-4 mb-8 flex-wrap">
         <span class="px-4 py-2 bg-cyan-400/10 border border-cyan-400/30 rounded-lg text-cyan-300 text-sm">
-          <i class="fab fa-google mr-2"></i>Google Reviews ({{ site.data.testimonials.aggregate.google_reviews }})
+          <i class="fab fa-google mr-2"></i>Google Reviews ({{ site.data.testimonials_stats.google_reviews }})
         </span>
         <span class="px-4 py-2 bg-purple-400/10 border border-purple-400/30 rounded-lg text-purple-300 text-sm">
-          <i class="fas fa-briefcase mr-2"></i>WorkMarket ({{ site.data.testimonials.aggregate.workmarket_reviews }})
+          <i class="fas fa-briefcase mr-2"></i>WorkMarket ({{ site.data.testimonials_stats.workmarket_reviews }})
         </span>
         <span class="px-4 py-2 bg-green-400/10 border border-green-400/30 rounded-lg text-green-300 text-sm">
-          <i class="fas fa-cloud mr-2"></i>Cloudwork PRO ({{ site.data.testimonials.aggregate.cloudwork_pro_reviews }})
+          <i class="fas fa-cloud mr-2"></i>Cloudwork PRO ({{ site.data.testimonials_stats.cloudwork_pro_reviews }})
         </span>
       </div>
 
