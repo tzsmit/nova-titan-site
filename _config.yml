@@ -1,15 +1,78 @@
-title: Nova Titan Systems
-url: 'https://novatitan.net'
-baseurl: ''
+# Site Settings
+title: "Nova Titan Systems"
+description: "IT consulting, networking & installations, managed support, and cloud/security — Lubbock & West Texas, with remote nationwide service."
+url: "https://novatitan.net"
+baseurl: ""   # root - no subdirectory
+
+# Author/Business Info
+author: "Traivone Smith"
+phone: "(806) 370-0624"
+email: "traivonesmith@novatitan.net"
+
+# Build Settings
 markdown: kramdown
+permalink: pretty
+
+# Theme
 theme: minima
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
 collections:
   posts:
     output: true
-    permalink: /blog/:title
+    permalink: /blog/:title/
+
+# Default Front Matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      lang: "en"
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      lang: "en"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .gitignore
+  - README.md
+  - deployment-summary.md
+  - DEPLOYMENT_SUMMARY.md
+  - SEO_ENHANCEMENTS_V3.1.md
+
+# Include
+include:
+  - _pages
+
+# Sitemap settings
+sitemap: true
+
+# SEO settings
+twitter:
+  username: novatitan1
+social:
+  name: Nova Titan Systems
+  links:
+    - https://github.com/tzsmit
+    - https://www.linkedin.com/in/traivone-smith-969b60327
+    - https://www.tiktok.com/@novatitan1
+
+# Netlify CMS (optional - keep existing config)
 netlify_cms:
   collections:
     - label: 'Pages'

@@ -1,0 +1,189 @@
+---
+layout: default
+---
+
+<!-- Blog Post Layout -->
+<article class="content py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <!-- Post Header -->
+    <header class="mb-12">
+      <h1 class="text-4xl sm:text-5xl font-bold glow mb-4">
+        {{ page.title }}
+      </h1>
+      
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-6">
+        {% if page.date %}
+        <div class="flex items-center">
+          <i class="fas fa-calendar mr-2 text-cyan-400"></i>
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %d, %Y" }}
+          </time>
+        </div>
+        {% endif %}
+        
+        {% if page.author %}
+        <div class="flex items-center">
+          <i class="fas fa-user mr-2 text-green-400"></i>
+          <span>{{ page.author }}</span>
+        </div>
+        {% endif %}
+        
+        {% if page.categories %}
+        <div class="flex items-center">
+          <i class="fas fa-folder mr-2 text-purple-400"></i>
+          <span>{{ page.categories | join: ", " }}</span>
+        </div>
+        {% endif %}
+        
+        {% if page.tags %}
+        <div class="flex flex-wrap gap-2">
+          {% for tag in page.tags %}
+          <span class="px-3 py-1 bg-cyan-900/30 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">
+            #{{ tag }}
+          </span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      
+      {% if page.excerpt %}
+      <p class="text-xl text-gray-300 leading-relaxed">
+        {{ page.excerpt | strip_html }}
+      </p>
+      {% endif %}
+    </header>
+    
+    <!-- Post Content -->
+    <div class="prose prose-lg prose-invert max-w-none">
+      {{ content }}
+    </div>
+    
+    <!-- Post Footer -->
+    <footer class="mt-12 pt-8 border-t border-gray-700">
+      <div class="flex flex-wrap justify-between items-center gap-4">
+        <!-- Share Buttons -->
+        <div>
+          <span class="text-gray-400 text-sm mr-3">Share:</span>
+          <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ site.url }}{{ page.url }}" 
+             target="_blank" 
+             rel="noopener"
+             class="inline-flex items-center px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-white text-sm transition">
+            <i class="fab fa-twitter mr-2"></i>Twitter
+          </a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title | uri_escape }}" 
+             target="_blank" 
+             rel="noopener"
+             class="inline-flex items-center px-4 py-2 bg-blue-700 hover:bg-blue-800 rounded-lg text-white text-sm transition ml-2">
+            <i class="fab fa-linkedin mr-2"></i>LinkedIn
+          </a>
+        </div>
+        
+        <!-- Back to Blog -->
+        <a href="/blog/" class="inline-flex items-center px-4 py-2 border border-cyan-400/40 hover:bg-cyan-400/10 rounded-lg transition">
+          <i class="fas fa-arrow-left mr-2"></i>Back to Blog
+        </a>
+      </div>
+    </footer>
+  </div>
+</article>
+
+<!-- Related Posts -->
+{% if site.related_posts.size > 0 %}
+<section class="content py-12 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-2xl font-bold glow mb-8">Related Articles</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for post in site.related_posts limit:3 %}
+      <article class="card rounded-xl p-6 hover:transform hover:scale-105 transition">
+        <h3 class="text-xl font-semibold text-cyan-300 mb-3">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h3>
+        <p class="text-gray-400 text-sm mb-4">
+          {{ post.excerpt | strip_html | truncate: 120 }}
+        </p>
+        <div class="flex items-center justify-between text-xs text-gray-500">
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%b %d, %Y" }}
+          </time>
+          <a href="{{ post.url }}" class="text-cyan-400 hover:text-cyan-300">
+            Read more →
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<style>
+  /* Enhanced Card Styles */
+  .card { 
+    border: 1px solid rgba(0,212,255,.25); 
+    transition: all .4s ease; 
+    background: rgba(26,26,46,.85); 
+    backdrop-filter: blur(12px); 
+  }
+  .card:hover { 
+    border-color: rgba(0,212,255,0.6);
+    box-shadow: 0 20px 40px rgba(0,212,255,.3);
+  }
+  
+  /* Prose Styling for Blog Content */
+  .prose {
+    color: #e5e7eb;
+  }
+  .prose h2, .prose h3, .prose h4 {
+    color: #00d4ff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+  .prose a {
+    color: #00d4ff;
+    text-decoration: underline;
+  }
+  .prose a:hover {
+    color: #00ff88;
+  }
+  .prose code {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .prose pre {
+    background: #1a1a2e;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  .prose pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .prose ul, .prose ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+  .prose img {
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+  .prose blockquote {
+    border-left: 4px solid var(--cy);
+    padding-left: 1rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #9ca3af;
+  }
+</style>

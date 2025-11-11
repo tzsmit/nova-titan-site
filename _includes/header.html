@@ -1,0 +1,146 @@
+<!-- Navigation Header -->
+<nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-[1000] top-0 content">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center group">
+        <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" 
+             alt="{{ site.title }} Logo" 
+             class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
+        <span class="ml-3 text-xl font-bold text-cyan-400 glow">{{ site.title }}</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden sm:flex items-center space-x-6">
+        {% for item in site.data.nav %}
+          {% assign current_path = page.url | remove: 'index.html' %}
+          {% assign is_active = false %}
+          {% if current_path == item.url %}
+            {% assign is_active = true %}
+          {% elsif current_path == '/' and item.url == '/' %}
+            {% assign is_active = true %}
+          {% elsif current_path != '/' and item.url != '/' and current_path contains item.url %}
+            {% assign is_active = true %}
+          {% endif %}
+          
+          <a href="{{ item.url }}" 
+             class="nav-link {% if is_active %}text-cyan-400 font-semibold{% endif %}">
+            {{ item.name }}
+          </a>
+        {% endfor %}
+        <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
+          <i class="fas fa-calendar-check mr-1"></i>Book Now
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="sm:hidden hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="sm:hidden hidden pb-4">
+      <div class="flex flex-col space-y-2">
+        {% for item in site.data.nav %}
+          {% assign current_path = page.url | remove: 'index.html' %}
+          {% assign is_active = false %}
+          {% if current_path == item.url %}
+            {% assign is_active = true %}
+          {% elsif current_path == '/' and item.url == '/' %}
+            {% assign is_active = true %}
+          {% elsif current_path != '/' and item.url != '/' and current_path contains item.url %}
+            {% assign is_active = true %}
+          {% endif %}
+          
+          <a href="{{ item.url }}" 
+             class="nav-link {% if is_active %}text-cyan-400 font-semibold{% endif %}">
+            {{ item.name }}
+          </a>
+        {% endfor %}
+        <a href="/book-now/" class="nav-link">Book Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Navigation Styles */
+  .nav-link { 
+    transition: all .3s ease; 
+    position: relative; 
+    padding: 0.5rem 0;
+    display: inline-block;
+  }
+  .nav-link:hover { 
+    color: var(--cy); 
+    transform: scale(1.05); 
+  }
+  .nav-link::after { 
+    content:''; 
+    position:absolute; 
+    bottom:-2px; 
+    left:0; 
+    height:2px; 
+    width:0; 
+    background: linear-gradient(90deg, var(--cy), var(--gr)); 
+    transition:width .3s ease; 
+  }
+  .nav-link:hover::after { width:100%; }
+  
+  /* Enhanced Buttons */
+  .btn-grad { 
+    background: linear-gradient(45deg,var(--cy),var(--gr)); 
+    transition: all .3s ease; 
+    box-shadow: 0 4px 15px rgba(0,212,255,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-grad:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 25px rgba(0,212,255,.5); 
+  }
+  .btn-grad::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+  .btn-grad:hover::before {
+    left: 100%;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger { 
+    width: 36px; 
+    height: 28px; 
+    position: relative; 
+    cursor: pointer;
+  }
+  .hamburger span { 
+    position:absolute; 
+    left:0; 
+    right:0; 
+    height:3px; 
+    background: linear-gradient(90deg, var(--cy), var(--gr)); 
+    transition:transform .3s, opacity .3s, top .3s; 
+    border-radius: 2px;
+  }
+  .hamburger span:nth-child(1){ top:4px; } 
+  .hamburger span:nth-child(2){ top:12px; } 
+  .hamburger span:nth-child(3){ top:20px; }
+  .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
+  .hamburger.active span:nth-child(2){ opacity:0; }
+  .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
+
+  /* Ensure nav stays above all content */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+</style>

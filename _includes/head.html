@@ -1,0 +1,176 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Title -->
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · {{ site.description }}{% endif %}</title>
+
+  <!-- SEO Tags (jekyll-seo-tag plugin) -->
+  {% seo title=false %}
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+  <!-- Plausible Analytics (Privacy-Friendly) -->
+  <script defer data-domain="novatitan.net" src="https://plausible.io/js/script.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8DZFXDCNV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R8DZFXDCNV');
+  </script>
+
+  <!-- LocalBusiness JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ site.title }}",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.phone }}",
+    "email": "{{ site.email }}",
+    "image": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lubbock",
+      "addressRegion": "TX",
+      "postalCode": "79401",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "33.5779",
+      "longitude": "-101.8552"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Lubbock",
+        "containedInPlace": {"@type": "State", "name": "Texas"}
+      },
+      {
+        "@type": "City",
+        "name": "Midland",
+        "containedInPlace": {"@type": "State", "name": "Texas"}
+      },
+      {
+        "@type": "City",
+        "name": "Odessa",
+        "containedInPlace": {"@type": "State", "name": "Texas"}
+      },
+      {
+        "@type": "State",
+        "name": "Texas"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      }
+    ],
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      "https://github.com/tzsmit",
+      "https://www.linkedin.com/in/traivone-smith-969b60327",
+      "https://www.tiktok.com/@novatitan1"
+    ]
+  }
+  </script>
+
+  <!-- Base Styles -->
+  <style>
+    :root { 
+      --cy: #00d4ff; 
+      --gr: #00ff88; 
+      --purple: #b300ff;
+      --red: #ff0066;
+      --orange: #ff8800;
+    }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); 
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    
+    /* Matrix Background */
+    .matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: matrix-move 20s linear infinite;
+      z-index: 0;
+    }
+    
+    @keyframes matrix-move {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+    
+    /* Particle Background */
+    #particles-js { 
+      position: fixed; 
+      inset: 0; 
+      z-index: 0; 
+    }
+    
+    .content { 
+      position: relative; 
+      z-index: 1; 
+    }
+
+    /* Glow Effects */
+    .glow { 
+      text-shadow: 0 0 20px rgba(0,212,255,.6); 
+    }
+    .glow-green { 
+      text-shadow: 0 0 20px rgba(0,255,136,.6); 
+    }
+    .glow-purple { 
+      text-shadow: 0 0 20px rgba(179,0,255,.6); 
+    }
+  </style>
+
+  <!-- Page-specific head content -->
+  {% if page.extra_head %}{{ page.extra_head }}{% endif %}
+</head>
