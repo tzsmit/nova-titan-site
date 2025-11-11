@@ -12,6 +12,21 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/og-image.jpg">
+  <meta property="og:site_name" content="{{ site.title }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="twitter:title" content="{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="twitter:image" content="{{ site.url }}/assets/img/og-image.jpg">
+
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -134,6 +149,47 @@
     ]
   }
   </script>
+
+  <!-- AggregateRating Schema for Testimonials -->
+  {% if page.url == '/testimonials/' or page.url == '/testimonials/index.html' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "{{ site.url }}/#organization",
+    "name": "{{ site.title }}",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ site.data.testimonials.aggregate.average_rating }}",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "{{ site.data.testimonials.aggregate.total_reviews }}",
+      "reviewCount": "{{ site.data.testimonials.aggregate.total_reviews }}"
+    },
+    "review": [
+      {% for testimonial in site.data.testimonials limit:10 %}
+        {% if testimonial.name %}
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "{{ testimonial.name }}"
+        },
+        "datePublished": "{{ testimonial.date }}",
+        "reviewBody": "{{ testimonial.review | escape }}",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "{{ testimonial.rating }}",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
 
   <!-- Base Styles -->
   <style>
