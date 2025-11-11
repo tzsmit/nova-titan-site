@@ -27,89 +27,34 @@ description: "Get in touch with Nova Titan Systems for cybersecurity consultatio
     </div>
   </section>
 
-  <!-- RESPONSE TIMES -->
-  <section class="content py-12 bg-gray-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold glow mb-4">Response Time Guarantee</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">Professional support when you need it most</p>
-      </div>
 
-      <div class="response-grid">
-        <div class="response-card fade-in">
-          <span class="response-time">< 4hrs</span>
-          <div class="response-label">Email Response</div>
-        </div>
-        <div class="response-card fade-in">
-          <span class="response-time">< 1hr</span>
-          <div class="response-label">Emergency Calls</div>
-        </div>
-        <div class="response-card fade-in">
-          <span class="response-time">Same Day</span>
-          <div class="response-label">Consultation Scheduling</div>
-        </div>
-        <div class="response-card fade-in">
-          <span class="response-time">24/7</span>
-          <div class="response-label">Security Monitoring</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- CONTACT METHODS -->
   <section class="content py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold glow mb-4">How to Reach Me</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">Multiple ways to connect for your convenience</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <div class="contact-method fade-in">
-          <div class="contact-icon phone">
-            <i class="fas fa-phone"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-cyan-300 mb-2">Phone</h3>
-          <p class="text-gray-300 mb-4">Direct line for immediate assistance</p>
-          <a href="tel:+18063700624" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg inline-block">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="card rounded-xl p-6 text-center">
+          <div class="text-4xl mb-3">📞</div>
+          <h3 class="text-xl font-semibold text-cyan-300 mb-2">Call</h3>
+          <a href="tel:+18063700624" class="text-gray-300 hover:text-cyan-300 transition">
             (806) 370-0624
           </a>
-          <p class="text-xs text-gray-400 mt-2">Available: Mon-Fri 8AM-6PM CST</p>
         </div>
 
-        <div class="contact-method fade-in">
-          <div class="contact-icon email">
-            <i class="fas fa-envelope"></i>
-          </div>
+        <div class="card rounded-xl p-6 text-center">
+          <div class="text-4xl mb-3">📧</div>
           <h3 class="text-xl font-semibold text-green-300 mb-2">Email</h3>
-          <p class="text-gray-300 mb-4">Detailed inquiries and documentation</p>
-          <a href="mailto:info@novatitan.net" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg inline-block">info@novatitan.net
+          <a href="mailto:info@novatitan.net" class="text-gray-300 hover:text-green-300 transition break-all">
+            info@novatitan.net
           </a>
-          <p class="text-xs text-gray-400 mt-2">Response within 4 hours</p>
         </div>
 
-        <div class="contact-method fade-in">
-          <div class="contact-icon location">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-purple-300 mb-2">Service Area</h3>
-          <p class="text-gray-300 mb-4">Onsite and remote services</p>
-          <div class="text-center">
-            <div class="font-semibold text-purple-300">Lubbock & West Texas</div>
-            <div class="text-sm text-gray-400">Remote nationwide</div>
-          </div>
-        </div>
-
-        <div class="contact-method fade-in">
-          <div class="contact-icon calendar">
-            <i class="fas fa-calendar-check"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-orange-300 mb-2">Schedule</h3>
-          <p class="text-gray-300 mb-4">Book your consultation online</p>
-          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg inline-block">
+        <div class="card rounded-xl p-6 text-center">
+          <div class="text-4xl mb-3">📅</div>
+          <h3 class="text-xl font-semibold text-purple-300 mb-2">Schedule</h3>
+          <a href="/book-now/" class="text-gray-300 hover:text-purple-300 transition">
             Book Online
           </a>
-          <p class="text-xs text-gray-400 mt-2">Free initial consultation</p>
         </div>
       </div>
     </div>
@@ -120,289 +65,106 @@ description: "Get in touch with Nova Titan Systems for cybersecurity consultatio
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-12">
         <!-- Contact Form -->
-        <div class="fade-in">
-          <h2 class="text-3xl font-bold glow mb-6">Send Secure Message</h2>
-          <div class="contact-form">
-            <div id="messageStatus" class="message"></div>
+        <div>
+          <h2 class="text-3xl font-bold glow mb-6">Send a Message</h2>
+          <div class="card rounded-xl p-8">
+            <div id="messageStatus" class="mb-4 hidden"></div>
             
-            <form id="contactForm">
-              <div class="form-group">
-                <label for="name" class="form-label">
-                  <i class="fas fa-user text-cyan-400 mr-2"></i>Full Name
-                </label>
-                <input type="text" id="name" name="name" class="form-input" required>
+            <form id="contactForm" class="space-y-6">
+              <div>
+                <label for="name" class="block text-gray-300 mb-2 font-medium">Name</label>
+                <input type="text" id="name" name="name" 
+                       class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-cyan-400 focus:outline-none transition" 
+                       required>
               </div>
 
-              <div class="form-group">
-                <label for="email" class="form-label">
-                  <i class="fas fa-envelope text-cyan-400 mr-2"></i>Email Address
-                </label>
-                <input type="email" id="email" name="email" class="form-input" required>
+              <div>
+                <label for="email" class="block text-gray-300 mb-2 font-medium">Email</label>
+                <input type="email" id="email" name="email" 
+                       class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-cyan-400 focus:outline-none transition" 
+                       required>
               </div>
 
-              <div class="form-group">
-                <label for="phone" class="form-label">
-                  <i class="fas fa-phone text-cyan-400 mr-2"></i>Phone Number (Optional)
-                </label>
-                <input type="tel" id="phone" name="phone" class="form-input">
+              <div>
+                <label for="message" class="block text-gray-300 mb-2 font-medium">Message</label>
+                <textarea id="message" name="message" rows="6"
+                          class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-cyan-400 focus:outline-none transition resize-none" 
+                          placeholder="Tell me about your technology needs..."
+                          required></textarea>
               </div>
 
-              <div class="form-group">
-                <label for="company" class="form-label">
-                  <i class="fas fa-building text-cyan-400 mr-2"></i>Company/Organization (Optional)
-                </label>
-                <input type="text" id="company" name="company" class="form-input">
-              </div>
-
-              <div class="form-group">
-                <label for="service" class="form-label">
-                  <i class="fas fa-shield-alt text-cyan-400 mr-2"></i>Service Interest
-                </label>
-                <select id="service" name="service" class="form-select" required>
-                  <option value="">Select a service...</option>
-                  <option value="home-audit">Home Wi-Fi Security Audit ($149)</option>
-                  <option value="business-network">Business Network Setup ($499+)</option>
-                  <option value="cloud-security">Cloud Security Checkup ($399)</option>
-                  <option value="commercial-setup">Commercial Business Setup ($2,999+)</option>
-                  <option value="tech-implementation">Technology Implementation & Integration ($1,499+)</option>
-                  <option value="installations">Installations & Setup ($99+)</option>
-                  <option value="remote-support">Remote Tech Support ($75)</option>
-                  <option value="web-security">Website Security Scan ($199)</option>
-                  <option value="training">Security Training ($249)</option>
-                  <option value="consultation">Free Consultation</option>
-                  <option value="emergency">Security Emergency</option>
-                  <option value="other">Other (describe in message)</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="urgency" class="form-label">
-                  <i class="fas fa-clock text-cyan-400 mr-2"></i>Urgency Level
-                </label>
-                <select id="urgency" name="urgency" class="form-select" required>
-                  <option value="">Select urgency...</option>
-                  <option value="low">Low - General inquiry (4hr response)</option>
-                  <option value="medium">Medium - Need service soon (2hr response)</option>
-                  <option value="high">High - Urgent security issue (1hr response)</option>
-                  <option value="emergency">Emergency - Active security incident (Call immediately)</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="form-label">
-                  <i class="fas fa-comment-alt text-cyan-400 mr-2"></i>Message Details
-                </label>
-                <textarea id="message" name="message" class="form-textarea" 
-                  placeholder="Please describe your security needs, current setup, and any specific concerns or requirements..." required></textarea>
-              </div>
-
-              <!-- Honeypot field -->
+              <!-- Honeypot -->
               <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-              <button type="submit" class="form-submit btn-grad">
-                <i class="fas fa-paper-plane mr-2"></i>
-                Send Secure Message
+              <button type="submit" class="w-full btn-grad text-gray-900 font-bold py-4 px-6 rounded-lg text-lg">
+                Send Message
               </button>
             </form>
 
-            <div class="mt-4 text-sm text-gray-400 text-center">
-              <i class="fas fa-lock mr-2"></i>
-              Your information is transmitted securely and never shared
-            </div>
+            <p class="mt-4 text-sm text-gray-400 text-center">
+              <i class="fas fa-lock mr-1"></i>
+              Your message is secure and confidential
+            </p>
           </div>
         </div>
 
-        <!-- Business Info & Hours -->
-        <div class="space-y-8 fade-in">
+        <!-- Contact Info -->
+        <div class="space-y-6">
           <!-- Office Hours -->
           <div class="card rounded-xl p-6">
-            <h3 class="text-2xl font-semibold glow mb-4">
-              <i class="fas fa-clock text-cyan-400 mr-3"></i>
-              Office Hours
-            </h3>
-            <div class="hours-grid">
-              <div class="hours-day" id="monday">
-                <span class="font-semibold">Monday</span>
-                <span class="text-green-300">8:00 AM - 6:00 PM</span>
+            <h3 class="text-2xl font-semibold glow mb-4">Office Hours</h3>
+            <div class="space-y-2 text-gray-300">
+              <div class="flex justify-between">
+                <span>Mon - Fri</span>
+                <span class="text-green-300">8AM - 6PM</span>
               </div>
-              <div class="hours-day" id="tuesday">
-                <span class="font-semibold">Tuesday</span>
-                <span class="text-green-300">8:00 AM - 6:00 PM</span>
-              </div>
-              <div class="hours-day" id="wednesday">
-                <span class="font-semibold">Wednesday</span>
-                <span class="text-green-300">8:00 AM - 6:00 PM</span>
-              </div>
-              <div class="hours-day" id="thursday">
-                <span class="font-semibold">Thursday</span>
-                <span class="text-green-300">8:00 AM - 6:00 PM</span>
-              </div>
-              <div class="hours-day" id="friday">
-                <span class="font-semibold">Friday</span>
-                <span class="text-green-300">8:00 AM - 6:00 PM</span>
-              </div>
-              <div class="hours-day" id="saturday">
-                <span class="font-semibold">Saturday</span>
-                <span class="text-orange-300">Emergency Only</span>
-              </div>
-              <div class="hours-day" id="sunday">
-                <span class="font-semibold">Sunday</span>
-                <span class="text-orange-300">Emergency Only</span>
+              <div class="flex justify-between">
+                <span>Weekend</span>
+                <span class="text-orange-300">By Appointment</span>
               </div>
             </div>
             <p class="text-sm text-gray-400 mt-4">
-              <i class="fas fa-info-circle mr-2"></i>
-              Security emergencies handled 24/7. Weekend consultations available by appointment.
+              🚨 Emergencies: 24/7 support available
             </p>
           </div>
 
-          <!-- Payment Methods -->
+          <!-- Location -->
           <div class="card rounded-xl p-6">
-            <h3 class="text-2xl font-semibold glow mb-4">
-              <i class="fas fa-credit-card text-green-400 mr-3"></i>
-              Payment Options
-            </h3>
-            <div class="space-y-3">
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-green-400 mr-3"></i>
-                <span>Credit & Debit Cards (Visa, MasterCard, Discover)</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-green-400 mr-3"></i>
-                <span>PayPal & Digital Payments</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-green-400 mr-3"></i>
-                <span>Bank Transfer (ACH)</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-green-400 mr-3"></i>
-                <span>Cash (for onsite services)</span>
-              </div>
-            </div>
-            <p class="text-sm text-gray-400 mt-4">
-              50% deposit required for onsite services over $200. Remaining balance due upon completion.
+            <h3 class="text-2xl font-semibold glow mb-4">Service Area</h3>
+            <p class="text-gray-300 mb-2">
+              📍 Lubbock & West Texas
+            </p>
+            <p class="text-gray-300">
+              🌐 Remote Services Nationwide
             </p>
           </div>
 
           <!-- Connect -->
           <div class="card rounded-xl p-6">
-            <h3 class="text-2xl font-semibold glow mb-4">
-              <i class="fas fa-share-alt text-purple-400 mr-3"></i>
-              Connect Online
-            </h3>
-            <div class="grid grid-cols-2 gap-4">
+            <h3 class="text-2xl font-semibold glow mb-4">Connect</h3>
+            <div class="flex gap-4 justify-center">
               <a href="https://www.linkedin.com/in/traivone-smith-969b60327" target="_blank" 
-                 class="flex items-center justify-center p-3 bg-blue-600/20 hover:bg-blue-600/30 rounded-lg transition">
-                <i class="fab fa-linkedin text-2xl text-blue-400 mr-2"></i>
-                <span>LinkedIn</span>
+                 class="text-3xl text-blue-400 hover:text-blue-300 transition" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
               </a>
               <a href="https://github.com/tzsmit" target="_blank" 
-                 class="flex items-center justify-center p-3 bg-gray-600/20 hover:bg-gray-600/30 rounded-lg transition">
-                <i class="fab fa-github text-2xl text-gray-300 mr-2"></i>
-                <span>GitHub</span>
+                 class="text-3xl text-gray-300 hover:text-gray-200 transition" title="GitHub">
+                <i class="fab fa-github"></i>
               </a>
               <a href="https://www.tiktok.com/@novatitan1" target="_blank" 
-                 class="flex items-center justify-center p-3 bg-pink-600/20 hover:bg-pink-600/30 rounded-lg transition">
-                <i class="fab fa-tiktok text-2xl text-pink-400 mr-2"></i>
-                <span>TikTok</span>
+                 class="text-3xl text-pink-400 hover:text-pink-300 transition" title="TikTok">
+                <i class="fab fa-tiktok"></i>
               </a>
               <a href="https://www.facebook.com/share/1GNBbSRT4b/" target="_blank" 
-                 class="flex items-center justify-center p-3 bg-blue-500/20 hover:bg-blue-500/30 rounded-lg transition">
-                <i class="fab fa-facebook text-2xl text-blue-500 mr-2"></i>
-                <span>Facebook</span>
+                 class="text-3xl text-blue-500 hover:text-blue-400 transition" title="Facebook">
+                <i class="fab fa-facebook"></i>
               </a>
             </div>
-            <p class="text-sm text-gray-400 mt-4">
-              Follow for cybersecurity tips, industry updates, and behind-the-scenes content.
-            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ SECTION -->
-  <section class="content py-12">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold glow mb-4">Frequently Asked Questions</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">Common questions about our services and process</p>
-      </div>
 
-      <div class="space-y-4">
-        <div class="card rounded-xl p-6 fade-in">
-          <h3 class="text-lg font-semibold text-cyan-300 mb-3">
-            <i class="fas fa-question-circle mr-2"></i>
-            How quickly can you respond to security emergencies?
-          </h3>
-          <p class="text-gray-300">
-            Security emergencies receive immediate attention with response within 1 hour during business hours. 
-            For after-hours emergencies, call (806) 370-0624 directly - emergency support is available 24/7.
-          </p>
-        </div>
-
-        <div class="card rounded-xl p-6 fade-in">
-          <h3 class="text-lg font-semibold text-cyan-300 mb-3">
-            <i class="fas fa-question-circle mr-2"></i>
-            Do you offer free consultations?
-          </h3>
-          <p class="text-gray-300">
-            Yes! Initial consultations are completely free for new clients. This allows us to understand 
-            your security needs and provide accurate recommendations without any commitment.
-          </p>
-        </div>
-
-        <div class="card rounded-xl p-6 fade-in">
-          <h3 class="text-lg font-semibold text-cyan-300 mb-3">
-            <i class="fas fa-question-circle mr-2"></i>
-            Can you provide services outside of West Texas?
-          </h3>
-          <p class="text-gray-300">
-            Absolutely! While our primary service area is Lubbock and West Texas, we offer remote services 
-            nationwide including cloud security assessments, network consultations, and security training.
-          </p>
-        </div>
-
-        <div class="card rounded-xl p-6 fade-in">
-          <h3 class="text-lg font-semibold text-cyan-300 mb-3">
-            <i class="fas fa-question-circle mr-2"></i>
-            What information should I include in my message?
-          </h3>
-          <p class="text-gray-300">
-            Please describe your current setup, specific security concerns, and desired outcomes. 
-            The more details you provide, the better we can prepare for our consultation and 
-            provide accurate recommendations.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA SECTION -->
-  <section class="content py-16 bg-gradient-to-r from-cyan-900/30 via-green-900/30 to-purple-900/30">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold glow mb-6">
-        Ready to Secure Your Technology?
-      </h2>
-      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-        Don't wait for a security incident to happen. Get proactive protection for 
-        your home or business with professional cybersecurity services.
-      </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="tel:+18063700624" class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center">
-          <i class="fas fa-phone mr-3"></i>
-          Call (806) 370-0624 Now
-        </a>
-        <a href="/book-now/" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition-all text-lg inline-flex items-center">
-          <i class="fas fa-calendar-check mr-3"></i>
-          Schedule Online
-        </a>
-      </div>
-      <p class="text-sm text-gray-400 mt-6">
-        <i class="fas fa-shield-check mr-2"></i>
-        Same-day response • Free consultation • No pressure, just honest security advice
-      </p>
-    </div>
-  </section>
 
