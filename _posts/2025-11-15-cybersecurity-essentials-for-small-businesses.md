@@ -49,7 +49,7 @@ Outdated software is a goldmine for cybercriminals. Many attacks exploit known v
 4. Antivirus and security software
 5. Network equipment firmware
 
-**Solution:** Our Titan Pro and Elite managed IT plans include automated patch management.
+**Solution:** Our [Titan Pro and Elite managed IT plans](/plans/) include automated patch management.
 
 ## 4. Employee Security Training
 
@@ -65,7 +65,7 @@ Your employees are both your strongest defense and weakest link. Regular trainin
 
 **Frequency:** Quarterly refresher training recommended
 
-**Service:** Nova Titan offers cybersecurity awareness training starting at $249/session
+**Service:** Nova Titan offers [cybersecurity awareness training](/services/#cloud-security) starting at $249/session
 
 ## 5. Data Backup Strategy
 
@@ -118,7 +118,7 @@ Proactive monitoring can detect threats before they cause damage.
 - Antivirus detections
 - Network performance anomalies
 
-**Our Service:** All managed IT plans include basic network monitoring; Elite plan includes 24/7 advanced monitoring.
+**Our Service:** All [managed IT plans](/plans/) include basic network monitoring; [Titan Elite plan](/plans/) includes 24/7 advanced monitoring.
 
 ## West Texas-Specific Considerations
 
@@ -164,11 +164,11 @@ Develop and test an incident response plan.
 Schedule a complimentary 30-minute consultation to assess your current security posture.
 
 **Services Include:**
-- Home Wi-Fi Security Audits – Starting at $149
-- Small Business Network Setup – Starting at $499
-- Cloud Security Assessments – Starting at $399
-- Managed IT Support Plans – From $99/month
-- Security Awareness Training – $249/session
+- [Home Wi-Fi Security Audits](/services/#cloud-security) – Starting at $149
+- [Small Business Network Setup](/services/#installations) – Starting at $499
+- [Cloud Security Assessments](/services/#cloud-security) – Starting at $399
+- [Managed IT Support Plans](/plans/) – From $99/month
+- [Security Awareness Training](/services/#cloud-security) – $249/session
 
 ### Service Area
 We proudly serve Lubbock, Midland, Odessa, Amarillo, and all of West Texas, with remote services available nationwide.
@@ -179,7 +179,7 @@ Cybersecurity doesn't have to be overwhelming. Start with these essentials, and 
 
 **Ready to secure your business?**
 - 📞 Call: (806) 370-0624
-- 📧 Email: traivonesmith@novatitan.net
+- 📧 Email: info@novatitan.net
 - 🌐 Visit: [https://novatitan.net](https://novatitan.net)
 - 📅 [Schedule a Free Consultation](/book-now/)
 
