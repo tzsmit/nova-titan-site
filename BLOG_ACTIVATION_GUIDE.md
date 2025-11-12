@@ -2,9 +2,13 @@
 
 ## 📝 Current Status
 
-✅ **Blog post written and ready:** `_posts/2025-01-20-smart-infrastructure-managed-tech-support-save-west-texas-smbs-money.md`  
+✅ **Blog post #1 written and ready:** `_posts/2025-01-20-smart-infrastructure-managed-tech-support-save-west-texas-smbs-money.md`  
+✅ **Blog post #2 enhanced:** `_posts/2025-11-15-cybersecurity-essentials-for-small-businesses.md`  
 ✅ **Blog strategy documented:** `BLOG_STRATEGY.md`  
-⏳ **Blog index:** Shows as "Coming Soon" (prevents 404 errors)
+⏳ **Blog index:** Both posts show as "Coming Soon" (prevents 404 errors until GitHub Pages rebuilds)
+
+**Why both posts are "Coming Soon":**  
+GitHub Pages needs to rebuild the site to generate the proper `/blog/:title/` URLs. Until that rebuild completes, both posts are set to "Coming Soon" to prevent 404 errors.
 
 ---
 
@@ -12,11 +16,20 @@
 
 When you're ready to make the blog post live and clickable, follow these steps:
 
-### **Step 1: Update Blog Index**
+### **Step 1: Wait for GitHub Pages Rebuild**
+
+First, verify that GitHub Pages has rebuilt the site with the new posts:
+
+- Check: https://novatitan.net/blog/cybersecurity-essentials-for-small-businesses/
+- Check: https://novatitan.net/blog/smart-infrastructure-managed-tech-support-save-west-texas-smbs-money/
+
+If both URLs load (not 404), proceed to Step 2. If they're still 404, wait a few more minutes for GitHub Pages to finish rebuilding.
+
+### **Step 2: Update Blog Index**
 
 Edit file: `blog/index.html`
 
-**Find this section (lines ~48-67):**
+**Find this section for Post #1 (Smart Infrastructure):**
 
 ```html
 <!-- Blog Post 1 - NEW: Coming Soon -->
@@ -74,7 +87,7 @@ Edit file: `blog/index.html`
 </article>
 ```
 
-**Key changes:**
+**Key changes for Post #1:**
 1. Remove `opacity-50` class from `<article>` tag
 2. Change `text-gray-400` to `text-cyan-300` in `<h2>` tag
 3. Add `<a>` link around title with hover effect
@@ -82,9 +95,13 @@ Edit file: `blog/index.html`
 5. Change "Coming Soon" date to actual date "Jan 20, 2025"
 6. Replace bottom `<span>` with clickable `<a>` link
 
+**Then find Post #2 (Cybersecurity Essentials) and make the same changes:**
+
+Replace the "Coming Soon" version with active version (change `opacity-50` to normal, add links, etc.)
+
 ---
 
-### **Step 2: Commit and Push**
+### **Step 3: Commit and Push**
 
 ```bash
 cd /home/user/webapp/nova-titan-site
@@ -95,7 +112,7 @@ git push origin main
 
 ---
 
-### **Step 3: Verify It's Live**
+### **Step 4: Verify It's Live**
 
 After GitHub Pages rebuilds (2-5 minutes):
 
