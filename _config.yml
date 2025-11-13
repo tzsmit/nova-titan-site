@@ -59,6 +59,7 @@ exclude:
   - tailwind.config.js
   - postcss.config.js
   - "*.md"
+  - thank-you
 
 # Include
 include:

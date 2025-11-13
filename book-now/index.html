@@ -816,7 +816,7 @@
       `;
     }
 
-    // Form Submission (Formspree + consent + honeypot + source)
+    // Form Submission (consent + honeypot check, then scroll to calendar)
     document.getElementById('bookingForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       
@@ -832,47 +832,15 @@
         return;
       }
       
-      const formData = {
-        service: selectedServiceType,
-        price: selectedServicePrice,
-        name: document.getElementById('fullName').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        location: document.getElementById('location').value,
-        details: document.getElementById('projectDetails').value,
-        source: document.getElementById('source').value || "book-now-page",
-        _subject: "New booking request (novatitan.net)",
-        _to: "traivonesmith@novatitan.net"
-      };
-
-      try {
-        const res = await fetch("https://formspree.io/f/xldpbapp", {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(formData)
-        });
-        if (!res.ok) throw new Error('Network or endpoint error');
-
-        alert('Thanks! We received your request and will reach out shortly.');
-        document.getElementById('bookingForm').reset();
-        document.getElementById('selectedService').innerHTML = `
-          <div class="text-center">
-            <i class="fas fa-mouse-pointer text-3xl text-cyan-400 mb-4"></i>
-            <p class="text-lg text-white">Select a service above to continue</p>
-          </div>`;
-        selectedServiceType = null; 
-        selectedServicePrice = 0;
-
-        // === Enhancement: scroll user to the calendar (3 lines) ===
-        const cal = document.querySelector('.tidycal-embed');
-        if (cal) {
-          cal.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          cal.style.outline = '2px solid #00d4ff';
-          setTimeout(() => cal.style.outline = 'none', 1500);
-        }
-      } catch (err) {
-        console.error(err);
-        alert('Sorry—could not send just now. Please call (806) 370-0624 or email info@novatitan.net.');
+      // Show success message
+      alert('Service selected! Please complete your booking using the calendar below.');
+      
+      // Scroll user to the calendar
+      const cal = document.querySelector('.tidycal-embed');
+      if (cal) {
+        cal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        cal.style.outline = '2px solid #00d4ff';
+        setTimeout(() => cal.style.outline = 'none', 1500);
       }
     });
 
