@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Title -->
+  <title>Thank You — Nova Titan Systems</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Thank you for contacting Nova Titan Systems. Your message has been received and we will reach out shortly.">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <style>
+    /* Thank You Page Specific Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #e5e5e5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+    
+    /* Fade-in animation */
+    .thank-you-container {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Heading styles */
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #00d4ff;
+      text-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+    }
+    
+    .checkmark {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      animation: scaleIn 0.6s ease 0.3s backwards;
+    }
+    
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    
+    /* Message text */
+    .message {
+      font-size: 1.25rem;
+      color: #d1d5db;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    
+    /* Button styling to match site */
+    .btn-home {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(45deg, #00d4ff, #00ff88);
+      color: #0a0a0a;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+      margin-bottom: 3rem;
+    }
+    
+    .btn-home:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(0, 212, 255, 0.6),
+                  0 0 70px rgba(0, 255, 136, 0.4);
+    }
+    
+    .btn-home i {
+      margin-right: 0.5rem;
+    }
+    
+    /* Brand signature */
+    .signature {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.8;
+    }
+    
+    .signature strong {
+      color: #00d4ff;
+      font-weight: 600;
+    }
+    
+    .signature .tagline {
+      color: #00ff88;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .checkmark {
+        font-size: 3.5rem;
+      }
+      
+      .message {
+        font-size: 1.1rem;
+      }
+      
+      .btn-home {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+      }
+      
+      .signature {
+        font-size: 0.85rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.75rem;
+      }
+      
+      .checkmark {
+        font-size: 3rem;
+      }
+      
+      .message {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-you-container">
+    <div class="checkmark">✅</div>
+    
+    <h1>Thank You!</h1>
+    
+    <p class="message">
+      Your message has been successfully received. A member of Nova Titan Systems will reach out shortly.
+    </p>
+    
+    <a href="/" class="btn-home">
+      <i class="fas fa-home"></i>Return to Home
+    </a>
+    
+    <div class="signature">
+      <strong>Traivone Smith</strong><br>
+      Founder & CEO | Nova Titan Systems<br>
+      <span class="tagline">Secure. Optimize. Innovate.</span>
+    </div>
+  </div>
+</body>
+</html>
