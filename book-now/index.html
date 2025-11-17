@@ -1,869 +1,470 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Cybersecurity Services - Schedule Consultation | Nova Titan Systems</title>
-  <meta name="description" content="Schedule your cybersecurity consultation with Nova Titan Systems. Free initial assessment, same-day response, emergency support available 24/7 in Lubbock, West Texas.">
-  <link rel="canonical" href="https://novatitan.net/book-now/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Nova Titan Systems">
-  <meta property="og:title" content="Book Cybersecurity Services - Schedule Consultation">
-  <meta property="og:description" content="Professional cybersecurity consultation and service booking. Same-day response guaranteed with transparent pricing.">
-  <meta property="og:image" content="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2">
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <!-- Assets -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+---
+layout: default
+title: "Book Cybersecurity Services - Schedule Consultation | Nova Titan Systems"
+description: "Schedule your cybersecurity consultation with Nova Titan Systems. Free initial assessment, same-day response, emergency support available 24/7 in Lubbock, West Texas."
+---
 
-  <style>
-    :root { 
-      --cy: #00d4ff; 
-      --gr: #00ff88; 
-      --purple: #b300ff;
-      --red: #ff0066;
-      --orange: #ff8800;
-    }
+<!-- HERO -->
+<section class="content pt-32 pb-14">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-wrap items-center gap-3 mb-4">
+      <span class="hero-badge inline-flex items-center px-4 py-2 rounded-full text-cyan-300 text-sm glow font-mono">
+        <span class="status-indicator mr-2"></span>
+        Book Your Security Assessment
+      </span>
+    </div>
     
-    body { 
-      font-family: 'Inter', sans-serif; 
-      background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); 
-      min-height: 100vh;
-    }
+    <h1 class="hero-title mt-4 text-4xl sm:text-6xl font-bold text-cyan-300 glow fade-in">
+      Schedule your 
+      <span class="glow-green">cybersecurity consultation</span>
+    </h1>
     
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    <p class="mt-4 text-gray-300 text-lg max-w-2xl fade-in">
+      <strong class="text-green-300">Free 30-minute assessment</strong> with same-day response guaranteed. 
+      <strong class="text-cyan-300">No long-term contracts</strong> required. 
+      Available for <strong class="text-purple-300">Lubbock & West Texas</strong> on-site, 
+      remote services nationwide.
+    </p>
     
-    /* Enhanced Navigation */
-    .nav-link { 
-      transition: all .3s ease; 
-      position: relative; 
-      padding: 0.5rem 0;
-    }
-    .nav-link:hover { 
-      color: var(--cy); 
-      transform: scale(1.05); 
-    }
-    .nav-link::after { 
-      content:''; 
-      position:absolute; 
-      bottom:-2px; 
-      left:0; 
-      height:2px; 
-      width:0; 
-      background: linear-gradient(90deg, var(--cy), var(--gr)); 
-      transition:width .3s ease; 
-    }
-    .nav-link:hover::after { width:100%; }
-    
-    /* Enhanced Buttons */
-    .btn-grad { 
-      background: linear-gradient(45deg,var(--cy),var(--gr)); 
-      transition: all .3s ease; 
-      box-shadow: 0 4px 15px rgba(0,212,255,0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-grad:hover { 
-      transform: translateY(-2px); 
-      box-shadow: 0 8px 25px rgba(0,212,255,.5); 
-    }
-    .btn-grad::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
-    }
-    .btn-grad:hover::before {
-      left: 100%;
-    }
-    
-    /* Enhanced Cards */
-    .card { 
-      border: 1px solid rgba(0,212,255,.25); 
-      transition: all .4s ease; 
-      background: rgba(26,26,46,.85); 
-      backdrop-filter: blur(12px); 
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--cy), var(--gr), var(--purple));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    .card:hover::before {
-      transform: scaleX(1);
-    }
-    .card:hover { 
-      transform: translateY(-8px) scale(1.02); 
-      box-shadow: 0 20px 40px rgba(0,212,255,.3), 0 0 20px rgba(0,255,136,0.2); 
-      border-color: rgba(0,212,255,0.6);
-    }
-    
-    /* Service Cards */
-    .service-card {
-      border: 1px solid rgba(0,212,255,.25); 
-      transition: all .4s ease; 
-      background: rgba(26,26,46,.85); 
-      backdrop-filter: blur(12px); 
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--cy), var(--gr), var(--purple));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    .service-card:hover::before {
-      transform: scaleX(1);
-    }
-    .service-card:hover { 
-      transform: translateY(-8px) scale(1.02); 
-      box-shadow: 0 20px 40px rgba(0,212,255,.3), 0 0 20px rgba(0,255,136,0.2); 
-      border-color: rgba(0,212,255,0.6);
-    }
-    .service-card.selected {
-      border-color: var(--gr);
-      background: rgba(0,255,136,0.1);
-      box-shadow: 0 0 30px rgba(0,255,136,0.4);
-    }
-    
-    /* Glow Effects */
-    .glow { 
-      text-shadow: 0 0 20px rgba(0,212,255,.6); 
-    }
-    .glow-green { 
-      text-shadow: 0 0 20px rgba(0,255,136,.6); 
-    }
-    .glow-purple { 
-      text-shadow: 0 0 20px rgba(179,0,255,.6); 
-    }
-    
-    /* Particle Background */
-    #particles-js { 
-      position: fixed; 
-      inset: 0; 
-      z-index: 0; 
-    }
-    .content { 
-      position: relative; 
-      z-index: 1; 
-    }
-
-    /* Matrix Effect Enhancement - EXACT SAME AS INDEX */
-    .matrix-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      animation: matrix-move 20s linear infinite;
-      z-index: 0;
-    }
-    
-    @keyframes matrix-move {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
-    }
-
-    /* Enhanced Hamburger */
-    .hamburger { 
-      width: 36px; 
-      height: 28px; 
-      position: relative; 
-      cursor: pointer;
-    }
-    .hamburger span { 
-      position:absolute; 
-      left:0; 
-      right:0; 
-      height:3px; 
-      background: linear-gradient(90deg, var(--cy), var(--gr)); 
-      transition:transform .3s, opacity .3s, top .3s; 
-      border-radius: 2px;
-    }
-    .hamburger span:nth-child(1){ top:4px; } 
-    .hamburger span:nth-child(2){ top:12px; } 
-    .hamburger span:nth-child(3){ top:20px; }
-    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
-    .hamburger.active span:nth-child(2){ opacity:0; }
-    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
-
-    /* Typography Enhancements */
-    h1, h2, h3 { 
-      text-shadow: 0 0 20px rgba(0,212,255,.6); 
-    }
-    
-    /* Hero Section Enhancements */
-    .hero-badge {
-      background: rgba(0,212,255,0.1);
-      border: 1px solid rgba(0,212,255,0.3);
-      backdrop-filter: blur(10px);
-      animation: badge-pulse 3s ease-in-out infinite;
-    }
-    
-    @keyframes badge-pulse {
-      0%, 100% { box-shadow: 0 0 5px rgba(0,212,255,0.3); }
-      50% { box-shadow: 0 0 20px rgba(0,212,255,0.6), 0 0 30px rgba(0,255,136,0.3); }
-    }
-
-    /* Emergency Alert */
-    .emergency-alert {
-      background: rgba(255,0,102,0.2);
-      border: 2px solid var(--red);
-      backdrop-filter: blur(12px);
-    }
-
-    /* Form Styling */
-    .form-input {
-      background: rgba(26,26,46,0.8) !important;
-      border: 1px solid rgba(0,212,255,0.3) !important;
-      color: #ffffff !important;
-      transition: all 0.3s ease;
-    }
-    .form-input:focus {
-      border-color: var(--cy) !important;
-      box-shadow: 0 0 0 3px rgba(0,212,255,0.1) !important;
-      outline: none !important;
-    }
-    ::placeholder {
-      color: #9ca3af !important;
-    }
-
-    /* Loading Animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Social Icons */
-    .social-icon {
-      transition: all 0.3s ease;
-      filter: drop-shadow(0 0 5px rgba(0,212,255,0.3));
-    }
-    .social-icon:hover {
-      transform: scale(1.2) rotate(5deg);
-      filter: drop-shadow(0 0 15px rgba(0,212,255,0.8));
-    }
-
-    /* Force visibility for all text elements */
-    h1, h2, h3, h4, h5, h6, p, span, div, a, li {
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-
-    /* Specific overrides for white text */
-    .text-white {
-      color: #ffffff !important;
-    }
-    .text-gray-200 {
-      color: #e5e7eb !important;  
-    }
-    .text-gray-300 {
-      color: #d1d5db !important;
-    }
-  /* Keep the calendar tidy within your card */
-  .tidycal-embed { width: 100%; display: block; }
-  /* optional: ensure a consistent area while it loads */
-  .tidycal-embed { min-height: 720px; }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Nova Titan Systems",
-    "description": "Professional cybersecurity services for West Texas. Same-day response with transparent pricing.",
-    "url": "https://novatitan.net",
-    "telephone": "+18063700624",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lubbock",
-      "addressRegion": "TX",
-      "addressCountry": "US"
-    }
-  }
-  </script>
-</head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8DZFXDCNV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R8DZFXDCNV');
-</script>
-
-<body class="text-white">
-  <div id="particles-js"></div>
-  <div class="matrix-bg"></div>
-
-  <!-- NAV -->
-  <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20 content">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center group">
-          <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
-          <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
-        </a>
-        <div class="hidden sm:flex items-center space-x-6">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Services</a>
-          <a href="/portfolio/" class="nav-link">Portfolio</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/faqs/" class="nav-link">FAQ</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
-            <i class="fas fa-calendar-check mr-1"></i>Book Now
-          </a>
-        </div>
-        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+    <!-- Emergency Alert -->
+    <div class="emergency-alert rounded-xl p-6 mt-8 max-w-2xl fade-in">
+      <div class="flex items-center mb-4">
+        <i class="fas fa-exclamation-triangle text-3xl text-red-400 mr-4"></i>
+        <h3 class="text-xl font-bold text-red-400">Security Emergency?</h3>
       </div>
-      <div id="mobileMenu" class="sm:hidden hidden pb-4">
-        <div class="flex flex-col space-y-2">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Services</a>
-          <a href="/portfolio/" class="nav-link">Portfolio</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/faqs/" class="nav-link">FAQ</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="/book-now/" class="nav-link">Book Now</a>
-        </div>
+      <p class="text-white mb-4">
+        For active breaches, malware infections, or network outages requiring immediate attention
+      </p>
+      <a href="tel:+18063700624" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center">
+        <i class="fas fa-phone mr-2"></i>
+        Call (806) 370-0624 Now
+      </a>
+      <p class="text-white mt-2 text-sm">24/7 Emergency Support Available</p>
+    </div>
+
+    <!-- Trust Indicators -->
+    <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-gray-400 fade-in">
+      <div class="flex items-center">
+        <i class="fas fa-certificate text-orange-400 mr-2"></i>
+        OCI Certified Cloud Security
+      </div>
+      <div class="flex items-center">
+        <i class="fas fa-shield-check text-green-400 mr-2"></i>
+        Same-Day Response Guaranteed
+      </div>
+      <div class="flex items-center">
+        <i class="fas fa-handshake text-blue-400 mr-2"></i>
+        No Long-Term Contracts
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="content pt-28 pb-14">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-wrap items-center gap-3 mb-4">
-        <span class="hero-badge inline-block px-3 py-1 rounded-full text-cyan-300 text-sm glow font-mono">
-          <span class="status-indicator mr-2"></span>
-          Book Your Security Assessment
-        </span>
-      </div>
-      
-      <h1 class="hero-title mt-4 text-4xl sm:text-6xl font-bold text-cyan-300 glow fade-in">
-        Schedule your 
-        <span class="glow-green">cybersecurity consultation</span>
-      </h1>
-      
-      <p class="mt-4 text-gray-300 text-lg max-w-2xl fade-in">
-        <strong class="text-green-300">Free 30-minute assessment</strong> with same-day response guaranteed. 
-        <strong class="text-cyan-300">No long-term contracts</strong> required. 
-        Available for <strong class="text-purple-300">Lubbock & West Texas</strong> on-site, 
-        remote services nationwide.
-      </p>
-      
-      <!-- Emergency Alert -->
-      <div class="emergency-alert rounded-xl p-6 mt-8 max-w-2xl fade-in">
-        <div class="flex items-center mb-4">
-          <i class="fas fa-exclamation-triangle text-3xl text-red-400 mr-4"></i>
-          <h3 class="text-xl font-bold text-red-400">Security Emergency?</h3>
+<!-- FEATURED SERVICES -->
+<section class="content py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-cyan-300 glow mb-4">Choose Your Service</h2>
+      <p class="text-gray-300">Select from our most popular cybersecurity services</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Home Wi-Fi Security -->
+      <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('home-audit', 149)">
+        <div class="text-center mb-4">
+          <i class="fas fa-home text-3xl text-cyan-400 mb-3"></i>
+          <h3 class="text-xl font-bold text-white mb-2">Home Wi-Fi Security</h3>
+          <div class="text-2xl font-bold text-green-300">$149</div>
         </div>
-        <p class="text-white mb-4">
-          For active breaches, malware infections, or network outages requiring immediate attention
+        <p class="text-gray-300 text-center mb-4">Complete security assessment for your home network</p>
+        <ul class="text-gray-200 space-y-1 text-sm">
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Router security configuration</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Wi-Fi password optimization</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Smart device protection</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Network monitoring setup</li>
+        </ul>
+      </div>
+
+      <!-- Business Network -->
+      <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('business-network', 499)">
+        <div class="text-center mb-4">
+          <i class="fas fa-building text-3xl text-cyan-400 mb-3"></i>
+          <h3 class="text-xl font-bold text-white mb-2">Business Network</h3>
+          <div class="text-2xl font-bold text-green-300">$499+</div>
+        </div>
+        <p class="text-gray-300 text-center mb-4">Secure enterprise network with VLAN segmentation</p>
+        <ul class="text-gray-200 space-y-1 text-sm">
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> VLAN network segmentation</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Guest network isolation</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> POS system security</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Firewall configuration</li>
+        </ul>
+      </div>
+
+      <!-- Cloud Security -->
+      <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('cloud-security', 399)">
+        <div class="text-center mb-4">
+          <i class="fas fa-cloud text-3xl text-cyan-400 mb-3"></i>
+          <h3 class="text-xl font-bold text-white mb-2">Cloud Security</h3>
+          <div class="text-2xl font-bold text-green-300">$399</div>
+        </div>
+        <p class="text-gray-300 text-center mb-4">OCI-certified cloud security audit</p>
+        <ul class="text-gray-200 space-y-1 text-sm">
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> AWS, Azure, OCI support</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> IAM security assessment</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> MFA implementation</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Compliance reporting</li>
+        </ul>
+      </div>
+
+      <!-- Equipment Installation -->
+      <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('installations', 99)">
+        <div class="text-center mb-4">
+          <i class="fas fa-tools text-3xl text-cyan-400 mb-3"></i>
+          <h3 class="text-xl font-bold text-white mb-2">Installation</h3>
+          <div class="text-2xl font-bold text-green-300">$99+</div>
+        </div>
+        <p class="text-gray-300 text-center mb-4">Professional hardware installation</p>
+        <ul class="text-gray-200 space-y-1 text-sm">
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> TV mounting & setup</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Smart home devices</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Network equipment</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Cable management</li>
+        </ul>
+      </div>
+
+      <!-- Remote Support -->
+      <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('remote-support', 75)">
+        <div class="text-center mb-4">
+          <i class="fas fa-desktop text-3xl text-cyan-400 mb-3"></i>
+          <h3 class="text-xl font-bold text-white mb-2">Remote Support</h3>
+          <div class="text-2xl font-bold text-green-300">$75</div>
+        </div>
+        <p class="text-gray-300 text-center mb-4">Secure remote troubleshooting</p>
+        <ul class="text-gray-200 space-y-1 text-sm">
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Device configuration</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Security updates</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> System optimization</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Performance tuning</li>
+        </ul>
+      </div>
+
+      <!-- Security Training -->
+      <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('security-training', 249)">
+        <div class="text-center mb-4">
+          <i class="fas fa-graduation-cap text-3xl text-cyan-400 mb-3"></i>
+          <h3 class="text-xl font-bold text-white mb-2">Security Training</h3>
+          <div class="text-2xl font-bold text-green-300">$249</div>
+        </div>
+        <p class="text-gray-300 text-center mb-4">Team security awareness training</p>
+        <ul class="text-gray-200 space-y-1 text-sm">
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Phishing awareness</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Password best practices</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Security policies</li>
+          <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Incident response</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULER (TidyCal) -->
+<section class="content py-6">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="card rounded-xl p-8">
+      <h2 class="text-3xl font-bold text-cyan-300 glow mb-6 text-center">Book on My Calendar</h2>
+      <p class="text-gray-300 mb-6 text-center">Instant booking with confirmations & calendar invites.</p>
+      <div class="tidycal-embed" data-path="traivonesmith"></div>
+      <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="content py-12">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="card rounded-xl p-8">
+      <h2 class="text-3xl font-bold text-cyan-300 glow mb-8 text-center">Contact Information</h2>
+      
+      <form id="bookingForm">
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div>
+            <label class="block text-white font-semibold mb-2">Full Name *</label>
+            <input type="text" id="fullName" required placeholder="Your full name" class="form-input w-full px-4 py-3 rounded-lg">
+          </div>
+          
+          <div>
+            <label class="block text-white font-semibold mb-2">Phone Number *</label>
+            <input type="tel" id="phone" required placeholder="(806) 555-0123" class="form-input w-full px-4 py-3 rounded-lg">
+          </div>
+          
+          <div>
+            <label class="block text-white font-semibold mb-2">Email Address *</label>
+            <input type="email" id="email" required placeholder="your@email.com" class="form-input w-full px-4 py-3 rounded-lg">
+          </div>
+          
+          <div>
+            <label class="block text-white font-semibold mb-2">Service Location</label>
+            <input type="text" id="location" placeholder="Lubbock, TX" class="form-input w-full px-4 py-3 rounded-lg">
+          </div>
+        </div>
+        
+        <div class="mb-8">
+          <label class="block text-white font-semibold mb-2">Project Details</label>
+          <textarea id="projectDetails" rows="4" placeholder="Tell us about your security needs..." class="form-input w-full px-4 py-3 rounded-lg"></textarea>
+        </div>
+
+        <!-- Selected Service Display -->
+        <div id="selectedService" class="card rounded-xl p-6 mb-8 text-center">
+          <div class="text-gray-300">
+            <i class="fas fa-mouse-pointer text-3xl text-cyan-400 mb-4"></i>
+            <p class="text-lg text-white">Select a service above to continue</p>
+          </div>
+        </div>
+
+        <!-- Consent + Honeypot + Source -->
+        <div class="mb-6">
+          <label class="inline-flex items-center">
+            <input type="checkbox" id="consent" required class="mr-2">
+            <span class="text-sm text-gray-300">I agree to the <a href="/privacy/" class="text-cyan-300 underline">Privacy Policy</a>.</span>
+          </label>
+          <input type="text" id="company" name="company" style="display:none"> <!-- honeypot -->
+          <input type="hidden" id="source" name="source" value="book-now-page">
+        </div>
+        
+        <button type="submit" class="btn-grad text-gray-900 font-semibold py-4 px-8 rounded-lg text-lg w-full">
+          <i class="fas fa-calendar-check mr-3"></i>
+          Schedule Consultation
+        </button>
+
+        <div class="text-center mt-6 space-y-2">
+          <p class="flex items-center justify-center text-gray-300"><i class="fas fa-check text-green-400 mr-2"></i> Same-day response guaranteed</p>
+          <p class="flex items-center justify-center text-gray-300"><i class="fas fa-check text-green-400 mr-2"></i> No long-term contracts</p>
+          <p class="flex items-center justify-center text-gray-300"><i class="fas fa-check text-green-400 mr-2"></i> Free 30-minute consultation</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS HOURS -->
+<section class="content py-12">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-cyan-300 glow mb-8">Business Hours</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card rounded-xl p-6">
+        <h3 class="text-xl font-bold text-white mb-4">
+          <i class="fas fa-clock text-cyan-400 mr-3"></i>
+          Regular Hours
+        </h3>
+        <div class="space-y-3 text-gray-200">
+          <div class="flex justify-between">
+            <span>Monday - Friday:</span>
+            <span class="font-semibold text-green-300">8:00 AM - 6:00 PM</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Saturday:</span>
+            <span class="font-semibold text-green-300">9:00 AM - 3:00 PM</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Sunday:</span>
+            <span class="font-semibold text-orange-300">Emergency Only</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card rounded-xl p-6">
+        <h3 class="text-xl font-bold text-white mb-4">
+          <i class="fas fa-shield-alt text-red-400 mr-3"></i>
+          Emergency Support
+        </h3>
+        <p class="mb-4 text-gray-300">
+          Security breaches don't wait for business hours. We're available 24/7 for critical incidents.
         </p>
         <a href="tel:+18063700624" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center">
           <i class="fas fa-phone mr-2"></i>
-          Call (806) 370-0624 Now
+          Emergency Line
         </a>
-        <p class="text-white mt-2 text-sm">24/7 Emergency Support Available</p>
-      </div>
-
-      <!-- Trust Indicators -->
-      <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-gray-400 fade-in">
-        <div class="flex items-center">
-          <i class="fas fa-certificate text-orange-400 mr-2"></i>
-          OCI Certified Cloud Security
-        </div>
-        <div class="flex items-center">
-          <i class="fas fa-shield-check text-green-400 mr-2"></i>
-          Same-Day Response Guaranteed
-        </div>
-        <div class="flex items-center">
-          <i class="fas fa-handshake text-blue-400 mr-2"></i>
-          No Long-Term Contracts
-        </div>
+        <p class="mt-3 text-sm text-gray-300">Response within 30 minutes</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FEATURED SERVICES -->
-  <section class="content py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-cyan-300 glow mb-4">Choose Your Service</h2>
-        <p class="text-gray-300">Select from our most popular cybersecurity services</p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Home Wi-Fi Security -->
-        <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('home-audit', 149)">
-          <div class="text-center mb-4">
-            <i class="fas fa-home text-3xl text-cyan-400 mb-3"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Home Wi-Fi Security</h3>
-            <div class="text-2xl font-bold text-green-300">$149</div>
-          </div>
-          <p class="text-gray-300 text-center mb-4">Complete security assessment for your home network</p>
-          <ul class="text-gray-200 space-y-1 text-sm">
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Router security configuration</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Wi-Fi password optimization</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Smart device protection</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Network monitoring setup</li>
-          </ul>
-        </div>
+<style>
+  /* Service Card Styles */
+  .service-card {
+    border: 1px solid rgba(0,212,255,.25); 
+    transition: all .4s ease; 
+    background: rgba(26,26,46,.85); 
+    backdrop-filter: blur(12px); 
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cy), var(--gr), #b300ff);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+  .service-card:hover { 
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 20px 40px rgba(0,212,255,.3), 0 0 20px rgba(0,255,136,0.2); 
+    border-color: rgba(0,212,255,0.6);
+  }
+  .service-card.selected {
+    border-color: var(--gr);
+    background: rgba(0,255,136,0.1);
+    box-shadow: 0 0 30px rgba(0,255,136,0.4);
+  }
 
-        <!-- Business Network -->
-        <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('business-network', 499)">
-          <div class="text-center mb-4">
-            <i class="fas fa-building text-3xl text-cyan-400 mb-3"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Business Network</h3>
-            <div class="text-2xl font-bold text-green-300">$499+</div>
-          </div>
-          <p class="text-gray-300 text-center mb-4">Secure enterprise network with VLAN segmentation</p>
-          <ul class="text-gray-200 space-y-1 text-sm">
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> VLAN network segmentation</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Guest network isolation</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> POS system security</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Firewall configuration</li>
-          </ul>
-        </div>
+  /* Emergency Alert */
+  .emergency-alert {
+    background: rgba(255,0,102,0.2);
+    border: 2px solid #ff0066;
+    backdrop-filter: blur(12px);
+  }
 
-        <!-- Cloud Security -->
-        <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('cloud-security', 399)">
-          <div class="text-center mb-4">
-            <i class="fas fa-cloud text-3xl text-cyan-400 mb-3"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Cloud Security</h3>
-            <div class="text-2xl font-bold text-green-300">$399</div>
-          </div>
-          <p class="text-gray-300 text-center mb-4">OCI-certified cloud security audit</p>
-          <ul class="text-gray-200 space-y-1 text-sm">
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> AWS, Azure, OCI support</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> IAM security assessment</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> MFA implementation</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Compliance reporting</li>
-          </ul>
-        </div>
+  /* Form Styling */
+  .form-input {
+    background: rgba(26,26,46,0.8) !important;
+    border: 1px solid rgba(0,212,255,0.3) !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+  }
+  .form-input:focus {
+    border-color: var(--cy) !important;
+    box-shadow: 0 0 0 3px rgba(0,212,255,0.1) !important;
+    outline: none !important;
+  }
+  ::placeholder {
+    color: #9ca3af !important;
+  }
 
-        <!-- Equipment Installation -->
-        <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('installations', 99)">
-          <div class="text-center mb-4">
-            <i class="fas fa-tools text-3xl text-cyan-400 mb-3"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Installation</h3>
-            <div class="text-2xl font-bold text-green-300">$99+</div>
-          </div>
-          <p class="text-gray-300 text-center mb-4">Professional hardware installation</p>
-          <ul class="text-gray-200 space-y-1 text-sm">
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> TV mounting & setup</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Smart home devices</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Network equipment</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Cable management</li>
-          </ul>
-        </div>
+  /* Hero Badge */
+  .hero-badge {
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.3);
+    backdrop-filter: blur(10px);
+    animation: badge-pulse 3s ease-in-out infinite;
+  }
+  
+  @keyframes badge-pulse {
+    0%, 100% { box-shadow: 0 0 5px rgba(0,212,255,0.3); }
+    50% { box-shadow: 0 0 20px rgba(0,212,255,0.6), 0 0 30px rgba(0,255,136,0.3); }
+  }
 
-        <!-- Remote Support -->
-        <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('remote-support', 75)">
-          <div class="text-center mb-4">
-            <i class="fas fa-desktop text-3xl text-cyan-400 mb-3"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Remote Support</h3>
-            <div class="text-2xl font-bold text-green-300">$75</div>
-          </div>
-          <p class="text-gray-300 text-center mb-4">Secure remote troubleshooting</p>
-          <ul class="text-gray-200 space-y-1 text-sm">
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Device configuration</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Security updates</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> System optimization</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Performance tuning</li>
-          </ul>
-        </div>
+  .status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #00d4ff, #00ff88);
+    border-radius: 50%;
+    animation: blink 2s infinite;
+  }
 
-        <!-- Security Training -->
-        <div class="service-card rounded-xl p-6 fade-in" onclick="selectService('security-training', 249)">
-          <div class="text-center mb-4">
-            <i class="fas fa-graduation-cap text-3xl text-cyan-400 mb-3"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Security Training</h3>
-            <div class="text-2xl font-bold text-green-300">$249</div>
-          </div>
-          <p class="text-gray-300 text-center mb-4">Team security awareness training</p>
-          <ul class="text-gray-200 space-y-1 text-sm">
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Phishing awareness</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Password best practices</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Security policies</li>
-            <li class="flex items-center"><span class="text-green-400 mr-2">✓</span> Incident response</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
 
-  <!-- SCHEDULER (TidyCal) -->
-  <section class="content py-6">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="card rounded-xl p-8">
-        <h2 class="text-3xl font-bold text-cyan-300 glow mb-6 text-center">Book on My Calendar</h2>
-        <p class="text-gray-300 mb-6 text-center">Instant booking with confirmations & calendar invites.</p>
-        <div class="tidycal-embed" data-path="traivonesmith"></div>
-        <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
-      </div>
-    </div>
-  </section>
+  /* Loading Animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-  <!-- BOOKING FORM -->
-  <section class="content py-12">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="card rounded-xl p-8">
-        <h2 class="text-3xl font-bold text-cyan-300 glow mb-8 text-center">Contact Information</h2>
-        
-        <form id="bookingForm">
-          <div class="grid md:grid-cols-2 gap-6 mb-8">
-            <div>
-              <label class="block text-white font-semibold mb-2">Full Name *</label>
-              <input type="text" id="fullName" required placeholder="Your full name" class="form-input w-full px-4 py-3 rounded-lg">
-            </div>
-            
-            <div>
-              <label class="block text-white font-semibold mb-2">Phone Number *</label>
-              <input type="tel" id="phone" required placeholder="(806) 555-0123" class="form-input w-full px-4 py-3 rounded-lg">
-            </div>
-            
-            <div>
-              <label class="block text-white font-semibold mb-2">Email Address *</label>
-              <input type="email" id="email" required placeholder="your@email.com" class="form-input w-full px-4 py-3 rounded-lg">
-            </div>
-            
-            <div>
-              <label class="block text-white font-semibold mb-2">Service Location</label>
-              <input type="text" id="location" placeholder="Lubbock, TX" class="form-input w-full px-4 py-3 rounded-lg">
-            </div>
-          </div>
-          
-          <div class="mb-8">
-            <label class="block text-white font-semibold mb-2">Project Details</label>
-            <textarea id="projectDetails" rows="4" placeholder="Tell us about your security needs..." class="form-input w-full px-4 py-3 rounded-lg"></textarea>
-          </div>
+  /* TidyCal embed styling */
+  .tidycal-embed { 
+    width: 100%; 
+    display: block; 
+    min-height: 720px; 
+  }
+</style>
 
-          <!-- Selected Service Display -->
-          <div id="selectedService" class="card rounded-xl p-6 mb-8 text-center">
-            <div class="text-gray-300">
-              <i class="fas fa-mouse-pointer text-3xl text-cyan-400 mb-4"></i>
-              <p class="text-lg text-white">Select a service above to continue</p>
-            </div>
-          </div>
+<script>
+  // Service Selection
+  let selectedServiceType = null;
+  let selectedServicePrice = 0;
 
-          <!-- Consent + Honeypot + Source -->
-          <div class="mb-6">
-            <label class="inline-flex items-center">
-              <input type="checkbox" id="consent" required class="mr-2">
-              <span class="text-sm text-gray-300">I agree to the <a href="/privacy/" class="text-cyan-300 underline">Privacy Policy</a>.</span>
-            </label>
-            <input type="text" id="company" name="company" style="display:none"> <!-- honeypot -->
-            <input type="hidden" id="source" name="source" value="book-now-page">
-          </div>
-          
-          <button type="submit" class="btn-grad text-gray-900 font-semibold py-4 px-8 rounded-lg text-lg w-full">
-            <i class="fas fa-calendar-check mr-3"></i>
-            Schedule Consultation
-          </button>
-
-          <div class="text-center mt-6 space-y-2" style="color: #d1d5db !important;">
-            <p class="flex items-center justify-center" style="color: #d1d5db !important;"><i class="fas fa-check text-green-400 mr-2"></i> Same-day response guaranteed</p>
-            <p class="flex items-center justify-center" style="color: #d1d5db !important;"><i class="fas fa-check text-green-400 mr-2"></i> No long-term contracts</p>
-            <p class="flex items-center justify-center" style="color: #d1d5db !important;"><i class="fas fa-check text-green-400 mr-2"></i> Free 30-minute consultation</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUSINESS HOURS -->
-  <section class="content py-12">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-cyan-300 glow mb-8" style="color: #00d4ff !important;">Business Hours</h2>
-      
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="card rounded-xl p-6">
-          <h3 class="text-xl font-bold mb-4" style="color: #ffffff !important;">
-            <i class="fas fa-clock text-cyan-400 mr-3"></i>
-            Regular Hours
-          </h3>
-          <div class="space-y-3" style="color: #e5e7eb !important;">
-            <div class="flex justify-between">
-              <span style="color: #e5e7eb !important;">Monday - Friday:</span>
-              <span class="font-semibold" style="color: #00ff88 !important;">8:00 AM - 6:00 PM</span>
-            </div>
-            <div class="flex justify-between">
-              <span style="color: #e5e7eb !important;">Saturday:</span>
-              <span class="font-semibold" style="color: #00ff88 !important;">9:00 AM - 3:00 PM</span>
-            </div>
-            <div class="flex justify-between">
-              <span style="color: #e5e7eb !important;">Sunday:</span>
-              <span class="font-semibold" style="color: #ff8800 !important;">Emergency Only</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card rounded-xl p-6">
-          <h3 class="text-xl font-bold mb-4" style="color: #ffffff !important;">
-            <i class="fas fa-shield-alt text-red-400 mr-3"></i>
-            Emergency Support
-          </h3>
-          <p class="mb-4" style="color: #d1d5db !important;">
-            Security breaches don't wait for business hours. We're available 24/7 for critical incidents.
-          </p>
-          <a href="tel:+18063700624" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center">
-            <i class="fas fa-phone mr-2"></i>
-            Emergency Line
-          </a>
-          <p class="mt-3 text-sm" style="color: #d1d5db !important;">Response within 30 minutes</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="content bg-gray-900/90 py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-        <!-- Brand -->
-        <div class="col-span-1 md:col-span-2">
-          <div class="flex items-center mb-4">
-            <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md mr-3"/>
-            <span class="text-xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
-          </div>
-          <p class="text-gray-300 mb-4 max-w-md">
-            Professional cybersecurity services for West Texas. Schedule your consultation today 
-            for a free assessment and discover how we can protect your digital assets.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 rounded text-xs">
-              <i class="fas fa-certificate mr-1"></i>OCI Foundations
-            </span>
-            <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">
-              <i class="fas fa-clock mr-1"></i>Same Day Response
-            </span>
-          </div>
-        </div>
-
-        <!-- Quick Contact -->
-        <div>
-          <h4 class="text-cyan-300 font-semibold mb-4">Quick Contact</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="tel:+18063700624" class="text-gray-300 hover:text-cyan-300 transition">(806) 370-0624</a></li>
-            <li><a href="mailto:info@novatitan.net" class="text-gray-300 hover:text-cyan-300 transition">info@novatitan.net</a></li>
-            <li><a href="/book-now/" class="text-gray-300 hover:text-cyan-300 transition">Schedule Online</a></li>
-            <li><span class="text-gray-400">Mon-Fri 8AM-6PM CST</span></li>
-            <li><span class="text-orange-300">24/7 Emergency Support</span></li>
-          </ul>
-        </div>
-
-        <!-- Service Areas -->
-        <div>
-          <h4 class="text-cyan-300 font-semibold mb-4">Service Areas</h4>
-          <ul class="space-y-2 text-sm">
-            <li class="text-gray-300"><i class="fas fa-map-marker-alt text-cyan-400 mr-2"></i>Lubbock, TX (Primary)</li>
-            <li class="text-gray-300"><i class="fas fa-map text-cyan-400 mr-2"></i>West Texas Region</li>
-            <li class="text-gray-300"><i class="fas fa-globe text-cyan-400 mr-2"></i>Remote Nationwide</li>
-            <li class="text-gray-300"><i class="fas fa-home text-cyan-400 mr-2"></i>Home Services</li>
-            <li class="text-gray-300"><i class="fas fa-building text-cyan-400 mr-2"></i>Business Services</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Footer Bottom -->
-      <div class="border-t border-gray-700 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-300 text-sm mb-4 md:mb-0">
-            &copy; <span id="year"></span> Nova Titan Systems. All rights reserved.
-          </p>
-          
-          <div class="flex items-center space-x-4 mb-4 md:mb-0">
-            <a href="/terms/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Terms</a>
-            <a href="/privacy/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Privacy</a>
-            <a href="/refunds/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Refunds</a>
-          </div>
-
-          <!-- Social Icons -->
-          <div class="flex items-center space-x-4">
-            <a href="https://github.com/tzsmit" target="_blank" rel="noopener noreferrer me" aria-label="GitHub" class="social-icon text-gray-300 hover:text-cyan-300 transition">
-              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.111.82-.261.82-.58 0-.286-.011-1.044-.017-2.05-3.338.726-4.042-1.61-4.042-1.61-.546-1.389-1.333-1.759-1.333-1.759-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.833 2.809 1.304 3.494.997.108-.775.419-1.304.762-1.603-2.665-.303-5.467-1.333-5.467-5.932 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.51 11.51 0 0 1 3.003-.403c1.02.005 2.046.137 3.003.403 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.48 5.921.43.37.815 1.102.815 2.222 0 1.604-.015 2.896-.015 3.29 0 .321.217.697.826.579C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12Z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/traivone-smith-969b60327" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" class="social-icon text-gray-300 hover:text-cyan-300 transition">
-              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.603 0 4.268 2.372 4.268 5.457v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.114 20.451H3.559V9h3.555v11.451zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-              </svg>
-            </a>
-            <a href="https://www.tiktok.com/@novatitan1" target="_blank" rel="noopener noreferrer me" aria-label="TikTok" class="social-icon text-gray-300 hover:text-cyan-300 transition">
-              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.667 0h3.043a7.727 7.727 0 0 0 2.215 4.76c1.365 1.35 3.09 2.226 5.075 2.405v3.1c-1.86.17-3.603-.33-5.391-1.22v6.88c0 7.74-8.39 10.3-12.73 5.08-2.82-3.41-2.05-8.94 2.08-11.04 1.01-.53 2.17-.78 3.31-.71v3.2c-.43-.04-.87.02-1.28.19-2.01.84-2.4 3.58-.75 5.01 2.57 2.2 6.6.34 6.6-2.86V0z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    // Particle.js Configuration - EXACT SAME AS INDEX
-    particlesJS('particles-js',{
-      particles:{ 
-        number:{ value:60, density:{enable:true,value_area:1000}},
-        color:{value:['#00d4ff','#00ff88','#b300ff','#ff0066']}, 
-        shape:{type:'circle'},
-        opacity:{value:.3,random:true}, 
-        size:{value:3,random:true},
-        line_linked:{enable:true,distance:120,color:'#00d4ff',opacity:.25,width:1},
-        move:{enable:true,speed:1.5,direction:'none',random:false,straight:false,out_mode:'out',bounce:false} 
-      },
-      interactivity:{ 
-        detect_on:'canvas',
-        events:{onhover:{enable:true,mode:'repulse'},onclick:{enable:true,mode:'push'}}, 
-        modes:{repulse:{distance:80,duration:0.4},push:{particles_nb:3}} 
-      },
-      retina_detect:true
+  function selectService(serviceType, price) {
+    // Remove previous selection
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.classList.remove('selected');
     });
-
-    // Mobile Menu Logic
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
     
-    menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('active');
-      const isOpen = mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden', !isOpen);
-      menuBtn.setAttribute('aria-expanded', String(isOpen));
-    });
+    // Add selection to clicked card
+    event.currentTarget.classList.add('selected');
+    
+    selectedServiceType = serviceType;
+    selectedServicePrice = price;
+    
+    updateServiceSummary(serviceType, price);
+  }
 
-    // Service Selection
-    let selectedServiceType = null;
-    let selectedServicePrice = 0;
+  function updateServiceSummary(serviceType, price) {
+    const serviceNames = {
+      'home-audit': 'Home Wi-Fi Security Audit',
+      'business-network': 'Business Network Setup',
+      'cloud-security': 'Cloud Security Checkup',
+      'installations': 'Equipment Installation',
+      'remote-support': 'Remote Tech Support',
+      'security-training': 'Security Training'
+    };
 
-    function selectService(serviceType, price) {
-      // Remove previous selection
-      document.querySelectorAll('.service-card').forEach(card => {
-        card.classList.remove('selected');
-      });
-      
-      // Add selection to clicked card
-      event.currentTarget.classList.add('selected');
-      
-      selectedServiceType = serviceType;
-      selectedServicePrice = price;
-      
-      updateServiceSummary(serviceType, price);
+    document.getElementById('selectedService').innerHTML = `
+      <div class="text-center">
+        <i class="fas fa-check-circle text-4xl text-green-400 mb-4"></i>
+        <h3 class="text-xl font-bold text-white mb-2">${serviceNames[serviceType]}</h3>
+        <div class="text-2xl font-bold text-green-300 mb-2">$${price}${price < 200 ? '+' : ''}</div>
+        <p class="text-gray-300">Free 30-minute consultation included</p>
+      </div>
+    `;
+  }
+
+  // Form Submission
+  document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    if (!selectedServiceType) {
+      alert('Please select a service first.');
+      return;
     }
 
-    function updateServiceSummary(serviceType, price) {
-      const serviceNames = {
-        'home-audit': 'Home Wi-Fi Security Audit',
-        'business-network': 'Business Network Setup',
-        'cloud-security': 'Cloud Security Checkup',
-        'installations': 'Equipment Installation',
-        'remote-support': 'Remote Tech Support',
-        'security-training': 'Security Training'
-      };
-
-      document.getElementById('selectedService').innerHTML = `
-        <div class="text-center">
-          <i class="fas fa-check-circle text-4xl text-green-400 mb-4"></i>
-          <h3 class="text-xl font-bold text-white mb-2">${serviceNames[serviceType]}</h3>
-          <div class="text-2xl font-bold text-green-300 mb-2">$${price}${price < 200 ? '+' : ''}</div>
-          <p class="text-gray-300">Free 30-minute consultation included</p>
-        </div>
-      `;
+    // Honeypot & consent checks
+    if (document.getElementById('company').value) return; // bot
+    if (!document.getElementById('consent').checked) {
+      alert('Please agree to the Privacy Policy.');
+      return;
     }
-
-    // Form Submission (consent + honeypot check, then scroll to calendar)
-    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      if (!selectedServiceType) {
-        alert('Please select a service first.');
-        return;
-      }
-
-      // Honeypot & consent checks
-      if (document.getElementById('company').value) return; // bot
-      if (!document.getElementById('consent').checked) {
-        alert('Please agree to the Privacy Policy.');
-        return;
-      }
-      
-      // Show success message
-      alert('Service selected! Please complete your booking using the calendar below.');
-      
-      // Scroll user to the calendar
-      const cal = document.querySelector('.tidycal-embed');
-      if (cal) {
-        cal.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        cal.style.outline = '2px solid #00d4ff';
-        setTimeout(() => cal.style.outline = 'none', 1500);
-      }
-    });
-
-    // GSAP Animations
-    gsap.registerPlugin();
     
-    // Hero animations
-    gsap.timeline()
-      .from("h1", {opacity:0, y:30, duration:0.8, ease:"power2.out"})
-      .from("h1 + p", {opacity:0, y:20, duration:0.8, ease:"power2.out"}, "-=0.4");
-
-    // Card animations with stagger
-    gsap.from(".card, .service-card", {
-      opacity: 0,
-      y: 30,
-      stagger: 0.05,
-      duration: 0.6,
-      delay: 0.2,
-      ease: "power2.out"
-    });
-
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    // Show success message
+    alert('Service selected! Please complete your booking using the calendar below.');
+    
+    // Scroll user to the calendar
+    const cal = document.querySelector('.tidycal-embed');
+    if (cal) {
+      cal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      cal.style.outline = '2px solid #00d4ff';
+      setTimeout(() => cal.style.outline = 'none', 1500);
+    }
+  });
+</script>
