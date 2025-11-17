@@ -1,33 +1,44 @@
 # Main Navigation Menu Items
+# Nova Titan Systems 2025 Rebuild - Enterprise Navigation
 # Order matters - items appear in this sequence
 
 - name: Home
   url: /
   icon: fas fa-home
 
-- name: About
-  url: /about/
-  icon: fas fa-user
+- name: Divisions
+  url: /divisions/
+  icon: fas fa-sitemap
+  submenu:
+    - name: Systems
+      url: /divisions/systems/
+    - name: Security
+      url: /divisions/security/
+    - name: Intelligence
+      url: /divisions/intelligence/
 
-- name: Solutions
-  url: /services/
-  icon: fas fa-tools
+- name: Products
+  url: /products/
+  icon: fas fa-cube
+  submenu:
+    - name: CloudWarden
+      url: /products/cloudwarden/
+    - name: Sports Analytics
+      url: /products/sports/
+    - name: AI Engine
+      url: /products/ai-engine/
 
-- name: Plans
-  url: /plans/
-  icon: fas fa-clipboard-list
+- name: CEO
+  url: /ceo/
+  icon: fas fa-user-tie
 
-- name: Portfolio
-  url: /portfolio/
-  icon: fas fa-briefcase
+- name: Government
+  url: /government/
+  icon: fas fa-landmark
 
-- name: Blog
-  url: /blog/
-  icon: fas fa-blog
-
-- name: Testimonials
-  url: /testimonials/
-  icon: fas fa-star
+- name: Partners
+  url: /partners/
+  icon: fas fa-handshake
 
 - name: Contact
   url: /contact/
