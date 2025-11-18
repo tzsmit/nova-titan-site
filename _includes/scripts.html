@@ -6,8 +6,8 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <!-- 2. Particle.js Configuration -->
-<script defer>
-  // Initialize Particles on load
+<script>
+  // Initialize Particles on load (deferred via event listener)
   window.addEventListener('load', function() {
     if (typeof particlesJS !== 'undefined') {
       particlesJS('particles-js', {
@@ -32,8 +32,8 @@
 </script>
 
 <!-- 3. GSAP Animations -->
-<script defer>
-  // Wait for all scripts to load before initializing
+<script>
+  // Wait for all scripts to load before initializing (deferred via event listener)
   window.addEventListener('load', function() {
     // Fallback: Ensure all content is visible even if GSAP fails
     setTimeout(function() {
