@@ -44,11 +44,7 @@ header img:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(#00e0e0, #00b7b7);
 }
-section {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease forwards;
-}
+/* Removed global section animation - was causing layout overlaps */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -254,18 +250,9 @@ body {
    SPACING & ALIGNMENT FIXES
    ==================================== */
 section.content {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-section.content.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-section.content.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  position: relative;
+  margin-bottom: 0;
+  clear: both;
 }
 
 /* ====================================
@@ -301,11 +288,7 @@ section.content.py-16 {
     padding-right: 1rem;
   }
   
-  /* Section spacing */
-  section.content {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
+  /* Section spacing - removed override to respect Tailwind classes */
 }
 
 @media (max-width: 480px) {
