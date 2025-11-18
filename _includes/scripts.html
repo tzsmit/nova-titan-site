@@ -42,64 +42,33 @@
       });
     }, 100);
     
-    // Initialize GSAP animations
+    // GSAP animations DISABLED to prevent layout shift issues
+    // The translateY animations were causing content to jump/shift up after page load
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       try {
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Card animations (initial load only) - with immediate visibility fallback
+        // Just ensure all elements are visible, no animations
         const cards = document.querySelectorAll('.card');
         if (cards.length > 0) {
-          cards.forEach(card => card.style.opacity = '1'); // Ensure visible
-          gsap.from('.card', {
-            opacity: 0,
-            y: 30,
-            stagger: 0.08,
-            duration: 0.7,
-            delay: 0.2,
-            ease: "power2.out"
-          });
+          cards.forEach(card => card.style.opacity = '1');
         }
 
-        // Fade-in elements with ScrollTrigger (trigger once)
         const fadeElements = document.querySelectorAll('.fade-in');
         if (fadeElements.length > 0) {
           fadeElements.forEach(el => {
-            el.style.opacity = '1'; // Ensure visible immediately
-            gsap.from(el, {
-              opacity: 0,
-              y: 20,
-              duration: 0.6,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: el,
-                start: "top 85%",
-                end: "top 60%",
-                once: true,
-                toggleActions: "play none none none"
-              }
-            });
+            el.style.opacity = '1';
           });
         }
         
-        // Portfolio preview animation
         const portfolioCards = document.querySelectorAll('.portfolio-preview');
         if (portfolioCards.length > 0) {
           portfolioCards.forEach(card => {
-            card.style.opacity = '1'; // Ensure visible
-            gsap.from(card, {
-              opacity: 0,
-              scale: 0.95,
-              duration: 0.8,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 85%",
-                once: true
-              }
-            });
+            card.style.opacity = '1';
           });
         }
+        
+        // All GSAP from() animations commented out to prevent layout shift
+        // Original code caused content to translateY upward after page load
+        // This was the root cause of heading/content overlaps
       } catch (error) {
         console.error('GSAP initialization error:', error);
         // Ensure everything is visible on error

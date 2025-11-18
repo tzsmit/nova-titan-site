@@ -45,12 +45,7 @@ header img:hover {
   background: linear-gradient(#00e0e0, #00b7b7);
 }
 /* Removed global section animation - was causing layout overlaps */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* fadeInUp keyframe removed - translateY animations disabled to prevent layout shift */
 body {
   background: url('/assets/img/cyber-bg.png') no-repeat center center fixed;
   background-size: cover;
@@ -177,35 +172,18 @@ body {
 }
 
 /* ====================================
-   SUBTLE SCROLL ANIMATIONS
+   SUBTLE SCROLL ANIMATIONS - DISABLED TO PREVENT LAYOUT SHIFT
    ==================================== */
+/* All translateY animations removed to fix overlap issues caused by content shifting after page load */
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: 0.1s;
+  opacity: 1; /* Always visible, no animation */
 }
 
 .slide-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: slideUp 0.7s ease forwards;
+  opacity: 1; /* Always visible, no animation */
 }
 
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Stagger animations for grid items */
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
-.card:nth-child(4) { animation-delay: 0.4s; }
-.card:nth-child(5) { animation-delay: 0.5s; }
-.card:nth-child(6) { animation-delay: 0.6s; }
+/* Card stagger animations removed - were causing layout shifts */
 
 /* ====================================
    HERO SECTION ENHANCEMENTS
