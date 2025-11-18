@@ -73,13 +73,13 @@
     gtag('config', 'G-R8DZFXDCNV');
   </script>
 
-  <!-- Organization & LocalBusiness JSON-LD Schema (ENHANCED FOR SEO) -->
+  <!-- Organization JSON-LD Schema (ENHANCED FOR SEO - Remote-Based Business) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+        "@type": "Organization",
         "@id": "{{ site.url }}/#organization",
         "name": "{{ site.title }}",
         "legalName": "Nova Titan Systems LLC",
@@ -102,63 +102,23 @@
             "https://github.com/tzsmit"
           ]
         },
-        "address": {
+        "location": {
           "@type": "PostalAddress",
+          "streetAddress": "3223 S Loop 289 Ste 600",
           "addressLocality": "Lubbock",
           "addressRegion": "TX",
-          "postalCode": "79401",
+          "postalCode": "79423",
           "addressCountry": "US"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "33.5779",
-          "longitude": "-101.8552"
+        "areaServed": "United States",
+        "additionalProperty": {
+          "@type": "PropertyValue",
+          "name": "Business Model",
+          "value": "Registered mailing address only. Remote-based company."
         },
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Lubbock",
-            "containedIn": {
-              "@type": "State",
-              "name": "Texas"
-            }
-          },
-          {
-            "@type": "City",
-            "name": "Midland",
-            "containedIn": {
-              "@type": "State",
-              "name": "Texas"
-            }
-          },
-          {
-            "@type": "City",
-            "name": "Odessa",
-            "containedIn": {
-              "@type": "State",
-              "name": "Texas"
-            }
-          },
-          {
-            "@type": "State",
-            "name": "Texas"
-          },
-          {
-            "@type": "Country",
-            "name": "United States"
-          }
-        ],
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card, Check, ACH",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "18:00"
-          }
-        ],
-        "slogan": "Founder-Led Technology Partner for West Texas",
+        "slogan": "Remote-Based Technology Partner Serving Clients Nationwide",
         "knowsAbout": ["Cybersecurity", "Cloud Computing", "Network Infrastructure", "IT Support", "Managed Services", "Government Contracting"],
         "sameAs": [
           "https://github.com/tzsmit",
@@ -214,7 +174,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Organization",
     "@id": "{{ site.url }}/#organization",
     "name": "{{ site.title }}",
     "aggregateRating": {
