@@ -68,22 +68,35 @@
     gtag('config', 'G-R8DZFXDCNV');
   </script>
 
-  <!-- Organization & LocalBusiness JSON-LD Schema -->
+  <!-- Organization & LocalBusiness JSON-LD Schema (ENHANCED FOR SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "LocalBusiness"],
+        "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
         "@id": "{{ site.url }}/#organization",
         "name": "{{ site.title }}",
+        "legalName": "Nova Titan Systems LLC",
         "alternateName": "Nova Titan",
         "description": "{{ site.description }}",
         "url": "{{ site.url }}",
         "telephone": "{{ site.phone }}",
         "email": "{{ site.email }}",
+        "foundingDate": "2025",
         "logo": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
         "image": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
+        "founder": {
+          "@type": "Person",
+          "@id": "{{ site.url }}/ceo/#founder",
+          "name": "Traivone Smith",
+          "jobTitle": "Founder & CEO",
+          "url": "{{ site.url }}/ceo/",
+          "sameAs": [
+            "https://www.linkedin.com/in/traivone-smith-969b60327",
+            "https://github.com/tzsmit"
+          ]
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Lubbock",
@@ -97,13 +110,41 @@
           "longitude": "-101.8552"
         },
         "areaServed": [
-          "Lubbock",
-          "Midland",
-          "Odessa",
-          "West Texas",
-          "United States"
+          {
+            "@type": "City",
+            "name": "Lubbock",
+            "containedIn": {
+              "@type": "State",
+              "name": "Texas"
+            }
+          },
+          {
+            "@type": "City",
+            "name": "Midland",
+            "containedIn": {
+              "@type": "State",
+              "name": "Texas"
+            }
+          },
+          {
+            "@type": "City",
+            "name": "Odessa",
+            "containedIn": {
+              "@type": "State",
+              "name": "Texas"
+            }
+          },
+          {
+            "@type": "State",
+            "name": "Texas"
+          },
+          {
+            "@type": "Country",
+            "name": "United States"
+          }
         ],
         "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card, Check, ACH",
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -112,6 +153,8 @@
             "closes": "18:00"
           }
         ],
+        "slogan": "Founder-Led Technology Partner for West Texas",
+        "knowsAbout": ["Cybersecurity", "Cloud Computing", "Network Infrastructure", "IT Support", "Managed Services", "Government Contracting"],
         "sameAs": [
           "https://github.com/tzsmit",
           "https://www.linkedin.com/in/traivone-smith-969b60327",

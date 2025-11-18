@@ -1,7 +1,50 @@
 ---
 layout: default
-title: "Products in Development | Nova Titan Systems"
-description: "Proprietary technology products in active development by Nova Titan Systems. CloudWarden cloud security, Sports Analytics Widget, and AI Engine."
+title: "Products in Development | CloudWarden, Sports Analytics & AI Engine"
+description: "Proprietary technology IP in active development: CloudWarden v3 (Alpha), Sports Analytics Widget (In Development), and AI Engine (R&D Phase). Built in-house by Nova Titan Systems."
+extra_head: |
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://novatitan.net/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://novatitan.net/products/"
+      }
+    ]
+  }
+  </script>
+  <!-- SoftwareApplication Schema for CloudWarden -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CloudWarden v3",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web-based",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/DevelopmentStage"
+    },
+    "description": "Multi-cloud security monitoring platform for AWS, Azure, and OCI with real-time threat detection and compliance automation.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://novatitan.net/#organization"
+    }
+  }
+  </script>
 ---
 
 <section class="content pt-32 pb-12">
