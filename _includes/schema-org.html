@@ -1,0 +1,408 @@
+<!-- Advanced Schema.org Structured Data for Procurement & Commercial Visibility -->
+
+<!-- Organization Schema with NAICS, PSC, and DUNS -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "@id": "{{ site.url }}/#organization",
+      "name": "{{ site.company.legal_name | default: 'Nova Titan Systems LLC' }}",
+      "alternateName": "Nova Titan",
+      "legalName": "{{ site.company.legal_name | default: 'Nova Titan Systems LLC' }}",
+      "url": "{{ site.url }}",
+      "logo": "{{ site.url }}/assets/images/logo.png",
+      "image": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
+      "description": "Professional technology solutions provider specializing in IT field services, smart hands support, network installations, and managed IT services for commercial businesses, government agencies, and enterprise clients across West Texas and nationwide.",
+      
+      "duns": "{{ site.company.duns | default: '141007579' }}",
+      "taxID": "Available upon request",
+      "naics": {{ site.company.naics_codes | default: '["541512", "541513", "541519", "238210", "518210"]' | jsonify }},
+      
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3223 S Loop 289 Ste 600",
+        "addressLocality": "Lubbock",
+        "addressRegion": "TX",
+        "postalCode": "79423",
+        "addressCountry": "US"
+      },
+      
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "{{ site.phone | default: '+1-806-370-0624' }}",
+          "contactType": "customer service",
+          "areaServed": ["US-TX", "US-NM", "US-OK", "US"],
+          "availableLanguage": "English",
+          "email": "{{ site.email | default: 'info@novatitan.net' }}"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "{{ site.phone | default: '+1-806-370-0624' }}",
+          "contactType": "sales",
+          "areaServed": "US",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "{{ site.phone | default: '+1-806-370-0624' }}",
+          "contactType": "technical support",
+          "areaServed": "US",
+          "availableLanguage": "English",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        }
+      ],
+      
+      "founder": {
+        "@type": "Person",
+        "@id": "{{ site.url }}/ceo/#founder",
+        "name": "{{ site.author | default: 'Traivone Smith' }}",
+        "jobTitle": "Founder & CEO",
+        "url": "{{ site.url }}/ceo/"
+      },
+      
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 33.5779,
+          "longitude": -101.8552,
+          "name": "Lubbock, TX"
+        },
+        "geoRadius": "500 miles",
+        "description": "Primary service area: West Texas (Lubbock, Midland, Odessa, Amarillo). Extended nationwide coverage for enterprise clients and field service partnerships."
+      },
+      
+      "serviceArea": [
+        {
+          "@type": "City",
+          "name": "Lubbock",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Texas"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Midland",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Texas"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Odessa",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Texas"
+          }
+        },
+        {
+          "@type": "State",
+          "name": "Texas",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "United States"
+          }
+        }
+      ],
+      
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "IT Field Services",
+            "name": "Smart Hands & Field Technician Services",
+            "description": "On-site technical support, equipment installation, rack & stack, cable management, and remote hands services for enterprise and government clients",
+            "provider": {
+              "@id": "{{ site.url }}/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Network Infrastructure",
+            "name": "Network Installation & Configuration",
+            "description": "Enterprise network deployment, structured cabling, WiFi installation, switch configuration, and network troubleshooting",
+            "provider": {
+              "@id": "{{ site.url }}/#organization"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Managed IT Services",
+            "name": "IT Support & Managed Services",
+            "description": "24/7 help desk support, remote monitoring, system maintenance, and proactive IT management for commercial and government clients",
+            "provider": {
+              "@id": "{{ site.url }}/#organization"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "serviceType": "Cybersecurity Services",
+            "name": "Security Assessment & Implementation",
+            "description": "Vulnerability assessments, security audits, compliance consulting, and cybersecurity infrastructure deployment",
+            "provider": {
+              "@id": "{{ site.url }}/#organization"
+            }
+          }
+        }
+      ],
+      
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Professional Technology Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Field Services & Smart Hands",
+            "description": "On-site technical support and equipment services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Equipment Installation & Removal",
+                  "description": "Server rack installation, equipment decommissioning, asset disposal"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Network Deployment",
+                  "description": "Multi-site rollouts, structured cabling, fiber installation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "On-Site Troubleshooting",
+                  "description": "Hardware diagnostics, connectivity testing, remote hands support"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Government Contracting",
+            "description": "Federal, state, and local government IT services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "GovernmentService",
+                  "name": "IT Infrastructure Services",
+                  "description": "Network infrastructure, cybersecurity implementation, system modernization",
+                  "serviceOperator": {
+                    "@id": "{{ site.url }}/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "GovernmentService",
+                  "name": "Professional Services",
+                  "description": "IT consulting, project management, technical documentation",
+                  "serviceOperator": {
+                    "@id": "{{ site.url }}/#organization"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Commercial Services",
+            "description": "Technology solutions for businesses",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Business Technology Setup",
+                  "description": "Network design, POS systems, workstation deployment"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "IT Support Plans",
+                  "description": "Managed support, help desk, system monitoring"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      
+      "knowsAbout": [
+        "IT Field Services",
+        "Smart Hands Support",
+        "Network Infrastructure",
+        "Cybersecurity",
+        "Managed IT Services",
+        "Government Contracting",
+        "Enterprise IT Solutions",
+        "Cloud Computing",
+        "Technical Support",
+        "Equipment Installation",
+        "Network Deployment",
+        "System Integration"
+      ],
+      
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "NAICS Primary",
+          "value": "541512 - Computer Systems Design Services"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "NAICS Additional",
+          "value": "541513 - Computer Facilities Management"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "NAICS Additional",
+          "value": "541519 - Other Computer Related Services"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "NAICS Additional",
+          "value": "238210 - Electrical Contractors"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "NAICS Additional",
+          "value": "518210 - Data Processing and Hosting"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "PSC Codes",
+          "value": "D301, D302, D306, D307, D310, J015"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Certifications",
+          "value": "WorkMarket Verified Vendor, CloudWork Pro Member"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Response Time",
+          "value": "Same-day dispatch available for West Texas region"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Service Coverage",
+          "value": "Local West Texas + Nationwide Extended"
+        }
+      ],
+      
+      "slogan": "Professional Field Services & Technology Solutions Partner",
+      "priceRange": "$$",
+      "paymentAccepted": ["Cash", "Credit Card", "Check", "ACH", "Purchase Order"],
+      "currenciesAccepted": "USD",
+      
+      "sameAs": [
+        "https://github.com/tzsmit",
+        "https://www.linkedin.com/in/traivone-smith-969b60327",
+        "https://www.tiktok.com/@novatitan1"
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- LocalBusiness Schema with Geographic Focus -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ site.url }}/#localbusiness",
+  "name": "{{ site.company.legal_name | default: 'Nova Titan Systems LLC' }}",
+  "image": "{{ site.url }}/assets/images/logo.png",
+  "telephone": "{{ site.phone | default: '(806) 370-0624' }}",
+  "email": "{{ site.email | default: 'info@novatitan.net' }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3223 S Loop 289 Ste 600",
+    "addressLocality": "Lubbock",
+    "addressRegion": "TX",
+    "postalCode": "79423",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.5779,
+    "longitude": -101.8552
+  },
+  "url": "{{ site.url }}",
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "paymentAccepted": ["Cash", "Credit Card", "Check", "ACH", "Purchase Order"],
+  "currenciesAccepted": "USD"
+}
+</script>
+
+<!-- ProfessionalService Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "{{ site.url }}/#professionalservice",
+  "name": "{{ site.company.legal_name | default: 'Nova Titan Systems LLC' }}",
+  "description": "Professional IT services, field technician support, and managed technology solutions for commercial, government, and enterprise clients",
+  "url": "{{ site.url }}",
+  "telephone": "{{ site.phone | default: '(806) 370-0624' }}",
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.5779,
+      "longitude": -101.8552
+    },
+    "geoRadius": "500 miles"
+  },
+  "serviceType": [
+    "IT Field Services",
+    "Smart Hands Support",
+    "Network Installation",
+    "Managed IT Services",
+    "Cybersecurity Consulting",
+    "Technical Support"
+  ]
+}
+</script>

@@ -43,9 +43,9 @@ Successfully transformed Nova Titan Systems from a **cybersecurity-focused** web
 
 ### New Content Sections
 ✅ **Featured Solution Pillars** (New Section)
-- Infrastructure & Installations (starting at $199)
-- Managed Technology & Support (plans from $99/month)
-- Cloud & Security Strategy (starting at $149)
+- Infrastructure & Installations (starting at )
+- Managed Technology & Support (plans from /month)
+- Cloud & Security Strategy (starting at )
 
 ✅ **Certifications & Memberships** (New Footer Section)
 - Texas HUB Certification (Pending)
@@ -69,25 +69,25 @@ Successfully transformed Nova Titan Systems from a **cybersecurity-focused** web
 ### Page Structure Reorganization
 
 #### OLD Structure (Cybersecurity Focus)
-1. Home Wi-Fi Security Audit ($149)
-2. Small Business Network Setup ($499)
-3. Cloud Security Checkup ($399)
+1. Home Wi-Fi Security Audit ()
+2. Small Business Network Setup ()
+3. Cloud Security Checkup ()
 4. Additional services (installations, remote support, web security, training)
 
 #### NEW Structure (Three-Pillar Approach)
-1. **🔧 Infrastructure & Installations** - Starting at $199
+1. **🔧 Infrastructure & Installations** - Starting at 
    - Business startup tech setup
    - Smart home & office installations
    - Clean cable management
    - Network equipment deployment
 
-2. **💻 Managed Technology & Support** - $99–$499/month
+2. **💻 Managed Technology & Support** - –/month
    - Remote tech support
    - Monthly maintenance plans
    - Device fleet management
    - Priority support response
 
-3. **☁️ Cloud & Security Strategy** - $149–$499
+3. **☁️ Cloud & Security Strategy** - –
    - Wi-Fi security audits
    - Cloud infrastructure assessments
    - Cybersecurity awareness training
@@ -116,7 +116,7 @@ Successfully transformed Nova Titan Systems from a **cybersecurity-focused** web
 
 ### Three-Tier Subscription Model
 
-#### **Titan Basic** - $99/month
+#### **Titan Basic** - /month
 - Up to 2 hours remote support/month
 - Device monitoring (2 devices)
 - Software update assistance
@@ -124,7 +124,7 @@ Successfully transformed Nova Titan Systems from a **cybersecurity-focused** web
 - Monthly security check-in
 - Target: Individuals & home offices
 
-#### **Titan Pro** - $299/month (FEATURED - MOST POPULAR)
+#### **Titan Pro** - /month (FEATURED - MOST POPULAR)
 - Up to 5 hours remote support/month
 - Device monitoring (5 devices)
 - Automated updates & patching
@@ -134,7 +134,7 @@ Successfully transformed Nova Titan Systems from a **cybersecurity-focused** web
 - 15% discount on additional services
 - Target: Growing businesses
 
-#### **Titan Elite** - $499/month
+#### **Titan Elite** - /month
 - Unlimited remote support
 - Unlimited device monitoring
 - 24/7 automated monitoring
@@ -146,10 +146,10 @@ Successfully transformed Nova Titan Systems from a **cybersecurity-focused** web
 - Target: Mission-critical operations
 
 ### Optional Add-Ons
-- **Cloud Backup** - +$25/month (100GB included)
-- **Advanced Security** - +$50/month (threat detection, firewall)
-- **Email Security** - +$35/month (spam filtering, phishing protection)
-- **Training Sessions** - +$75/hour (custom technology training)
+- **Cloud Backup** - +/month (100GB included)
+- **Advanced Security** - +/month (threat detection, firewall)
+- **Email Security** - +/month (spam filtering, phishing protection)
+- **Training Sessions** - +/hour (custom technology training)
 
 ### FAQ Section
 ✅ 5 common questions answered:

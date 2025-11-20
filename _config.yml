@@ -9,6 +9,56 @@ author: "Traivone Smith"
 phone: "(806) 370-0624"
 email: "info@novatitan.net"
 
+# Company Metadata (for Procurement & Commercial Discovery)
+company:
+  legal_name: "Nova Titan Systems LLC"
+  duns: "141007579"
+  uei: "Pending"
+  cage: "Pending"
+  naics_primary: "541512"
+  naics_codes:
+    - "541512"  # Computer Systems Design Services
+    - "541513"  # Computer Facilities Management Services
+    - "541519"  # Other Computer Related Services
+    - "238210"  # Electrical Contractors and Other Wiring Installation Contractors
+    - "518210"  # Data Processing, Hosting, and Related Services
+  psc_codes:
+    - "D301"    # IT and Telecom - Facility Operation and Maintenance
+    - "D302"    # IT and Telecom - Systems Development
+    - "D306"    # IT and Telecom - Systems Analysis
+    - "D307"    # IT and Telecom - Automated Information System Design and Integration
+    - "D310"    # IT and Telecom - Telecommunications Network Management
+    - "J015"    # Maintenance/Repair/Rebuild of Equipment - IT and Telecommunications Equipment
+  certifications:
+    - "WorkMarket Verified Vendor"
+    - "CloudWork Pro Member"
+  capabilities:
+    - "IT Field Services & Smart Hands"
+    - "Network Infrastructure Deployment"
+    - "Equipment Installation & Removal"
+    - "Structured Cabling & Fiber Installation"
+    - "Managed IT Support Services"
+    - "Cybersecurity Implementation"
+    - "System Integration & Configuration"
+    - "Technical Support & Help Desk"
+  service_areas:
+    primary:
+      - "Lubbock, TX"
+      - "Midland, TX"
+      - "Odessa, TX"
+      - "Amarillo, TX"
+      - "West Texas Region"
+    extended:
+      - "Texas (Statewide)"
+      - "New Mexico"
+      - "Oklahoma"
+      - "United States (Nationwide for Enterprise Clients)"
+  business_attributes:
+    response_time: "Same-day dispatch available for West Texas"
+    coverage: "Local + Nationwide Extended"
+    experience: "95+ field projects completed"
+    availability: "24/7 emergency support available"
+
 # Build Settings
 markdown: kramdown
 permalink: pretty

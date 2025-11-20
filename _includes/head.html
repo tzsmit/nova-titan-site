@@ -73,101 +73,27 @@
     gtag('config', 'G-R8DZFXDCNV');
   </script>
 
-  <!-- Organization JSON-LD Schema (ENHANCED FOR SEO - Remote-Based Business) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "{{ site.url }}/#organization",
-        "name": "{{ site.title }}",
-        "legalName": "Nova Titan Systems LLC",
-        "alternateName": "Nova Titan",
-        "description": "{{ site.description }}",
-        "url": "{{ site.url }}",
-        "telephone": "{{ site.phone }}",
-        "email": "{{ site.email }}",
-        "foundingDate": "2025",
-        "logo": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
-        "image": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
-        "founder": {
-          "@type": "Person",
-          "@id": "{{ site.url }}/ceo/#founder",
-          "name": "Traivone Smith",
-          "jobTitle": "Founder & CEO",
-          "url": "{{ site.url }}/ceo/",
-          "sameAs": [
-            "https://www.linkedin.com/in/traivone-smith-969b60327",
-            "https://github.com/tzsmit"
-          ]
-        },
-        "location": {
-          "@type": "PostalAddress",
-          "streetAddress": "3223 S Loop 289 Ste 600",
-          "addressLocality": "Lubbock",
-          "addressRegion": "TX",
-          "postalCode": "79423",
-          "addressCountry": "US"
-        },
-        "areaServed": "United States",
-        "additionalProperty": {
-          "@type": "PropertyValue",
-          "name": "Business Model",
-          "value": "Registered mailing address only. Remote-based company."
-        },
-        "priceRange": "$$",
-        "paymentAccepted": "Cash, Credit Card, Check, ACH",
-        "slogan": "Remote-Based Technology Partner Serving Clients Nationwide",
-        "knowsAbout": ["Cybersecurity", "Cloud Computing", "Network Infrastructure", "IT Support", "Managed Services", "Government Contracting"],
-        "sameAs": [
-          "https://github.com/tzsmit",
-          "https://www.linkedin.com/in/traivone-smith-969b60327",
-          "https://www.tiktok.com/@novatitan1"
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Technology Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Cybersecurity Consulting",
-                "description": "Comprehensive cybersecurity assessments, cloud security audits, and vulnerability testing",
-                "provider": {
-                  "@id": "{{ site.url }}/#organization"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Network Installation & Setup",
-                "description": "Professional network infrastructure installation, WiFi optimization, and hardware setup",
-                "provider": {
-                  "@id": "{{ site.url }}/#organization"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "IT Consulting & Support",
-                "description": "Managed IT support, remote assistance, and technology strategy consulting",
-                "provider": {
-                  "@id": "{{ site.url }}/#organization"
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
-  }
-  </script>
+  <!-- Procurement-Grade Meta Tags for Government & Commercial Discovery -->
+  <meta name="naics" content="541512,541513,541519,238210,518210">
+  <meta name="naics-primary" content="541512">
+  <meta name="psc" content="D301,D302,D306,D307,D310,J015">
+  <meta name="duns" content="141007579">
+  <meta name="industry" content="Information Technology,Professional Services,Field Services">
+  <meta name="service-type" content="IT Field Services,Smart Hands,Network Installation,Managed Services">
+  <meta name="geographic-scope" content="West Texas,Nationwide">
+  <meta name="service-area" content="Lubbock TX,Midland TX,Odessa TX,Texas,United States">
+  <meta name="business-type" content="Small Business,Technology Services,Government Contractor">
+  <meta name="procurement-ready" content="true">
+  <meta name="subcontractor" content="available">
+  <meta name="vendor-type" content="Prime Contractor,Subcontractor,Field Service Provider">
+  <meta name="capabilities" content="Network Deployment,Equipment Installation,Smart Hands,Technical Support,System Integration">
+  <meta name="certifications" content="WorkMarket Verified,CloudWork Pro Member">
+  
+  <!-- Enhanced Keywords for Procurement Discovery -->
+  <meta name="keywords" content="IT field services Texas, smart hands support Lubbock, network installation West Texas, government IT contractor Texas, enterprise field technician, MSP partner, subcontractor IT services, equipment installation Texas, network deployment services, remote hands support, data center support Texas, telecommunications contractor, structured cabling Texas, fiber optic installation, IT infrastructure services, government technology contractor, federal IT services, commercial IT support, managed services provider Texas">
+
+  <!-- Advanced Schema.org Structured Data (NAICS, PSC, DUNS) -->
+  {% include schema-org.html %}
 
   <!-- AggregateRating Schema for Testimonials -->
   {% if page.url == '/testimonials/' or page.url == '/testimonials/index.html' %}

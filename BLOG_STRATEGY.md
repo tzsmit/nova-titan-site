@@ -78,7 +78,7 @@ Position Nova Titan as the go-to technology authority for:
 - **Topics:** AWS/Azure migration, compliance (energy sector), cost optimization
 - **Local:** Midland/Odessa industry focus
 - **Internal Links:** /services/#cloud-security, /contact/
-- **CTA:** Schedule cloud assessment ($399)
+- **CTA:** Schedule cloud assessment ()
 
 ### **Month 5: May 2025**
 #### **Post 5: "Smart Home Technology: Security, Automation, and Entertainment"**
@@ -245,7 +245,7 @@ image: /assets/img/blog/post-slug.jpg  # Optional featured image
 - "Schedule your free IT assessment"
 
 **Cloud & Security Posts:**
-- "Book your $149 Wi-Fi security audit"
+- "Book your  Wi-Fi security audit"
 - "Schedule a cloud migration consultation"
 - "Download our free security checklist"
 
