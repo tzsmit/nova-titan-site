@@ -45,19 +45,19 @@ Nova Titan Systems will be transformed from a small security-focused provider in
 ### 2. Past Performance Highlights
 
 **Government/Federal:**
-- Dyess Air Force Base (Equipment Removal - Core Technology Solutions)
-- USDA Big Spring, TX (Site Survey - Concert Technologies)
+- Federal Installation (Equipment Removal - Core Technology Solutions)
+- Federal Agency Big Spring, TX (Site Survey - Concert Technologies)
 - BNSF Railway Infrastructure (CSA Solutions)
-- DPS Stanton (MVN Media PC Replacement)
+- DPS Location (MVN Media PC Replacement)
 
 **Commercial/Enterprise:**
-- 7 BREW Network Stack Installation - Lubbock, TX ($800)
-- Amazon Keycafe Installation - Hobbs, NM ($842.50)
+- QSR Location Network Stack Installation - Lubbock, TX ()
+- Amazon Keycafe Installation - Hobbs, NM ()
 - ODP Smart Hands Support - Multi-location (AVASO)
 - LAN Migration Projects - Multiple locations (ASD)
 
 **Medical/Healthcare:**
-- Alpine Drugs - Windows 11 Upgrade Fleet ($562.18)
+- Medical Facility - Windows 11 Upgrade Fleet ()
 - United Supermarkets Pharmacy - Multiple Higi repairs
 - CVS locations - Equipment maintenance
 

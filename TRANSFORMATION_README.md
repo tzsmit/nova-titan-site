@@ -41,15 +41,15 @@ This branch contains a complete multi-audience transformation of the Nova Titan 
 
 ### Past Performance Highlighted
 **Government/Federal:**
-- Dyess Air Force Base - $660
-- USDA Big Spring - $150
-- DPS Stanton - $237.85
+- Federal Installation - 
+- Federal Agency Big Spring - 
+- DPS Location - 
 
 **Commercial/Enterprise:**
-- 7 BREW Network Stack - $800
-- Amazon Keycafe Install - $842.50
+- QSR Location Network Stack - 
+- Amazon Keycafe Install - 
 - ODP Smart Hands (multi-location)
-- Alpine Drugs Windows 11 Fleet - $562.18
+- Medical Facility Windows 11 Fleet - 
 
 ---
 

@@ -84,8 +84,8 @@ Commits:                6 organized commits
 **After:** "95+ Field Projects • WorkMarket Verified • Multi-Platform Experience"
 
 ### 2. Past Performance Showcase
-**Government:** Dyess AFB, USDA, DPS, BNSF Railway  
-**Commercial:** 7 BREW, Amazon, Alpine Drugs, ODP  
+**Government:** Federal Installation, Federal Agency, DPS, BNSF Railway  
+**Commercial:** QSR Location, Amazon, Medical Facility, ODP  
 **Platforms:** WorkMarket, CloudWork Pro verified
 
 ### 3. Multi-Audience Clarity

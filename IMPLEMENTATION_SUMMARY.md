@@ -31,12 +31,12 @@ Successfully transformed Nova Titan Systems from a single-audience security-focu
 - 95+ projects completion showcase
 - WorkMarket/CloudWork Pro verification prominently displayed
 - Real past performance examples:
-  - 7 BREW Network Stack Installation ($800)
-  - Dyess Air Force Base Equipment Removal ($660)
-  - Amazon Keycafe Installation ($842.50)
+  - QSR Location Network Stack Installation ()
+  - Federal Installation Equipment Removal ()
+  - Amazon Keycafe Installation ()
   - ODP Smart Hands Support (AVASO)
   - LAN Migration Projects
-  - USDA Site Survey
+  - Federal Agency Site Survey
 
 **Coverage Information:**
 - Primary: West Texas (< 24hr response)
@@ -61,7 +61,7 @@ Successfully transformed Nova Titan Systems from a single-audience security-focu
 - Franchises & Chains
 
 **Service Offerings:**
-1. **New Business Technology Setup** - Starting at $2,999
+1. **New Business Technology Setup** - Starting at 
    - Complete network design
    - POS system integration
    - Security cameras
@@ -69,20 +69,20 @@ Successfully transformed Nova Titan Systems from a single-audience security-focu
    - Phone systems
    - Staff training
 
-2. **Network Infrastructure Services** - Starting at $499
+2. **Network Infrastructure Services** - Starting at 
    - Structured cabling
    - Switch/router installation
    - Wi-Fi optimization
    - Network security
    - VLAN segmentation
 
-3. **POS & Payment Systems** - Starting at $799
+3. **POS & Payment Systems** - Starting at 
    - PCI-compliant networks
    - Hardware installation
    - Payment terminal config
    - Staff training
 
-4. **Managed IT Support Plans** - From $149/month
+4. **Managed IT Support Plans** - From /month
    - Priority support
    - Monthly maintenance
    - Remote troubleshooting
@@ -90,8 +90,8 @@ Successfully transformed Nova Titan Systems from a single-audience security-focu
    - Security monitoring
 
 **Success Stories Featured:**
-- 7 BREW Coffee - Lubbock (Network deployment)
-- Alpine Drugs - Windows 11 fleet upgrade
+- QSR Location Coffee - Lubbock (Network deployment)
+- Medical Facility - Windows 11 fleet upgrade
 - Multiple retail clients (ongoing support)
 
 ### 3. Existing Pages - Status
@@ -134,25 +134,25 @@ Successfully transformed Nova Titan Systems from a single-audience security-focu
 ## 📊 Past Performance Showcase
 
 ### Government/Federal Projects:
-- **Dyess Air Force Base** - Equipment Removal (Core Technology Solutions) - $660
-- **USDA Big Spring, TX** - Site Survey (Concert Technologies) - $150
+- **Federal Installation** - Equipment Removal (Core Technology Solutions) - 
+- **Federal Agency Big Spring, TX** - Site Survey (Concert Technologies) - 
 - **BNSF Railway** - Infrastructure projects (CSA Solutions)
-- **DPS Stanton** - MVN Media PC Replacement - $237.85
+- **DPS Location** - MVN Media PC Replacement - 
 
 ### Commercial/Enterprise Projects:
-- **7 BREW** - Network Stack Installation, Lubbock - $800
-- **Amazon** - Keycafe Installation, Hobbs NM - $842.50
+- **QSR Location** - Network Stack Installation, Lubbock - 
+- **Amazon** - Keycafe Installation, Hobbs NM - 
 - **ODP Smart Hands** - Multi-location support (AVASO)
-- **LAN Migration** - Multiple locations (ASD) - $200 each
+- **LAN Migration** - Multiple locations (ASD) -  each
 
 ### Medical/Healthcare Projects:
-- **Alpine Drugs** - Windows 11 Upgrade Fleet - $562.18
+- **Medical Facility** - Windows 11 Upgrade Fleet - 
 - **United Supermarkets Pharmacy** - Multiple Higi equipment repairs
 - **CVS locations** - Equipment maintenance
 
 ### Retail/QSR Projects:
-- **Walmart Supercenter** - Medeco Key Cabinet maintenance - $225
-- **JCPenney** - Equipment move/removal - $180
+- **Walmart Supercenter** - Medeco Key Cabinet maintenance - 
+- **JCPenney** - Equipment move/removal - 
 - **Sam's Club** - Multiple equipment repairs
 
 ---
