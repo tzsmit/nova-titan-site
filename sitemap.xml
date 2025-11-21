@@ -1,63 +1,259 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
   <url>
     <loc>https://novatitan.net/</loc>
-    <lastmod>2025-10-30</lastmod>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
+  
+  <!-- Core Pages -->
   <url>
     <loc>https://novatitan.net/about/</loc>
-    <lastmod>2025-10-30</lastmod>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-  <url>
-    <loc>https://novatitan.net/services/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://novatitan.net/blog/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://novatitan.net/faqs/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <priority>0.70</priority>
-  </url>
+  
   <url>
     <loc>https://novatitan.net/contact/</loc>
-    <lastmod>2025-10-30</lastmod>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  
   <url>
     <loc>https://novatitan.net/book-now/</loc>
-    <lastmod>2025-10-30</lastmod>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <!-- Services & Industries -->
+  <url>
+    <loc>https://novatitan.net/services/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
+  
   <url>
-    <loc>https://novatitan.net/resources/</loc>
-    <lastmod>2025-10-30</lastmod>
-    <priority>0.85</priority>
+    <loc>https://novatitan.net/services/all-services/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
+  
   <url>
-    <loc>https://novatitan.net/capability-statement/</loc>
-    <lastmod>2025-10-30</lastmod>
+    <loc>https://novatitan.net/services/commercial/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  
+  <url>
+    <loc>https://novatitan.net/industries/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- Government & Partners -->
+  <url>
+    <loc>https://novatitan.net/government/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/partners/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/partners/enterprise/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
+  <!-- Cybersecurity Services -->
   <url>
     <loc>https://novatitan.net/cybersecurity/basic-security-assessment/</loc>
-    <lastmod>2025-10-30</lastmod>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+  
   <url>
     <loc>https://novatitan.net/cybersecurity/compliance-readiness-review/</loc>
-    <lastmod>2025-10-30</lastmod>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+  
   <url>
     <loc>https://novatitan.net/cybersecurity/security-awareness-training/</loc>
-    <lastmod>2025-10-30</lastmod>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+  
+  <!-- Products -->
+  <url>
+    <loc>https://novatitan.net/products/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/products/cloudwarden/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/products/sports/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/products/ai-engine/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <!-- Divisions -->
+  <url>
+    <loc>https://novatitan.net/divisions/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/divisions/intelligence/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/divisions/security/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/divisions/systems/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  
+  <!-- Resources & Content -->
+  <url>
+    <loc>https://novatitan.net/resources/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/blog/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/blogs/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/capability-statement/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/portfolio/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/testimonials/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/faqs/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/plans/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/ceo/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  
+  <!-- Legal & Utility Pages -->
+  <url>
+    <loc>https://novatitan.net/privacy/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/terms/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/refunds/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
+  
+  <url>
+    <loc>https://novatitan.net/thank-you/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  
 </urlset>
