@@ -19,9 +19,9 @@
     - name: View All Services
       url: /services/
 
-- name: Solutions
-  url: /solutions/
-  icon: fas fa-lightbulb
+- name: Industries
+  url: /services/
+  icon: fas fa-building
   submenu:
     - name: Commercial & Local Business
       url: /services/commercial/
