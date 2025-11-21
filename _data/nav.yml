@@ -29,8 +29,6 @@
       url: /government/
     - name: Enterprise & MSP Partners
       url: /partners/enterprise/
-    - name: Field Services & Dispatch
-      url: /services/field-services/
 
 - name: About
   url: /about/
