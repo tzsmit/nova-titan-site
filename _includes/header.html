@@ -13,14 +13,21 @@
       <!-- Desktop Navigation -->
       <div class="hidden sm:flex items-center space-x-6">
         {% for item in site.data.nav %}
-          {% assign current_path = page.url | remove: 'index.html' %}
+          {% assign current_path = page.url | remove: 'index.html' | remove: '.html' %}
+          {% assign item_path = item.url | remove: 'index.html' | remove: '.html' %}
           {% assign is_active = false %}
-          {% if current_path == item.url %}
+          
+          {% comment %} Exact match or root match {% endcomment %}
+          {% if current_path == item_path %}
             {% assign is_active = true %}
-          {% elsif current_path == '/' and item.url == '/' %}
+          {% elsif current_path == '/' and item_path == '/' %}
             {% assign is_active = true %}
-          {% elsif current_path != '/' and item.url != '/' and current_path contains item.url %}
-            {% assign is_active = true %}
+          {% comment %} Contains match but only if not root and path starts with item path {% endcomment %}
+          {% elsif current_path != '/' and item_path != '/' %}
+            {% assign item_path_with_slash = item_path | append: '/' %}
+            {% if current_path == item_path_with_slash or current_path starts_with item_path_with_slash %}
+              {% assign is_active = true %}
+            {% endif %}
           {% endif %}
           
           <a href="{{ item.url }}" 
@@ -43,14 +50,21 @@
     <div id="mobileMenu" class="sm:hidden hidden pb-4">
       <div class="flex flex-col space-y-2">
         {% for item in site.data.nav %}
-          {% assign current_path = page.url | remove: 'index.html' %}
+          {% assign current_path = page.url | remove: 'index.html' | remove: '.html' %}
+          {% assign item_path = item.url | remove: 'index.html' | remove: '.html' %}
           {% assign is_active = false %}
-          {% if current_path == item.url %}
+          
+          {% comment %} Exact match or root match {% endcomment %}
+          {% if current_path == item_path %}
             {% assign is_active = true %}
-          {% elsif current_path == '/' and item.url == '/' %}
+          {% elsif current_path == '/' and item_path == '/' %}
             {% assign is_active = true %}
-          {% elsif current_path != '/' and item.url != '/' and current_path contains item.url %}
-            {% assign is_active = true %}
+          {% comment %} Contains match but only if not root and path starts with item path {% endcomment %}
+          {% elsif current_path != '/' and item_path != '/' %}
+            {% assign item_path_with_slash = item_path | append: '/' %}
+            {% if current_path == item_path_with_slash or current_path starts_with item_path_with_slash %}
+              {% assign is_active = true %}
+            {% endif %}
           {% endif %}
           
           <a href="{{ item.url }}" 
