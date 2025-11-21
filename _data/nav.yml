@@ -20,7 +20,7 @@
       url: /services/
 
 - name: Industries
-  url: /services/
+  url: /industries/
   icon: fas fa-building
   submenu:
     - name: Commercial & Local Business

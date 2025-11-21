@@ -1,365 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resources & Documents | Nova Titan Systems Lubbock TX</title>
-  <meta name="description" content="Download Nova Titan Systems cybersecurity resources, capability statement, and service documentation. Free security guides and assessments for Lubbock and West Texas businesses.">
-  <link rel="canonical" href="https://novatitan.net/resources/">
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://novatitan.net/resources/">
-  <meta property="og:title" content="Resources & Documents - Nova Titan Systems">
-  <meta property="og:description" content="Download cybersecurity resources, capability statement, and service documentation for Lubbock and West Texas businesses.">
-  <meta property="og:image" content="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  
-  <!-- Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  
-  <style>
-    body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); min-height: 100vh; }
-    
-    /* Navigation */
-    .nav-link { 
-      transition: all .3s ease; 
-      position: relative; 
-      padding: 0.5rem 0;
-    }
-    .nav-link:hover { 
-      color: var(--cy); 
-      transform: scale(1.05); 
-    }
-    .nav-link::after { 
-      content:''; 
-      position:absolute; 
-      bottom:-2px; 
-      left:0; 
-      height:2px; 
-      width:0; 
-      background: linear-gradient(90deg, var(--cy), var(--gr)); 
-      transition:width .3s ease; 
-    }
-    .nav-link:hover::after { width:100%; }
-    
-    .btn-grad { 
-      background: linear-gradient(45deg,var(--cy),var(--gr)); 
-      transition: all .3s ease; 
-      box-shadow: 0 4px 15px rgba(0,212,255,0.3);
-    }
-    .btn-grad:hover { 
-      transform: translateY(-2px); 
-      box-shadow: 0 8px 25px rgba(0,212,255,.5); 
-    }
-    
-    /* Hamburger */
-    .hamburger { 
-      width: 36px; 
-      height: 28px; 
-      position: relative; 
-      cursor: pointer;
-    }
-    .hamburger span { 
-      position:absolute; 
-      left:0; 
-      right:0; 
-      height:3px; 
-      background: linear-gradient(90deg, var(--cy), var(--gr)); 
-      transition:transform .3s, opacity .3s, top .3s; 
-      border-radius: 2px;
-    }
-    .hamburger span:nth-child(1){ top:4px; } 
-    .hamburger span:nth-child(2){ top:12px; } 
-    .hamburger span:nth-child(3){ top:20px; }
-    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
-    .hamburger.active span:nth-child(2){ opacity:0; }
-    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
-    .glow { text-shadow: 0 0 20px rgba(0,212,255,.6); }
-    .card { border: 1px solid rgba(0,212,255,.25); background: rgba(26,26,46,.85); backdrop-filter: blur(12px); transition: all .3s ease; }
-    .card:hover { border-color: rgba(0,212,255,0.6); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,212,255,.3); }
-    .resource-icon { background: linear-gradient(135deg, #00d4ff, #00ff88); width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #0a0a0f; }
-  </style>
-  
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Nova Titan Systems Resources",
-    "description": "Cybersecurity resources, capability statement, and service documentation for businesses",
-    "url": "https://novatitan.net/resources/",
-    "publisher": {"@id": "https://novatitan.net/#org"}
-  }
-  </script>
+---
+layout: default
+title: "Resources & Documents"
+description: "Download Nova Titan Systems cybersecurity resources, capability statement, and service documentation. Free security guides and assessments for businesses across Texas."
+---
 
-  <!-- Plausible Analytics (Privacy-Friendly) -->
-  <script defer data-domain="novatitan.net" src="https://plausible.io/js/script.js"></script>
+<!-- HERO -->
+<section class="content pt-32 pb-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12 fade-in">
+      <span class="inline-block px-4 py-2 bg-cyan-900/30 border border-cyan-400/30 rounded-full text-cyan-300 text-sm glow font-mono mb-6">
+        <i class="fas fa-book-open mr-2"></i>Resource Center
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold text-cyan-300 glow mb-6">
+        Resources & Documents
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Explore our cybersecurity services, download our capability statement, and access key resources for your business security needs.
+      </p>
+    </div>
+  </div>
+</section>
 
-</head>
-<body class="text-white">
-  <!-- NAV -->
-  <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center group">
-          <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
-          <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
-        </a>
-        <div class="hidden sm:flex items-center space-x-6">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Solutions</a>
-          <a href="/plans/" class="nav-link">Plans</a>
-          <a href="/portfolio/" class="nav-link">Portfolio</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/testimonials/" class="nav-link">Testimonials</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
-            <i class="fas fa-calendar-check mr-1"></i>Book Now
+<!-- COMPANY OVERVIEW -->
+<section class="content py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="card rounded-xl p-8 mb-12 fade-in">
+      <div class="flex items-center mb-6">
+        <div class="resource-icon mr-4">
+          <i class="fas fa-building"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-cyan-300 glow">Company Overview</h2>
+          <p class="text-gray-400">Learn about Nova Titan Systems capabilities and services</p>
+        </div>
+      </div>
+      <div class="bg-gray-800/50 rounded-lg p-6">
+        <h3 class="text-xl font-bold text-cyan-300 mb-4">
+          <i class="fas fa-file-alt text-cyan-400 mr-2"></i>
+          Capability Statement
+        </h3>
+        <p class="text-gray-300 mb-4">
+          Comprehensive overview of Nova Titan Systems LLC - our three service divisions, performance metrics, certifications, and competitive differentiators. Essential for partnership discussions and government contracting opportunities.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/capability-statement/" class="inline-flex items-center bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-3 px-6 rounded-lg hover:shadow-lg transition">
+            <i class="fas fa-eye mr-2"></i>View Online
           </a>
         </div>
-        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-      <div id="mobileMenu" class="sm:hidden hidden pb-4">
-        <div class="flex flex-col space-y-2">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Solutions</a>
-          <a href="/plans/" class="nav-link">Plans</a>
-          <a href="/portfolio/" class="nav-link">Portfolio</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/testimonials/" class="nav-link">Testimonials</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="/book-now/" class="nav-link">Book Now</a>
-        </div>
       </div>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <section class="pt-28 pb-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <span class="inline-block px-4 py-2 bg-cyan-900/30 border border-cyan-400/30 rounded-full text-cyan-300 text-sm glow font-mono mb-6">
-          <i class="fas fa-book-open mr-2"></i>Resource Center
-        </span>
-        <h1 class="text-4xl sm:text-5xl font-bold text-cyan-300 glow mb-6">
-          Resources & Documents
-        </h1>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-          Explore our cybersecurity services, download our capability statement, and access key resources for your business security needs.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPANY OVERVIEW -->
-  <section class="py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="card rounded-xl p-8 mb-12">
-        <div class="flex items-center mb-6">
-          <div class="resource-icon mr-4">
-            <i class="fas fa-building"></i>
-          </div>
-          <div>
-            <h2 class="text-2xl font-bold text-cyan-300 glow">Company Overview</h2>
-            <p class="text-gray-400">Learn about Nova Titan Systems capabilities and services</p>
-          </div>
-        </div>
-        <div class="bg-gray-800/50 rounded-lg p-6">
-          <h3 class="text-xl font-bold text-cyan-300 mb-4">
-            <i class="fas fa-file-alt text-cyan-400 mr-2"></i>
-            Capability Statement
-          </h3>
-          <p class="text-gray-300 mb-4">
-            Comprehensive overview of Nova Titan Systems LLC - our three service divisions, performance metrics, certifications, and competitive differentiators. Essential for partnership discussions and government contracting opportunities.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="/capability-statement/" class="inline-flex items-center bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-3 px-6 rounded-lg hover:shadow-lg transition">
-              <i class="fas fa-eye mr-2"></i>View Online
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- CYBERSECURITY SERVICES -->
-      <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-12">
-        <i class="fas fa-shield-alt mr-3"></i>Cybersecurity Services
-      </h2>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Basic Security Assessment -->
-        <div class="card rounded-xl p-6">
-          <div class="resource-icon mb-4">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3 class="text-xl font-bold text-cyan-300 mb-2">Basic Security Assessment</h3>
-          <div class="inline-block bg-cyan-900/30 border border-cyan-400/30 rounded-lg px-3 py-1 text-cyan-300 text-sm font-mono mb-4">
-            $1,500
-          </div>
-          <p class="text-gray-400 mb-4 text-sm">
-            Professional cybersecurity audit identifying vulnerabilities, quantifying risk, and providing remediation roadmap. Includes asset inventory, vulnerability scanning, and executive report.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-400 mb-6">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>5-7 day turnaround</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Executive-ready report</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>30 days email support</li>
-          </ul>
-          <div class="flex flex-col gap-2">
-            <a href="/cybersecurity/basic-security-assessment/" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition text-sm">
-              <i class="fas fa-eye mr-2"></i>View Details
-            </a>
-            <a href="/book-now/" class="inline-flex items-center justify-center px-4 py-2 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition text-sm">
-              <i class="fas fa-calendar-check mr-2"></i>Book Now
-            </a>
-          </div>
-        </div>
-
-        <!-- Compliance Readiness Review -->
-        <div class="card rounded-xl p-6">
-          <div class="resource-icon mb-4">
-            <i class="fas fa-clipboard-check"></i>
-          </div>
-          <h3 class="text-xl font-bold text-green-300 mb-2">Compliance Readiness Review</h3>
-          <div class="inline-block bg-green-900/30 border border-green-400/30 rounded-lg px-3 py-1 text-green-300 text-sm font-mono mb-4">
-            $2,500
-          </div>
-          <p class="text-gray-400 mb-4 text-sm">
-            Comprehensive regulatory compliance gap analysis for HIPAA, PCI-DSS, SOX, and NIST frameworks. Strategic remediation roadmaps transform compliance into competitive advantage.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-400 mb-6">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Framework coverage</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Gap analysis report</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Implementation guidance</li>
-          </ul>
-          <div class="flex flex-col gap-2">
-            <a href="/cybersecurity/compliance-readiness-review/" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition text-sm">
-              <i class="fas fa-eye mr-2"></i>View Details
-            </a>
-            <a href="/book-now/" class="inline-flex items-center justify-center px-4 py-2 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition text-sm">
-              <i class="fas fa-calendar-check mr-2"></i>Book Now
-            </a>
-          </div>
-        </div>
-
-        <!-- Security Awareness Training -->
-        <div class="card rounded-xl p-6">
-          <div class="resource-icon mb-4">
-            <i class="fas fa-user-shield"></i>
-          </div>
-          <h3 class="text-xl font-bold text-purple-300 mb-2">Security Awareness Training</h3>
-          <div class="inline-block bg-purple-900/30 border border-purple-400/30 rounded-lg px-3 py-1 text-purple-300 text-sm font-mono mb-4">
-            $1,000+
-          </div>
-          <p class="text-gray-400 mb-4 text-sm">
-            Transform your workforce into security champions. Interactive training, phishing simulations, and real-world scenarios reduce risk by 70%+ while meeting compliance requirements.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-400 mb-6">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Phishing simulation</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Interactive workshops</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Compliance certificates</li>
-          </ul>
-          <div class="flex flex-col gap-2">
-            <a href="/cybersecurity/security-awareness-training/" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition text-sm">
-              <i class="fas fa-eye mr-2"></i>View Details
-            </a>
-            <a href="/book-now/" class="inline-flex items-center justify-center px-4 py-2 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition text-sm">
-              <i class="fas fa-calendar-check mr-2"></i>Book Now
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ADDITIONAL SERVICES -->
-  <section class="py-12 bg-gray-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-12">
-        Additional Services
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="card rounded-xl p-6">
-          <div class="flex items-start">
-            <i class="fas fa-network-wired text-green-400 text-2xl mr-4 mt-1"></i>
-            <div>
-              <h3 class="text-xl font-bold text-green-300 mb-2">IT Infrastructure Services</h3>
-              <p class="text-gray-400 mb-4">Managed IT support, network design, cloud migration, and smart business integration solutions.</p>
-              <a href="/services/" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition">
-                View All IT Services <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="card rounded-xl p-6">
-          <div class="flex items-start">
-            <i class="fas fa-cloud text-purple-400 text-2xl mr-4 mt-1"></i>
-            <div>
-              <h3 class="text-xl font-bold text-purple-300 mb-2">Cloud & Digital Innovation</h3>
-              <p class="text-gray-400 mb-4">CloudWarden platform, automation systems, and AI-powered threat detection solutions.</p>
-              <a href="/portfolio/" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition">
-                View Portfolio <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold glow mb-6">Need Help Choosing?</h2>
-      <p class="text-xl text-gray-300 mb-8">
-        Contact our team for a free consultation and we'll recommend the best solution for your security needs.
-      </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/contact/" class="bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg hover:shadow-lg transition">
-          <i class="fas fa-envelope mr-3"></i>Contact Us
-        </a>
-        <a href="tel:+18063700624" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition text-lg">
-          <i class="fas fa-phone mr-3"></i>Call (806) 370-0624
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-900/90 py-8">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <p class="text-gray-300 text-sm">
-        &copy; 2025 Nova Titan Systems LLC. All rights reserved.
-      </p>
-      <p class="text-gray-400 text-xs mt-2">
-        Lubbock, TX | (806) 370-0624 | info@novatitan.net
-      </p>
-    </div>
-  </footer>
-  <!-- Mobile Menu Script -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+    <!-- CYBERSECURITY SERVICES -->
+    <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-12 fade-in">
+      <i class="fas fa-shield-alt mr-3"></i>Cybersecurity Services
+    </h2>
     
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => {
-        menuBtn.classList.toggle('active');
-        const isOpen = mobileMenu.classList.contains('hidden');
-        mobileMenu.classList.toggle('hidden', !isOpen);
-        menuBtn.setAttribute('aria-expanded', String(isOpen));
-      });
-    }
-  </script>
-</body>
-</html>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Basic Security Assessment -->
+      <div class="card rounded-xl p-6 fade-in">
+        <div class="resource-icon mb-4">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3 class="text-xl font-bold text-cyan-300 mb-2">Basic Security Assessment</h3>
+        <div class="inline-block bg-cyan-900/30 border border-cyan-400/30 rounded-lg px-3 py-1 text-cyan-300 text-sm font-mono mb-4">
+          $1,500
+        </div>
+        <p class="text-gray-400 mb-4 text-sm">
+          Professional cybersecurity audit identifying vulnerabilities, quantifying risk, and providing remediation roadmap. Includes asset inventory, vulnerability scanning, and executive report.
+        </p>
+        <ul class="space-y-2 text-sm text-gray-400 mb-6">
+          <li><i class="fas fa-check text-green-400 mr-2"></i>5-7 day turnaround</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Executive-ready report</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>30 days email support</li>
+        </ul>
+        <div class="flex flex-col gap-2">
+          <a href="/book-now/" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition text-sm">
+            <i class="fas fa-calendar-check mr-2"></i>Book Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Compliance Readiness Review -->
+      <div class="card rounded-xl p-6 fade-in">
+        <div class="resource-icon mb-4">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h3 class="text-xl font-bold text-green-300 mb-2">Compliance Readiness Review</h3>
+        <div class="inline-block bg-green-900/30 border border-green-400/30 rounded-lg px-3 py-1 text-green-300 text-sm font-mono mb-4">
+          $2,500
+        </div>
+        <p class="text-gray-400 mb-4 text-sm">
+          Comprehensive regulatory compliance gap analysis for HIPAA, PCI-DSS, SOX, and NIST frameworks. Strategic remediation roadmaps transform compliance into competitive advantage.
+        </p>
+        <ul class="space-y-2 text-sm text-gray-400 mb-6">
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Framework coverage</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Gap analysis report</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Implementation guidance</li>
+        </ul>
+        <div class="flex flex-col gap-2">
+          <a href="/book-now/" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition text-sm">
+            <i class="fas fa-calendar-check mr-2"></i>Book Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Security Awareness Training -->
+      <div class="card rounded-xl p-6 fade-in">
+        <div class="resource-icon mb-4">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h3 class="text-xl font-bold text-purple-300 mb-2">Security Awareness Training</h3>
+        <div class="inline-block bg-purple-900/30 border border-purple-400/30 rounded-lg px-3 py-1 text-purple-300 text-sm font-mono mb-4">
+          $1,000+
+        </div>
+        <p class="text-gray-400 mb-4 text-sm">
+          Transform your workforce into security champions. Interactive training, phishing simulations, and real-world scenarios reduce risk by 70%+ while meeting compliance requirements.
+        </p>
+        <ul class="space-y-2 text-sm text-gray-400 mb-6">
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Phishing simulation</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Interactive workshops</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Compliance certificates</li>
+        </ul>
+        <div class="flex flex-col gap-2">
+          <a href="/book-now/" class="inline-flex items-center justify-center bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition text-sm">
+            <i class="fas fa-calendar-check mr-2"></i>Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADDITIONAL SERVICES -->
+<section class="content py-12 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-12 fade-in">
+      Additional Services
+    </h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card rounded-xl p-6 fade-in">
+        <div class="flex items-start">
+          <i class="fas fa-network-wired text-green-400 text-2xl mr-4 mt-1"></i>
+          <div>
+            <h3 class="text-xl font-bold text-green-300 mb-2">IT Infrastructure Services</h3>
+            <p class="text-gray-400 mb-4">Managed IT support, network design, cloud migration, and smart business integration solutions.</p>
+            <a href="/services/" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition">
+              View All IT Services <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card rounded-xl p-6 fade-in">
+        <div class="flex items-start">
+          <i class="fas fa-cloud text-purple-400 text-2xl mr-4 mt-1"></i>
+          <div>
+            <h3 class="text-xl font-bold text-purple-300 mb-2">Cloud & Digital Innovation</h3>
+            <p class="text-gray-400 mb-4">CloudWarden platform, automation systems, and AI-powered threat detection solutions.</p>
+            <a href="/portfolio/" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition">
+              View Portfolio <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="content py-16">
+  <div class="max-w-4xl mx-auto px-6 text-center fade-in">
+    <h2 class="text-4xl font-bold glow mb-6">Need Help Choosing?</h2>
+    <p class="text-xl text-gray-300 mb-8">
+      Contact our team for a free consultation and we'll recommend the best solution for your security needs.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="/contact/" class="bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg hover:shadow-lg transition">
+        <i class="fas fa-envelope mr-3"></i>Contact Us
+      </a>
+      <a href="tel:+18063700624" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition text-lg">
+        <i class="fas fa-phone mr-3"></i>Call (806) 370-0624
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+.resource-icon { 
+  background: linear-gradient(135deg, #00d4ff, #00ff88); 
+  width: 60px; 
+  height: 60px; 
+  border-radius: 12px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 1.5rem; 
+  color: #0a0a0f; 
+}
+</style>
