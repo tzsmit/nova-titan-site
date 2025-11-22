@@ -19,13 +19,17 @@
     - name: View All Services
       url: /services/
 
+- name: Government
+  url: /government/
+  icon: fas fa-flag-usa
+
 - name: Industries
   url: /industries/
   icon: fas fa-building
   submenu:
     - name: Commercial & Local Business
       url: /services/commercial/
-    - name: Government Contracting
+    - name: Government Solutions
       url: /government/
     - name: Enterprise & MSP Partners
       url: /partners/enterprise/
