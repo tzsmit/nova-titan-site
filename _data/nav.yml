@@ -41,7 +41,9 @@
     - name: Company Overview
       url: /about/
     - name: Leadership Team
-      url: /ceo/
+      url: /leadership/
+    - name: Certifications
+      url: /certifications/
     - name: Portfolio & Case Studies
       url: /portfolio/
 
