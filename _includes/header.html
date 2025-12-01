@@ -1,5 +1,5 @@
 <!-- Navigation Header -->
-<nav class="nav-container fixed w-full z-[10000] top-0 content" style="background: rgba(10,10,15,0.95); backdrop-filter: blur(6px); box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<nav class="nav-container fixed w-full top-0 content" style="background: rgba(10,10,15,0.95); backdrop-filter: blur(6px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 10000;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
@@ -11,7 +11,7 @@
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden sm:flex items-center space-x-6">
+      <div class="hidden lg:flex items-center space-x-6">
         {% for item in site.data.nav %}
           {% assign current_path = page.url %}
           {% assign is_active = false %}
@@ -30,15 +30,15 @@
           
           {% if item.submenu %}
             <!-- Navigation item with dropdown -->
-            <div class="nav-dropdown-container">
+            <div class="nav-item-wrapper">
               <a href="{{ item.url }}" 
-                 class="nav-link {% if is_active %}text-cyan-400 font-semibold{% endif %}">
-                {{ item.name }} <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                 class="nav-link-main {% if is_active %}active{% endif %}">
+                {{ item.name }} <i class="fas fa-chevron-down text-xs ml-1"></i>
               </a>
               <!-- Dropdown Menu -->
-              <div class="nav-dropdown">
+              <div class="dropdown-menu">
                 {% for subitem in item.submenu %}
-                  <a href="{{ subitem.url }}" class="nav-dropdown-item">
+                  <a href="{{ subitem.url }}" class="dropdown-link">
                     {{ subitem.name }}
                   </a>
                 {% endfor %}
@@ -47,7 +47,7 @@
           {% else %}
             <!-- Regular navigation link -->
             <a href="{{ item.url }}" 
-               class="nav-link {% if is_active %}text-cyan-400 font-semibold{% endif %}">
+               class="nav-link-main {% if is_active %}active{% endif %}">
               {{ item.name }}
             </a>
           {% endif %}
@@ -58,13 +58,13 @@
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="menuBtn" class="sm:hidden hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button id="menuBtn" class="lg:hidden hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobileMenu" class="sm:hidden hidden pb-4">
+    <div id="mobileMenu" class="lg:hidden hidden pb-4">
       <div class="flex flex-col space-y-2">
         {% for item in site.data.nav %}
           {% assign current_path = page.url %}
@@ -83,120 +83,121 @@
           {% endunless %}
           
           <a href="{{ item.url }}" 
-             class="nav-link {% if is_active %}text-cyan-400 font-semibold{% endif %}">
+             class="nav-link-main {% if is_active %}active{% endif %}">
             {{ item.name }}
           </a>
           {% if item.submenu %}
             <div class="ml-4 flex flex-col space-y-1">
               {% for subitem in item.submenu %}
-                <a href="{{ subitem.url }}" class="nav-link text-sm text-gray-400">
+                <a href="{{ subitem.url }}" class="text-sm text-gray-400 hover:text-cyan-300 py-1">
                   {{ subitem.name }}
                 </a>
               {% endfor %}
             </div>
           {% endif %}
         {% endfor %}
-        <a href="/book-now/" class="nav-link">Book Now</a>
+        <a href="/book-now/" class="nav-link-main">Book Now</a>
       </div>
     </div>
   </div>
 </nav>
 
 <style>
-  /* Navigation Styles */
-  .nav-link { 
-    transition: all .3s ease; 
-    position: relative; 
+  /* Base Navigation Styles - CONSISTENT ACROSS ALL PAGES */
+  .nav-link-main { 
+    color: #e5e7eb;
+    transition: color 0.3s ease;
+    position: relative;
     padding: 0.5rem 0;
     display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
   }
-  .nav-link:hover { 
-    color: #29a8ab; 
+  
+  .nav-link-main:hover,
+  .nav-link-main.active { 
+    color: #00d4ff;
   }
-  .nav-link::after { 
+  
+  .nav-link-main::after { 
     content:''; 
-    position:absolute; 
-    bottom:-2px; 
-    left:0; 
-    height:2px; 
-    width:0; 
-    background: linear-gradient(90deg, var(--cy), var(--gr)); 
-    transition:width .3s ease; 
+    position: absolute; 
+    bottom: -2px; 
+    left: 0; 
+    height: 2px; 
+    width: 0; 
+    background: linear-gradient(90deg, #00d4ff, #00ff88); 
+    transition: width 0.3s ease; 
   }
-  .nav-link:hover::after { width:100%; }
+  
+  .nav-link-main:hover::after,
+  .nav-link-main.active::after { 
+    width: 100%; 
+  }
   
   /* Dropdown Container */
-  .nav-dropdown-container {
+  .nav-item-wrapper {
     position: relative;
     display: inline-block;
   }
   
-  /* Dropdown Menu - Overlay Style */
-  .nav-dropdown {
+  /* Dropdown Menu - Simple Overlay */
+  .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    min-width: 240px;
-    background: rgba(15, 15, 25, 0.98);
-    backdrop-filter: blur(12px);
+    left: 0;
+    min-width: 220px;
+    background: rgba(15, 15, 25, 0.97);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 212, 255, 0.3);
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 0;
+    margin-top: 1rem;
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-    margin-top: 0.75rem;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
     z-index: 99999;
   }
   
-  .nav-dropdown-container:hover .nav-dropdown {
+  .nav-item-wrapper:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   
-  /* Dropdown Items */
-  .nav-dropdown-item {
+  /* Dropdown Links */
+  .dropdown-link {
     display: block;
-    padding: 0.875rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     color: #e5e7eb;
     text-decoration: none;
     transition: all 0.2s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.925rem;
+    font-size: 0.95rem;
     white-space: nowrap;
   }
   
-  .nav-dropdown-item:last-child {
-    border-bottom: none;
-    border-radius: 0 0 8px 8px;
-  }
-  
-  .nav-dropdown-item:first-child {
-    border-radius: 8px 8px 0 0;
-  }
-  
-  .nav-dropdown-item:hover {
-    background: linear-gradient(90deg, rgba(0, 212, 255, 0.15), rgba(0, 255, 136, 0.1));
+  .dropdown-link:hover {
+    background: rgba(0, 212, 255, 0.15);
     color: #00d4ff;
-    padding-left: 1.75rem;
+    padding-left: 1.5rem;
   }
   
-  /* Enhanced Buttons */
+  /* Book Now Button */
   .btn-grad { 
-    background: linear-gradient(45deg,var(--cy),var(--gr)); 
-    transition: all .3s ease; 
-    box-shadow: 0 4px 15px rgba(0,212,255,0.3);
+    background: linear-gradient(45deg, #00d4ff, #00ff88); 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
     position: relative;
     overflow: hidden;
   }
+  
   .btn-grad:hover { 
     transform: translateY(-2px); 
-    box-shadow: 0 8px 25px rgba(0,212,255,.5); 
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5); 
   }
+  
   .btn-grad::before {
     content: '';
     position: absolute;
@@ -204,9 +205,10 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
   }
+  
   .btn-grad:hover::before {
     left: 100%;
   }
@@ -218,26 +220,28 @@
     position: relative; 
     cursor: pointer;
   }
+  
   .hamburger span { 
-    position:absolute; 
-    left:0; 
-    right:0; 
-    height:3px; 
-    background: linear-gradient(90deg, var(--cy), var(--gr)); 
-    transition:transform .3s, opacity .3s, top .3s; 
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    height: 3px; 
+    background: linear-gradient(90deg, #00d4ff, #00ff88); 
+    transition: transform 0.3s, opacity 0.3s, top 0.3s; 
     border-radius: 2px;
   }
-  .hamburger span:nth-child(1){ top:4px; } 
-  .hamburger span:nth-child(2){ top:12px; } 
-  .hamburger span:nth-child(3){ top:20px; }
-  .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
-  .hamburger.active span:nth-child(2){ opacity:0; }
-  .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
+  
+  .hamburger span:nth-child(1) { top: 4px; } 
+  .hamburger span:nth-child(2) { top: 12px; } 
+  .hamburger span:nth-child(3) { top: 20px; }
+  
+  .hamburger.active span:nth-child(1) { top: 12px; transform: rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { top: 12px; transform: rotate(-45deg); }
 
-  /* Ensure nav stays above all content */
-  nav {
-    position: fixed;
-    top: 0;
-    z-index: 10000;
+  /* Force nav to stay on top */
+  .nav-container {
+    position: fixed !important;
+    z-index: 10000 !important;
   }
 </style>
