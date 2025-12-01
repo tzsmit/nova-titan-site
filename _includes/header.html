@@ -28,10 +28,29 @@
             {% endif %}
           {% endunless %}
           
-          <a href="{{ item.url }}" 
-             class="nav-link {% if is_active %}text-cyan-400 font-semibold{% endif %}">
-            {{ item.name }}
-          </a>
+          {% if item.submenu %}
+            <!-- Navigation item with dropdown -->
+            <div class="nav-dropdown-container">
+              <a href="{{ item.url }}" 
+                 class="nav-link {% if is_active %}text-cyan-400 font-semibold{% endif %}">
+                {{ item.name }} <i class="fas fa-chevron-down ml-1 text-xs"></i>
+              </a>
+              <!-- Dropdown Menu -->
+              <div class="nav-dropdown">
+                {% for subitem in item.submenu %}
+                  <a href="{{ subitem.url }}" class="nav-dropdown-item">
+                    {{ subitem.name }}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <!-- Regular navigation link -->
+            <a href="{{ item.url }}" 
+               class="nav-link {% if is_active %}text-cyan-400 font-semibold{% endif %}">
+              {{ item.name }}
+            </a>
+          {% endif %}
         {% endfor %}
         <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
           <i class="fas fa-calendar-check mr-1"></i>Book Now
@@ -67,6 +86,15 @@
              class="nav-link {% if is_active %}text-cyan-400 font-semibold{% endif %}">
             {{ item.name }}
           </a>
+          {% if item.submenu %}
+            <div class="ml-4 flex flex-col space-y-1">
+              {% for subitem in item.submenu %}
+                <a href="{{ subitem.url }}" class="nav-link text-sm text-gray-400">
+                  {{ subitem.name }}
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
         {% endfor %}
         <a href="/book-now/" class="nav-link">Book Now</a>
       </div>
@@ -97,6 +125,63 @@
     transition:width .3s ease; 
   }
   .nav-link:hover::after { width:100%; }
+  
+  /* Dropdown Container */
+  .nav-dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Menu */
+  .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: rgba(15, 15, 25, 0.98);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    z-index: 9999;
+  }
+  
+  .nav-dropdown-container:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  /* Dropdown Items */
+  .nav-dropdown-item {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: #e5e7eb;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+  }
+  
+  .nav-dropdown-item:last-child {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .nav-dropdown-item:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .nav-dropdown-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+    padding-left: 1.5rem;
+  }
   
   /* Enhanced Buttons */
   .btn-grad { 
