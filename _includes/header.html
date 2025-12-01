@@ -1,17 +1,19 @@
 <!-- Navigation Header -->
-<nav class="nav-container fixed w-full top-0 content" style="background: rgba(10,10,15,0.95); backdrop-filter: blur(6px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 10000;">
+<nav class="nav-container fixed w-full top-0 content" role="navigation" aria-label="Main navigation" style="background: rgba(10,10,15,0.95); backdrop-filter: blur(6px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 10000;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a href="/" class="flex items-center group">
+      <a href="/" class="flex items-center group" aria-label="Nova Titan Systems Home">
         <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" 
-             alt="{{ site.title }} Logo" 
-             class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
-        <span class="ml-3 text-xl font-bold text-cyan-400 glow">{{ site.title }}</span>
+             alt="Nova Titan Systems Logo" 
+             class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"
+             width="40"
+             height="40"/>
+        <span class="ml-3 text-xl font-bold text-cyan-400 glow" aria-label="Nova Titan Systems">{{ site.title }}</span>
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-6">
+      <div class="hidden lg:flex items-center space-x-6" role="menubar">
         {% for item in site.data.nav %}
           {% assign current_path = page.url %}
           {% assign is_active = false %}
@@ -30,15 +32,16 @@
           
           {% if item.submenu %}
             <!-- Navigation item with dropdown -->
-            <div class="nav-item-wrapper">
+            <div class="nav-item-wrapper" role="menuitem" aria-haspopup="true">
               <a href="{{ item.url }}" 
-                 class="nav-link-main {% if is_active %}active{% endif %}">
-                {{ item.name }} <i class="fas fa-chevron-down text-xs ml-1"></i>
+                 class="nav-link-main {% if is_active %}active{% endif %}"
+                 aria-expanded="false">
+                {{ item.name }} <i class="fas fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
               </a>
               <!-- Dropdown Menu -->
-              <div class="dropdown-menu">
+              <div class="dropdown-menu" role="menu" aria-label="{{ item.name }} submenu">
                 {% for subitem in item.submenu %}
-                  <a href="{{ subitem.url }}" class="dropdown-link">
+                  <a href="{{ subitem.url }}" class="dropdown-link" role="menuitem">
                     {{ subitem.name }}
                   </a>
                 {% endfor %}
@@ -47,24 +50,30 @@
           {% else %}
             <!-- Regular navigation link -->
             <a href="{{ item.url }}" 
-               class="nav-link-main {% if is_active %}active{% endif %}">
+               class="nav-link-main {% if is_active %}active{% endif %}"
+               role="menuitem"
+               {% if is_active %}aria-current="page"{% endif %}>
               {{ item.name }}
             </a>
           {% endif %}
         {% endfor %}
-        <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
-          <i class="fas fa-calendar-check mr-1"></i>Book Now
+        <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm" role="button">
+          <i class="fas fa-calendar-check mr-1" aria-hidden="true"></i>Book Now
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="menuBtn" class="lg:hidden hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button id="menuBtn" 
+              class="lg:hidden hamburger" 
+              aria-label="Toggle navigation menu" 
+              aria-expanded="false"
+              aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobileMenu" class="lg:hidden hidden pb-4">
+    <div id="mobileMenu" class="lg:hidden hidden pb-4" role="menu" aria-label="Mobile navigation">
       <div class="flex flex-col space-y-2">
         {% for item in site.data.nav %}
           {% assign current_path = page.url %}
@@ -83,20 +92,24 @@
           {% endunless %}
           
           <a href="{{ item.url }}" 
-             class="nav-link-main {% if is_active %}active{% endif %}">
+             class="nav-link-main {% if is_active %}active{% endif %}"
+             role="menuitem"
+             {% if is_active %}aria-current="page"{% endif %}>
             {{ item.name }}
           </a>
           {% if item.submenu %}
-            <div class="ml-4 flex flex-col space-y-1">
+            <div class="ml-4 flex flex-col space-y-1" role="group" aria-label="{{ item.name }} submenu">
               {% for subitem in item.submenu %}
-                <a href="{{ subitem.url }}" class="text-sm text-gray-400 hover:text-cyan-300 py-1">
+                <a href="{{ subitem.url }}" 
+                   class="text-sm text-gray-400 hover:text-cyan-300 py-1 transition-colors"
+                   role="menuitem">
                   {{ subitem.name }}
                 </a>
               {% endfor %}
             </div>
           {% endif %}
         {% endfor %}
-        <a href="/book-now/" class="nav-link-main">Book Now</a>
+        <a href="/book-now/" class="nav-link-main" role="menuitem">Book Now</a>
       </div>
     </div>
   </div>
@@ -112,11 +125,18 @@
     display: inline-block;
     text-decoration: none;
     font-size: 1rem;
+    font-weight: 500;
   }
   
   .nav-link-main:hover,
   .nav-link-main.active { 
     color: #00d4ff;
+  }
+  
+  .nav-link-main:focus {
+    outline: 2px solid #00d4ff;
+    outline-offset: 4px;
+    border-radius: 4px;
   }
   
   .nav-link-main::after { 
@@ -141,27 +161,28 @@
     display: inline-block;
   }
   
-  /* Dropdown Menu - Simple Overlay */
+  /* Dropdown Menu - Professional Overlay */
   .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 220px;
-    background: rgba(15, 15, 25, 0.97);
-    backdrop-filter: blur(10px);
+    min-width: 240px;
+    background: rgba(15, 15, 25, 0.98);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(0, 212, 255, 0.3);
     border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(0, 212, 255, 0.1);
     padding: 0.5rem 0;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 99999;
   }
   
-  .nav-item-wrapper:hover .dropdown-menu {
+  .nav-item-wrapper:hover .dropdown-menu,
+  .nav-item-wrapper:focus-within .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -175,13 +196,20 @@
     text-decoration: none;
     transition: all 0.2s ease;
     font-size: 0.95rem;
+    font-weight: 500;
     white-space: nowrap;
   }
   
-  .dropdown-link:hover {
-    background: rgba(0, 212, 255, 0.15);
+  .dropdown-link:hover,
+  .dropdown-link:focus {
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.15), rgba(0, 255, 136, 0.08));
     color: #00d4ff;
     padding-left: 1.5rem;
+  }
+  
+  .dropdown-link:focus {
+    outline: 2px solid #00d4ff;
+    outline-offset: -2px;
   }
   
   /* Book Now Button */
@@ -196,6 +224,11 @@
   .btn-grad:hover { 
     transform: translateY(-2px); 
     box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5); 
+  }
+  
+  .btn-grad:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
   }
   
   .btn-grad::before {
@@ -219,6 +252,15 @@
     height: 28px; 
     position: relative; 
     cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  .hamburger:focus {
+    outline: 2px solid #00d4ff;
+    outline-offset: 4px;
+    border-radius: 4px;
   }
   
   .hamburger span { 
@@ -239,9 +281,33 @@
   .hamburger.active span:nth-child(2) { opacity: 0; }
   .hamburger.active span:nth-child(3) { top: 12px; transform: rotate(-45deg); }
 
+  /* Mobile Menu Improvements */
+  #mobileMenu {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  #mobileMenu a {
+    tap-highlight-color: rgba(0, 212, 255, 0.2);
+  }
+
   /* Force nav to stay on top */
   .nav-container {
     position: fixed !important;
     z-index: 10000 !important;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1023px) {
+    .nav-link-main {
+      padding: 0.75rem 0;
+      font-size: 1.125rem;
+    }
+  }
+  
+  /* Prevent body scroll when mobile menu open */
+  body.menu-open {
+    overflow: hidden;
   }
 </style>

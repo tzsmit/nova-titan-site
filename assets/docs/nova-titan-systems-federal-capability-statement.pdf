@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/cMvY6JKt -->
+<html lang="en" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Titan Systems LLC - Federal Capability Statement Package</title>
+    <link rel="stylesheet" href="./Nova Titan Systems LLC - Federal Capability Statement Package_files/pico.min.css">
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 32px 80px;
+        position: relative;
+        box-sizing: border-box;
+        font-family: Arial, Calibri, sans-serif;
+        line-height: 1.4;
+        color: #2c3e50;
+      }
+
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #34495e;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+      }
+
+      .company-name {
+        font-size: 2.2em;
+        font-weight: bold;
+        color: #1e3a8a;
+        margin: 0;
+      }
+
+      .tagline {
+        font-size: 1.1em;
+        color: #64748b;
+        margin: 5px 0;
+      }
+
+      .nav-menu {
+        background: #f8fafc;
+        padding: 15px;
+        margin: 20px 0;
+        border-left: 4px solid #1e3a8a;
+      }
+
+      .nav-menu h3 {
+        margin: 0 0 10px 0;
+        color: #1e3a8a;
+      }
+
+      .nav-menu ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .section {
+        margin: 30px 0;
+        page-break-inside: avoid;
+      }
+
+      .section h2 {
+        color: #1e3a8a;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+      }
+
+      .section h3 {
+        color: #475569;
+        margin: 20px 0 10px 0;
+      }
+
+      .competency-category {
+        margin: 15px 0;
+      }
+
+      .competency-category h4 {
+        color: #1e40af;
+        margin: 0 0 8px 0;
+        font-size: 1.1em;
+      }
+
+      ul {
+        margin: 8px 0;
+      }
+
+      li {
+        margin: 4px 0;
+      }
+
+      .codes-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 15px 0;
+      }
+
+      .contact-box {
+        background: #f1f5f9;
+        padding: 20px;
+        border: 1px solid #cbd5e1;
+        margin: 20px 0;
+      }
+
+      .company-info {
+        background: #eff6ff;
+        padding: 15px;
+        border-left: 4px solid #2563eb;
+        margin: 15px 0;
+      }
+
+      .micro-purchase {
+        background: #fefce8;
+        padding: 20px;
+        border: 2px solid #facc15;
+        margin: 25px 0;
+      }
+
+      .keyword-list {
+        columns: 3;
+        column-gap: 20px;
+        margin: 15px 0;
+      }
+
+      .keyword-list li {
+        break-inside: avoid;
+        margin: 2px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+
+      th,
+      td {
+        border: 1px solid #d1d5db;
+        padding: 8px 12px;
+        text-align: left;
+      }
+
+      th {
+        background: #f3f4f6;
+        font-weight: bold;
+      }
+
+      .page-break {
+        page-break-before: always;
+        margin-top: 40px;
+      }
+
+      @media print {
+        body {
+          padding: 20px 40px;
+        }
+        .page-break {
+          page-break-before: always;
+        }
+      }
+    </style>
+  <style id="__wb_font_loader">
+    /* Optimist Extra Light */
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_XLt.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_XLt.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_XLtIt.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_XLtIt.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+    }
+
+    /* Optimist Light */
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_Lt.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_Lt.woff') format('woff');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_LtIt.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_LtIt.woff') format('woff');
+      font-weight: 200;
+      font-style: italic;
+    }
+
+    /* Optimist Regular */
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_Rg.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_Rg.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_It.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_It.woff') format('woff');
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    /* Optimist SemiBold */
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_SBd.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_SBd.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_SBdIt.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_SBdIt.woff') format('woff');
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    /* Optimist Bold */
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_Bd.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_Bd.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Optimist';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_BdIt.woff2') format('woff2'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/Optimist_W_BdIt.woff') format('woff');
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    /* Wikibuy Icon Font */
+    @font-face {
+      font-family: 'wikibuy-iconfont';
+      src:
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/wikibuy-iconfont.woff') format('woff'),
+        url('chrome-extension://nenlahapcbofgnanklpelkaejcehkggg/assets/font/wikibuy-iconfont.svg') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style></head>
+  <body data-new-gr-c-s-check-loaded="14.1264.0" data-gr-ext-installed="">
+    <div class="header">
+      <h1 class="company-name">NOVA TITAN SYSTEMS LLC</h1>
+      <p class="tagline">Secure. Optimize. Innovate.</p>
+      <p class="tagline">novatitan.net</p>
+    </div>
+
+    <div class="nav-menu">
+      <h3>Document Contents</h3>
+      <ul>
+        <li>Federal Capability Statement</li>
+        <li>Micro-Purchase Quick Reference</li>
+        <li>Government Identity Stack</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>CAPABILITY STATEMENT</h2>
+
+      <div class="company-info">
+        <strong>UEI:</strong> CZ8BLZMSKZ66 | <strong>CAGE:</strong> 170W6 | <strong>Founded:</strong> 2025<br>
+        <strong>Business Type:</strong> LLC • For-Profit • Small Business • Self-Identified Minority-Owned
+      </div>
+
+      <h3>COMPANY OVERVIEW</h3>
+      <p>
+        Nova Titan Systems LLC is a self-identified minority-owned small business specializing in IT infrastructure,
+        cybersecurity, cloud security, networking, ICS/OT field support, and telecommunications services. Registered in
+        SAM.gov and verified in DSBS, we serve federal, state, and commercial clients across West Texas and nationwide.
+        Our team delivers hands-on field engineering, break-fix support, structured cabling, security system
+        installations, and CloudWarden IAM security audits. We operate as both prime contractor and subcontractor, with
+        full insurance coverage and rapid deployment capabilities.
+      </p>
+
+      <h3>CORE COMPETENCIES</h3>
+
+      <div class="competency-category">
+        <h4>Cybersecurity &amp; Cloud Security</h4>
+        <ul>
+          <li>IAM security audits using CloudWarden platform</li>
+          <li>Zero Trust architecture and MFA implementation</li>
+          <li>Vulnerability scanning and remediation</li>
+          <li>AWS cloud security configuration and support</li>
+          <li>OT/ICS cybersecurity guidance and assessments</li>
+        </ul>
+      </div>
+
+      <div class="competency-category">
+        <h4>IT Infrastructure &amp; Networking</h4>
+        <ul>
+          <li>Firewall, router, switch, and wireless network deployment</li>
+          <li>Network installation, optimization, and troubleshooting</li>
+          <li>Remote and on-site technical support</li>
+          <li>Data center and IT infrastructure support</li>
+          <li>Server and storage configuration</li>
+        </ul>
+      </div>
+
+      <div class="competency-category">
+        <h4>Field Technical Services</h4>
+        <ul>
+          <li>Security system installation (cameras, alarms, access control, sensors)</li>
+          <li>POS systems, kiosks, payment terminals, and digital signage</li>
+          <li>Structured cabling, rack builds, and fiber optic termination</li>
+          <li>Multi-site field dispatch and deployment services</li>
+          <li>Equipment staging and configuration</li>
+          <li><strong>Telecommunications &amp; ICS/OT Field Support</strong> – Telecom infrastructure, industrial control systems, and operational technology environments</li>
+        </ul>
+      </div>
+
+      <div class="competency-category">
+        <h4>Consulting &amp; Managed Services</h4>
+        <ul>
+          <li>System design and integration</li>
+          <li>Cybersecurity and IT advisory services</li>
+          <li>Project coordination and implementation support</li>
+          <li>Technical documentation and compliance support</li>
+        </ul>
+      </div>
+
+      <h3>DIFFERENTIATORS</h3>
+      <ul>
+        <li>
+          Multi-discipline capability set spanning IT infrastructure, cybersecurity, cloud security, and field
+          engineering—reducing vendor fragmentation for federal buyers
+        </li>
+        <li>
+          Proven commercial track record with national brands in retail, industrial, telecommunications, and enterprise
+          IT environments
+        </li>
+        <li>
+          Experienced across ICS/OT, SCADA-adjacent systems, telecom infrastructure, and traditional enterprise networks
+        </li>
+        <li>
+          Fast response and deployment across West Texas with same-day service availability for federal facilities
+        </li>
+        <li>Owner-led operations with direct accountability—no project handoffs or subcontractor layers</li>
+        <li>Credit card accepted for micro-purchases and simplified acquisitions under $10,000</li>
+        <li>
+          SAM.gov active, DSBS verified, CAGE assigned, HUB certification in progress—ready for prime and subcontracting
+          work
+        </li>
+        <li>
+          Flexible engagement model supporting BOAs, IDIQs, task orders, micro-purchases, and emergency response
+          requirements
+        </li>
+      </ul>
+
+      <h3>REPRESENTATIVE PROJECTS</h3>
+      <ul>
+        <li>
+          <strong>7 Brew Coffee</strong> – Network infrastructure upgrades and on-site field services across multiple
+          locations
+        </li>
+        <li><strong>Granite Telecommunications</strong> – Network remediation and technical support services</li>
+        <li>
+          <strong>NCR / Lexmark</strong> – Printer maintenance, POS system support, and peripheral device
+          troubleshooting
+        </li>
+        <li><strong>Office Depot / Walmart</strong> – Field deployment services and equipment installations</li>
+        <li><strong>Tagmarshal</strong> – Golf course technology kiosk hardware installation and configuration</li>
+        <li>
+          <strong>Banks &amp; Schools (West Texas)</strong> – Structured cabling, network equipment setup, and
+          infrastructure support
+        </li>
+        <li><strong>CloudWarden IAM</strong> – Security audit services for small business clients</li>
+        <li><strong>WorkMarket / Field Nation</strong> – Diverse IT and field service projects nationwide</li>
+      </ul>
+
+      <div class="codes-grid">
+        <div>
+          <h3>NAICS CODES</h3>
+          <ul>
+            <li>238210 – Electrical Contractors</li>
+            <li>238990 – Other Specialty Trade Contractors</li>
+            <li>334118 – Computer Terminal Equipment Manufacturing</li>
+            <li>334290 – Other Communications Equipment Manufacturing</li>
+            <li>517312 – Wireless Telecommunications Carriers (except Satellite)</li>
+            <li>517911 – Telecommunications Resellers</li>
+            <li>541330 – Engineering Services</li>
+            <li>541511 – Custom Computer Programming Services</li>
+            <li>541512 – Computer Systems Design Services</li>
+            <li>541513 – Computer Facilities Management Services</li>
+            <li>541519 – Other Computer Related Services</li>
+            <li>541611 – Administrative Management Consulting</li>
+            <li>541618 – Other Management Consulting Services</li>
+            <li>541690 – Other Scientific and Technical Consulting</li>
+            <li>541715 – R&amp;D in Physical, Engineering, and Life Sciences</li>
+            <li>561621 – Security Systems Services</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>PSC CODES</h3>
+          <ul>
+            <li>D302 – IT Cyber Security and Data Backup</li>
+            <li>D307 – IT Strategy and Architecture</li>
+            <li>D310 – Cyber Security</li>
+            <li>D399 – Other IT and Telecommunications</li>
+            <li>J019 – IT Equipment Maintenance/Repair</li>
+            <li>J041 – Building Maintenance</li>
+            <li>R408 – Program Management Support</li>
+            <li>R425 – Engineering/Technical Support</li>
+            <li>R499 – Other Professional Support</li>
+            <li>7010 – IT Security Software</li>
+            <li>7030 – Information Technology Software</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>CERTIFICATIONS &amp; REGISTRATIONS</h3>
+      <ul>
+        <li>SAM.gov Active Registration – UEI: CZ8BLZMSKZ66 | CAGE: 170W6</li>
+        <li>DSBS Verified Profile – Small Business, Minority-Owned</li>
+        <li>Texas HUB Certification – In Progress</li>
+        <li>Fully Insured and Bonded</li>
+        <li>Credit Card Accepted for Micro-Purchases</li>
+      </ul>
+
+      <div class="contact-box">
+        <h3>CONTACT INFORMATION</h3>
+        <p>
+          <strong>Nova Titan Systems LLC</strong><br>
+          1307 59th St<br>
+          Lubbock, TX 79412<br>
+          Phone: 806-370-0624<br>
+          Email: traivonesmith@novatitan.net<br>
+          Website: https://novatitan.net
+        </p>
+
+        <p>
+          <strong>UEI:</strong> CZ8BLZMSKZ66<br>
+          <strong>CAGE:</strong> 170W6<br>
+          <strong>DUNS:</strong> Available upon request
+        </p>
+      </div>
+    </div>
+
+    <div class="section page-break micro-purchase">
+      <h2>MICRO-PURCHASE QUICK REFERENCE</h2>
+
+      <div class="company-info" style="background: #dcfce7; border-left: 4px solid #16a34a;">
+        <p style="margin: 0; font-weight: bold; color: #15803d;">✓ Credit Card Accepted | Same-Day Service Available</p>
+      </div>
+
+      <h3>Company Summary</h3>
+      <p>
+        Nova Titan Systems LLC is a minority-owned small business providing IT infrastructure, cybersecurity, field
+        engineering, and telecommunications support across Texas and nationwide. We specialize in rapid-response
+        deployments for federal facilities, including network troubleshooting, security system installation, structured
+        cabling, and break-fix support. Our team is experienced with government procurement processes, micro-purchase
+        procedures, and purchase card transactions.
+      </p>
+
+      <h3>Most Frequently Micro-Purchased Services</h3>
+      <ul>
+        <li>On-site network troubleshooting and repair</li>
+        <li>Security camera and access control system installation</li>
+        <li>Structured cabling and fiber optic termination</li>
+        <li>Firewall and router configuration</li>
+        <li>Wireless network installation and optimization</li>
+        <li>IT equipment staging and deployment</li>
+        <li>POS and kiosk hardware setup</li>
+        <li>Vulnerability assessments and security audits</li>
+        <li>Server and workstation configuration</li>
+        <li>After-hours emergency IT support</li>
+      </ul>
+
+      <h3>Service Areas</h3>
+      <ul>
+        <li><strong>Primary:</strong> Lubbock and West Texas region</li>
+        <li><strong>Secondary:</strong> Remote support nationwide</li>
+        <li><strong>Federal Facilities:</strong> Available for travel as required</li>
+      </ul>
+
+      <div class="company-info">
+        <h3>Quick Reference</h3>
+        <p>
+          <strong>NAICS:</strong> 541512, 541513, 541519, 238210, 561621, 541330, 517911, 517312<br>
+          <strong>PSC:</strong> D302, D310, D399, R425, J019, 7010<br>
+          <strong>UEI:</strong> CZ8BLZMSKZ66 | <strong>CAGE:</strong> 170W6
+        </p>
+
+        <h4>Contact</h4>
+        <p>
+          Traivone Smith, Owner<br>
+          806-370-0624 | traivonesmith@novatitan.net<br>
+          https://novatitan.net
+        </p>
+      </div>
+    </div>
+
+    <div class="section page-break">
+      <h2>GOVERNMENT IDENTITY STACK</h2>
+
+      <h3>NAICS MASTER LIST</h3>
+      <table>
+        <tbody><tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>238210</td>
+          <td>Electrical Contractors and Other Wiring Installation Contractors</td>
+        </tr>
+        <tr>
+          <td>238990</td>
+          <td>All Other Specialty Trade Contractors</td>
+        </tr>
+        <tr>
+          <td>334118</td>
+          <td>Computer Terminal and Other Computer Peripheral Equipment Manufacturing</td>
+        </tr>
+        <tr>
+          <td>334290</td>
+          <td>Other Communications Equipment Manufacturing</td>
+        </tr>
+        <tr>
+          <td>517312</td>
+          <td>Wireless Telecommunications Carriers (except Satellite)</td>
+        </tr>
+        <tr>
+          <td>517911</td>
+          <td>Telecommunications Resellers</td>
+        </tr>
+        <tr>
+          <td>541330</td>
+          <td>Engineering Services</td>
+        </tr>
+        <tr>
+          <td>541511</td>
+          <td>Custom Computer Programming Services</td>
+        </tr>
+        <tr>
+          <td>541512</td>
+          <td>Computer Systems Design Services</td>
+        </tr>
+        <tr>
+          <td>541513</td>
+          <td>Computer Facilities Management Services</td>
+        </tr>
+        <tr>
+          <td>541519</td>
+          <td>Other Computer Related Services</td>
+        </tr>
+        <tr>
+          <td>541611</td>
+          <td>Administrative Management and General Management Consulting Services</td>
+        </tr>
+        <tr>
+          <td>541618</td>
+          <td>Other Management Consulting Services</td>
+        </tr>
+        <tr>
+          <td>541690</td>
+          <td>Other Scientific and Technical Consulting Services</td>
+        </tr>
+        <tr>
+          <td>541715</td>
+          <td>Research and Development in the Physical, Engineering, and Life Sciences</td>
+        </tr>
+        <tr>
+          <td>561621</td>
+          <td>Security Systems Services (except Locksmiths)</td>
+        </tr>
+      </tbody></table>
+
+      <h3>PSC MASTER LIST</h3>
+      <table>
+        <tbody><tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>D302</td>
+          <td>IT and Telecom – Cyber Security and Data Backup</td>
+        </tr>
+        <tr>
+          <td>D307</td>
+          <td>IT and Telecom – IT Strategy and Architecture</td>
+        </tr>
+        <tr>
+          <td>D310</td>
+          <td>IT and Telecom – Cyber Security</td>
+        </tr>
+        <tr>
+          <td>D399</td>
+          <td>IT and Telecom – Other IT and Telecommunications</td>
+        </tr>
+        <tr>
+          <td>J019</td>
+          <td>Maintenance/Repair/Rebuild of Equipment – IT Equipment</td>
+        </tr>
+        <tr>
+          <td>J041</td>
+          <td>Maintenance of Miscellaneous Buildings</td>
+        </tr>
+        <tr>
+          <td>R408</td>
+          <td>Support – Professional: Program Management/Support</td>
+        </tr>
+        <tr>
+          <td>R425</td>
+          <td>Support – Professional: Engineering/Technical</td>
+        </tr>
+        <tr>
+          <td>R499</td>
+          <td>Support – Professional: Other</td>
+        </tr>
+        <tr>
+          <td>7010</td>
+          <td>ADP Software – IT Security Software</td>
+        </tr>
+        <tr>
+          <td>7030</td>
+          <td>Information Technology Software</td>
+        </tr>
+      </tbody></table>
+
+      <h3>NIGP CODES (Texas)</h3>
+      <table>
+        <tbody><tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>920-25</td>
+          <td>Computer and Network Security Equipment and Software</td>
+        </tr>
+        <tr>
+          <td>920-13</td>
+          <td>Computer Equipment and Peripherals</td>
+        </tr>
+        <tr>
+          <td>920-32</td>
+          <td>Computer Technology Services</td>
+        </tr>
+        <tr>
+          <td>920-45</td>
+          <td>Data and Telecommunications Equipment</td>
+        </tr>
+        <tr>
+          <td>925-11</td>
+          <td>Electrical Contracting Services</td>
+        </tr>
+        <tr>
+          <td>912-50</td>
+          <td>Security and Surveillance Equipment</td>
+        </tr>
+        <tr>
+          <td>912-18</td>
+          <td>Access Control Systems</td>
+        </tr>
+        <tr>
+          <td>918-77</td>
+          <td>Structured Cabling Services</td>
+        </tr>
+        <tr>
+          <td>918-88</td>
+          <td>Technology Installation Services</td>
+        </tr>
+      </tbody></table>
+
+      <h3>PROCUREMENT KEYWORDS</h3>
+      <div class="keyword-list">
+        <ul>
+          <li>IT support</li>
+          <li>Cybersecurity</li>
+          <li>Network installation</li>
+          <li>Cloud security</li>
+          <li>AWS configuration</li>
+          <li>IAM audit</li>
+          <li>Vulnerability scanning</li>
+          <li>Zero Trust</li>
+          <li>MFA implementation</li>
+          <li>Firewall configuration</li>
+          <li>Router setup</li>
+          <li>Switch deployment</li>
+          <li>Wireless networking</li>
+          <li>Structured cabling</li>
+          <li>Fiber optic</li>
+          <li>Security cameras</li>
+          <li>Access control</li>
+          <li>POS systems</li>
+          <li>Kiosk installation</li>
+          <li>ICS security</li>
+          <li>OT cybersecurity</li>
+          <li>SCADA security</li>
+          <li>Field services</li>
+          <li>On-site support</li>
+          <li>Help desk</li>
+          <li>Server configuration</li>
+          <li>Data center support</li>
+          <li>Network troubleshooting</li>
+          <li>IT infrastructure</li>
+          <li>System integration</li>
+          <li>Technical support</li>
+          <li>Equipment installation</li>
+          <li>Rack builds</li>
+          <li>Cable management</li>
+          <li>Network optimization</li>
+          <li>Security assessment</li>
+          <li>Penetration testing</li>
+          <li>Compliance support</li>
+          <li>Emergency response</li>
+          <li>Remote monitoring</li>
+          <li>Managed services</li>
+          <li>Cloud migration</li>
+          <li>Digital signage</li>
+          <li>Payment terminals</li>
+          <li>Alarm systems</li>
+          <li>Sensor installation</li>
+          <li>Video surveillance</li>
+          <li>Network security</li>
+          <li>System administration</li>
+          <li>Technical consulting</li>
+          <li>Project management</li>
+          <li>Field deployment</li>
+          <li>Equipment staging</li>
+          <li>Site surveys</li>
+          <li>Documentation</li>
+          <li>Training services</li>
+          <li>Maintenance support</li>
+          <li>Upgrade services</li>
+          <li>Migration support</li>
+        </ul>
+      </div>
+
+      <h3>CORE COMPETENCY SUMMARY</h3>
+      <p>
+        Nova Titan Systems LLC delivers comprehensive IT infrastructure, cybersecurity, and field technical services
+        through a unified service model that spans traditional networking, modern cloud security, and hands-on field
+        deployments. Our team provides end-to-end support from initial system design and security assessments through
+        installation, configuration, and ongoing maintenance across commercial and government environments. We
+        specialize in rapid deployment of security systems, structured cabling, network infrastructure, and
+        point-of-sale technology while maintaining strong capabilities in IAM audits, vulnerability management, and
+        industrial control system security guidance.
+      </p>
+
+      <div class="company-info">
+        <h3>COMPANY SNAPSHOT</h3>
+        <p>
+          <strong>Legal Name:</strong> Nova Titan Systems LLC<br>
+          <strong>UEI:</strong> CZ8BLZMSKZ66<br>
+          <strong>CAGE Code:</strong> 170W6<br>
+          <strong>Location:</strong> 1307 59th St, Lubbock, TX 79412<br>
+          <strong>Business Type:</strong> LLC, For-Profit, Small Business<br>
+          <strong>Certifications:</strong> Self-Identified Minority-Owned, SAM.gov Active, DSBS Verified, HUB Certification in Progress<br>
+          <strong>Insurance:</strong> Fully insured and bonded<br>
+          <strong>Contact:</strong> Traivone Smith, Owner<br>
+          <strong>Phone:</strong> 806-370-0624<br>
+          <strong>Email:</strong> traivonesmith@novatitan.net<br>
+          <strong>Website:</strong> https://novatitan.net<br>
+          <strong>Service Area:</strong> West Texas + Nationwide Remote Support<br>
+          <strong>Contract Ready:</strong> Prime contractor and subcontracting capabilities
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <p style="text-align: center; margin-top: 40px; color: #64748b; font-size: 0.9em">
+        © 2025 Nova Titan Systems LLC – All Rights Reserved
+      </p>
+    </div>
+  <script defer="" src="./Nova Titan Systems LLC - Federal Capability Statement Package_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9a745365ac921711&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
