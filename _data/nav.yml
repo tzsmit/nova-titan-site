@@ -33,6 +33,8 @@
       url: /government/
     - name: Enterprise & MSP Partners
       url: /partners/enterprise/
+    - name: Portfolio & Case Studies
+      url: /portfolio/
 
 - name: About
   url: /about/
@@ -44,15 +46,11 @@
       url: /leadership/
     - name: Certifications
       url: /certifications/
-    - name: Portfolio & Case Studies
-      url: /portfolio/
 
 - name: Resources
   url: /resources/
   icon: fas fa-book
   submenu:
-    - name: Capability Statement
-      url: /capability-statement/
     - name: Support Plans
       url: /plans/
     - name: FAQ
