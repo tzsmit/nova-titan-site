@@ -35,8 +35,17 @@
 }
 
 .hero-section {
-  padding-top: 8rem;    /* pt-32 - accounts for fixed header */
+  padding-top: 9rem;    /* pt-32 - accounts for fixed header (80px nav + extra space) */
   padding-bottom: 3rem; /* pb-12 */
+}
+
+/* Ensure all .pt-32 and .pt-28 elements have proper spacing for fixed header */
+.pt-32 {
+  padding-top: 9rem !important;  /* 144px - accounts for 80px fixed nav */
+}
+
+.pt-28 {
+  padding-top: 8rem !important;  /* 128px - accounts for 80px fixed nav */
 }
 
 /* === STANDARDIZED HEADING STYLES === */

@@ -80,13 +80,13 @@ html, body {
     padding-bottom: 3rem !important;
   }
   
-  /* Hero sections */
+  /* Hero sections - account for fixed header */
   .pt-32 {
-    padding-top: 6rem !important;
+    padding-top: 7rem !important;
   }
   
   .pt-28 {
-    padding-top: 5rem !important;
+    padding-top: 6rem !important;
   }
   
   /* Card grids to single column */

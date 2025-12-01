@@ -11,13 +11,13 @@
   icon: fas fa-briefcase
   submenu:
     - name: Infrastructure & Installations
-      url: /services/#installations
+      url: /services/infrastructure/
     - name: Managed IT Support
-      url: /services/#managed-support
+      url: /plans/
     - name: Cloud & Security
-      url: /services/#cloud-security
+      url: /services/cloud-security/
     - name: View All Services
-      url: /services/
+      url: /services/all-services/
 
 - name: Government
   url: /government/
@@ -41,7 +41,7 @@
   icon: fas fa-info-circle
   submenu:
     - name: Company Overview
-      url: /about/
+      url: /about/overview/
     - name: Leadership Team
       url: /leadership/
     - name: Certifications
