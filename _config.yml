@@ -13,22 +13,49 @@ email: "info@novatitan.net"
 company:
   legal_name: "Nova Titan Systems LLC"
   duns: "141007579"
-  uei: "Pending"
-  cage: "Pending"
-  naics_primary: "541512"
+  uei: "CZ8BLZMSKZ66"
+  cage: "170W6"
+  naics_primary: "541519"
   naics_codes:
+    - "541519"  # Other Computer Related Services (PRIMARY)
+    - "238210"  # Electrical Contractors and Other Wiring Installation Contractors
+    - "238990"  # All Other Specialty Trade Contractors
+    - "334118"  # Computer Terminal And Other Computer Peripheral Equipment Manufacturing
+    - "334290"  # Other Communications Equipment Manufacturing
     - "541512"  # Computer Systems Design Services
     - "541513"  # Computer Facilities Management Services
-    - "541519"  # Other Computer Related Services
-    - "238210"  # Electrical Contractors and Other Wiring Installation Contractors
-    - "518210"  # Data Processing, Hosting, and Related Services
+    - "541611"  # Administrative Management And General Management Consulting Services
+    - "541690"  # Other Scientific And Technical Consulting Services
+    - "561621"  # Security Systems Services (Except Locksmiths)
   psc_codes:
-    - "D301"    # IT and Telecom - Facility Operation and Maintenance
-    - "D302"    # IT and Telecom - Systems Development
-    - "D306"    # IT and Telecom - Systems Analysis
-    - "D307"    # IT and Telecom - Automated Information System Design and Integration
-    - "D310"    # IT and Telecom - Telecommunications Network Management
-    - "J015"    # Maintenance/Repair/Rebuild of Equipment - IT and Telecommunications Equipment
+    - "DA01"    # IT and Telecom - Business Application/Application Development Support Services (Labor)
+    - "DA10"    # IT and Telecom - Business Application/Application Development Software As A Service
+    - "DB01"    # IT and Telecom - High Performance Computing (Hpc) Support Services (Labor)
+    - "DB02"    # IT and Telecom - Compute Support Services, Non-Hpc (Labor)
+    - "DB10"    # IT and Telecom - Compute As A Service: Mainframe/Servers
+    - "DC01"    # IT and Telecom - Data Center Support Services (Labor)
+    - "DC10"    # IT and Telecom - Data Center As A Service
+    - "DD01"    # IT and Telecom - Service Delivery Support Services: Itsm, Operations Center, Project/Pm (Labor)
+    - "DE01"    # IT and Telecom - End User: Help Desk; Tier 1-2, Workspace, Print, Output, Productivity Tools (Labor)
+    - "DE02"    # IT and Telecom - Mobile Device Support Services (Labor)
+    - "DE10"    # IT and Telecom - End User As A Service: Help Desk;tier 1-2,Workspace,Print,Output Productivity Tools
+    - "DE11"    # IT and Telecom - Mobile Device As A Service
+    - "DF01"    # IT and Telecom - It Management Support Services (Labor)
+    - "DF10"    # IT and Telecom - It Management As A Service
+    - "DG01"    # IT and Telecom - Network Support Services (Labor)
+    - "DG10"    # IT and Telecom - Network As A Service
+    - "DG11"    # IT and Telecom - Network: Satellite Communications And Telecom Access Services
+    - "DH01"    # IT and Telecom - Platform Support Services: Database, Mainframe, Middleware (Labor)
+    - "DH10"    # IT and Telecom - Platform As A Service: Database, Mainframe, Middleware
+    - "DJ01"    # IT and Telecom - Security And Compliance Support Services (Labor)
+    - "DJ10"    # IT and Telecom - Security And Compliance As A Service
+    - "DK01"    # IT and Telecom - Storage Support Services (Labor)
+    - "DK10"    # IT and Telecom - Storage As A Service
+    - "J063"    # Maintenance, Repair, And Rebuilding Of Equipment- Alarm, Signal, And Security Detection Systems
+    - "L058"    # Technical Representative- Communication, Detection, And Coherent Radiation Equipment
+    - "L060"    # Technical Representative- Fiber Optics Materials, Components, Assemblies, And Accessories
+    - "N063"    # Installation Of Equipment- Alarm, Signal, And Security Detection Systems
+    - "N074"    # Installation Of Equipment- Office Machines, Text Processing Systems, And Visible Record Equipment
   certifications:
     - "WorkMarket Verified Vendor"
     - "CloudWork Pro Member"
