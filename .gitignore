@@ -19,4 +19,4 @@ api/node_modules/
 /private/
 
 # Temp files
-/temp_uploads/
+/temp_uploads/_site
