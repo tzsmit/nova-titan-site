@@ -1,0 +1,325 @@
+---
+layout: default
+---
+
+<!-- Case Study Template -->
+<article class="case-study-page">
+  
+  <!-- HERO SECTION -->
+  <section class="content pt-28 pb-14 bg-gradient-to-b from-gray-900 via-gray-900/95 to-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Breadcrumb -->
+      <nav class="text-sm text-gray-400 mb-6 fade-in">
+        <a href="/" class="hover:text-cyan-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/case-studies/" class="hover:text-cyan-400 transition-colors">Case Studies</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-300">{{ page.case_study.title }}</span>
+      </nav>
+
+      <!-- Category Badges -->
+      <div class="flex flex-wrap gap-2 mb-6 fade-in">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-{{ page.case_study.color }}-600/20 text-{{ page.case_study.color }}-300 border border-{{ page.case_study.color }}-400/30">
+          <i class="{{ page.case_study.icon }} mr-1"></i>
+          {{ page.case_study.industry }}
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-cyan-600/20 text-cyan-300 border border-cyan-400/30">
+          {{ page.case_study.government_type }}
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-600/20 text-purple-300 border border-purple-400/30">
+          {{ page.case_study.service_type }}
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-600/20 text-green-300 border border-green-400/30">
+          <i class="fas fa-map-marker-alt mr-1"></i>
+          {{ page.case_study.region }}
+        </span>
+      </div>
+      
+      <!-- Title -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 fade-in">
+        {{ page.case_study.title }}
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="text-xl sm:text-2xl text-{{ page.case_study.color }}-300 mb-8 fade-in">
+        {{ page.case_study.subtitle }}
+      </p>
+      
+      <!-- Key Metrics -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 fade-in">
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-cyan-300 mb-1">{{ page.case_study.contract_value }}</div>
+          <div class="text-xs text-gray-400">Contract Value</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-green-300 mb-1">{{ page.case_study.date }}</div>
+          <div class="text-xs text-gray-400">Project Date</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-purple-300 mb-1">{{ page.case_study.metrics.services_count }}</div>
+          <div class="text-xs text-gray-400">Services Provided</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-orange-300 mb-1">{{ page.case_study.location_city }}</div>
+          <div class="text-xs text-gray-400">Location</div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- PROJECT OVERVIEW -->
+  <section class="content py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Main Content -->
+        <div class="lg:col-span-2 space-y-8">
+          
+          <!-- Challenge -->
+          <div class="card rounded-2xl p-8 fade-in">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center mr-4">
+                <i class="fas fa-exclamation-triangle text-xl text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-white">The Challenge</h2>
+            </div>
+            <p class="text-gray-300 leading-relaxed">
+              {{ page.case_study.challenge }}
+            </p>
+          </div>
+          
+          <!-- Solution -->
+          <div class="card rounded-2xl p-8 fade-in">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mr-4">
+                <i class="fas fa-lightbulb text-xl text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-white">Our Solution</h2>
+            </div>
+            <p class="text-gray-300 leading-relaxed">
+              {{ page.case_study.solution }}
+            </p>
+          </div>
+          
+          <!-- Services Provided -->
+          <div class="card rounded-2xl p-8 fade-in">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                <i class="fas fa-cogs text-xl text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-white">Services Provided</h2>
+            </div>
+            <ul class="space-y-3">
+              {% for service in page.case_study.services %}
+              <li class="flex items-start text-gray-300">
+                <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+                <span>{{ service }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          
+          <!-- Results -->
+          <div class="card rounded-2xl p-8 fade-in">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-4">
+                <i class="fas fa-chart-line text-xl text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-white">Results Achieved</h2>
+            </div>
+            <ul class="space-y-3">
+              {% for result in page.case_study.results %}
+              <li class="flex items-start text-gray-300">
+                <i class="fas fa-trophy text-yellow-400 mr-3 mt-1"></i>
+                <span>{{ result }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          
+          <!-- Community Impact -->
+          <div class="card rounded-2xl p-8 bg-gradient-to-br from-cyan-900/30 via-purple-900/30 to-blue-900/30 border-2 border-cyan-400/20 fade-in">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-purple-400 rounded-xl flex items-center justify-center mr-4">
+                <i class="fas fa-heart text-xl text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-cyan-300 glow">Community Impact</h2>
+            </div>
+            <p class="text-gray-200 leading-relaxed text-lg">
+              {{ page.case_study.impact }}
+            </p>
+          </div>
+          
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="lg:col-span-1 space-y-6">
+          
+          <!-- Project Details -->
+          <div class="card rounded-2xl p-6 fade-in sticky top-24">
+            <h3 class="text-xl font-bold text-white mb-4">Project Details</h3>
+            
+            <div class="space-y-4 text-sm">
+              <div>
+                <div class="text-gray-400 mb-1">Client</div>
+                <div class="text-white font-semibold">{{ page.case_study.client }}</div>
+              </div>
+              
+              <div>
+                <div class="text-gray-400 mb-1">End Client</div>
+                <div class="text-white font-semibold">{{ page.case_study.end_client }}</div>
+              </div>
+              
+              <div>
+                <div class="text-gray-400 mb-1">Location</div>
+                <div class="text-white font-semibold">
+                  <i class="fas fa-map-marker-alt text-{{ page.case_study.color }}-400 mr-1"></i>
+                  {{ page.case_study.location }}
+                </div>
+              </div>
+              
+              <div>
+                <div class="text-gray-400 mb-1">Project Type</div>
+                <div class="text-white font-semibold">{{ page.case_study.project_type }}</div>
+              </div>
+              
+              <div>
+                <div class="text-gray-400 mb-1">Timeline</div>
+                <div class="text-white font-semibold">
+                  <i class="fas fa-clock text-green-400 mr-1"></i>
+                  {{ page.case_study.metrics.timeline }}
+                </div>
+              </div>
+              
+              {% if page.case_study.technical_specs %}
+              <div class="pt-4 border-t border-gray-700">
+                <div class="text-gray-400 mb-2">Technical Specifications</div>
+                <div class="text-xs text-gray-400 leading-relaxed">
+                  {{ page.case_study.technical_specs }}
+                </div>
+              </div>
+              {% endif %}
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="mt-6 space-y-3">
+              <a href="/government/" class="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-center transition-all">
+                <i class="fas fa-handshake mr-2"></i>
+                Partner With Us
+              </a>
+              <a href="/assets/docs/nova-titan-systems-federal-capability-statement.pdf" target="_blank" rel="noopener noreferrer" class="block w-full px-4 py-3 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 text-white font-semibold text-center transition-all">
+                <i class="fas fa-download mr-2"></i>
+                Capability Statement
+              </a>
+              <a href="/contact/" class="block w-full px-4 py-3 rounded-lg border-2 border-purple-400/40 hover:bg-purple-400/10 text-white font-semibold text-center transition-all">
+                <i class="fas fa-envelope mr-2"></i>
+                Discuss Your Project
+              </a>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED CASE STUDIES -->
+  <section class="content py-16 bg-gray-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white mb-4">Related Projects</h2>
+        <p class="text-gray-400">Explore more of our government and commercial success stories</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        {% for study in site.data.case_studies %}
+          {% if study.id != page.case_study.id and study.featured %}
+          <a href="/case-studies/{{ study.id }}/" class="card rounded-xl p-6 hover:border-{{ study.color }}-400/40 transition-all group fade-in">
+            <div class="w-12 h-12 bg-gradient-to-br from-{{ study.color }}-500 to-{{ study.color }}-600 rounded-lg flex items-center justify-center mb-4">
+              <i class="{{ study.icon }} text-xl text-white"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-{{ study.color }}-300 transition-colors">
+              {{ study.title }}
+            </h3>
+            <p class="text-sm text-gray-400 mb-3">
+              {{ study.end_client }}
+            </p>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-gray-500">{{ study.location_city }}</span>
+              <span class="text-{{ study.color }}-400 font-semibold">{{ study.contract_value }}</span>
+            </div>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="/case-studies/" class="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white font-semibold transition-all">
+          View All Case Studies
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- MISSION CTA -->
+  <section class="content py-16 bg-gradient-to-r from-cyan-900/30 via-purple-900/30 to-blue-900/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="mb-6">
+        <i class="fas fa-satellite-dish text-5xl text-cyan-400 glow"></i>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 glow">
+        Ready to Bridge the Digital Divide?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Let's discuss how Nova Titan Systems can support your federal, state, or local government IT infrastructure needs.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/government/" class="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-lg inline-flex items-center transition-all">
+          <i class="fas fa-handshake mr-3"></i>
+          Partner With Us
+        </a>
+        <a href="tel:+18063700624" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 text-white font-bold text-lg inline-flex items-center transition-all">
+          <i class="fas fa-phone mr-3"></i>
+          (806) 370-0624
+        </a>
+      </div>
+      <p class="text-sm text-gray-400 mt-6">
+        <i class="fas fa-shield-check mr-2"></i>
+        SAM.gov Active | UEI: CZ8BLZMSKZ66 | CAGE: 170W6 | 300+ Projects
+      </p>
+    </div>
+  </section>
+
+</article>
+
+<!-- Schema.org Case Study Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.case_study.title }}",
+  "description": "{{ page.case_study.meta_description }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Nova Titan Systems LLC",
+    "url": "https://novatitan.net"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nova Titan Systems LLC",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://novatitan.net/assets/images/logo.png"
+    }
+  },
+  "datePublished": "{{ page.case_study.date }}",
+  "articleSection": "Case Study",
+  "keywords": "{{ page.case_study.keywords }}"
+}
+</script>

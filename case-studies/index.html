@@ -1,0 +1,363 @@
+---
+layout: default
+title: "Case Studies | 300+ Projects Connecting Communities | Nova Titan Systems"
+description: "Explore Nova Titan Systems' federal government, healthcare, and commercial IT infrastructure case studies. Bridging the digital divide across DoD, VA, and enterprise projects in underserved communities. SAM.gov Active | UEI: CZ8BLZMSKZ66"
+keywords: "government IT case studies, federal contractor projects, DoD IT contractor, VA healthcare IT, rural infrastructure deployment, digital equity projects, West Texas IT"
+---
+
+<!-- Case Studies Main Page -->
+
+<!-- HERO SECTION -->
+<section class="content pt-28 pb-14 bg-gradient-to-b from-gray-900 via-gray-900/95 to-gray-900">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 fade-in">
+        <span class="text-cyan-300 glow">300+ Projects</span><br>
+        Connecting Communities
+      </h1>
+      <p class="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 fade-in">
+        Real-world federal, state, and commercial IT infrastructure projects demonstrating our commitment to 
+        <strong class="text-purple-300">bridging the digital divide</strong> in underserved communities
+      </p>
+      
+      <!-- Key Stats -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto fade-in">
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-3xl font-bold text-cyan-300 mb-1">300+</div>
+          <div class="text-sm text-gray-400">Projects Completed</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-3xl font-bold text-green-300 mb-1">$5K+</div>
+          <div class="text-sm text-gray-400">Revenue Generated</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-3xl font-bold text-purple-300 mb-1">Federal</div>
+          <div class="text-sm text-gray-400">DoD & VA</div>
+        </div>
+        <div class="card rounded-xl p-4 text-center">
+          <div class="text-3xl font-bold text-orange-300 mb-1">5+ States</div>
+          <div class="text-sm text-gray-400">Service Coverage</div>
+        </div>
+      </div>
+      
+      <!-- Credentials -->
+      <div class="mt-8 flex flex-wrap justify-center gap-3 fade-in">
+        <span class="feature-badge">
+          <i class="fas fa-check-circle text-green-400 mr-2"></i>
+          SAM.gov Active
+        </span>
+        <span class="feature-badge">
+          <i class="fas fa-id-card text-cyan-400 mr-2"></i>
+          UEI: CZ8BLZMSKZ66
+        </span>
+        <span class="feature-badge">
+          <i class="fas fa-building text-purple-400 mr-2"></i>
+          CAGE: 170W6
+        </span>
+        <span class="feature-badge">
+          <i class="fas fa-certificate text-orange-400 mr-2"></i>
+          Black-Owned
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<section class="content py-8 bg-gray-900/50 sticky top-20 z-10 backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-wrap gap-3 justify-center">
+      <button class="filter-btn active" data-filter="all">
+        <i class="fas fa-th mr-2"></i>
+        All Projects (6)
+      </button>
+      <button class="filter-btn" data-filter="federal">
+        <i class="fas fa-flag-usa mr-2"></i>
+        Federal (3)
+      </button>
+      <button class="filter-btn" data-filter="commercial">
+        <i class="fas fa-briefcase mr-2"></i>
+        Commercial (3)
+      </button>
+      <button class="filter-btn" data-filter="infrastructure">
+        <i class="fas fa-network-wired mr-2"></i>
+        Infrastructure
+      </button>
+      <button class="filter-btn" data-filter="healthcare">
+        <i class="fas fa-heartbeat mr-2"></i>
+        Healthcare
+      </button>
+      <button class="filter-btn" data-filter="security">
+        <i class="fas fa-shield-alt mr-2"></i>
+        Security
+      </button>
+      <button class="filter-btn" data-filter="texas">
+        <i class="fas fa-map-marker-alt mr-2"></i>
+        Texas
+      </button>
+      <button class="filter-btn" data-filter="new-mexico">
+        <i class="fas fa-map-marker-alt mr-2"></i>
+        New Mexico
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CASE STUDIES -->
+<section class="content py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white mb-4">
+        <i class="fas fa-star text-yellow-400 mr-2"></i>
+        Featured Projects
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Flagship projects showcasing our capabilities across federal DoD, enterprise security, and multi-site deployments
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 case-studies-grid">
+      
+      {% for study in site.data.case_studies %}
+      {% if study.featured %}
+      
+      <article class="case-study-card card rounded-2xl p-6 fade-in group hover:border-{{ study.color }}-400/40 transition-all cursor-pointer" 
+               data-categories="{{ study.government_type | downcase }} {{ study.service_type | downcase | replace: ' ', '-' }} {{ study.industry | downcase | replace: '/', '-' | replace: ' ', '-' }} {{ study.region | downcase | replace: ' ', '-' }}">
+        
+        <!-- Icon & Badge -->
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-16 h-16 bg-gradient-to-br from-{{ study.color }}-500 to-{{ study.color }}-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="{{ study.icon }} text-2xl text-white"></i>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-{{ study.color }}-600/20 text-{{ study.color }}-300 border border-{{ study.color }}-400/30">
+            {{ study.government_type }}
+          </span>
+        </div>
+        
+        <!-- Title & Subtitle -->
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-{{ study.color }}-300 transition-colors">
+          {{ study.title }}
+        </h3>
+        <p class="text-sm text-gray-400 mb-4">
+          {{ study.subtitle }}
+        </p>
+        
+        <!-- Client Info -->
+        <div class="mb-4 pb-4 border-b border-gray-700">
+          <div class="text-xs text-gray-500 mb-1">End Client</div>
+          <div class="text-sm font-semibold text-white">{{ study.end_client }}</div>
+        </div>
+        
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <div>
+            <div class="text-xs text-gray-500 mb-1">Value</div>
+            <div class="text-lg font-bold text-{{ study.color }}-400">{{ study.contract_value }}</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 mb-1">Location</div>
+            <div class="text-sm font-semibold text-white">{{ study.location_city }}</div>
+          </div>
+        </div>
+        
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded text-xs bg-gray-800 text-gray-400">
+            <i class="fas fa-cog mr-1"></i>
+            {{ study.service_type }}
+          </span>
+          <span class="px-2 py-1 rounded text-xs bg-gray-800 text-gray-400">
+            <i class="fas fa-building mr-1"></i>
+            {{ study.industry }}
+          </span>
+        </div>
+        
+        <!-- Impact Preview -->
+        <p class="text-sm text-gray-400 mb-4 line-clamp-3">
+          {{ study.impact | truncate: 150 }}
+        </p>
+        
+        <!-- CTA -->
+        <a href="/case-studies/{{ study.id }}/" class="inline-flex items-center text-{{ study.color }}-400 hover:text-{{ study.color }}-300 font-semibold text-sm transition-colors">
+          Read Full Case Study
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+        
+      </article>
+      
+      {% endif %}
+      {% endfor %}
+      
+    </div>
+  </div>
+</section>
+
+<!-- ALL CASE STUDIES -->
+<section class="content py-16 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white mb-4">All Case Studies</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Additional projects demonstrating year-round healthcare IT support, federal contractor services, and enterprise network deployments
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 case-studies-grid">
+      
+      {% for study in site.data.case_studies %}
+      {% unless study.featured %}
+      
+      <article class="case-study-card card rounded-2xl p-6 fade-in group hover:border-{{ study.color }}-400/40 transition-all cursor-pointer" 
+               data-categories="{{ study.government_type | downcase }} {{ study.service_type | downcase | replace: ' ', '-' }} {{ study.industry | downcase | replace: '/', '-' | replace: ' ', '-' }} {{ study.region | downcase | replace: ' ', '-' }}">
+        
+        <!-- Icon & Badge -->
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-16 h-16 bg-gradient-to-br from-{{ study.color }}-500 to-{{ study.color }}-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="{{ study.icon }} text-2xl text-white"></i>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-{{ study.color }}-600/20 text-{{ study.color }}-300 border border-{{ study.color }}-400/30">
+            {{ study.government_type }}
+          </span>
+        </div>
+        
+        <!-- Title & Subtitle -->
+        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-{{ study.color }}-300 transition-colors">
+          {{ study.title }}
+        </h3>
+        <p class="text-sm text-gray-400 mb-4">
+          {{ study.subtitle }}
+        </p>
+        
+        <!-- Client Info -->
+        <div class="mb-4 pb-4 border-b border-gray-700">
+          <div class="text-xs text-gray-500 mb-1">End Client</div>
+          <div class="text-sm font-semibold text-white">{{ study.end_client }}</div>
+        </div>
+        
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <div>
+            <div class="text-xs text-gray-500 mb-1">Value</div>
+            <div class="text-lg font-bold text-{{ study.color }}-400">{{ study.contract_value }}</div>
+          </div>
+          <div>
+            <div class="text-xs text-gray-500 mb-1">Timeline</div>
+            <div class="text-sm font-semibold text-white">{{ study.metrics.timeline }}</div>
+          </div>
+        </div>
+        
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 rounded text-xs bg-gray-800 text-gray-400">
+            <i class="fas fa-cog mr-1"></i>
+            {{ study.service_type }}
+          </span>
+          <span class="px-2 py-1 rounded text-xs bg-gray-800 text-gray-400">
+            <i class="fas fa-building mr-1"></i>
+            {{ study.industry }}
+          </span>
+        </div>
+        
+        <!-- Impact Preview -->
+        <p class="text-sm text-gray-400 mb-4 line-clamp-3">
+          {{ study.impact | truncate: 150 }}
+        </p>
+        
+        <!-- CTA -->
+        <a href="/case-studies/{{ study.id }}/" class="inline-flex items-center text-{{ study.color }}-400 hover:text-{{ study.color }}-300 font-semibold text-sm transition-colors">
+          Read Full Case Study
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+        
+      </article>
+      
+      {% endunless %}
+      {% endfor %}
+      
+    </div>
+  </div>
+</section>
+
+<!-- MISSION CTA -->
+<section class="content py-16 bg-gradient-to-r from-cyan-900/30 via-purple-900/30 to-blue-900/30">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-white mb-6 glow">
+      Your Project Could Be Next
+    </h2>
+    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+      Whether you're a federal agency, state government, or commercial enterprise, Nova Titan Systems has the 
+      expertise and credentials to deliver mission-critical IT infrastructure in underserved communities.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center mb-8">
+      <a href="/government/" class="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-lg inline-flex items-center transition-all">
+        <i class="fas fa-handshake mr-3"></i>
+        Partner With Us
+      </a>
+      <a href="/assets/docs/nova-titan-systems-federal-capability-statement.pdf" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 text-white font-bold text-lg inline-flex items-center transition-all">
+        <i class="fas fa-download mr-3"></i>
+        Capability Statement
+      </a>
+      <a href="tel:+18063700624" class="px-8 py-4 rounded-lg border-2 border-purple-400/40 hover:bg-purple-400/10 text-white font-bold text-lg inline-flex items-center transition-all">
+        <i class="fas fa-phone mr-3"></i>
+        (806) 370-0624
+      </a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+      <span><i class="fas fa-check-circle text-green-400 mr-2"></i>SAM.gov Active</span>
+      <span><i class="fas fa-id-card text-cyan-400 mr-2"></i>UEI: CZ8BLZMSKZ66</span>
+      <span><i class="fas fa-building text-purple-400 mr-2"></i>CAGE: 170W6</span>
+      <span><i class="fas fa-certificate text-orange-400 mr-2"></i>Black-Owned</span>
+      <span><i class="fas fa-star text-yellow-400 mr-2"></i>Minority-Owned</span>
+    </div>
+  </div>
+</section>
+
+<!-- Filtering JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const caseStudyCards = document.querySelectorAll('.case-study-card');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter cards
+      caseStudyCards.forEach(card => {
+        if (filter === 'all') {
+          card.style.display = 'block';
+          setTimeout(() => card.classList.add('fade-in'), 10);
+        } else {
+          const categories = card.getAttribute('data-categories');
+          if (categories.includes(filter)) {
+            card.style.display = 'block';
+            setTimeout(() => card.classList.add('fade-in'), 10);
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+});
+</script>
+
+<!-- Schema.org Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Case Studies - Nova Titan Systems",
+  "description": "Federal government, healthcare, and commercial IT infrastructure case studies from Nova Titan Systems. 300+ projects bridging the digital divide in underserved communities.",
+  "url": "https://novatitan.net/case-studies/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nova Titan Systems LLC",
+    "url": "https://novatitan.net"
+  }
+}
+</script>

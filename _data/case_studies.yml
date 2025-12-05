@@ -1,0 +1,326 @@
+# Nova Titan Systems - Case Studies Data
+# Professional project case studies demonstrating government and commercial capabilities
+
+- id: dyess-afb
+  featured: true
+  title: "Supporting Military Readiness Through Federal IT Excellence"
+  subtitle: "DoD Installation Equipment Upgrade at Dyess Air Force Base"
+  client: "Core Technology Solutions (Prime Contractor)"
+  end_client: "U.S. Air Force, Dyess AFB"
+  location: "Dyess Air Force Base, TX 79607"
+  location_city: "Abilene, TX"
+  location_state: "Texas"
+  date: "December 2023"
+  contract_value: "$660"
+  project_type: "Federal DoD Installation"
+  
+  # Categorization for filtering
+  government_type: "Federal"
+  service_type: "IT Infrastructure"
+  industry: "Military/DoD"
+  region: "Texas"
+  
+  # Project overview
+  challenge: "Dyess Air Force Base required secure HP enterprise equipment removal and disposal while maintaining strict DoD facility security protocols and mission continuity. The project demanded coordination with base security, adherence to federal facility procedures, and compliance with military equipment handling standards."
+  
+  solution: "Nova Titan Systems coordinated with Core Technology Solutions and Dyess AFB security personnel to execute equipment decommissioning per DoD standards. Our team navigated security clearance requirements, completed site access protocols, and ensured zero disruption to base operations."
+  
+  # Services provided (array)
+  services:
+    - "HP enterprise equipment removal and disposal"
+    - "DoD facility security coordination"
+    - "Federal compliance and documentation"
+    - "Equipment decommissioning per military standards"
+    - "Base access protocol management"
+  
+  # Results (array)
+  results:
+    - "Successfully completed mission-critical equipment upgrade with zero security incidents"
+    - "Maintained full compliance with DoD facility procedures"
+    - "Supported military readiness at active Air Force base"
+    - "Established capability for future DoD installations"
+  
+  # Community impact
+  impact: "This project demonstrated our ability to serve military installations in rural West Texas, supporting the men and women who defend our nation with reliable, compliant IT infrastructure services."
+  
+  # Key metrics for display
+  metrics:
+    timeline: "1 day"
+    services_count: 5
+    compliance_frameworks: "DoD Security"
+    locations: 1
+  
+  # Technical details
+  technical_specs: "Federal facility compliance, DoD security protocols, equipment disposal standards, ServicePoint ticket S-378821"
+  
+  # Image/icon
+  icon: "fas fa-fighter-jet"
+  color: "blue"
+  
+  # SEO
+  meta_description: "Nova Titan Systems supported Dyess Air Force Base with federal IT infrastructure services including DoD-compliant equipment removal and disposal in rural West Texas."
+  keywords: "Dyess AFB, DoD IT contractor, military installation support, federal facility compliance, Air Force Base IT"
+
+- id: amazon-security
+  featured: true
+  title: "Enterprise-Scale Security Infrastructure for Major Logistics Hub"
+  subtitle: "Advanced Access Control System Deployment for Amazon"
+  client: "Velociti"
+  end_client: "Amazon"
+  location: "Hobbs, NM 88240"
+  location_city: "Hobbs, NM"
+  location_state: "New Mexico"
+  date: "July 2024"
+  contract_value: "$842.50"
+  project_type: "Secure Facility Infrastructure"
+  
+  government_type: "Commercial"
+  service_type: "Security Infrastructure"
+  industry: "Logistics"
+  region: "New Mexico"
+  
+  challenge: "Amazon's Hobbs logistics facility required installation of advanced MS5 Keycafe electronic key management systems to enhance security and streamline access control across a large-scale distribution center in rural New Mexico."
+  
+  solution: "Nova Titan Systems deployed smart locker installation and electronic key management systems, integrating secure facility access control with existing logistics operations. The project required precision installation, system integration, and thorough testing to ensure 24/7 operational reliability."
+  
+  services:
+    - "MS5 Keycafe Unit installation"
+    - "Smart locker deployment and configuration"
+    - "Electronic key management systems"
+    - "Secure facility access control integration"
+    - "Logistics facility IT infrastructure support"
+  
+  results:
+    - "Completed highest-value single project to date ($842.50)"
+    - "Zero downtime during installation in active logistics facility"
+    - "Enhanced security infrastructure for 24/7 operations"
+    - "Demonstrated capability for enterprise-scale deployments"
+  
+  impact: "Bringing enterprise-grade security infrastructure to rural New Mexico, this project bridged the technology gap between major metropolitan distribution centers and facilities serving underserved communities."
+  
+  metrics:
+    timeline: "2 days"
+    services_count: 5
+    facility_size: "Large-scale"
+    uptime: "100%"
+  
+  technical_specs: "MS5 Keycafe systems, access control integration, 24/7 logistics operations support, FastFunds payment"
+  
+  icon: "fas fa-warehouse"
+  color: "orange"
+  
+  meta_description: "Nova Titan Systems deployed enterprise-scale security infrastructure for Amazon's Hobbs, NM logistics facility including advanced electronic key management systems."
+  keywords: "Amazon IT contractor, logistics security, access control systems, rural New Mexico IT, enterprise security infrastructure"
+
+- id: 7brew-multi-site
+  featured: true
+  title: "Nationwide Restaurant Chain Infrastructure Rollout"
+  subtitle: "Multi-Site Network Deployment for 7 BREW Expansion"
+  client: "Granite Telecommunications"
+  end_client: "7 BREW (Multi-Location Rollout)"
+  location: "Lubbock, TX 79424"
+  location_city: "Lubbock, TX"
+  location_state: "Texas"
+  date: "October 2024"
+  contract_value: "$800"
+  project_type: "Multi-Site Enterprise Deployment"
+  
+  government_type: "Commercial"
+  service_type: "Network Infrastructure"
+  industry: "Restaurant/Retail"
+  region: "Texas"
+  
+  challenge: "7 BREW, a rapidly expanding restaurant chain, required complete network infrastructure installation across multiple locations with tight deployment timelines and zero tolerance for operational downtime during business hours."
+  
+  solution: "Nova Titan Systems partnered with Granite Telecommunications to deploy enterprise-grade network stack equipment, configure routers and switches, install wireless access points, and implement secure network architecture. The project included comprehensive site coordination, equipment staging, installation, testing, and documentation across multiple facilities."
+  
+  services:
+    - "Complete network infrastructure installation"
+    - "Network stack equipment deployment"
+    - "Router and switch configuration"
+    - "Wireless access point installation"
+    - "Secure network architecture implementation"
+    - "Multi-site project coordination"
+    - "Equipment staging, testing, and documentation"
+  
+  results:
+    - "Successfully deployed infrastructure across multiple restaurant locations"
+    - "Zero business disruption during installation"
+    - "Enabled enterprise-grade connectivity for growing chain"
+    - "Completed within aggressive timeline requirements"
+    - "Established ongoing relationship with Granite Telecommunications"
+  
+  impact: "This project demonstrated our ability to execute complex multi-site deployments for enterprise clients, bringing reliable IT infrastructure to support business growth in West Texas communities."
+  
+  metrics:
+    timeline: "1 week"
+    services_count: 7
+    locations_covered: "Multiple"
+    downtime: "Zero"
+  
+  technical_specs: "Network stack deployment, enterprise wireless infrastructure, secure routing, Granite Ticket 5959515, Internal Owner: Douglas Wolfanger"
+  
+  icon: "fas fa-coffee"
+  color: "purple"
+  
+  meta_description: "Nova Titan Systems deployed multi-site network infrastructure for 7 BREW restaurant chain expansion in Lubbock, TX with zero business disruption."
+  keywords: "multi-site network deployment, restaurant IT infrastructure, Granite Telecommunications, enterprise wireless, West Texas IT"
+
+- id: va-healthcare
+  featured: false
+  title: "Improving Veteran Healthcare Access Through Reliable IT Infrastructure"
+  subtitle: "Year-Round Medical Equipment Support Across Rural VA Facilities"
+  client: "CSA Solutions (Higi Health Stations)"
+  end_client: "VA Healthcare System"
+  location: "Multiple VA facilities across West Texas and New Mexico"
+  location_city: "Lubbock, Midland, Odessa, Roswell, Levelland"
+  location_state: "Texas, New Mexico"
+  date: "January 2024 - November 2024"
+  contract_value: "$2,000+"
+  project_type: "Federal Healthcare IT"
+  
+  government_type: "Federal"
+  service_type: "Healthcare IT"
+  industry: "Healthcare/VA"
+  region: "Multi-State"
+  
+  challenge: "VA healthcare facilities across rural West Texas and New Mexico required ongoing maintenance and repair of medical kiosks and health monitoring equipment critical to veteran care delivery. Equipment failures directly impacted veteran access to healthcare services in underserved rural areas."
+  
+  solution: "Nova Titan Systems provided year-round medical equipment repair, kiosk maintenance, hardware diagnostics, and healthcare facility IT support across multiple locations including Lubbock, Midland, Odessa, Roswell, and Levelland. Our rapid response model ensured minimal downtime for critical veteran healthcare equipment."
+  
+  services:
+    - "Medical equipment repair and maintenance"
+    - "Healthcare kiosk diagnostics and troubleshooting"
+    - "Hardware replacement and upgrades"
+    - "Healthcare facility IT support"
+    - "Multi-location service coverage across rural areas"
+    - "Rapid response (often same-day service)"
+  
+  results:
+    - "Completed 20+ healthcare equipment projects over 11 months"
+    - "Maintained consistent service quality across multiple rural locations"
+    - "Generated $2,000+ in federal healthcare IT revenue"
+    - "Established reliable vendor relationship with CSA Solutions"
+    - "Enabled continuous veteran healthcare access"
+  
+  impact: "This ongoing partnership directly supports our mission of bridging the digital divide in healthcare delivery. By ensuring reliable operation of medical kiosks and health monitoring equipment in rural VA facilities, we help veterans in underserved areas access the same quality of care available in major metropolitan centers."
+  
+  metrics:
+    timeline: "11 months"
+    projects_completed: "20+"
+    locations_covered: 5
+    response_time: "Same-day"
+  
+  technical_specs: "Higi SH650-C health stations, ZT2776-4G kiosk systems, healthcare IT compliance, CSA Solutions Work Orders"
+  
+  icon: "fas fa-heartbeat"
+  color: "red"
+  
+  meta_description: "Nova Titan Systems provides ongoing VA healthcare IT support across rural West Texas and New Mexico, maintaining critical medical kiosks and health monitoring equipment for veteran care."
+  keywords: "VA healthcare IT, veteran medical equipment, rural healthcare technology, federal healthcare contractor, VA kiosk repair"
+
+- id: office-depot-federal
+  featured: false
+  title: "Nationwide IT Deployment for Federal GSA Contractor"
+  subtitle: "Smart Hands IT Support for Federal Supply Chain Operations"
+  client: "AVASO Technology Solutions Inc"
+  end_client: "Office Depot (Federal GSA Supply Schedule Contractor)"
+  location: "West Texas and New Mexico (Lubbock, Midland, Odessa, Roswell)"
+  location_city: "Lubbock, Midland, Odessa, Roswell"
+  location_state: "Texas, New Mexico"
+  date: "May 2024 - November 2024"
+  contract_value: "$1,200+"
+  project_type: "Federal Contractor Support / IT Deployment"
+  
+  government_type: "Federal"
+  service_type: "IT Smart Hands"
+  industry: "Federal Supply Chain"
+  region: "Multi-State"
+  
+  challenge: "Office Depot, operating under federal GSA supply schedules, required rapid-response IT smart hands support across multiple locations in rural West Texas and New Mexico. Projects ranged from desktop deployment to network equipment installation and server maintenance, often with tight turnaround requirements to support federal agency operations."
+  
+  solution: "Nova Titan Systems provided on-demand IT smart hands support as a regional partner for AVASO Technology Solutions. Our West Texas presence enabled 4-hour response times for urgent federal contractor deployments, ensuring Office Depot could meet federal agency service level agreements."
+  
+  services:
+    - "IT smart hands support and rapid response"
+    - "Desktop deployment and configuration"
+    - "Network equipment installation"
+    - "Server maintenance and troubleshooting"
+    - "Federal contractor logistics support"
+    - "Multi-location coverage across rural areas"
+  
+  results:
+    - "Completed 6+ federal contractor IT deployments"
+    - "Maintained 100% on-time completion rate"
+    - "Generated $1,200+ in federal supply chain revenue"
+    - "Established regional coverage capability for AVASO"
+    - "Enabled federal GSA contractor to serve rural agencies"
+  
+  impact: "By providing reliable IT deployment support for federal contractors in rural areas, we ensure that federal agencies in underserved regions receive the same rapid, professional IT support available in major cities. This work directly supports federal operations serving rural communities across West Texas and New Mexico."
+  
+  metrics:
+    timeline: "7 months"
+    projects_completed: "6+"
+    on_time_rate: "100%"
+    response_time: "4 hours"
+  
+  technical_specs: "ATS case management system, Office Depot PPT contracts, federal GSA supply chain support, multi-location field technician dispatch"
+  
+  icon: "fas fa-hands-helping"
+  color: "green"
+  
+  meta_description: "Nova Titan Systems provides rapid-response IT smart hands support for federal GSA contractors across rural West Texas and New Mexico."
+  keywords: "federal GSA IT support, smart hands technician, Office Depot contractor, rural federal IT, AVASO partner"
+
+- id: abc-supply-migration
+  featured: false
+  title: "Mission-Critical Network Upgrade for Supply Chain Operations"
+  subtitle: "Zero-Downtime LAN Migration for ABC Supply"
+  client: "ASD (Applied System Designs) / Spectrum"
+  end_client: "ABC Supply (National Building Materials Distributor)"
+  location: "Lubbock, TX 79404"
+  location_city: "Lubbock, TX"
+  location_state: "Texas"
+  date: "September 2024"
+  contract_value: "$400"
+  project_type: "Enterprise Network Infrastructure"
+  
+  government_type: "Commercial"
+  service_type: "Network Infrastructure"
+  industry: "Supply Chain/Distribution"
+  region: "Texas"
+  
+  challenge: "ABC Supply, a major national building materials distributor, required LAN migration and network infrastructure upgrades with absolute zero downtime tolerance. The project required hard start times and precise coordination to avoid disrupting 24/7 supply chain operations."
+  
+  solution: "Nova Titan Systems executed a carefully orchestrated two-phase LAN migration with hard start times, ensuring seamless transition from legacy network infrastructure to upgraded systems. The project required advanced planning, after-hours coordination, and rapid execution to maintain continuous operations."
+  
+  services:
+    - "LAN migration with hard start time requirements"
+    - "Network infrastructure upgrades"
+    - "Enterprise IT coordination"
+    - "After-hours deployment"
+    - "Pre-migration testing and validation"
+    - "Post-migration verification and support"
+  
+  results:
+    - "Achieved 100% uptime during critical network migration"
+    - "Completed both project phases on schedule with hard start times"
+    - "Zero disruption to 24/7 supply chain operations"
+    - "Demonstrated enterprise-scale project management capability"
+    - "Established capability for mission-critical infrastructure upgrades"
+  
+  impact: "This project showcased our ability to execute complex, time-sensitive enterprise IT projects in West Texas, ensuring that regional supply chain operations maintain the same level of network reliability as major metropolitan facilities."
+  
+  metrics:
+    timeline: "2 phases"
+    uptime: "100%"
+    services_count: 6
+    disruption: "Zero"
+  
+  technical_specs: "Spectrum Network Services contracts 25S18009, 25S18007, Internal Owner: Jason Hunter, hard start time coordination, enterprise LAN architecture"
+  
+  icon: "fas fa-network-wired"
+  color: "cyan"
+  
+  meta_description: "Nova Titan Systems executed zero-downtime LAN migration for ABC Supply's Lubbock facility, ensuring continuous 24/7 supply chain operations."
+  keywords: "zero downtime network migration, enterprise LAN upgrade, supply chain IT, Lubbock IT contractor, mission-critical infrastructure"
