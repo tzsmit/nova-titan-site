@@ -33,7 +33,9 @@
       url: /government/
     - name: Enterprise & MSP Partners
       url: /partners/enterprise/
-    - name: Portfolio & Case Studies
+    - name: Case Studies
+      url: /case-studies/
+    - name: Security Portfolio
       url: /portfolio/
 
 - name: About
