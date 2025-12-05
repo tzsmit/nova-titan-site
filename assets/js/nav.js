@@ -132,25 +132,27 @@
 
   /**
    * Handle active navigation state
+   * NOTE: Active state is primarily handled by Jekyll/Liquid templating in header.html
+   * This function provides additional client-side enhancement if needed
    */
   function updateActiveNav() {
     const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link-main');
     
     navLinks.forEach(link => {
       const linkPath = link.getAttribute('href');
       
-      // Remove existing active classes
-      link.classList.remove('text-cyan-400', 'font-semibold');
+      // Check if this link should be active
+      const isActive = currentPath === linkPath || 
+                      (linkPath !== '/' && currentPath.startsWith(linkPath));
       
-      // Add active class if paths match
-      if (currentPath === linkPath || 
-          (linkPath !== '/' && currentPath.startsWith(linkPath))) {
-        link.classList.add('text-cyan-400', 'font-semibold');
+      // Ensure active class is present (Jekyll should handle this, but reinforce)
+      if (isActive && !link.classList.contains('active')) {
+        link.classList.add('active');
       }
     });
   }
 
-  // Update active nav on load
+  // Update active nav on load (backup to Jekyll templating)
   document.addEventListener('DOMContentLoaded', updateActiveNav);
 })();
