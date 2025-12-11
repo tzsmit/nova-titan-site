@@ -21,3 +21,10 @@ api/node_modules/
 # Temp files
 /temp_uploads/_site
 nova-titan-systems/
+
+# Environment variables - NEVER COMMIT
+.env
+.env.local
+.env.*.local
+*.credentials
+.ghl-config/
