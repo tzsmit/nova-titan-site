@@ -1,9 +1,11 @@
 # 🎯 GOHIGHLEVEL (GHL) FORMS - COMPREHENSIVE AUDIT & UPGRADE
 
 **Date:** December 11, 2024  
-**Location ID:** l9FXVehNOazAR0Uexx8J  
+**Location ID:** [REDACTED - Use Environment Variable]  
 **API Version:** GHL v2.0 (2021-07-28)  
 **Status:** ✅ **AUDIT COMPLETE - IMPLEMENTATION IN PROGRESS**
+
+⚠️ **SECURITY NOTE:** API credentials are stored securely and NOT included in this document.
 
 ---
 
@@ -355,7 +357,7 @@ WEBSITE FORMS:
 ## 📞 SUPPORT & DOCUMENTATION
 
 **GHL API Documentation:** https://highlevel.stoplight.io/  
-**Location ID:** l9FXVehNOazAR0Uexx8J  
+**Location ID:** [REDACTED - Use Environment Variable]  
 **API Token:** [Stored securely - not in repo]  
 
 **Internal Contact:**

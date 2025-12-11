@@ -208,8 +208,8 @@ The capability statement PDF must be updated to reflect the removal of manufactu
 After creating forms in GHL UI, run this command to get the new form IDs:
 
 ```bash
-curl -X GET "https://services.leadconnectorhq.com/forms/?locationId=l9FXVehNOazAR0Uexx8J" \
-  -H "Authorization: Bearer pit-0ff5306e-bd54-4040-9b51-004d7493d193" \
+curl -X GET "https://services.leadconnectorhq.com/forms/?locationId=${GHL_LOCATION_ID}" \
+  -H "Authorization: Bearer ${GHL_API_TOKEN}" \
   -H "Version: 2021-07-28" \
   -H "Content-Type: application/json"
 ```
