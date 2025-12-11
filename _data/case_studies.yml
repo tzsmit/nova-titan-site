@@ -173,11 +173,11 @@
   location_city: "Lubbock, Midland, Odessa, Roswell, Levelland"
   location_state: "Texas, New Mexico"
   date: "January 2024 - November 2024"
-  project_type: "Federal Healthcare IT"
+  project_type: "Commercial Healthcare IT Services"
   
-  government_type: "Federal"
+  government_type: "Commercial"
   service_type: "Healthcare IT"
-  industry: "Healthcare/VA"
+  industry: "Healthcare Services"
   region: "Multi-State"
   
   challenge: "VA healthcare facilities across rural West Texas and New Mexico required ongoing maintenance and repair of medical kiosks and health monitoring equipment critical to veteran care delivery. Equipment failures directly impacted veteran access to healthcare services in underserved rural areas."
@@ -225,11 +225,11 @@
   location_city: "Lubbock, Midland, Odessa, Roswell"
   location_state: "Texas, New Mexico"
   date: "May 2024 - November 2024"
-  project_type: "Federal Contractor Support / IT Deployment"
+  project_type: "Commercial Contractor Support / IT Deployment"
   
-  government_type: "Federal"
+  government_type: "Commercial"
   service_type: "IT Smart Hands"
-  industry: "Federal Supply Chain"
+  industry: "Commercial Supply Chain"
   region: "Multi-State"
   
   challenge: "Office Depot, operating under federal GSA supply schedules, required rapid-response IT smart hands support across multiple locations in rural West Texas and New Mexico. Projects ranged from desktop deployment to network equipment installation and server maintenance, often with tight turnaround requirements to support federal agency operations."
