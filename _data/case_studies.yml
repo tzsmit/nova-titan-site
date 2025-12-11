@@ -2,63 +2,63 @@
 # Professional project case studies demonstrating government and commercial capabilities
 
 - id: dyess-afb
-  featured: true
-  title: "Supporting Military Readiness Through Federal IT Excellence"
-  subtitle: "DoD Installation Equipment Upgrade at Dyess Air Force Base"
+  featured: false
+  title: "Commercial IT Equipment Services for Federal Contractor"
+  subtitle: "Equipment Management Services Through Prime Contractor Partnership"
   client: "Core Technology Solutions (Prime Contractor)"
-  end_client: "U.S. Air Force, Dyess AFB"
-  location: "Dyess Air Force Base, TX 79607"
+  end_client: "Commercial Federal Contractor"
+  location: "West Texas Region"
   location_city: "Abilene, TX"
   location_state: "Texas"
   date: "December 2023"
-  project_type: "Federal DoD Installation"
+  project_type: "Commercial Subcontractor Services"
   
   # Categorization for filtering
-  government_type: "Federal"
+  government_type: "Commercial"
   service_type: "IT Infrastructure"
-  industry: "Military/DoD"
+  industry: "Commercial IT Services"
   region: "Texas"
   
   # Project overview
-  challenge: "Dyess Air Force Base required secure HP enterprise equipment removal and disposal while maintaining strict DoD facility security protocols and mission continuity. The project demanded coordination with base security, adherence to federal facility procedures, and compliance with military equipment handling standards."
+  challenge: "A prime contractor required reliable equipment management services for a federal facility project in rural West Texas. The work demanded strict adherence to facility security protocols and professional service delivery standards."
   
-  solution: "Nova Titan Systems coordinated with Core Technology Solutions and Dyess AFB security personnel to execute equipment decommissioning per DoD standards. Our team navigated security clearance requirements, completed site access protocols, and ensured zero disruption to base operations."
+  solution: "Nova Titan Systems executed equipment management services through our prime contractor partner, Core Technology Solutions. Our team completed all required access protocols and delivered services with zero disruptions, demonstrating our capability as a dependable subcontractor for federal-facility-adjacent commercial work."
   
   # Services provided (array)
   services:
-    - "HP enterprise equipment removal and disposal"
-    - "DoD facility security coordination"
-    - "Federal compliance and documentation"
-    - "Equipment decommissioning per military standards"
-    - "Base access protocol management"
+    - "Commercial equipment management and handling"
+    - "Facility access protocol compliance"
+    - "Professional documentation and reporting"
+    - "Secure equipment handling per contract standards"
+    - "Subcontractor coordination and communication"
   
   # Results (array)
   results:
-    - "Successfully completed mission-critical equipment upgrade with zero security incidents"
-    - "Maintained full compliance with DoD facility procedures"
-    - "Supported military readiness at active Air Force base"
-    - "Established capability for future DoD installations"
+    - "Successfully completed commercial equipment services with zero security incidents"
+    - "Maintained full compliance with prime contractor requirements"
+    - "Demonstrated reliability for federal-facility-adjacent commercial work"
+    - "Established track record as dependable subcontractor partner"
   
   # Community impact
-  impact: "This project demonstrated our ability to serve military installations in rural West Texas, supporting the men and women who defend our nation with reliable, compliant IT infrastructure services."
+  impact: "This project demonstrated our ability to serve as a reliable subcontractor for commercial work in federal facility environments, supporting rural West Texas communities and prime contractor partners with professional IT services."
   
   # Key metrics for display
   metrics:
     timeline: "1 day"
     services_count: 5
-    compliance_frameworks: "DoD Security"
+    compliance_frameworks: "Commercial Standards"
     locations: 1
   
   # Technical details
-  technical_specs: "Federal facility compliance, DoD security protocols, equipment disposal standards, ServicePoint ticket S-378821"
+  technical_specs: "Commercial service delivery, facility access compliance, equipment handling standards, ServicePoint ticket S-378821"
   
   # Image/icon
-  icon: "fas fa-fighter-jet"
+  icon: "fas fa-tools"
   color: "blue"
   
   # SEO
-  meta_description: "Nova Titan Systems supported Dyess Air Force Base with federal IT infrastructure services including DoD-compliant equipment removal and disposal in rural West Texas."
-  keywords: "Dyess AFB, DoD IT contractor, military installation support, federal facility compliance, Air Force Base IT"
+  meta_description: "Nova Titan Systems provided commercial IT equipment services through prime contractor partnership in West Texas, demonstrating subcontractor reliability and professional service delivery."
+  keywords: "IT subcontractor services, commercial IT contractor, West Texas IT services, federal facility commercial work, prime contractor partner"
 
 - id: amazon-security
   featured: true
