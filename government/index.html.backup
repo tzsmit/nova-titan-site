@@ -1,0 +1,628 @@
+---
+layout: default
+title: "Government Solutions | Federal Contracting | Nova Titan Systems"
+description: "Nova Titan Systems LLC - SAM.gov registered IT contractor. UEI: CZ8BLZMSKZ66. Small Business (Self-Identified Minority-Owned) providing IT field services, network infrastructure, and cybersecurity solutions for federal, state, and local government agencies."
+extra_head: |
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://novatitan.net/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Government Contracting",
+        "item": "https://novatitan.net/government/"
+      }
+    ]
+  }
+  </script>
+---
+
+<section class="content pt-32 pb-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div class="inline-block mb-6">
+        <span class="bg-cyan-600/30 text-cyan-300 px-4 py-2 rounded-full text-sm font-semibold border border-cyan-400/40">
+          <i class="fas fa-flag-usa mr-2"></i>Government Ready
+        </span>
+      </div>
+      <h1 class="text-5xl sm:text-6xl font-bold text-cyan-300 glow mb-6">
+        Government Contracting
+      </h1>
+      <p class="text-2xl text-gray-300 mb-8">Capability Statement & Federal Readiness</p>
+      <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+        Nova Titan Systems LLC is actively pursuing government contracting certifications to serve federal, state, and local 
+        government agencies with comprehensive technology solutions across three specialized divisions.
+      </p>
+    </div>
+
+    <!-- Registration Status -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="card rounded-xl p-6 text-center border-2 border-green-400/30">
+        <div class="text-3xl font-bold text-green-300 mb-2">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="text-sm text-gray-400 mb-2">SAM.gov Status</div>
+        <div class="text-green-300 font-semibold">Active</div>
+      </div>
+      <div class="card rounded-xl p-6 text-center border-2 border-green-400/30">
+        <div class="text-3xl font-bold text-green-300 mb-2">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="text-sm text-gray-400 mb-2">CAGE Code</div>
+        <div class="text-green-300 font-semibold">Active</div>
+      </div>
+      <div class="card rounded-xl p-6 text-center border-2 border-yellow-400/30">
+        <div class="text-3xl font-bold text-yellow-300 mb-2">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="text-sm text-gray-400 mb-2">Socioeconomic Status</div>
+        <div class="text-white font-semibold">Small Business<br><span class="text-xs text-gray-400">(Self-Identified Minority-Owned)</span></div>
+      </div>
+      <div class="card rounded-xl p-6 text-center border-2 border-cyan-400/30">
+        <div class="text-3xl font-bold text-cyan-300 mb-2">
+          <i class="fas fa-hourglass-half"></i>
+        </div>
+        <div class="text-sm text-gray-400 mb-2">UEI Number</div>
+        <div class="text-cyan-300 font-semibold font-mono">CZ8BLZMSKZ66</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Overview -->
+<section class="content py-16 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-cyan-300 glow mb-12 text-center">Company Overview</h2>
+    
+    <div class="card rounded-xl p-12 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-cyan-300 mb-4">Business Information</h3>
+          <div class="space-y-3 text-gray-300">
+            <div>
+              <span class="text-gray-400">Company Name:</span><br>
+              <strong>Nova Titan Systems LLC</strong>
+            </div>
+            <div>
+              <span class="text-gray-400">Headquarters:</span><br>
+              <strong>Lubbock, Texas</strong>
+            </div>
+            <div>
+              <span class="text-gray-400">Service Areas:</span><br>
+              <strong>West Texas • Nationwide (Remote)</strong>
+            </div>
+            <div>
+              <span class="text-gray-400">UEI Number:</span><br>
+              <strong class="text-cyan-300 font-mono">CZ8BLZMSKZ66</strong>
+            </div>
+            <div>
+              <span class="text-gray-400">Founded:</span><br>
+              <strong>2024</strong>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-cyan-300 mb-4">Government Credentials</h3>
+          <div class="space-y-3 text-gray-300">
+            <div>
+              <span class="text-gray-400">SAM.gov Status:</span><br>
+              <strong class="text-green-300">Active</strong>
+            </div>
+            <div>
+              <span class="text-gray-400">CAGE Code:</span><br>
+              <strong class="text-green-300">Active</strong>
+            </div>
+            <div>
+              <span class="text-gray-400">Business Type:</span><br>
+              <strong>Small Business LLC</strong>
+            </div>
+            <div>
+              <span class="text-gray-400">Socioeconomic Status:</span><br>
+              <strong>Self-Identified Minority-Owned</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAICS Codes -->
+<section class="content py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-cyan-300 glow mb-12 text-center">Registered NAICS Codes</h2>
+    <p class="text-center text-gray-300 mb-8 max-w-3xl mx-auto">
+      Nova Titan Systems LLC is registered under the following North American Industry Classification System (NAICS) codes
+    </p>
+    
+    <!-- NAICS Table -->
+    <div class="card rounded-xl p-8 overflow-x-auto">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b border-gray-700">
+            <th class="pb-4 pr-4 text-cyan-300 font-semibold">NAICS Code</th>
+            <th class="pb-4 text-cyan-300 font-semibold">Description</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-300">
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4">
+              <span class="font-mono font-bold text-cyan-400">541519</span>
+              <span class="ml-2 text-xs bg-cyan-600/30 text-cyan-300 px-2 py-1 rounded">PRIMARY</span>
+            </td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Other Computer Related Services</div>
+              <div class="text-sm text-gray-400">IT support & helpdesk, hardware installation, technical training, field services</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541512</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Computer Systems Design Services</div>
+              <div class="text-sm text-gray-400">Custom software development, IT consulting & strategy, systems integration</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541513</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Computer Facilities Management Services</div>
+              <div class="text-sm text-gray-400">Data center management, IT infrastructure oversight, managed services</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">238210</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Electrical Contractors and Other Wiring Installation Contractors</div>
+              <div class="text-sm text-gray-400">Network cabling, structured wiring, low-voltage installations, fiber optic services</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">238990</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">All Other Specialty Trade Contractors</div>
+              <div class="text-sm text-gray-400">Specialized technology installation, smart building integration, equipment deployment</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">334118</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Computer Terminal and Other Computer Peripheral Equipment Manufacturing</div>
+              <div class="text-sm text-gray-400">Hardware configuration, peripheral device integration, equipment setup</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">334290</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Other Communications Equipment Manufacturing</div>
+              <div class="text-sm text-gray-400">Network equipment, telecommunications hardware, wireless systems</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541611</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Administrative Management and General Management Consulting Services</div>
+              <div class="text-sm text-gray-400">Technology strategy consulting, digital transformation advisory, IT governance</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541690</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Other Scientific and Technical Consulting Services</div>
+              <div class="text-sm text-gray-400">Cybersecurity consulting, technology assessments, security advisory</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">561621</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Security Systems Services (except Locksmiths)</div>
+              <div class="text-sm text-gray-400">Security camera installation, access control systems, surveillance infrastructure</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PSC Codes -->
+<section class="content py-16 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-purple-300 glow mb-12 text-center">Federal Product/Service Codes (PSC)</h2>
+    <p class="text-center text-gray-300 mb-8 max-w-3xl mx-auto">
+      Nova Titan Systems LLC is registered to provide services under the following Federal Product Service Codes
+    </p>
+    
+    <!-- PSC Table -->
+    <div class="card rounded-xl p-8 overflow-x-auto">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b border-gray-700">
+            <th class="pb-4 pr-4 text-purple-300 font-semibold">PSC Code</th>
+            <th class="pb-4 text-purple-300 font-semibold">Description</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-300">
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DJ01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Annual Maintenance Only (Non-Continuous)</div>
+              <div class="text-sm text-gray-400">Annual service contracts, periodic maintenance agreements</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DF01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Telecom/Network Administration Services</div>
+              <div class="text-sm text-gray-400">Network management, telecommunications administration, infrastructure support</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DH01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Data/Information/Knowledge Management</div>
+              <div class="text-sm text-gray-400">Data management, information systems, knowledge base administration</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DH10</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Cyber Security and Data Backup</div>
+              <div class="text-sm text-gray-400">Cybersecurity services, data backup solutions, security monitoring</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DK01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Computer Network Services</div>
+              <div class="text-sm text-gray-400">Network design, implementation, and support services</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DK10</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Automated Information System (AIS) Design/Integration</div>
+              <div class="text-sm text-gray-400">System design, integration services, AIS implementation</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DC01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Facility Operation and Maintenance (Non-Continuous)</div>
+              <div class="text-sm text-gray-400">IT facility operations, maintenance services, infrastructure support</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DC10</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Continuous Maintenance</div>
+              <div class="text-sm text-gray-400">Ongoing maintenance contracts, continuous support services</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DG01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Computer Network Support</div>
+              <div class="text-sm text-gray-400">Network troubleshooting, technical support, helpdesk services</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DG10</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Computer/IT Support Services</div>
+              <div class="text-sm text-gray-400">IT technical support, helpdesk, user support services</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DA01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Systems Analysis</div>
+              <div class="text-sm text-gray-400">Requirements analysis, system evaluation, technical assessments</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DA10</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Business Program/Project Management Services</div>
+              <div class="text-sm text-gray-400">IT project management, program coordination, delivery management</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DB01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Programming</div>
+              <div class="text-sm text-gray-400">Software programming, application development, code development</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DB02</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Implementation and Integration Services</div>
+              <div class="text-sm text-gray-400">System implementation, integration services, deployment support</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DB10</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Software Development Services</div>
+              <div class="text-sm text-gray-400">Custom software development, application design, software engineering</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DE01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Processing and Storage Services</div>
+              <div class="text-sm text-gray-400">Data processing, storage solutions, cloud hosting services</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DE02</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Voice Services (Wireless and Landline)</div>
+              <div class="text-sm text-gray-400">VoIP implementation, telephony services, voice systems</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DE10</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - IT Strategy and Architecture</div>
+              <div class="text-sm text-gray-400">IT strategy consulting, enterprise architecture, technology roadmaps</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DE11</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Telecommunications Network Management</div>
+              <div class="text-sm text-gray-400">Network operations, telecom management, infrastructure oversight</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">DD01</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">IT and Telecom - Systems Development</div>
+              <div class="text-sm text-gray-400">System design and development, application architecture</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">L058</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Installation of Electronic Equipment</div>
+              <div class="text-sm text-gray-400">Hardware installation, equipment setup, device deployment</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">L060</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Installation of Communications Equipment</div>
+              <div class="text-sm text-gray-400">Telecom equipment installation, network device setup</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">N063</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Maintenance/Repair/Rebuild of Equipment - Electronic Equipment</div>
+              <div class="text-sm text-gray-400">Electronic equipment repair, maintenance services</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">N074</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Maintenance/Repair/Rebuild of Equipment - Communications Equipment</div>
+              <div class="text-sm text-gray-400">Telecommunications equipment maintenance and repair</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">J063</span></td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Maintenance/Repair/Rebuild of Equipment - IT and Telecommunications</div>
+              <div class="text-sm text-gray-400">IT equipment maintenance, repair services, technical support</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Core Competencies -->
+<section class="content py-16 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-cyan-300 glow mb-12 text-center">Core Competencies</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Division 1 -->
+      <div class="card rounded-xl p-8">
+        <div class="service-icon mb-4" style="width: 60px; height: 60px;">
+          <i class="fas fa-network-wired text-3xl text-gray-900"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-cyan-300 mb-4">Nova Titan Systems™</h3>
+        <ul class="text-gray-400 space-y-2 text-sm">
+          <li><i class="fas fa-chevron-right text-cyan-400 mr-2"></i>IT infrastructure design & installation</li>
+          <li><i class="fas fa-chevron-right text-cyan-400 mr-2"></i>Network deployment & cabling</li>
+          <li><i class="fas fa-chevron-right text-cyan-400 mr-2"></i>Hardware procurement & setup</li>
+          <li><i class="fas fa-chevron-right text-cyan-400 mr-2"></i>Managed IT support services</li>
+          <li><i class="fas fa-chevron-right text-cyan-400 mr-2"></i>Field technology deployment</li>
+          <li><i class="fas fa-chevron-right text-cyan-400 mr-2"></i>Smart building integration</li>
+        </ul>
+      </div>
+
+      <!-- Division 2 -->
+      <div class="card rounded-xl p-8">
+        <div class="service-icon mb-4" style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #ec4899);">
+          <i class="fas fa-shield-alt text-3xl text-gray-900"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-purple-300 mb-4">Nova Titan Security™</h3>
+        <ul class="text-gray-400 space-y-2 text-sm">
+          <li><i class="fas fa-chevron-right text-purple-400 mr-2"></i>Cloud security monitoring</li>
+          <li><i class="fas fa-chevron-right text-purple-400 mr-2"></i>Cybersecurity assessments</li>
+          <li><i class="fas fa-chevron-right text-purple-400 mr-2"></i>Vulnerability scanning & testing</li>
+          <li><i class="fas fa-chevron-right text-purple-400 mr-2"></i>Security policy development</li>
+          <li><i class="fas fa-chevron-right text-purple-400 mr-2"></i>Incident response services</li>
+          <li><i class="fas fa-chevron-right text-purple-400 mr-2"></i>Compliance & audit support</li>
+        </ul>
+      </div>
+
+      <!-- Division 3 -->
+      <div class="card rounded-xl p-8">
+        <div class="service-icon mb-4" style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #3b82f6);">
+          <i class="fas fa-brain text-3xl text-gray-900"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-green-300 mb-4">Nova Titan Intelligence™</h3>
+        <ul class="text-gray-400 space-y-2 text-sm">
+          <li><i class="fas fa-chevron-right text-green-400 mr-2"></i>Custom software development</li>
+          <li><i class="fas fa-chevron-right text-green-400 mr-2"></i>AI/ML integration services</li>
+          <li><i class="fas fa-chevron-right text-green-400 mr-2"></i>Data analytics & visualization</li>
+          <li><i class="fas fa-chevron-right text-green-400 mr-2"></i>Business intelligence solutions</li>
+          <li><i class="fas fa-chevron-right text-green-400 mr-2"></i>Automation & workflow optimization</li>
+          <li><i class="fas fa-chevron-right text-green-400 mr-2"></i>API development & integration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Past Performance -->
+<section class="content py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-cyan-300 glow mb-12 text-center">Past Performance Highlights</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="card rounded-xl p-8">
+        <h3 class="text-xl font-bold text-white mb-4">
+          <i class="fas fa-building text-cyan-300 mr-2"></i>
+          Commercial & Enterprise
+        </h3>
+        <ul class="text-gray-400 space-y-3 text-sm">
+          <li><i class="fas fa-check text-green-400 mr-2"></i>95+ installation projects completed</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>50+ security audits performed</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Enterprise client experience (Amazon, Walmart, CVS)</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>West Texas & regional operations</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>24/7 support delivery capability</li>
+        </ul>
+      </div>
+
+      <div class="card rounded-xl p-8">
+        <h3 class="text-xl font-bold text-white mb-4">
+          <i class="fas fa-flag-usa text-cyan-300 mr-2"></i>
+          Federal & Government
+        </h3>
+        <ul class="text-gray-400 space-y-3 text-sm">
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Dyess Air Force Base service experience</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>USDA facility technology support</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>BNSF Railway infrastructure projects</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Government-grade security protocols</li>
+          <li><i class="fas fa-check text-green-400 mr-2"></i>Clearance-capable technical staff (when needed)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Differentiators -->
+<section class="content py-16 bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-cyan-300 glow mb-12 text-center">Why Choose Nova Titan Systems</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="card rounded-xl p-6 text-center">
+        <i class="fas fa-sitemap text-4xl text-cyan-300 mb-4"></i>
+        <h3 class="text-lg font-bold text-white mb-2">Multi-Division Structure</h3>
+        <p class="text-gray-400 text-sm">Comprehensive capabilities under one contract</p>
+      </div>
+
+      <div class="card rounded-xl p-6 text-center">
+        <i class="fas fa-code text-4xl text-purple-300 mb-4"></i>
+        <h3 class="text-lg font-bold text-white mb-2">Proprietary Tools</h3>
+        <p class="text-gray-400 text-sm">CloudWarden and other R&D products</p>
+      </div>
+
+      <div class="card rounded-xl p-6 text-center">
+        <i class="fas fa-tachometer-alt text-4xl text-green-300 mb-4"></i>
+        <h3 class="text-lg font-bold text-white mb-2">Rapid Response</h3>
+        <p class="text-gray-400 text-sm">Same-day emergency support available</p>
+      </div>
+
+      <div class="card rounded-xl p-6 text-center">
+        <i class="fas fa-graduation-cap text-4xl text-yellow-300 mb-4"></i>
+        <h3 class="text-lg font-bold text-white mb-2">Certified Expertise</h3>
+        <p class="text-gray-400 text-sm">cloud-certified leadership team</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact & Resources -->
+<section class="content py-20 bg-gradient-to-r from-cyan-900/30 via-purple-900/30 to-green-900/30">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold glow mb-6">Ready to Partner with Nova Titan?</h2>
+      <p class="text-xl text-gray-300 mb-8">
+        Contact us to discuss your agency's technology needs or request our full capability statement package.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="card rounded-xl p-8">
+        <h3 class="text-2xl font-bold text-cyan-300 mb-4">Government Contracting Office</h3>
+        <div class="space-y-3 text-gray-300">
+          <div>
+            <i class="fas fa-building text-cyan-400 mr-3"></i>
+            <div class="inline-block">
+              <strong>Nova Titan Systems LLC</strong><br>
+              <span class="text-sm text-gray-400">UEI: <span class="font-mono text-cyan-300">CZ8BLZMSKZ66</span></span>
+            </div>
+          </div>
+          <div>
+            <i class="fas fa-envelope text-cyan-400 mr-3"></i>
+            <a href="mailto:info@novatitan.net" class="hover:text-cyan-300">info@novatitan.net</a>
+          </div>
+          <div>
+            <i class="fas fa-phone text-cyan-400 mr-3"></i>
+            <a href="tel:+18063700624" class="hover:text-cyan-300">(806) 370-0624</a>
+          </div>
+          <div>
+            <i class="fas fa-map-marker-alt text-cyan-400 mr-3"></i>
+            <div class="inline-block">
+              <span>3223 S Loop 289 Ste 600</span><br>
+              <span>Lubbock, TX 79423</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card rounded-xl p-8">
+        <h3 class="text-2xl font-bold text-green-300 mb-4">Available Documentation</h3>
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li>
+            <i class="fas fa-file-pdf text-green-400 mr-3"></i>
+            <a href="/assets/docs/nova-titan-systems-federal-capability-statement.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-green-300 underline">Federal Capability Statement (PDF)</a>
+          </li>
+          <li><i class="fas fa-file-alt text-green-400 mr-3"></i>Technical Specifications & NAICS/PSC Details</li>
+          <li><i class="fas fa-certificate text-green-400 mr-3"></i>Certifications & Credentials Documentation</li>
+          <li><i class="fas fa-users text-green-400 mr-3"></i>Key Personnel Resumes (Upon Request)</li>
+          <li><i class="fas fa-history text-green-400 mr-3"></i>Past Performance References</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="/assets/docs/nova-titan-systems-federal-capability-statement.pdf" target="_blank" rel="noopener noreferrer" class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center">
+        <i class="fas fa-download mr-3"></i>
+        Download Federal Capability Statement
+      </a>
+      <a href="/book-now/" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition-all text-lg inline-flex items-center">
+        <i class="fas fa-calendar-check mr-3"></i>
+        Schedule Briefing
+      </a>
+    </div>
+  </div>
+</section>
