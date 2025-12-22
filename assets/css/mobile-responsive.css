@@ -373,3 +373,19 @@ html, body {
     height: 2rem;
   }
 }
+
+/* Fix mobile top spacing - reduce excessive padding */
+@media (max-width: 768px) {
+  .content.pt-32 {
+    padding-top: 5rem !important;
+  }
+  
+  section.content:first-of-type {
+    padding-top: 5rem !important;
+  }
+  
+  .content.pt-32.pb-12 {
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
