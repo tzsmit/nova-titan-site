@@ -102,7 +102,7 @@ NIST and DISA STIG compliance, vulnerability assessments, security hardening, an
 | **CAGE Code** | 170W6 |
 | **DUNS** | 141007579 |
 | **Primary NAICS** | 541519 (Other Computer Related Services) |
-| **Additional NAICS** | 541512, 541513, 238210, 238990, 334118, 334290, 541611, 541690, 561621 |
+| **Additional NAICS** | 541512, 541513, 238210, 238990, 541611, 541690, 561621, 561612, 561210, 562111 |
 | **PSC Codes** | 27 codes covering IT & Telecom Services |
 | **Business Type** | Black-Owned, Minority-Owned, Small Business |
 | **Location** | Lubbock, TX (HUBZone-eligible) |
