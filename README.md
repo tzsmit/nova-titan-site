@@ -20,9 +20,9 @@ Our mission is to deploy reliable, secure, and accessible IT infrastructure for 
 - **USDA & Rural Services**: Agricultural facilities, rural broadband support, regional offices
 - **DHS, SSA, & Federal Buildings**: Security infrastructure, facility IT modernization
 
-**Past Performance**: Dyess Air Force Base, VA facilities, USDA regional offices
+**Ready to Serve**: Federal agencies, DoD installations, VA facilities, and rural services
 
-### State Government (Texas HUB Q1 2025)
+### State Government (Texas HUB Application Planned)
 - **State Agencies**: IT infrastructure, cybersecurity compliance, data center support
 - **Universities & Colleges**: Campus networks, research facilities, student services
 - **State Hospitals & Health Systems**: Healthcare IT, HIPAA compliance, telehealth support
@@ -36,7 +36,7 @@ Our mission is to deploy reliable, secure, and accessible IT infrastructure for 
 
 ## 📊 Key Statistics
 
-- **300+ Projects** connecting communities across America
+- **95+ Projects Completed** connecting communities across America
 - **SAM.gov Active** | UEI: CZ8BLZMSKZ66 | CAGE Code: 170W6
 - **Black-Owned** | **Minority-Owned** | Small Business
 - **Based in Lubbock, TX** (HUBZone) | Serving Nationwide
@@ -107,23 +107,19 @@ NIST and DISA STIG compliance, vulnerability assessments, security hardening, an
 | **Business Type** | Black-Owned, Minority-Owned, Small Business |
 | **Location** | Lubbock, TX (HUBZone-eligible) |
 
-## 🌟 Past Performance Highlights
+## 🌟 Service Experience
 
-### Federal Government
-- **Dyess Air Force Base (DoD)**: Equipment removal and technology support enhancing military readiness
-- **VA Healthcare Facilities**: Infrastructure supporting veteran healthcare access
-- **USDA Regional Offices**: Connecting rural agricultural communities
+### Commercial IT Projects (Verified)
+- 95+ projects completed through WorkMarket, CloudWork Pro, and direct contracts
+- Enterprise clients: Amazon, Walmart, CVS, Office Depot, 7 BREW Coffee, ABC Supply
+- Nationwide field technician network for infrastructure deployments
 
-### State Government
-- **Texas DPS Locations**: Technology support for public safety infrastructure
-- **Future**: State agencies, universities, hospitals, correctional facilities
-
-### Local Government
-- **Future**: School districts, county facilities, municipal IT modernization
-
-### Commercial (Background)
-- 300+ projects through WorkMarket, CloudWork Pro, and direct contracts
-- Amazon, Walmart, CVS, Office Depot, 7 BREW Coffee, and other enterprise clients
+### Government Contracting Ready
+- **SAM.gov Active** - Ready for federal procurement opportunities
+- **CAGE Code 170W6** - Prime contractor capable
+- **10 Service-Based NAICS Codes** - Comprehensive IT service coverage
+- **Compliance Ready** - NIST, DISA STIG capabilities
+- **Serving**: Federal, State, and Local government agencies nationwide
 
 ## 🎯 Mission-Driven Values
 
@@ -150,6 +146,16 @@ Enterprise-grade capability with small-business agility. Government-compliant se
 This site is automatically deployed via **GitHub Pages** on every push to the `main` branch.
 
 **Live Site**: https://novatitan.net/
+
+## 📚 Documentation
+
+### Current Documentation
+- **FINAL_COMPREHENSIVE_SITE_REVIEW_DECEMBER_22_2024.md** - Latest complete site audit (Dec 22, 2024)
+- **SITE_WIDE_CONTENT_AUDIT_DECEMBER_2024.md** - Site-wide content corrections
+- **HOMEPAGE_CONTENT_REWRITE_DECEMBER_2024.md** - Homepage transformation details
+
+### Archived Documentation
+Historical audits, implementation guides, and previous reviews are archived in `_archive/documentation/` for reference.
 
 ## 📄 License
 
