@@ -1,0 +1,28 @@
+# humanstxt.org
+
+/* TEAM */
+  Founder & CEO: Traivone Smith
+  Location: Lubbock, Texas
+  Contact: info [at] novatitan.net
+
+/* SITE */
+  Standards: HTML5, CSS3, JavaScript ES6+
+  Components: Jekyll, GitHub Pages, TailwindCSS
+  Software: VS Code, Git, GitHub Actions
+  
+/* BUSINESS */
+  Company: Nova Titan Systems LLC
+  Founded: 2024
+  Location: Lubbock, TX 79412
+  Service Area: West Texas, Nationwide
+  
+/* CREDENTIALS */
+  SAM.gov: Active
+  UEI: CZ8BLZMSKZ66
+  CAGE Code: 170W6
+  Primary NAICS: 541519
+  Certifications: Black-Owned Small Disadvantaged Business
+  
+/* THANKS */
+  Built with care for businesses and government agencies
+  Connecting communities to the future

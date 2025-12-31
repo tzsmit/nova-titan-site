@@ -5,6 +5,9 @@ api/.env
 .env.development
 .env.production
 
+# Jekyll build output
+_site/
+
 # Node modules
 node_modules/
 api/node_modules/
