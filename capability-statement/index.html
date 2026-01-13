@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Federal Capability Statement - Nova Titan Systems LLC | SAM.gov Active</title>
+  <meta name="description" content="Nova Titan Systems LLC - IT infrastructure, cybersecurity, cloud security, field services, and ICS/OT support. SAM.gov active | UEI: CZ8BLZMSKZ66 | CAGE: 170W6 | Small Business | Minority-Owned">
+  <link rel="canonical" href="https://novatitan.net/capability-statement/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://novatitan.net/capability-statement/">
+  <meta property="og:title" content="Capability Statement - Nova Titan Systems">
+  <meta property="og:description" content="IT infrastructure, cybersecurity, cloud security, field technical services, and telecommunications support. SAM.gov active federal contractor.">
+  <meta property="og:image" content="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://novatitan.net/capability-statement/">
+  <meta property="twitter:title" content="Capability Statement - Nova Titan Systems">
+  <meta property="twitter:description" content="IT infrastructure, cybersecurity, cloud security, field technical services, and telecommunications support. SAM.gov active federal contractor.">
+  <meta property="twitter:image" content="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <style>
+    :root { 
+      --cy: #00d4ff; 
+      --gr: #00ff88; 
+      --purple: #b300ff;
+    }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); 
+      min-height: 100vh;
+    }
+    
+    /* Navigation */
+    .nav-link { 
+      transition: all .3s ease; 
+      position: relative; 
+      padding: 0.5rem 0;
+    }
+    .nav-link:hover { 
+      color: var(--cy); 
+      transform: scale(1.05); 
+    }
+    .nav-link::after { 
+      content:''; 
+      position:absolute; 
+      bottom:-2px; 
+      left:0; 
+      height:2px; 
+      width:0; 
+      background: linear-gradient(90deg, var(--cy), var(--gr)); 
+      transition:width .3s ease; 
+    }
+    .nav-link:hover::after { width:100%; }
+    
+    .btn-grad { 
+      background: linear-gradient(45deg,var(--cy),var(--gr)); 
+      transition: all .3s ease; 
+      box-shadow: 0 4px 15px rgba(0,212,255,0.3);
+    }
+    .btn-grad:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 25px rgba(0,212,255,.5); 
+    }
+    
+    /* Hamburger */
+    .hamburger { 
+      width: 36px; 
+      height: 28px; 
+      position: relative; 
+      cursor: pointer;
+    }
+    .hamburger span { 
+      position:absolute; 
+      left:0; 
+      right:0; 
+      height:3px; 
+      background: linear-gradient(90deg, var(--cy), var(--gr)); 
+      transition:transform .3s, opacity .3s, top .3s; 
+      border-radius: 2px;
+    }
+    .hamburger span:nth-child(1){ top:4px; } 
+    .hamburger span:nth-child(2){ top:12px; } 
+    .hamburger span:nth-child(3){ top:20px; }
+    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
+    
+    .glow { text-shadow: 0 0 20px rgba(0,212,255,.6); }
+    .glow-green { text-shadow: 0 0 20px rgba(0,255,136,.6); }
+    .card { 
+      border: 1px solid rgba(0,212,255,.25); 
+      background: rgba(26,26,46,.85); 
+      backdrop-filter: blur(12px);
+      transition: all .3s ease;
+    }
+    .card:hover {
+      border-color: rgba(0,212,255,0.6);
+      box-shadow: 0 10px 30px rgba(0,212,255,.2);
+    }
+    .metric-card {
+      background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,255,136,0.1));
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all .3s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,212,255,.3);
+    }
+  </style>
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Document",
+    "name": "Nova Titan Systems Capability Statement",
+    "description": "Comprehensive capability statement for Nova Titan Systems LLC - cybersecurity, IT infrastructure, and cloud innovation solutions",
+    "url": "https://novatitan.net/capability-statement/",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://novatitan.net/#org",
+      "name": "Nova Titan Systems",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3223 S Loop 289, Suite 600",
+        "addressLocality": "Lubbock",
+        "addressRegion": "TX",
+        "postalCode": "79423",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-806-370-0624",
+      "email": "info@novatitan.net",
+      "url": "https://novatitan.net",
+      "knowsAbout": ["Cybersecurity", "IT Infrastructure", "Cloud Computing", "HIPAA Compliance", "PCI-DSS", "Network Security"]
+    },
+    "about": [
+      {
+        "@type": "Service",
+        "serviceType": "Cybersecurity Services",
+        "provider": { "@id": "https://novatitan.net/#org" },
+        "areaServed": ["West Texas", "Lubbock", "United States"]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "IT Infrastructure",
+        "provider": { "@id": "https://novatitan.net/#org" },
+        "areaServed": ["West Texas", "Lubbock", "United States"]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Cloud Innovation",
+        "provider": { "@id": "https://novatitan.net/#org" },
+        "areaServed": ["West Texas", "Lubbock", "United States"]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="text-white">
+  <!-- NAV -->
+  <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center group">
+          <img src="https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2" alt="Nova Titan Logo" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
+          <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
+        </a>
+        <div class="hidden sm:flex items-center space-x-6">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link">Services</a>
+          <a href="/resources/" class="nav-link">Resources</a>
+          <a href="/portfolio/" class="nav-link">Portfolio</a>
+          <a href="/blogs/" class="nav-link">Blog</a>
+          <a href="/faqs/" class="nav-link">FAQ</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
+            <i class="fas fa-calendar-check mr-1"></i>Book Now
+          </a>
+        </div>
+        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div id="mobileMenu" class="sm:hidden hidden pb-4">
+        <div class="flex flex-col space-y-2">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about/" class="nav-link">About</a>
+          <a href="/services/" class="nav-link">Services</a>
+          <a href="/resources/" class="nav-link">Resources</a>
+          <a href="/portfolio/" class="nav-link">Portfolio</a>
+          <a href="/blogs/" class="nav-link">Blog</a>
+          <a href="/faqs/" class="nav-link">FAQ</a>
+          <a href="/contact/" class="nav-link">Contact</a>
+          <a href="/book-now/" class="nav-link">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-2 bg-cyan-900/30 border border-cyan-400/30 rounded-full text-cyan-300 text-sm glow font-mono mb-6">
+          <i class="fas fa-file-alt mr-2"></i>Official Capability Statement
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-bold text-cyan-300 glow mb-4">
+          Nova Titan Systems LLC
+        </h1>
+        <p class="text-xl text-gray-300 mb-4">Secure. Optimize. Innovate.</p>
+        <p class="text-gray-400">
+          <i class="fas fa-map-marker-alt mr-2 text-cyan-400"></i>
+          3223 S Loop 289, Suite 600, Lubbock, TX 79423
+        </p>
+        <p class="text-gray-400 mt-2">
+          <i class="fas fa-phone mr-2 text-cyan-400"></i>(806) 370-0624
+          <span class="mx-3">|</span>
+          <i class="fas fa-envelope mr-2 text-cyan-400"></i>info@novatitan.net
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY OVERVIEW -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="card rounded-xl p-8 mb-12">
+        <h2 class="text-3xl font-bold text-cyan-300 glow mb-6">
+          <i class="fas fa-building mr-3"></i>Company Overview
+        </h2>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          Nova Titan Systems LLC provides <strong class="text-cyan-400">IT infrastructure support</strong>, <strong class="text-green-400">cybersecurity services</strong>, <strong class="text-purple-400">cloud security</strong>, field technical services, telecommunications, and ICS/OT support for government and commercial clients. Strategically positioned in <strong class="text-green-400">Lubbock, Texas</strong>, we deliver on-site services throughout West Texas and nationwide remote support capabilities.
+        </p>
+        <p class="text-gray-300 text-lg leading-relaxed mt-4">
+          As a <strong class="text-cyan-400">Small Business</strong> and <strong class="text-green-400">Minority-Owned</strong> enterprise, we are positioned to serve as both prime contractor and subcontractor. We are <strong class="text-purple-400">micro-purchase ready</strong> and accept credit card payments for rapid procurement.
+        </p>
+      </div>
+
+      <!-- Performance Metrics -->
+      <div class="mb-12">
+        <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-8">
+          Government Contracting Information
+        </h2>
+        <div class="card rounded-xl p-8 mb-8">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="metric-card">
+              <div class="text-xs text-gray-400 mb-2">UEI</div>
+              <div class="text-xl font-bold text-cyan-400 font-mono">CZ8BLZMSKZ66</div>
+            </div>
+            <div class="metric-card">
+              <div class="text-xs text-gray-400 mb-2">CAGE Code</div>
+              <div class="text-xl font-bold text-green-400 font-mono">170W6</div>
+            </div>
+            <div class="metric-card">
+              <div class="text-xs text-gray-400 mb-2">SAM.gov Status</div>
+              <div class="text-xl font-bold text-green-400">Active</div>
+            </div>
+            <div class="metric-card">
+              <div class="text-xs text-gray-400 mb-2">DSBS</div>
+              <div class="text-xl font-bold text-cyan-400">Verified</div>
+            </div>
+            <div class="metric-card">
+              <div class="text-xs text-gray-400 mb-2">Texas HUB</div>
+              <div class="text-xl font-bold text-yellow-400">In Progress</div>
+            </div>
+            <div class="metric-card">
+              <div class="text-xs text-gray-400 mb-2">Micro-Purchase</div>
+              <div class="text-xl font-bold text-green-400">Ready</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card rounded-xl p-6">
+          <h3 class="text-xl font-bold text-cyan-300 mb-4">Business Classifications</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <span class="inline-block px-3 py-1 bg-cyan-900/30 border border-cyan-400/30 rounded-full text-cyan-300 text-sm">Small Business</span>
+            </div>
+            <div>
+              <span class="inline-block px-3 py-1 bg-green-900/30 border border-green-400/30 rounded-full text-green-300 text-sm">Minority-Owned</span>
+            </div>
+            <div>
+              <span class="inline-block px-3 py-1 bg-purple-900/30 border border-purple-400/30 rounded-full text-purple-300 text-sm">Prime + Sub Capable</span>
+            </div>
+            <div>
+              <span class="inline-block px-3 py-1 bg-yellow-900/30 border border-yellow-400/30 rounded-full text-yellow-300 text-sm">Credit Card Accepted</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE COMPETENCIES -->
+  <section class="py-12 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-12">
+        <i class="fas fa-th-large mr-3"></i>Core Competencies
+      </h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Cybersecurity & Cloud Security -->
+        <div class="card rounded-xl p-6">
+          <div class="text-4xl text-cyan-400 mb-4"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">Cybersecurity & Cloud Security</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Security audits and assessments</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Cloud security implementation</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Vulnerability scanning</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Security awareness training</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Compliance alignment support</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Incident response planning</li>
+          </ul>
+        </div>
+
+        <!-- IT Infrastructure & Networking -->
+        <div class="card rounded-xl p-6">
+          <div class="text-4xl text-green-400 mb-4"><i class="fas fa-network-wired"></i></div>
+          <h3 class="text-2xl font-bold text-green-300 mb-4">IT Infrastructure & Networking</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Network design and deployment</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Infrastructure setup and configuration</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Hardware installation and integration</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Wi-Fi and wireless network deployment</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Cable management and organization</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Smart building technology integration</li>
+          </ul>
+        </div>
+
+        <!-- Field Technical Services -->
+        <div class="card rounded-xl p-6">
+          <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-tools"></i></div>
+          <h3 class="text-2xl font-bold text-purple-300 mb-4">Field Technical Services</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li><i class="fas fa-check text-green-400 mr-2"></i>On-site technical support</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Equipment installation and configuration</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Hardware deployment services</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Rack and stack operations</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Device setup and testing</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Field engineering support</li>
+          </ul>
+        </div>
+
+        <!-- Telecommunications & ICS/OT Support -->
+        <div class="card rounded-xl p-6">
+          <div class="text-4xl text-yellow-400 mb-4"><i class="fas fa-broadcast-tower"></i></div>
+          <h3 class="text-2xl font-bold text-yellow-300 mb-4">Telecommunications & ICS/OT Support</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li><i class="fas fa-check text-green-400 mr-2"></i>VoIP and communication systems</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Industrial control systems security</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Operational technology support</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Network infrastructure for ICS/OT</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>SCADA system support</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>IoT device integration and security</li>
+          </ul>
+        </div>
+
+        <!-- Consulting & Managed Services -->
+        <div class="card rounded-xl p-6">
+          <div class="text-4xl text-cyan-400 mb-4"><i class="fas fa-headset"></i></div>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">Consulting & Managed Services</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li><i class="fas fa-check text-green-400 mr-2"></i>IT strategy and planning</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Technology roadmap development</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Remote technical support</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Help desk services</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>System monitoring and maintenance</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Cloud service management</li>
+          </ul>
+        </div>
+
+        <!-- Cloud Innovation & Digital Products -->
+        <div class="card rounded-xl p-6">
+          <div class="text-4xl text-green-400 mb-4"><i class="fas fa-cloud"></i></div>
+          <h3 class="text-2xl font-bold text-green-300 mb-4">Cloud Innovation & Digital Products</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li><i class="fas fa-check text-green-400 mr-2"></i>CloudWarden security platform development</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Multi-cloud architecture design</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Cloud migration services</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Automation system development</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Custom security tool creation</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>SaaS product launch support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITIVE DIFFERENTIATORS -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-12">
+        Differentiators
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card rounded-xl p-6">
+          <div class="flex items-start">
+            <i class="fas fa-layer-group text-cyan-400 text-2xl mr-4 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-bold text-cyan-300 mb-2">Multi-Discipline Service Model</h3>
+              <p class="text-gray-400">Single-source provider delivering IT infrastructure, cybersecurity, cloud security, field services, and telecommunications support</p>
+            </div>
+          </div>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-start">
+            <i class="fas fa-map-marked-alt text-green-400 text-2xl mr-4 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-bold text-green-300 mb-2">Rapid West Texas Deployment</h3>
+              <p class="text-gray-400">Strategic Lubbock location enabling quick response throughout West Texas region with proximity to military installations</p>
+            </div>
+          </div>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-start">
+            <i class="fas fa-user-tie text-purple-400 text-2xl mr-4 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-bold text-purple-300 mb-2">Owner-Led Execution</h3>
+              <p class="text-gray-400">Direct oversight and quality control with principal involvement in project delivery</p>
+            </div>
+          </div>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-start">
+            <i class="fas fa-credit-card text-yellow-400 text-2xl mr-4 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-bold text-yellow-300 mb-2">Micro-Purchase Readiness</h3>
+              <p class="text-gray-400">Accept credit card payments for rapid procurement under simplified acquisition thresholds</p>
+            </div>
+          </div>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-start">
+            <i class="fas fa-handshake text-cyan-400 text-2xl mr-4 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-bold text-cyan-300 mb-2">Prime & Subcontract Flexibility</h3>
+              <p class="text-gray-400">Experienced in both prime contractor and subcontractor roles with established teaming capabilities</p>
+            </div>
+          </div>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-start">
+            <i class="fas fa-certificate text-green-400 text-2xl mr-4 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-bold text-green-300 mb-2">Small Business & Minority-Owned</h3>
+              <p class="text-gray-400">SAM.gov verified small business with self-identified minority ownership</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPRESENTATIVE PROJECTS / PAST PERFORMANCE -->
+  <section class="py-12 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-12">
+        Representative Projects
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card rounded-xl p-6">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-coffee text-cyan-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-bold text-cyan-300">7 Brew</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Multi-location network infrastructure and POS system integration for retail coffee chain</p>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-phone-volume text-green-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-bold text-green-300">Granite Telecommunications</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Field technical services and telecommunications equipment deployment support</p>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-cash-register text-purple-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-bold text-purple-300">NCR / Lexmark</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Hardware installation and configuration services for POS and printing equipment</p>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-store text-yellow-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-bold text-yellow-300">Office Depot / Walmart</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Field service support for retail technology infrastructure and hardware deployment</p>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-golf-ball text-cyan-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-bold text-cyan-300">Tagmarshal</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Golf course management technology installation and network integration services</p>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-university text-green-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-bold text-green-300">Banks & Schools</h3>
+          </div>
+          <p class="text-gray-400 text-sm">IT infrastructure support and security implementations for financial and educational institutions</p>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-shield-virus text-purple-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-bold text-purple-300">CloudWarden IAM</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Development of cloud security monitoring platform with IAM policy analysis capabilities</p>
+        </div>
+        <div class="card rounded-xl p-6">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-briefcase text-yellow-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-bold text-yellow-300">WorkMarket / Field Nation</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Platform-based field service delivery for enterprise clients nationwide</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAICS & PSC CODES -->
+  <section class="py-12 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-12">
+        NAICS & PSC Codes
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="card rounded-xl p-6">
+          <h3 class="text-xl font-bold text-cyan-300 mb-4">
+            <i class="fas fa-list-ul mr-2"></i>Primary NAICS Codes
+          </h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <span class="font-mono text-cyan-400 font-bold mr-3 mt-0.5">541519</span>
+              <span class="text-sm">Other Computer Related Services (Primary)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-mono text-cyan-400 font-bold mr-3 mt-0.5">541512</span>
+              <span class="text-sm">Computer Systems Design Services</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-mono text-cyan-400 font-bold mr-3 mt-0.5">238210</span>
+              <span class="text-sm">Electrical Contractors and Other Wiring Installation Contractors</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-mono text-cyan-400 font-bold mr-3 mt-0.5">561621</span>
+              <span class="text-sm">Security Systems Services (except Locksmiths)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card rounded-xl p-6">
+          <h3 class="text-xl font-bold text-green-300 mb-4">
+            <i class="fas fa-tags mr-2"></i>Product Service Codes (PSC)
+          </h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-start">
+              <span class="font-mono text-green-400 font-bold mr-3 mt-0.5">D302</span>
+              <span class="text-sm">IT and Telecom - Systems Development</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-mono text-green-400 font-bold mr-3 mt-0.5">D310</span>
+              <span class="text-sm">IT and Telecom - Cyber Security and Data Backup</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-mono text-green-400 font-bold mr-3 mt-0.5">D399</span>
+              <span class="text-sm">IT and Telecom - Other IT and Telecommunications</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-mono text-green-400 font-bold mr-3 mt-0.5">R425</span>
+              <span class="text-sm">Professional Services - Engineering/Technical</span>
+            </li>
+            <li class="flex items-start">
+              <span class="font-mono text-green-400 font-bold mr-3 mt-0.5">J019</span>
+              <span class="text-sm">Maintenance/Repair/Rebuild of Equipment - IT Equipment</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card rounded-xl p-6">
+        <p class="text-gray-400 text-sm text-center">
+          <i class="fas fa-info-circle text-cyan-400 mr-2"></i>
+          Full listing of NAICS codes and detailed capability descriptions available in downloadable capability statement
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD PDF -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="card rounded-xl p-8 text-center">
+        <div class="text-5xl text-cyan-400 mb-4">
+          <i class="fas fa-file-pdf"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-cyan-300 glow mb-4">Download Full Capability Statement</h2>
+        <p class="text-gray-300 mb-6">
+          Complete federal capability statement including detailed service descriptions, full NAICS listings, certifications, and past performance
+        </p>
+        <a href="/Nova-Titan-Systems-Federal-Capability-Statement.pdf" download class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center" target="_blank">
+          <i class="fas fa-download mr-3"></i>
+          Download PDF Capability Statement
+        </a>
+        <p class="text-gray-400 text-sm mt-4">
+          PDF Format | Federal Acquisition Ready
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold glow mb-6">Ready to Work Together?</h2>
+      <p class="text-xl text-gray-300 mb-8">
+        Contact us to discuss partnership opportunities, subcontracting, or government contracts.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/contact/" class="bg-gradient-to-r from-cyan-400 to-green-400 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg hover:shadow-lg transition">
+          <i class="fas fa-envelope mr-3"></i>Contact Us
+        </a>
+        <a href="tel:+18063700624" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition text-lg">
+          <i class="fas fa-phone mr-3"></i>Call (806) 370-0624
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900/90 py-8">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-gray-300 text-sm">
+        &copy; 2025 Nova Titan Systems LLC. All rights reserved.
+      </p>
+      <p class="text-gray-400 text-xs mt-2">
+        Lubbock, TX | (806) 370-0624 | info@novatitan.net
+      </p>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        const isOpen = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden', !isOpen);
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+  </script>
+</body>
+</html>
