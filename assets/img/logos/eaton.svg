@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <g>
+    <rect x="10" y="25" width="50" height="50" fill="#00A94F" rx="5"/>
+    <text x="25" y="60" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF">E</text>
+    <text x="70" y="58" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#000000">EATON</text>
+    <text x="70" y="78" font-family="Arial, sans-serif" font-size="18" fill="#666666">Tripp Lite</text>
+  </g>
+</svg>

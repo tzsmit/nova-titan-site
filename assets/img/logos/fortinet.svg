@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <g>
+    <path fill="#EE3124" d="M10 10 h35 v35 h-35 z M55 10 h35 v35 h-35 z"/>
+    <path fill="#EE3124" d="M10 55 h80 v35 h-80 z"/>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#000000">Fortinet</text>
+  </g>
+</svg>

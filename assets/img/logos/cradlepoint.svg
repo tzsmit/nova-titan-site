@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <g>
+    <circle cx="40" cy="50" r="30" fill="#00A0DF" opacity="0.8"/>
+    <circle cx="60" cy="50" r="30" fill="#00A0DF" opacity="0.9"/>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#00A0DF">Cradlepoint</text>
+  </g>
+</svg>

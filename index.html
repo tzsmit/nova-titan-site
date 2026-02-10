@@ -496,31 +496,31 @@ description: "Nova Titan Systems delivers professional IT infrastructure, manage
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Cisco -->
         <div class="card rounded-xl p-6 text-center fade-in">
-          <div class="text-4xl mb-4 text-cyan-400">
-            <i class="fas fa-network-wired"></i>
+          <div class="mb-4 flex items-center justify-center h-16">
+            <img src="/assets/img/logos/cisco.svg" alt="Cisco Logo" class="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity">
           </div>
           <h3 class="text-lg font-semibold text-cyan-300 mb-2">Cisco</h3>
           <p class="text-sm text-gray-400">Enterprise networking & switching platforms</p>
         </div>
 
         <!-- Fortinet -->
-        <div class="card rounded-xl p-6 text-center fade-in border border-purple-400/30">
-          <div class="text-4xl mb-4 text-purple-400">
-            <i class="fas fa-shield-alt"></i>
+        <div class="card rounded-xl p-6 text-center fade-in border border-purple-400/30 hover:border-purple-400/60 transition-all group cursor-pointer" onclick="openCertificateModal()">
+          <div class="mb-4 flex items-center justify-center h-16">
+            <img src="/assets/img/logos/fortinet.svg" alt="Fortinet Logo" class="h-12 w-auto opacity-90 group-hover:opacity-100 transition-opacity">
           </div>
-          <h3 class="text-lg font-semibold text-purple-300 mb-2">Fortinet</h3>
+          <h3 class="text-lg font-semibold text-purple-300 mb-2 group-hover:text-purple-200">Fortinet</h3>
           <p class="text-sm text-gray-400">Certified security platform deployment</p>
           <div class="mt-3">
-            <a href="/assets/certs/fortinet-certified-associate-cybersecurity.pdf" target="_blank" class="text-xs text-purple-300 hover:text-purple-200 inline-flex items-center">
-              <i class="fas fa-certificate mr-1"></i>View Certificate
-            </a>
+            <span class="text-xs text-purple-300 group-hover:text-purple-200 inline-flex items-center">
+              <i class="fas fa-certificate mr-1 animate-pulse"></i>View Certificate
+            </span>
           </div>
         </div>
 
         <!-- Cradlepoint -->
         <div class="card rounded-xl p-6 text-center fade-in">
-          <div class="text-4xl mb-4 text-green-400">
-            <i class="fas fa-wifi"></i>
+          <div class="mb-4 flex items-center justify-center h-16">
+            <img src="/assets/img/logos/cradlepoint.svg" alt="Cradlepoint Logo" class="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity">
           </div>
           <h3 class="text-lg font-semibold text-green-300 mb-2">Cradlepoint</h3>
           <p class="text-sm text-gray-400">Wireless WAN & edge networking</p>
@@ -528,8 +528,8 @@ description: "Nova Titan Systems delivers professional IT infrastructure, manage
 
         <!-- SonicWall -->
         <div class="card rounded-xl p-6 text-center fade-in">
-          <div class="text-4xl mb-4 text-orange-400">
-            <i class="fas fa-fire"></i>
+          <div class="mb-4 flex items-center justify-center h-16">
+            <img src="/assets/img/logos/sonicwall.svg" alt="SonicWall Logo" class="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity">
           </div>
           <h3 class="text-lg font-semibold text-orange-300 mb-2">SonicWall</h3>
           <p class="text-sm text-gray-400">Firewall & security appliances</p>
@@ -537,8 +537,8 @@ description: "Nova Titan Systems delivers professional IT infrastructure, manage
 
         <!-- Avigilon -->
         <div class="card rounded-xl p-6 text-center fade-in">
-          <div class="text-4xl mb-4 text-blue-400">
-            <i class="fas fa-video"></i>
+          <div class="mb-4 flex items-center justify-center h-16">
+            <img src="/assets/img/logos/avigilon.svg" alt="Avigilon Logo" class="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity">
           </div>
           <h3 class="text-lg font-semibold text-blue-300 mb-2">Avigilon</h3>
           <p class="text-sm text-gray-400">Video surveillance systems</p>
@@ -546,8 +546,8 @@ description: "Nova Titan Systems delivers professional IT infrastructure, manage
 
         <!-- AT&T -->
         <div class="card rounded-xl p-6 text-center fade-in">
-          <div class="text-4xl mb-4 text-cyan-400">
-            <i class="fas fa-signal"></i>
+          <div class="mb-4 flex items-center justify-center h-16">
+            <img src="/assets/img/logos/att.svg" alt="AT&T Logo" class="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity">
           </div>
           <h3 class="text-lg font-semibold text-cyan-300 mb-2">AT&T</h3>
           <p class="text-sm text-gray-400">Telecommunications infrastructure</p>
@@ -555,8 +555,8 @@ description: "Nova Titan Systems delivers professional IT infrastructure, manage
 
         <!-- Eaton / Tripp Lite -->
         <div class="card rounded-xl p-6 text-center fade-in">
-          <div class="text-4xl mb-4 text-yellow-400">
-            <i class="fas fa-plug"></i>
+          <div class="mb-4 flex items-center justify-center h-16">
+            <img src="/assets/img/logos/eaton.svg" alt="Eaton / Tripp Lite Logo" class="h-12 w-auto opacity-90 hover:opacity-100 transition-opacity">
           </div>
           <h3 class="text-lg font-semibold text-yellow-300 mb-2">Eaton / Tripp Lite</h3>
           <p class="text-sm text-gray-400">Power management & UPS systems</p>
@@ -850,3 +850,60 @@ description: "Nova Titan Systems delivers professional IT infrastructure, manage
     </div>
   </div>
 </section>
+
+<!-- Fortinet Certificate Modal -->
+<div id="certificateModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" onclick="closeCertificateModal(event)">
+  <div class="relative max-w-5xl w-full bg-gray-900 rounded-2xl shadow-2xl border border-purple-400/30" onclick="event.stopPropagation()">
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between p-6 border-b border-gray-700">
+      <div>
+        <h3 class="text-2xl font-bold text-purple-300 mb-1">
+          <i class="fas fa-certificate mr-2"></i>Fortinet Certified Associate in Cybersecurity
+        </h3>
+        <p class="text-sm text-gray-400">Professional Certification Verification</p>
+      </div>
+      <button onclick="closeCertificateModal()" class="text-gray-400 hover:text-white transition-colors p-2">
+        <i class="fas fa-times text-2xl"></i>
+      </button>
+    </div>
+    
+    <!-- Modal Body -->
+    <div class="p-6">
+      <div class="bg-gray-800 rounded-xl p-4 mb-6">
+        <embed src="/assets/certs/fortinet-certified-associate-cybersecurity.pdf" type="application/pdf" width="100%" height="600px" class="rounded-lg" />
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/assets/certs/fortinet-certified-associate-cybersecurity.pdf" target="_blank" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center justify-center">
+          <i class="fas fa-external-link-alt mr-2"></i>
+          Open in New Tab
+        </a>
+        <a href="/assets/certs/fortinet-certified-associate-cybersecurity.pdf" download class="px-6 py-3 rounded-lg border-2 border-purple-400/40 hover:bg-purple-400/10 transition-all inline-flex items-center justify-center">
+          <i class="fas fa-download mr-2"></i>
+          Download Certificate
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openCertificateModal() {
+  document.getElementById('certificateModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCertificateModal(event) {
+  if (!event || event.target.id === 'certificateModal') {
+    document.getElementById('certificateModal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeCertificateModal();
+  }
+});
+</script>
