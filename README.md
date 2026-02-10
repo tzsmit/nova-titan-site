@@ -50,7 +50,7 @@ Deploying secure, compliant network infrastructure for military bases, VA hospit
 **Services Include:**
 - Network infrastructure deployment (routers, switches, firewalls, access points)
 - Low-voltage cabling and structured wiring (Cat5e/6/6a, fiber optic)
-- Field technician dispatch (nationwide, 4-hour response)
+- Professional field services coordination (nationwide deployment capabilities)
 - Site surveys and technical documentation
 - Equipment installation, removal, and decommissioning
 
@@ -110,9 +110,9 @@ NIST and DISA STIG compliance, vulnerability assessments, security hardening, an
 ## 🌟 Service Experience
 
 ### Commercial IT Projects (Verified)
-- 95+ projects completed through WorkMarket, CloudWork Pro, and direct contracts
-- Enterprise clients: Amazon, Walmart, CVS, Office Depot, 7 BREW Coffee, ABC Supply
-- Nationwide field technician network for infrastructure deployments
+- 95+ enterprise projects completed nationwide
+- Experience supporting: Amazon, Walmart, CVS, Office Depot, 7 BREW Coffee, and major retailers
+- Management-first execution model with scalable deployment capabilities
 
 ### Government Contracting Ready
 - **SAM.gov Active** - Ready for federal procurement opportunities
