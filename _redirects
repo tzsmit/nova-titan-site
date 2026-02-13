@@ -1,42 +1,5 @@
-# Nova Titan Systems - URL Redirects for GitHub Pages
-# Format: old-path new-path [status-code]
-
-# Fix /home redirect (404 issue from Google Search Console)
-/home              /                 301
-/home/             /                 301
-/home/index.html   /                 301
-
-# Fix .html extension issues (canonical URLs)
-/index.html        /                 301
-/faqs.html         /faqs/            301
-/contact.html      /contact/         301
-/book-now.html     /book-now/        301
-/services.html     /services/        301
-/about.html        /about/           301
-/resources.html    /resources/       301
-/portfolio.html    /portfolio/       301
-/blog.html         /blog/            301
-/blogs.html        /blogs/           301
-
-# Legacy blog redirects
-/blogs/            /blog/            301
-
-# Ensure trailing slashes for consistency
-/about             /about/           301
-/services          /services/        301
-/contact           /contact/         301
-/faqs              /faqs/            301
-/book-now          /book-now/        301
-/resources         /resources/       301
-/portfolio         /portfolio/       301
-/testimonials      /testimonials/    301
-/government        /government/      301
-/industries        /industries/      301
-/partners          /partners/        301
-/capability-statement  /capability-statement/  301
-
-# Private pages - block access
-/private/*         /                 404
-
-# Old sitemap location (if exists)
-/sitemap_old.xml   /sitemap.xml      301
+# Redirects for removed pages
+/join-our-network/    /apply-tech/          301
+/ceo/                 /leadership/          301
+/discovery-call/      /book-now/            301
+/blog/                /resources/           301
