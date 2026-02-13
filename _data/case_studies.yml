@@ -165,11 +165,11 @@
 
 - id: va-healthcare
   featured: false
-  title: "Improving Veteran Healthcare Access Through Reliable IT Infrastructure"
-  subtitle: "Year-Round Medical Equipment Support Across Rural VA Facilities"
-  client: "CSA Solutions (Higi Health Stations)"
-  end_client: "VA Healthcare System"
-  location: "Multiple VA facilities across West Texas and New Mexico"
+  title: "Healthcare Equipment Support Through Commercial Contractor"
+  subtitle: "Medical Equipment Maintenance Services via CSA Solutions"
+  client: "CSA Solutions (Prime Contractor)"
+  end_client: "Healthcare Facility Equipment (Higi Health Stations)"
+  location: "Multiple healthcare facilities across West Texas and New Mexico"
   location_city: "Lubbock, Midland, Odessa, Roswell, Levelland"
   location_state: "Texas, New Mexico"
   date: "January 2024 - November 2024"
@@ -180,9 +180,9 @@
   industry: "Healthcare Services"
   region: "Multi-State"
   
-  challenge: "VA healthcare facilities across rural West Texas and New Mexico required ongoing maintenance and repair of medical kiosks and health monitoring equipment critical to veteran care delivery. Equipment failures directly impacted veteran access to healthcare services in underserved rural areas."
+  challenge: "Healthcare facilities across rural West Texas and New Mexico required ongoing maintenance and repair of medical kiosks and health monitoring equipment. Equipment failures directly impacted healthcare service delivery in underserved rural areas."
   
-  solution: "Nova Titan Systems provided year-round medical equipment repair, kiosk maintenance, hardware diagnostics, and healthcare facility IT support across multiple locations including Lubbock, Midland, Odessa, Roswell, and Levelland. Our rapid response model ensured minimal downtime for critical veteran healthcare equipment."
+  solution: "Nova Titan Systems provided year-round medical equipment repair, kiosk maintenance, hardware diagnostics, and healthcare facility IT support through our prime contractor partner, CSA Solutions. Our rapid response model ensured minimal downtime for critical healthcare equipment across multiple locations."
   
   services:
     - "Medical equipment repair and maintenance"
@@ -197,9 +197,9 @@
     - "Maintained consistent service quality across multiple rural locations"
     - "Delivered consistent service quality across 20+ healthcare projects"
     - "Established reliable vendor relationship with CSA Solutions"
-    - "Enabled continuous veteran healthcare access"
+    - "Enabled continuous healthcare access"
   
-  impact: "This ongoing partnership directly supports our mission of bridging the digital divide in healthcare delivery. By ensuring reliable operation of medical kiosks and health monitoring equipment in rural VA facilities, we help veterans in underserved areas access the same quality of care available in major metropolitan centers."
+  impact: "This ongoing partnership supports our mission of bridging the digital divide in healthcare delivery. By ensuring reliable operation of medical kiosks and health monitoring equipment in rural facilities, we help communities in underserved areas access quality healthcare technology."
   
   metrics:
     timeline: "11 months"
@@ -212,15 +212,15 @@
   icon: "fas fa-heartbeat"
   color: "red"
   
-  meta_description: "Nova Titan Systems provides ongoing VA healthcare IT support across rural West Texas and New Mexico, maintaining critical medical kiosks and health monitoring equipment for veteran care."
-  keywords: "VA healthcare IT, veteran medical equipment, rural healthcare technology, federal healthcare contractor, VA kiosk repair"
+  meta_description: "Nova Titan Systems provides healthcare IT support across rural West Texas and New Mexico, maintaining medical kiosks and health monitoring equipment through commercial contractor partnerships."
+  keywords: "healthcare IT, medical equipment maintenance, rural healthcare technology, healthcare contractor, medical kiosk repair"
 
 - id: office-depot-federal
   featured: false
-  title: "Nationwide IT Deployment for Federal GSA Contractor"
-  subtitle: "Smart Hands IT Support for Federal Supply Chain Operations"
-  client: "AVASO Technology Solutions Inc"
-  end_client: "Office Depot (Federal GSA Supply Schedule Contractor)"
+  title: "Commercial IT Deployment Support Through Technology Partner"
+  subtitle: "Smart Hands IT Support for Commercial Contractor Operations"
+  client: "AVASO Technology Solutions Inc (Prime Contractor)"
+  end_client: "Office Depot (Commercial Operations)"
   location: "West Texas and New Mexico (Lubbock, Midland, Odessa, Roswell)"
   location_city: "Lubbock, Midland, Odessa, Roswell"
   location_state: "Texas, New Mexico"
@@ -232,26 +232,26 @@
   industry: "Commercial Supply Chain"
   region: "Multi-State"
   
-  challenge: "Office Depot, operating under federal GSA supply schedules, required rapid-response IT smart hands support across multiple locations in rural West Texas and New Mexico. Projects ranged from desktop deployment to network equipment installation and server maintenance, often with tight turnaround requirements to support federal agency operations."
+  challenge: "A commercial contractor required rapid-response IT smart hands support across multiple locations in rural West Texas and New Mexico. Projects ranged from desktop deployment to network equipment installation and server maintenance with tight turnaround requirements."
   
-  solution: "Nova Titan Systems provided on-demand IT smart hands support as a regional partner for AVASO Technology Solutions. Our West Texas presence enabled 4-hour response times for urgent federal contractor deployments, ensuring Office Depot could meet federal agency service level agreements."
+  solution: "Nova Titan Systems provided on-demand IT smart hands support as a regional partner for AVASO Technology Solutions. Our West Texas presence enabled 4-hour response times for urgent commercial deployments across the region."
   
   services:
     - "IT smart hands support and rapid response"
     - "Desktop deployment and configuration"
     - "Network equipment installation"
     - "Server maintenance and troubleshooting"
-    - "Federal contractor logistics support"
+    - "Commercial contractor logistics support"
     - "Multi-location coverage across rural areas"
   
   results:
-    - "Completed 6+ federal contractor IT deployments"
+    - "Completed 6+ commercial IT deployments"
     - "Maintained 100% on-time completion rate"
-    - "Delivered consistent regional IT support for federal operations"
+    - "Delivered consistent regional IT support"
     - "Established regional coverage capability for AVASO"
-    - "Enabled federal GSA contractor to serve rural agencies"
+    - "Enabled commercial contractor to serve rural locations"
   
-  impact: "By providing reliable IT deployment support for federal contractors in rural areas, we ensure that federal agencies in underserved regions receive the same rapid, professional IT support available in major cities. This work directly supports federal operations serving rural communities across West Texas and New Mexico."
+  impact: "By providing reliable IT deployment support for commercial contractors in rural areas, we help ensure that businesses in underserved regions receive the same rapid, professional IT support available in major cities."
   
   metrics:
     timeline: "7 months"
@@ -259,13 +259,13 @@
     on_time_rate: "100%"
     response_time: "4 hours"
   
-  technical_specs: "ATS case management system, Office Depot PPT contracts, federal GSA supply chain support, multi-location field technician dispatch"
+  technical_specs: "ATS case management system, multi-location field technician dispatch, commercial contractor support"
   
   icon: "fas fa-hands-helping"
   color: "green"
   
-  meta_description: "Nova Titan Systems provides rapid-response IT smart hands support for federal GSA contractors across rural West Texas and New Mexico."
-  keywords: "federal GSA IT support, smart hands technician, Office Depot contractor, rural federal IT, AVASO partner"
+  meta_description: "Nova Titan Systems provides rapid-response IT smart hands support for commercial contractors across rural West Texas and New Mexico."
+  keywords: "commercial IT support, smart hands technician, contractor support, rural IT services, AVASO partner"
 
 - id: abc-supply-migration
   featured: false
