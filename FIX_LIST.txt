@@ -1,0 +1,14 @@
+FILES TO FIX - Government Language:
+
+1. ./apply-tech/index.html:38 - "serving... government agencies"
+2. ./index.html:420 - "serving businesses and agencies"  
+3. ./services/lubbock/network-installation.html:279 - "government projects"
+4. ./services/lubbock/security-systems.html:4 - meta: "government facilities"
+5. ./services/lubbock/security-systems.html:142 - "government installations"
+6. ./government/index.html:43 - "serving federal, state"
+7. ./leadership/index.html:19 - schema: "serving federal, state, local"
+8. ./leadership/index.html:52 - OG: "serving government agencies"
+9. ./leadership/index.html:89 - content: "serving federal, state"
+10. ./leadership/index.html:343 - CTA: "serving federal, state, local"
+
+TOTAL: 10 instances to fix
