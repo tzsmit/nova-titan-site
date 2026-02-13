@@ -2,7 +2,7 @@
 
 **Bridging the Digital Divide Through Government IT Infrastructure**
 
-A Black-owned, mission-driven IT contractor serving federal, state, and local government agencies in underserved communities across America.
+A Black-owned, mission-driven IT contractor pursuing federal, state, and local government contracts to serve underserved communities across America.
 
 ## 🎯 Our Mission
 
@@ -12,7 +12,7 @@ Our mission is to deploy reliable, secure, and accessible IT infrastructure for 
 
 > **"We don't just install routers and switches—we connect communities to the future."**
 
-## 🏛️ Government Sectors We Serve
+## 🏛️ Government Sectors We're Pursuing
 
 ### Federal Government (SAM.gov Active)
 - **Department of Defense (DoD)**: Military bases, installations, equipment deployments
@@ -20,7 +20,7 @@ Our mission is to deploy reliable, secure, and accessible IT infrastructure for 
 - **USDA & Rural Services**: Agricultural facilities, rural broadband support, regional offices
 - **DHS, SSA, & Federal Buildings**: Security infrastructure, facility IT modernization
 
-**Ready to Serve**: Federal agencies, DoD installations, VA facilities, and rural services
+**Status**: Ready to serve as prime or subcontractor
 
 ### State Government (Texas HUB Application Planned)
 - **State Agencies**: IT infrastructure, cybersecurity compliance, data center support
@@ -45,7 +45,7 @@ Our mission is to deploy reliable, secure, and accessible IT infrastructure for 
 ## 🔧 Core Service Capabilities
 
 ### IT Infrastructure for Government Facilities
-Deploying secure, compliant network infrastructure for military bases, VA hospitals, federal buildings, state agencies, school districts, and local government facilities in underserved areas nationwide.
+Commercial experience with secure network infrastructure deployments. Positioned to serve military bases, VA hospitals, federal buildings, state agencies, school districts, and local government facilities.
 
 **Services Include:**
 - Network infrastructure deployment (routers, switches, firewalls, access points)
