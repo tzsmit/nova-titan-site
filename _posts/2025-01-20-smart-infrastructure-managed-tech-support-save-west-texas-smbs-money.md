@@ -82,12 +82,12 @@ We implemented a professional network with:
 **Start investing in:**
 - Smart thermostats (Nest, Ecobee): **20-30% energy savings**
 - Automated lighting: **Cut electricity costs 40%**
-- Integrated security (cameras, access control, alarms)
+- Integrated smart home technology (thermostats, lighting, automation)
 - Centralized management from your phone
 
 **Cost breakdown:**
 - Smart thermostat installation: **$199-$499**
-- 5-camera security system: **$1,499** (installed)
+- Smart home automation package: **$799-$2,999**
 - Annual energy savings: **$800-$1,500**
 - **Payback period: 12-18 months**
 
@@ -357,7 +357,7 @@ Technology failures aren't a matter of **if**, they're a matter of **when**. The
 - Small business network (1-10 employees): **$499-$1,499**
 - Medium business network (10-50 employees): **$2,499-$4,999**
 - Smart home automation: **$799-$2,999**
-- Security camera system (4-8 cameras): **$1,499-$3,499**
+- Security infrastructure network cabling (4-8 camera locations): **$999-$2,499**
 
 ### Managed IT Support Plans
 - **Titan Essential:** $99/month (basic remote support + monitoring)
