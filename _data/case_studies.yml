@@ -62,8 +62,8 @@
 
 - id: amazon-security
   featured: true
-  title: "Enterprise-Scale Security Infrastructure for Major Logistics Hub"
-  subtitle: "Advanced Access Control System Deployment for Amazon"
+  title: "Enterprise-Scale IT Infrastructure Support for Major Logistics Hub"
+  subtitle: "Access Control Infrastructure Deployment for Amazon (Subcontractor under Velociti)"
   client: "Velociti"
   end_client: "Amazon"
   location: "Hobbs, NM 88240"
@@ -77,24 +77,24 @@
   industry: "Logistics"
   region: "New Mexico"
   
-  challenge: "Amazon's Hobbs logistics facility required installation of advanced MS5 Keycafe electronic key management systems to enhance security and streamline access control across a large-scale distribution center in rural New Mexico."
+  challenge: "Amazon's Hobbs logistics facility required infrastructure support for deployment of advanced MS5 Keycafe electronic key management systems to enhance security and streamline access control across a large-scale distribution center in rural New Mexico."
   
-  solution: "Nova Titan Systems deployed smart locker installation and electronic key management systems, integrating secure facility access control with existing logistics operations. The project required precision installation, system integration, and thorough testing to ensure 24/7 operational reliability."
+  solution: "Working as a subcontractor under Velociti (a licensed security contractor), Nova Titan Systems provided physical mounting, cabling infrastructure, and logistics support for smart locker and electronic key management system deployment. The project required precision infrastructure work, coordination with the licensed prime contractor, and thorough testing to support 24/7 operational reliability."
   
   services:
-    - "MS5 Keycafe Unit installation"
-    - "Smart locker deployment and configuration"
-    - "Electronic key management systems"
-    - "Secure facility access control integration"
+    - "Physical mounting and cabling infrastructure for MS5 Keycafe units (under Velociti license)"
+    - "Smart locker physical mounting and cabling support"
+    - "Low-voltage cabling for electronic key management systems"
+    - "IT infrastructure support for facility access control integration"
     - "Logistics facility IT infrastructure support"
   
   results:
-    - "Completed enterprise-scale security infrastructure deployment"
-    - "Zero downtime during installation in active logistics facility"
-    - "Enhanced security infrastructure for 24/7 operations"
+    - "Completed enterprise-scale infrastructure support deployment"
+    - "Zero downtime during work in active logistics facility"
+    - "Provided reliable subcontractor support for licensed security contractor"
     - "Demonstrated capability for enterprise-scale deployments"
   
-  impact: "Bringing enterprise-grade security infrastructure to rural New Mexico, this project bridged the technology gap between major metropolitan distribution centers and facilities serving underserved communities."
+  impact: "Bringing enterprise-grade IT infrastructure support to rural New Mexico, this project bridged the technology gap between major metropolitan distribution centers and facilities serving underserved communities. Work performed as subcontractor under Velociti, a licensed security contractor."
   
   metrics:
     timeline: "2 days"
@@ -107,8 +107,8 @@
   icon: "fas fa-warehouse"
   color: "orange"
   
-  meta_description: "Nova Titan Systems deployed enterprise-scale security infrastructure for Amazon's Hobbs, NM logistics facility including advanced electronic key management systems."
-  keywords: "Amazon IT contractor, logistics security, access control systems, rural New Mexico IT, enterprise security infrastructure"
+  meta_description: "Nova Titan Systems provided infrastructure support for Amazon's Hobbs, NM logistics facility including cabling and mounting for electronic key management systems, as subcontractor under Velociti."
+  keywords: "Amazon IT contractor, logistics infrastructure, access control cabling, rural New Mexico IT, enterprise IT infrastructure"
 
 - id: 7brew-multi-site
   featured: true

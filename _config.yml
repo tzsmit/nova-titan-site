@@ -24,7 +24,7 @@ company:
     - "541513"  # Computer Facilities Management Services
     - "541611"  # Administrative Management And General Management Consulting Services
     - "541690"  # Other Scientific And Technical Consulting Services
-    - "561621"  # Security Systems Services (Except Locksmiths)
+    - "561621"  # Security Systems Services (Except Locksmiths) - infrastructure cabling support only; physical device installation & monitoring performed by licensed subcontractor partners
   psc_codes:
     - "DA01"    # IT and Telecom - Business Application/Application Development Support Services (Labor)
     - "DA10"    # IT and Telecom - Business Application/Application Development Software As A Service
@@ -49,10 +49,8 @@ company:
     - "DJ10"    # IT and Telecom - Security And Compliance As A Service
     - "DK01"    # IT and Telecom - Storage Support Services (Labor)
     - "DK10"    # IT and Telecom - Storage As A Service
-    - "J063"    # Maintenance, Repair, And Rebuilding Of Equipment- Alarm, Signal, And Security Detection Systems
     - "L058"    # Technical Representative- Communication, Detection, And Coherent Radiation Equipment
     - "L060"    # Technical Representative- Fiber Optics Materials, Components, Assemblies, And Accessories
-    - "N063"    # Installation Of Equipment- Alarm, Signal, And Security Detection Systems
     - "N074"    # Installation Of Equipment- Office Machines, Text Processing Systems, And Visible Record Equipment
   certifications:
     - "WorkMarket Verified Vendor"
@@ -81,7 +79,7 @@ company:
   business_attributes:
     response_time: "Same-day dispatch available for West Texas"
     coverage: "Local + Nationwide Extended"
-    experience: "95+ field projects completed"
+    experience: "95+ field projects completed (as of Feb 2026)"
     availability: "24/7 emergency support available"
 
 # Build Settings
