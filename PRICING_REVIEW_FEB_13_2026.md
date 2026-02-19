@@ -118,7 +118,7 @@ Typical projects: $150-$1,500
 - TV Mounting: **Starting at $99**
 - Smart Home Setup (Basic): **Starting at $150**
 - Smart Home Setup (Complete): **Starting at $500**
-- Security Camera Install (1-4 cameras): **Starting at $299**
+- Security Camera Cabling (1-4 runs): **Starting at $299** *(infrastructure cabling only; device installation via licensed partners)*
 - Network Setup (Home WiFi): **Starting at $199**
 
 **Commercial Projects:**

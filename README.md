@@ -26,13 +26,13 @@ Our mission is to deploy reliable, secure, and accessible IT infrastructure for 
 - **State Agencies**: IT infrastructure, cybersecurity compliance, data center support
 - **Universities & Colleges**: Campus networks, research facilities, student services
 - **State Hospitals & Health Systems**: Healthcare IT, HIPAA compliance, telehealth support
-- **Courts & Correctional Facilities**: Secure networks, surveillance systems, access control
+- **Courts & Correctional Facilities**: IT infrastructure, network security, structured cabling
 
 ### Local Government (Ready to Serve)
 - **Cities & Municipalities**: City hall IT, public Wi-Fi, smart city infrastructure
 - **County Governments**: Courthouse technology, emergency services IT, records management
 - **School Districts & Libraries**: Student network access, digital learning infrastructure, public internet
-- **Public Safety & Emergency Services**: Police/fire/EMS communications, dispatch systems, surveillance
+- **Public Safety & Emergency Services**: Police/fire/EMS communications, dispatch systems, IT infrastructure
 
 ## 📊 Key Statistics
 
@@ -40,7 +40,7 @@ Our mission is to deploy reliable, secure, and accessible IT infrastructure for 
 - **SAM.gov Active** | UEI: CZ8BLZMSKZ66 | CAGE Code: 170W6
 - **Black-Owned** | **Minority-Owned** | Small Business
 - **Based in Lubbock, TX** (HUBZone) | Serving Nationwide
-- **10 NAICS Codes** | **27 PSC Codes** | Federal, State & Local ready
+- **8 NAICS Codes** | **28 PSC Codes** | Federal, State & Local ready
 
 ## 🔧 Core Service Capabilities
 
@@ -102,8 +102,8 @@ NIST and DISA STIG compliance, vulnerability assessments, security hardening, an
 | **CAGE Code** | 170W6 |
 | **DUNS** | 141007579 |
 | **Primary NAICS** | 541519 (Other Computer Related Services) |
-| **Additional NAICS** | 541512, 541513, 238210, 238990, 541611, 541690, 561621, 561612, 561210, 562111 |
-| **PSC Codes** | 27 codes covering IT & Telecom Services |
+| **Additional NAICS** | 541512, 541513, 238210, 238990, 561621, 541611, 541690 |
+| **PSC Codes** | 28 codes covering IT & Telecom Services |
 | **Business Type** | Black-Owned, Minority-Owned, Small Business |
 | **Location** | Lubbock, TX (HUBZone-eligible) |
 
@@ -117,7 +117,7 @@ NIST and DISA STIG compliance, vulnerability assessments, security hardening, an
 ### Government Contracting Ready
 - **SAM.gov Active** - Ready for federal procurement opportunities
 - **CAGE Code 170W6** - Prime contractor capable
-- **10 Service-Based NAICS Codes** - Comprehensive IT service coverage
+- **8 NAICS Codes** - Comprehensive IT service coverage
 - **Compliance Ready** - NIST, DISA STIG capabilities
 - **Serving**: Federal, State, and Local government agencies nationwide
 
