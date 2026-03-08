@@ -1,8 +1,9 @@
 User-agent: *
 Allow: /
 
-# Disallow private internal documents
-Disallow: /private/
+# Block utility pages from indexing
+Disallow: /public/
+Disallow: /thank-you/
 
 # Sitemap location
 Sitemap: https://novatitan.net/sitemap.xml

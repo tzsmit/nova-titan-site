@@ -25,7 +25,7 @@ Our mission is to deploy reliable, secure, and accessible IT infrastructure for 
 ### State Government (Texas HUB Application Planned)
 - **State Agencies**: IT infrastructure, cybersecurity compliance, data center support
 - **Universities & Colleges**: Campus networks, research facilities, student services
-- **State Hospitals & Health Systems**: Healthcare IT, HIPAA compliance, telehealth support
+- **State Hospitals & Health Systems**: Network infrastructure, structured cabling, cybersecurity consulting
 - **Courts & Correctional Facilities**: IT infrastructure, network security, structured cabling
 
 ### Local Government (Ready to Serve)
@@ -64,15 +64,15 @@ Round-the-clock monitoring, rapid response field services, and proactive mainten
 - Help desk and technical troubleshooting
 - Emergency response and incident management
 
-### Cybersecurity & Compliance
-NIST and DISA STIG compliance, vulnerability assessments, security hardening, and staff training to protect citizen data and ensure government agencies meet federal, state, and local security requirements.
+### Cybersecurity & Network Security
+Network security assessments, Fortinet firewall deployment, infrastructure hardening, and cybersecurity consulting to protect network infrastructure and ensure government agencies maintain secure operations.
 
 **Services Include:**
-- NIST Cybersecurity Framework implementation
-- DISA STIG compliance and security hardening
-- Vulnerability assessments and penetration testing
-- Security awareness training for government staff
-- Incident response and breach remediation
+- Network security assessments
+- Fortinet firewall deployment & basic configuration
+- Infrastructure hardening recommendations
+- Cybersecurity consulting
+- Managed network monitoring retainer
 
 ## 📂 Website Pages
 
@@ -118,7 +118,7 @@ NIST and DISA STIG compliance, vulnerability assessments, security hardening, an
 - **SAM.gov Active** - Ready for federal procurement opportunities
 - **CAGE Code 170W6** - Prime contractor capable
 - **10 Service-Based NAICS Codes** - Comprehensive IT service coverage
-- **Compliance Ready** - NIST, DISA STIG capabilities
+- **Compliance Ready** - SAM.gov active, CAGE assigned, government contractor ready
 - **Serving**: Federal, State, and Local government agencies nationwide
 
 ## 🎯 Mission-Driven Values

@@ -1,110 +1,65 @@
 ---
 layout: default
-title: "Professional Technology Services | Lubbock TX | Nova Titan Systems"
-description: "Professional technology services delivered by Traivone Smith: Infrastructure & installations, managed IT support, cloud & security strategy. Serving homes and businesses in Lubbock, West Texas, and nationwide."
-extra_head: |
-  <!-- Service Schema for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "@id": "https://novatitan.net/services/#infrastructure",
-        "serviceType": "Infrastructure & Installations",
-        "provider": {
-          "@type": "Organization",
-          "@id": "https://novatitan.net/#organization"
-        },
-        "areaServed": {
-          "@type": "State",
-          "name": "Texas"
-        },
-        "description": "Professional on-site technology installations including network cabling, hardware setup, smart home integration, and complete infrastructure buildouts.",
-        "offers": {
-          "@type": "Offer",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "price": "199",
-            "priceCurrency": "USD",
-            "priceComponentType": "StartingPrice"
-          }
-        }
-      },
-      {
-        "@type": "Service",
-        "@id": "https://novatitan.net/services/#managed-support",
-        "serviceType": "Managed Technology & Support",
-        "provider": {
-          "@type": "Organization",
-          "@id": "https://novatitan.net/#organization"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "United States"
-        },
-        "description": "Ongoing remote support, proactive monitoring, device management, and monthly maintenance plans to keep your technology running smoothly.",
-        "offers": {
-          "@type": "Offer",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "price": "99",
-            "priceCurrency": "USD",
-            "billingIncrement": "Month",
-            "priceComponentType": "StartingPrice"
-          }
-        }
-      },
-      {
-        "@type": "Service",
-        "@id": "https://novatitan.net/services/#cloud-security",
-        "serviceType": "Cloud & Security Strategy",
-        "provider": {
-          "@type": "Organization",
-          "@id": "https://novatitan.net/#organization"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "United States"
-        },
-        "description": "Advanced security audits, cloud infrastructure assessments, cybersecurity training, and strategic technology planning for businesses.",
-        "offers": {
-          "@type": "Offer",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "price": "149",
-            "priceCurrency": "USD",
-            "priceComponentType": "StartingPrice"
-          }
-        }
-      }
-    ]
-  }
-  </script>
+title: "Technology Services | Lubbock TX | Nova Titan"
+description: "Professional technology services in Lubbock, TX. Structured cabling, network infrastructure, Fortinet firewalls, and cybersecurity."
 ---
+{% comment %}
+  Service Schema — matches Nova Titan's 12 executable services exactly
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://novatitan.net/services/#cabling",
+      "name": "Structured Cabling & Network Infrastructure",
+      "serviceType": "Structured Cabling",
+      "provider": {"@id": "https://novatitan.net/#org"},
+      "areaServed": {"@type": "State", "name": "Texas"},
+      "description": "Cat5e, Cat6, Cat6a, and fiber optic cabling with Fluke certification. Rack-and-stack, server-room build-outs, and cable testing."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://novatitan.net/services/#network",
+      "name": "Network Design, Installation & Optimization",
+      "serviceType": "Network Installation",
+      "provider": {"@id": "https://novatitan.net/#org"},
+      "areaServed": {"@type": "State", "name": "Texas"},
+      "description": "End-to-end network design, access point deployment, point-to-point wireless, and POS system deployment."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://novatitan.net/services/#security",
+      "name": "Cybersecurity Consulting & Fortinet Firewall Deployment",
+      "serviceType": "Cybersecurity Consulting",
+      "provider": {"@id": "https://novatitan.net/#org"},
+      "areaServed": {"@type": "Country", "name": "United States"},
+      "description": "Network security assessments, Fortinet firewall deployment and basic configuration, and managed network monitoring retainer."
+    }
+  ]
+}
+</script>
+
   <!-- HERO -->
   <section class="content pt-28 pb-14">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="inline-flex items-center px-4 py-2 rounded-full bg-cyan-900/30 border border-cyan-400/40 text-cyan-300 text-sm glow font-mono mb-6">
-          <span class="inline-block w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-          Professional • Hands-On Technology Partner
-        </span>
-        
+      <div class="text-center mb-12">
         <h1 class="text-4xl sm:text-6xl font-bold glow mb-6 fade-in">
-          <span class="text-cyan-300">Technology Services You Can Trust</span><br>
-          <span class="text-3xl glow-green">Infrastructure, Support & Security</span>
+          <span class="text-cyan-300">Professional Technology Services</span><br>
+          <span class="text-3xl glow-green">Cabling &bull; Networking &bull; Security</span>
         </h1>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-6 fade-in">
-          As a founder-led company, <strong class="text-cyan-300">we provide personalized service</strong> to 
-          homes and businesses to design, deploy, and maintain their technology infrastructure. From hands-on 
-          installations in <strong class="text-green-300">Lubbock & West Texas</strong> to remote nationwide 
-          support—you get consistent, reliable service without rotating teams.
+          Nova Titan Systems delivers hands-on infrastructure services&mdash;from structured cabling and network builds
+          to Fortinet firewall deployment and cybersecurity consulting. 
+          <strong class="text-cyan-300">Fortinet Certified</strong> &bull; 
+          <strong class="text-green-300">SAM.gov Registered</strong> &bull; 
+          Serving <strong class="text-green-300">West Texas</strong> and nationwide.
         </p>
         <div class="flex flex-wrap justify-center gap-4 fade-in">
-          <a href="#home-audit" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center">
-            <i class="fas fa-shield-check mr-2"></i>
-            Start with Security Audit
+          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center">
+            <i class="fas fa-calendar-check mr-2"></i>
+            Schedule Free Consultation
           </a>
           <a href="tel:+18063700624" class="px-6 py-3 rounded-lg border border-cyan-400/40 hover:bg-cyan-400/10 transition-all inline-flex items-center">
             <i class="fas fa-phone mr-2"></i>
@@ -115,200 +70,209 @@ extra_head: |
     </div>
   </section>
 
-  <!-- COMMERCIAL SERVICES -->
-  <section class="content py-12 bg-gradient-to-b from-gray-900/50 to-transparent">
+  <!-- CORE SERVICES — The Authoritative 12 -->
+  <section class="content py-12">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-purple-300 glow mb-4">Commercial Services</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">Enterprise-grade technology solutions for retail stores and commercial businesses requiring professional technology solutions</p>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold glow mb-4">Our Service Scope</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">Every service listed below is work we actively perform and deliver.</p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-8 mb-16">
-        <!-- Commercial Business Setup -->
-        <div class="card rounded-xl p-6 border border-purple-400/20 hover:border-purple-400/40 transition-all">
-          <div class="service-icon mb-4">
-            <i class="fas fa-store-alt text-2xl text-purple-400"></i>
+      <div class="grid lg:grid-cols-3 gap-8 mb-16">
+
+        <!-- Pillar 1: Cabling & Physical Infrastructure -->
+        <div id="cabling" class="service-card featured rounded-2xl p-8 fade-in">
+          <div class="service-icon home">
+            <i class="fas fa-ethernet text-3xl text-gray-900"></i>
           </div>
-          <h3 class="text-xl font-semibold text-purple-300 mb-3">Commercial Business Setup</h3>
-          <p class="text-gray-300 mb-4">Complete technology infrastructure setup for new businesses, retail stores, and commercial establishments. From network architecture to POS integration.</p>
-          <div class="price-tag mb-4">
-            <span class="text-purple-300">Starting at </span>
-            <span class="text-green-300 text-lg">$2,999</span>
-          </div>
-          <ul class="text-sm text-gray-400 mb-4 space-y-1">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Enterprise network design & setup</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>POS system integration & security</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Complete hardware procurement</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Staff training & documentation</li>
+          <h3 class="text-2xl font-bold text-cyan-300 mb-4">Cabling & Physical Infrastructure</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Professional structured cabling, rack-and-stack, and physical network builds for commercial and government facilities.
+          </p>
+
+          <ul class="feature-list mb-6 text-sm">
+            <li><i class="fas fa-network-wired"></i> Structured cabling &mdash; Cat5e, Cat6, Cat6a, fiber optic</li>
+            <li><i class="fas fa-server"></i> Rack-and-stack &amp; server-room build-outs</li>
+            <li><i class="fas fa-camera"></i> Security camera infrastructure (cabling &amp; mounting)</li>
+            <li><i class="fas fa-tachometer-alt"></i> Cable certification &amp; testing (Fluke equipment)</li>
+            <li><i class="fas fa-clipboard-list"></i> Site surveys &amp; technical documentation</li>
           </ul>
-          <a class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg inline-flex items-center" href="/book-now/">
-            <i class="fas fa-calendar mr-2"></i>Schedule Consultation
-          </a>
+
+          <div class="flex flex-col gap-3">
+            <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
+              <i class="fas fa-calendar-check mr-2"></i>
+              Request a Site Survey
+            </a>
+            <p class="text-xs text-gray-400 text-center">
+              <i class="fas fa-map-marker-alt mr-1"></i>
+              Serving Lubbock &amp; West Texas &bull; 500-mile dispatch radius
+            </p>
+          </div>
         </div>
 
-        <!-- Technology Implementation -->
-        <div class="card rounded-xl p-6 border border-purple-400/20 hover:border-purple-400/40 transition-all">
-          <div class="service-icon mb-4">
-            <i class="fas fa-cogs text-2xl text-purple-400"></i>
+        <!-- Pillar 2: Network & Deployment -->
+        <div id="network" class="service-card rounded-2xl p-8 fade-in">
+          <div class="service-icon business">
+            <i class="fas fa-project-diagram text-3xl text-gray-900"></i>
           </div>
-          <h3 class="text-xl font-semibold text-purple-300 mb-3">Technology Implementation & Integration</h3>
-          <p class="text-gray-300 mb-4">Seamless integration of new systems, software deployment, and technology upgrades for existing commercial operations.</p>
-          <div class="price-tag mb-4">
-            <span class="text-purple-300">Starting at </span>
-            <span class="text-green-300 text-lg">$1,499</span>
-          </div>
-          <ul class="text-sm text-gray-400 mb-4 space-y-1">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>System integration & deployment</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Software configuration & testing</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Data migration & backup setup</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Security hardening & compliance</li>
-          </ul>
-          <a class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg inline-flex items-center" href="/book-now/">
-            <i class="fas fa-calendar mr-2"></i>Get Started
-          </a>
-        </div>
-      </div>
+          <h3 class="text-2xl font-bold text-green-300 mb-4">Network Design & Deployment</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            End-to-end network design, wireless deployment, and commercial system integration for businesses of every size.
+          </p>
 
-      <div class="text-center">
-        <div class="inline-flex items-center bg-purple-900/30 border border-purple-400/40 rounded-lg px-4 py-3">
-          <i class="fas fa-info-circle text-purple-400 mr-2"></i>
-          <span class="text-purple-300 font-semibold">Commercial services are separate installations from residential offerings</span>
+          <ul class="feature-list mb-6 text-sm">
+            <li><i class="fas fa-drafting-compass"></i> Network design, installation &amp; optimization</li>
+            <li><i class="fas fa-wifi"></i> Access point deployment (Ubiquiti, Meraki, Aruba)</li>
+            <li><i class="fas fa-broadcast-tower"></i> Point-to-point wireless links</li>
+            <li><i class="fas fa-cash-register"></i> POS system &amp; payment terminal deployment</li>
+          </ul>
+
+          <div class="flex flex-col gap-3">
+            <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
+              <i class="fas fa-calendar-check mr-2"></i>
+              Get a Network Quote
+            </a>
+            <p class="text-xs text-gray-400 text-center">
+              <i class="fas fa-globe mr-1"></i>
+              On-site &amp; multi-site rollouts available
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Security & Monitoring -->
+        <div id="security" class="service-card rounded-2xl p-8 fade-in">
+          <div class="service-icon cloud">
+            <i class="fas fa-shield-alt text-3xl text-gray-900"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-purple-300 mb-4">Security & Monitoring</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Fortinet firewall deployment, cybersecurity consulting, and ongoing network monitoring to protect your infrastructure.
+          </p>
+
+          <ul class="feature-list mb-6 text-sm">
+            <li><i class="fas fa-fire-alt"></i> Fortinet firewall deployment &amp; basic configuration</li>
+            <li><i class="fas fa-search"></i> Cybersecurity consulting &amp; network security assessments</li>
+            <li><i class="fas fa-chart-line"></i> Managed network monitoring retainer</li>
+          </ul>
+
+          <div class="flex flex-col gap-3">
+            <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
+              <i class="fas fa-calendar-check mr-2"></i>
+              Schedule Security Assessment
+            </a>
+            <p class="text-xs text-gray-400 text-center">
+              <i class="fas fa-certificate mr-1"></i>
+              Fortinet Certified Associate (FCA)
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- THREE PILLARS OVERVIEW -->
-  <section class="content py-12">
+  <!-- FULL SERVICE LIST — Flat Reference -->
+  <section class="content py-12 bg-gray-900/50">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold glow mb-4">Three Core Services</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">Real services delivered by a founder who knows technology inside and out</p>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold glow mb-4">Complete Service List</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">The 12 services we actively execute, nothing more and nothing less.</p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-8 mb-16">
-        <!-- Pillar 1: Infrastructure & Installations -->
-        <div id="installations" class="service-card featured rounded-2xl p-8 fade-in">
-          <div class="service-icon home">
-            <i class="fas fa-wrench text-3xl text-gray-900"></i>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-ethernet text-cyan-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-cyan-300">Structured Cabling</h3>
           </div>
-          <h3 class="text-2xl font-bold text-cyan-300 mb-4">🔧 Infrastructure & Installations</h3>
-          <p class="text-gray-300 mb-6 leading-relaxed">
-            We handle your infrastructure needs with care—whether it's setting up a retail POS system, 
-            mounting TVs with clean cable management, or deploying secure business networks. Hands-on, 
-            professional work done right the first time.
-          </p>
-          
-          <div class="mb-6">
-            <div class="text-sm text-gray-300 mb-2"><strong class="text-cyan-300">Residential Services:</strong></div>
-            <div class="text-sm text-gray-400 ml-4 space-y-1">
-              <div>• TV Mounting: <span class="text-green-300 font-semibold">Starting at $99</span></div>
-              <div>• Smart Home Setup: <span class="text-green-300 font-semibold">Starting at $150</span></div>
-              <div class="text-xs text-gray-500 ml-6 mt-1">Pricing varies by number of devices and home size</div>
-            </div>
-            <div class="text-sm text-gray-400 mt-3"><strong class="text-purple-300">Commercial Projects:</strong> Custom Quote</div>
-          </div>
-
-          <ul class="feature-list mb-6 text-sm">
-            <li><i class="fas fa-store"></i> Business startup tech setup (networking, hardware, POS)</li>
-            <li><i class="fas fa-home"></i> Smart home & office installations (AV, cabling, IoT)</li>
-            <li><i class="fas fa-network-wired"></i> Clean cable management & device integration</li>
-            <li><i class="fas fa-tv"></i> TV mounting & entertainment systems</li>
-            <li><i class="fas fa-camera"></i> Low-voltage cabling for security systems</li>
-            <li><i class="fas fa-tools"></i> Network equipment deployment & optimization</li>
-          </ul>
-
-          <div class="flex flex-col gap-3">
-            <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
-              <i class="fas fa-calendar-check mr-2"></i>
-              Schedule Installation
-            </a>
-            <p class="text-xs text-gray-400 text-center">
-              <i class="fas fa-map-marker-alt mr-1"></i>
-              Serving Lubbock & West Texas
-            </p>
-          </div>
+          <p class="text-sm text-gray-400">Cat5e, Cat6, Cat6a, and fiber optic installation for commercial and government facilities.</p>
         </div>
 
-        <!-- Pillar 2: Managed Technology & Support -->
-        <div id="managed-support" class="service-card rounded-2xl p-8 fade-in">
-          <div class="service-icon business">
-            <i class="fas fa-headset text-3xl text-gray-900"></i>
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-project-diagram text-cyan-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-cyan-300">Network Design &amp; Installation</h3>
           </div>
-          <h3 class="text-2xl font-bold text-green-300 mb-4">💻 Managed Technology & Support</h3>
-          <p class="text-gray-300 mb-6 leading-relaxed">
-            When something breaks or you need expert guidance, you get direct access to our team. No call centers, 
-            no ticket queues—just responsive support from technicians who understand your setup and 
-            have personally reviewed your infrastructure.
-          </p>
-          
-          <div class="mb-6">
-            <div class="text-sm text-gray-300 mb-2"><strong class="text-green-300">Residential Support:</strong></div>
-            <div class="text-sm text-gray-400 ml-4 space-y-1">
-              <div>• Remote Support: <span class="text-green-300 font-semibold">$75/hour</span></div>
-            </div>
-            <div class="text-sm text-gray-400 mt-3"><strong class="text-purple-300">Business Plans:</strong> Custom Quote</div>
-          </div>
-
-          <ul class="feature-list mb-6 text-sm">
-            <li><i class="fas fa-laptop-code"></i> Remote tech support (troubleshooting, configuration)</li>
-            <li><i class="fas fa-calendar-alt"></i> Monthly maintenance & monitoring plans</li>
-            <li><i class="fas fa-mobile-alt"></i> Device fleet management for small businesses</li>
-            <li><i class="fas fa-sync"></i> Software updates & patch management</li>
-            <li><i class="fas fa-shield-check"></i> Proactive security monitoring</li>
-            <li><i class="fas fa-phone"></i> Priority support response times</li>
-          </ul>
-
-          <div class="flex flex-col gap-3">
-            <a href="/plans/" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
-              <i class="fas fa-clipboard-list mr-2"></i>
-              View Plans
-            </a>
-            <p class="text-xs text-gray-400 text-center">
-              <i class="fas fa-globe mr-1"></i>
-              Available nationwide (remote)
-            </p>
-          </div>
+          <p class="text-sm text-gray-400">End-to-end network architecture, equipment installation, and performance optimization.</p>
         </div>
 
-        <!-- Pillar 3: Cloud & Security Strategy -->
-        <div id="cloud-security" class="service-card rounded-2xl p-8 fade-in">
-          <div class="service-icon cloud"><i class="fas fa-shield-alt text-3xl text-gray-900"></i>
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-server text-cyan-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-cyan-300">Rack-and-Stack</h3>
           </div>
-          <h3 class="text-2xl font-bold text-purple-300 mb-4">☁️ Cloud & Security Strategy</h3>
-          <p class="text-gray-300 mb-6 leading-relaxed">
-            Our professionally certified security team assesses your Wi-Fi, cloud 
-            infrastructure, and security posture with expert attention to detail. You get 
-            actionable findings and a clear roadmap—not just a report that collects dust.
-          </p>
-          
-          <div class="mb-6">
-            <div class="text-sm text-gray-300 mb-2"><strong class="text-purple-300">Residential Security:</strong></div>
-            <div class="text-sm text-gray-400 ml-4 space-y-1">
-              <div>• Home WiFi Security Audit: <span class="text-green-300 font-semibold">$149</span></div>
-            </div>
-            <div class="text-sm text-gray-400 mt-3"><strong class="text-cyan-300">Enterprise Security:</strong> Custom Quote</div>
-          </div>
+          <p class="text-sm text-gray-400">Server-room build-outs, equipment racking, and structured cable management.</p>
+        </div>
 
-          <ul class="feature-list mb-6 text-sm">
-            <li><i class="fas fa-wifi"></i> Wi-Fi security audits (home & business)</li>
-            <li><i class="fas fa-cloud"></i> Cloud infrastructure assessments (AWS, Azure)</li>
-            <li><i class="fas fa-graduation-cap"></i> Cybersecurity awareness training & workshops</li>
-            <li><i class="fas fa-exclamation-triangle"></i> Incident response & recovery support</li>
-            <li><i class="fas fa-file-contract"></i> Compliance & policy documentation</li>
-            <li><i class="fas fa-chart-line"></i> Security posture scoring & roadmap</li>
-          </ul>
-
-          <div class="flex flex-col gap-3">
-            <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
-              <i class="fas fa-calendar-check mr-2"></i>
-              Schedule Audit
-            </a>
-            <p class="text-xs text-gray-400 text-center">
-              <i class="fas fa-certificate mr-1"></i>
-              Cloud Foundations Certified
-            </p>
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-cash-register text-green-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-green-300">POS &amp; Payment Terminal Deployment</h3>
           </div>
+          <p class="text-sm text-gray-400">Point-of-sale system setup, payment terminal installation, and network integration.</p>
+        </div>
+
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-camera text-green-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-green-300">Security Camera Infrastructure</h3>
+          </div>
+          <p class="text-sm text-gray-400">Cabling and mounting for camera systems. Programming performed by licensed subcontractor partners.</p>
+        </div>
+
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-broadcast-tower text-green-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-green-300">Point-to-Point Wireless</h3>
+          </div>
+          <p class="text-sm text-gray-400">Building-to-building wireless links for campus and multi-site connectivity.</p>
+        </div>
+
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-tachometer-alt text-purple-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-purple-300">Cable Certification &amp; Testing</h3>
+          </div>
+          <p class="text-sm text-gray-400">Fluke DSX-series certification testing with full documentation and compliance reports.</p>
+        </div>
+
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-wifi text-purple-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-purple-300">Access Point Deployment</h3>
+          </div>
+          <p class="text-sm text-gray-400">Enterprise Wi-Fi design and access point installation (Ubiquiti, Meraki, Aruba, Cisco).</p>
+        </div>
+
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-clipboard-list text-purple-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-purple-300">Site Surveys</h3>
+          </div>
+          <p class="text-sm text-gray-400">On-site assessments, facility documentation, and infrastructure planning for new deployments.</p>
+        </div>
+
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-fire-alt text-red-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-red-300">Fortinet Firewall Deployment</h3>
+          </div>
+          <p class="text-sm text-gray-400">FortiGate firewall installation and basic configuration. Fortinet Certified Associate (FCA).</p>
+        </div>
+
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-chart-line text-red-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-red-300">Managed Network Monitoring</h3>
+          </div>
+          <p class="text-sm text-gray-400">Ongoing network health monitoring, alerting, and performance reporting on retainer.</p>
+        </div>
+
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-search text-red-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-red-300">Cybersecurity Consulting</h3>
+          </div>
+          <p class="text-sm text-gray-400">Network security assessments, infrastructure hardening recommendations, and security strategy.</p>
         </div>
       </div>
     </div>
@@ -317,18 +281,18 @@ extra_head: |
   <!-- PROCESS -->
   <section class="content py-12">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold glow mb-4">My Security Process</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">A systematic, hands-on approach to securing your technology infrastructure</p>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold glow mb-4">Our Project Process</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">A systematic approach to every engagement</p>
       </div>
 
       <div class="grid md:grid-cols-4 gap-6">
         <div class="process-step fade-in">
           <div class="process-number">1</div>
           <div class="mt-6">
-            <h3 class="text-lg font-semibold text-cyan-300 mb-3">Assessment</h3>
+            <h3 class="text-lg font-semibold text-cyan-300 mb-3">Site Survey</h3>
             <p class="text-gray-300 text-sm">
-              Comprehensive evaluation of your current security posture, identifying vulnerabilities and risks.
+              On-site assessment of your facility, existing infrastructure, and project requirements.
             </p>
           </div>
         </div>
@@ -336,9 +300,9 @@ extra_head: |
         <div class="process-step fade-in">
           <div class="process-number">2</div>
           <div class="mt-6">
-            <h3 class="text-lg font-semibold text-green-300 mb-3">Planning</h3>
+            <h3 class="text-lg font-semibold text-green-300 mb-3">Design &amp; Quote</h3>
             <p class="text-gray-300 text-sm">
-              Custom security strategy development based on your specific needs, budget, and compliance requirements.
+              Custom network design, material specifications, and transparent fixed-price proposal.
             </p>
           </div>
         </div>
@@ -346,9 +310,9 @@ extra_head: |
         <div class="process-step fade-in">
           <div class="process-number">3</div>
           <div class="mt-6">
-            <h3 class="text-lg font-semibold text-purple-300 mb-3">Implementation</h3>
+            <h3 class="text-lg font-semibold text-purple-300 mb-3">Professional Install</h3>
             <p class="text-gray-300 text-sm">
-              Professional deployment of security solutions with minimal disruption to your operations.
+              Clean, professional deployment with minimal disruption to your operations.
             </p>
           </div>
         </div>
@@ -356,84 +320,12 @@ extra_head: |
         <div class="process-step fade-in">
           <div class="process-number">4</div>
           <div class="mt-6">
-            <h3 class="text-lg font-semibold text-orange-300 mb-3">Monitoring</h3>
+            <h3 class="text-lg font-semibold text-orange-300 mb-3">Testing &amp; Handoff</h3>
             <p class="text-gray-300 text-sm">
-              Ongoing security monitoring, maintenance, and support to ensure continued protection.
+              Fluke certification testing, documentation package, and operational handoff.
             </p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASE STUDY HIGHLIGHTS -->
-  <section class="content py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold glow mb-4">📈 Case Study Highlights</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">Real results from real clients across Texas</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <article class="card rounded-xl p-6 fade-in">
-          <div class="flex items-center mb-4">
-            <div class="service-icon install mr-4" style="width: 48px; height: 48px; min-width: 48px;">
-              <i class="fas fa-network-wired text-lg text-gray-900"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-cyan-300">Retail Network Upgrade</h3>
-              <p class="text-sm text-gray-400">Lubbock, TX</p>
-            </div>
-          </div>
-          <p class="text-gray-300 text-sm mb-3">
-            Complete network infrastructure overhaul for local retail store. Implemented secure VLANs, 
-            POS network segmentation, and guest Wi-Fi with captive portal.
-          </p>
-          <div class="flex gap-2 flex-wrap">
-            <span class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-xs">Network Design</span>
-            <span class="bg-green-500/20 text-green-300 px-2 py-1 rounded text-xs">POS Integration</span>
-          </div>
-        </article>
-
-        <article class="card rounded-xl p-6 fade-in">
-          <div class="flex items-center mb-4">
-            <div class="service-icon home mr-4" style="width: 48px; height: 48px; min-width: 48px;">
-              <i class="fas fa-home text-lg text-gray-900"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-green-300">Smart Home Automation</h3>
-              <p class="text-sm text-gray-400">Odessa, TX</p>
-            </div>
-          </div>
-          <p class="text-gray-300 text-sm mb-3">
-            Comprehensive smart home setup including smart lighting automation, 
-            and climate control. All devices secured and segmented on isolated network.
-          </p>
-          <div class="flex gap-2 flex-wrap">
-            <span class="bg-green-500/20 text-green-300 px-2 py-1 rounded text-xs">IoT Security</span>
-            <span class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-xs">Automation</span>
-          </div>
-        </article>
-
-        <article class="card rounded-xl p-6 fade-in">
-          <div class="flex items-center mb-4">
-            <div class="service-icon cloud mr-4" style="width: 48px; height: 48px; min-width: 48px;">
-              <i class="fas fa-cloud text-lg text-gray-900"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-purple-300">Cloud Security Audit</h3>
-              <p class="text-sm text-gray-400">Midland, TX</p>
-            </div>
-          </div>
-          <p class="text-gray-300 text-sm mb-3">
-            AWS security assessment identified 17 critical misconfigurations. Implemented MFA, 
-            IAM best practices, and automated security monitoring for oil & gas contractor.
-          </p>
-          <div class="flex gap-2 flex-wrap">
-            <span class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-xs">Cloud Audit</span>
-            <span class="bg-red-500/20 text-red-300 px-2 py-1 rounded text-xs">Compliance</span>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -442,17 +334,10 @@ extra_head: |
   <section class="content py-16 bg-gradient-to-r from-cyan-900/30 via-green-900/30 to-purple-900/30">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold glow mb-6">
-        Ready to Work with a Professional Technology Partner?
+        Ready to Start Your Project?
       </h2>
       <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-        Schedule a free consultation with <a href="/ceo/" class="text-cyan-300 hover:text-cyan-400 underline">Traivone Smith</a> directly. Whether you need installations, ongoing support, 
-        or security expertise, our team will create a custom solution tailored to your needs and budget—then 
-        execute it with founder-level oversight on every detail.
-      </p>
-      <p class="text-gray-400 mb-8">
-        Learn more about our <a href="/divisions/" class="text-cyan-300 hover:text-cyan-400 underline">three operating divisions</a> 
-        or explore our <a href="/products/" class="text-cyan-300 hover:text-cyan-400 underline">proprietary technology products</a> 
-        like CloudWarden security automation.
+        Schedule your free consultation today. We'll survey your facility, design the right solution, and deliver a transparent quote&mdash;no surprises.
       </p>
       <div class="flex flex-wrap gap-4 justify-center mb-6">
         <a href="/book-now/" class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center">
@@ -475,9 +360,10 @@ extra_head: |
         </div>
         <div class="flex items-center justify-center">
           <i class="fas fa-award text-yellow-400 mr-2"></i>
-          100% satisfaction commitment
+          Fortinet Certified &bull; SAM.gov Registered
         </div>
       </div>
     </div>
   </section>
 
+{% include related-services.html services="cabling,firewall,monitoring" %}
