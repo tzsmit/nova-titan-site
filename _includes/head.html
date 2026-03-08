@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Title -->
-  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · {{ site.description }}{% endif %}</title>
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }} | {{ site.description }}{% endif %}</title>
 
   <!-- SEO Tags (jekyll-seo-tag plugin) -->
   {% seo title=false %}
@@ -15,17 +15,20 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:image" content="{{ site.url }}/assets/img/og-image.jpg">
-  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:image" content="{{ site.url }}/assets/images/nova-titan-og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Nova Titan Systems">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="twitter:title" content="{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="twitter:image" content="{{ site.url }}/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/images/nova-titan-og-image.png">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -57,96 +60,119 @@
     gtag('config', 'G-R8DZFXDCNV');
   </script>
 
-  <!-- Organization & LocalBusiness JSON-LD Schema -->
+  <!-- LocalBusiness JSON-LD Schema (single authoritative block) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
+    "@type": "LocalBusiness",
+    "@id": "{{ site.url }}/#organization",
+    "name": "Nova Titan Systems LLC",
+    "alternateName": "Nova Titan",
+    "legalName": "Nova Titan Systems LLC",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url }}",
+    "telephone": "+1-806-370-0624",
+    "email": "info@novatitan.net",
+    "logo": "{{ site.url }}/assets/images/nova-titan-og-image.png",
+    "image": "{{ site.url }}/assets/images/nova-titan-og-image.png",
+    "foundingDate": "2025-09",
+    "founder": {
+      "@type": "Person",
+      "name": "Traivone Smith",
+      "jobTitle": "Founder & CEO"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3223 S Loop 289 Ste 600",
+      "addressLocality": "Lubbock",
+      "addressRegion": "TX",
+      "postalCode": "79423",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.5779,
+      "longitude": -101.8552
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Lubbock", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "City", "name": "Midland", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "City", "name": "Odessa", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "City", "name": "Amarillo", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "State", "name": "Texas" },
+      { "@type": "Country", "name": "United States" }
+    ],
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Credit Card, Check, ACH, Purchase Order",
+    "openingHoursSpecification": [
       {
-        "@type": ["Organization", "LocalBusiness"],
-        "@id": "{{ site.url }}/#organization",
-        "name": "{{ site.title }}",
-        "alternateName": "Nova Titan",
-        "description": "{{ site.description }}",
-        "url": "{{ site.url }}",
-        "telephone": "{{ site.phone }}",
-        "email": "{{ site.email }}",
-        "logo": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
-        "image": "https://page.gensparksite.com/v1/base64_upload/b12f5870654d8f0d2849b96fdb25cab2",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Lubbock",
-          "addressRegion": "TX",
-          "postalCode": "79401",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "33.5779",
-          "longitude": "-101.8552"
-        },
-        "areaServed": [
-          "Lubbock",
-          "Midland",
-          "Odessa",
-          "West Texas",
-          "United States"
-        ],
-        "priceRange": "$$",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "18:00"
-          }
-        ],
-        "sameAs": [
-          "https://github.com/tzsmit",
-          "https://www.linkedin.com/in/traivone-smith-969b60327",
-          "https://www.tiktok.com/@novatitan1"
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Technology Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Cybersecurity Consulting",
-                "description": "Network security assessments, Fortinet firewall deployment, and cybersecurity consulting",
-                "provider": {
-                  "@id": "{{ site.url }}/#organization"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Structured Cabling & Network Infrastructure",
-                "description": "Cat5e/6/6a and fiber optic cabling, rack-and-stack, access point deployment, and cable certification",
-                "provider": {
-                  "@id": "{{ site.url }}/#organization"
-                }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Managed Network Monitoring",
-                "description": "Ongoing network health monitoring, alerting, and Fortinet firewall management on retainer",
-                "provider": {
-                  "@id": "{{ site.url }}/#organization"
-                }
-              }
-            }
-          ]
-        }
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
       }
-    ]
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/nova-titan-systems",
+      "https://www.linkedin.com/in/traivone-smith-969b60327",
+      "https://g.page/nova-titan-systems",
+      "https://github.com/tzsmit",
+      "https://www.tiktok.com/@novatitan1"
+    ],
+    "duns": "141007579",
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "UEI", "value": "CZ8BLZMSKZ66" },
+      { "@type": "PropertyValue", "name": "CAGE Code", "value": "170W6" },
+      { "@type": "PropertyValue", "name": "NAICS Primary", "value": "541519" },
+      { "@type": "PropertyValue", "name": "Certifications", "value": "SAM.gov Active, Fortinet Certified Associate, DSBS Verified, WorkMarket Verified" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Technology Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Structured Cabling",
+            "description": "Cat5e/6/6a copper and fiber optic cabling for commercial and government facilities"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Network Design & Deployment",
+            "description": "Enterprise network architecture, switch/router configuration, and full deployment"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fortinet Firewall Deployment",
+            "description": "FortiGate firewall installation, configuration, and ongoing management"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Managed Network Monitoring",
+            "description": "Ongoing device uptime monitoring, performance alerting, and monthly health reports"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cybersecurity Consulting",
+            "description": "Network security assessments, vulnerability scanning, and remediation roadmaps"
+          }
+        }
+      ]
+    }
   }
   </script>
 
@@ -157,7 +183,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "{{ site.url }}/#organization",
-    "name": "{{ site.title }}",
+    "name": "Nova Titan Systems LLC",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "{{ site.data.testimonials.aggregate.average_rating }}",
@@ -257,4 +283,7 @@
 
   <!-- Page-specific head content -->
   {% if page.extra_head %}{{ page.extra_head }}{% endif %}
+
+  <!-- Procurement schema for government/partner pages -->
+  {% include schema-org.html %}
 </head>
