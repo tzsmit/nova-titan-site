@@ -31,3 +31,4 @@ nova-titan-systems/
 .env.*.local
 *.credentials
 .ghl-config/
+nova-titan-site/
