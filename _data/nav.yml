@@ -1,5 +1,5 @@
 # Main Navigation Menu Items
-# Nova Titan Systems Multi-Audience Navigation
+# Nova Titan Systems - Division 27/28 Low-Voltage Contractor
 # Order matters - items appear in this sequence
 
 - name: Home
@@ -12,8 +12,6 @@
   submenu:
     - name: Infrastructure & Installations
       url: /services/infrastructure/
-    - name: Managed IT Support
-      url: /plans/
     - name: Cloud & Security
       url: /services/cloud-security/
     - name: View All Services
@@ -53,8 +51,6 @@
   url: /resources/
   icon: fas fa-book
   submenu:
-    - name: Support Plans
-      url: /plans/
     - name: FAQ
       url: /faqs/
 

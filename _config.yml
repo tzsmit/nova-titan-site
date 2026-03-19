@@ -1,6 +1,6 @@
 # Site Settings
 title: "Nova Titan Systems"
-description: "Structured cabling, network infrastructure, Fortinet firewall deployment, and cybersecurity consulting — Lubbock & West Texas, with nationwide service."
+description: "Division 27/28 commercial low-voltage subcontractor serving West Texas, Houston, and DFW. Structured cabling, access control, security cameras, and low-voltage infrastructure for general contractors and public entities."
 url: "https://novatitan.net"
 baseurl: ""   # root - no subdirectory
 
@@ -15,13 +15,12 @@ company:
   duns: "141007579"
   uei: "CZ8BLZMSKZ66"
   cage: "170W6"
-  naics_primary: "541519"
+  naics_primary: "238210"
   naics_codes:
-    - "541519"  # Other Computer Related Services (PRIMARY)
-    - "238210"  # Electrical Contractors and Other Wiring Installation Contractors
-    - "238990"  # All Other Specialty Trade Contractors
+    - "238210"  # Electrical Contractors and Other Wiring Installation Contractors (PRIMARY)
     - "541512"  # Computer Systems Design Services
     - "541513"  # Computer Facilities Management Services
+    - "541519"  # Other Computer Related Services
     - "541611"  # Administrative Management And General Management Consulting Services
     - "541690"  # Other Scientific And Technical Consulting Services
     - "561621"  # Security Systems Services (Except Locksmiths) - infrastructure cabling support only; physical device installation & monitoring performed by licensed subcontractor partners
@@ -56,14 +55,14 @@ company:
     - "WorkMarket Verified Vendor"
     - "CloudWork Pro Member"
   capabilities:
-    - "IT Field Services & Smart Hands"
-    - "Network Infrastructure Deployment"
-    - "Equipment Installation & Removal"
-    - "Structured Cabling & Fiber Installation"
-    - "Managed IT Support Services"
-    - "Cybersecurity Implementation"
-    - "System Integration & Configuration"
-    - "Technical Support & Help Desk"
+    - "Structured Cabling & Low-Voltage Installation (CAT6/6A, Fiber)"
+    - "Access Control Systems (Card Readers, Door Hardware, Panels)"
+    - "Security Camera Infrastructure (IP Cabling, PoE, NVR)"
+    - "Wi-Fi Infrastructure & AP Deployment"
+    - "Audio/Visual & PA System Cabling"
+    - "Field & Smart Hands Services (Rack & Stack, Site Surveys)"
+    - "Fortinet Firewall Deployment"
+    - "Cybersecurity Consulting"
   service_areas:
     primary:
       - "Lubbock, TX"
@@ -72,15 +71,15 @@ company:
       - "Amarillo, TX"
       - "West Texas Region"
     extended:
+      - "Houston, TX"
+      - "Dallas-Fort Worth, TX"
       - "Texas (Statewide)"
-      - "New Mexico"
-      - "Oklahoma"
       - "United States (Nationwide for Enterprise Clients)"
   business_attributes:
     response_time: "Same-day dispatch available for West Texas"
     coverage: "Local + Nationwide Extended"
-    experience: "95+ field projects completed (as of Feb 2026)"
-    availability: "24/7 emergency support available"
+    experience: "Active in West Texas, Houston, and DFW markets"
+    availability: "Same-day dispatch available"
 
 # Build Settings
 markdown: kramdown

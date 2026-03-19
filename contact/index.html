@@ -106,7 +106,7 @@ description: "Get in touch with Nova Titan Systems for cybersecurity consultatio
           </div>
           <h3 class="text-xl font-semibold text-orange-300 mb-2">Schedule</h3>
           <p class="text-gray-300 mb-4">Book your consultation online</p>
-          <a href="/book-now/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg inline-block">
+          <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg inline-block">
             Book Online
           </a>
           <p class="text-xs text-gray-400 mt-2">Free initial consultation</p>
@@ -119,97 +119,76 @@ description: "Get in touch with Nova Titan Systems for cybersecurity consultatio
   <section class="content py-12 bg-gray-900/50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-12">
-        <!-- Contact Form -->
+        <!-- Contact Form (mailto) -->
         <div class="fade-in">
-          <h2 class="text-3xl font-bold glow mb-6">Send Secure Message</h2>
+          <h2 class="text-3xl font-bold glow mb-6">Send a Message</h2>
           <div class="contact-form">
-            <div id="messageStatus" class="message"></div>
-            
-            <form id="contactForm">
+            <form id="contactMailtoForm" onsubmit="return sendContactMailto()">
               <div class="form-group">
-                <label for="name" class="form-label">
-                  <i class="fas fa-user text-cyan-400 mr-2"></i>Full Name
+                <label for="contactName" class="form-label">
+                  <i class="fas fa-user text-cyan-400 mr-2"></i>Full Name *
                 </label>
-                <input type="text" id="name" name="name" class="form-input" required>
+                <input type="text" id="contactName" name="name" class="form-input" required>
               </div>
 
               <div class="form-group">
-                <label for="email" class="form-label">
-                  <i class="fas fa-envelope text-cyan-400 mr-2"></i>Email Address
+                <label for="contactEmail" class="form-label">
+                  <i class="fas fa-envelope text-cyan-400 mr-2"></i>Email Address *
                 </label>
-                <input type="email" id="email" name="email" class="form-input" required>
+                <input type="email" id="contactEmail" name="email" class="form-input" required>
               </div>
 
               <div class="form-group">
-                <label for="phone" class="form-label">
+                <label for="contactPhone" class="form-label">
                   <i class="fas fa-phone text-cyan-400 mr-2"></i>Phone Number (Optional)
                 </label>
-                <input type="tel" id="phone" name="phone" class="form-input">
+                <input type="tel" id="contactPhone" name="phone" class="form-input">
               </div>
 
               <div class="form-group">
-                <label for="company" class="form-label">
+                <label for="contactCompany" class="form-label">
                   <i class="fas fa-building text-cyan-400 mr-2"></i>Company/Organization (Optional)
                 </label>
-                <input type="text" id="company" name="company" class="form-input">
+                <input type="text" id="contactCompany" name="company" class="form-input">
               </div>
 
               <div class="form-group">
-                <label for="service" class="form-label">
-                  <i class="fas fa-shield-alt text-cyan-400 mr-2"></i>Service Interest
+                <label for="contactService" class="form-label">
+                  <i class="fas fa-hard-hat text-cyan-400 mr-2"></i>Service Interest
                 </label>
-                <select id="service" name="service" class="form-select" required>
+                <select id="contactService" name="service" class="form-select" required>
                   <option value="">Select a service...</option>
-                  <option value="structured-cabling">Structured Cabling (Cat5e/6/6a, Fiber)</option>
-                  <option value="network-design">Network Design &amp; Installation</option>
-                  <option value="rack-stack">Rack-and-Stack &amp; Server Room Build-Out</option>
-                  <option value="pos-deployment">POS &amp; Payment Terminal Deployment</option>
-                  <option value="camera-infrastructure">Security Camera Infrastructure</option>
-                  <option value="point-to-point">Point-to-Point Wireless</option>
-                  <option value="cable-testing">Cable Certification &amp; Testing (Fluke)</option>
-                  <option value="access-points">Access Point Deployment</option>
-                  <option value="site-survey">Site Survey</option>
-                  <option value="fortinet-firewall">Fortinet Firewall Deployment</option>
-                  <option value="managed-monitoring">Managed Network Monitoring</option>
-                  <option value="security-assessment">Cybersecurity Consulting &amp; Assessment</option>
-                  <option value="consultation">Free Consultation</option>
-                  <option value="other">Other (describe in message)</option>
+                  <option value="Structured Cabling &amp; Low Voltage">Structured Cabling &amp; Low Voltage</option>
+                  <option value="Access Control Systems">Access Control Systems</option>
+                  <option value="Security Camera Infrastructure">Security Camera Infrastructure</option>
+                  <option value="Wi-Fi Infrastructure">Wi-Fi Infrastructure</option>
+                  <option value="Audio/Visual &amp; PA Systems">Audio/Visual &amp; PA Systems</option>
+                  <option value="Field &amp; Smart Hands Services">Field &amp; Smart Hands Services</option>
+                  <option value="Fortinet Firewall Deployment">Fortinet Firewall Deployment</option>
+                  <option value="Cybersecurity Consulting">Cybersecurity Consulting</option>
+                  <option value="GC Sub-List Request">Add Us to Your GC Sub-List</option>
+                  <option value="Free Consultation">Free Consultation</option>
+                  <option value="Other">Other (describe in message)</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="urgency" class="form-label">
-                  <i class="fas fa-clock text-cyan-400 mr-2"></i>Urgency Level
+                <label for="contactMessage" class="form-label">
+                  <i class="fas fa-comment-alt text-cyan-400 mr-2"></i>Message Details *
                 </label>
-                <select id="urgency" name="urgency" class="form-select" required>
-                  <option value="">Select urgency...</option>
-                  <option value="low">Low - General inquiry (4hr response)</option>
-                  <option value="medium">Medium - Need service soon (2hr response)</option>
-                  <option value="high">High - Urgent security issue (1hr response)</option>
-                  <option value="emergency">Emergency - Active security incident (Call immediately)</option>
-                </select>
+                <textarea id="contactMessage" name="message" class="form-textarea" 
+                  placeholder="Please describe your project needs, facility details, and any specific requirements..." required></textarea>
               </div>
-
-              <div class="form-group">
-                <label for="message" class="form-label">
-                  <i class="fas fa-comment-alt text-cyan-400 mr-2"></i>Message Details
-                </label>
-                <textarea id="message" name="message" class="form-textarea" 
-                  placeholder="Please describe your security needs, current setup, and any specific concerns or requirements..." required></textarea>
-              </div>
-
-              <!-- Honeypot field -->
-              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
               <button type="submit" class="form-submit btn-grad">
                 <i class="fas fa-paper-plane mr-2"></i>
-                Send Secure Message
+                Send Message
               </button>
             </form>
 
             <div class="mt-4 text-sm text-gray-400 text-center">
-              <i class="fas fa-lock mr-2"></i>
-              Your information is transmitted securely and never shared
+              <i class="fas fa-envelope mr-2"></i>
+              Messages are sent directly to info@novatitan.net
             </div>
           </div>
         </div>
@@ -396,15 +375,39 @@ description: "Get in touch with Nova Titan Systems for cybersecurity consultatio
           <i class="fas fa-phone mr-3"></i>
           Call (806) 370-0624 Now
         </a>
-        <a href="/book-now/" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition-all text-lg inline-flex items-center">
+        <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 transition-all text-lg inline-flex items-center">
           <i class="fas fa-calendar-check mr-3"></i>
           Schedule Online
         </a>
       </div>
       <p class="text-sm text-gray-400 mt-6">
         <i class="fas fa-shield-check mr-2"></i>
-        Same-day response • Free consultation • No pressure, just honest security advice
+        Same-day response &bull; Free consultation &bull; Division 27/28 low-voltage subcontractor
       </p>
     </div>
   </section>
+
+<script>
+  function sendContactMailto() {
+    var name = document.getElementById('contactName').value;
+    var email = document.getElementById('contactEmail').value;
+    var phone = document.getElementById('contactPhone').value;
+    var company = document.getElementById('contactCompany').value;
+    var service = document.getElementById('contactService').value;
+    var message = document.getElementById('contactMessage').value;
+    
+    var subject = encodeURIComponent('Website Inquiry \u2014 Nova Titan Systems');
+    var body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      'Phone: ' + phone + '\n' +
+      'Company: ' + company + '\n' +
+      'Service Interest: ' + service + '\n\n' +
+      'Message:\n' + message
+    );
+    
+    window.location.href = 'mailto:info@novatitan.net?subject=' + subject + '&body=' + body;
+    return false;
+  }
+</script>
 
