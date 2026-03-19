@@ -192,222 +192,54 @@ sitemap: false
         Complete the form below to apply for our technician network. We'll review your application and contact you within 2-3 business days.
       </p>
 
-      <!-- GHL Form Container with Branding -->
-      <div class="ghl-form-container">
-        <!-- Decorative Top Border -->
-        <div class="form-header-decoration">
-          <div class="decoration-line"></div>
-          <div class="decoration-icon">
-            <i class="fas fa-network-wired text-cyan-400"></i>
+      <!-- Application Form (mailto) -->
+      <div class="card rounded-xl p-8">
+        <form id="techAppForm" onsubmit="return sendTechApp()">
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label class="block text-white font-semibold mb-2">Full Name *</label>
+              <input type="text" id="techName" required placeholder="Your full name" class="w-full px-4 py-3 rounded-lg" style="background: rgba(26,26,46,0.8); border: 1px solid rgba(0,212,255,0.3); color: #ffffff;">
+            </div>
+            <div>
+              <label class="block text-white font-semibold mb-2">Email *</label>
+              <input type="email" id="techEmail" required placeholder="your@email.com" class="w-full px-4 py-3 rounded-lg" style="background: rgba(26,26,46,0.8); border: 1px solid rgba(0,212,255,0.3); color: #ffffff;">
+            </div>
+            <div>
+              <label class="block text-white font-semibold mb-2">Phone *</label>
+              <input type="tel" id="techPhone" required placeholder="(806) 555-0123" class="w-full px-4 py-3 rounded-lg" style="background: rgba(26,26,46,0.8); border: 1px solid rgba(0,212,255,0.3); color: #ffffff;">
+            </div>
+            <div>
+              <label class="block text-white font-semibold mb-2">Location</label>
+              <input type="text" id="techLocation" placeholder="City, State" class="w-full px-4 py-3 rounded-lg" style="background: rgba(26,26,46,0.8); border: 1px solid rgba(0,212,255,0.3); color: #ffffff;">
+            </div>
           </div>
-          <div class="decoration-line"></div>
-        </div>
-
-        <!-- GHL Embedded Form -->
-        <div class="ghl-form-wrapper">
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/form/JhTgjBW3Yvp8gvROVgVR"
-            style="width:100%;height:100%;border:none;border-radius:8px"
-            id="inline-JhTgjBW3Yvp8gvROVgVR" 
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="NT – Technician Application Form (apply-tech)"
-            data-height="undefined"
-            data-layout-iframe-id="inline-JhTgjBW3Yvp8gvROVgVR"
-            data-form-id="JhTgjBW3Yvp8gvROVgVR"
-            title="NT – Technician Application Form (apply-tech)"
-          >
-          </iframe>
-        </div>
-
-        <!-- Decorative Bottom Border -->
-        <div class="form-footer-decoration">
-          <div class="security-badge">
-            <i class="fas fa-shield-alt mr-2 text-green-400"></i>
-            <span class="text-sm text-gray-400">Secure Application</span>
+          <div class="mb-6">
+            <label class="block text-white font-semibold mb-2">Skills &amp; Experience</label>
+            <textarea id="techSkills" rows="4" placeholder="Describe your low-voltage, cabling, or field service experience..." class="w-full px-4 py-3 rounded-lg" style="background: rgba(26,26,46,0.8); border: 1px solid rgba(0,212,255,0.3); color: #ffffff;"></textarea>
           </div>
-          <div class="privacy-badge">
-            <i class="fas fa-lock mr-2 text-cyan-400"></i>
-            <span class="text-sm text-gray-400">Your information is confidential</span>
-          </div>
+          <button type="submit" class="btn-grad text-gray-900 font-semibold py-4 px-8 rounded-lg text-lg w-full">
+            <i class="fas fa-paper-plane mr-3"></i>Submit Application
+          </button>
+        </form>
+        <div class="mt-4 text-sm text-gray-400 text-center">
+          <i class="fas fa-envelope mr-2"></i>Applications sent directly to info@novatitan.net
         </div>
       </div>
     </div>
 
-    <!-- Custom Styling for GHL Form -->
-    <style>
-      /* GHL Form Container Styling */
-      .ghl-form-container {
-        background: linear-gradient(135deg, rgba(10, 10, 15, 0.8) 0%, rgba(26, 26, 46, 0.8) 100%);
-        border: 2px solid rgba(0, 212, 255, 0.2);
-        border-radius: 16px;
-        padding: 2rem;
-        position: relative;
-        overflow: hidden;
+    <script>
+      function sendTechApp() {
+        var name = document.getElementById('techName').value;
+        var email = document.getElementById('techEmail').value;
+        var phone = document.getElementById('techPhone').value;
+        var loc = document.getElementById('techLocation').value;
+        var skills = document.getElementById('techSkills').value;
+        var subject = encodeURIComponent('Technician Application — Nova Titan Systems');
+        var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nLocation: ' + loc + '\n\nSkills & Experience:\n' + skills);
+        window.location.href = 'mailto:info@novatitan.net?subject=' + subject + '&body=' + body;
+        return false;
       }
-
-      /* Animated background glow effect */
-      .ghl-form-container::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
-        animation: rotate-glow 20s linear infinite;
-        pointer-events: none;
-      }
-
-      @keyframes rotate-glow {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-
-      /* Header Decoration */
-      .form-header-decoration {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 2rem;
-        gap: 1rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .decoration-line {
-        flex: 1;
-        height: 2px;
-        background: linear-gradient(90deg, transparent 0%, rgba(0, 212, 255, 0.5) 50%, transparent 100%);
-      }
-
-      .decoration-icon {
-        font-size: 1.5rem;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 212, 255, 0.1);
-        border: 2px solid rgba(0, 212, 255, 0.3);
-        border-radius: 50%;
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-        animation: pulse-icon 3s ease-in-out infinite;
-      }
-
-      @keyframes pulse-icon {
-        0%, 100% {
-          box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-          transform: scale(1);
-        }
-        50% {
-          box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-          transform: scale(1.05);
-        }
-      }
-
-      /* GHL Form Wrapper */
-      .ghl-form-wrapper {
-        min-height: 800px;
-        position: relative;
-        z-index: 1;
-        background: rgba(0, 0, 0, 0.3);
-        border-radius: 12px;
-        padding: 1rem;
-        box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Footer Decoration */
-      .form-footer-decoration {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(0, 212, 255, 0.2);
-        position: relative;
-        z-index: 1;
-      }
-
-      .security-badge,
-      .privacy-badge {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        background: rgba(0, 212, 255, 0.05);
-        border: 1px solid rgba(0, 212, 255, 0.2);
-        border-radius: 20px;
-        transition: all 0.3s ease;
-      }
-
-      .security-badge:hover,
-      .privacy-badge:hover {
-        background: rgba(0, 212, 255, 0.1);
-        border-color: rgba(0, 212, 255, 0.4);
-        transform: translateY(-2px);
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .ghl-form-container {
-          padding: 1rem;
-        }
-
-        .form-footer-decoration {
-          flex-direction: column;
-          gap: 1rem;
-        }
-
-        .ghl-form-wrapper {
-          min-height: 1000px;
-        }
-      }
-
-      /* Loading state for iframe */
-      .ghl-form-wrapper::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50px;
-        height: 50px;
-        border: 3px solid rgba(0, 212, 255, 0.3);
-        border-top-color: #00d4ff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      @keyframes spin {
-        0% { transform: translate(-50%, -50%) rotate(0deg); }
-        100% { transform: translate(-50%, -50%) rotate(360deg); }
-      }
-
-      /* Corner accent decorations */
-      .ghl-form-container::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100px;
-        height: 100px;
-        background: radial-gradient(circle at top right, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
-        pointer-events: none;
-      }
-    </style>
-
-    <!-- GHL Form Script -->
-    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </script>
 
     <!-- Contact Info -->
     <div class="text-center text-gray-400 fade-in">
