@@ -131,6 +131,7 @@ exclude:
   - tailwind.config.js
   - postcss.config.js
   - "*.md"
+  - nova-titan-site
 
 # Include
 include:

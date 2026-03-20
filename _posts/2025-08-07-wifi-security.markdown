@@ -9,4 +9,4 @@ Learn how to protect your Wi-Fi from intruders with these simple steps.
 2. **Enable WPA3 Encryption**: Use the latest encryption standard for secure connections.
 3. **Disable Remote Management**: Prevent external access to your router’s settings.
 
-For professional Wi-Fi security audits, [book a service call](/book-now).
+For professional Wi-Fi security audits, [schedule a consultation](https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems).
