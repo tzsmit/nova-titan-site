@@ -1,345 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FAQ | Cabling & Cybersecurity | Nova Titan</title>
-  <meta name="description" content="Frequently asked questions about Nova Titan structured cabling, network infrastructure, Fortinet firewall, and cybersecurity services.">
+---
+layout: default
+title: "FAQ | Cabling & Cybersecurity | Nova Titan"
+description: "Frequently asked questions about Nova Titan structured cabling, network infrastructure, Fortinet firewall, and cybersecurity services."
+extra_head: |
   <link rel="canonical" href="https://novatitan.net/faqs/">
-
-<!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <!-- Assets -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-
-  <style>
-    :root { 
-      --cy: #00d4ff; 
-      --gr: #00ff88; 
-      --purple: #b300ff;
-      --red: #ff0066;
-      --orange: #ff8800;
-    }
-    
-    body { 
-      font-family: 'Inter', sans-serif; 
-      background: linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%); 
-      min-height: 100vh;
-    }
-    
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
-    
-    /* Enhanced Navigation */
-    .nav-link { 
-      transition: all .3s ease; 
-      position: relative; 
-      padding: 0.5rem 0;
-    }
-    .nav-link:hover { 
-      color: var(--cy); 
-      transform: scale(1.05); 
-    }
-    .nav-link::after { 
-      content:''; 
-      position:absolute; 
-      bottom:-2px; 
-      left:0; 
-      height:2px; 
-      width:0; 
-      background: linear-gradient(90deg, var(--cy), var(--gr)); 
-      transition:width .3s ease; 
-    }
-    .nav-link:hover::after { width:100%; }
-    
-    /* Enhanced Buttons */
-    .btn-grad { 
-      background: linear-gradient(45deg,var(--cy),var(--gr)); 
-      transition: all .3s ease; 
-      box-shadow: 0 4px 15px rgba(0,212,255,0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-grad:hover { 
-      transform: translateY(-2px); 
-      box-shadow: 0 8px 25px rgba(0,212,255,.5); 
-    }
-    .btn-grad::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
-    }
-    .btn-grad:hover::before {
-      left: 100%;
-    }
-    
-    /* Enhanced Cards - EXACTLY FROM INDEX.HTML */
-    .card { 
-      border: 1px solid rgba(0,212,255,.25); 
-      transition: all .4s ease; 
-      background: rgba(26,26,46,.85); 
-      backdrop-filter: blur(12px); 
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--cy), var(--gr), var(--purple));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    .card:hover::before {
-      transform: scaleX(1);
-    }
-    .card:hover { 
-      transform: translateY(-8px) scale(1.02); 
-      box-shadow: 0 20px 40px rgba(0,212,255,.3), 0 0 20px rgba(0,255,136,0.2); 
-      border-color: rgba(0,212,255,0.6);
-    }
-    
-    /* FAQ Items - Simple and Clean */
-    .faq-item {
-      background: rgba(26,26,46,.85);
-      border: 1px solid rgba(0,212,255,.25);
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      backdrop-filter: blur(12px);
-    }
-    
-    .faq-question {
-      padding: 1.5rem;
-      cursor: pointer;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(0,212,255,.15);
-    }
-    
-    .faq-question h3 {
-      color: white;
-      margin: 0;
-      font-size: 1.125rem;
-      font-weight: 600;
-    }
-    
-    .faq-answer {
-      padding: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .faq-answer.active {
-      padding: 1.5rem;
-      max-height: 500px;
-    }
-    
-    .faq-answer p, .faq-answer li {
-      color: #d1d5db;
-      line-height: 1.6;
-    }
-    
-    .faq-icon {
-      color: var(--cy);
-      transition: transform 0.3s ease;
-    }
-    
-    .faq-icon.rotate {
-      transform: rotate(180deg);
-    }
-    
-    /* Glow Effects */
-    .glow { 
-      text-shadow: 0 0 20px rgba(0,212,255,.6); 
-    }
-    .glow-green { 
-      text-shadow: 0 0 20px rgba(0,255,136,.6); 
-    }
-    .glow-purple { 
-      text-shadow: 0 0 20px rgba(179,0,255,.6); 
-    }
-    
-    /* Particle Background */
-    #particles-js { 
-      position: fixed; 
-      inset: 0; 
-      z-index: 0; 
-    }
-    .content { 
-      position: relative; 
-      z-index: 1; 
-    }
-
-    /* Matrix Effect Enhancement */
-    .matrix-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      animation: matrix-move 60s linear infinite; /* slowed from 20s */
-      z-index: 0;
-    }
-    
-    @keyframes matrix-move {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
-    }
-
-    /* Enhanced Hamburger */
-    .hamburger { 
-      width: 36px; 
-      height: 28px; 
-      position: relative; 
-      cursor: pointer;
-    }
-    .hamburger span { 
-      position:absolute; 
-      left:0; 
-      right:0; 
-      height:3px; 
-      background: linear-gradient(90deg, var(--cy), var(--gr)); 
-      transition:transform .3s, opacity .3s, top .3s; 
-      border-radius: 2px;
-    }
-    .hamburger span:nth-child(1){ top:4px; } 
-    .hamburger span:nth-child(2){ top:12px; } 
-    .hamburger span:nth-child(3){ top:20px; }
-    .hamburger.active span:nth-child(1){ top:12px; transform:rotate(45deg); }
-    .hamburger.active span:nth-child(2){ opacity:0; }
-    .hamburger.active span:nth-child(3){ top:12px; transform:rotate(-45deg); }
-
-    /* Typography Enhancements */
-    h1, h2, h3 { 
-      text-shadow: 0 0 20px rgba(0,212,255,.6); 
-    }
-    
-    /* Hero Section Enhancements */
-    .hero-badge {
-      background: rgba(0,212,255,0.1);
-      border: 1px solid rgba(0,212,255,0.3);
-      backdrop-filter: blur(10px);
-      animation: badge-pulse 3s ease-in-out infinite;
-    }
-    
-    @keyframes badge-pulse {
-      0%, 100% { box-shadow: 0 0 5px rgba(0,212,255,0.3); }
-      50% { box-shadow: 0 0 20px rgba(0,212,255,0.6), 0 0 30px rgba(0,255,136,0.3); }
-    }
-    
-    /* Service Card Icons */
-    .service-icon {
-      background: linear-gradient(135deg, var(--cy), var(--gr));
-      width: 60px;
-      height: 60px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-      box-shadow: 0 8px 20px rgba(0,212,255,0.3);
-    }
-    
-    /* Pricing Enhancement */
-    .price-tag {
-      background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,255,136,0.1));
-      border: 1px solid rgba(0,212,255,0.3);
-      border-radius: 8px;
-      padding: 0.5rem 1rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 600;
-    }
-    
-    /* Certification Badge */
-    .cert-badge {
-      background: linear-gradient(135deg, var(--orange), var(--red));
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(255,136,0,0.3);
-      animation: cert-glow 2s ease-in-out infinite alternate;
-    }
-    
-    @keyframes cert-glow {
-      0% { box-shadow: 0 4px 10px rgba(255,136,0,0.3); }
-      100% { box-shadow: 0 6px 20px rgba(255,136,0,0.6), 0 0 15px rgba(255,0,102,0.4); }
-    }
-    
-    /* Security Status Indicator */
-    .status-indicator {
-      width: 12px;
-      height: 12px;
-      background: var(--gr);
-      border-radius: 50%;
-      display: inline-block;
-      box-shadow: 0 0 10px var(--gr);
-      animation: status-pulse 2s ease-in-out infinite;
-    }
-    
-    @keyframes status-pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
-    
-    /* Loading Animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    /* Enhanced Social Icons */
-    .social-icon {
-      transition: all 0.3s ease;
-      filter: drop-shadow(0 0 5px rgba(0,212,255,0.3));
-    }
-    .social-icon:hover {
-      transform: scale(1.2) rotate(5deg);
-      filter: drop-shadow(0 0 15px rgba(0,212,255,0.8));
-    }
-    
-    /* Responsive Enhancements */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      .card {
-        margin-bottom: 1.5rem;
-      }
-    }
-  </style>
-
-  <!-- Plausible Analytics (Privacy-Friendly) -->
-  <script defer data-domain="novatitan.net" src="https://plausible.io/js/script.js"></script>
-
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://novatitan.net/faqs/">
@@ -356,571 +20,345 @@
   <meta name="twitter:title" content="FAQ | Cabling & Cybersecurity | Nova Titan">
   <meta name="twitter:description" content="Frequently asked questions about Nova Titan structured cabling, network infrastructure, Fortinet firewall, and cybersecurity services.">
   <meta name="twitter:image" content="https://novatitan.net/assets/images/nova-titan-og-image.png">
-</head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8DZFXDCNV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <style>
+    .faq-item { background: rgba(26,26,46,.85); border: 1px solid rgba(0,212,255,.25); border-radius: 8px; margin-bottom: 1rem; backdrop-filter: blur(12px); }
+    .faq-question { padding: 1.5rem; cursor: pointer; color: white; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0,212,255,.15); }
+    .faq-question h3 { color: white; margin: 0; font-size: 1.125rem; font-weight: 600; }
+    .faq-answer { padding: 0; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
+    .faq-answer.active { padding: 1.5rem; max-height: 500px; }
+    .faq-answer p, .faq-answer li { color: #d1d5db; line-height: 1.6; }
+    .faq-icon { color: var(--cy, #00d4ff); transition: transform 0.3s ease; }
+    .faq-icon.rotate { transform: rotate(180deg); }
+    .glow-green { text-shadow: 0 0 20px rgba(0,255,136,.6); }
+    .glow-purple { text-shadow: 0 0 20px rgba(179,0,255,.6); }
+  </style>
+---
 
-  gtag('config', 'G-R8DZFXDCNV');
-</script>
-<body class="text-white">
-  <div id="particles-js"></div>
-  <div class="matrix-bg"></div>
-
-  <!-- NAV -->
-  <nav class="bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full z-20 content">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center group">
-          <img src="/assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"/>
-          <span class="ml-3 text-xl font-bold text-cyan-400 glow">Nova Titan</span>
-        </a>
-        <div class="hidden sm:flex items-center space-x-6">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Solutions</a>
-          <a href="/plans/" class="nav-link">Plans</a>
-          <a href="/portfolio/" class="nav-link">Portfolio</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/testimonials/" class="nav-link">Testimonials</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
-            <i class="fas fa-calendar-check mr-1"></i>Book Now
-          </a>
-        </div>
-        <button id="menuBtn" class="sm:hidden hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-      <div id="mobileMenu" class="sm:hidden hidden pb-4">
-        <div class="flex flex-col space-y-2">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about/" class="nav-link">About</a>
-          <a href="/services/" class="nav-link">Solutions</a>
-          <a href="/plans/" class="nav-link">Plans</a>
-          <a href="/portfolio/" class="nav-link">Portfolio</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-          <a href="/testimonials/" class="nav-link">Testimonials</a>
-          <a href="/contact/" class="nav-link">Contact</a>
-          <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" class="nav-link">Book Now</a>
-        </div>
-      </div>
+<!-- HERO -->
+<section class="content pt-28 pb-14">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-wrap items-center gap-3 mb-4">
+      <span class="hero-badge inline-block px-3 py-1 rounded-full text-cyan-300 text-sm glow font-mono">
+        <span class="status-indicator mr-2"></span>
+        Frequently Asked Questions
+      </span>
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="content pt-28 pb-14">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-wrap items-center gap-3 mb-4">
-        <span class="hero-badge inline-block px-3 py-1 rounded-full text-cyan-300 text-sm glow font-mono">
-          <span class="status-indicator mr-2"></span>
-          Frequently Asked Questions
-        </span>
-        <span class="cert-badge">
-          <i class="fas fa-question-circle mr-1"></i>Get Answers Fast
-        </span>
-      </div>
-      
-      <h1 class="hero-title mt-4 text-4xl sm:text-6xl font-bold text-cyan-300 glow fade-in">
-        Common questions about 
-        <span class="glow-green">our services</span>.
-      </h1>
-      
-      <p class="mt-4 text-gray-300 text-lg max-w-2xl fade-in">
-        Get quick answers about our structured cabling, network infrastructure, Fortinet firewall deployment, and cybersecurity consulting services. 
-        <strong class="text-cyan-300">Serving Lubbock & West Texas</strong> with a 
-        <strong class="text-green-300">500-mile dispatch radius</strong>.
-      </p>
-      
-      <div class="mt-8 flex flex-wrap gap-4 fade-in">
-        <a href="/contact/" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg flex items-center">
-          <i class="fas fa-comments mr-2"></i>
-          Ask a Question
-        </a>
-        <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg border border-cyan-400/40 hover:bg-cyan-400/10 transition-all flex items-center">
-          <i class="fas fa-calendar-check mr-2"></i>
-          Schedule Free Consultation
-        </a>
-      </div>
+    
+    <h1 class="mt-4 text-4xl sm:text-6xl font-bold text-cyan-300 glow fade-in">
+      Common questions about 
+      <span class="glow-green">our services</span>.
+    </h1>
+    
+    <p class="mt-4 text-gray-300 text-lg max-w-2xl fade-in">
+      Get quick answers about our structured cabling, network infrastructure, Fortinet firewall deployment, and cybersecurity consulting services. 
+      <strong class="text-cyan-300">Serving Lubbock & West Texas</strong> with a 
+      <strong class="text-green-300">500-mile dispatch radius</strong>.
+    </p>
+    
+    <div class="mt-8 flex flex-wrap gap-4 fade-in">
+      <a href="/contact/" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg flex items-center">
+        <i class="fas fa-comments mr-2"></i>
+        Ask a Question
+      </a>
+      <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg border border-cyan-400/40 hover:bg-cyan-400/10 transition-all flex items-center">
+        <i class="fas fa-calendar-check mr-2"></i>
+        Schedule Free Consultation
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ CONTENT -->
-  <section class="content py-16">
-    <div class="max-w-4xl mx-auto px-6">
+<!-- FAQ CONTENT -->
+<section class="content py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    
+    <!-- General Questions -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-cyan-400 glow mb-8">
+        <i class="fas fa-info-circle mr-3"></i>General Questions
+      </h2>
       
-      <!-- General Questions -->
-      <div class="mb-16">
-        <h2 class="text-3xl font-bold text-cyan-400 glow mb-8">
-          <i class="fas fa-info-circle mr-3"></i>General Questions
-        </h2>
-        
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>What areas do you serve?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong style="color: #00d4ff;">On-site services:</strong> Lubbock and surrounding West Texas areas with a 500-mile dispatch radius. We cover Midland, Odessa, Amarillo, Abilene, San Angelo, and surrounding communities.</p>
-            <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Extended coverage:</strong> Multi-site rollouts available nationwide for enterprise and government clients. Cybersecurity consulting available remotely.</p>
-          </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>What areas do you serve?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
         </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>How quickly can you respond to emergencies?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong style="color: #ff0066;">Emergency Response Times:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Same-day response for emergency calls in Lubbock area</li>
-              <li>Remote emergency support available 24/7 nationwide</li>
-              <li>Critical security incidents prioritized with immediate response</li>
-              <li>Non-emergency requests typically handled within 24-48 hours</li>
-            </ul>
-          </div>
-        </div>
-
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Do you offer free consultations?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Yes! We offer <strong style="color: #00ff88;">free 30-minute security consultations</strong> to assess your current security posture and recommend improvements.</p>
-            <p style="margin-top: 1rem;"><strong style="color: #00d4ff;">This includes:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Basic security assessment</li>
-              <li>Identification of immediate vulnerabilities</li>
-              <li>Customized recommendations</li>
-              <li>Service planning and pricing discussion</li>
-            </ul>
-            <p style="margin-top: 1rem;">Schedule online at <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; text-decoration: underline;">Schedule on Calendly</a> or call <a href="tel:8063700624" style="color: #00d4ff;">(806) 370-0624</a>.</p>
-          </div>
+        <div class="faq-answer">
+          <p><strong style="color: #00d4ff;">On-site services:</strong> Lubbock and surrounding West Texas areas with a 500-mile dispatch radius. We cover Midland, Odessa, Amarillo, Abilene, San Angelo, and surrounding communities.</p>
+          <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Extended coverage:</strong> Multi-site rollouts available nationwide for enterprise and government clients. Cybersecurity consulting available remotely.</p>
         </div>
       </div>
 
-      <!-- Services & Pricing -->
-      <div class="mb-16">
-        <h2 class="text-3xl font-bold text-green-400 glow-green mb-8">
-          <i class="fas fa-dollar-sign mr-3"></i>Services & Pricing
-        </h2>
-        
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>What services does Nova Titan provide?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong style="color: #00d4ff;">Cabling & Physical Infrastructure:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Structured cabling (Cat5e, Cat6, Cat6a, fiber optic)</li>
-              <li>Rack-and-stack & server-room build-outs</li>
-              <li>Security camera infrastructure (cabling & mounting)</li>
-              <li>Cable certification & testing (Fluke equipment)</li>
-              <li>Site surveys & technical documentation</li>
-            </ul>
-            
-            <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Network Design & Deployment:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Network design, installation & optimization</li>
-              <li>Access point deployment (Ubiquiti, Meraki, Aruba)</li>
-              <li>Point-to-point wireless links</li>
-              <li>POS system & payment terminal deployment</li>
-            </ul>
-
-            <p style="margin-top: 1rem;"><strong style="color: #b300ff;">Security & Monitoring:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Fortinet firewall deployment & basic configuration</li>
-              <li>Cybersecurity consulting & network security assessments</li>
-              <li>Managed network monitoring retainer</li>
-            </ul>
-          </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>How quickly can you respond to emergencies?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
         </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>How much do your services cost?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong style="color: #00d4ff;">Pricing is project-based and depends on scope:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Structured cabling: <span style="color: #00ff88;">$150–$300 per drop</span> (varies by cable type and complexity)</li>
-              <li>Network design & installation: <span style="color: #00ff88;">Custom quote</span> based on site survey</li>
-              <li>Fortinet firewall deployment: <span style="color: #00ff88;">Custom quote</span> based on model and configuration</li>
-              <li>Cybersecurity consulting: <span style="color: #00ff88;">Starting at $1,500</span></li>
-              <li>Managed network monitoring: <span style="color: #00ff88;">$99–$499/month</span> depending on network size</li>
-            </ul>
-            
-            <p style="margin-top: 1rem;"><strong style="color: #ff8800;">How we quote:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Free site survey for all cabling and network projects</li>
-              <li>Transparent, fixed-price proposals with scoped deliverables</li>
-              <li>No hidden fees or surprise charges</li>
-              <li>Payment: Cash, check, card, or NET terms for government</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Do you provide ongoing support contracts?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Yes! We offer managed network monitoring retainer plans:</p>
-            <ul style="margin-top: 1rem; margin-left: 1rem;">
-              <li><strong>Titan Basic ($99/mo):</strong> Up to 10 devices, uptime & performance alerting</li>
-              <li><strong>Titan Pro ($299/mo):</strong> Up to 50 devices, Fortinet firewall monitoring</li>
-              <li><strong>Titan Elite ($499/mo):</strong> Unlimited devices, 24/7 monitoring, quarterly on-site reviews</li>
-            </ul>
-            <p style="margin-top: 1rem;">All plans are month-to-month with no long-term contracts. We also provide priority scheduling and discounted rates for repeat project work. <a href="/plans/" style="color: #00d4ff; text-decoration: underline;">View all plans &rarr;</a></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Technical Questions -->
-      <div class="mb-16">
-        <h2 class="text-3xl font-bold text-purple-400 glow-purple mb-8">
-          <i class="fas fa-cogs mr-3"></i>Technical Questions
-        </h2>
-        
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>What cabling types do you install?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong style="color: #00d4ff;">Copper Cabling:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Cat5e &mdash; standard commercial installations</li>
-              <li>Cat6 &mdash; most new commercial projects</li>
-              <li>Cat6a &mdash; high-performance and PoE+ environments</li>
-            </ul>
-            
-            <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Fiber Optic:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Single-mode and multi-mode fiber</li>
-              <li>Backbone runs between floors and buildings</li>
-              <li>Fiber-to-the-desk for high-bandwidth requirements</li>
-            </ul>
-            
-            <p style="margin-top: 1rem;">All installations include Fluke DSX-series certification testing and full documentation.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>What network equipment do you work with?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong style="color: #00d4ff;">Access Points & Wireless:</strong> Ubiquiti/UniFi, Cisco Meraki, Aruba, Cisco Small Business</p>
-            <p style="margin-top: 0.5rem;"><strong style="color: #00ff88;">Firewalls:</strong> Fortinet FortiGate (Fortinet Certified Associate)</p>
-            <p style="margin-top: 0.5rem;"><strong style="color: #b300ff;">Switching:</strong> Cisco, HPE/Aruba, Ubiquiti, Juniper</p>
-            <p style="margin-top: 0.5rem;"><strong style="color: #ff8800;">POS Systems:</strong> Clover, Square, Toast, Lightspeed</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Do you handle security camera installation?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>We provide <strong style="color: #00d4ff;">security camera infrastructure</strong> &mdash; the cabling and physical mounting of camera hardware. This includes:</p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li>Structured cabling runs to camera locations</li>
-              <li>PoE switch installation for camera power</li>
-              <li>Physical camera mounting and bracket installation</li>
-              <li>Conduit and pathway systems</li>
-            </ul>
-            <p style="margin-top: 1rem;"><strong style="color: #ff8800;">Note:</strong> Camera programming and monitoring system configuration is performed by our licensed subcontractor partners. We coordinate the full installation for a seamless experience.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Credentials & Compliance -->
-      <div class="mb-16">
-        <h2 class="text-3xl font-bold text-red-400 mb-8" style="text-shadow: 0 0 20px rgba(255,0,102,.6);">
-          <i class="fas fa-certificate mr-3"></i>Credentials & Compliance
-        </h2>
-        
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Are you licensed and insured?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong style="color: #00d4ff;">Yes. Nova Titan Systems LLC is fully insured and registered:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li><strong>SAM.gov:</strong> Active registration (UEI: CZ8BLZMSKZ66, CAGE: 170W6)</li>
-              <li><strong>DUNS:</strong> 141007579</li>
-              <li><strong>Insurance:</strong> General Liability & Workers' Compensation via Next Insurance</li>
-              <li><strong>Texas Compliance:</strong> Low-voltage work per Tex. Occupations Code &sect;1305.003(a)(12)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>What certifications does your team hold?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong style="color: #00ff88;">Current Certifications:</strong></p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li><strong>Fortinet Certified Associate (FCA)</strong> &mdash; Achieved April 2025, valid through April 2027</li>
-              <li><strong>AASDI Member</strong> &mdash; Association for the Advancement of Structured Data Infrastructure</li>
-              <li><strong>Verkada Authorized Reseller</strong></li>
-              <li><strong>Pelco/Motorola Solutions Partner</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h3>Do you work with government agencies?</h3>
-            <i class="fas fa-chevron-down faq-icon"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Yes. We are SAM.gov registered and qualified for federal, state, and local government work:</p>
-            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-              <li><strong>UEI:</strong> CZ8BLZMSKZ66</li>
-              <li><strong>CAGE Code:</strong> 170W6</li>
-              <li><strong>NAICS Codes:</strong> 541519, 238210, 541512, 541513, and more</li>
-              <li><strong>Small Disadvantaged Business (SDB)</strong> &mdash; Black-owned</li>
-              <li><strong>HUBZone:</strong> In progress</li>
-            </ul>
-            <p style="margin-top: 1rem;">Download our <a href="/capability-statement/" style="color: #00d4ff; text-decoration: underline;">Capability Statement 2026</a> for full details.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA SECTION -->
-  <section class="content py-16">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="card p-8 text-center">
-        <h2 class="text-4xl font-bold text-white glow mb-6">
-          Still Have Questions?
-        </h2>
-        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Our infrastructure and cybersecurity experts are here to help. Get personalized answers with a free consultation.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact/" class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg flex items-center justify-center">
-            <i class="fas fa-phone mr-2"></i>Contact Us
-          </a>
-          <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all flex items-center justify-center">
-            <i class="fas fa-calendar-check mr-2"></i>Schedule Free Consultation
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="content bg-gray-900/90 py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-        <!-- Brand -->
-        <div class="col-span-1 md:col-span-2">
-          <div class="flex items-center mb-4">
-            <img src="/assets/img/logo-rounded.png" alt="Nova Titan Logo" class="h-10 w-10 rounded-md mr-3"/>
-            <span class="text-xl font-bold text-cyan-400 glow">Nova Titan Systems</span>
-          </div>
-          <p class="text-gray-300 mb-4 max-w-md">
-            Professional infrastructure and cybersecurity services for West Texas. 
-            Fortinet Certified Associate with 95+ completed field projects.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="cert-badge text-xs">
-              <i class="fas fa-certificate mr-1"></i>Fortinet Certified
-            </span>
-            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">
-              <i class="fas fa-flag-usa mr-1"></i>SAM.gov Registered
-            </span>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-cyan-300 font-semibold mb-4">Quick Links</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/services/" class="text-gray-300 hover:text-cyan-300 transition">All Services</a></li>
-            <li><a href="/portfolio/" class="text-gray-300 hover:text-cyan-300 transition">Portfolio</a></li>
-            <li><a href="/about/" class="text-gray-300 hover:text-cyan-300 transition">About</a></li>
-            <li><a href="/blogs/" class="text-gray-300 hover:text-cyan-300 transition">Security Blog</a></li>
-            <li><a href="/faqs/" class="text-gray-300 hover:text-cyan-300 transition">FAQ</a></li>
-            <li><a href="/contact/" class="text-gray-300 hover:text-cyan-300 transition">Contact</a></li>
+        <div class="faq-answer">
+          <p><strong style="color: #ff0066;">Emergency Response Times:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Same-day response for emergency calls in Lubbock area</li>
+            <li>Remote emergency support available 24/7 nationwide</li>
+            <li>Critical security incidents prioritized with immediate response</li>
+            <li>Non-emergency requests typically handled within 24-48 hours</li>
           </ul>
         </div>
-
-        <!-- Contact Info -->
-        <div>
-          <h4 class="text-cyan-300 font-semibold mb-4">Get In Touch</h4>
-          <div class="space-y-3 text-sm">
-            <div class="flex items-center">
-              <i class="fas fa-phone text-cyan-400 w-4 mr-3"></i>
-              <a href="tel:+18063700624" class="text-gray-300 hover:text-cyan-300 transition">(806) 370-0624</a>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-envelope text-cyan-400 w-4 mr-3"></i>
-              <a href="mailto:info@novatitan.net" class="text-gray-300 hover:text-cyan-300 transition">info@novatitan.net</a>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-map-marker-alt text-cyan-400 w-4 mr-3"></i>
-              <span class="text-gray-300">Lubbock, TX & West Texas</span>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="border-t border-gray-700 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-300 text-sm mb-4 md:mb-0">
-            &copy; <span id="year"></span> Nova Titan Systems. All rights reserved.
-          </p>
-          
-          <div class="flex items-center space-x-4 mb-4 md:mb-0">
-            <a href="/terms/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Terms</a>
-            <a href="/privacy/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Privacy</a>
-            <a href="/refunds/" class="text-gray-400 hover:text-cyan-300 text-sm transition">Refunds</a>
-          </div>
-<div class="flex items-center space-x-4">
-            <a href="https://github.com/tzsmit" target="_blank" rel="noopener noreferrer me" aria-label="GitHub" class="social-icon text-gray-300 hover:text-cyan-300 transition">
-              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.111.82-.261.82-.58 0-.286-.011-1.044-.017-2.05-3.338.726-4.042-1.61-4.042-1.61-.546-1.389-1.333-1.759-1.333-1.759-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.833 2.809 1.304 3.494.997.108-.775.419-1.304.762-1.603-2.665-.303-5.467-1.333-5.467-5.932 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.51 11.51 0 0 1 3.003-.403c1.02.005 2.046.137 3.003.403 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.48 5.921.43.37.815 1.102.815 2.222 0 1.604-.015 2.896-.015 3.29 0 .321.217.697.826.579C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12Z"/>
-              </svg>
-            </a>
-            <a href="https://www.tiktok.com/@novatitan1" target="_blank" rel="noopener noreferrer me" aria-label="TikTok" class="social-icon text-gray-300 hover:text-cyan-300 transition">
-              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.667 0h3.043a7.727 7.727 0 0 0 2.215 4.76c1.365 1.35 3.09 2.226 5.075 2.405v3.1c-1.86.17-3.603-.33-5.391-1.22v6.88c0 7.74-8.39 10.3-12.73 5.08-2.82-3.41-2.05-8.94 2.08-11.04 1.01-.53 2.17-.78 3.31-.71v3.2c-.43-.04-.87.02-1.28.19-2.01.84-2.4 3.58-.75 5.01 2.57 2.2 6.6.34 6.6-2.86V0z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/traivone-smith-969b60327" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" class="social-icon text-gray-300 hover:text-cyan-300 transition">
-              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.355V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.603 0 4.268 2.372 4.268 5.457v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.114 20.451H3.559V9h3.555v11.451zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-              </svg>
-            </a>
-            <a href="https://www.facebook.com/share/1GNBbSRT4b/" target="_blank" rel="noopener noreferrer me" aria-label="Facebook" class="social-icon text-gray-300 hover:text-cyan-300 transition">
-              <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078V12.07h3.047V9.412c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.963h-1.513c-1.49 0-1.953.93-1.953 1.887v2.242h3.328l-.532 3.493h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-              </svg>
-            </a>
-          </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Do you offer free consultations?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! We offer <strong style="color: #00ff88;">free 30-minute security consultations</strong> to assess your current security posture and recommend improvements.</p>
+          <p style="margin-top: 1rem;"><strong style="color: #00d4ff;">This includes:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Basic security assessment</li>
+            <li>Identification of immediate vulnerabilities</li>
+            <li>Customized recommendations</li>
+            <li>Service planning and pricing discussion</li>
+          </ul>
+          <p style="margin-top: 1rem;">Schedule online at <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; text-decoration: underline;">Schedule on Calendly</a> or call <a href="tel:8063700624" style="color: #00d4ff;">(806) 370-0624</a>.</p>
         </div>
       </div>
     </div>
-  </footer>
 
-  <!-- SCRIPTS -->
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    menuBtn.addEventListener('click', () => {
-      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    <!-- Services & Pricing -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-green-400 glow-green mb-8">
+        <i class="fas fa-dollar-sign mr-3"></i>Services & Pricing
+      </h2>
       
-      menuBtn.setAttribute('aria-expanded', !isExpanded);
-      menuBtn.classList.toggle('active');
-      mobileMenu.classList.toggle('hidden');
-    });
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>What services does Nova Titan provide?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p><strong style="color: #00d4ff;">Cabling & Physical Infrastructure:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Structured cabling (Cat5e, Cat6, Cat6a, fiber optic)</li>
+            <li>Rack-and-stack & server-room build-outs</li>
+            <li>Security camera infrastructure (cabling & mounting)</li>
+            <li>Cable certification & testing (Fluke equipment)</li>
+            <li>Site surveys & technical documentation</li>
+          </ul>
+          <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Network Design & Deployment:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Network design, installation & optimization</li>
+            <li>Access point deployment (Ubiquiti, Meraki, Aruba)</li>
+            <li>Point-to-point wireless links</li>
+            <li>POS system & payment terminal deployment</li>
+          </ul>
+          <p style="margin-top: 1rem;"><strong style="color: #b300ff;">Security & Monitoring:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Fortinet firewall deployment & basic configuration</li>
+            <li>Cybersecurity consulting & network security assessments</li>
+            <li>Managed network monitoring retainer</li>
+          </ul>
+        </div>
+      </div>
 
-    // FAQ toggle function - Simple and clean
-    function toggleFaq(element) {
-      const answer = element.nextElementSibling;
-      const icon = element.querySelector('.faq-icon');
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>How much do your services cost?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p><strong style="color: #00d4ff;">Pricing is project-based and depends on scope:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Structured cabling: <span style="color: #00ff88;">$150-$300 per drop</span> (varies by cable type and complexity)</li>
+            <li>Network design & installation: <span style="color: #00ff88;">Custom quote</span> based on site survey</li>
+            <li>Fortinet firewall deployment: <span style="color: #00ff88;">Custom quote</span> based on model and configuration</li>
+            <li>Cybersecurity consulting: <span style="color: #00ff88;">Starting at $1,500</span></li>
+            <li>Managed network monitoring: <span style="color: #00ff88;">$99-$499/month</span> depending on network size</li>
+          </ul>
+          <p style="margin-top: 1rem;"><strong style="color: #ff8800;">How we quote:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Free site survey for all cabling and network projects</li>
+            <li>Transparent, fixed-price proposals with scoped deliverables</li>
+            <li>No hidden fees or surprise charges</li>
+            <li>Payment: Cash, check, card, or NET terms for government</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Do you provide ongoing support contracts?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! We offer managed network monitoring retainer plans:</p>
+          <ul style="margin-top: 1rem; margin-left: 1rem;">
+            <li><strong>Titan Basic ($99/mo):</strong> Up to 10 devices, uptime & performance alerting</li>
+            <li><strong>Titan Pro ($299/mo):</strong> Up to 50 devices, Fortinet firewall monitoring</li>
+            <li><strong>Titan Elite ($499/mo):</strong> Unlimited devices, 24/7 monitoring, quarterly on-site reviews</li>
+          </ul>
+          <p style="margin-top: 1rem;">All plans are month-to-month with no long-term contracts. We also provide priority scheduling and discounted rates for repeat project work. <a href="/plans/" style="color: #00d4ff; text-decoration: underline;">View all plans &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Questions -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-purple-400 glow-purple mb-8">
+        <i class="fas fa-cogs mr-3"></i>Technical Questions
+      </h2>
       
-      // Close all other FAQs
-      document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
-        if (otherAnswer !== answer) {
-          otherAnswer.classList.remove('active');
-          otherAnswer.parentElement.querySelector('.faq-icon').classList.remove('rotate');
-        }
-      });
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>What cabling types do you install?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p><strong style="color: #00d4ff;">Copper Cabling:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Cat5e &mdash; standard commercial installations</li>
+            <li>Cat6 &mdash; most new commercial projects</li>
+            <li>Cat6a &mdash; high-performance and PoE+ environments</li>
+          </ul>
+          <p style="margin-top: 1rem;"><strong style="color: #00ff88;">Fiber Optic:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Single-mode and multi-mode fiber</li>
+            <li>Backbone runs between floors and buildings</li>
+            <li>Fiber-to-the-desk for high-bandwidth requirements</li>
+          </ul>
+          <p style="margin-top: 1rem;">All installations include Fluke DSX-series certification testing and full documentation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>What network equipment do you work with?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p><strong style="color: #00d4ff;">Access Points & Wireless:</strong> Ubiquiti/UniFi, Cisco Meraki, Aruba, Cisco Small Business</p>
+          <p style="margin-top: 0.5rem;"><strong style="color: #00ff88;">Firewalls:</strong> Fortinet FortiGate (Fortinet Certified Associate)</p>
+          <p style="margin-top: 0.5rem;"><strong style="color: #b300ff;">Switching:</strong> Cisco, HPE/Aruba, Ubiquiti, Juniper</p>
+          <p style="margin-top: 0.5rem;"><strong style="color: #ff8800;">POS Systems:</strong> Clover, Square, Toast, Lightspeed</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Do you handle security camera installation?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We provide <strong style="color: #00d4ff;">security camera infrastructure</strong> &mdash; the cabling and physical mounting of camera hardware. This includes:</p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li>Structured cabling runs to camera locations</li>
+            <li>PoE switch installation for camera power</li>
+            <li>Physical camera mounting and bracket installation</li>
+            <li>Conduit and pathway systems</li>
+          </ul>
+          <p style="margin-top: 1rem;"><strong style="color: #ff8800;">Note:</strong> Camera programming and monitoring system configuration is performed by our licensed subcontractor partners. We coordinate the full installation for a seamless experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Credentials & Compliance -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-red-400 mb-8" style="text-shadow: 0 0 20px rgba(255,0,102,.6);">
+        <i class="fas fa-certificate mr-3"></i>Credentials & Compliance
+      </h2>
       
-      // Toggle current FAQ
-      answer.classList.toggle('active');
-      icon.classList.toggle('rotate');
-    }
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Are you licensed and insured?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p><strong style="color: #00d4ff;">Yes. Nova Titan Systems LLC is fully insured and registered:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li><strong>SAM.gov:</strong> Active registration (UEI: CZ8BLZMSKZ66, CAGE: 170W6)</li>
+            <li><strong>DUNS:</strong> 141007579</li>
+            <li><strong>Insurance:</strong> General Liability & Workers' Compensation via Next Insurance</li>
+            <li><strong>Texas Compliance:</strong> Low-voltage work per Tex. Occupations Code &sect;1305.003(a)(12)</li>
+          </ul>
+        </div>
+      </div>
 
-    // Particles.js configuration (slowed movement)
-    particlesJS("particles-js", {
-      "particles": {
-        "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
-        "color": {"value": "#00d4ff"},
-        "shape": {
-          "type": "circle",
-          "stroke": {"width": 0, "color": "#000000"},
-          "polygon": {"nb_sides": 5},
-          "image": {"src": "img/github.svg", "width": 100, "height": 100}
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false,
-          "anim": {"enable": false, "speed": 1, "opacity_min": 0.1, "sync": false}
-        },
-        "size": {
-          "value": 3,
-          "random": true,
-          "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#00d4ff",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 1, /* slowed from 6 */
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {"enable": true, "mode": "repulse"},
-          "onclick": {"enable": true, "mode": "push"},
-          "resize": true
-        },
-        "modes": {
-          "grab": {"distance": 400, "line_linked": {"opacity": 1}},
-          "bubble": {"distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3},
-          "repulse": {"distance": 200, "duration": 0.4},
-          "push": {"particles_nb": 4},
-          "remove": {"particles_nb": 2}
-        }
-      },
-      "retina_detect": true
-    });
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>What certifications does your team hold?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p><strong style="color: #00ff88;">Current Certifications:</strong></p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li><strong>Fortinet Certified Associate (FCA)</strong> &mdash; Achieved April 2025, valid through April 2027</li>
+            <li><strong>AASDI Member</strong> &mdash; Association for the Advancement of Structured Data Infrastructure</li>
+            <li><strong>Verkada Authorized Reseller</strong></li>
+            <li><strong>Pelco/Motorola Solutions Partner</strong></li>
+          </ul>
+        </div>
+      </div>
 
-    // GSAP Animations
-    gsap.from(".fade-in", {
-      duration: 0.6,
-      y: 20,
-      opacity: 0,
-      ease: "power2.out"
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Do you work with government agencies?</h3>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes. We are SAM.gov registered and qualified for federal, state, and local government work:</p>
+          <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+            <li><strong>UEI:</strong> CZ8BLZMSKZ66</li>
+            <li><strong>CAGE Code:</strong> 170W6</li>
+            <li><strong>NAICS Codes:</strong> 541519, 238210, 541512, 541513, and more</li>
+            <li><strong>Small Disadvantaged Business (SDB)</strong> &mdash; Black-owned</li>
+            <li><strong>HUBZone:</strong> In progress</li>
+          </ul>
+          <p style="margin-top: 1rem;">Download our <a href="/capability-statement/" style="color: #00d4ff; text-decoration: underline;">Capability Statement 2026</a> for full details.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="content py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="card p-8 text-center">
+      <h2 class="text-4xl font-bold text-white glow mb-6">
+        Still Have Questions?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Our infrastructure and cybersecurity experts are here to help. Get personalized answers with a free consultation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg flex items-center justify-center">
+          <i class="fas fa-phone mr-2"></i>Contact Us
+        </a>
+        <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition-all flex items-center justify-center">
+          <i class="fas fa-calendar-check mr-2"></i>Schedule Free Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ toggle function
+  function toggleFaq(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('.faq-icon');
+    
+    // Close all other FAQs
+    document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+      if (otherAnswer !== answer) {
+        otherAnswer.classList.remove('active');
+        var otherIcon = otherAnswer.parentElement.querySelector('.faq-icon');
+        if (otherIcon) otherIcon.classList.remove('rotate');
+      }
     });
-  </script>
-</body>
-</html>
+    
+    // Toggle current FAQ
+    answer.classList.toggle('active');
+    icon.classList.toggle('rotate');
+  }
+</script>
