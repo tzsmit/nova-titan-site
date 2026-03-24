@@ -9,10 +9,33 @@
   <!-- SEO Tags (jekyll-seo-tag plugin — outputs og:title, og:description, og:image, og:url, twitter:card, etc.) -->
   {% seo title=false %}
 
+  <!-- Explicit Open Graph / Social Share Tags (override jekyll-seo-tag for reliability) -->
+  {% assign og_image_url = site.url | append: "/assets/images/nova-titan-og-image.png" %}
+  {% if page.og_image %}{% assign og_image_url = site.url | append: page.og_image %}{% endif %}
+  <meta property="og:image" content="{{ og_image_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Nova Titan Systems – Division 27/28 Low-Voltage Contractor | West Texas & Houston">
+  <meta property="og:site_name" content="Nova Titan Systems">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@novatitan1">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{{ og_image_url }}">
+  <meta name="twitter:image:alt" content="Nova Titan Systems – Division 27/28 Low-Voltage Contractor">
+
   <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
 
   <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,9 +46,13 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- CSS: Compiled Tailwind + Custom Component Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/mobile-responsive.css">
+  <link rel="stylesheet" href="/assets/css/phase3-standardization.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <!-- Tailwind CDN for dynamic/missing classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Plausible Analytics (Privacy-Friendly) -->
   <script defer data-domain="novatitan.net" src="https://plausible.io/js/script.js"></script>
