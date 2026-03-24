@@ -6,29 +6,8 @@
   <!-- Title -->
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }} | {{ site.description }}{% endif %}</title>
 
-  <!-- SEO Tags (jekyll-seo-tag plugin) -->
+  <!-- SEO Tags (jekyll-seo-tag plugin — outputs og:title, og:description, og:image, og:url, twitter:card, etc.) -->
   {% seo title=false %}
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:image" content="{{ site.url }}/assets/images/nova-titan-og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="Nova Titan Systems">
-  <meta property="og:locale" content="en_US">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image" content="{{ site.url }}/assets/images/nova-titan-og-image.png">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
