@@ -4,6 +4,10 @@ description: "Division 27/28 commercial low-voltage subcontractor serving West T
 url: "https://novatitan.net"
 baseurl: ""   # root - no subdirectory
 
+# Default OG image for social sharing (used by jekyll-seo-tag)
+image: /assets/images/nova-titan-og-image.png
+logo: /assets/images/nova-titan-og-image.png
+
 # Author/Business Info
 author: "Traivone Smith"
 phone: "(806) 370-0624"
@@ -107,6 +111,7 @@ defaults:
     values:
       layout: "default"
       lang: "en"
+      image: /assets/images/nova-titan-og-image.png
   - scope:
       path: "_posts"
       type: "posts"
