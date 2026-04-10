@@ -64,32 +64,69 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-R8DZFXDCNV');
+
+    // GA4 Event Tracking: Tally Quote Form
+    document.addEventListener('DOMContentLoaded', function() {
+      // Track clicks on Tally form links
+      document.querySelectorAll('a[href*="tally.so/r/Y5MMAN"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'quote_request_click', {
+            event_category: 'engagement',
+            event_label: 'tally_form_cta',
+            link_url: 'https://tally.so/r/Y5MMAN'
+          });
+        });
+      });
+      // Track Tally embed form submission via postMessage
+      window.addEventListener('message', function(e) {
+        if (e.data && typeof e.data === 'string') {
+          try {
+            var msg = JSON.parse(e.data);
+            if (msg.event === 'Tally.FormSubmitted') {
+              gtag('event', 'generate_lead', {
+                event_category: 'conversion',
+                event_label: 'tally_quote_form_submitted',
+                value: 1
+              });
+            }
+          } catch(err) {}
+        }
+      });
+    });
   </script>
 
-  <!-- LocalBusiness JSON-LD Schema (single authoritative block) -->
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+
+  <!-- SpecialtyContractor JSON-LD Schema (single authoritative block) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["ElectricalContractor", "LocalBusiness"],
     "@id": "{{ site.url }}/#organization",
     "name": "Nova Titan Systems LLC",
     "alternateName": "Nova Titan",
     "legalName": "Nova Titan Systems LLC",
-    "description": "{{ site.description }}",
+    "description": "Division 27/28 commercial low-voltage and fire alarm subcontractor. SAM.gov active, MBE certified, NAICS 238210. Structured cabling, fire alarm, access control, security cameras serving West Texas, Houston, and DFW.",
     "url": "{{ site.url }}",
     "telephone": "+1-806-370-0624",
-    "email": "info@novatitan.net",
-    "logo": "{{ site.url }}/assets/images/nova-titan-logo.png",
+    "email": "traivonesmith@novatitan.net",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/images/nova-titan-logo.png",
+      "width": 400,
+      "height": 400
+    },
     "image": "{{ site.url }}/assets/images/nova-titan-og-image.png",
     "foundingDate": "2025-09",
     "founder": {
       "@type": "Person",
       "name": "Traivone Smith",
-      "jobTitle": "CEO"
+      "jobTitle": "Chief Executive Officer",
+      "url": "https://www.linkedin.com/in/traivone-smith-969b60327"
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "3223 S Loop 289 Ste 600",
       "addressLocality": "Lubbock",
       "addressRegion": "TX",
       "postalCode": "79423",
@@ -116,24 +153,43 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
         "opens": "08:00",
         "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "08:00",
+        "closes": "17:00"
       }
     ],
     "sameAs": [
       "https://www.linkedin.com/company/nova-titan-systems",
       "https://www.linkedin.com/in/traivone-smith-969b60327",
-      "https://g.page/nova-titan-systems",
       "https://github.com/tzsmit",
-      "https://www.tiktok.com/@novatitan1"
+      "https://www.tiktok.com/@novatitan1",
+      "https://www.facebook.com/share/1GNBbSRT4b/"
     ],
     "duns": "141007579",
+    "knowsAbout": [
+      "Fire Alarm Systems",
+      "Structured Cabling",
+      "Low Voltage Installation",
+      "Access Control Systems",
+      "Security Camera Infrastructure",
+      "Division 27 Construction",
+      "Division 28 Construction",
+      "NAICS 238210"
+    ],
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "UEI", "value": "CZ8BLZMSKZ66" },
       { "@type": "PropertyValue", "name": "CAGE Code", "value": "170W6" },
       { "@type": "PropertyValue", "name": "NAICS Primary", "value": "238210" },
-      { "@type": "PropertyValue", "name": "Certifications", "value": "SAM.gov Active, Fortinet Certified Associate, DSBS Verified, WorkMarket Verified" }
+      { "@type": "PropertyValue", "name": "SAM.gov Status", "value": "Active" },
+      { "@type": "PropertyValue", "name": "MBE Status", "value": "Certified" },
+      { "@type": "PropertyValue", "name": "Certifications", "value": "SAM.gov Active, MBE Certified, Fortinet Certified Associate, DSBS Verified, WorkMarket Verified" },
+      { "@type": "PropertyValue", "name": "Business Type", "value": "Minority-Owned Small Disadvantaged Business" }
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -143,16 +199,20 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Fire Alarm Systems (Div 28)",
-            "description": "Fire alarm system installation and design-assist for commercial construction and government facilities"
+            "name": "Fire Alarm Systems (Division 28)",
+            "description": "Fire alarm system installation, device wiring, panel installation, and design-assist for commercial construction and government facilities in Texas.",
+            "areaServed": { "@type": "State", "name": "Texas" },
+            "url": "{{ site.url }}/services/fire-alarm-subcontractor-texas/"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Structured Cabling & Low Voltage",
-            "description": "CAT6/6A copper and fiber optic cabling, telecom rooms, IDF/MDF build-outs for commercial and government facilities"
+            "name": "Structured Cabling & Low Voltage (Division 27)",
+            "description": "CAT6/6A copper and fiber optic cabling, telecom rooms, IDF/MDF build-outs for commercial and government facilities.",
+            "areaServed": { "@type": "State", "name": "Texas" },
+            "url": "{{ site.url }}/services/low-voltage-subcontractor-lubbock-tx/"
           }
         },
         {
@@ -160,7 +220,8 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Access Control Systems",
-            "description": "Card readers, door hardware, panels, and intrusion detection infrastructure installation"
+            "description": "Card readers, door hardware, panels, and intrusion detection infrastructure installation for commercial buildings.",
+            "areaServed": { "@type": "State", "name": "Texas" }
           }
         },
         {
@@ -168,15 +229,17 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Security Camera Infrastructure",
-            "description": "IP camera cabling, mounting, PoE infrastructure, and NVR integration"
+            "description": "IP camera cabling, mounting, PoE infrastructure, and NVR integration for commercial and government facilities.",
+            "areaServed": { "@type": "State", "name": "Texas" }
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Wi-Fi Infrastructure",
-            "description": "Enterprise wireless access point deployment, structured wireless cabling, and WAP installation"
+            "name": "Wi-Fi & Wireless Infrastructure",
+            "description": "Enterprise wireless access point deployment, structured wireless cabling, and WAP installation.",
+            "areaServed": { "@type": "State", "name": "Texas" }
           }
         },
         {
@@ -184,7 +247,8 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Audio/Visual & PA Systems",
-            "description": "PA cabling, intercom systems, and nurse-call support infrastructure"
+            "description": "PA cabling, intercom systems, and nurse-call support infrastructure for commercial construction.",
+            "areaServed": { "@type": "State", "name": "Texas" }
           }
         },
         {
@@ -192,7 +256,8 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Field & Smart Hands Services",
-            "description": "Rack and stack, site surveys, multi-site coordination, and equipment staging"
+            "description": "Rack and stack, site surveys, multi-site coordination, and equipment staging across Texas.",
+            "areaServed": { "@type": "State", "name": "Texas" }
           }
         }
       ]
