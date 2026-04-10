@@ -5,10 +5,11 @@
       <!-- Logo -->
       <a href="/" class="flex items-center group" aria-label="Nova Titan Systems Home">
         <img src="/assets/images/nova-titan-logo.png" 
-             alt="Nova Titan Systems Logo" 
-             class="h-10 w-10 rounded-md transition-transform group-hover:scale-110"
+             alt="Nova Titan Systems LLC - Low Voltage and Fire Alarm Subcontractor" 
+             class="nav-logo rounded-md transition-transform group-hover:scale-110"
              width="40"
-             height="40"/>
+             height="40"
+             loading="eager"/>
         <span class="ml-3 text-xl font-bold text-cyan-400 glow" aria-label="Nova Titan Systems">{{ site.title }}</span>
       </a>
 
@@ -303,6 +304,16 @@
     .nav-link-main {
       padding: 0.75rem 0;
       font-size: 1.125rem;
+    }
+    .nav-logo {
+      height: 32px;
+      width: 32px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .nav-logo {
+      height: 40px;
+      width: 40px;
     }
   }
   
