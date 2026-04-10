@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Technology Services | Lubbock TX | Nova Titan"
-description: "Professional technology services in Lubbock, TX. Structured cabling, network infrastructure, Fortinet firewalls, and cybersecurity."
+title: "Technology Services | Fire Alarm & Low-Voltage | Nova Titan"
+description: "Nova Titan Systems LLC — Commercial fire alarm (Div 28), structured cabling, access control, and low-voltage services. Fortinet certified, SAM.gov registered, MBE certified. Serving West Texas, Houston, and DFW."
 ---
 {% comment %}
   Service Schema — matches Nova Titan's 12 executable services exactly
@@ -10,6 +10,15 @@ description: "Professional technology services in Lubbock, TX. Structured cablin
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://novatitan.net/services/#fire-alarm",
+      "name": "Fire Alarm Systems (Division 28)",
+      "serviceType": "Fire Alarm Installation",
+      "provider": {"@id": "https://novatitan.net/#org"},
+      "areaServed": {"@type": "State", "name": "Texas"},
+      "description": "Fire alarm system installation and design-assist for commercial construction and government facilities. Panel installation, device mounting, wiring, and inspection support."
+    },
     {
       "@type": "Service",
       "@id": "https://novatitan.net/services/#cabling",
@@ -47,13 +56,14 @@ description: "Professional technology services in Lubbock, TX. Structured cablin
       <div class="text-center mb-12">
         <h1 class="text-4xl sm:text-6xl font-bold glow mb-6 fade-in">
           <span class="text-cyan-300">Professional Technology Services</span><br>
-          <span class="text-3xl glow-green">Cabling &bull; Networking &bull; Security</span>
+          <span class="text-3xl glow-green">Fire Alarm &bull; Cabling &bull; Networking &bull; Security</span>
         </h1>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-6 fade-in">
-          Nova Titan Systems delivers hands-on infrastructure services&mdash;from structured cabling and network builds
+          Nova Titan Systems delivers hands-on infrastructure services&mdash;from fire alarm systems and structured cabling
           to Fortinet firewall deployment and cybersecurity consulting. 
           <strong class="text-cyan-300">Fortinet Certified</strong> &bull; 
           <strong class="text-green-300">SAM.gov Registered</strong> &bull; 
+          <strong class="text-purple-300">MBE Certified</strong> &bull; 
           Serving <strong class="text-green-300">West Texas</strong> and nationwide.
         </p>
         <div class="flex flex-wrap justify-center gap-4 fade-in">
@@ -79,6 +89,36 @@ description: "Professional technology services in Lubbock, TX. Structured cablin
       </div>
 
       <div class="grid lg:grid-cols-3 gap-8 mb-16">
+
+        <!-- Pillar 0: Fire Alarm Systems -->
+        <div id="fire-alarm" class="service-card featured rounded-2xl p-8 fade-in">
+          <div class="service-icon home" style="background: linear-gradient(135deg, #ff4444, #cc0000);">
+            <i class="fas fa-fire text-3xl text-gray-900"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-red-300 mb-4">Fire Alarm Systems (Div 28)</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Fire alarm system installation and design-assist for commercial construction and government facilities.
+          </p>
+
+          <ul class="feature-list mb-6 text-sm">
+            <li><i class="fas fa-fire"></i> Fire alarm panel installation &amp; wiring</li>
+            <li><i class="fas fa-bell"></i> Notification appliance &amp; device mounting</li>
+            <li><i class="fas fa-drafting-compass"></i> Design-assist &amp; coordination with AHJ</li>
+            <li><i class="fas fa-clipboard-check"></i> Inspection support &amp; closeout documentation</li>
+            <li><i class="fas fa-building"></i> Commercial &amp; government facility experience</li>
+          </ul>
+
+          <div class="flex flex-col gap-3">
+            <a href="https://tally.so/r/Y5MMAN" target="_blank" rel="noopener noreferrer" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
+              <i class="fas fa-file-invoice mr-2"></i>
+              Request a Fire Alarm Quote
+            </a>
+            <p class="text-xs text-gray-400 text-center">
+              <i class="fas fa-map-marker-alt mr-1"></i>
+              Active bids: NASA JSC, Garden City ISD, and more
+            </p>
+          </div>
+        </div>
 
         <!-- Pillar 1: Cabling & Physical Infrastructure -->
         <div id="cabling" class="service-card featured rounded-2xl p-8 fade-in">
@@ -175,10 +215,19 @@ description: "Professional technology services in Lubbock, TX. Structured cablin
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold glow mb-4">Complete Service List</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">The 12 services we actively execute, nothing more and nothing less.</p>
+        <p class="text-gray-300 max-w-2xl mx-auto">Every service listed below is work we actively perform and deliver.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Fire Alarm Systems -->
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-3">
+            <i class="fas fa-fire text-red-400 text-xl mr-3"></i>
+            <h3 class="text-lg font-semibold text-red-300">Fire Alarm Systems (Div 28)</h3>
+          </div>
+          <p class="text-sm text-gray-400">Fire alarm panel installation, device mounting, wiring, design-assist, and inspection support for commercial and government projects.</p>
+        </div>
+
         <div class="card rounded-xl p-6 fade-in">
           <div class="flex items-center mb-3">
             <i class="fas fa-ethernet text-cyan-400 text-xl mr-3"></i>

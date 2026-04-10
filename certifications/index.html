@@ -12,13 +12,13 @@ extra_head: |
     "name": "Nova Titan Systems LLC",
     "legalName": "Nova Titan Systems LLC",
     "url": "https://novatitan.net",
-    "logo": "https://novatitan.net/assets/img/logo-rounded.png",
+    "logo": "https://novatitan.net/assets/images/nova-titan-logo.png",
     "description": "Black-owned, minority-owned small business providing IT infrastructure, cybersecurity, and field engineering services to federal, state, and local government agencies.",
     "foundingDate": "2025",
     "founders": [{
       "@type": "Person",
       "name": "Traivone Smith",
-      "jobTitle": "Founder & CEO"
+      "jobTitle": "CEO"
     }],
     "address": {
       "@type": "PostalAddress",
@@ -39,7 +39,7 @@ extra_head: |
       "https://www.linkedin.com/company/nova-titan-systems"
     ],
     "diversityCertifications": ["Black-Owned Business", "Minority-Owned Business", "Small Disadvantaged Business Eligible"],
-    "naics": ["541512", "541513", "541519", "238210", "541611", "541690", "561621", "238990"]
+    "naics": ["238210", "541512", "541513", "541519", "541611", "541690", "561621"]
   }
   </script>
   <!-- Breadcrumb Schema -->
@@ -70,7 +70,7 @@ extra_head: |
   <meta property="og:description" content="SAM.gov registered Black-owned Small Disadvantaged Business providing IT and cybersecurity services to government agencies. UEI: CZ8BLZMSKZ66">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://novatitan.net/certifications/">
-  <meta property="og:image" content="https://novatitan.net/assets/img/logo-rounded.png">
+  <meta property="og:image" content="https://novatitan.net/assets/images/nova-titan-og-image.png">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Federal Certifications | Nova Titan Systems">
@@ -120,7 +120,7 @@ extra_head: |
           <i class="fas fa-check-circle"></i>
         </div>
         <div class="text-sm text-gray-400 mb-2">CAGE Code</div>
-        <div class="text-green-300 font-semibold">Active</div>
+        <div class="text-green-300 font-semibold font-mono">170W6</div>
       </div>
       <div class="card rounded-xl p-6 text-center border-2 border-purple-400/30">
         <div class="text-3xl font-bold text-purple-300 mb-2">
@@ -168,8 +168,8 @@ extra_head: |
           <li class="flex items-start">
             <i class="fas fa-map-marker-alt text-purple-400 mr-3 mt-1"></i>
             <div>
-              <strong class="text-white">Location:</strong> Lubbock, Texas (West Texas HUBZone)<br>
-              <span class="text-sm text-gray-400">3223 S Loop 289 Ste 600, Lubbock, TX 79423</span>
+              <strong class="text-white">Location:</strong> Lubbock, Texas<br>
+              <span class="text-sm text-gray-400">Lubbock, TX 79423</span>
             </div>
           </li>
         </ul>
@@ -183,28 +183,28 @@ extra_head: |
           <li class="flex items-start">
             <i class="fas fa-hourglass-half text-yellow-400 mr-3 mt-1"></i>
             <div>
-              <strong class="text-white">CAGE Code:</strong> <span class="text-green-300">Active</span><br>
-              <span class="text-sm text-gray-400">Commercial and Government Entity code (assigned with SAM validation)</span>
+              <strong class="text-white">CAGE Code:</strong> <span class="text-green-300 font-mono">170W6</span> <span class="text-green-300">(Active)</span><br>
+              <span class="text-sm text-gray-400">Commercial and Government Entity code</span>
             </div>
           </li>
           <li class="flex items-start">
             <i class="fas fa-hourglass-half text-yellow-400 mr-3 mt-1"></i>
             <div>
-              <strong class="text-white">SBA 8(a) Business Development:</strong> Application Planned<br>
+              <strong class="text-white">SBA 8(a) Business Development:</strong> Eligibility Under Review &mdash; 2026 Rule Changes Noted<br>
               <span class="text-sm text-gray-400">Small Disadvantaged Business program for federal set-asides</span>
             </div>
           </li>
           <li class="flex items-start">
             <i class="fas fa-hourglass-half text-yellow-400 mr-3 mt-1"></i>
             <div>
-              <strong class="text-white">Texas HUB Certification:</strong> Application Planned<br>
+              <strong class="text-white">Texas HUB Certification:</strong> Application Planned &mdash; Not Yet Filed<br>
               <span class="text-sm text-gray-400">Historically Underutilized Business for state contracts</span>
             </div>
           </li>
           <li class="flex items-start">
-            <i class="fas fa-hourglass-half text-yellow-400 mr-3 mt-1"></i>
+            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
             <div>
-              <strong class="text-white">NMSDC MBE:</strong> Planned Submission<br>
+              <strong class="text-white">NMSDC MBE:</strong> <span class="text-green-300">Certified &mdash; Active</span><br>
               <span class="text-sm text-gray-400">National Minority Supplier Development Council Minority Business Enterprise</span>
             </div>
           </li>
@@ -256,11 +256,11 @@ extra_head: |
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-              <strong>Potential HUBZone Eligibility</strong>
+              <strong>Potential HUBZone Eligibility</strong> &mdash; <span class="text-yellow-300">Pending</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-              <strong>Texas HUB Program Eligible</strong>
+              <strong>Texas HUB Program</strong> &mdash; <span class="text-yellow-300">Application Planned</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
@@ -301,9 +301,16 @@ extra_head: |
         <tbody class="text-gray-300">
           <tr class="border-b border-gray-800">
             <td class="py-4 pr-4">
-              <span class="font-mono font-bold text-cyan-400">541519</span>
+              <span class="font-mono font-bold text-cyan-400">238210</span>
               <span class="ml-2 text-xs bg-cyan-600/30 text-cyan-300 px-2 py-1 rounded">PRIMARY</span>
             </td>
+            <td class="py-4">
+              <div class="font-semibold text-white mb-1">Electrical Contractors and Wiring Installation</div>
+              <div class="text-sm text-gray-400">Network cabling, structured wiring, low-voltage, fiber optic, fire alarm systems</div>
+            </td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541519</span></td>
             <td class="py-4">
               <div class="font-semibold text-white mb-1">Other Computer Related Services</div>
               <div class="text-sm text-gray-400">IT support, helpdesk, hardware installation, technical training, field services</div>

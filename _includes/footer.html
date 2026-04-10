@@ -5,7 +5,7 @@
       <!-- Brand Column -->
       <div class="col-span-1 md:col-span-2">
         <div class="flex items-center mb-4">
-          <img src="/assets/img/logo-rounded.png" 
+          <img src="/assets/images/nova-titan-logo.png" 
                alt="Nova Titan Systems Logo" 
                class="h-10 w-10 rounded-md mr-3"
                width="40"
@@ -13,8 +13,8 @@
           <span class="text-xl font-bold text-cyan-400 glow">{{ site.title }}</span>
         </div>
         <p class="text-gray-300 mb-4 max-w-md">
-          Division 27/28 commercial low-voltage subcontractor serving West Texas, Houston, and DFW. 
-          Structured cabling, access control, security cameras, and low-voltage infrastructure for general contractors and public entities.
+          Division 27/28 commercial low-voltage and fire alarm subcontractor serving West Texas, Houston, and DFW. 
+          Structured cabling, fire alarm, access control, security cameras, and low-voltage infrastructure for general contractors and public entities.
         </p>
         
         <!-- Certifications -->
@@ -26,7 +26,7 @@
             <i class="fas fa-flag-usa mr-1"></i>SAM.gov Registered
           </span>
           <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">
-            <i class="fas fa-shield-alt mr-1"></i>Fully Insured
+            <i class="fas fa-users mr-1"></i>MBE Certified
           </span>
           <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">
             <i class="fas fa-users mr-1"></i>Minority-Owned
@@ -62,6 +62,11 @@
           </div>
           <div class="flex items-center">
             <i class="fas fa-envelope text-cyan-400 w-4 mr-3"></i>
+            <a href="mailto:traivonesmith@novatitan.net" 
+               class="text-gray-300 hover:text-cyan-300 transition">traivonesmith@novatitan.net</a>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-envelope text-cyan-400 w-4 mr-3"></i>
             <a href="mailto:{{ site.email }}" 
                class="text-gray-300 hover:text-cyan-300 transition">{{ site.email }}</a>
           </div>
@@ -81,7 +86,7 @@
     <div class="border-t border-gray-700 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <p class="text-gray-300 text-sm mb-4 md:mb-0">
-          &copy; <span id="year"></span> {{ site.title }}. All rights reserved.
+          &copy; 2026 Nova Titan Systems LLC. All rights reserved.
         </p>
         
         <!-- Legal Links -->
@@ -139,6 +144,5 @@
 </style>
 
 <script>
-  // Set current year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Footer year is hardcoded to 2026
 </script>

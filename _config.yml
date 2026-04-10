@@ -1,12 +1,12 @@
 # Site Settings
 title: "Nova Titan Systems"
-description: "Division 27/28 commercial low-voltage subcontractor serving West Texas, Houston, and DFW. Structured cabling, access control, security cameras, and low-voltage infrastructure for general contractors and public entities."
+description: "Nova Titan Systems LLC — Commercial fire alarm (Div 28) and low-voltage (Div 27) subcontractor serving West Texas, Houston, and DFW. SAM.gov active, MBE certified, minority-owned."
 url: "https://novatitan.net"
 baseurl: ""   # root - no subdirectory
 
 # Default OG image for social sharing (used by jekyll-seo-tag)
 image: /assets/images/nova-titan-og-image.png
-logo: /assets/images/nova-titan-og-image.png
+logo: /assets/images/nova-titan-logo.png
 
 # Author/Business Info
 author: "Traivone Smith"
@@ -59,6 +59,7 @@ company:
     - "WorkMarket Verified Vendor"
     - "CloudWork Pro Member"
   capabilities:
+    - "Fire Alarm Systems (Div 28) — Installation & Design-Assist"
     - "Structured Cabling & Low-Voltage Installation (CAT6/6A, Fiber)"
     - "Access Control Systems (Card Readers, Door Hardware, Panels)"
     - "Security Camera Infrastructure (IP Cabling, PoE, NVR)"
