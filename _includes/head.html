@@ -98,7 +98,11 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
 
-  <!-- SpecialtyContractor JSON-LD Schema (single authoritative block) -->
+  <!-- SpecialtyContractor JSON-LD Schema (single authoritative block)
+       GBP REMINDER: Claim and verify Google Business Profile at business.google.com
+       Primary GBP Category: Electrical Installation Service / Low Voltage Contractor
+       Once verified, add the GBP URL to the sameAs array below.
+  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -107,13 +111,13 @@
     "name": "Nova Titan Systems LLC",
     "alternateName": "Nova Titan",
     "legalName": "Nova Titan Systems LLC",
-    "description": "Division 27/28 commercial low-voltage and fire alarm subcontractor. SAM.gov active, MBE certified, NAICS 238210. Structured cabling, fire alarm, access control, security cameras serving West Texas, Houston, and DFW.",
+    "description": "Division 27/28 commercial low-voltage and fire alarm subcontractor. SAM.gov active, minority-owned, NAICS 238210. Structured cabling, fire alarm, access control, security cameras serving West Texas, Houston, and DFW.",
     "url": "{{ site.url }}",
     "telephone": "+1-806-370-0624",
     "email": "traivonesmith@novatitan.net",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.url }}/assets/images/nova-titan-logo.png",
+      "url": "{{ site.url }}/assets/images/low-voltage-contractor-lubbock-logo.png",
       "width": 400,
       "height": 400
     },
@@ -165,7 +169,6 @@
       }
     ],
     "sameAs": [
-      "https://www.linkedin.com/company/nova-titan-systems",
       "https://www.linkedin.com/in/traivone-smith-969b60327",
       "https://github.com/tzsmit",
       "https://www.tiktok.com/@novatitan1",
@@ -188,7 +191,7 @@
       { "@type": "PropertyValue", "name": "NAICS Primary", "value": "238210" },
       { "@type": "PropertyValue", "name": "SAM.gov Status", "value": "Active" },
       { "@type": "PropertyValue", "name": "MBE Status", "value": "Certified" },
-      { "@type": "PropertyValue", "name": "Certifications", "value": "SAM.gov Active, MBE Certified, Fortinet Certified Associate, DSBS Verified, WorkMarket Verified" },
+      { "@type": "PropertyValue", "name": "Certifications", "value": "SAM.gov Active, Minority-Owned Business (Self-Certified), Fortinet Certified Associate, DSBS Verified, WorkMarket Verified" },
       { "@type": "PropertyValue", "name": "Business Type", "value": "Minority-Owned Small Disadvantaged Business" }
     ],
     "hasOfferCatalog": {
