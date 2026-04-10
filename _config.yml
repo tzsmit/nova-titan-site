@@ -1,12 +1,12 @@
 # Site Settings
 title: "Nova Titan Systems"
-description: "Nova Titan Systems LLC — Commercial fire alarm (Div 28) and low-voltage (Div 27) subcontractor serving West Texas, Houston, and DFW. SAM.gov active, MBE certified, minority-owned."
+description: "Nova Titan Systems LLC — Commercial fire alarm (Div 28) and low-voltage (Div 27) subcontractor serving West Texas, Houston, and DFW. SAM.gov active, minority-owned."
 url: "https://novatitan.net"
 baseurl: ""   # root - no subdirectory
 
 # Default OG image for social sharing (used by jekyll-seo-tag)
 image: /assets/images/nova-titan-og-image.png
-logo: /assets/images/nova-titan-logo.png
+logo: /assets/images/low-voltage-contractor-lubbock-logo.png
 
 # Author/Business Info
 author: "Traivone Smith"

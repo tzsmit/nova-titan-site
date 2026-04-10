@@ -5,12 +5,16 @@
       <!-- Brand Column -->
       <div class="col-span-1 md:col-span-2">
         <div class="flex items-center mb-4">
-          <img src="/assets/images/nova-titan-logo.png" 
-               alt="Nova Titan Systems LLC - Low Voltage and Fire Alarm Subcontractor" 
-               class="h-10 w-10 rounded-md mr-3"
-               width="40"
-               height="40"
-               loading="lazy"/>
+          <picture>
+            <source srcset="/assets/images/low-voltage-contractor-lubbock-logo.webp" type="image/webp">
+            <img src="/assets/images/low-voltage-contractor-lubbock-logo.png" 
+                 alt="Nova Titan Systems LLC - Low Voltage and Fire Alarm Subcontractor Lubbock Texas" 
+                 class="h-10 w-10 rounded-md mr-3"
+                 width="160"
+                 height="40"
+                 loading="lazy"
+                 style="height:40px;width:auto;"/>
+          </picture>
           <span class="text-xl font-bold text-cyan-400 glow">{{ site.title }}</span>
         </div>
         <p class="text-gray-300 mb-4 max-w-md">
@@ -27,7 +31,7 @@
             <i class="fas fa-flag-usa mr-1"></i>SAM.gov Registered
           </span>
           <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">
-            <i class="fas fa-users mr-1"></i>MBE Certified
+            <i class="fas fa-users mr-1"></i>Minority-Owned Business
           </span>
           <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">
             <i class="fas fa-users mr-1"></i>Minority-Owned
@@ -50,6 +54,15 @@
           <li><a href="/blog/" class="text-gray-300 hover:text-cyan-300 transition">Technical Blog</a></li>
           <li><a href="/about/" class="text-gray-300 hover:text-cyan-300 transition">About Us</a></li>
         </ul>
+        <h4 class="text-cyan-300 font-semibold mt-6 mb-3">Service Areas</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/services/fire-alarm-subcontractor-texas/" class="text-gray-300 hover:text-cyan-300 transition">Texas Fire Alarm Subcontractor &mdash; Div 28</a></li>
+          <li><a href="/services/low-voltage-subcontractor-lubbock-tx/" class="text-gray-300 hover:text-cyan-300 transition">Low Voltage Subcontractor Lubbock TX</a></li>
+          <li><a href="/services/low-voltage-subcontractor-houston-tx/" class="text-gray-300 hover:text-cyan-300 transition">Low Voltage Subcontractor Houston TX</a></li>
+          <li><a href="/services/low-voltage-subcontractor-dfw/" class="text-gray-300 hover:text-cyan-300 transition">Low Voltage Subcontractor Dallas-Fort Worth</a></li>
+          <li><a href="/services/low-voltage-subcontractor-midland-odessa-tx/" class="text-gray-300 hover:text-cyan-300 transition">Low Voltage Subcontractor Midland &amp; Odessa</a></li>
+          <li><a href="/services/low-voltage-subcontractor-amarillo-tx/" class="text-gray-300 hover:text-cyan-300 transition">Low Voltage Subcontractor Amarillo TX</a></li>
+        </ul>
       </div>
 
       <!-- Contact Info -->
@@ -65,11 +78,6 @@
             <i class="fas fa-envelope text-cyan-400 w-4 mr-3"></i>
             <a href="mailto:traivonesmith@novatitan.net" 
                class="text-gray-300 hover:text-cyan-300 transition">traivonesmith@novatitan.net</a>
-          </div>
-          <div class="flex items-center">
-            <i class="fas fa-envelope text-cyan-400 w-4 mr-3"></i>
-            <a href="mailto:{{ site.email }}" 
-               class="text-gray-300 hover:text-cyan-300 transition">{{ site.email }}</a>
           </div>
           <div class="flex items-center">
             <i class="fas fa-map-marker-alt text-cyan-400 w-4 mr-3"></i>
