@@ -35,8 +35,19 @@
 }
 
 .hero-section {
-  padding-top: 9rem;    /* pt-32 - accounts for fixed header (80px nav + extra space) */
+  padding-top: 9rem;    /* pt-32 - accounts for fixed header (96px nav + extra space) */
   padding-bottom: 3rem; /* pb-12 */
+}
+
+/* Navigation must always be visible — override any conflicting rules */
+.nav-container {
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 10000 !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
 }
 
 /* Ensure all .pt-32 and .pt-28 elements have proper spacing for fixed header */

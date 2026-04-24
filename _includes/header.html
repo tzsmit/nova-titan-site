@@ -1,7 +1,7 @@
 <!-- Navigation Header -->
-<nav class="nav-container fixed w-full top-0 content" role="navigation" aria-label="Main navigation" style="background: rgba(10,10,15,0.95); backdrop-filter: blur(6px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 10000;">
+<nav class="nav-container fixed w-full top-0" role="navigation" aria-label="Main navigation" style="background: rgba(10,10,15,0.95); backdrop-filter: blur(6px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 10000;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-24">
       <!-- Logo -->
       <a href="/" class="flex items-center group" aria-label="Nova Titan Systems Home">
         <picture>
@@ -178,19 +178,22 @@
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(0, 212, 255, 0.1);
     padding: 0.5rem 0;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 99999;
+    pointer-events: none;
   }
   
   .nav-item-wrapper:hover .dropdown-menu,
-  .nav-item-wrapper:focus-within .dropdown-menu {
+  .nav-item-wrapper:focus-within .dropdown-menu,
+  .nav-item-wrapper.open .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
   }
   
   /* Dropdown Links */
@@ -297,10 +300,16 @@
     tap-highlight-color: rgba(0, 212, 255, 0.2);
   }
 
-  /* Force nav to stay on top */
+  /* Force nav to stay on top — never hide, never clip, never translate */
   .nav-container {
     position: fixed !important;
+    top: 0 !important;
     z-index: 10000 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    will-change: auto;
   }
   
   /* Responsive adjustments */
@@ -332,3 +341,54 @@
     overflow: hidden;
   }
 </style>
+
+<script>
+  // SAFETY: Ensure nav is ALWAYS visible — prevent any script from hiding it
+  (function() {
+    function protectNav() {
+      var nav = document.querySelector('.nav-container');
+      if (nav) {
+        nav.style.transform = 'none';
+        nav.style.opacity = '1';
+        nav.style.visibility = 'visible';
+        nav.style.display = '';
+        nav.style.top = '0';
+        nav.style.position = 'fixed';
+      }
+    }
+    // Run immediately and after DOM/window load to catch any late-running scripts
+    protectNav();
+    document.addEventListener('DOMContentLoaded', protectNav);
+    window.addEventListener('load', protectNav);
+    // Also run on a short delay to catch GSAP or other animation libraries
+    setTimeout(protectNav, 500);
+    setTimeout(protectNav, 2000);
+  })();
+
+  // Dropdown click-to-toggle for desktop nav
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.nav-item-wrapper > a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var wrapper = this.parentElement;
+        var isOpen = wrapper.classList.contains('open');
+        // Close all other open dropdowns
+        document.querySelectorAll('.nav-item-wrapper.open').forEach(function(el) {
+          el.classList.remove('open');
+        });
+        if (!isOpen) {
+          e.preventDefault();
+          wrapper.classList.add('open');
+        }
+        // If already open, the second click navigates to the page
+      });
+    });
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-item-wrapper')) {
+        document.querySelectorAll('.nav-item-wrapper.open').forEach(function(el) {
+          el.classList.remove('open');
+        });
+      }
+    });
+  });
+</script>

@@ -79,25 +79,29 @@
 
   /**
    * Sticky Navigation Enhancement
+   * NOTE: The nav must ALWAYS remain visible. Never hide/translate the nav on scroll.
+   * Only a subtle shadow is added after scrolling past the hero area.
    */
   function initStickyNav() {
-    const nav = document.querySelector('nav');
+    var nav = document.querySelector('.nav-container');
     if (!nav) return;
 
-    let lastScroll = 0;
-    
+    // Ensure the nav is always visible and never transformed off-screen
+    nav.style.transform = 'none';
+    nav.style.opacity = '1';
+    nav.style.visibility = 'visible';
+    nav.style.display = '';
+
     window.addEventListener('scroll', function() {
-      const currentScroll = window.pageYOffset;
+      var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
       
-      // Add shadow on scroll (background color is handled inline)
+      // Only toggle shadow — never hide/translate the nav
       if (currentScroll > 50) {
         nav.classList.add('shadow-2xl');
       } else {
         nav.classList.remove('shadow-2xl');
       }
-      
-      lastScroll = currentScroll;
-    });
+    }, { passive: true });
   }
 
   /**
@@ -117,8 +121,8 @@
         if (target) {
           e.preventDefault();
           
-          // Calculate offset for fixed header
-          const headerHeight = 80;
+          // Calculate offset for fixed header (h-24 = 96px)
+          const headerHeight = 96;
           const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
           
           window.scrollTo({
