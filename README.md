@@ -1,168 +1,99 @@
 # Nova Titan Systems
 
-**Bridging the Digital Divide Through Government IT Infrastructure**
+**Division 27/28 Low-Voltage Subcontractor | West Texas, Houston & DFW**
 
-A Black-owned, mission-driven IT contractor pursuing federal, state, and local government contracts to serve underserved communities across America.
+A minority-owned, SAM.gov-registered commercial low-voltage subcontractor headquartered in Lubbock, TX.
 
-## 🎯 Our Mission
+## About Nova Titan Systems
 
-At Nova Titan Systems, we believe **technology access is a fundamental right**, not a privilege. As a Black-owned IT firm based in rural West Texas, we've witnessed firsthand how lack of digital infrastructure limits economic opportunity, education access, and healthcare delivery in underserved communities.
+Nova Titan Systems LLC is a Division 27/28 low-voltage subcontractor serving general contractors, property managers, and public entities across Texas. We deliver structured cabling, access control, security camera infrastructure, Wi-Fi deployment, AV/PA cabling, field & smart hands services, and Division 28 fire alarm rough-in coordination for commercial construction and government facilities.
 
-Our mission is to deploy reliable, secure, and accessible IT infrastructure for government agencies serving these communities—ensuring that veterans in rural areas get the same quality VA telehealth as those in major cities, that small-town school districts have the cybersecurity protection they need, and that every public facility we support becomes a bridge to digital opportunity.
+All regulated fire alarm programming, testing, and tagging is performed by properly licensed Texas fire alarm subcontractors engaged at award. Nova Titan's scope is limited to Division 28 rough-in (conduit, pathway, and device location coordination).
 
-> **"We don't just install routers and switches—we connect communities to the future."**
+**Headquarters**: Lubbock, TX 79423 | **Dispatch Radius**: 500 miles  
+**Phone**: (806) 370-0624 | **Email**: traivonesmith@novatitan.net  
+**Website**: [https://novatitan.net](https://novatitan.net)
 
-## 🏛️ Government Sectors We're Pursuing
+---
 
-### Federal Government (SAM.gov Active)
-- **Department of Defense (DoD)**: Military bases, installations, equipment deployments
-- **Veterans Affairs (VA)**: Healthcare facilities, telehealth infrastructure, rural clinics
-- **USDA & Rural Services**: Agricultural facilities, rural broadband support, regional offices
-- **DHS, SSA, & Federal Buildings**: Security infrastructure, facility IT modernization
+## Core Service Capabilities
 
-**Status**: Ready to serve as prime or subcontractor
+| Division | Service |
+|----------|---------|
+| Div 27 | Structured Cabling — CAT6/6A, Fiber Optic |
+| Div 27 | Access Control Infrastructure |
+| Div 27 | Security Camera Cabling & PoE Infrastructure |
+| Div 27 | Wi-Fi / AP Deployment |
+| Div 27 | AV/PA System Cabling |
+| Div 27 | Field & Smart Hands Services |
+| Div 28 | Fire Alarm Rough-In & Coordination (regulated work by licensed TX FA partners) |
+| — | Fortinet Firewall Deployment (FCA Certified) |
+| — | Cybersecurity Consulting |
+| — | Network Design & Installation |
 
-### State Government (Texas HUB Application Planned)
-- **State Agencies**: IT infrastructure, cybersecurity compliance, data center support
-- **Universities & Colleges**: Campus networks, research facilities, student services
-- **State Hospitals & Health Systems**: Network infrastructure, structured cabling, cybersecurity consulting
-- **Courts & Correctional Facilities**: IT infrastructure, network security, structured cabling
+---
 
-### Local Government (Ready to Serve)
-- **Cities & Municipalities**: City hall IT, public Wi-Fi, smart city infrastructure
-- **County Governments**: Courthouse technology, emergency services IT, records management
-- **School Districts & Libraries**: Student network access, digital learning infrastructure, public internet
-- **Public Safety & Emergency Services**: Police/fire/EMS communications, dispatch systems, IT infrastructure
+## Government Credentials
 
-## 📊 Key Statistics
+| Credential | Value |
+|------------|-------|
+| **SAM.gov Status** | Active |
+| **UEI** | CZ8BLZMSKZ66 |
+| **CAGE Code** | 170W6 |
+| **DUNS** | 141007579 |
+| **Primary NAICS** | 238210 (Electrical Contractors & Other Wiring Installation) |
+| **Additional NAICS** | 541512, 541513, 541519, 541611, 541690, 561621 |
+| **Business Type** | Minority-Owned, Small Disadvantaged Business (self-certified, SAM.gov) |
+| **Location** | Lubbock, TX (serving West Texas, Houston, DFW, and statewide) |
 
-- **95+ Projects Completed** connecting communities across America
-- **SAM.gov Active** | UEI: CZ8BLZMSKZ66 | CAGE Code: 170W6
-- **Black-Owned** | **Minority-Owned** | Small Business
-- **Based in Lubbock, TX** (HUBZone) | Serving Nationwide
-- **8 NAICS Codes** | **25 PSC Codes** | Federal, State & Local ready
+**95+ documented field service projects** across commercial retail, government, warehouse, and corporate facilities.
 
-## 🔧 Core Service Capabilities
+---
 
-### IT Infrastructure for Government Facilities
-Commercial experience with secure network infrastructure deployments. Positioned to serve military bases, VA hospitals, federal buildings, state agencies, school districts, and local government facilities.
+## Service Areas
 
-**Services Include:**
-- Network infrastructure deployment (routers, switches, firewalls, access points)
-- Low-voltage cabling and structured wiring (Cat5e/6/6a, fiber optic)
-- Professional field services coordination (nationwide deployment capabilities)
-- Site surveys and technical documentation
-- Equipment installation, removal, and decommissioning
+**Primary**: Lubbock & West Texas, Midland/Odessa/Permian Basin, Amarillo & Texas Panhandle  
+**Extended**: Houston Metro, Dallas-Fort Worth Metroplex, Texas statewide
 
-### 24/7 Government IT Support
-Round-the-clock monitoring, rapid response field services, and proactive maintenance ensuring government services stay online and citizens have uninterrupted access to critical services.
+---
 
-**Services Include:**
-- 24/7 remote monitoring and support
-- Multi-site government facility support
-- Equipment lifecycle management and upgrades
-- Help desk and technical troubleshooting
-- Emergency response and incident management
+## Regional Service Pages
 
-### Cybersecurity & Network Security
-Network security assessments, Fortinet firewall deployment, infrastructure hardening, and cybersecurity consulting to protect network infrastructure and ensure government agencies maintain secure operations.
+- [Low-Voltage Subcontractor Lubbock TX](https://novatitan.net/services/low-voltage-subcontractor-lubbock-tx/)
+- [Low-Voltage Subcontractor Houston TX](https://novatitan.net/services/low-voltage-subcontractor-houston-tx/)
+- [Low-Voltage Subcontractor DFW](https://novatitan.net/services/low-voltage-subcontractor-dfw/)
+- [Low-Voltage Subcontractor Midland & Odessa TX](https://novatitan.net/services/low-voltage-subcontractor-midland-odessa-tx/)
+- [Low-Voltage Subcontractor Amarillo TX](https://novatitan.net/services/low-voltage-subcontractor-amarillo-tx/)
+- [Fire Alarm Rough-In Subcontractor Texas](https://novatitan.net/services/fire-alarm-subcontractor-texas/)
 
-**Services Include:**
-- Network security assessments
-- Fortinet firewall deployment & basic configuration
-- Infrastructure hardening recommendations
-- Cybersecurity consulting
-- Managed network monitoring retainer
+---
 
-## 📂 Website Pages
-
-- **Home** – Mission statement, government sectors served, community impact
-- **About/Mission** – Full mission narrative, company overview, values
-- **Government Solutions** – Federal, state, and local contracting capabilities
-- **Services** – Infrastructure, Support, Cybersecurity
-- **Certifications** – SAM.gov, NAICS/PSC codes, business certifications
-- **Contact** – Government-specific inquiry forms
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Static Site Generator**: Jekyll
 - **Hosting**: GitHub Pages
 - **Styling**: Tailwind CSS + Custom CSS
 - **JavaScript**: Vanilla JS (nav.js, download-handler.js)
-- **Forms**: Contact forms integrated
-- **Analytics**: Google Analytics + Plausible Analytics
-- **PDF**: Federal Capability Statement (8 pages, 197KB)
-
-## 💼 Government Credentials
-
-| Credential | Value |
-|------------|-------|
-| **SAM.gov Status** | Active Registration |
-| **UEI** | CZ8BLZMSKZ66 |
-| **CAGE Code** | 170W6 |
-| **DUNS** | 141007579 |
-| **Primary NAICS** | 541519 (Other Computer Related Services) |
-| **Additional NAICS** | 541512, 541513, 238210, 238990, 561621, 541611, 541690 |
-| **PSC Codes** | 27 codes covering IT & Telecom Services |
-| **Business Type** | Black-Owned, Minority-Owned, Small Business |
-| **Location** | Lubbock, TX (HUBZone-eligible) |
-
-## 🌟 Service Experience
-
-### Commercial IT Projects (Verified)
-- 95+ enterprise projects completed nationwide
-- Experience supporting: Amazon, Walmart, CVS, Office Depot, 7 BREW Coffee, and major retailers
-- Management-first execution model with scalable deployment capabilities
-
-### Government Contracting Ready
-- **SAM.gov Active** - Ready for federal procurement opportunities
-- **CAGE Code 170W6** - Prime contractor capable
-- **10 Service-Based NAICS Codes** - Comprehensive IT service coverage
-- **Compliance Ready** - SAM.gov active, CAGE assigned, government contractor ready
-- **Serving**: Federal, State, and Local government agencies nationwide
-
-## 🎯 Mission-Driven Values
-
-### Digital Equity
-We believe technology access is a fundamental right. Every project prioritizes connecting underserved communities to the same quality infrastructure available in major urban centers.
-
-### Public Service
-Government facilities serve citizens—veterans, students, families. We approach every deployment with the understanding that reliable IT infrastructure enables critical public services.
-
-### Technical Excellence
-Enterprise-grade capability with small-business agility. Government-compliant security, professional documentation, and solutions built to protect citizen data and support mission-critical operations.
-
-## 📞 Contact Information
-
-- **Company**: Nova Titan Systems LLC
-- **Email**: info@novatitan.net
-- **Phone**: ‪(806) 370-0624‬
-- **Website**: [https://novatitan.net](https://novatitan.net)
-- **GitHub**: [https://github.com/tzsmit/nova-titan-site](https://github.com/tzsmit/nova-titan-site)
-- **Location**: Lubbock, Texas (serving nationwide)
-
-## 🚀 Deployment
-
-This site is automatically deployed via **GitHub Pages** on every push to the `main` branch.
-
-**Live Site**: https://novatitan.net/
-
-## 📚 Documentation
-
-### Current Documentation
-- **FINAL_COMPREHENSIVE_SITE_REVIEW_DECEMBER_22_2024.md** - Latest complete site audit (Dec 22, 2024)
-- **SITE_WIDE_CONTENT_AUDIT_DECEMBER_2024.md** - Site-wide content corrections
-- **HOMEPAGE_CONTENT_REWRITE_DECEMBER_2024.md** - Homepage transformation details
-
-### Archived Documentation
-Historical audits, implementation guides, and previous reviews are archived in `_archive/documentation/` for reference.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- **Forms**: Tally.so (quote requests) + Calendly (consultations)
+- **Analytics**: Google Analytics (G-R8DZFXDCNV) + Plausible Analytics
+- **PDF**: Capability Statement — [Download](https://novatitan.net/assets/docs/nova-titan-systems-capability-statement-2026.pdf) *(pending regeneration)*
 
 ---
 
-© 2025 Nova Titan Systems LLC. All rights reserved.
+## Deployment
 
-**Connecting Communities to the Future.**
+This site is automatically deployed via **GitHub Pages** on every push to the `main` branch.
+
+**Live Site**: [https://novatitan.net](https://novatitan.net)
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE) file for details.
+
+---
+
+© 2026 Nova Titan Systems LLC. All rights reserved.
+
+**Division 27/28 Low-Voltage Subcontractor | Lubbock, TX | SAM.gov Active | Minority-Owned**
