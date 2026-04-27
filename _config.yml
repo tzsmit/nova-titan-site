@@ -1,6 +1,6 @@
 # Site Settings
 title: "Nova Titan Systems"
-description: "Nova Titan Systems LLC — Commercial fire alarm (Div 28) and low-voltage (Div 27) subcontractor serving West Texas, Houston, and DFW. SAM.gov active, minority-owned."
+description: "Nova Titan Systems LLC — Division 27/28 low-voltage subcontractor serving West Texas, Houston, and DFW. Structured cabling, access control, security cameras, and Division 28 fire alarm rough-in coordination (regulated FA work by licensed TX partners at award). SAM.gov active, minority-owned."
 url: "https://novatitan.net"
 baseurl: ""   # root - no subdirectory
 
@@ -59,7 +59,7 @@ company:
     - "WorkMarket Verified Vendor"
     - "CloudWork Pro Member"
   capabilities:
-    - "Fire Alarm Systems (Div 28) — Installation & Design-Assist"
+    - "Division 28 Fire Alarm Rough-In & Coordination (regulated FA work performed by licensed Texas FA subcontractors at award)"
     - "Structured Cabling & Low-Voltage Installation (CAT6/6A, Fiber)"
     - "Access Control Systems (Card Readers, Door Hardware, Panels)"
     - "Security Camera Infrastructure (IP Cabling, PoE, NVR)"
