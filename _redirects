@@ -1,0 +1,20 @@
+# Nova Titan Systems — 301 Redirects (Netlify)
+# Generated: 2026-04-27 — Master Context v10.2.0 cleanup
+
+/services/government-it-contractor-texas/    /services/    301
+/services/lubbock/managed-it/               /services/low-voltage-subcontractor-lubbock-tx/    301
+/services/lubbock/commercial-it/            /services/low-voltage-subcontractor-lubbock-tx/    301
+/services/lubbock/cybersecurity/            /services/    301
+/services/lubbock/network-installation/     /services/low-voltage-subcontractor-lubbock-tx/    301
+/services/lubbock/security-systems/         /services/low-voltage-subcontractor-lubbock-tx/    301
+/services/lubbock/low-voltage/              /services/low-voltage-subcontractor-lubbock-tx/    301
+/plans/                                     /contact/    301
+/portfolio/                                 /services/    301
+/services/all-services/                     /services/    301
+/services/cloud-security/                   /services/    301
+/services/commercial/                       /services/    301
+/cybersecurity/basic-security-assessment/   /services/    301
+/cybersecurity/compliance-readiness-review/ /services/    301
+/cybersecurity/security-awareness-training/ /services/    301
+/case-studies/                              /services/    301
+/case-studies/:splat                        /services/    301

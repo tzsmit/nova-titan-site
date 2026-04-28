@@ -9,32 +9,14 @@
 - name: Services
   url: /services/
   icon: fas fa-briefcase
-  submenu:
-    - name: Infrastructure & Installations
-      url: /services/infrastructure/
-    - name: Cloud & Security
-      url: /services/cloud-security/
-    - name: View All Services
-      url: /services/all-services/
 
 - name: Government
   url: /government/
   icon: fas fa-flag-usa
 
-- name: Industries
-  url: /industries/
+- name: Case Studies
+  url: /case-studies/
   icon: fas fa-building
-  submenu:
-    - name: Commercial & Local Business
-      url: /services/commercial/
-    - name: Government Solutions
-      url: /government/
-    - name: Enterprise & MSP Partners
-      url: /partners/enterprise/
-    - name: Case Studies
-      url: /case-studies/
-    - name: Security Portfolio
-      url: /portfolio/
 
 - name: About
   url: /about/
