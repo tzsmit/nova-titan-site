@@ -16,7 +16,6 @@ email: "traivonesmith@novatitan.net"
 # Company Metadata (for Procurement & Commercial Discovery)
 company:
   legal_name: "Nova Titan Systems LLC"
-  duns: "141007579"
   uei: "CZ8BLZMSKZ66"
   cage: "170W6"
   naics_primary: "238210"
@@ -85,6 +84,58 @@ company:
     coverage: "Local + Nationwide Extended"
     experience: "Active in West Texas, Houston, and DFW markets"
     availability: "Same-day dispatch available"
+
+# 301 Redirects (Netlify-style redirects for deleted/moved pages)
+# These also serve as documentation; actual redirects handled by _redirects or netlify.toml
+redirects:
+  - from: /services/government-it-contractor-texas/
+    to: /services/
+    status: 301
+  - from: /services/lubbock/managed-it/
+    to: /services/low-voltage-subcontractor-lubbock-tx/
+    status: 301
+  - from: /services/lubbock/commercial-it/
+    to: /services/low-voltage-subcontractor-lubbock-tx/
+    status: 301
+  - from: /services/lubbock/cybersecurity/
+    to: /services/
+    status: 301
+  - from: /services/lubbock/network-installation/
+    to: /services/low-voltage-subcontractor-lubbock-tx/
+    status: 301
+  - from: /services/lubbock/security-systems/
+    to: /services/low-voltage-subcontractor-lubbock-tx/
+    status: 301
+  - from: /services/lubbock/low-voltage/
+    to: /services/low-voltage-subcontractor-lubbock-tx/
+    status: 301
+  - from: /plans/
+    to: /contact/
+    status: 301
+  - from: /portfolio/
+    to: /services/
+    status: 301
+  - from: /services/all-services/
+    to: /services/
+    status: 301
+  - from: /services/cloud-security/
+    to: /services/
+    status: 301
+  - from: /services/commercial/
+    to: /services/
+    status: 301
+  - from: /cybersecurity/basic-security-assessment/
+    to: /services/
+    status: 301
+  - from: /cybersecurity/compliance-readiness-review/
+    to: /services/
+    status: 301
+  - from: /cybersecurity/security-awareness-training/
+    to: /services/
+    status: 301
+  - from: /case-studies/
+    to: /services/
+    status: 301
 
 # Build Settings
 markdown: kramdown

@@ -155,7 +155,7 @@
     locations_covered: "Multiple"
     downtime: "Zero"
   
-  technical_specs: "Network stack deployment, enterprise wireless infrastructure, secure routing, Granite Ticket 5959515, Internal Owner: Douglas Wolfanger"
+  technical_specs: "Network stack deployment, enterprise wireless infrastructure, secure routing, Granite Ticket 5959515"
   
   icon: "fas fa-coffee"
   color: "purple"
@@ -199,7 +199,7 @@
     - "Established reliable vendor relationship with CSA Solutions"
     - "Enabled continuous healthcare access"
   
-  impact: "This ongoing partnership supports our mission of bridging the digital divide in healthcare delivery. By ensuring reliable operation of medical kiosks and health monitoring equipment in rural facilities, we help communities in underserved areas access quality healthcare technology."
+  impact: "This ongoing partnership supports reliable healthcare technology operations. By ensuring reliable operation of medical kiosks and health monitoring equipment in rural facilities, we help healthcare providers maintain consistent technology uptime."
   
   metrics:
     timeline: "11 months"
@@ -311,7 +311,7 @@
     services_count: 6
     disruption: "Zero"
   
-  technical_specs: "Spectrum Network Services contracts 25S18009, 25S18007, Internal Owner: Jason Hunter, hard start time coordination, enterprise LAN architecture"
+  technical_specs: "Spectrum Network Services contracts 25S18009, 25S18007, hard start time coordination, enterprise LAN architecture"
   
   icon: "fas fa-network-wired"
   color: "cyan"
