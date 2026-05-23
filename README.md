@@ -2,7 +2,7 @@
 
 **Division 27/28 Low-Voltage Subcontractor | West Texas, Houston & DFW**
 
-A minority-owned, SAM.gov-registered commercial low-voltage subcontractor headquartered in Lubbock, TX.
+A Lubbock-based, SAM.gov-registered commercial low-voltage subcontractor headquartered in Lubbock, TX.
 
 ## About Nova Titan Systems
 
@@ -40,13 +40,12 @@ All regulated fire alarm programming, testing, and tagging is performed by prope
 | **SAM.gov Status** | Active |
 | **UEI** | CZ8BLZMSKZ66 |
 | **CAGE Code** | 170W6 |
-| **DUNS** | 141007579 |
 | **Primary NAICS** | 238210 (Electrical Contractors & Other Wiring Installation) |
 | **Additional NAICS** | 541512, 541513, 541519, 541611, 541690, 561621 |
-| **Business Type** | Minority-Owned, Small Disadvantaged Business (self-certified, SAM.gov) |
+| **Business Type** | Owner-Operated Small Business, SAM.gov Active |
 | **Location** | Lubbock, TX (serving West Texas, Houston, DFW, and statewide) |
 
-**95+ documented field service projects** across commercial retail, government, warehouse, and corporate facilities.
+Documented field service projects across commercial retail, government, warehouse, and corporate facilities.
 
 ---
 
@@ -96,4 +95,4 @@ MIT License — see [LICENSE](LICENSE) file for details.
 
 © 2026 Nova Titan Systems LLC. All rights reserved.
 
-**Division 27/28 Low-Voltage Subcontractor | Lubbock, TX | SAM.gov Active | Minority-Owned**
+**Division 27/28 Low-Voltage Subcontractor | Lubbock, TX | SAM.gov Active | Owner-Operated**

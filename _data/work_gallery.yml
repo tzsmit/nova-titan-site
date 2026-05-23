@@ -1,0 +1,156 @@
+# Nova Titan Systems — Work Gallery Data
+# All images manually reviewed and approved for public website use.
+# Rejected images documented in rejected_photos_notes.md
+# Last reviewed: 2026-05-23
+
+- original_filename: "20260211_145256.jpg"
+  new_webp_filename: "commercial-warehouse-low-voltage-infrastructure-01.webp"
+  jpg_fallback_filename: "commercial-warehouse-low-voltage-infrastructure-01.jpg"
+  image_path: "/assets/images/work/commercial-warehouse-low-voltage-infrastructure-01.webp"
+  fallback_path: "/assets/images/work/commercial-warehouse-low-voltage-infrastructure-01.jpg"
+  category: "Commercial Construction"
+  service_keyword: "low-voltage infrastructure"
+  location_keyword: "West Texas"
+  buyer_intent: "GC / prime contractor proof — large commercial build"
+  alt_text: "Large commercial warehouse interior during low-voltage and communications infrastructure work by Nova Titan Systems"
+  caption: "Commercial warehouse low-voltage infrastructure buildout"
+  short_description: "Interior of a large commercial facility during active low-voltage communications infrastructure and pathway work."
+  page_target: "/field-work/"
+  use_on_homepage: true
+  use_on_case_studies: true
+  use_on_services: true
+  sensitive_review_status: "approved"
+  sensitive_notes: "Large commercial interior, workers visible at distance but faces not identifiable. JLG lift branding and Cintas safety signage visible — generic commercial construction context only. No private data."
+
+- original_filename: "20260211_145947.jpg"
+  new_webp_filename: "commercial-warehouse-low-voltage-infrastructure-02.webp"
+  jpg_fallback_filename: "commercial-warehouse-low-voltage-infrastructure-02.jpg"
+  image_path: "/assets/images/work/commercial-warehouse-low-voltage-infrastructure-02.webp"
+  fallback_path: "/assets/images/work/commercial-warehouse-low-voltage-infrastructure-02.jpg"
+  category: "Commercial Construction"
+  service_keyword: "commercial low-voltage"
+  location_keyword: "West Texas"
+  buyer_intent: "GC / prime contractor — large commercial facility scope"
+  alt_text: "Commercial warehouse prepared for communications, security, and network infrastructure installation"
+  caption: "Large commercial facility low-voltage and network pathway work"
+  short_description: "Wide view of a large commercial facility under active infrastructure buildout — cabling pathways, communications, and network prep."
+  page_target: "/field-work/"
+  use_on_homepage: false
+  use_on_case_studies: true
+  use_on_services: true
+  sensitive_review_status: "approved"
+  sensitive_notes: "Similar angle to -01. Workers at distance, no identifiable faces. JLG branding on lift. No sensitive data."
+
+- original_filename: "20260211_140727.jpg"
+  new_webp_filename: "commercial-facility-site-survey-west-texas.webp"
+  jpg_fallback_filename: "commercial-facility-site-survey-west-texas.jpg"
+  image_path: "/assets/images/work/commercial-facility-site-survey-west-texas.webp"
+  fallback_path: "/assets/images/work/commercial-facility-site-survey-west-texas.jpg"
+  category: "Site Survey"
+  service_keyword: "site survey"
+  location_keyword: "West Texas"
+  buyer_intent: "Property manager / GC — pre-work site documentation"
+  alt_text: "Commercial facility exterior during site survey and low-voltage infrastructure planning in West Texas"
+  caption: "Commercial facility site survey for structured cabling and network planning"
+  short_description: "Exterior of a commercial facility photographed during a pre-work site survey for structured cabling and network infrastructure planning."
+  page_target: "/field-work/"
+  use_on_homepage: false
+  use_on_case_studies: true
+  use_on_services: false
+  sensitive_review_status: "approved"
+  sensitive_notes: "Exterior building only. No faces, no signage, no identifying marks visible. Clean."
+
+- original_filename: "20260112_120321.jpg"
+  new_webp_filename: "starlink-commercial-wireless-site-survey.webp"
+  jpg_fallback_filename: "starlink-commercial-wireless-site-survey.jpg"
+  image_path: "/assets/images/work/starlink-commercial-wireless-site-survey.webp"
+  fallback_path: "/assets/images/work/starlink-commercial-wireless-site-survey.jpg"
+  category: "Wireless Infrastructure"
+  service_keyword: "wireless connectivity"
+  location_keyword: "Texas"
+  buyer_intent: "Commercial business / property manager — wireless / connectivity support"
+  alt_text: "Starlink wireless equipment staged on a rooftop during connectivity and site survey work"
+  caption: "Rooftop wireless equipment staging during connectivity site survey"
+  short_description: "Starlink equipment staged on a rooftop during a connectivity site survey for a commercial property."
+  page_target: "/field-work/"
+  use_on_homepage: true
+  use_on_case_studies: false
+  use_on_services: true
+  sensitive_review_status: "approved"
+  sensitive_notes: "Equipment on roof edge. No serial numbers, MACs, or IPs visible. No client identifiers."
+
+- original_filename: "20260112_132400.jpg"
+  new_webp_filename: "enterprise-wireless-access-point-installation.webp"
+  jpg_fallback_filename: "enterprise-wireless-access-point-installation.jpg"
+  image_path: "/assets/images/work/enterprise-wireless-access-point-installation.webp"
+  fallback_path: "/assets/images/work/enterprise-wireless-access-point-installation.jpg"
+  category: "Wireless Infrastructure"
+  service_keyword: "wireless access point installation"
+  location_keyword: "Texas"
+  buyer_intent: "Commercial business / MSP / IT — commercial Wi-Fi infrastructure"
+  alt_text: "Fortinet wireless access point installed on a commercial ceiling for enterprise Wi-Fi coverage"
+  caption: "Commercial wireless access point installation for structured Wi-Fi coverage"
+  short_description: "Fortinet enterprise wireless access point mounted on a commercial interior ceiling during Wi-Fi infrastructure deployment."
+  page_target: "/field-work/"
+  use_on_homepage: true
+  use_on_case_studies: false
+  use_on_services: true
+  sensitive_review_status: "approved"
+  sensitive_notes: "Fortinet logo visible on device — this is a credential asset, not sensitive. No config data, no IPs, no serial numbers readable."
+
+- original_filename: "20260213_090400.jpg"
+  new_webp_filename: "starlink-rooftop-mount-field-installation.webp"
+  jpg_fallback_filename: "starlink-rooftop-mount-field-installation.jpg"
+  image_path: "/assets/images/work/starlink-rooftop-mount-field-installation.webp"
+  fallback_path: "/assets/images/work/starlink-rooftop-mount-field-installation.jpg"
+  category: "Wireless Infrastructure"
+  service_keyword: "rooftop wireless installation"
+  location_keyword: "Texas"
+  buyer_intent: "Commercial property / GC — field wireless mount proof"
+  alt_text: "Rooftop wireless mount installation on a commercial brick building during field service"
+  caption: "Rooftop wireless internet mount installation"
+  short_description: "Field proof of a rooftop wireless mount installation on a commercial building."
+  page_target: "/field-work/"
+  use_on_homepage: false
+  use_on_case_studies: false
+  use_on_services: true
+  sensitive_review_status: "approved"
+  sensitive_notes: "Rooftop equipment only. Brick building exterior. No identifiers, no faces, no labels readable."
+
+- original_filename: "20260304_082240.jpg"
+  new_webp_filename: "network-rack-commercial-equipment-install.webp"
+  jpg_fallback_filename: "network-rack-commercial-equipment-install.jpg"
+  image_path: "/assets/images/work/network-rack-commercial-equipment-install.webp"
+  fallback_path: "/assets/images/work/network-rack-commercial-equipment-install.jpg"
+  category: "Network Infrastructure"
+  service_keyword: "network rack installation"
+  location_keyword: "Texas"
+  buyer_intent: "MSP / IT company / commercial business — rack and stack proof"
+  alt_text: "Commercial network rack and equipment installation with structured cabling in a server room"
+  caption: "Commercial network rack installation and structured cabling"
+  short_description: "Server room with network rack, structured cabling, and commercial equipment installed — general view without sensitive identifiers."
+  page_target: "/field-work/"
+  use_on_homepage: true
+  use_on_case_studies: true
+  use_on_services: true
+  sensitive_review_status: "approved"
+  sensitive_notes: "Dell and Vertiv branding visible on equipment — generic rack vendor context. No IPs, no passwords, no config screens visible. Wide shot only."
+
+- original_filename: "20260406_110045.jpg"
+  new_webp_filename: "empty-rack-staging-commercial-installation.webp"
+  jpg_fallback_filename: "empty-rack-staging-commercial-installation.jpg"
+  image_path: "/assets/images/work/empty-rack-staging-commercial-installation.webp"
+  fallback_path: "/assets/images/work/empty-rack-staging-commercial-installation.jpg"
+  category: "Rack & Stack"
+  service_keyword: "rack staging"
+  location_keyword: "Texas"
+  buyer_intent: "MSP / IT / commercial business — pre-install rack setup"
+  alt_text: "Network rack staged and ready for commercial equipment installation and rack-and-stack work"
+  caption: "Network rack staged before commercial equipment installation"
+  short_description: "Empty network rack staged in a small equipment room before rack-and-stack installation — pre-install documentation."
+  page_target: "/field-work/"
+  use_on_homepage: false
+  use_on_case_studies: false
+  use_on_services: true
+  sensitive_review_status: "approved"
+  sensitive_notes: "Empty rack in a small office/equipment room. No sensitive data visible. Paper on wall in background is too small to read."
