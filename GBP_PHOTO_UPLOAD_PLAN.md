@@ -23,7 +23,7 @@ GBP does not guarantee ranking. Uploading quality, relevant, real-work photos su
 ---
 
 ### PHOTO 1 — First Upload (Lead Photo / Cover Candidate)
-**File:** `commercial-warehouse-low-voltage-infrastructure-01.webp`
+**File:** `nova-titan-commercial-low-voltage-warehouse-west-texas-01.webp`
 **Category:** Work / Jobsite Proof
 **GBP Category Selection:** Interior, or At Work
 **Caption for GBP:**
@@ -39,7 +39,7 @@ GBP does not guarantee ranking. Uploading quality, relevant, real-work photos su
 ---
 
 ### PHOTO 2 — Second Upload
-**File:** `commercial-warehouse-low-voltage-infrastructure-02.webp`
+**File:** `nova-titan-commercial-low-voltage-warehouse-west-texas-02.webp`
 **Category:** Work / Jobsite Proof
 **GBP Category Selection:** At Work
 **Caption for GBP:**
@@ -54,7 +54,7 @@ GBP does not guarantee ranking. Uploading quality, relevant, real-work photos su
 ---
 
 ### PHOTO 3 — Third Upload
-**File:** `network-rack-commercial-equipment-install.webp`
+**File:** `nova-titan-commercial-network-rack-low-voltage-lubbock-tx-01.webp`
 **Category:** Network Infrastructure / Rack & Stack
 **GBP Category Selection:** At Work
 **Caption for GBP:**
@@ -70,7 +70,7 @@ GBP does not guarantee ranking. Uploading quality, relevant, real-work photos su
 ---
 
 ### PHOTO 4 — Fourth Upload
-**File:** `enterprise-wireless-access-point-installation.webp`
+**File:** `nova-titan-enterprise-wireless-ap-commercial-lubbock-tx-01.webp`
 **Category:** Wireless Infrastructure
 **GBP Category Selection:** At Work
 **Caption for GBP:**
@@ -86,7 +86,7 @@ GBP does not guarantee ranking. Uploading quality, relevant, real-work photos su
 ---
 
 ### PHOTO 5 — Fifth Upload
-**File:** `starlink-rooftop-mount-field-installation.webp`
+**File:** `nova-titan-starlink-rooftop-mount-field-installation-lubbock-tx-01.webp`
 **Category:** Field Service / Rooftop Installation
 **GBP Category Selection:** Exterior or At Work
 **Caption for GBP:**
@@ -102,7 +102,7 @@ GBP does not guarantee ranking. Uploading quality, relevant, real-work photos su
 ---
 
 ### PHOTO 6 — Sixth Upload
-**File:** `starlink-commercial-wireless-site-survey.webp`
+**File:** `nova-titan-starlink-wireless-site-survey-commercial-west-texas-01.webp`
 **Category:** Site Survey / Wireless
 **GBP Category Selection:** At Work
 **Caption for GBP:**
@@ -118,7 +118,7 @@ GBP does not guarantee ranking. Uploading quality, relevant, real-work photos su
 ---
 
 ### PHOTO 7 — Seventh Upload
-**File:** `commercial-facility-site-survey-west-texas.webp`
+**File:** `nova-titan-commercial-facility-site-survey-west-texas-01.webp`
 **Category:** Site Survey / Exterior
 **GBP Category Selection:** Exterior
 **Caption for GBP:**
@@ -134,7 +134,7 @@ GBP does not guarantee ranking. Uploading quality, relevant, real-work photos su
 ---
 
 ### PHOTO 8 — Eighth Upload
-**File:** `empty-rack-staging-commercial-installation.webp`
+**File:** `nova-titan-empty-rack-staging-commercial-installation-west-texas-01.webp`
 **Category:** Rack & Stack / Pre-Install
 **GBP Category Selection:** At Work
 **Caption for GBP:**
