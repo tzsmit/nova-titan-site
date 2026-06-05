@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+# Explicitly allow high-value pages (belt-and-suspenders)
+Allow: /capability-statement/
+Allow: /quote/
+Allow: /government/
+Allow: /field-work/
+
 # Block utility pages from indexing
 Disallow: /public/
 Disallow: /thank-you/

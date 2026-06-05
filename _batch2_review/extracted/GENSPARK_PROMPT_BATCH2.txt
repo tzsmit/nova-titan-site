@@ -1,0 +1,68 @@
+You are updating the Nova Titan Systems website using the new processed Batch 2 work-gallery assets.
+
+Site: https://novatitan.net
+Repo: https://github.com/tzsmit/nova-titan-site
+
+Use the attached processed package:
+- Copy all images from `assets/images/work/` into the repo path `assets/images/work/`.
+- Use WebP as the primary image source and JPG as fallback.
+- Merge `_data/work_gallery_additions_batch2.yml` into the existing work gallery data file, or create a separate batch include if the current site structure supports it.
+- Review `photo_manifest_batch2.csv` for source file, category, alt text, caption, and sensitivity notes.
+
+Business positioning:
+Nova Titan Systems LLC is a West Texas commercial low-voltage and network infrastructure contractor based in Lubbock, Texas. Core services include structured cabling, commercial network racks, firewall/security appliance support, Fortinet/FortiSwitch support, Cradlepoint/WAN failover, Starlink and commercial wireless support, wireless AP installation, server room/MDF support, camera/NVR infrastructure cabling support, smart hands, and field service.
+
+Do not position Nova Titan as a generic handyman company. Do not overstate regulated fire alarm/security scope. For regulated systems, keep the language limited to cabling/pathway/infrastructure support unless properly licensed subcontractors are engaged.
+
+SEO goals:
+- Strengthen proof-of-work signals for commercial low-voltage, structured cabling, network infrastructure, Fortinet firewall support, Cradlepoint WAN failover, Starlink installation, wireless AP support, server room/MDF support, NVR/PoE switch infrastructure, and West Texas field service.
+- Use service-area language naturally: Lubbock, West Texas, Amarillo, Midland, Odessa, Abilene, Pampa, and surrounding communities.
+- Use descriptive alt text exactly from the provided YAML/CSV unless you need a minor grammar adjustment.
+- Use captions under or near images.
+- Do not keyword stuff.
+- Use lazy loading and async decoding for all images.
+- Keep the layout mobile-responsive.
+
+Recommended gallery categories to show:
+- Structured Cabling
+- Network Infrastructure
+- Fortinet / Firewall
+- Cradlepoint / WAN Failover
+- Starlink / Rooftop Wireless
+- Server Room / MDF
+- Wireless / Wi-Fi Infrastructure
+- Structured Cabling Pathway
+- Audio / AV + Network Rack
+- Testing / Verification
+- Fiber / ONT Support
+
+Sensitive-info handling:
+These assets were processed with targeted blur where needed. Do not replace them with raw originals. Do not publish rejected raw photos. Do one final QA pass for: visible IP addresses, passwords, serial numbers, live CCTV feeds, client names, handwritten store/site identifiers, labels that disclose locations, faces, license plates, and confidential screens.
+
+Suggested section intro copy:
+Nova Titan Systems provides commercial low-voltage, structured cabling, network infrastructure, wireless, firewall, Starlink, and smart-hands field support across Lubbock and West Texas. These field photos show examples of rack support, cabling, wireless equipment, network hardware, rooftop wireless installations, server room work, and connectivity verification.
+
+Suggested CTA:
+Need commercial low-voltage or network infrastructure support in West Texas? Request a quote from Nova Titan Systems.
+
+Implementation requirements:
+1. Add these Batch 2 images to the existing Work Gallery / Field Work page.
+2. Add only a smaller proof strip to the homepage if needed; avoid overwhelming the homepage.
+3. Use `<picture><source type="image/webp"><img ...>` pattern with `loading="lazy"` and `decoding="async"`.
+4. Keep existing SEO-safe fire alarm/security wording unchanged.
+5. Do not delete old gallery images.
+6. Do not duplicate near-identical images excessively on the homepage.
+7. Update sitemap if new pages are created; if only adding images/data to existing pages, sitemap changes may not be necessary.
+8. Verify all image paths return HTTP 200 after deployment.
+
+Return:
+- Files changed
+- Number of images added
+- Categories added/updated
+- Any rejected images not used
+- Confirmation that sensitive-info blurs are retained
+- Confirmation that gallery loads on mobile
+- Final QA checklist
+
+
+Batch 2 package note: use the processed files only. This package intentionally avoids duplicate source photos so the live gallery does not repeat the same image.

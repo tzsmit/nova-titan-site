@@ -1,0 +1,127 @@
+- image: /assets/images/work/nova-titan-structured-cabling-blue-cat6-patch-panel-rack-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-structured-cabling-blue-cat6-patch-panel-rack-west-texas-01.jpg
+  alt: Structured cabling rack with blue Cat6 patch cables and organized cable management for a commercial network installation
+    in West Texas.
+  caption: Structured cabling rack with organized Cat6 patching and commercial network equipment.
+  category: Structured Cabling
+- image: /assets/images/work/nova-titan-commercial-network-rack-att-velocity-bandwidth-manager-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-commercial-network-rack-att-velocity-bandwidth-manager-west-texas-01.jpg
+  alt: Commercial network rack with AT&T demarc equipment, Velocity bandwidth manager, Fortinet appliances, and structured
+    patching for a West Texas business.
+  caption: Network rack with carrier demarc, bandwidth management, firewall, switching, and patching.
+  category: Network Infrastructure
+- image: /assets/images/work/nova-titan-commercial-nvr-poe-switch-rack-hikvision-lorex-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-commercial-nvr-poe-switch-rack-hikvision-lorex-west-texas-01.jpg
+  alt: Commercial rack with Hikvision NVR, Lorex recorder, Ruckus switch, PoE cabling, and network support equipment.
+  caption: NVR, PoE switching, and network rack support for a commercial camera infrastructure environment.
+  category: Security Camera Infrastructure
+- image: /assets/images/work/nova-titan-fortinet-fortiswitch-commercial-rack-patch-panel-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-fortinet-fortiswitch-commercial-rack-patch-panel-west-texas-01.jpg
+  alt: Fortinet firewall and FortiSwitch equipment installed in a commercial network rack with patch panel support.
+  caption: Fortinet firewall, switching, and rack-mounted network support equipment.
+  category: Network Infrastructure
+- image: /assets/images/work/nova-titan-commercial-cctv-network-rack-white-cabling-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-commercial-cctv-network-rack-white-cabling-west-texas-01.jpg
+  alt: Commercial CCTV and network rack with white cabling, switch gear, and camera infrastructure support.
+  caption: Commercial CCTV/network rack before cleanup or service support, with camera monitoring screen blurred for privacy.
+  category: Security Camera Infrastructure
+- image: /assets/images/work/nova-titan-dell-server-rack-pdu-storage-cabling-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-dell-server-rack-pdu-storage-cabling-west-texas-01.jpg
+  alt: Dell server and storage rack with PDU equipment, organized cabling, and data center support hardware.
+  caption: Dell server/storage rack with PDU hardware and cabling support.
+  category: Server Room / MDF
+- image: /assets/images/work/nova-titan-full-dell-server-rack-after-install-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-full-dell-server-rack-after-install-west-texas-01.jpg
+  alt: Full Dell server rack with storage, power distribution, and network equipment after field support work.
+  caption: Full Dell server rack with network and power infrastructure support.
+  category: Server Room / MDF
+- image: /assets/images/work/nova-titan-fortigate-40f-commercial-firewall-closeup-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-fortigate-40f-commercial-firewall-closeup-west-texas-01.jpg
+  alt: FortiGate 40F firewall closeup in a commercial rack with connected network cabling and support equipment.
+  caption: FortiGate firewall installed in a commercial rack environment.
+  category: Fortinet / Firewall
+- image: /assets/images/work/nova-titan-fortigate-fortiswitch-eaton-ups-commercial-rack-01.webp
+  fallback: /assets/images/work/nova-titan-fortigate-fortiswitch-eaton-ups-commercial-rack-01.jpg
+  alt: Commercial rack with Fortinet firewall, FortiSwitch, Eaton UPS, and structured cabling for network infrastructure support.
+  caption: Fortinet firewall, switch, UPS, and rack-mounted network equipment.
+  category: Fortinet / Firewall
+- image: /assets/images/work/nova-titan-fortinet-firewall-cisco-router-commercial-rack-01.webp
+  fallback: /assets/images/work/nova-titan-fortinet-firewall-cisco-router-commercial-rack-01.jpg
+  alt: Fortinet firewall installed with Cisco router and rack-mounted network equipment for commercial infrastructure support.
+  caption: Fortinet firewall and Cisco router support in a commercial rack.
+  category: Fortinet / Firewall
+- image: /assets/images/work/nova-titan-dual-fortinet-firewalls-cradlepoint-wan-failover-01.webp
+  fallback: /assets/images/work/nova-titan-dual-fortinet-firewalls-cradlepoint-wan-failover-01.jpg
+  alt: Dual Fortinet firewalls with Cradlepoint WAN failover equipment in a commercial network rack.
+  caption: Dual firewall and Cradlepoint WAN failover installation.
+  category: Cradlepoint / WAN Failover
+- image: /assets/images/work/nova-titan-cradlepoint-fortinet-wan-failover-rack-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-cradlepoint-fortinet-wan-failover-rack-west-texas-01.jpg
+  alt: Commercial rack with Fortinet firewall equipment and Cradlepoint WAN failover support for resilient connectivity.
+  caption: Cradlepoint and Fortinet WAN failover equipment in a commercial rack.
+  category: Cradlepoint / WAN Failover
+- image: /assets/images/work/nova-titan-starlink-rooftop-dish-mount-commercial-wireless-01.webp
+  fallback: /assets/images/work/nova-titan-starlink-rooftop-dish-mount-commercial-wireless-01.jpg
+  alt: Starlink rooftop dish mount installed for commercial wireless internet support in West Texas.
+  caption: Starlink rooftop dish mount for commercial wireless connectivity.
+  category: Starlink / Rooftop Wireless
+- image: /assets/images/work/nova-titan-starlink-rooftop-mount-aerial-view-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-starlink-rooftop-mount-aerial-view-west-texas-01.jpg
+  alt: Aerial view of Starlink rooftop mount and field installation for commercial wireless support.
+  caption: Starlink rooftop mount and wireless field installation.
+  category: Starlink / Rooftop Wireless
+- image: /assets/images/work/nova-titan-starlink-rooftop-parapet-mount-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-starlink-rooftop-parapet-mount-west-texas-01.jpg
+  alt: Starlink dish mounted on a rooftop parapet for commercial wireless internet service.
+  caption: Starlink rooftop parapet mount for wireless service.
+  category: Starlink / Rooftop Wireless
+- image: /assets/images/work/nova-titan-rooftop-wireless-camera-mount-cabling-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-rooftop-wireless-camera-mount-cabling-west-texas-01.jpg
+  alt: Exterior rooftop wireless or camera mount with clean cable pathway on a commercial building.
+  caption: Exterior wireless/camera mount with cabling support.
+  category: Starlink / Rooftop Wireless
+- image: /assets/images/work/nova-titan-server-room-entry-mdf-commercial-network-support-01.webp
+  fallback: /assets/images/work/nova-titan-server-room-entry-mdf-commercial-network-support-01.jpg
+  alt: Server room entry and MDF area showing commercial network infrastructure and rack support environment.
+  caption: Server room/MDF environment for commercial network infrastructure support.
+  category: Server Room / MDF
+- image: /assets/images/work/nova-titan-complex-mdf-bas-rack-conduit-cabling-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-complex-mdf-bas-rack-conduit-cabling-west-texas-01.jpg
+  alt: Complex MDF and building automation rack with conduit, cabling pathways, and network infrastructure support.
+  caption: MDF/BAS rack with conduit and structured pathway support.
+  category: Server Room / MDF
+- image: /assets/images/work/nova-titan-raycom-power-distribution-cisco-telecom-rack-01.webp
+  fallback: /assets/images/work/nova-titan-raycom-power-distribution-cisco-telecom-rack-01.jpg
+  alt: Raycom power distribution and Cisco telecom rack equipment with structured cabling and conduit support.
+  caption: Power distribution and telecom rack support with structured cabling.
+  category: Server Room / MDF
+- image: /assets/images/work/nova-titan-fortinet-wireless-access-point-ceiling-mount-01.webp
+  fallback: /assets/images/work/nova-titan-fortinet-wireless-access-point-ceiling-mount-01.jpg
+  alt: Fortinet wireless access point mounted on a commercial ceiling tile for business Wi-Fi infrastructure.
+  caption: Fortinet wireless access point ceiling installation.
+  category: Wireless / Wi-Fi Infrastructure
+- image: /assets/images/work/nova-titan-low-voltage-cable-bundle-wall-pathway-west-texas-01.webp
+  fallback: /assets/images/work/nova-titan-low-voltage-cable-bundle-wall-pathway-west-texas-01.jpg
+  alt: Low-voltage cable bundle routed through a wall pathway for commercial network cabling support.
+  caption: Low-voltage cable pathway and wall routing for network infrastructure.
+  category: Structured Cabling Pathway
+- image: /assets/images/work/nova-titan-labeled-pdu-fortinet-fortiswitch-amp-rack-closeup-01.webp
+  fallback: /assets/images/work/nova-titan-labeled-pdu-fortinet-fortiswitch-amp-rack-closeup-01.jpg
+  alt: Labeled rack power and network connections for modem, FortiGate firewall, FortiSwitch, and amplifier equipment.
+  caption: Labeled rack power and network connections for firewall, switch, modem, and amplifier.
+  category: Audio / AV + Network Rack
+- image: /assets/images/work/nova-titan-audio-network-rack-fortinet-fortiswitch-crown-amp-01.webp
+  fallback: /assets/images/work/nova-titan-audio-network-rack-fortinet-fortiswitch-crown-amp-01.jpg
+  alt: Commercial audio and network rack with Fortinet firewall, FortiSwitch, and amplifier equipment.
+  caption: Audio/network rack integration with Fortinet equipment and amplifier support.
+  category: Audio / AV + Network Rack
+- image: /assets/images/work/nova-titan-network-speedtest-verification-cisco-equipment-01.webp
+  fallback: /assets/images/work/nova-titan-network-speedtest-verification-cisco-equipment-01.jpg
+  alt: Laptop speed test verification with commercial Cisco network equipment in the background.
+  caption: Network speed test verification after field support work.
+  category: Testing / Verification
+- image: /assets/images/work/nova-titan-fiber-ont-wall-mount-commercial-network-support-01.webp
+  fallback: /assets/images/work/nova-titan-fiber-ont-wall-mount-commercial-network-support-01.jpg
+  alt: Clean fiber ONT or modem wall mount with fiber drop and network cabling for commercial connectivity support.
+  caption: Fiber/ONT wall mount and network connectivity support.
+  category: Fiber / ONT Support
