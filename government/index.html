@@ -47,6 +47,14 @@ extra_head: |
 
     <!-- Federal Readiness Status -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="card rounded-xl p-6 text-center border-2 border-green-400/50">
+        <div class="text-3xl font-bold text-green-300 mb-2">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <div class="text-sm text-gray-400 mb-2">HUBZone Status</div>
+        <div class="text-green-300 font-semibold">SBA-Certified</div>
+        <div class="text-xs text-gray-500 mt-1">Eff. 2026-06-05</div>
+      </div>
       <div class="card rounded-xl p-6 text-center border-2 border-green-400/30">
         <div class="text-3xl font-bold text-green-300 mb-2">
           <i class="fas fa-check-circle"></i>
@@ -54,26 +62,21 @@ extra_head: |
         <div class="text-sm text-gray-400 mb-2">SAM.gov Status</div>
         <div class="text-green-300 font-semibold">Active</div>
       </div>
-      <div class="card rounded-xl p-6 text-center border-2 border-green-400/30">
-        <div class="text-3xl font-bold text-green-300 mb-2">
-          <i class="fas fa-badge-check"></i>
-        </div>
-        <div class="text-sm text-gray-400 mb-2">CAGE Code</div>
-        <div class="text-green-300 font-semibold">170W6</div>
-      </div>
       <div class="card rounded-xl p-6 text-center border-2 border-cyan-400/30">
         <div class="text-3xl font-bold text-cyan-300 mb-2">
-          <i class="fas fa-building"></i>
+          <i class="fas fa-id-card"></i>
         </div>
-        <div class="text-sm text-gray-400 mb-2">UEI Number</div>
-        <div class="text-cyan-300 font-semibold font-mono text-sm">CZ8BLZMSKZ66</div>
+        <div class="text-sm text-gray-400 mb-2">CAGE / UEI</div>
+        <div class="text-cyan-300 font-semibold font-mono text-sm">170W6</div>
+        <div class="text-xs text-gray-400 font-mono mt-1">CZ8BLZMSKZ66</div>
       </div>
       <div class="card rounded-xl p-6 text-center border-2 border-purple-400/30">
         <div class="text-3xl font-bold text-purple-300 mb-2">
-          <i class="fas fa-certificate"></i>
+          <i class="fas fa-hard-hat"></i>
         </div>
-        <div class="text-sm text-gray-400 mb-2">Business Type</div>
-        <div class="text-white font-semibold text-sm">Small Business<br><span class="text-xs text-purple-300">Owner-Operated</span></div>
+        <div class="text-sm text-gray-400 mb-2">NAICS Primary</div>
+        <div class="text-purple-300 font-semibold font-mono">238210</div>
+        <div class="text-xs text-gray-500 mt-1">Div 27/28 Low-Voltage</div>
       </div>
     </div>
   </div>
@@ -129,8 +132,8 @@ extra_head: |
             </div>
             <div>
               <span class="text-gray-400">Business Classification:</span><br>
-              <strong>Small Business (SB)</strong><br>
-              <span class="text-sm text-purple-300">Owner-Operated Small Business</span><br>
+              <strong class="text-green-300">SBA-Certified HUBZone Small Business</strong><br>
+              <span class="text-sm text-gray-300">Eligible for HUBZone set-aside awards</span><br>
               <span class="text-sm text-yellow-300">SAM.gov Registered — CAGE 170W6</span>
             </div>
 
@@ -431,8 +434,7 @@ extra_head: |
     
     <div class="card rounded-xl p-8 max-w-5xl mx-auto mb-8">
       <div class="text-center mb-8">
-        
-        <div class="text-xl text-gray-300">Projects Completed</div>
+        <div class="text-xl text-gray-300">Commercial &amp; Field Service Projects Delivered</div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
@@ -703,11 +705,10 @@ extra_head: |
     <!-- Federal Credentials Footer -->
     <div class="text-center">
       <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+        <span><i class="fas fa-certificate text-green-400 mr-2"></i>SBA-Certified HUBZone</span>
         <span><i class="fas fa-check-circle text-green-400 mr-2"></i>SAM.gov Active</span>
         <span><i class="fas fa-id-card text-cyan-400 mr-2"></i>UEI: CZ8BLZMSKZ66</span>
         <span><i class="fas fa-badge-check text-cyan-400 mr-2"></i>CAGE: 170W6</span>
-        <span><i class="fas fa-certificate text-green-400 mr-2"></i>SBA-Certified HUBZone</span>
-        <span><i class="fas fa-check-circle text-cyan-400 mr-2"></i>SAM.gov Active</span>
         <span><i class="fas fa-laptop-code text-green-400 mr-2"></i>NAICS 238210</span>
       </div>
     </div>
