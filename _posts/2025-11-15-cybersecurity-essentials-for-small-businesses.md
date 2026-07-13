@@ -1,5 +1,6 @@
 ---
 layout: post
+published: false  # HOLD: pre-repositioning content (managed IT plans/pricing) — rewrite before publishing
 title: "Cybersecurity Essentials for Small Businesses in West Texas"
 date: 2025-11-15 10:00:00 -0600
 categories: [cybersecurity, small-business, west-texas]
@@ -49,7 +50,7 @@ Outdated software is a goldmine for cybercriminals. Many attacks exploit known v
 4. Antivirus and security software
 5. Network equipment firmware
 
-**Solution:** Our [Titan Pro and Elite managed IT plans](/plans/) include automated patch management.
+**Solution:** Our [Titan Pro and Elite managed IT plans](/quote/) include automated patch management.
 
 ## 4. Employee Security Training
 
@@ -118,7 +119,7 @@ Proactive monitoring can detect threats before they cause damage.
 - Antivirus detections
 - Network performance anomalies
 
-**Our Service:** All [managed IT plans](/plans/) include basic network monitoring; [Titan Elite plan](/plans/) includes 24/7 advanced monitoring.
+**Our Service:** All [managed IT plans](/quote/) include basic network monitoring; [Titan Elite plan](/quote/) includes 24/7 advanced monitoring.
 
 ## West Texas-Specific Considerations
 
@@ -167,7 +168,7 @@ Schedule a complimentary 30-minute consultation to assess your current security 
 - [Home Wi-Fi Security Audits](/services/#cloud-security) – Starting at $149
 - [Small Business Network Setup](/services/#installations) – Starting at $499
 - [Cloud Security Assessments](/services/#cloud-security) – Starting at $399
-- [Managed IT Support Plans](/plans/) – From $99/month
+- [Managed IT Support Plans](/quote/) – From $99/month
 - [Security Awareness Training](/services/#cloud-security) – $249/session
 
 ### Service Area
@@ -181,7 +182,7 @@ Cybersecurity doesn't have to be overwhelming. Start with these essentials, and 
 - 📞 Call: (806) 370-0624
 - 📧 Email: info@novatitan.net
 - 🌐 Visit: [https://novatitan.net](https://novatitan.net)
-- 📅 [Schedule a Free Consultation](/book-now/)
+- 📅 [Schedule a Free Consultation](/quote/)
 
 ---
 

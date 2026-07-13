@@ -1,0 +1,12 @@
+Contact: info@novatitan.net
+Contact: tel:+1-806-370-0624
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://novatitan.net/.well-known/security.txt
+Policy: https://novatitan.net/privacy/
+Hiring: https://novatitan.net/contact/
+
+# Nova Titan Systems LLC
+# SAM.gov Registered IT Contractor
+# UEI: CZ8BLZMSKZ66 | CAGE: 170W6
+# Lubbock, Texas

@@ -6,8 +6,9 @@
   <!-- Title -->
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }} | {{ site.description }}{% endif %}</title>
 
-  <!-- SEO Tags (jekyll-seo-tag plugin — outputs og:title, og:description, og:image, og:url, twitter:card, etc.) -->
+  <!-- SEO Tags (jekyll-seo-tag plugin — outputs og:title, og:description, og:image, og:url, twitter:card, canonical, etc.) -->
   {% seo title=false %}
+  {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
 
   <!-- Explicit Open Graph / Social Share Tags (override jekyll-seo-tag for reliability) -->
   {% assign og_image_url = site.url | append: "/assets/images/nova-titan-og-image.png" %}
@@ -68,7 +69,7 @@
     // GA4 Event Tracking: Tally Quote Form
     document.addEventListener('DOMContentLoaded', function() {
       // Track clicks on Tally form links
-      document.querySelectorAll('a[href*="tally.so/r/Y5MMAN"]').forEach(function(el) {
+      document.querySelectorAll('a[href*="tally.so/r/Y5MMAN"], a[href="/quote/"]').forEach(function(el) {
         el.addEventListener('click', function() {
           gtag('event', 'quote_request_click', {
             event_category: 'engagement',
@@ -95,8 +96,7 @@
     });
   </script>
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <!-- Canonical URL emitted by jekyll-seo-tag ({% raw %}{% seo %}{% endraw %}) above — do not add a second one. -->
 
   <!-- SpecialtyContractor JSON-LD Schema (single authoritative block)
        GBP REMINDER: Claim and verify Google Business Profile at business.google.com
@@ -131,6 +131,7 @@
     },
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "3223 S Loop 289",
       "addressLocality": "Lubbock",
       "addressRegion": "TX",
       "postalCode": "79423",
@@ -172,7 +173,9 @@
       "https://www.linkedin.com/in/traivone-smith-969b60327",
       "https://github.com/tzsmit",
       "https://www.tiktok.com/@novatitan1",
-      "https://www.facebook.com/share/1GNBbSRT4b/"
+      "https://www.facebook.com/NovaTitanSystems/",
+      "https://www.yelp.com/biz/nova-titan-systems-lubbock",
+      "https://www.mapquest.com/us/texas/nova-titan-systems-791891345"
     ],
     "knowsAbout": [
       "Division 28 Fire Alarm Rough-In and Coordination",
@@ -277,14 +280,6 @@
     "@type": "LocalBusiness",
     "@id": "{{ site.url }}/#organization",
     "name": "Nova Titan Systems LLC",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "{{ site.data.testimonials.aggregate.average_rating }}",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "{{ site.data.testimonials.aggregate.total_reviews }}",
-      "reviewCount": "{{ site.data.testimonials.aggregate.total_reviews }}"
-    },
     "review": [
       {% for testimonial in site.data.testimonials limit:10 %}
         {% if testimonial.name %}

@@ -7,9 +7,9 @@ Allow: /quote/
 Allow: /government/
 Allow: /field-work/
 
-# Block utility pages from indexing
+# Utility pages: /thank-you/ uses a noindex meta tag instead of a robots
+# Disallow (a Disallow would prevent Google from ever seeing the noindex).
 Disallow: /public/
-Disallow: /thank-you/
 
 # Sitemap location
 Sitemap: https://novatitan.net/sitemap.xml
