@@ -41,19 +41,23 @@
   <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts (weights trimmed to those actually used: 400/500/600/700) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS: Compiled Tailwind + Custom Component Styles -->
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- CSS: Compiled Tailwind (see tailwind.config.js) + Custom Component Styles.
+       Tailwind CDN runtime compiler REMOVED (was ~112KB blocking JS + main-thread compile).
+       If a page looks unstyled after adding new utility classes, rebuild main.css:
+       bundle exec jekyll build && npx tailwindcss@3.4.18 -c tailwind.config.js -i assets/css/input.css -o assets/css/main.css --minify -->
+  <!-- ORDER MATTERS: main.css (compiled Tailwind utilities) must load LAST so utilities
+       win the cascade over mobile-responsive/phase3 — this replicates the old CDN behavior
+       where Tailwind injected its styles at the end of <head>. -->
   <link rel="stylesheet" href="/assets/css/mobile-responsive.css">
   <link rel="stylesheet" href="/assets/css/phase3-standardization.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <!-- Tailwind CDN for dynamic/missing classes -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- FontAwesome: self-hosted 6KB subset (was 102KB CDN CSS + 283KB fonts).
+       Adding a NEW icon requires regenerating assets/css/fontawesome-subset.css + /assets/webfonts/ -->
+  <link rel="stylesheet" href="/assets/css/fontawesome-subset.css">
 
   <!-- Plausible Analytics (Privacy-Friendly) -->
   <script defer data-domain="novatitan.net" src="https://plausible.io/js/script.js"></script>
