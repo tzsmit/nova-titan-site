@@ -1,5 +1,6 @@
 ---
 layout: post
+published: false  # HOLD: pre-repositioning content (managed IT plans/pricing) — rewrite before publishing
 title: "How Smart Infrastructure & Managed Tech Support Save West Texas SMBs Money"
 date: 2025-01-20 10:00:00 -0600
 categories: [Technology, Small Business, West Texas]
@@ -142,7 +143,7 @@ The biggest shift West Texas small businesses need to make: **Stop being reactiv
 - Prevents 2-3 major incidents/year: **Saves $10,000-$15,000**
 - **Net savings: $8,812-$13,812 annually**
 
-👉 **Compare our [Managed Technology & Support Plans](/plans/)**
+👉 **Compare our [Managed Technology & Support Plans](/quote/)**
 
 ### What Problems Managed Support Prevents
 
@@ -296,7 +297,7 @@ We'll review your current:
 - Pain points and frustrations
 - Budget and goals
 
-**Book your free consultation:** [Schedule Now](/book-now/)
+**Book your free consultation:** [Schedule Now](/quote/)
 
 ### Step 2: Customized Proposal
 
@@ -364,7 +365,7 @@ Technology failures aren't a matter of **if**, they're a matter of **when**. The
 - **Titan Pro:** $299/month (everything Essential + priority support + security)
 - **Titan Elite:** $499/month (everything Pro + 24/7 monitoring + dedicated support)
 
-👉 **Full plan comparison:** [View All Plans](/plans/)
+👉 **Full plan comparison:** [View All Plans](/quote/)
 
 ### Cloud & Security Services
 - Wi-Fi security audit: **$149**
@@ -411,9 +412,9 @@ The longer you wait to modernize your technology infrastructure and adopt proact
 
 ### Next Steps:
 
-1. **Schedule your free 30-minute consultation:** [Book Now](/book-now/)
+1. **Schedule your free 30-minute consultation:** [Book Now](/quote/)
 2. **Explore our service offerings:** [View Solutions](/services/)
-3. **Compare our managed support plans:** [See Plans](/plans/)
+3. **Compare our managed support plans:** [See Plans](/quote/)
 4. **Call us directly:** **(806) 370-0624**
 5. **Email:** **info@novatitan.net**
 

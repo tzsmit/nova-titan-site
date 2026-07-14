@@ -16,3 +16,7 @@ node_modules/
 # Temp files
 /private/
 nova-titan-site/
+
+# Local bundler artifacts (do not commit)
+vendor/
+.bundle/

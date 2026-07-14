@@ -45,30 +45,30 @@ description: "Technology insights, cybersecurity tips, and industry news from No
     <div class="max-w-7xl mx-auto px-6">
       <div id="blogGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Blog Post 1 -->
-        <article class="card blog-post rounded-xl overflow-hidden" data-tags="cybersecurity,small-business,west-texas">
+        <!-- Published posts (dynamic — never links to unpublished/removed posts) -->
+        {% for post in site.posts %}
+        <article class="card blog-post rounded-xl overflow-hidden" data-tags="{{ post.tags | join: ',' }}">
           <div class="p-8">
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="text-xs px-2 py-1 rounded-full bg-green-500/20 text-green-300">Cybersecurity</span>
-              <span class="text-xs px-2 py-1 rounded-full bg-red-500/20 text-red-300">West Texas</span>
+              {% for tag in post.tags limit:2 %}
+              <span class="text-xs px-2 py-1 rounded-full bg-green-500/20 text-green-300">{{ tag }}</span>
+              {% endfor %}
             </div>
             <h2 class="text-2xl font-bold text-cyan-300 mb-3 hover:text-green-300 transition">
-              <a href="/blog/cybersecurity-essentials-for-small-businesses/">
-                Cybersecurity Essentials for Small Businesses in West Texas
-              </a>
+              <a href="{{ post.url }}">{{ post.title }}</a>
             </h2>
             <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-              Essential cybersecurity practices every small business in Lubbock and West Texas should implement to protect against cyber threats.
+              {{ post.description | default: post.excerpt | strip_html | truncate: 150 }}
             </p>
             <div class="flex items-center justify-between text-sm text-gray-400 mb-4">
-              <span><i class="fas fa-calendar mr-2"></i>Nov 15, 2025</span>
-              <span><i class="fas fa-clock mr-2"></i>8 min read</span>
+              <span><i class="fas fa-calendar mr-2"></i>{{ post.date | date: "%b %-d, %Y" }}</span>
             </div>
-            <a href="/blog/cybersecurity-essentials-for-small-businesses/" class="text-cyan-400 hover:text-green-400 transition text-sm font-semibold">
+            <a href="{{ post.url }}" class="text-cyan-400 hover:text-green-400 transition text-sm font-semibold">
               Read Article <i class="fas fa-arrow-right ml-1"></i>
             </a>
           </div>
         </article>
+        {% endfor %}
 
         <!-- Placeholder for future posts -->
         <article class="card blog-post rounded-xl overflow-hidden opacity-50" data-tags="networking,lubbock">

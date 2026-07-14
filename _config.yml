@@ -149,6 +149,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Collections
 collections:
@@ -172,6 +173,8 @@ defaults:
       lang: "en"
 
 # Exclude from build
+# NOTE: do NOT use a blanket "*.md" exclude — it also excludes _posts/*.md
+# and silently prevents blog posts from building (SEO audit 2026-07).
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -179,11 +182,16 @@ exclude:
   - vendor
   - .git
   - .gitignore
-  - "*.md"
+  - README.md
+  - GBP_PHOTO_UPLOAD_PLAN.md
+  - POST_LAUNCH_SEO_ACTIONS.md
+  - rejected_photos_notes.md
+  - _batch2_review
 
 # Include
 include:
   - _pages
+  - .well-known
 
 # Sitemap settings
 sitemap: true

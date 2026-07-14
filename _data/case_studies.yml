@@ -2,6 +2,7 @@
 # Professional project case studies demonstrating government and commercial capabilities
 
 - id: dyess-afb
+  has_page: false  # no detail page built — index card renders without CTA link
   featured: false
   title: "Commercial IT Equipment Services for Federal Contractor"
   subtitle: "Equipment Management Services Through Prime Contractor Partnership"
@@ -216,6 +217,7 @@
   keywords: "healthcare IT, medical equipment maintenance, rural healthcare technology, healthcare contractor, medical kiosk repair"
 
 - id: office-depot-federal
+  has_page: false  # no detail page built — index card renders without CTA link
   featured: false
   title: "Commercial IT Deployment Support Through Technology Partner"
   subtitle: "Smart Hands IT Support for Commercial Contractor Operations"

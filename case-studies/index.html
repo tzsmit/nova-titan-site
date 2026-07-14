@@ -173,10 +173,10 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
         </p>
         
         <!-- CTA -->
-        <a href="/case-studies/{{ study.id }}/" class="inline-flex items-center text-{{ study.color }}-400 hover:text-{{ study.color }}-300 font-semibold text-sm transition-colors">
+        {% unless study.has_page == false %}<a href="/case-studies/{{ study.id }}/" class="inline-flex items-center text-{{ study.color }}-400 hover:text-{{ study.color }}-300 font-semibold text-sm transition-colors">
           Read Full Case Study
           <i class="fas fa-arrow-right ml-2"></i>
-        </a>
+        </a>{% endunless %}
         
       </article>
       
@@ -259,10 +259,10 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
         </p>
         
         <!-- CTA -->
-        <a href="/case-studies/{{ study.id }}/" class="inline-flex items-center text-{{ study.color }}-400 hover:text-{{ study.color }}-300 font-semibold text-sm transition-colors">
+        {% unless study.has_page == false %}<a href="/case-studies/{{ study.id }}/" class="inline-flex items-center text-{{ study.color }}-400 hover:text-{{ study.color }}-300 font-semibold text-sm transition-colors">
           Read Full Case Study
           <i class="fas fa-arrow-right ml-2"></i>
-        </a>
+        </a>{% endunless %}
         
       </article>
       
@@ -382,7 +382,7 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
       expertise and credentials to deliver mission-critical IT infrastructure in underserved communities.
     </p>
     <div class="flex flex-wrap gap-4 justify-center mb-8">
-      <a href="https://tally.so/r/Y5MMAN" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-lg inline-flex items-center transition-all">
+      <a href="/quote/" class="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-lg inline-flex items-center transition-all">
         <i class="fas fa-file-invoice mr-3"></i>
         Request a Quote
       </a>
