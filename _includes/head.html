@@ -284,6 +284,14 @@
     "@type": "LocalBusiness",
     "@id": "{{ site.url }}/#organization",
     "name": "Nova Titan Systems LLC",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ site.data.testimonials_stats.average_rating }}",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "{{ site.data.testimonials_stats.total_reviews }}",
+      "reviewCount": "{{ site.data.testimonials_stats.total_reviews }}"
+    },
     "review": [
       {% for testimonial in site.data.testimonials limit:10 %}
         {% if testimonial.name %}
