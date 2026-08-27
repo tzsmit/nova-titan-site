@@ -1,6 +1,26 @@
 /**
  * Download Handler with User Notification
  * Handles PDF downloads and displays a toast notification
+ *
+ * ---------------------------------------------------------------------------
+ * DEAD CODE NOTICE -- PHASE 2 REPO AUDIT (2026-08)
+ *
+ * This file is NOT loaded by any page. Verified repo-wide: zero <script>
+ * references in any .html source or in generated _site output (the only textual
+ * mentions are README.md and this comment). Jekyll still copies it, so it IS
+ * publicly served at /assets/js/download-handler.js with HTTP 200.
+ *
+ * It is retained rather than deleted because it is inert (never executed, no
+ * SEO or entity impact) and deleting published asset URLs is exactly the
+ * mistake that produced the /assets/docs/...federal-capability-statement.pdf
+ * 404. Removing it is safe but is a deliberate owner decision, not cleanup
+ * needed for this entity pass.
+ *
+ * IF IT IS EVER WIRED UP: its handlePDFDownload() helper takes an explicit
+ * pdfUrl argument. Any caller must point at the CANONICAL capability statement
+ * (/assets/docs/nova-titan-systems-capability-statement-2026.pdf), not at one of
+ * the three historical aliases, which are kept only to preserve indexed URLs.
+ * ---------------------------------------------------------------------------
  */
 
 // Create and inject toast notification styles

@@ -1,2 +1,16 @@
+# PHASE 2 CORRECTION (2026-08) -- DORMANT LEGACY DATA FILE, NOW CORRECTED.
+#
+# Verified during this pass: NOTHING references `site.data.home` anywhere in the
+# repo, so these values are not rendered into any built page. They were left over
+# from the pre-repositioning consumer/gamer-facing site.
+#
+# The previous subheadline read:
+#   "Expert IT Support, Cybersecurity, and Installations for Homeowners, Small
+#    Businesses, and Gamers in West Texas & Beyond."
+#
+# That is retired positioning on three counts (cybersecurity as a core service,
+# homeowner/gamer consumer audience, and "& Beyond" implying unbounded service
+# area). It is corrected rather than deleted because the file is harmless while
+# dormant but would inject stale entity copy the moment someone wires it up.
 hero_headline: Nova Titan Systems
-subheadline: Expert IT Support, Cybersecurity, and Installations for Homeowners, Small Businesses, and Gamers in West Texas & Beyond.
+subheadline: Commercial Division 27/28 low-voltage infrastructure — structured cabling, security camera and access control infrastructure, and fire alarm rough-in coordination for general contractors and facility owners across Texas.

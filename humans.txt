@@ -12,15 +12,15 @@
   
 /* BUSINESS */
   Company: Nova Titan Systems LLC
-  Founded: 2024
-  Location: Lubbock, TX 79412
-  Service Area: West Texas, Nationwide
+  Founded: 2025
+  Location: 3223 S Loop 289, Suite 600, Lubbock, TX 79423
+  Service Area: West Texas, Houston, DFW (Texas)
   
 /* CREDENTIALS */
   SAM.gov: Active
   UEI: CZ8BLZMSKZ66
   CAGE Code: 170W6
-  Primary NAICS: 541519
+  Primary NAICS: 238210 (Electrical Contractors and Other Wiring Installation Contractors)
   Certifications: Black-Owned Small Disadvantaged Business
   
 /* THANKS */

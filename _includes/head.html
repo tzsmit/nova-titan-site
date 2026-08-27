@@ -333,11 +333,24 @@
       /government/ and /leadership/ say "September 2025" and remain consistent.
     {%- endcomment -%}
     "foundingDate": "2025-09-17",
+    {%- comment -%}
+      PHASE 2 CORRECTION (2026-08): the founder Person's "url" was the owner's
+      PERSONAL LinkedIn (/in/...). This block is emitted on EVERY page, so the
+      Organization entity asserted that personal profile sitewide -- the same
+      person<->company identity claim that justified removing GitHub from the
+      footer and from the Person sameAs. Removing the rel="me" anchor from the
+      footer while leaving this in JSON-LD would have left the assertion live in
+      the strongest possible place (structured data, all 34 built pages).
+
+      Replaced with the /leadership/ page, which IS the company's own
+      authoritative page about this person. The founder Person entity is retained
+      in full -- only the unverified external URL is dropped.
+    {%- endcomment -%}
     "founder": {
       "@type": "Person",
       "name": "Traivone Smith",
       "jobTitle": "Chief Executive Officer",
-      "url": "https://www.linkedin.com/in/traivone-smith-969b60327"
+      "url": "https://novatitan.net/leadership/"
     },
     "address": {
       "@type": "PostalAddress",
@@ -379,9 +392,38 @@
         "closes": "17:00"
       }
     ],
+    {%- comment -%}
+      ORGANIZATION sameAs \u2014 COMPANY-OWNED PROFILES ONLY (Phase 2, 2026-08)
+
+      schema.org sameAs on an Organization asserts "this URL is another
+      authoritative reference to THIS COMPANY." It is an entity-equivalence
+      claim, not a link list. Two entries were removed because they described a
+      PERSON, not the company:
+
+      1. https://github.com/tzsmit  -- REMOVED.
+         This is the owner's personal developer profile. Verified 2026-08 by
+         fetching the live profile: it describes Nova Titan as a cybersecurity
+         consultancy and prominently promotes CloudWarden (27 mentions),
+         cybersecurity (37), quantum-safe security (24), AI security, cloud
+         security, OT/ICS security and 24/7 monitoring. Declaring that page
+         entity-equivalent to this Organization handed Google a directly
+         CONTRADICTORY description of the company's line of business, competing
+         with the Division 27/28 contractor identity the site asserts. This is
+         the single strongest conflicting entity signal found in Phase 2.
+         The profile itself is legitimate and is NOT being changed by this PR --
+         it simply is not a company-equivalence source. It now lives on the
+         Person entity at /leadership/, which is where it is accurate.
+
+      2. https://www.linkedin.com/in/traivone-smith-969b60327  -- MOVED.
+         An /in/ URL is a personal LinkedIn profile. Belongs on the Person
+         entity, not the Organization. Moved to /leadership/.
+
+      Remaining entries are all genuine Nova Titan company profiles.
+      A verified company LinkedIn page (/company/...) and a stable Google
+      Business Profile URL are desirable additions but do not exist yet -- they
+      are returned as OWNER ACTIONS rather than invented here.
+    {%- endcomment -%}
     "sameAs": [
-      "https://www.linkedin.com/in/traivone-smith-969b60327",
-      "https://github.com/tzsmit",
       "https://www.tiktok.com/@novatitan1",
       "https://www.facebook.com/NovaTitanSystems/",
       "https://www.yelp.com/biz/nova-titan-systems-lubbock",
@@ -406,7 +448,15 @@
       { "@type": "PropertyValue", "name": "HUBZone Effective", "value": "2026-06-05" },
       { "@type": "PropertyValue", "name": "HUBZone Renewal", "value": "2029-06-05" },
       { "@type": "PropertyValue", "name": "Business Type", "value": "SBA-Certified HUBZone Small Business — SAM.gov Registered (UEI CZ8BLZMSKZ66)" },
-      { "@type": "PropertyValue", "name": "Certifications", "value": "SBA HUBZone, Fortinet Certified Associate, DSBS Verified, WorkMarket Verified" }
+      { "@type": "PropertyValue", "name": "Certifications", "value": "SBA HUBZone, DSBS Verified, WorkMarket Verified" },
+      {%- comment -%}
+        FINAL PASS (2026-08): "Fortinet Certified Associate" was listed among the
+        ORGANIZATION's Certifications on every page. The Fortinet credential
+        belongs to the founder (Person), not the company, so it is stated here as
+        a founder credential instead of an Organization certification. The Person
+        node carrying it is on /certifications/ (@id .../#founder).
+      {%- endcomment -%}
+      { "@type": "PropertyValue", "name": "Founder Credential", "value": "Fortinet Certified Associate (FCA) — Traivone Smith, valid through 2027-04-22" }
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

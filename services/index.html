@@ -41,7 +41,7 @@ redirect_from:
       "serviceType": "Structured Cabling",
       "provider": {"@id": "https://novatitan.net/#organization"},
       "areaServed": {"@type": "State", "name": "Texas"},
-      "description": "Cat5e, Cat6, Cat6a, and fiber optic cabling with Fluke certification. Rack-and-stack, server-room build-outs, and cable testing."
+      "description": "Cat5e, Cat6, Cat6a, and fiber optic cabling with Fluke DSX certification testing. Rack-and-stack, server-room build-outs, and cable testing."
     },
     {
       "@type": "Service",
@@ -55,11 +55,11 @@ redirect_from:
     {
       "@type": "Service",
       "@id": "https://novatitan.net/services/#security",
-      "name": "Cybersecurity Consulting & Fortinet Firewall Deployment",
-      "serviceType": "Cybersecurity Consulting",
+      "name": "Fortinet Firewall Installation & Network Hardware Deployment",
+      "serviceType": "Network Equipment Installation",
       "provider": {"@id": "https://novatitan.net/#organization"},
-      "areaServed": {"@type": "Country", "name": "United States"},
-      "description": "Network security assessments, Fortinet firewall deployment and basic configuration, and cybersecurity consulting."
+      "areaServed": {"@type": "State", "name": "Texas"},
+      "description": "FortiGate firewall installation and basic policy configuration, switch and access point mounting, and structured cabling terminations, with handoff to the customer's IT or security integrator. Nova Titan does not sell standalone cybersecurity consulting, penetration testing, or managed security monitoring."
     },
     {
       "@type": "Service",
@@ -208,12 +208,22 @@ redirect_from:
           </div>
           <h3 class="text-2xl font-bold text-purple-300 mb-4">Security &amp; Network Health</h3>
           <p class="text-gray-300 mb-6 leading-relaxed">
-            Fortinet firewall deployment, cybersecurity consulting, and network health support for commercial infrastructure.
+            {%- comment -%}
+              FINAL PASS (2026-08): this card still sold "cybersecurity consulting"
+              in two places while THIS SAME PAGE's Service JSON-LD states Nova
+              Titan "does not sell standalone cybersecurity consulting,
+              penetration testing, or managed security monitoring." Visible copy
+              and structured data directly contradicted each other in production.
+              Lowercase "cybersecurity consulting" is why earlier case-sensitive
+              sweeps missed it. Reframed to the hardware/infrastructure scope
+              actually delivered.
+            {%- endcomment -%}
+            Fortinet firewall installation, network hardware deployment, and infrastructure support for commercial facilities.
           </p>
 
           <ul class="feature-list mb-6 text-sm">
-            <li><i class="fas fa-fire-alt"></i> Fortinet firewall deployment &amp; basic configuration</li>
-            <li><i class="fas fa-search"></i> Cybersecurity consulting &amp; network security assessments</li>
+            <li><i class="fas fa-fire-alt"></i> Fortinet firewall installation &amp; basic configuration</li>
+            <li><i class="fas fa-search"></i> Network infrastructure review &amp; cabling certification testing</li>
             <li><i class="fas fa-chart-line"></i> Network health checks and support coordination</li>
           </ul>
 
@@ -232,11 +242,11 @@ redirect_from:
           <div class="flex flex-col gap-3">
             <a href="https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems" target="_blank" rel="noopener noreferrer" class="btn-grad text-gray-900 font-semibold py-3 px-4 rounded-lg text-center inline-flex items-center justify-center">
               <i class="fas fa-calendar-check mr-2"></i>
-              Schedule Security Assessment
+              Schedule Infrastructure Consultation
             </a>
             <p class="text-xs text-gray-400 text-center">
               <i class="fas fa-certificate mr-1"></i>
-              Fortinet Certified Associate (FCA)
+              Founder credential: Fortinet Certified Associate (FCA)
             </p>
           </div>
         </div>
@@ -330,7 +340,7 @@ redirect_from:
             <i class="fas fa-fire-alt text-red-400 text-xl mr-3"></i>
             <h3 class="text-lg font-semibold text-red-300">Fortinet Firewall Deployment</h3>
           </div>
-          <p class="text-sm text-gray-400">FortiGate firewall installation and basic configuration. Fortinet Certified Associate (FCA).</p>
+          <p class="text-sm text-gray-400">FortiGate firewall installation and basic configuration. Founder holds Fortinet Certified Associate (FCA).</p>
         </div>
 
         <div class="card rounded-xl p-6 fade-in">
@@ -344,9 +354,16 @@ redirect_from:
         <div class="card rounded-xl p-6 fade-in">
           <div class="flex items-center mb-3">
             <i class="fas fa-search text-red-400 text-xl mr-3"></i>
-            <h3 class="text-lg font-semibold text-red-300">Cybersecurity Consulting</h3>
+            {%- comment -%}
+              PHASE 2 CORRECTION (2026-08): card was "Cybersecurity Consulting"
+              offering security assessments, hardening recommendations and
+              "security strategy" -- a retired service line still being advertised
+              on the services page. Reframed to the physical infrastructure work
+              performed. This card's JSON-LD Service entry was corrected to match.
+            {%- endcomment -%}
+            <h3 class="text-lg font-semibold text-red-300">Firewall &amp; Network Hardware Installation</h3>
           </div>
-          <p class="text-sm text-gray-400">Network security assessments, infrastructure hardening recommendations, and security strategy.</p>
+          <p class="text-sm text-gray-400">FortiGate firewall installation and basic policy configuration, switch and access point mounting, and cabling terminations, with clean handoff to your IT or security integrator.</p>
         </div>
       </div>
     </div>
@@ -396,7 +413,7 @@ redirect_from:
           <div class="mt-6">
             <h3 class="text-lg font-semibold text-orange-300 mb-3">Testing &amp; Handoff</h3>
             <p class="text-gray-300 text-sm">
-              Fluke certification testing, documentation package, and operational handoff.
+              Fluke DSX certification testing, documentation package, and operational handoff.
             </p>
           </div>
         </div>
@@ -426,7 +443,12 @@ redirect_from:
       <div class="grid md:grid-cols-4 gap-4 text-sm text-gray-400">
         <div class="flex items-center justify-center">
           <i class="fas fa-shield-halved text-green-400 mr-2"></i>
-          Same-day response guaranteed
+          {%- comment -%}
+            PHASE 2 CORRECTION (2026-08): was "Same-day response guaranteed" -- the
+            same unsupported guarantee corrected on /contact/ and already disclaimed
+            in /faqs/ ("not guaranteed", depends on crew availability).
+          {%- endcomment -%}
+          Same-day response target
         </div>
         <div class="flex items-center justify-center">
           <i class="fas fa-clock text-blue-400 mr-2"></i>
@@ -438,7 +460,7 @@ redirect_from:
         </div>
         <div class="flex items-center justify-center">
           <i class="fas fa-award text-yellow-400 mr-2"></i>
-          Fortinet Certified &bull; CAGE 170W6
+          Founder: Fortinet FCA &bull; CAGE 170W6
         </div>
       </div>
       <p class="text-xs text-gray-500 mt-4">
@@ -466,5 +488,5 @@ redirect_from:
     </div>
   </section>
 
-{% include related-services.html services="cabling,firewall,monitoring" %}
+{% include related-services.html services="cabling,security-cam,government" %}
 <!-- SCOPE NOTE: Nova Titan fire alarm scope = Division 28 rough-in (conduit, pathway, device coordination). Regulated FA programming, testing, and tagging performed by licensed Texas FA subcontractors at award. -->

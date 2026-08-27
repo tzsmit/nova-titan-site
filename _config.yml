@@ -9,7 +9,12 @@ image: /assets/images/nova-titan-og-image.png
 logo: /assets/images/low-voltage-contractor-lubbock-logo.png
 
 # Author/Business Info
-author: "Traivone Smith"
+# PHASE 2 (2026-08): was `author: "Traivone Smith"`. jekyll-seo-tag renders the
+# site-level `author` into the WebSite publisher/Organization node, which made the
+# built output declare `"publisher": {"@type":"Organization","name":"Traivone Smith"}`
+# -- i.e. it told Google the PUBLISHING ORGANIZATION is a person. Set to the
+# company. The founder remains a first-class Person entity at /leadership/.
+author: "Nova Titan Systems LLC"
 phone: "(806) 370-0624"
 email: "traivonesmith@novatitan.net"
 
@@ -65,8 +70,13 @@ company:
     - "Wi-Fi Infrastructure & AP Deployment"
     - "Audio/Visual & PA System Cabling"
     - "Field & Smart Hands Services (Rack & Stack, Site Surveys)"
-    - "Fortinet Firewall Deployment"
-    - "Cybersecurity Consulting"
+    - "Fortinet Firewall Installation & Basic Configuration"
+    # PHASE 2 CORRECTION (2026-08): "Cybersecurity Consulting" removed from the
+    # company capability list. Nova Titan no longer sells a standalone
+    # cybersecurity/consulting line. This key is not currently rendered into any
+    # page, but it is company procurement metadata in the repo's most-read config
+    # file and was contradicting the corrected capability statement.
+    - "Network Hardware Installation & Cabling Terminations"
   service_areas:
     primary:
       - "Lubbock, TX"
@@ -125,19 +135,12 @@ collections:
     permalink: /blog/:title/
 
 # Default Front Matter
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-      lang: "en"
-      image: /assets/images/nova-titan-og-image.png
-  - scope:
-      path: "_posts"
-      type: "posts"
-    values:
-      layout: "post"
-      lang: "en"
+# NOTE (2026-08): the site-wide defaults that used to live here have been MOVED
+# into the single consolidated `defaults:` block further down this file (near the
+# capability-statement PDF alias rules). Reason: this file previously declared
+# `defaults:` twice. YAML forbids duplicate mapping keys and resolves them
+# last-wins, so THIS block was silently discarded and never applied. Do not
+# re-add a second `defaults:` key here -- add entries to the consolidated block.
 
 # Exclude from build
 # NOTE: do NOT use a blanket "*.md" exclude — it also excludes _posts/*.md
@@ -197,8 +200,54 @@ sitemap: true
 # applied here via `defaults` (the only mechanism jekyll-sitemap honors for
 # non-front-matter files). These URLs stay crawlable and return 200 — they are
 # simply not *submitted* as separate documents.
+#
+# PHASE 2 CORRECTION (2026-08) -- THIRD HISTORICAL ALIAS RESTORED.
+#
+#   assets/docs/nova-titan-systems-federal-capability-statement.pdf
+#
+# This URL was published 2025-12-01 (dc83ae4) and hard-DELETED on 2026-03-20
+# (b97f95d, "site cleanup ... stale files"). The deletion shipped to production,
+# so the URL has been returning HTTP 404 ever since -- verified live during this
+# pass (404, text/html, Nova Titan "Page Not Found").
+#
+# The deleted document was genuinely obsolete. Its recovered bytes
+# (md5 f64addf90cb4a4df221744f1609ebb98, 201102 b) contain, by text extraction:
+# cybersecurity x9, cloud security x6, CloudWarden IAM x3, Zero Trust x2,
+# vulnerability x4, penetration testing, managed services x2, remote support x2,
+# OT/ICS, the OLD "1307 59th St" address x2, retired primary NAICS 541511/541512/
+# 541519, and "Texas HUB ... in progress" language.
+#
+# Deleting it was therefore right on CONTENT and wrong on URL HANDLING: it
+# converted an indexed federal-procurement asset into a 404 instead of correcting
+# it in place. Restoring the path with the CURRENT accurate statement recovers the
+# link equity and removes the stale claims at the same time. Same alias strategy,
+# same rationale as the two entries below.
 # ---------------------------------------------------------------------------
+#
+# NOTE (2026-08): this `defaults:` block was previously a SECOND top-level
+# `defaults:` key in this file, while another `defaults:` block was declared
+# earlier (site-wide layout/lang/image). YAML mappings cannot hold duplicate
+# keys -- last one wins -- so the earlier block was being SILENTLY DISCARDED at
+# parse time. The two are now merged into this single block. Verified: all 33
+# front-matter pages already set `layout:` explicitly and none relied on the
+# defaulted `image:` (og:image is emitted by _includes/head.html), so the built
+# output is unchanged; this removes a latent trap for the next page added
+# without an explicit layout.
 defaults:
+  # --- site-wide (formerly the first, shadowed `defaults:` block) ---
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      lang: "en"
+      image: /assets/images/nova-titan-og-image.png
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      lang: "en"
+  # --- historical capability-statement PDF aliases: keep 200, keep out of sitemap ---
   - scope:
       path: "assets/capability-statement/novatitan-capability-statement.pdf"
     values:
@@ -207,16 +256,32 @@ defaults:
       path: "assets/docs/nova-titan-systems-capability-statement-hubzone-2026.pdf"
     values:
       sitemap: false
+  - scope:
+      path: "assets/docs/nova-titan-systems-federal-capability-statement.pdf"
+    values:
+      sitemap: false
 
 # SEO settings
 twitter:
   username: novatitan1
+# PHASE 2 (2026-08) -- COMPANY PROFILES ONLY.
+# jekyll-seo-tag renders `social.links` into a SECOND, WebSite/Organization-level
+# `sameAs` array in the built output, independent of the hand-authored
+# Organization block in _includes/head.html. Cleaning only that block therefore
+# left the contradiction live in the page; this is the actual root cause.
+#
+# Removed:
+#   - https://github.com/tzsmit                     personal dev profile; live
+#     content describes Nova Titan as a cybersecurity consultancy (CloudWarden,
+#     quantum-safe, AI security, 24/7 monitoring) and contradicts the Division
+#     27/28 contractor entity. Retained on the Person entity at /leadership/.
+#   - https://www.linkedin.com/in/traivone-smith-... personal /in/ profile;
+#     belongs to the Person entity, not the company.
 social:
   name: Nova Titan Systems
   links:
-    - https://github.com/tzsmit
-    - https://www.linkedin.com/in/traivone-smith-969b60327
     - https://www.tiktok.com/@novatitan1
+    - https://www.facebook.com/NovaTitanSystems/
 
 # Netlify CMS (optional - keep existing config)
 netlify_cms:

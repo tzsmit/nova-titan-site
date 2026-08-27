@@ -70,8 +70,15 @@ description: "Company overview for Nova Titan Systems LLC — Division 27/28 low
             <div class="text-sm text-gray-400">Low-Voltage Subcontractor</div>
           </div>
           <div class="card rounded-xl p-6 text-center border border-green-400/30">
-            <div class="text-3xl font-bold text-green-300 mb-2">100%</div>
-            <div class="text-sm text-gray-400">Client Satisfaction</div>
+            {%- comment -%}
+              PHASE 2: was "100% / Client Satisfaction". No survey instrument,
+              review corpus, or CSAT dataset exists to support it, and a company
+              founded in 2025 asserting a perfect satisfaction rate reads as
+              boilerplate to a commercial buyer. Replaced with a verifiable
+              procurement fact rather than a different unsupported number.
+            {%- endcomment -%}
+            <div class="text-3xl font-bold text-green-300 mb-2">238210</div>
+            <div class="text-sm text-gray-400">Primary NAICS &mdash; Electrical &amp; Wiring Installation</div>
           </div>
           <div class="card rounded-xl p-6 text-center border border-purple-400/30">
             <div class="text-3xl font-bold text-purple-300 mb-2">SAM.gov</div>
