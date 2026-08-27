@@ -479,7 +479,17 @@ redirect_from:
           </div>
           <h3 class="text-sm font-semibold text-cyan-300 mb-1">Verkada</h3>
           <p class="text-xs text-gray-400">Security camera infrastructure</p>
-          <span class="mt-2 inline-block text-xs text-cyan-300 bg-cyan-900/30 px-2 py-0.5 rounded-full">Authorized Reseller</span>
+          {%- comment -%}
+            PHASE 2 CORRECTION (2026-08): this badge read "Authorized Reseller"
+            under Verkada. That is a specific, documented program status and no
+            documentation of it exists in this repo or on the site. It is exactly
+            the claim flagged as prohibited without a reseller agreement on file.
+            Replaced with what is factually supportable: Nova Titan installs the
+            cabling/mounting infrastructure these systems run on. If a Verkada
+            reseller agreement does exist, restoring the badge is an OWNER ACTION
+            and should cite the agreement.
+          {%- endcomment -%}
+          <span class="mt-2 inline-block text-xs text-cyan-300 bg-cyan-900/30 px-2 py-0.5 rounded-full">Infrastructure Installer</span>
         </div>
 
         <!-- Pelco / Motorola Solutions -->
