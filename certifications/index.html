@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Certifications & Registrations | Nova Titan Systems"
-description: "Nova Titan Systems certifications: SAM.gov active, Fortinet Certified, CAGE 170W6, NAICS 238210. Division 27/28 low-voltage subcontractor. UEI CZ8BLZMSKZ66."
-keywords: "SAM.gov registration, UEI CZ8BLZMSKZ66, CAGE 170W6, NAICS 238210, Division 27/28 contractor, low-voltage subcontractor certifications, Fortinet certified, commercial subcontractor Texas"
+description: "Nova Titan Systems certifications: SAM.gov active, founder Fortinet FCA, CAGE 170W6, NAICS 238210. Division 27/28 low-voltage subcontractor. UEI CZ8BLZMSKZ66."
+keywords: "SAM.gov registration, UEI CZ8BLZMSKZ66, CAGE 170W6, NAICS 238210, Division 27/28 contractor, low-voltage subcontractor certifications, founder Fortinet FCA, commercial subcontractor Texas"
 extra_head: |
   <!-- ENTITY CONSISTENCY (2026-08 SEO audit):
        This page used to emit a SECOND, standalone Organization block with no
@@ -31,17 +31,48 @@ extra_head: |
     "hasCredential": [
       {
         "@type": "EducationalOccupationalCredential",
-        "name": "Fortinet Certified Associate (FCA) — Cybersecurity",
-        "credentialCategory": "certification",
-        "recognizedBy": { "@type": "Organization", "name": "Fortinet" }
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
         "name": "SAM.gov Registered Entity (UEI CZ8BLZMSKZ66)",
         "credentialCategory": "registration",
         "recognizedBy": { "@type": "GovernmentOrganization", "name": "U.S. General Services Administration" }
       }
-    ]
+    ],
+    "founder": { "@id": "https://novatitan.net/#founder" }
+  }
+  </script>
+  <!-- FINAL PASS (2026-08) -- FORTINET CREDENTIAL IS A PERSON CREDENTIAL.
+       The Fortinet certificate PDF served at
+       /assets/certs/fortinet-certified-associate-cybersecurity.pdf certifies
+       "Traivone Smith" -- NOT Nova Titan Systems LLC -- as a Fortinet Certified
+       Associate in Cybersecurity (achieved 2025-04-22, valid through
+       2027-04-22, validation number 7233163615TS).
+
+       It was previously attached to hasCredential on the ORGANIZATION node,
+       which asserted to Google that the company itself holds a Fortinet
+       certification. That is a Person-vs-Organization attribution error, and it
+       also re-implied a retired cybersecurity service line.
+
+       The credential now lives on the founder Person entity below, which
+       declares the stable @id https://novatitan.net/#founder and is referenced
+       from the Organization via "founder". The genuine certificate PDF is
+       untouched and still linked from the credential card on this page. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://novatitan.net/#founder",
+    "name": "Traivone Smith",
+    "jobTitle": "Founder & Chief Executive Officer",
+    "worksFor": { "@id": "https://novatitan.net/#organization" },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Fortinet Certified Associate (FCA) — Cybersecurity",
+      "credentialCategory": "certification",
+      "identifier": "7233163615TS",
+      "validFrom": "2025-04-22",
+      "expires": "2027-04-22",
+      "url": "https://novatitan.net/assets/certs/fortinet-certified-associate-cybersecurity.pdf",
+      "recognizedBy": { "@type": "Organization", "name": "Fortinet" }
+    }
   }
   </script>
   <!-- Breadcrumb Schema -->
@@ -69,7 +100,7 @@ extra_head: |
   </script>
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Federal Certifications & Registrations | Nova Titan Systems">
-  <meta property="og:description" content="SAM.gov registered Division 27/28 low-voltage subcontractor. Fortinet Certified, CAGE 170W6, NAICS 238210. West Texas, Houston, DFW.">
+  <meta property="og:description" content="SAM.gov registered Division 27/28 low-voltage subcontractor. Founder: Fortinet FCA, CAGE 170W6, NAICS 238210. West Texas, Houston, DFW.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://novatitan.net/certifications/">
   <meta property="og:image" content="https://novatitan.net/assets/images/nova-titan-og-image.png">
@@ -92,12 +123,12 @@ extra_head: |
       <h1 class="text-5xl sm:text-6xl font-bold text-green-300 glow mb-6">
         Certifications & Registrations
       </h1>
-      <p class="text-2xl text-gray-300 mb-8">SBA-Certified HUBZone &bull; SAM.gov Registered &bull; CAGE 170W6 &bull; Fortinet Certified</p>
+      <p class="text-2xl text-gray-300 mb-8">SBA-Certified HUBZone &bull; SAM.gov Registered &bull; CAGE 170W6 &bull; Founder: Fortinet FCA</p>
       <p class="text-lg text-gray-400 max-w-3xl mx-auto">
         Nova Titan Systems LLC is an <strong class="text-green-300">SBA-Certified HUBZone small business</strong> and
         <strong class="text-green-300">SAM.gov-registered</strong> Division 27/28 low-voltage subcontractor
         delivering structured cabling, access control, security cameras, and fire alarm rough-in coordination for commercial construction across Texas.
-        Fortinet Certified, CAGE 170W6, NAICS 238210.
+        Founder: Fortinet FCA, CAGE 170W6, NAICS 238210.
       </p>
     </div>
 
@@ -200,7 +231,7 @@ extra_head: |
           <li class="flex items-start">
             <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
             <div>
-              <strong class="text-white">Owner-Operated:</strong> <span class="text-green-300">CEO-Led Field Execution</span><br>
+              <strong class="text-white">Business Type:</strong> <span class="text-green-300">Owner-Operated Small Business &mdash; CEO-led field execution</span><br>
               <span class="text-sm text-gray-400">Lubbock, TX &mdash; SAM.gov Active, CAGE 170W6</span>
             </div>
           </li>
@@ -344,7 +375,7 @@ extra_head: |
             <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541690</span></td>
             <td class="py-4">
               <div class="font-semibold text-white mb-1">Other Scientific and Technical Consulting</div>
-              <div class="text-sm text-gray-400">Cybersecurity consulting, technology assessments, security advisory</div>
+              <div class="text-sm text-gray-400">Technology assessments and infrastructure advisory supporting low-voltage scope</div>
             </td>
           </tr>
           <tr>
@@ -453,7 +484,7 @@ extra_head: |
         <div class="text-5xl text-purple-400 mb-4 text-center">
           <i class="fas fa-shield-alt"></i>
         </div>
-        <h3 class="text-xl font-bold text-white mb-3 text-center">Fortinet Certified Associate</h3>
+        <h3 class="text-xl font-bold text-white mb-3 text-center">Fortinet Certified Associate <span class="block text-xs font-normal text-gray-400 mt-1">Founder credential &mdash; Traivone Smith</span></h3>
         <p class="text-purple-300 font-semibold text-center mb-4">Cybersecurity</p>
         <div class="bg-gray-800/50 rounded-lg p-4 mb-4">
           <p class="text-gray-300 text-sm mb-2">
@@ -478,17 +509,24 @@ extra_head: |
         <div class="text-5xl text-cyan-400 mb-4 text-center">
           <i class="fas fa-video"></i>
         </div>
-        <h3 class="text-xl font-bold text-white mb-3 text-center">Verkada Platform &mdash; Field-Qualified Installer</h3>
+        <h3 class="text-xl font-bold text-white mb-3 text-center">Verkada Platform Experience</h3>
+        <!-- FINAL PASS (2026-08): was "Verkada Platform - Field-Qualified
+             Installer". "Field-Qualified Installer" reads as a FORMAL Verkada
+             program designation; the available evidence is a Verkada/Nova Titan
+             partnership DISCUSSION plus genuine field/platform experience, not
+             completed reseller or installer-program authorization. Restated as
+             plain field experience. Do not restore "Authorized Reseller" or
+             invent a program title without primary documentation. -->
         <p class="text-cyan-300 font-semibold text-center mb-4">Security Camera Infrastructure</p>
         <div class="bg-gray-800/50 rounded-lg p-4 mb-4">
           <ul class="text-gray-300 text-sm space-y-2">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Field Experience with Verkada Systems</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Camera infrastructure field experience with Verkada systems</li>
             <li><i class="fas fa-check text-green-400 mr-2"></i>Camera Infrastructure Cabling</li>
             <li><i class="fas fa-check text-green-400 mr-2"></i>PoE Network Deployment</li>
             <li><i class="fas fa-check text-green-400 mr-2"></i>Surveillance System Support</li>
           </ul>
         </div>
-        <p class="text-xs text-gray-400 text-center italic">Field experience deploying Verkada camera infrastructure including cabling, PoE, and NVR integration. Formal reseller partnership pending.</p>
+        <p class="text-xs text-gray-400 text-center italic">Field experience deploying Verkada camera infrastructure including cabling, PoE, and NVR integration. Not a Verkada authorized reseller; infrastructure installation scope only.</p>
       </div>
 
       <!-- Network & Infrastructure -->

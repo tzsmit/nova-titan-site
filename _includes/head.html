@@ -448,7 +448,15 @@
       { "@type": "PropertyValue", "name": "HUBZone Effective", "value": "2026-06-05" },
       { "@type": "PropertyValue", "name": "HUBZone Renewal", "value": "2029-06-05" },
       { "@type": "PropertyValue", "name": "Business Type", "value": "SBA-Certified HUBZone Small Business — SAM.gov Registered (UEI CZ8BLZMSKZ66)" },
-      { "@type": "PropertyValue", "name": "Certifications", "value": "SBA HUBZone, Fortinet Certified Associate, DSBS Verified, WorkMarket Verified" }
+      { "@type": "PropertyValue", "name": "Certifications", "value": "SBA HUBZone, DSBS Verified, WorkMarket Verified" },
+      {%- comment -%}
+        FINAL PASS (2026-08): "Fortinet Certified Associate" was listed among the
+        ORGANIZATION's Certifications on every page. The Fortinet credential
+        belongs to the founder (Person), not the company, so it is stated here as
+        a founder credential instead of an Organization certification. The Person
+        node carrying it is on /certifications/ (@id .../#founder).
+      {%- endcomment -%}
+      { "@type": "PropertyValue", "name": "Founder Credential", "value": "Fortinet Certified Associate (FCA) — Traivone Smith, valid through 2027-04-22" }
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
