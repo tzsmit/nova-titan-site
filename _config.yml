@@ -85,57 +85,24 @@ company:
     experience: "Active in West Texas, Houston, and DFW markets"
     availability: "Same-day dispatch available"
 
-# 301 Redirects (Netlify-style redirects for deleted/moved pages)
-# These also serve as documentation; actual redirects handled by _redirects or netlify.toml
-redirects:
-  - from: /services/government-it-contractor-texas/
-    to: /services/
-    status: 301
-  - from: /services/lubbock/managed-it/
-    to: /services/low-voltage-subcontractor-lubbock-tx/
-    status: 301
-  - from: /services/lubbock/commercial-it/
-    to: /services/low-voltage-subcontractor-lubbock-tx/
-    status: 301
-  - from: /services/lubbock/cybersecurity/
-    to: /services/
-    status: 301
-  - from: /services/lubbock/network-installation/
-    to: /services/low-voltage-subcontractor-lubbock-tx/
-    status: 301
-  - from: /services/lubbock/security-systems/
-    to: /services/low-voltage-subcontractor-lubbock-tx/
-    status: 301
-  - from: /services/lubbock/low-voltage/
-    to: /services/low-voltage-subcontractor-lubbock-tx/
-    status: 301
-  - from: /plans/
-    to: /contact/
-    status: 301
-  - from: /portfolio/
-    to: /services/
-    status: 301
-  - from: /services/all-services/
-    to: /services/
-    status: 301
-  - from: /services/cloud-security/
-    to: /services/
-    status: 301
-  - from: /services/commercial/
-    to: /services/
-    status: 301
-  - from: /cybersecurity/basic-security-assessment/
-    to: /services/
-    status: 301
-  - from: /cybersecurity/compliance-readiness-review/
-    to: /services/
-    status: 301
-  - from: /cybersecurity/security-awareness-training/
-    to: /services/
-    status: 301
-  - from: /case-studies/
-    to: /services/
-    status: 301
+# ============================================================================
+# REDIRECT ARCHITECTURE — SINGLE SOURCE OF TRUTH
+# ============================================================================
+# This site is Jekyll on GitHub Pages. Redirects are generated ONLY by the
+# `jekyll-redirect-from` plugin reading `redirect_from:` front matter on the
+# DESTINATION page. There is no Netlify `_redirects` / `netlify.toml` in play.
+#
+# A `redirects:` block used to live here in Netlify style. It was inert (nothing
+# consumed it) and had DRIFTED from reality — e.g. it documented
+# `/plans/ -> /contact/` while the actual generated redirect sends /plans/ to
+# /quote/, and it listed `/case-studies/ -> /services/` even though
+# /case-studies/ is a live, indexable page. It has been removed so no future
+# maintainer implements the wrong redirects from stale documentation.
+#
+# TO ADD A REDIRECT: add the old path to `redirect_from:` on the target page,
+# then add a regression assertion in .github/workflows/seo-qa.yml.
+# The authoritative human-readable map is REDIRECTS.md (kept in sync by CI).
+# ============================================================================
 
 # Build Settings
 markdown: kramdown
@@ -187,6 +154,13 @@ exclude:
   - POST_LAUNCH_SEO_ACTIONS.md
   - rejected_photos_notes.md
   - _batch2_review
+  # Local-only legacy clone of the pre-migration site. It is .gitignored (so CI
+  # never sees it), but if present locally Jekyll would build a full duplicate of
+  # the OLD site into /nova-titan-site/* AND inject ~55 duplicate URLs into
+  # sitemap.xml. Excluding it keeps local builds identical to CI/production.
+  - nova-titan-site
+  - vendor
+  - .bundle
 
 # Include
 include:
@@ -195,6 +169,44 @@ include:
 
 # Sitemap settings
 sitemap: true
+
+# ---------------------------------------------------------------------------
+# HISTORICAL CAPABILITY-STATEMENT PDF ALIASES — keep 200, keep OUT of sitemap.
+#
+# 2026-08 correction pass. Two capability-statement PDF URLs were already
+# indexed by Google:
+#   /assets/capability-statement/novatitan-capability-statement.pdf
+#   /assets/docs/nova-titan-systems-capability-statement-hubzone-2026.pdf
+#
+# An earlier attempt replaced them with HTML meta-refresh "tombstones" published
+# at those exact .pdf paths. THAT WAS WRONG. GitHub Pages assigns Content-Type
+# purely from the file extension (verified live: .txt -> text/plain,
+# .xml -> application/xml), so an HTML body at a .pdf path would be served as
+# `application/pdf` and would render as a CORRUPT PDF. GitHub Pages also cannot
+# issue a 301 or set custom headers, so there is no redirect option for an exact
+# static asset path.
+#
+# Correct fix: serve a REAL, CURRENT, ACCURATE PDF at each historical URL
+# (byte-identical to the canonical 2026 statement). The previously-served file at
+# the first URL was genuinely obsolete — it claimed "CAGE: Pending Assignment"
+# (real CAGE is 170W6) and marketed retired cybersecurity/cloud-security and
+# managed-IT lines — so the content IS corrected; only the URL survives.
+#
+# Because all three files are byte-identical, only the CANONICAL path belongs in
+# sitemap.xml. Static binaries cannot carry front matter, so `sitemap: false` is
+# applied here via `defaults` (the only mechanism jekyll-sitemap honors for
+# non-front-matter files). These URLs stay crawlable and return 200 — they are
+# simply not *submitted* as separate documents.
+# ---------------------------------------------------------------------------
+defaults:
+  - scope:
+      path: "assets/capability-statement/novatitan-capability-statement.pdf"
+    values:
+      sitemap: false
+  - scope:
+      path: "assets/docs/nova-titan-systems-capability-statement-hubzone-2026.pdf"
+    values:
+      sitemap: false
 
 # SEO settings
 twitter:

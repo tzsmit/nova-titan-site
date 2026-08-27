@@ -5,44 +5,46 @@ description: "Subcontracting and field service partnerships for MSPs and enterpr
 ---
 
 <!-- ==================================================================================
-     ENTERPRISE PARTNERSHIP & SUBCONTRACTING SIGNALS
+     2026-08 SEO audit note — REMOVED: ~30 lines of hidden keyword-stuffed HTML
+     comments ("SUBCONTRACTING SIGNALS") that listed NAICS/PSC codes, platform
+     names and equipment brands purely for crawlers. Keyword lists in markup that
+     no user can see are worthless for ranking and read as manipulative under
+     Google's spam policies. Every capability that is genuinely true is now stated
+     in visible, buyer-useful page copy below, which is what actually gets
+     retrieved and cited. Do not reintroduce hidden keyword blocks.
      ================================================================================== -->
 
-<!-- Enterprise Field Service Provider | Prime Contractor Support -->
-<!-- WorkMarket Verified | CloudWork Pro Member -->
-<!-- Subcontractor Available | Multi-Site Deployment Capable -->
-<!-- Service Area: West Texas Primary + Nationwide Extended -->
-
-<!-- Field Service Specializations -->
-<!-- Smart Hands | Remote Hands | On-Site Technical Support -->
-<!-- Rack & Stack | Equipment Installation | Decommissioning -->
-<!-- Network Deployment | Structured Cabling | Fiber Installation -->
-<!-- Break-Fix Support | Troubleshooting | Hardware Replacement -->
-
-<!-- Partner Integration Experience -->
-<!-- WorkMarket Platform | CloudWork Pro | Granite Telecom -->
-<!-- AVASO Field Services | CSA Solutions | Core Technology Solutions -->
-<!-- Multi-platform dispatch coordination | Professional ticketing -->
-
-<!-- NAICS: 541512, 541513, 541519, 238210, 518210 -->
-<!-- PSC: D301, D302, D306, D307, D310, J015 -->
-
-<!-- Deployment Capabilities -->
-<!-- Multi-site rollouts | Nationwide coordination | Same-day West Texas dispatch -->
-<!-- Professional documentation | Photo reporting | Real-time updates -->
-<!-- Government and commercial experience -->
-
-<!-- Equipment & Vendor Experience -->
-<!-- Cisco | HPE | Dell | Aruba | Ubiquiti | Juniper | Meraki -->
-<!-- Telecommunications equipment | Network infrastructure | Low-voltage systems -->
-
-<!-- ================================================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Partners", "item": "{{ site.url }}/partners/" },
+    { "@type": "ListItem", "position": 3, "name": "Enterprise & MSP Partnerships", "item": "{{ site.url }}/partners/enterprise/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Enterprise & MSP Field Services Subcontracting",
+  "serviceType": "Low-Voltage Field Services Subcontracting",
+  "provider": { "@id": "{{ site.url }}/#organization" },
+  "areaServed": [
+    { "@type": "State", "name": "Texas" }
+  ],
+  "description": "White-label smart hands, rack-and-stack, structured cabling and multi-site deployment support performed for MSPs, prime contractors and enterprise field-service platforms.",
+  "url": "{{ site.url }}/partners/enterprise/"
+}
+</script>
 
 <section class="content pt-32 pb-12">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-12">
       <div class="inline-block mb-6">
-        <span class="bg-purple-600/30 text-purple-300 px-4 py-2 rounded-full text-sm font-semibold border border-purple-400/40">
+        <span class="inline-flex items-center justify-center text-center bg-purple-600/30 text-purple-300 px-4 py-2 rounded-full text-sm font-semibold border border-purple-400/40">
           <i class="fas fa-handshake mr-2"></i>Partnership Ready
         </span>
       </div>
@@ -57,14 +59,19 @@ description: "Subcontracting and field service partnerships for MSPs and enterpr
     </div>
 
     <!-- Key Stats -->
+    <!-- 2026-08 audit: the first card rendered an EMPTY value above the label
+         "Projects Completed" (a visible blank box) — a page-quality defect on a
+         page Google had declined to index. Replaced with a verifiable capability
+         fact rather than an invented project count. Do not populate this with an
+         unverified number. -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
       <div class="card rounded-xl p-6 text-center">
-        
-        <div class="text-sm text-gray-400">Projects Completed</div>
+        <div class="text-3xl font-bold text-purple-300 mb-2">Div 27/28</div>
+        <div class="text-sm text-gray-400">Scope Executed</div>
       </div>
       <div class="card rounded-xl p-6 text-center">
-        <div class="text-3xl font-bold text-cyan-300 mb-2">< 24hr</div>
-        <div class="text-sm text-gray-400">Response Time</div>
+        <div class="text-3xl font-bold text-cyan-300 mb-2">&lt; 24hr</div>
+        <div class="text-sm text-gray-400">Dispatch Response Target</div>
       </div>
       <div class="card rounded-xl p-6 text-center">
         <div class="text-3xl font-bold text-green-300 mb-2">West TX</div>
@@ -285,6 +292,48 @@ description: "Subcontracting and field service partnerships for MSPs and enterpr
   </div>
 </section>
 
+<!-- ============================================================================
+     PROOF + SCOPE INTERNAL LINKING (2026-08 SEO audit, §13/§15)
+     This page was effectively a link dead-end: it had exactly ONE outbound
+     internal link (/contact/) and received only one inbound link, which is a
+     strong contributor to Google's "Crawled - currently not indexed" verdict.
+     These contextual links connect the page into the topical graph in both
+     directions — out to the money pages describing the scope it sells, and out
+     to the documented case study that proves multi-site execution.
+     ============================================================================ -->
+<section class="content py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-cyan-300 glow mb-4 text-center">Scope We Execute for Partners</h2>
+    <p class="text-gray-400 text-center mb-10 max-w-3xl mx-auto">
+      Partner and prime-contractor work is delivered through the same Division 27/28
+      field scope described on our service pages.
+    </p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="/services/structured-cabling-lubbock-tx/" class="card rounded-xl p-6 hover:border-cyan-400/50 transition-all group">
+        <div class="text-cyan-400 text-2xl mb-3"><i class="fas fa-ethernet"></i></div>
+        <h3 class="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">Structured Cabling &amp; Certification</h3>
+        <p class="text-gray-400 text-sm mt-2">CAT6/6A and fiber backbone, IDF/MDF build-out, test results at closeout.</p>
+      </a>
+      <a href="/services/security-camera-infrastructure-lubbock-tx/" class="card rounded-xl p-6 hover:border-cyan-400/50 transition-all group">
+        <div class="text-cyan-400 text-2xl mb-3"><i class="fas fa-video"></i></div>
+        <h3 class="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">Camera &amp; Access-Control Infrastructure</h3>
+        <p class="text-gray-400 text-sm mt-2">IP camera cabling, PoE switching, NVR racks, reader and door rough-in.</p>
+      </a>
+      <a href="/case-studies/7brew-multi-site/" class="card rounded-xl p-6 hover:border-purple-400/50 transition-all group">
+        <div class="text-purple-400 text-2xl mb-3"><i class="fas fa-diagram-project"></i></div>
+        <h3 class="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors">Multi-Site Rollout Case Study</h3>
+        <p class="text-gray-400 text-sm mt-2">How a multi-location deployment was staged, installed and documented as a subcontractor to the prime.</p>
+      </a>
+    </div>
+    <div class="text-center mt-10">
+      <a href="/quote/" class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center">
+        <i class="fas fa-file-invoice mr-3"></i>
+        Add Nova Titan to Your Bid List
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Coverage & Response -->
 <section class="content py-16 bg-gray-900/50">
   <div class="max-w-7xl mx-auto px-6">
@@ -371,6 +420,60 @@ description: "Subcontracting and field service partnerships for MSPs and enterpr
   </div>
 </section>
 
+<!-- ============================================================================
+     PROOF + SCOPE INTERNAL LINKING (2026-08 audit)
+     This page was "Crawled - currently not indexed" and had exactly ONE outbound
+     internal link (/contact/). A page that neither receives nor passes topical
+     links looks isolated and low-value to Google's selection process. These are
+     contextual, descriptive-anchor links to the scope pages and first-party proof
+     that a partner/MSP evaluator would actually want next.
+     ============================================================================ -->
+<section class="content pb-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="card rounded-2xl p-8">
+      <h2 class="text-2xl font-bold text-cyan-300 mb-3">Scope We Execute for Partners</h2>
+      <p class="text-gray-400 mb-6 text-sm max-w-3xl">
+        Partner work is delivered under the same Division 27/28 scope Nova Titan performs
+        as a direct subcontractor. These pages describe exactly what is included, how it is
+        tested, and how it is documented at closeout.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/services/structured-cabling-lubbock-tx/" class="block bg-gray-800/60 border border-gray-700/50 rounded-xl p-5 hover:border-cyan-500/50 transition-all group">
+          <div class="text-cyan-400 text-xl mb-2"><i class="fas fa-ethernet"></i></div>
+          <h3 class="text-base font-semibold text-white group-hover:text-cyan-300">Structured cabling &amp; Cat6/6A certification</h3>
+          <p class="text-gray-400 text-sm mt-2">Copper and fiber installation with test results delivered at closeout.</p>
+        </a>
+        <a href="/services/security-camera-infrastructure-lubbock-tx/" class="block bg-gray-800/60 border border-gray-700/50 rounded-xl p-5 hover:border-cyan-500/50 transition-all group">
+          <div class="text-cyan-400 text-xl mb-2"><i class="fas fa-video"></i></div>
+          <h3 class="text-base font-semibold text-white group-hover:text-cyan-300">Camera &amp; PoE infrastructure</h3>
+          <p class="text-gray-400 text-sm mt-2">IP camera cabling, PoE switching and NVR rack infrastructure.</p>
+        </a>
+        <a href="/services/" class="block bg-gray-800/60 border border-gray-700/50 rounded-xl p-5 hover:border-cyan-500/50 transition-all group">
+          <div class="text-cyan-400 text-xl mb-2"><i class="fas fa-server"></i></div>
+          <h3 class="text-base font-semibold text-white group-hover:text-cyan-300">Rack-and-stack &amp; smart hands</h3>
+          <p class="text-gray-400 text-sm mt-2">Equipment installation, staging, break-fix and site surveys.</p>
+        </a>
+      </div>
+
+      <h2 class="text-2xl font-bold text-green-300 mt-10 mb-3">Documented Partner-Delivered Work</h2>
+      <p class="text-gray-400 mb-6 text-sm max-w-3xl">
+        Nova Titan has executed multi-site work through enterprise platforms and prime
+        contractors. These are first-party accounts of that delivery model.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/case-studies/7brew-multi-site/" class="block bg-gray-800/60 border border-gray-700/50 rounded-xl p-5 hover:border-green-500/50 transition-all group">
+          <h3 class="text-base font-semibold text-white group-hover:text-green-300">Multi-site restaurant rollout through a prime contractor</h3>
+          <p class="text-gray-400 text-sm mt-2">Network stack deployment across multiple locations with zero business-hours downtime.</p>
+        </a>
+        <a href="/field-work/" class="block bg-gray-800/60 border border-gray-700/50 rounded-xl p-5 hover:border-green-500/50 transition-all group">
+          <h3 class="text-base font-semibold text-white group-hover:text-green-300">Field work photo documentation</h3>
+          <p class="text-gray-400 text-sm mt-2">Racks, cabling, firewall and wireless installs from completed jobs.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Request Vendor Packet CTA -->
 <section class="content py-20 bg-gradient-to-r from-purple-900/30 via-cyan-900/30 to-green-900/30">
   <div class="max-w-5xl mx-auto px-6">
@@ -420,4 +523,3 @@ description: "Subcontracting and field service partnerships for MSPs and enterpr
     </div>
   </div>
 </section>
-on>

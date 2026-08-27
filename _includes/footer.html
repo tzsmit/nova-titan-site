@@ -70,7 +70,13 @@
         <div class="space-y-3 text-sm">
           <div class="flex items-center">
             <i class="fas fa-phone text-cyan-400 w-4 mr-3"></i>
-            <a href="tel:{{ site.phone | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}" 
+            {%- comment -%}
+              E.164 (+1...) is required for NAP consistency with the Organization
+              JSON-LD telephone value and for reliable dialing from desktop
+              handoff apps. The bare 10-digit form previously emitted here was the
+              only tel: variant on the site that disagreed with every other link.
+            {%- endcomment -%}
+            <a href="tel:+1{{ site.phone | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}" 
                class="text-gray-300 hover:text-cyan-300 transition">{{ site.phone }}</a>
           </div>
           <div class="flex items-center">

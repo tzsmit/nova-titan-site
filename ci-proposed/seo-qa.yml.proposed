@@ -1,0 +1,337 @@
+name: SEO QA
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  seo-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      # ---------------------------------------------------------------------
+      # HARD GATE. Everything below FAILS the build. Previously the internal
+      # link check was advisory only, which is how the defects found in the
+      # 2026-08 audit (empty metric cards, a stray `on>` tag, orphaned buyer
+      # pages, an obsolete indexed PDF) survived in production.
+      # ---------------------------------------------------------------------
+      - name: SEO invariants
+        run: |
+          set -euo pipefail
+
+          echo "1. Homepage has exactly one canonical"
+          test "$(grep -c 'rel="canonical"' _site/index.html)" = "1"
+
+          echo "2. Authoritative organization entity present on homepage"
+          grep -q 'ElectricalContractor' _site/index.html
+
+          echo "3. Sitemap generated and contains money pages"
+          test -f _site/sitemap.xml
+          grep -q '/services/low-voltage-subcontractor-lubbock-tx/' _site/sitemap.xml
+          grep -q '/quote/' _site/sitemap.xml
+
+          echo "4. robots.txt present and does NOT block /thank-you/"
+          test -f _site/robots.txt
+          ! grep -qi 'Disallow: */thank-you' _site/robots.txt
+
+          echo "5. Blog posts actually build (regression guard for *.md exclude bug)"
+          test -d _site/blog/wifi-security
+          for u in $(grep -o 'href="/blog/[a-z0-9-]*/"' _site/blog/index.html | sed 's/href="//;s/"//'); do
+            test -f "_site$u/index.html" || { echo "BROKEN blog link: $u"; exit 1; }
+          done
+
+          echo "6. thank-you is noindexed"
+          grep -q 'noindex' _site/thank-you/index.html
+
+          echo "7. No empty aggregateRating"
+          ! grep -q '"ratingValue": ""' _site/testimonials/index.html
+
+          echo "8. Legacy duplicate site tree must never be published"
+          test ! -d _site/nova-titan-site
+          ! grep -q 'nova-titan-site' _site/sitemap.xml
+
+          echo "9. Capability statement PDFs: one CONTENT, no stale divergence"
+          # 2026-08 correction pass. The previous form of this gate asserted
+          # exactly ONE *capability-statement*.pdf existed. That was wrong once
+          # we deliberately restored real PDFs at the two historical URLs that
+          # Google has already indexed (see §3 of the correction report and the
+          # `defaults:` block in _config.yml).
+          #
+          # GitHub Pages sets Content-Type purely from the file extension, so an
+          # HTML meta-refresh body living at a `.pdf` path is served as
+          # application/pdf and reaches the user as a CORRUPT document. Serving a
+          # real, accurate PDF at those paths is the safe option.
+          #
+          # The invariant that actually protects us is therefore NOT "one file",
+          # it is "one piece of CONTENT": every public capability statement must
+          # be byte-identical, so a stale/inaccurate revision can never be
+          # reachable at any historical URL, and only the canonical copy is
+          # indexable.
+          pdfs=$(find _site -iname '*capability-statement*.pdf' -size +5k | sort)
+          test -n "$pdfs" || { echo "FAIL: no public capability statement PDF"; exit 1; }
+          echo "$pdfs" | sed 's/^/    /'
+          hashes=$(echo "$pdfs" | xargs -r md5sum | awk '{print $1}' | sort -u | wc -l)
+          test "$hashes" = "1" || {
+            echo "FAIL: public capability statement PDFs DIVERGE ($hashes distinct"
+            echo "      revisions). Every historical URL must serve the SAME"
+            echo "      current document."
+            echo "$pdfs" | xargs -r md5sum
+            exit 1; }
+
+          echo "9b. No HTML document may be published at a .pdf path"
+          # Directly guards the MIME hazard above: if any *.pdf in the build does
+          # not start with the %PDF magic bytes, GitHub Pages would serve HTML as
+          # application/pdf and the asset would be corrupt on arrival.
+          while IFS= read -r f; do
+            head -c 5 "$f" | grep -q '%PDF' || {
+              echo "FAIL: $f is not a real PDF (GitHub Pages will still serve it"
+              echo "      as application/pdf -> corrupt asset)"; exit 1; }
+          done < <(find _site -iname '*.pdf')
+
+          echo "9c. Exactly ONE capability statement PDF may be in the sitemap"
+          test "$(grep -c 'capability-statement.*\.pdf' _site/sitemap.xml)" = "1"
+
+          echo "All SEO invariants passed."
+
+      # Every legacy path Search Console has reported must keep resolving to its
+      # intended destination. A future redesign silently dropping a redirect_from
+      # entry is exactly how these became 404s in the first place.
+      - name: Redirect regression (Search Console legacy URLs)
+        run: |
+          set -euo pipefail
+          check() { # $1 = legacy path, $2 = expected destination substring
+            f="_site$1/index.html"
+            test -f "$f" || { echo "FAIL: $1 does not build a redirect page"; exit 1; }
+            grep -q "$2" "$f" || { echo "FAIL: $1 does not point at $2"; exit 1; }
+            echo "  ok  $1 -> $2"
+          }
+          # Reported as 404 in Search Console
+          check /home                                  'novatitan.net/'
+          check /services/west-texas-locations         '/services/'
+          check /divisions/systems                     '/services/'
+          check /divisions/intelligence                '/services/'
+          check /plans                                 '/quote/'
+          check /portfolio                             '/services/'
+          check /services/lubbock/commercial-it        'low-voltage-subcontractor-lubbock-tx'
+          # Reported as noindex / superseded
+          check /services/amarillo                    'low-voltage-subcontractor-amarillo-tx'
+          check /services/all-services                 '/services/'
+          check /book-now                               '/quote/'
+          # Reported as crawled-not-indexed, obsolete
+          check /services/commercial                   '/services/'
+          check /services/odessa                       'low-voltage-subcontractor-midland-odessa-tx'
+          echo "All redirect regressions passed."
+
+      - name: Money page integrity
+        run: |
+          set -euo pipefail
+          for p in / /services/ /quote/ /contact/ /government/ /capability-statement/ \
+                   /partners/enterprise/ /case-studies/7brew-multi-site/ \
+                   /services/low-voltage-subcontractor-lubbock-tx/ \
+                   /services/low-voltage-subcontractor-houston-tx/ \
+                   /services/low-voltage-subcontractor-dfw/ \
+                   /services/low-voltage-subcontractor-amarillo-tx/ \
+                   /services/low-voltage-subcontractor-midland-odessa-tx/ \
+                   /services/structured-cabling-lubbock-tx/ \
+                   /services/security-camera-infrastructure-lubbock-tx/ \
+                   /services/fire-alarm-subcontractor-texas/ ; do
+            f="_site${p}index.html"
+            test -f "$f" || { echo "FAIL: money page $p did not build"; exit 1; }
+            # exactly one canonical
+            test "$(grep -c 'rel="canonical"' "$f")" = "1" || { echo "FAIL: $p canonical count != 1"; exit 1; }
+            # exactly one H1
+            test "$(grep -c '<h1' "$f")" = "1" || { echo "FAIL: $p H1 count != 1"; exit 1; }
+            # must have a meta description
+            grep -q 'name="description"' "$f" || { echo "FAIL: $p missing meta description"; exit 1; }
+            # MUST NOT be noindexed
+            ! grep -q 'name="robots" content="noindex' "$f" || { echo "FAIL: $p is NOINDEXED"; exit 1; }
+            # must appear in sitemap
+            grep -q "https://novatitan.net${p}<" _site/sitemap.xml || { echo "FAIL: $p missing from sitemap"; exit 1; }
+            echo "  ok  $p"
+          done
+
+      - name: Sitemap hygiene / schema / links / legacy content
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os,re,glob,json,sys,collections
+          site='_site'; fail=[]
+          pages={p:open(p,encoding='utf-8',errors='ignore').read()
+                 for p in glob.glob(site+'/**/*.html',recursive=True)}
+
+          # --- sitemap must contain only canonical, indexable, existing URLs ---
+          sm=open(site+'/sitemap.xml',encoding='utf-8').read()
+          locs=re.findall(r'<loc>(.*?)</loc>',sm)
+          if len(locs)!=len(set(locs)): fail.append("sitemap has duplicate <loc> entries")
+          for u in locs:
+              path=u.replace('https://novatitan.net','')
+              if path.startswith('/assets'):
+                  if not os.path.exists(site+path): fail.append(f"sitemap asset 404: {path}")
+                  continue
+              f=site+path+'index.html' if path.endswith('/') else site+path
+              if not os.path.exists(f): fail.append(f"sitemap URL 404: {path}"); continue
+              h=pages.get(f,'')
+              if 'http-equiv="refresh"' in h: fail.append(f"sitemap contains a REDIRECT page: {path}")
+              if re.search(r'name="robots" content="noindex',h): fail.append(f"sitemap contains NOINDEX page: {path}")
+
+          # --- all JSON-LD must parse ---
+          for p,h in pages.items():
+              for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>',h,re.S):
+                  try: json.loads(b)
+                  except Exception as e: fail.append(f"invalid JSON-LD in {p}: {e}")
+
+          # --- no broken same-origin links; no non-canonical host links ---
+          def exists(u):
+              u=u.split('#')[0].split('?')[0]
+              return any(os.path.exists(c) for c in
+                         (site+u,site+u+'index.html',site+u.rstrip('/')+'/index.html',site+u.rstrip('/')+'.html'))
+          for p,h in pages.items():
+              if 'http-equiv="refresh"' in h: continue
+              for m in re.findall(r'href="([^"]+)"',h):
+                  if m.startswith('/') and not exists(m):
+                      fail.append(f"broken same-origin link {m} on {p}")
+                  if re.match(r'https?://(www\.)?novatitan\.net',m) and (
+                     m.startswith('http://') or '//www.' in m or m.endswith('/index.html')):
+                      fail.append(f"non-canonical host link {m} on {p}")
+
+          # --- retired positioning must not reappear on live pages ---
+          banned=[r'24/7 (Government )?IT Support', r'Nationwide managed IT',
+                  r'security awareness training', r'href="/plans/"', r'CAGE: Pending']
+          for p,h in pages.items():
+              if 'http-equiv="refresh"' in h: continue
+              for b in banned:
+                  if re.search(b,h,re.I): fail.append(f"RETIRED positioning '{b}' reappeared on {p}")
+
+          # --- visible empty metric cards (blank value above a label) ---
+          for p,h in pages.items():
+              if re.search(r'<div class="text-(?:2|3|4)xl[^"]*"[^>]*>\s*</div>',h):
+                  fail.append(f"empty metric value rendered on {p}")
+
+          # --- no hidden keyword-stuffed comment blocks ---
+          for p,h in pages.items():
+              for c in re.findall(r'<!--(.*?)-->',h,re.S):
+                  if c.count('|')>=6 and len(c)<400:
+                      fail.append(f"hidden keyword-stuffed comment on {p}")
+
+          # --- exactly one H1 on CANONICAL INDEXABLE CONTENT pages only -----
+          # The only live blog post shipped with ZERO H1 for months because it
+          # used `layout: default` (no page header) instead of `layout: post`.
+          #
+          # 2026-08 CORRECTION: the first version of this check iterated EVERY
+          # generated *.html file. That was wrong on both sides:
+          #
+          #   FALSE-NEGATIVE RISK — it only passed by COINCIDENCE. Generated
+          #   jekyll-redirect-from pages happen to emit exactly one
+          #   "<h1>Redirecting&hellip;</h1>", so they satisfied "== 1" by luck,
+          #   not by intent. If the plugin ever changed that markup, or a
+          #   redirect template dropped the heading, CI would fail on pages that
+          #   have no SEO requirement for an H1 at all.
+          #
+          #   FALSE-POSITIVE RISK — noindex utility pages (/thank-you/,
+          #   /apply-tech/) and /404.html were held to a content-page rule they
+          #   do not owe. They currently have one H1, so the gate was silently
+          #   depending on that; a legitimate redesign of an error page could
+          #   have blocked an unrelated merge.
+          #
+          # The scope is now EXPLICIT rather than accidental. Excluded classes:
+          #   - meta-refresh / JS-location redirect pages (incl. asset tombstones)
+          #   - any page carrying robots noindex
+          #   - error pages (404)
+          #   - pages canonicalised to a DIFFERENT URL (alternate representations)
+          #   - non-.html asset paths (never reached by this glob anyway)
+          # Everything that survives is a real indexable content page and MUST
+          # have exactly one H1. This still hard-fails for 0 or 2+ H1s on any
+          # money/service/content page — no `|| true`, no warning downgrade.
+          def h1_exempt(path, html):
+              # 1. redirect pages of any flavour (meta refresh or location=)
+              if 'http-equiv="refresh"' in html: return 'redirect'
+              if re.search(r'<script>\s*location\s*=', html):  return 'js-redirect'
+              # 2. explicitly de-indexed pages
+              if re.search(r'name="robots"[^>]*content="[^"]*noindex', html):
+                  return 'noindex'
+              # 3. error documents
+              if os.path.basename(path) == '404.html': return '404'
+              # 4. canonicalised away from itself -> alternate representation
+              m = re.search(r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"', html)
+              if m:
+                  own = '/' + os.path.relpath(path, site)
+                  own = own[:-len('index.html')] if own.endswith('index.html') else own
+                  can = m.group(1).replace('https://novatitan.net', '') or '/'
+                  if can.rstrip('/') != own.rstrip('/'): return 'canonicalised-away'
+              return None
+
+          checked = 0
+          for p, h in sorted(pages.items()):
+              why = h1_exempt(p, h)
+              if why:
+                  print(f"  h1: skip [{why}] {p}")
+                  continue
+              checked += 1
+              n = len(re.findall(r'<h1[\s>]', h))
+              if n != 1:
+                  fail.append(f"H1 count {n} (want exactly 1) on indexable page {p}")
+          print(f"  h1: enforced on {checked} canonical indexable content pages")
+          if checked < 20:
+              # Guard against the exemption logic silently swallowing the whole
+              # site (e.g. a head.html bug emitting noindex everywhere).
+              fail.append(f"H1 gate only evaluated {checked} pages — exemption "
+                          "logic is too broad or the build is incomplete")
+
+          # --- redirects must never chain, and must land on a real page -----
+          red={}
+          for p in glob.glob(site+'/**/*.html',recursive=True):
+              h=open(p,encoding='utf-8',errors='ignore').read()
+              if 'http-equiv="refresh"' not in h: continue
+              m=re.search(r'url=([^"\']+)',h)
+              if not m: fail.append(f"redirect page with no url= : {p}"); continue
+              src='/'+os.path.relpath(p,site)
+              src=src[:-len('index.html')] if src.endswith('index.html') else src
+              red[src]=m.group(1).replace('https://novatitan.net','')
+          for s,d in red.items():
+              if d in red: fail.append(f"REDIRECT CHAIN {s} -> {d} -> {red[d]}")
+              t=site+d+'index.html' if d.endswith('/') else site+d
+              if not os.path.exists(t): fail.append(f"redirect {s} lands on missing {d}")
+          # REDIRECTS.md must document the real count, or it has drifted.
+          if os.path.exists('REDIRECTS.md'):
+              md=open('REDIRECTS.md',encoding='utf-8').read()
+              if f"({len(red)} entries" not in md:
+                  fail.append(f"REDIRECTS.md is stale: build has {len(red)} redirects; "
+                              "update the '(N entries, ...)' heading and the tables")
+          else:
+              fail.append("REDIRECTS.md is missing (redirect source of truth)")
+
+          # --- tel: links must be E.164 for NAP consistency ----------------
+          for p,h in pages.items():
+              for t in re.findall(r'href="(tel:[^"]+)"',h):
+                  if not t.startswith('tel:+1'):
+                      fail.append(f"non-E.164 tel link {t} on {p}")
+
+          # --- lead attribution layer must not be silently dropped ---------
+          need=['phone_call_click','schedule_click','email_lead_click',
+                'file_download','generate_lead','quote_request_click']
+          home=pages.get(site+'/index.html','')
+          for ev in need:
+              if ev not in home: fail.append(f"analytics event '{ev}' missing from homepage")
+
+          if fail:
+              print("SEO QA FAILURES:"); [print("  -",f) for f in sorted(set(fail))]; sys.exit(1)
+          print("Sitemap/schema/link/legacy checks passed.")
+          PY
+
+      # External links only. Network flakiness must not fail the build, but
+      # same-origin breakage is already a hard failure above.
+      - name: External link check (advisory)
+        continue-on-error: true
+        run: |
+          npx --yes linkinator ./_site --recurse --silent \
+            --skip "tally.so|linkedin.com|facebook.com|tiktok.com|instagram.com|yelp.com|mapquest.com|twitter.com|x.com|github.com|plausible.io|googletagmanager.com|fonts.|calendly.com|google.com" \
+            || echo "::warning::linkinator found external issues"

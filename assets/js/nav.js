@@ -1,7 +1,9 @@
 /**
  * Nova Titan Systems - Navigation Script
  * Handles mobile menu toggle and navigation behavior
- * Loads after GSAP and Particles to prevent conflicts
+ * Loads after Particles to prevent conflicts
+ * (GSAP/ScrollTrigger were removed in the 2026-08 performance audit — they were
+ *  loaded sitewide but never actually animated anything.)
  */
 
 (function() {

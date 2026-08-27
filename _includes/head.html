@@ -70,34 +70,214 @@
     gtag('js', new Date());
     gtag('config', 'G-R8DZFXDCNV');
 
-    // GA4 Event Tracking: Tally Quote Form
-    document.addEventListener('DOMContentLoaded', function() {
-      // Track clicks on Tally form links
-      document.querySelectorAll('a[href*="tally.so/r/Y5MMAN"], a[href="/quote/"]').forEach(function(el) {
-        el.addEventListener('click', function() {
-          gtag('event', 'quote_request_click', {
-            event_category: 'engagement',
-            event_label: 'tally_form_cta',
-            link_url: 'https://tally.so/r/Y5MMAN'
+    /* =====================================================================
+       LEAD ATTRIBUTION LAYER  (§20 — 2026-08 audit)
+
+       BEFORE this audit only TWO events existed: quote_request_click (bound
+       ONLY to /quote/ and one Tally URL) and generate_lead. A sitewide crawl
+       of the built output found the surfaces below firing ZERO events, i.e.
+       invisible in GA4.
+
+       IMPORTANT — these are TWO DIFFERENT INTENT TIERS and must never be
+       summed into one headline number:
+
+       TIER 1 — DIRECT CONVERSION SURFACES (163 anchors)
+         the visitor contacts / obtains something in this one click
+         73 x  tel:       -> phone calls, the highest-intent action
+         53 x  mailto:    -> 2 sub-list/RFQ (email_lead_click)
+                             51 generic  (email_click)
+         23 x  calendly   -> the homepage PRIMARY cta
+         14 x  .pdf       -> capability statement / vendor packet
+
+       TIER 2 — NAVIGATION / INTENT SURFACES (260 anchors)
+         the visitor only moves toward a form; NOT a conversion
+        133 x  /contact/  -> contact_page_click
+        127 x  /quote/    -> quote_request_click (was already partly tracked)
+
+       So the accurate statement is: "163 direct conversion surfaces plus 133
+       contact-navigation surfaces were previously unmeasured." It is NOT
+       correct to describe 163 as the total of all untracked interactive paths,
+       and it is NOT correct to add the tiers together and call the result
+       conversions. Counts are reproducible via
+       tools/crawl_conversion_surfaces.py against a clean _site.
+
+       Because the homepage's primary CTA is Calendly and its secondary CTA is
+       a mailto:, the two single most important actions on the highest-traffic
+       page were completely unmeasured. Any judgement about which pages
+       actually produce the 1-2 monthly inquiries was therefore unfounded.
+
+       DESIGN NOTES
+       - ONE delegated listener on document (capture phase). Replaces
+         per-element binding, so it also covers content injected later.
+       - Fires on 'click' only. NOT on 'auxclick'/keydown, to avoid inflation.
+       - DOUBLE-FIRE GUARD: each element is stamped with a dataset flag and
+         re-entry within 800ms is dropped. The old code bound BOTH the
+         `a[href="/quote/"]` selector AND `a[href*="tally.so/r/Y5MMAN"]`, so an
+         anchor matching both would have fired twice.
+       - Every GA4 event is mirrored to Plausible when present, so the two
+         tools stay reconcilable instead of telling different stories.
+       - page_location/page_path are attached so attribution answers
+         "WHICH page produced the lead", which is the whole point.
+
+       RECOMMENDED GA4 KEY EVENTS (mark manually in Admin > Events):
+         generate_lead ................ form actually submitted  (TRUE conv.)
+         phone_call_click ............. treat as conversion
+         schedule_click ............... Calendly open
+         email_lead_click ............. mailto with a sub-list/RFQ subject
+       DO NOT mark quote_request_click as a key event — it is a navigation
+       intent signal, not a completed lead, and marking it will overstate
+       conversions by roughly the ratio of quote-page visits to submissions.
+       ===================================================================== */
+    /* PLAUSIBLE CUSTOM-EVENT STUB — required, not optional.
+       2026-08 correction pass.
+
+       The installed snippet is:
+         <script defer data-domain="novatitan.net" src=".../js/script.js">
+       Because it is DEFERRED, window.plausible does not exist during parse or
+       during early user interaction. The first version of this tracker mirrored
+       events with `if (typeof window.plausible === 'function')`, which meant any
+       click before the script finished loading was SILENTLY DROPPED — and on a
+       fast click (e.g. tapping a phone number immediately) that is most of them.
+
+       Inspecting the real script.js confirms it drains a pre-existing queue on
+       init:
+         for (var c = window.plausible && window.plausible.q || [], r = 0;
+              r < c.length; r++) g.apply(this, c[r]);
+         window.plausible = g; ...
+
+       So the officially supported pattern is to define a stub that pushes into
+       `.q` before the library loads. The library then replays the queue. If
+       Plausible is blocked by an ad blocker the stub simply accumulates a few
+       array entries and nothing throws — GA4 is unaffected either way. */
+    window.plausible = window.plausible || function () {
+      (window.plausible.q = window.plausible.q || []).push(arguments);
+    };
+
+    (function () {
+      var DUP_WINDOW_MS = 800;
+
+      function track(name, params) {
+        params = params || {};
+        params.page_path = window.location.pathname;
+        params.page_location = window.location.href;
+        try { gtag('event', name, params); } catch (e) {}
+        // Mirror to Plausible. The stub above guarantees this is always callable,
+        // so events fired before script.js loads are queued and replayed rather
+        // than lost. Wrapped defensively so an analytics fault can never break
+        // navigation.
+        try {
+          window.plausible(name, { props: params });
+        } catch (e) {}
+      }
+
+      function alreadyFired(el) {
+        var now = Date.now();
+        var last = parseInt(el.getAttribute('data-nt-fired') || '0', 10);
+        if (now - last < DUP_WINDOW_MS) { return true; }
+        el.setAttribute('data-nt-fired', String(now));
+        return false;
+      }
+
+      // Short, readable label for where on the page the click happened.
+      function surfaceOf(el) {
+        if (el.closest('nav, .nav-container')) { return 'nav'; }
+        if (el.closest('footer')) { return 'footer'; }
+        if (el.closest('aside, .sidebar')) { return 'sidebar'; }
+        return 'body';
+      }
+
+      document.addEventListener('click', function (ev) {
+        var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+        if (!a) { return; }
+        var href = a.getAttribute('href') || '';
+        var label = (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80);
+        var surface = surfaceOf(a);
+
+        // --- Phone: highest-intent action on the site ---------------------
+        if (href.indexOf('tel:') === 0) {
+          if (alreadyFired(a)) { return; }
+          track('phone_call_click', {
+            event_category: 'conversion', link_text: label, surface: surface
           });
+          return;
+        }
+
+        // --- Calendly: homepage PRIMARY cta -------------------------------
+        if (href.indexOf('calendly.com') !== -1) {
+          if (alreadyFired(a)) { return; }
+          track('schedule_click', {
+            event_category: 'conversion', link_text: label, surface: surface
+          });
+          return;
+        }
+
+        // --- Email --------------------------------------------------------
+        if (href.indexOf('mailto:') === 0) {
+          if (alreadyFired(a)) { return; }
+          // A mailto carrying a prefilled RFQ/sub-list subject is a real lead
+          // intent, not a generic "contact us" click. Separate the two so the
+          // homepage sub-list CTA is not diluted by footer email links.
+          var isLead = /subject=/i.test(href) &&
+                       /(sub-?list|rfq|quote|bid|project|partner)/i.test(href);
+          track(isLead ? 'email_lead_click' : 'email_click', {
+            event_category: isLead ? 'conversion' : 'engagement',
+            link_text: label, surface: surface
+          });
+          return;
+        }
+
+        // --- Document downloads -------------------------------------------
+        if (/\.pdf(\?|$)/i.test(href)) {
+          if (alreadyFired(a)) { return; }
+          var docName = href.split('/').pop().split('?')[0];
+          track('file_download', {
+            event_category: 'engagement',
+            file_name: docName,
+            file_extension: 'pdf',
+            doc_type: /capability/i.test(docName) ? 'capability_statement'
+                    : /cert|fortinet/i.test(docName) ? 'certification' : 'other',
+            surface: surface
+          });
+          return;
+        }
+
+        // --- Quote intent (navigation, NOT a conversion) ------------------
+        if (href === '/quote/' || href.indexOf('/quote/') === 0 ||
+            href.indexOf('tally.so') !== -1) {
+          if (alreadyFired(a)) { return; }
+          track('quote_request_click', {
+            event_category: 'engagement', link_text: label, surface: surface
+          });
+          return;
+        }
+
+        // --- Contact page intent ------------------------------------------
+        if (href === '/contact/') {
+          if (alreadyFired(a)) { return; }
+          track('contact_page_click', {
+            event_category: 'engagement', link_text: label, surface: surface
+          });
+          return;
+        }
+      }, true);
+
+      // --- Tally embed submission: the ONLY true completed-lead signal ----
+      // Guarded so a duplicated postMessage cannot inflate generate_lead.
+      var leadFired = false;
+      window.addEventListener('message', function (e) {
+        var msg = e.data;
+        if (typeof msg === 'string') {
+          try { msg = JSON.parse(msg); } catch (err) { return; }
+        }
+        if (!msg || msg.event !== 'Tally.FormSubmitted' || leadFired) { return; }
+        leadFired = true;
+        track('generate_lead', {
+          event_category: 'conversion',
+          form_name: 'tally_quote_form',
+          value: 1
         });
       });
-      // Track Tally embed form submission via postMessage
-      window.addEventListener('message', function(e) {
-        if (e.data && typeof e.data === 'string') {
-          try {
-            var msg = JSON.parse(e.data);
-            if (msg.event === 'Tally.FormSubmitted') {
-              gtag('event', 'generate_lead', {
-                event_category: 'conversion',
-                event_label: 'tally_quote_form_submitted',
-                value: 1
-              });
-            }
-          } catch(err) {}
-        }
-      });
-    });
+    })();
   </script>
 
   <!-- Canonical URL emitted by jekyll-seo-tag ({% raw %}{% seo %}{% endraw %}) above — do not add a second one. -->
@@ -126,7 +306,33 @@
       "height": 400
     },
     "image": "{{ site.url }}/assets/images/nova-titan-og-image.png",
-    "foundingDate": "2025-09",
+    {%- comment -%}
+      FOUNDING DATE — sourced from an in-repo authoritative company document,
+      NOT inferred from website copy.
+
+      Source: assets/docs/nova-titan-systems-capability-statement-2026.pdf
+              COMPANY SNAPSHOT -> "Founded September 17, 2025"
+      This is the current capability statement the company itself distributes to
+      GCs and government buyers, so it is treated as the company's own statement
+      of fact rather than a guess. It is corroborated by the archived
+      pre-repositioning statement ("Started: 09/17/2025"), /leadership/,
+      /government/ and /about/.
+
+      Earlier in this audit the value was normalised to the imprecise "2025-09"
+      because only the month was considered confirmed. Now that the exact day is
+      documented in the distributed PDF, the full ISO 8601 date is used — schema
+      Date accepts YYYY-MM-DD and the more precise value is preferable.
+
+      OWNER VERIFICATION: CONFIRMED 2026-08 by the owner. 2025-09-17 is the
+      correct company founding date and matches the capability statement. This
+      value is therefore settled — it is no longer pending confirmation and does
+      not require re-verification against the Texas SOS certificate.
+
+      If it ever DOES need to change, this single line is the only place the
+      global structured-data value lives. Prose mentions in /about/,
+      /government/ and /leadership/ say "September 2025" and remain consistent.
+    {%- endcomment -%}
+    "foundingDate": "2025-09-17",
     "founder": {
       "@type": "Person",
       "name": "Traivone Smith",
@@ -284,6 +490,14 @@
     "@type": "LocalBusiness",
     "@id": "{{ site.url }}/#organization",
     "name": "Nova Titan Systems LLC",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ site.data.testimonials_stats.average_rating }}",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "{{ site.data.testimonials_stats.total_reviews }}",
+      "reviewCount": "{{ site.data.testimonials_stats.total_reviews }}"
+    },
     "review": [
       {% for testimonial in site.data.testimonials limit:10 %}
         {% if testimonial.name %}
