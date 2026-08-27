@@ -146,14 +146,9 @@ body {
 }
 
 /* Profile Image */
-.profile-image {
-  width: 300px;
-  height: 300px;
-  border-radius: 20px;
-  object-fit: cover;
-  border: 3px solid rgba(0,212,255,0.3);
-  box-shadow: 0 8px 32px rgba(0,212,255,0.2);
-}
+/* .profile-image removed in Phase 2 (2026-08): it existed only to frame the
+   founder headshot on /about/ and /leadership/. Both portraits were removed per
+   owner directive and the rule had no other consumer. */
 
 /* Skill Bars */
 .skill-bar {

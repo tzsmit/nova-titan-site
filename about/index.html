@@ -1,37 +1,51 @@
 ---
 layout: default
-title: "About Nova Titan Systems | CEO Traivone Smith"
-description: "CEO Traivone Smith leads Nova Titan Systems LLC, a Division 27/28 low-voltage subcontractor specializing in structured cabling and fire alarm rough-in coordination. SAM.gov active. West Texas, Houston, DFW."
+title: "About Nova Titan Systems | Division 27/28 Commercial Contractor"
+description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage subcontractor delivering structured cabling, security camera and access control infrastructure, and fire alarm rough-in coordination for general contractors and public entities across West Texas, Houston, and DFW. SAM.gov active, CAGE 170W6."
 ---
   <!-- HERO -->
   <section class="content pt-32 pb-14">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-center lg:text-left">
-          <div class="mb-6 fade-in">
-            <img src="/assets/img/headshot-placeholder.jpg" alt="Traivone Smith — CEO, Nova Titan Systems LLC" class="profile-image mx-auto lg:mx-0" loading="lazy">
-          </div>
-        </div>
-        
-        <div class="fade-in">
+      {%- comment -%}
+        PHASE 2 — COMPANY-FIRST HERO.
+
+        This hero previously led with a 300px CEO portrait and an H1 of
+        "Traivone Smith | CEO", which presented Nova Titan as a founder personal
+        brand rather than a commercial contracting company. Removed per owner
+        directive. The founder now appears further down the page, in a company
+        history / accountability section, with his legitimate title intact.
+
+        Deliberately NOT replaced with stock or AI-generated executive imagery,
+        or a fictional team photo. The hero is text-first; visual proof of
+        capability lives in real field work at /field-work/ and /case-studies/.
+      {%- endcomment -%}
+      <div class="max-w-4xl fade-in">
           <div class="cert-badge mb-6">
-            <i class="fas fa-certificate"></i>
-            Fortinet Certified &bull; Owner-Operated Business
+            <i class="fas fa-hard-hat"></i>
+            Division 27/28 Commercial Subcontractor &bull; SAM.gov Active
           </div>
-          
+
           <h1 class="text-4xl sm:text-5xl font-bold glow mb-6">
-            Traivone Smith | <span class="glow-green">CEO</span>
+            About <span class="glow-green">Nova Titan Systems</span>
           </h1>
-          <p class="text-2xl text-cyan-300 mb-4 font-semibold">Nova Titan Systems LLC</p>
-          
+          <p class="text-2xl text-cyan-300 mb-4 font-semibold">
+            Commercial low-voltage field execution across Texas
+          </p>
+
           <p class="text-xl text-gray-300 mb-6 leading-relaxed">
-            Nova Titan Systems LLC is a <strong class="text-cyan-300">Division 27/28 commercial subcontractor</strong> 
-            specializing in <strong class="text-green-300">fire alarm rough-in &amp; coordination</strong>, 
-            <strong class="text-green-300">structured cabling</strong>, 
-            <strong class="text-orange-300">access control</strong>, and 
-            <strong class="text-purple-300">low-voltage infrastructure</strong> 
-            for general contractors and public entities across 
+            Nova Titan Systems LLC is a <strong class="text-cyan-300">Division 27/28 commercial subcontractor</strong>
+            delivering <strong class="text-green-300">structured cabling</strong>,
+            <strong class="text-purple-300">security camera and access control infrastructure</strong>, and
+            <strong class="text-green-300">fire alarm rough-in &amp; coordination</strong>
+            for general contractors, facility owners, and public entities across
             <strong class="text-green-300">West Texas, Houston, and DFW</strong>.
+          </p>
+
+          <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+            We work as a subcontractor to general contractors and directly for
+            commercial and government facility owners &mdash; taking scope from
+            plan review and submittals through rough-in, termination, testing,
+            and closeout documentation.
           </p>
           
           <div class="flex flex-wrap gap-4 mb-8">
@@ -55,7 +69,6 @@ description: "CEO Traivone Smith leads Nova Titan Systems LLC, a Division 27/28 
               SAM.gov Active &bull; CAGE 170W6
             </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
@@ -69,8 +82,14 @@ description: "CEO Traivone Smith leads Nova Titan Systems LLC, a Division 27/28 
           <div class="stat-label text-gray-400 mt-2">Dispatch Radius</div>
         </div>
         <div class="stat-card fade-in">
-          <span class="stat-number text-green-300 text-3xl font-bold">NAICS</span>
-          <div class="stat-label text-gray-400 mt-2">238210 Certified</div>
+          {%- comment -%}
+            PHASE 2: was "238210 Certified". A NAICS code is an industry
+            CLASSIFICATION used in federal procurement, not a certification.
+            Describing it as "Certified" implied a credential that does not
+            exist and is the kind of claim a procurement officer would catch.
+          {%- endcomment -%}
+          <span class="stat-number text-green-300 text-3xl font-bold">238210</span>
+          <div class="stat-label text-gray-400 mt-2">Primary NAICS Code</div>
         </div>
         <div class="stat-card fade-in">
           <span class="stat-number text-purple-300 text-3xl font-bold">SAM.gov</span>
@@ -111,8 +130,20 @@ description: "CEO Traivone Smith leads Nova Titan Systems LLC, a Division 27/28 
         
         <p class="text-gray-300 leading-relaxed">
           Based in Lubbock, Texas, Nova Titan Systems serves the West Texas, Houston, and Dallas-Fort Worth markets 
-          with a 500-mile dispatch radius. The company is SAM.gov registered, holds CAGE Code 170W6, and is a 
-          business. Nova Titan actively bids Division 28 fire alarm rough-in coordination (regulated FA work by licensed TX partners at award), structured cabling, 
+          with a 500-mile dispatch radius. The company is registered in SAM.gov under
+          CAGE Code 170W6 and UEI CZ8BLZMSKZ66, with primary NAICS 238210 &mdash;
+          Electrical Contractors and Other Wiring Installation Contractors.
+          {%- comment -%}
+            PHASE 2: the previous sentence read "...holds CAGE Code 170W6, and is a
+            business." — truncated, incomplete copy where a business designation
+            appears to have been removed at some point. Rewritten using ONLY facts
+            verifiable in-repo (SAM.gov registration, CAGE, UEI, primary NAICS).
+            No designation was inferred to fill the gap: HUBZone, minority-owned,
+            small-business, veteran-owned and disadvantaged-business status were all
+            deliberately NOT inserted here, because the intended original word
+            cannot be proven from available evidence.
+          {%- endcomment -%}
+          Nova Titan actively bids Division 28 fire alarm rough-in coordination (regulated FA work by licensed TX partners at award), structured cabling, 
           access control, security camera infrastructure, and communications systems projects for commercial 
           construction and government facilities.
         </p>
@@ -297,8 +328,14 @@ description: "CEO Traivone Smith leads Nova Titan Systems LLC, a Division 27/28 
           </div>
           <h3 class="text-xl font-semibold text-cyan-300 mb-3">Reliable Delivery</h3>
           <p class="text-gray-300">
-            Show up on time, deliver clean work, and close out on schedule. Every project gets 
-            direct CEO oversight and transparent communication from start to finish.
+            Show up on time, deliver clean work, and close out on schedule. Every project has
+            a named point of accountability and transparent communication from start to finish.
+            {%- comment -%}
+              PHASE 2: "direct CEO oversight" REDUCED. Ownership accountability is a
+              real differentiator, but phrased this way it reads solo-operator to a GC
+              estimator evaluating whether a sub can staff a job. The commitment is
+              retained; the founder-centric framing is not.
+            {%- endcomment -%}
           </p>
         </div>
         
@@ -349,7 +386,12 @@ description: "CEO Traivone Smith leads Nova Titan Systems LLC, a Division 27/28 
       </div>
       <p class="text-sm text-gray-400 mt-6">
         <i class="fas fa-shield-halved mr-2"></i>
-        SAM.gov Active &bull; CAGE 170W6 &bull; Owner-Operated Business &bull; CEO-led operations
+        SAM.gov Active &bull; CAGE 170W6 &bull; UEI CZ8BLZMSKZ66 &bull; Primary NAICS 238210
+        {%- comment -%}
+          PHASE 2: replaced "Owner-Operated Business • CEO-led operations" with
+          procurement identifiers. A GC or public buyer scanning this line wants
+          registration data they can verify, not founder framing.
+        {%- endcomment -%}
       </p>
     </div>
   </section>

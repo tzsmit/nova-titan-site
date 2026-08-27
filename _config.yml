@@ -9,7 +9,12 @@ image: /assets/images/nova-titan-og-image.png
 logo: /assets/images/low-voltage-contractor-lubbock-logo.png
 
 # Author/Business Info
-author: "Traivone Smith"
+# PHASE 2 (2026-08): was `author: "Traivone Smith"`. jekyll-seo-tag renders the
+# site-level `author` into the WebSite publisher/Organization node, which made the
+# built output declare `"publisher": {"@type":"Organization","name":"Traivone Smith"}`
+# -- i.e. it told Google the PUBLISHING ORGANIZATION is a person. Set to the
+# company. The founder remains a first-class Person entity at /leadership/.
+author: "Nova Titan Systems LLC"
 phone: "(806) 370-0624"
 email: "traivonesmith@novatitan.net"
 
@@ -211,12 +216,24 @@ defaults:
 # SEO settings
 twitter:
   username: novatitan1
+# PHASE 2 (2026-08) -- COMPANY PROFILES ONLY.
+# jekyll-seo-tag renders `social.links` into a SECOND, WebSite/Organization-level
+# `sameAs` array in the built output, independent of the hand-authored
+# Organization block in _includes/head.html. Cleaning only that block therefore
+# left the contradiction live in the page; this is the actual root cause.
+#
+# Removed:
+#   - https://github.com/tzsmit                     personal dev profile; live
+#     content describes Nova Titan as a cybersecurity consultancy (CloudWarden,
+#     quantum-safe, AI security, 24/7 monitoring) and contradicts the Division
+#     27/28 contractor entity. Retained on the Person entity at /leadership/.
+#   - https://www.linkedin.com/in/traivone-smith-... personal /in/ profile;
+#     belongs to the Person entity, not the company.
 social:
   name: Nova Titan Systems
   links:
-    - https://github.com/tzsmit
-    - https://www.linkedin.com/in/traivone-smith-969b60327
     - https://www.tiktok.com/@novatitan1
+    - https://www.facebook.com/NovaTitanSystems/
 
 # Netlify CMS (optional - keep existing config)
 netlify_cms:
