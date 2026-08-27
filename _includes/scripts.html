@@ -1,92 +1,105 @@
 <!-- JavaScript Libraries & Scripts -->
 
-<!-- 1. Vendor Libraries (Load First with defer) -->
+<!-- ============================================================================
+     PERFORMANCE (2026-08 SEO audit, §21)
+
+     GSAP (72KB raw / 28KB gzip) and ScrollTrigger (43KB raw / 18KB gzip) were
+     loaded on EVERY page — 115KB raw / 46KB transferred of third-party
+     JavaScript — while the animation block below explicitly stated "GSAP
+     animations DISABLED to prevent layout shift issues" and every single
+     from()/timeline call was commented out. The only thing the GSAP branch
+     still did was set opacity to 1 on .card / .fade-in / .portfolio-preview
+     elements, which requires no animation library at all.
+
+     A repo-wide grep confirmed ZERO other references to `gsap` or
+     `ScrollTrigger` in any page, layout, include or asset JS, so nothing else
+     depended on them. Both <script> tags were removed and the reveal logic
+     rewritten in vanilla JS below. Net effect: two fewer third-party requests
+     and 115KB less JS parsed/executed on every page, with identical rendering.
+
+     DO NOT re-add a GSAP CDN tag unless a page genuinely animates with it. If
+     animation returns, load it only on the page that needs it via
+     `extra_scripts`, never sitewide.
+     ============================================================================ -->
+
+<!-- 1. Vendor Libraries -->
 <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<!-- 2. Particle.js Configuration -->
+<!-- 2. Particles.js Configuration
+     Particle canvas is intentionally skipped on mobile/reduced-motion and on
+     conversion-critical pages (see PARTICLE_EXCLUDED_PATHS) to protect mobile
+     CPU cost and INP on the pages that actually produce inquiries. -->
 <script>
-  // Initialize Particles on load (deferred via event listener)
-  window.addEventListener('load', function() {
-    if (typeof particlesJS !== 'undefined') {
-      particlesJS('particles-js', {
-        particles: { 
-          number: { value: 80, density: { enable: true, value_area: 1000 } },
-          color: { value: ['#00d4ff', '#00ff88', '#b300ff', '#ff0066'] }, 
-          shape: { type: 'circle' },
-          opacity: { value: .3, random: true }, 
-          size: { value: 3, random: true },
-          line_linked: { enable: true, distance: 120, color: '#00d4ff', opacity: .25, width: 1 },
-          move: { enable: true, speed: 1.8, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false } 
-        },
-        interactivity: { 
-          detect_on: 'canvas',
-          events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } }, 
-          modes: { repulse: { distance: 80, duration: 0.4 }, push: { particles_nb: 3 } } 
-        },
-        retina_detect: true
-      });
+  (function () {
+    // Money/conversion pages where a full-screen animated canvas costs mobile
+    // CPU without adding value. Keep this list conservative.
+    var PARTICLE_EXCLUDED_PATHS = ['/quote/', '/contact/', '/thank-you/'];
+
+    function particlesAllowed() {
+      if (PARTICLE_EXCLUDED_PATHS.indexOf(window.location.pathname) !== -1) return false;
+      // Respect user motion preference.
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
+      // Skip the animation loop on small screens (mobile CPU / battery).
+      if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) return false;
+      return true;
     }
-  });
-</script>
 
-<!-- 3. GSAP Animations -->
-<script>
-  // Wait for all scripts to load before initializing (deferred via event listener)
-  window.addEventListener('load', function() {
-    // Fallback: Ensure all content is visible even if GSAP fails
-    setTimeout(function() {
-      document.querySelectorAll('.fade-in, .card').forEach(function(el) {
-        el.style.opacity = '1';
-      });
-    }, 100);
-    
-    // GSAP animations DISABLED to prevent layout shift issues
-    // The translateY animations were causing content to jump/shift up after page load
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      try {
-        // Just ensure all elements are visible, no animations
-        const cards = document.querySelectorAll('.card');
-        if (cards.length > 0) {
-          cards.forEach(card => card.style.opacity = '1');
-        }
+    window.addEventListener('load', function () {
+      var container = document.getElementById('particles-js');
+      if (!container) return;
 
-        const fadeElements = document.querySelectorAll('.fade-in');
-        if (fadeElements.length > 0) {
-          fadeElements.forEach(el => {
-            el.style.opacity = '1';
-          });
-        }
-        
-        const portfolioCards = document.querySelectorAll('.portfolio-preview');
-        if (portfolioCards.length > 0) {
-          portfolioCards.forEach(card => {
-            card.style.opacity = '1';
-          });
-        }
-        
-        // All GSAP from() animations commented out to prevent layout shift
-        // Original code caused content to translateY upward after page load
-        // This was the root cause of heading/content overlaps
-      } catch (error) {
-        console.error('GSAP initialization error:', error);
-        // Ensure everything is visible on error
-        document.querySelectorAll('.fade-in, .card').forEach(function(el) {
-          el.style.opacity = '1';
+      if (!particlesAllowed()) {
+        // Remove the empty canvas host so it cannot capture pointer events.
+        container.style.display = 'none';
+        return;
+      }
+
+      if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+          particles: {
+            number: { value: 80, density: { enable: true, value_area: 1000 } },
+            color: { value: ['#00d4ff', '#00ff88', '#b300ff', '#ff0066'] },
+            shape: { type: 'circle' },
+            opacity: { value: .3, random: true },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 120, color: '#00d4ff', opacity: .25, width: 1 },
+            move: { enable: true, speed: 1.8, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+          },
+          interactivity: {
+            detect_on: 'canvas',
+            events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+            modes: { repulse: { distance: 80, duration: 0.4 }, push: { particles_nb: 3 } }
+          },
+          retina_detect: true
         });
       }
-    } else {
-      console.warn('GSAP or ScrollTrigger not loaded - showing all content');
-      // Ensure everything is visible when GSAP not loaded
-      document.querySelectorAll('.fade-in, .card').forEach(function(el) {
-        el.style.opacity = '1';
-      });
-    }
-  });
+    });
+  })();
 </script>
 
-<!-- 4. Navigation Script (Must load after GSAP/Particles) -->
+<!-- 3. Content reveal (vanilla — replaces the disabled GSAP block)
+     Previously this required GSAP + ScrollTrigger to be present just to set
+     opacity:1. Now it runs immediately with no dependency, so content can never
+     be left invisible by a CDN failure. -->
+<script>
+  (function () {
+    function revealAll() {
+      var els = document.querySelectorAll('.fade-in, .card, .portfolio-preview');
+      for (var i = 0; i < els.length; i++) {
+        els[i].style.opacity = '1';
+      }
+    }
+    // Run as early as possible, then again after load to catch late DOM.
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', revealAll);
+    } else {
+      revealAll();
+    }
+    window.addEventListener('load', revealAll);
+  })();
+</script>
+
+<!-- 4. Navigation Script -->
 <script defer src="/assets/js/nav.js"></script>
 
 <!-- 5. Page-specific scripts -->

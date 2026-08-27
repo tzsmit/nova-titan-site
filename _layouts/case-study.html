@@ -141,6 +141,67 @@ layout: default
             </ul>
           </div>
           
+          <!-- Field Notes — first-party, non-commodity operational detail.
+               This is the material Google's guidance actually rewards (original
+               firsthand experience) and what a GC/estimator reads to judge
+               whether a sub understands their schedule risk. -->
+          {% if case_study.field_notes %}
+          <div class="card rounded-2xl p-8 fade-in">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-green-500 rounded-xl flex items-center justify-center mr-4">
+                <i class="fas fa-clipboard-check text-xl text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-white">Field Notes</h2>
+            </div>
+            <p class="text-gray-400 text-sm mb-5">What this job actually taught us, from the crew that performed it.</p>
+            <ul class="space-y-4">
+              {% for note in case_study.field_notes %}
+              <li class="flex items-start text-gray-300">
+                <i class="fas fa-hard-hat text-cyan-400 mr-3 mt-1"></i>
+                <span>{{ note }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          <!-- Relationship disclosure — prevents an end-client brand reference
+               from being read as a direct Nova Titan customer relationship. -->
+          {% if case_study.relationship_disclosure %}
+          <div class="rounded-xl p-5 border border-yellow-500/30 bg-yellow-900/10 fade-in">
+            <p class="text-sm text-gray-300">
+              <i class="fas fa-circle-info text-yellow-400 mr-2"></i>
+              <strong class="text-yellow-300">Project relationship:</strong>
+              {{ case_study.relationship_disclosure }}
+            </p>
+          </div>
+          {% endif %}
+
+          <!-- FIELD NOTES — first-party observations (2026-08 audit, §13).
+               This is the non-commodity, firsthand content that distinguishes a
+               real case study from "successful installation" filler, and it is
+               the kind of original material Google's generative-AI guidance
+               rewards. Only rendered when the case study actually has notes. -->
+          {% if case_study.field_notes and case_study.field_notes.size > 0 %}
+          <div class="card rounded-2xl p-8 fade-in">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center mr-4">
+                <i class="fas fa-clipboard-check text-xl text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold text-white">Field Notes</h2>
+            </div>
+            <p class="text-sm text-gray-400 mb-4">Firsthand observations from performing this scope.</p>
+            <ul class="space-y-4">
+              {% for note in case_study.field_notes %}
+              <li class="flex items-start text-gray-300 leading-relaxed">
+                <i class="fas fa-hard-hat text-amber-400 mr-3 mt-1"></i>
+                <span>{{ note }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
           <!-- Community Impact -->
           <div class="card rounded-2xl p-8 bg-gradient-to-br from-cyan-900/30 via-purple-900/30 to-blue-900/30 border-2 border-cyan-400/20 fade-in">
             <div class="flex items-center mb-4">
@@ -203,13 +264,47 @@ layout: default
                 </div>
               </div>
               {% endif %}
+
+              <!-- RELATIONSHIP DISCLOSURE (2026-08 audit, §13).
+                   Where Nova Titan worked THROUGH a prime contractor or
+                   enterprise platform, the end client's brand must not be
+                   allowed to imply a direct customer relationship. Rendering
+                   this on-page keeps the proof honest. -->
+              {% if case_study.relationship_disclosure %}
+              <div class="pt-4 border-t border-gray-700">
+                <div class="text-gray-400 mb-2"><i class="fas fa-circle-info mr-1"></i>Engagement Relationship</div>
+                <div class="text-xs text-gray-400 leading-relaxed">
+                  {{ case_study.relationship_disclosure }}
+                </div>
+              </div>
+              {% endif %}
             </div>
             
+            <!-- RELATED SCOPE (2026-08 audit, §13/§15).
+                 Case studies previously linked only to /government/, the PDF and
+                 /contact/ — they never linked to the service pages describing the
+                 scope they prove. That wasted the strongest proof→money-page
+                 signal on the site. Driven by an optional `related_services`
+                 list on each case study so anchors stay contextual rather than
+                 boilerplate. -->
+            {% if case_study.related_services and case_study.related_services.size > 0 %}
+            <div class="mt-6 pt-4 border-t border-gray-700">
+              <div class="text-gray-400 mb-3 text-sm">Related Scope</div>
+              <div class="space-y-2">
+                {% for rs in case_study.related_services %}
+                <a href="{{ rs.url }}" class="block text-sm text-cyan-300 hover:text-cyan-200 hover:underline">
+                  <i class="fas fa-arrow-right text-xs mr-2"></i>{{ rs.label }}
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+            {% endif %}
+
             <!-- CTA Buttons -->
             <div class="mt-6 space-y-3">
-              <a href="/government/" class="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-center transition-all">
-                <i class="fas fa-handshake mr-2"></i>
-                Partner With Us
+              <a href="/quote/" class="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-center transition-all">
+                <i class="fas fa-file-invoice mr-2"></i>
+                Send Project Details
               </a>
               <a href="/assets/docs/nova-titan-systems-capability-statement-2026.pdf" target="_blank" rel="noopener noreferrer" class="block w-full px-4 py-3 rounded-lg border-2 border-cyan-400/40 hover:bg-cyan-400/10 text-white font-semibold text-center transition-all">
                 <i class="fas fa-download mr-2"></i>
@@ -314,13 +409,14 @@ layout: default
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://novatitan.net/#organization",
     "name": "Nova Titan Systems LLC",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://novatitan.net/assets/images/logo.png"
+      "url": "https://novatitan.net/assets/images/low-voltage-contractor-lubbock-logo.png"
     }
   },
-  "datePublished": "{{ case_study.date }}",
+  "datePublished": "{{ case_study.date_iso | default: case_study.date }}",
   "articleSection": "Case Study",
   "keywords": "{{ case_study.keywords }}"
 }

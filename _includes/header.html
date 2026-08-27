@@ -360,7 +360,9 @@
     protectNav();
     document.addEventListener('DOMContentLoaded', protectNav);
     window.addEventListener('load', protectNav);
-    // Also run on a short delay to catch GSAP or other animation libraries
+    // Short-delay re-runs catch any late-executing script that mutates nav styles.
+    // (Historically this guarded against GSAP/ScrollTrigger, which were removed in
+    // the 2026-08 performance audit. Kept as cheap defensive code — 2 timer calls.)
     setTimeout(protectNav, 500);
     setTimeout(protectNav, 2000);
   })();

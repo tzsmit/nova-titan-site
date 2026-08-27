@@ -4,41 +4,44 @@ title: "Certifications & Registrations | Nova Titan Systems"
 description: "Nova Titan Systems certifications: SAM.gov active, Fortinet Certified, CAGE 170W6, NAICS 238210. Division 27/28 low-voltage subcontractor. UEI CZ8BLZMSKZ66."
 keywords: "SAM.gov registration, UEI CZ8BLZMSKZ66, CAGE 170W6, NAICS 238210, Division 27/28 contractor, low-voltage subcontractor certifications, Fortinet certified, commercial subcontractor Texas"
 extra_head: |
-  <!-- Advanced SEO Schema Markup -->
+  <!-- ENTITY CONSISTENCY (2026-08 SEO audit):
+       This page used to emit a SECOND, standalone Organization block with no
+       @id. That created a competing Nova Titan entity whose facts drifted from
+       the authoritative graph in _includes/head.html (it carried
+       foundingDate "2025" vs the global "2025-09", a different description, and
+       a truncated sameAs list). It also used two properties that do not exist in
+       schema.org ("certifications", "naics"), so they conveyed nothing.
+
+       It now REFERENCES the single authoritative entity by @id, so Google merges
+       these credentials into the one Nova Titan node instead of guessing between
+       two. Credentials are expressed with valid schema (additionalProperty /
+       hasCredential). Do not reintroduce a second Organization block. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Nova Titan Systems LLC",
-    "legalName": "Nova Titan Systems LLC",
-    "url": "https://novatitan.net",
-    "logo": "https://novatitan.net/assets/images/low-voltage-contractor-lubbock-logo.png",
-    "description": "SAM.gov-registered Division 27/28 low-voltage subcontractor providing structured cabling, access control, security cameras, and fire alarm rough-in coordination for commercial construction in Texas.",
-    "foundingDate": "2025",
-    "founders": [{
-      "@type": "Person",
-      "name": "Traivone Smith",
-      "jobTitle": "CEO"
-    }],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lubbock",
-      "addressRegion": "TX",
-      "postalCode": "79423",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-806-370-0624",
-      "contactType": "customer service",
-      "email": "traivonesmith@novatitan.net",
-      "areaServed": "US"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/traivone-smith-969b60327"
+    "@type": ["ElectricalContractor", "LocalBusiness"],
+    "@id": "https://novatitan.net/#organization",
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "NAICS Primary", "value": "238210" },
+      { "@type": "PropertyValue", "name": "NAICS Additional", "value": "541512, 541513, 541519, 541611, 541690, 561621" },
+      { "@type": "PropertyValue", "name": "CAGE Code", "value": "170W6" },
+      { "@type": "PropertyValue", "name": "UEI", "value": "CZ8BLZMSKZ66" },
+      { "@type": "PropertyValue", "name": "SAM.gov Status", "value": "Active" }
     ],
-    "certifications": ["Fortinet Certified Associate", "SAM.gov Registered", "Disaster Response Registry Active"],
-    "naics": ["238210", "541512", "541513", "541519", "541611", "541690", "561621"]
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Fortinet Certified Associate (FCA) — Cybersecurity",
+        "credentialCategory": "certification",
+        "recognizedBy": { "@type": "Organization", "name": "Fortinet" }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "SAM.gov Registered Entity (UEI CZ8BLZMSKZ66)",
+        "credentialCategory": "registration",
+        "recognizedBy": { "@type": "GovernmentOrganization", "name": "U.S. General Services Administration" }
+      }
+    ]
   }
   </script>
   <!-- Breadcrumb Schema -->
@@ -82,7 +85,7 @@ extra_head: |
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-12">
       <div class="inline-block mb-6">
-        <span class="bg-green-600/30 text-green-300 px-4 py-2 rounded-full text-sm font-semibold border border-green-400/40">
+        <span class="inline-block bg-green-600/30 text-green-300 px-4 py-2 rounded-full text-sm font-semibold border border-green-400/40">
           <i class="fas fa-certificate mr-2"></i>Federal Ready
         </span>
       </div>

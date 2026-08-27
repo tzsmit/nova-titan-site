@@ -13,6 +13,19 @@ redirect_from:
   - /cybersecurity/basic-security-assessment/
   - /cybersecurity/compliance-readiness-review/
   - /cybersecurity/security-awareness-training/
+  # --- Search Console 404 cleanup (2026-08 audit) -------------------------
+  # /services/west-texas-locations/ was a market-hub index. This page carries
+  # the Service Coverage section listing every current TX market page, so it is
+  # the closest semantic replacement (do NOT point it at the homepage).
+  - /services/west-texas-locations/
+  # Retired "divisions" taxonomy. /divisions/systems/ was the low-voltage /
+  # infrastructure division index -> this services hub.
+  - /divisions/systems/
+  # /divisions/intelligence/ was the old cybersecurity-branded division. Nova
+  # Titan no longer sells a standalone cybersecurity line, so we deliberately do
+  # NOT invent a /cybersecurity/ route to preserve it. The honest closest
+  # equivalent is the current service hub.
+  - /divisions/intelligence/
 ---
 {% comment %}
   Service Schema — matches Nova Titan's 12 executable services exactly
@@ -26,7 +39,7 @@ redirect_from:
       "@id": "https://novatitan.net/services/#cabling",
       "name": "Structured Cabling & Network Infrastructure",
       "serviceType": "Structured Cabling",
-      "provider": {"@id": "https://novatitan.net/#org"},
+      "provider": {"@id": "https://novatitan.net/#organization"},
       "areaServed": {"@type": "State", "name": "Texas"},
       "description": "Cat5e, Cat6, Cat6a, and fiber optic cabling with Fluke certification. Rack-and-stack, server-room build-outs, and cable testing."
     },
@@ -35,7 +48,7 @@ redirect_from:
       "@id": "https://novatitan.net/services/#network",
       "name": "Network Design, Installation & Optimization",
       "serviceType": "Network Installation",
-      "provider": {"@id": "https://novatitan.net/#org"},
+      "provider": {"@id": "https://novatitan.net/#organization"},
       "areaServed": {"@type": "State", "name": "Texas"},
       "description": "End-to-end network design, access point deployment, point-to-point wireless, and POS system deployment."
     },
@@ -44,7 +57,7 @@ redirect_from:
       "@id": "https://novatitan.net/services/#security",
       "name": "Cybersecurity Consulting & Fortinet Firewall Deployment",
       "serviceType": "Cybersecurity Consulting",
-      "provider": {"@id": "https://novatitan.net/#org"},
+      "provider": {"@id": "https://novatitan.net/#organization"},
       "areaServed": {"@type": "Country", "name": "United States"},
       "description": "Network security assessments, Fortinet firewall deployment and basic configuration, and cybersecurity consulting."
     },
@@ -53,7 +66,7 @@ redirect_from:
       "@id": "https://novatitan.net/services/fire-alarm-subcontractor-texas/",
       "name": "Fire Alarm Rough-In and Coordination \u2014 Division 28 | Texas",
       "serviceType": "Fire Alarm Rough-In and Coordination",
-      "provider": {"@id": "https://novatitan.net/#org"},
+      "provider": {"@id": "https://novatitan.net/#organization"},
       "areaServed": {"@type": "State", "name": "Texas"},
       "description": "Division 28 conduit, pathway, and rough-in coordination for commercial fire alarm scope across Texas. All regulated fire alarm testing, programming, and tagging performed by properly licensed Texas fire alarm subcontractors engaged at award."
     }

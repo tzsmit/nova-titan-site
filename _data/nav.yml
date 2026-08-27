@@ -33,6 +33,20 @@
     - name: Certifications
       url: /certifications/
 
+# 2026-08 audit: /partners/ and /partners/enterprise/ and /industries/ were
+# ORPHANS — zero inbound internal links from anywhere on the site and absent from
+# nav and footer. /partners/enterprise/ is a real buyer page that Google had
+# "Crawled - currently not indexed", and orphan depth is a likely contributor.
+# Surfaced here so they are reachable within 2 clicks of the homepage.
+- name: Partners
+  url: /partners/
+  icon: fas fa-handshake
+  submenu:
+    - name: Enterprise & MSP Partnerships
+      url: /partners/enterprise/
+    - name: Industries Served
+      url: /industries/
+
 - name: Resources
   url: /resources/
   icon: fas fa-book

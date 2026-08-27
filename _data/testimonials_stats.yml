@@ -1,10 +1,11 @@
 # Testimonial Aggregate Statistics
-total_reviews: 15
-average_rating: 4.8
-five_star: 10
+# NOTE: Keep these in sync with _data/testimonials.yml (currently 16 reviews)
+total_reviews: 16
+average_rating: 4.7
+five_star: 11
 four_star: 5
 google_reviews: 6
 cloudwork_pro_reviews: 1
-workmarket_reviews: 8
-verified_reviews: 15
+workmarket_reviews: 9
+verified_reviews: 16
 satisfaction_rate: 100

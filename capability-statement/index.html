@@ -109,7 +109,34 @@
     }
   </style>
   
-  <!-- JSON-LD Schema -->
+  <!-- JSON-LD Schema
+
+       2026-08 CORRECTION PASS — Organization entity consolidation.
+
+       This block previously used a SECOND entity id ("https://novatitan.net/#org")
+       and additionally RE-DECLARED name/address/telephone/email/url/knowsAbout
+       inline, creating a competing partial definition of the same company.
+       Two @ids can be read as two separate organizations, splitting entity
+       signals. It is now a pure REFERENCE to the single authoritative
+       Organization node defined in _includes/head.html:
+           "@id": "https://novatitan.net/#organization"
+       Attributes are deliberately NOT repeated here — the canonical node already
+       carries name, address, telephone, email, url, sameAs, credentials and
+       hasOfferCatalog. Duplicating a subset is exactly how the two definitions
+       drifted apart originally.
+
+       Also: the second "about" Service previously read "Cybersecurity Consulting
+       & Fortinet Firewall Deployment". Nova Titan no longer sells a standalone
+       cybersecurity/consulting line (see the retired-positioning cleanup), so
+       advertising it in structured data contradicted both the visible page and
+       the current capability statement. Narrowed to the Division 28 scope the
+       company actually self-performs.
+
+       NOTE FOR MAINTAINERS: this file has NO front matter, so Jekyll copies it
+       verbatim and performs ZERO Liquid processing. Do not use {%- comment -%}
+       tags in here — they will be emitted literally and will invalidate the
+       JSON-LD. Use HTML comments outside the <script> block, like this one.
+  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -117,34 +144,19 @@
     "name": "Nova Titan Systems Capability Statement",
     "description": "SBA-Certified HUBZone Small Business. Nova Titan Systems LLC is a Division 27 low-voltage infrastructure contractor providing structured cabling, network infrastructure, wireless AP support, access control cabling, security camera cabling, and field technology for commercial and government clients in West Texas.",
     "url": "https://novatitan.net/capability-statement/",
-    "author": {
-      "@type": "Organization",
-      "@id": "https://novatitan.net/#org",
-      "name": "Nova Titan Systems",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Lubbock",
-        "addressRegion": "TX",
-        "postalCode": "79423",
-        "addressCountry": "US"
-      },
-      "telephone": "+1-806-370-0624",
-      "email": "traivonesmith@novatitan.net",
-      "url": "https://novatitan.net",
-      "knowsAbout": ["Structured Cabling", "Division 27 Low-Voltage", "Network Infrastructure", "Wireless Access Point Support", "Access Control Cabling", "Security Camera Infrastructure", "Field Technology", "Smart Hands", "HUBZone Contractor", "NAICS 238210"]
-    },
+    "author": { "@id": "https://novatitan.net/#organization" },
     "about": [
       {
         "@type": "Service",
         "serviceType": "Structured Cabling & Network Infrastructure",
-        "provider": { "@id": "https://novatitan.net/#org" },
+        "provider": { "@id": "https://novatitan.net/#organization" },
         "areaServed": ["West Texas", "Lubbock", "United States"]
       },
       {
         "@type": "Service",
-        "serviceType": "Cybersecurity Consulting & Fortinet Firewall Deployment",
-        "provider": { "@id": "https://novatitan.net/#org" },
-        "areaServed": ["West Texas", "Lubbock", "United States"]
+        "serviceType": "Access Control & Security Camera Infrastructure",
+        "provider": { "@id": "https://novatitan.net/#organization" },
+        "areaServed": ["West Texas", "Lubbock", "Texas"]
       }
     ]
   }
