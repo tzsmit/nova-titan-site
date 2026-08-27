@@ -23,18 +23,25 @@
         </p>
         
         <!-- Certifications -->
+        {%- comment -%}
+          CRO / ENTITY PASS (2026-08, post-#47): this badge row used to lead with
+          "Fortinet Certified" (a company-level claim), which #47 corrected to
+          "Founder: Fortinet FCA". That fixed the attribution but left a PERSONAL
+          credential advertised in the SITEWIDE footer on every page.
+
+          The founder credential is supporting proof of technical background, not
+          a company capability signal, and repeating it site-wide pushed a
+          personal certification ahead of what Nova Titan actually sells. The
+          badge is removed from the footer entirely.
+
+          It remains prominent where it is contextually correct:
+            /certifications/  (founder credential card + Person JSON-LD #founder)
+            /about/           (Professional Certifications + founding timeline)
+            /faqs/            (credential Q&A)
+          The Organization still references the founder Person via "founder".
+          Do NOT re-add a Fortinet or founder-credential badge here.
+        {%- endcomment -%}
         <div class="flex flex-wrap gap-2 mb-4">
-          <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-2 py-1 rounded text-xs">
-            {%- comment -%}
-              FINAL PASS (2026-08): this badge read "Fortinet Certified" and, being
-              in the sitewide footer, asserted a COMPANY-level Fortinet
-              certification on all 34 pages. The underlying certificate certifies
-              Traivone Smith (validation 7233163615TS), not Nova Titan Systems LLC.
-              Reworded to attribute the credential to the founder. See the Person
-              entity (@id .../#founder) on /certifications/.
-            {%- endcomment -%}
-            <i class="fas fa-certificate mr-1"></i>Founder: Fortinet FCA
-          </span>
           <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">
             <i class="fas fa-flag-usa mr-1"></i>SAM.gov Registered
           </span>

@@ -13,28 +13,40 @@ extra_head: |
        schema.org ("certifications", "naics"), so they conveyed nothing.
 
        It now REFERENCES the single authoritative entity by @id, so Google merges
-       these credentials into the one Nova Titan node instead of guessing between
-       two. Credentials are expressed with valid schema (additionalProperty /
-       hasCredential). Do not reintroduce a second Organization block. -->
+       these facts into the one Nova Titan node instead of guessing between two.
+       Do not reintroduce a second Organization block.
+
+       SEMANTIC CORRECTION (2026-08, post-#47): this node previously carried
+         hasCredential: "SAM.gov Registered Entity (UEI CZ8BLZMSKZ66)"
+       schema.org hasCredential expects an EducationalOccupationalCredential --
+       an *awarded* qualification. A SAM.gov entity registration is neither
+       awarded nor occupational; it is an entity record keyed by an identifier.
+       Modelling it as a credential mis-signalled the company as holding a
+       government qualification it was never granted.
+
+       The registration is now expressed with the correct vocabulary on the
+       AUTHORITATIVE node in _includes/head.html:
+         - identifier          -> UEI and CAGE as PropertyValue with propertyID
+         - additionalProperty  -> "SAM.gov Registration: Active"
+
+       Because that node shares this @id, Google merges the two. To avoid
+       DUPLICATE identifiers on the merged entity, this block no longer restates
+       UEI, CAGE, NAICS Primary or SAM.gov status at all -- it contributes only
+       the supplementary NAICS list and the founder link. Nothing factual was
+       lost; the visible SAM.gov/UEI/CAGE copy on this page is unchanged.
+
+       Organization hasCredential is now intentionally ABSENT: Nova Titan holds
+       no awarded occupational credential of its own. HUBZone is an SBA
+       certification and is modelled on the authoritative node in
+       _includes/head.html -- it is deliberately NOT touched here.
+       Do NOT move the founder's Fortinet credential back onto this node. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["ElectricalContractor", "LocalBusiness"],
     "@id": "https://novatitan.net/#organization",
     "additionalProperty": [
-      { "@type": "PropertyValue", "name": "NAICS Primary", "value": "238210" },
-      { "@type": "PropertyValue", "name": "NAICS Additional", "value": "541512, 541513, 541519, 541611, 541690, 561621" },
-      { "@type": "PropertyValue", "name": "CAGE Code", "value": "170W6" },
-      { "@type": "PropertyValue", "name": "UEI", "value": "CZ8BLZMSKZ66" },
-      { "@type": "PropertyValue", "name": "SAM.gov Status", "value": "Active" }
-    ],
-    "hasCredential": [
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "SAM.gov Registered Entity (UEI CZ8BLZMSKZ66)",
-        "credentialCategory": "registration",
-        "recognizedBy": { "@type": "GovernmentOrganization", "name": "U.S. General Services Administration" }
-      }
+      { "@type": "PropertyValue", "name": "NAICS Additional", "value": "541512, 541513, 541519, 541611, 541690, 561621" }
     ],
     "founder": { "@id": "https://novatitan.net/#founder" }
   }
@@ -515,8 +527,19 @@ extra_head: |
              program designation; the available evidence is a Verkada/Nova Titan
              partnership DISCUSSION plus genuine field/platform experience, not
              completed reseller or installer-program authorization. Restated as
-             plain field experience. Do not restore "Authorized Reseller" or
-             invent a program title without primary documentation. -->
+             plain field experience.
+
+             CRO PASS (2026-08, post-#47): the caption below carried the explicit
+             negative "Not a Verkada authorized reseller; infrastructure
+             installation scope only." That was added as a truthfulness guardrail,
+             but as customer-facing copy it advertised a status Nova Titan never
+             claimed and planted a doubt no buyer had raised. Replaced with neutral
+             factual scope language, which is equally accurate and does not imply
+             any formal Verkada program status.
+
+             GUARDRAIL RETAINED IN CODE, NOT IN COPY:
+             DO NOT upgrade to Authorized Reseller without documentary evidence.
+             Do not invent or imply formal Verkada program status. -->
         <p class="text-cyan-300 font-semibold text-center mb-4">Security Camera Infrastructure</p>
         <div class="bg-gray-800/50 rounded-lg p-4 mb-4">
           <ul class="text-gray-300 text-sm space-y-2">
@@ -526,7 +549,7 @@ extra_head: |
             <li><i class="fas fa-check text-green-400 mr-2"></i>Surveillance System Support</li>
           </ul>
         </div>
-        <p class="text-xs text-gray-400 text-center italic">Field experience deploying Verkada camera infrastructure including cabling, PoE, and NVR integration. Not a Verkada authorized reseller; infrastructure installation scope only.</p>
+        <p class="text-xs text-gray-400 text-center italic">Verkada camera infrastructure field experience &mdash; cabling, PoE, and NVR integration.</p>
       </div>
 
       <!-- Network & Infrastructure -->
