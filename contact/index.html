@@ -12,7 +12,16 @@ description: "Request a quote from Nova Titan Systems for Division 27/28 low-vol
         </h1>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-6 fade-in">
           Nova Titan Systems LLC &mdash; Division 27/28 Commercial Low-Voltage Subcontractor serving West Texas, Houston, and DFW.
-          <strong class="text-cyan-300">Same-day response guaranteed</strong> for all inquiries.
+          {%- comment -%}
+            PHASE 2 CORRECTION (2026-08): was "Same-day response guaranteed" for ALL
+            inquiries. That is an unconditional guarantee the business cannot honor,
+            and it directly contradicted the corrected /faqs/ answer, which states
+            response targets "depend on crew availability and current project
+            commitments and are confirmed per project, not guaranteed."
+            Reworded as a target. No contractual guarantee is removed here -- none
+            existed; this was marketing copy only.
+          {%- endcomment -%}
+          <strong class="text-cyan-300">Same-day response target</strong> on inquiries received during business hours, subject to crew availability.
         </p>
         <!-- Primary Quote CTA -->
         <div class="flex flex-wrap gap-4 justify-center mb-6 fade-in">
@@ -62,8 +71,16 @@ description: "Request a quote from Nova Titan Systems for Division 27/28 low-vol
   <section class="content py-12">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold glow mb-4">Response Time Guarantee</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">Professional support when you need it most</p>
+        {%- comment -%}
+          PHASE 2 CORRECTION (2026-08): heading was "Response Time Guarantee".
+          The corrected /faqs/ language already says response times are TARGETS
+          dependent on crew availability and are not guaranteed, so this heading
+          asserted a promise the rest of the site disclaims. Renamed to
+          "Response Time Targets" and a qualifying line added so the figures below
+          read as objectives rather than a warranty.
+        {%- endcomment -%}
+        <h2 class="text-3xl font-bold glow mb-4">Response Time Targets</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">Typical response objectives for business-hours inquiries. Actual timing depends on crew availability and current project commitments, and is confirmed per project.</p>
       </div>
 
       <div class="response-grid">

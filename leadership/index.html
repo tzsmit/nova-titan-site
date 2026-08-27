@@ -4,6 +4,26 @@ title: "Leadership | Nova Titan Systems"
 description: "Leadership and project accountability at Nova Titan Systems LLC, a Division 27/28 commercial low-voltage subcontractor delivering structured cabling, security and access control infrastructure, and fire alarm rough-in coordination across Texas."
 keywords: "Nova Titan Systems leadership, Division 27 subcontractor, Division 28 subcontractor, low voltage contractor Texas, structured cabling contractor leadership, commercial field execution"
 extra_head: |
+  <!--
+    PHASE 2 CORRECTION (2026-08) -- PERSON sameAs INTENTIONALLY EMPTY.
+
+    Phase 2 moved https://github.com/tzsmit off the Organization entity and onto
+    this Person entity, which was structurally more correct. It was still wrong in
+    effect: the live profile repeatedly describes NOVA TITAN ITSELF as an
+    AI/cybersecurity consultancy (CloudWarden, quantum-safe, OT/ICS, 24/7
+    monitoring). Because this Person declares worksFor -> #organization, the
+    contradictory company context reached the Organization anyway, one hop away.
+    Removed until the profile itself is aligned with the current business.
+
+    The founder's personal LinkedIn (/in/...) was also removed. Its exact URL is
+    not independently verified from an authoritative source, and asserting an
+    unverified sameAs is a factual claim this site should not make.
+
+    sameAs is therefore an empty array: schema-valid, and an honest statement that
+    no verified non-conflicting personal identity URL is currently published.
+    The Person entity itself is retained in full. Restoring either URL is an
+    OWNER ACTION (see owner-verification list).
+  -->
   <!-- Person Schema for SEO -->
   <script type="application/ld+json">
   {
@@ -25,10 +45,7 @@ extra_head: |
       "Enterprise Network Engineering",
       "Secure Network Deployment"
     ],
-    "sameAs": [
-      "https://www.linkedin.com/in/traivone-smith-969b60327",
-      "https://github.com/tzsmit"
-    ]
+    "sameAs": []
   }
   </script>
   <!-- Breadcrumb Schema -->
@@ -54,12 +71,29 @@ extra_head: |
     }]
   }
   </script>
-  <!-- Open Graph -->
-  <meta property="og:title" content="Traivone Smith - Founder & CEO | Nova Titan Systems">
-  <meta property="og:description" content="West Texas-based founder leading Nova Titan Systems, a IT services company pursuing government contracting opportunities and serving commercial clients.">
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://novatitan.net/leadership/">
-  <!-- Canonical -->
+  <!--
+    PHASE 2 CORRECTION (2026-08) -- STALE HARDCODED OPEN GRAPH REMOVED.
+
+    This block previously hardcoded:
+      og:title       "Traivone Smith - Founder & CEO | Nova Titan Systems"
+      og:description "West Texas-based founder leading Nova Titan Systems, a IT
+                      services company pursuing government contracting
+                      opportunities and serving commercial clients."
+
+    Both were stale and self-contradictory after the Phase 2 front-matter fix:
+    the page title/description now present an institutional Division 27/28
+    contractor, while these tags still described a founder-first "IT services
+    company". Because _includes/head.html already emits og:title, og:description,
+    twitter:title and twitter:description from page.title / page.description,
+    this block produced a SECOND, conflicting set of tags on the same page --
+    and crawlers may honor either one.
+
+    Fix: the redundant hardcoded og:title/og:description are DELETED rather than
+    rewritten, so exactly one generator of record remains (the global head).
+    og:type and og:url are also dropped: head.html emits og:type and og:url for
+    every page, so re-declaring them here duplicated those too.
+    No founder portrait is reintroduced.
+  -->
 ---
 
 <!-- HERO -->
@@ -217,8 +251,15 @@ extra_head: |
         </div>
         <h3 class="text-xl font-semibold text-green-300 mb-3">Field Engineering</h3>
         <p class="text-gray-300 text-sm">
-          On-site hardware deployments, IT infrastructure installations, POS/kiosk setups, smart hands support, 
-          and nationwide field service coordination.
+          {%- comment -%}
+            PHASE 2 CORRECTION (2026-08): "nationwide field service coordination"
+            removed from this capability card. Cards in this grid read as present
+            capability, and the company's stated service area is Texas. The
+            nationwide coordination history is retained, explicitly labeled as prior
+            experience, in the Founder Professional Background section below.
+          {%- endcomment -%}
+          On-site hardware deployments, infrastructure installations, POS/kiosk setups, smart-hands support,
+          and multi-site field service coordination across Texas.
         </p>
       </div>
 
@@ -262,7 +303,22 @@ extra_head: |
 <section class="content py-16 bg-gray-900/50">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold glow mb-4">Professional Background</h2>
+      {%- comment -%}
+        PHASE 2 CORRECTION (2026-08): this section describes the FOUNDER'S PRIOR
+        CAREER EXPERIENCE, not Nova Titan Systems' current service catalog. That
+        distinction was not stated anywhere, so a reader (or a crawler building an
+        entity profile) could reasonably read AWS/Azure and security-hardening
+        bullets as things the company sells today. An explicit scope line is added
+        below instead of deleting legitimate background.
+      {%- endcomment -%}
+      <h2 class="text-3xl font-bold glow mb-4">Founder Professional Background</h2>
+      <p class="text-gray-300 max-w-3xl mx-auto text-sm">
+        The items below summarize <strong class="text-cyan-300">Traivone Smith's prior professional
+        experience</strong> and the technical foundation it provides for infrastructure work.
+        They are personal career history &mdash; not a list of services Nova Titan Systems currently
+        sells. For the company's present scope, see
+        <a href="/services/" class="text-cyan-300 underline hover:text-cyan-200">Services</a>.
+      </p>
     </div>
     
     <div class="card rounded-xl p-8 fade-in">
@@ -292,10 +348,29 @@ extra_head: |
         <div class="flex items-start">
           <i class="fas fa-shield-halved text-purple-400 mr-4 mt-1 text-xl"></i>
           <div>
-            <h3 class="text-lg font-semibold text-white mb-2">Cloud & Security Certifications</h3>
+            {%- comment -%}
+              PHASE 2 CORRECTION (2026-08): heading was "Cloud & Security
+              Certifications". Two problems:
+                1. It asserted CERTIFICATIONS. No specific cloud or security
+                   certification is named, dated or verified anywhere on this site,
+                   so the plural noun claimed credentials without evidence.
+                2. "identity security, access management, infrastructure hardening
+                   for government and enterprise clients" reads as a current Nova
+                   Titan service line -- the exact cloud/cybersecurity-consulting
+                   positioning this cleanup is retiring.
+              Renamed to "Network & Security Background" and reworded as prior
+              hands-on platform experience. The legitimate underlying experience is
+              preserved and tied to what it actually supports here: secure network
+              deployment. Naming specific certifications is an OWNER ACTION and
+              requires the certificate record.
+            {%- endcomment -%}
+            <h3 class="text-lg font-semibold text-white mb-2">Network &amp; Security Background</h3>
             <p class="text-sm">
-              Cloud platform expertise (AWS, Azure) with focus on identity security, access management, 
-              and infrastructure hardening for government and enterprise clients.
+              Prior hands-on experience with enterprise cloud platforms (AWS, Azure), identity and
+              access administration, and system hardening practices. This background informs how Nova
+              Titan plans and documents <strong class="text-cyan-300">secure network infrastructure</strong>
+              &mdash; cabling, switching, wireless and access-control pathways &mdash; in government and
+              commercial facilities. Nova Titan does not sell cloud-security or cybersecurity consulting.
             </p>
           </div>
         </div>
@@ -303,10 +378,21 @@ extra_head: |
         <div class="flex items-start">
           <i class="fas fa-tools text-orange-400 mr-4 mt-1 text-xl"></i>
           <div>
+            {%- comment -%}
+              PHASE 2 CORRECTION (2026-08): "Nationwide field deployment experience"
+              sat in a section with no scope framing, so it could be read as an
+              offer of nationwide service today. Nova Titan's stated service area is
+              Texas (West Texas, Houston, DFW). Reworded to make explicit that the
+              nationwide coordination is PAST experience, and that current field
+              execution is Texas-based. Legitimate experience retained.
+            {%- endcomment -%}
             <h3 class="text-lg font-semibold text-white mb-2">Field Service Leadership</h3>
             <p class="text-sm">
-              Nationwide field deployment experience coordinating technical installations, break-fix services, 
-              and smart hands support for enterprise clients and government facilities.
+              Previously coordinated multi-site technical installations, break-fix dispatch, and smart-hands
+              support on nationwide programs for enterprise and government facilities. That prior scheduling
+              and closeout experience now supports Nova Titan's
+              <strong class="text-cyan-300">Texas-based field execution</strong> across West Texas, Houston,
+              and DFW.
             </p>
           </div>
         </div>

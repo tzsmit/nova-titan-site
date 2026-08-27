@@ -20,7 +20,7 @@
   SAM.gov: Active
   UEI: CZ8BLZMSKZ66
   CAGE Code: 170W6
-  Primary NAICS: 541519
+  Primary NAICS: 238210 (Electrical Contractors and Other Wiring Installation Contractors)
   Certifications: Black-Owned Small Disadvantaged Business
   
 /* THANKS */

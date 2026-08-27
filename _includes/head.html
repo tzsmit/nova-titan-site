@@ -333,11 +333,24 @@
       /government/ and /leadership/ say "September 2025" and remain consistent.
     {%- endcomment -%}
     "foundingDate": "2025-09-17",
+    {%- comment -%}
+      PHASE 2 CORRECTION (2026-08): the founder Person's "url" was the owner's
+      PERSONAL LinkedIn (/in/...). This block is emitted on EVERY page, so the
+      Organization entity asserted that personal profile sitewide -- the same
+      person<->company identity claim that justified removing GitHub from the
+      footer and from the Person sameAs. Removing the rel="me" anchor from the
+      footer while leaving this in JSON-LD would have left the assertion live in
+      the strongest possible place (structured data, all 34 built pages).
+
+      Replaced with the /leadership/ page, which IS the company's own
+      authoritative page about this person. The founder Person entity is retained
+      in full -- only the unverified external URL is dropped.
+    {%- endcomment -%}
     "founder": {
       "@type": "Person",
       "name": "Traivone Smith",
       "jobTitle": "Chief Executive Officer",
-      "url": "https://www.linkedin.com/in/traivone-smith-969b60327"
+      "url": "https://novatitan.net/leadership/"
     },
     "address": {
       "@type": "PostalAddress",

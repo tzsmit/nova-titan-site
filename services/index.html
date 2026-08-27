@@ -55,11 +55,11 @@ redirect_from:
     {
       "@type": "Service",
       "@id": "https://novatitan.net/services/#security",
-      "name": "Cybersecurity Consulting & Fortinet Firewall Deployment",
-      "serviceType": "Cybersecurity Consulting",
+      "name": "Fortinet Firewall Installation & Network Hardware Deployment",
+      "serviceType": "Network Equipment Installation",
       "provider": {"@id": "https://novatitan.net/#organization"},
-      "areaServed": {"@type": "Country", "name": "United States"},
-      "description": "Network security assessments, Fortinet firewall deployment and basic configuration, and cybersecurity consulting."
+      "areaServed": {"@type": "State", "name": "Texas"},
+      "description": "FortiGate firewall installation and basic policy configuration, switch and access point mounting, and structured cabling terminations, with handoff to the customer's IT or security integrator. Nova Titan does not sell standalone cybersecurity consulting, penetration testing, or managed security monitoring."
     },
     {
       "@type": "Service",
@@ -344,9 +344,16 @@ redirect_from:
         <div class="card rounded-xl p-6 fade-in">
           <div class="flex items-center mb-3">
             <i class="fas fa-search text-red-400 text-xl mr-3"></i>
-            <h3 class="text-lg font-semibold text-red-300">Cybersecurity Consulting</h3>
+            {%- comment -%}
+              PHASE 2 CORRECTION (2026-08): card was "Cybersecurity Consulting"
+              offering security assessments, hardening recommendations and
+              "security strategy" -- a retired service line still being advertised
+              on the services page. Reframed to the physical infrastructure work
+              performed. This card's JSON-LD Service entry was corrected to match.
+            {%- endcomment -%}
+            <h3 class="text-lg font-semibold text-red-300">Firewall &amp; Network Hardware Installation</h3>
           </div>
-          <p class="text-sm text-gray-400">Network security assessments, infrastructure hardening recommendations, and security strategy.</p>
+          <p class="text-sm text-gray-400">FortiGate firewall installation and basic policy configuration, switch and access point mounting, and cabling terminations, with clean handoff to your IT or security integrator.</p>
         </div>
       </div>
     </div>
@@ -426,7 +433,12 @@ redirect_from:
       <div class="grid md:grid-cols-4 gap-4 text-sm text-gray-400">
         <div class="flex items-center justify-center">
           <i class="fas fa-shield-halved text-green-400 mr-2"></i>
-          Same-day response guaranteed
+          {%- comment -%}
+            PHASE 2 CORRECTION (2026-08): was "Same-day response guaranteed" -- the
+            same unsupported guarantee corrected on /contact/ and already disclaimed
+            in /faqs/ ("not guaranteed", depends on crew availability).
+          {%- endcomment -%}
+          Same-day response target
         </div>
         <div class="flex items-center justify-center">
           <i class="fas fa-clock text-blue-400 mr-2"></i>
