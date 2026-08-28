@@ -1,35 +1,45 @@
-<!-- Procurement-Specific Structured Data (NAICS, PSC, Government Codes) -->
-<!-- Primary LocalBusiness schema is in _includes/head.html -->
+<!-- Procurement-Specific Structured Data -->
+<!-- Primary LocalBusiness/Organization schema is in _includes/head.html (@id #organization) -->
+
+{%- comment -%}
+  2026-08 GOVERNMENT SCHEMA CORRECTION (PR #52 follow-up):
+
+  1. TYPE: schema.org defines GovernmentService as a service PROVIDED BY a
+     government organization. Nova Titan is a private contractor providing
+     services TO government buyers, so the generic "Service" type is the
+     correct fit, not "GovernmentService".
+
+  2. NO DUPLICATED IDENTITY: this include previously nested a second
+     "provider" object (@type LocalBusiness, @id #organization) that
+     re-declared UEI, CAGE, NAICS, and a legacy PSC list as
+     additionalProperty. That duplicated -- and, worse, contradicted -- the
+     single authoritative Organization node in _includes/head.html, which
+     already carries UEI, CAGE, NAICS Primary 238210, SAM.gov Registration,
+     and HUBZone status via `identifier` / `additionalProperty`. This block
+     now references that node by @id instead of restating it.
+
+  3. NO STALE NAICS/PSC: the previous additionalProperty list carried
+     541512, 541513, 541611, 541690, 561621, 238990, and a 26-code PSC blob
+     that is entirely IT/cybersecurity/computer-systems-design coded. That
+     directly contradicted the Division 27/28 low-voltage positioning
+     cleaned up on /government/ in this same PR. Per the visible-page
+     correction, secondary NAICS/PSC are omitted here rather than replaced
+     speculatively; the canonical Organization node's NAICS Primary 238210
+     remains the single structured-data NAICS fact. Buyers are directed on
+     the visible page to confirm solicitation-specific codes.
+{%- endcomment -%}
 
 {% if page.url == '/government/' or page.url contains '/partners/' or page.url contains '/certifications/' %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "GovernmentService",
+  "@type": "Service",
   "@id": "{{ site.url }}/#govservice",
-  "name": "Nova Titan Systems LLC — Government Low-Voltage Infrastructure Services",
+  "name": "Government Low-Voltage Contracting & Subcontractor Support",
+  "serviceType": "Division 27/28 government low-voltage contracting and subcontractor support",
   "description": "SAM.gov-registered small business providing Division 27/28 structured cabling, network infrastructure, security camera and access control infrastructure, and fire alarm rough-in coordination to federal, state, and local government agencies.",
-  "serviceOperator": {
-    "@id": "{{ site.url }}/#organization"
-  },
   "provider": {
-    "@type": "LocalBusiness",
-    "@id": "{{ site.url }}/#organization",
-    "name": "Nova Titan Systems LLC",
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "UEI", "value": "CZ8BLZMSKZ66" },
-      { "@type": "PropertyValue", "name": "CAGE Code", "value": "170W6" },
-      { "@type": "PropertyValue", "name": "NAICS Primary", "value": "238210 - Electrical Contractors and Other Wiring Installation Contractors" },
-      { "@type": "PropertyValue", "name": "NAICS", "value": "541512 - Computer Systems Design Services" },
-      { "@type": "PropertyValue", "name": "NAICS", "value": "541513 - Computer Facilities Management Services" },
-      { "@type": "PropertyValue", "name": "NAICS", "value": "238210 - Electrical Contractors" },
-      { "@type": "PropertyValue", "name": "NAICS", "value": "238990 - All Other Specialty Trade Contractors" },
-      { "@type": "PropertyValue", "name": "NAICS", "value": "541611 - Administrative Management Consulting" },
-      { "@type": "PropertyValue", "name": "NAICS", "value": "541690 - Scientific And Technical Consulting" },
-      { "@type": "PropertyValue", "name": "NAICS", "value": "561621 - Security Systems Services" },
-      { "@type": "PropertyValue", "name": "PSC Codes", "value": "DA01, DA10, DB01, DB02, DB10, DC01, DC10, DD01, DE01, DE02, DE10, DE11, DF01, DF10, DG01, DG10, DG11, DH01, DH10, DJ01, DJ10, DK01, DK10, L058, L060, N074" },
-      { "@type": "PropertyValue", "name": "Business Status", "value": "Owner-Operated Small Business, SAM.gov Registered, NAICS 238210" }
-    ]
+    "@id": "{{ site.url }}/#organization"
   }
 }
 </script>
