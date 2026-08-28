@@ -37,10 +37,13 @@ redirect_from:
     </div>
 
     <h1 class="text-4xl sm:text-5xl font-bold glow mb-5 fade-in">
-      Request a Quote
+      Send Plans / Request a Quote
     </h1>
     <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-4 fade-in">
       Tell us what you need help with. Nova Titan Systems provides low-voltage, structured cabling, network infrastructure, wireless access point, security camera, access control cabling, and field technology support for commercial and public-sector clients.
+    </p>
+    <p class="text-base text-cyan-200 max-w-2xl mx-auto mb-4 fade-in">
+      RFQs, drawings, SOWs, and site photos welcome. Typical intake takes about 2 minutes.
     </p>
     <p class="text-sm text-gray-400 mb-2 fade-in">
       <i class="fas fa-map-marker-alt text-cyan-400 mr-1"></i>
@@ -55,13 +58,24 @@ redirect_from:
   </div>
 </section>
 
-<!-- TALLY FORM EMBED -->
+<!-- TALLY FORM EMBED
+     LOADING DECISION (corrected 2026-08, PR #49 review): switched from
+     loading="lazy" to loading="eager" on THIS page ONLY. /quote/'s hero
+     above the fold is short (three brief paragraphs, no large media) and
+     the form IS the page's entire purpose -- there is nothing else for a
+     visitor to do here. Native lazy-loading defers the iframe request until
+     it nears the viewport, which on a page with a compact hero just adds
+     avoidable delay before the primary conversion surface appears,
+     especially on slower mobile connections. /contact/'s Tally embed is
+     intentionally left loading="lazy" -- that page has more content (hero,
+     CTA button, emergency banner) ahead of its form and is a secondary/dual
+     -purpose page, so deferring its iframe is still the safer default. -->
 <section class="content pb-12">
   <div class="max-w-3xl mx-auto px-4">
     <div class="card rounded-2xl p-2 sm:p-4 fade-in">
       <iframe
         data-tally-src="https://tally.so/embed/Y5MMAN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-        loading="lazy"
+        loading="eager"
         width="100%"
         height="800"
         frameborder="0"
@@ -86,10 +100,25 @@ redirect_from:
 
 <!-- Tally embed script — loads dynamically, no redirect needed -->
 <script>
-  var d = document, w = "https://tally.so/widgets/embed.js",
-    v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) { e.src = e.dataset.tallySrc; }); };
-  if ("undefined" != typeof Tally) { v(); }
-  else if (d.querySelector('script[src="' + w + '"]') == null) {
-    var s = d.createElement("script"); s.src = w; s.onload = v; s.onerror = v; d.body.appendChild(s);
-  }
+  (function () {
+    var d = document, w = "https://tally.so/widgets/embed.js";
+    // Append this visit's attribution hidden-field querystring (built in
+    // _includes/head.html as window.NT_TALLY_HIDDEN_QS, from origin_page/
+    // service/market/cta + any inbound utm_* params) onto the Tally embed
+    // URL BEFORE Tally reads data-tally-src. Tally exposes URL query params
+    // on the embed src as HIDDEN form fields -- never visible questions.
+    // https://tally.so/help/hidden-fields
+    var hiddenQS = window.NT_TALLY_HIDDEN_QS || '';
+    if (hiddenQS) {
+      d.querySelectorAll('iframe[data-tally-src]').forEach(function (el) {
+        var src = el.getAttribute('data-tally-src');
+        if (src) { el.setAttribute('data-tally-src', src + '&' + hiddenQS); }
+      });
+    }
+    var v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) { e.src = e.dataset.tallySrc; }); };
+    if ("undefined" != typeof Tally) { v(); }
+    else if (d.querySelector('script[src="' + w + '"]') == null) {
+      var s = d.createElement("script"); s.src = w; s.onload = v; s.onerror = v; d.body.appendChild(s);
+    }
+  })();
 </script>
