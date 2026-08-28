@@ -195,6 +195,64 @@
         } catch (e) {}
       }
 
+      // =====================================================================
+      // QUOTE FUNNEL ATTRIBUTION (2026-08 conversion upgrade, §22).
+      // Computed on EVERY page (cheap, zero DOM dependency) so the values
+      // are ready before /quote/'s or /contact/'s own inline Tally
+      // embed-loader script runs and reads window.NT_TALLY_HIDDEN_QS.
+      //
+      // SOURCES, in priority order:
+      //   cta / service / market  -> query params on THIS page's URL, i.e.
+      //     whatever the CTA link the visitor clicked carried, e.g.
+      //     /quote/?cta=lubbock_location&service=low_voltage&market=lubbock
+      //   origin_page  -> explicit ?origin_page= override, else the
+      //     same-origin document.referrer path, else 'direct'.
+      //   utm_source / utm_medium / utm_campaign -> passed through verbatim
+      //     from the current URL's query string, unchanged.
+      //
+      // NON-PII GUARANTEE: every value below is derived ONLY from the URL
+      // and document.referrer. Nothing in this block, or in the
+      // Tally.FormSubmitted handler further down, ever reads the Tally
+      // postMessage payload's answer data (name/email/phone/company/project
+      // description/uploaded file names) -- that payload is never touched at
+      // all, so it is architecturally impossible for this tracker to leak
+      // respondent PII into GA4 or Plausible.
+      // =====================================================================
+      function qp(name) {
+        try { return new URLSearchParams(window.location.search).get(name) || ''; }
+        catch (e) { return ''; }
+      }
+      function sameOriginReferrerPath() {
+        try {
+          if (!document.referrer) { return ''; }
+          var r = new URL(document.referrer);
+          return r.origin === window.location.origin ? r.pathname : '';
+        } catch (e) { return ''; }
+      }
+      var NT_CTX = {
+        origin_page: qp('origin_page') || sameOriginReferrerPath() || 'direct',
+        service: qp('service'),
+        market: qp('market'),
+        cta: qp('cta')
+      };
+      (function buildTallyHiddenFieldQS() {
+        var parts = [];
+        ['origin_page', 'service', 'market', 'cta'].forEach(function (k) {
+          if (NT_CTX[k]) { parts.push(k + '=' + encodeURIComponent(NT_CTX[k])); }
+        });
+        // UTM passthrough: forwarded as-is, never invented.
+        ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+          var v = qp(k);
+          if (v) { parts.push(k + '=' + encodeURIComponent(v)); }
+        });
+        // Consumed by /quote/'s and /contact/'s inline Tally embed-loader
+        // script, which appends this string to data-tally-src as a
+        // querystring so Tally's own hidden-fields mechanism captures it.
+        // These become HIDDEN fields inside the form (not visible questions)
+        // per https://tally.so/help/hidden-fields
+        window.NT_TALLY_HIDDEN_QS = parts.join('&');
+      })();
+
       function alreadyFired(el) {
         var now = Date.now();
         var last = parseInt(el.getAttribute('data-nt-fired') || '0', 10);
@@ -286,21 +344,89 @@
         }
       }, true);
 
-      // --- Tally embed submission: the ONLY true completed-lead signal ----
-      // Guarded so a duplicated postMessage cannot inflate generate_lead.
-      var leadFired = false;
+      // =====================================================================
+      // TALLY EMBED LIFECYCLE (2026-08 conversion upgrade, §22)
+      //
+      // Tally's OFFICIAL embed events (developers.tally.so/widgets/events),
+      // delivered as postMessage payloads for embeds/popups:
+      //   Tally.FormLoaded, Tally.FormPageView, Tally.FormSubmitted,
+      //   Tally.PopupClosed (popups only, not used here -- we embed inline).
+      //
+      // This site maps them to three funnel-stage events:
+      //   tally_form_loaded    <- Tally.FormLoaded    (iframe rendered)
+      //   tally_form_started   <- Tally.FormPageView   (respondent advanced
+      //                           past the first page/question -- Tally has
+      //                           no separate "started" event, so the first
+      //                           FormPageView after load is the closest
+      //                           accurate signal of "started answering")
+      //   tally_form_submitted <- Tally.FormSubmitted  (submission complete)
+      //
+      // generate_lead ITSELF still fires ONLY off Tally.FormSubmitted, exactly
+      // as before this change -- tally_form_submitted is an ADDITIONAL event
+      // alongside it, not a replacement, and does not change what counts as a
+      // conversion. leadFired guards generate_lead specifically so a
+      // duplicated postMessage (or, now, multiple iframes on a page that also
+      // embeds Tally elsewhere) can never fire it twice on one page view.
+      // =====================================================================
+      var loadedFired = false, startedFired = false, leadFired = false;
+
+      function nonPiiMeta() {
+        // Explicitly enumerated allow-list. Only these five keys are ever
+        // attached to a Tally lifecycle/lead event. None of them can contain
+        // respondent-entered data: origin_page/service/market/cta come from
+        // NT_CTX (derived solely from THIS page's own URL + referrer, computed
+        // above, long before any form interaction), and page_path is added by
+        // track() itself from window.location. The Tally postMessage payload's
+        // `fields`/`data` (name, email, phone, company, project description,
+        // uploaded file names) is NEVER read by this handler.
+        return {
+          origin_page: NT_CTX.origin_page,
+          service: NT_CTX.service,
+          market: NT_CTX.market,
+          cta: NT_CTX.cta
+        };
+      }
+
       window.addEventListener('message', function (e) {
         var msg = e.data;
         if (typeof msg === 'string') {
           try { msg = JSON.parse(msg); } catch (err) { return; }
         }
-        if (!msg || msg.event !== 'Tally.FormSubmitted' || leadFired) { return; }
-        leadFired = true;
-        track('generate_lead', {
-          event_category: 'conversion',
-          form_name: 'tally_quote_form',
-          value: 1
-        });
+        if (!msg || typeof msg.event !== 'string') { return; }
+
+        if (msg.event === 'Tally.FormLoaded') {
+          if (loadedFired) { return; }
+          loadedFired = true;
+          track('tally_form_loaded', Object.assign({
+            event_category: 'engagement', form_name: 'tally_quote_form'
+          }, nonPiiMeta()));
+          return;
+        }
+
+        if (msg.event === 'Tally.FormPageView') {
+          if (startedFired) { return; }
+          startedFired = true;
+          track('tally_form_started', Object.assign({
+            event_category: 'engagement', form_name: 'tally_quote_form'
+          }, nonPiiMeta()));
+          return;
+        }
+
+        if (msg.event === 'Tally.FormSubmitted') {
+          // tally_form_submitted is a funnel-stage event distinct from, and
+          // fired alongside, generate_lead -- see block comment above.
+          track('tally_form_submitted', Object.assign({
+            event_category: 'conversion', form_name: 'tally_quote_form'
+          }, nonPiiMeta()));
+
+          if (leadFired) { return; } // duplicate-fire guard, unchanged behavior
+          leadFired = true;
+          track('generate_lead', Object.assign({
+            event_category: 'conversion',
+            form_name: 'tally_quote_form',
+            value: 1
+          }, nonPiiMeta()));
+        }
       });
     })();
   </script>
