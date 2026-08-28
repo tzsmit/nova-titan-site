@@ -254,6 +254,35 @@
         } catch (e) { return ''; }
       }
 
+      // --- ANALYTICS-SAFE SANITIZATION (2026-08, PR #49 final patch) --------
+      // qp()/sameOriginReferrerPath() return whatever a visitor's URL/referrer
+      // happens to contain. Before this patch, nonPiiMeta() allow-listed only
+      // FIELD NAMES, not VALUES, so a crafted link such as
+      // "/quote/?cta=john@example.com" would have forwarded that arbitrary
+      // string straight into GA4/Plausible -- the "PII leakage is
+      // architecturally impossible" claim was true for the Tally answer data
+      // (never read) but NOT true for these URL-derived context values. These
+      // two functions are the enforcement point; every value that reaches
+      // nonPiiMeta() is passed through one of them first.
+      function sanitizeToken(v) {
+        // For service / market / cta: short slug-like tokens only.
+        // Allowed: A-Z a-z 0-9 _ - ; max 80 chars; anything else -> ''.
+        if (typeof v !== 'string') { return ''; }
+        v = v.slice(0, 80);
+        return /^[A-Za-z0-9_-]+$/.test(v) ? v : '';
+      }
+      function sanitizePath(v) {
+        // For origin_page / landing_page: same-origin path-like strings only
+        // (may be a literal token like "homepage"/"direct", or a real path
+        // like "/services/foo/"). Allowed: A-Z a-z 0-9 _ - / ; no "@", no "?"
+        // or "#" (so no querystring/fragment can ride along), no whitespace;
+        // max 200 chars; anything else -> '' (caller applies its own
+        // fallback, e.g. 'direct').
+        if (typeof v !== 'string') { return ''; }
+        v = v.slice(0, 200);
+        return /^[A-Za-z0-9_\-\/]+$/.test(v) ? v : '';
+      }
+
       // --- FIRST-TOUCH (session-scoped, locked after first computation) ----
       var NT_SESSION_KEY = 'nt_first_touch_v1';
 
@@ -300,6 +329,17 @@
       var NT_FIRST_TOUCH = computeFirstTouch();
 
       // --- CURRENT-TOUCH (recomputed on every page load) --------------------
+      // NOTE: NT_CTX itself stays UNSANITIZED and is intentionally left as-is
+      // -- it is the source object for the Tally hidden-field querystring
+      // (buildTallyHiddenFieldQS() below), and this patch does not change
+      // Tally field forwarding behavior (Tally is a form the visitor already
+      // controls the content of; forwarding an odd value into a Tally hidden
+      // field is not an analytics-integrity issue the way it is for GA4/
+      // Plausible). Sanitization for the ANALYTICS path (GA4/Plausible)
+      // happens separately in nonPiiMeta() further down, which derives its
+      // own cleaned copies of origin_page/service/market/cta/landing_page
+      // from this object via sanitizeToken()/sanitizePath() -- see that
+      // function for the enforcement point.
       var NT_CTX = {
         origin_page: qp('origin_page') || sameOriginReferrerPath() || 'direct',
         service: qp('service'),
@@ -460,9 +500,12 @@
       // system just rendering page 1.
       //
       //   tally_form_loaded     <- Tally.FormLoaded    (iframe rendered)
-      //   tally_form_page_view  <- Tally.FormPageView   (any page shown,
-      //                            including page 1 -- payload.page tells
-      //                            you which; NOT relabelled as "started")
+      //   tally_form_page_view  <- Tally.FormPageView   (EACH DISTINCT page
+      //                            number shown during this page load, incl.
+      //                            page 1 -- payload.page tells you which;
+      //                            NOT relabelled as "started"; see PAGE-VIEW
+      //                            DEDUPE below for why this fires more than
+      //                            once per load)
       //   tally_form_submitted  <- Tally.FormSubmitted  (submission complete)
       //
       // generate_lead ITSELF still fires ONLY off Tally.FormSubmitted, exactly
@@ -475,29 +518,59 @@
       // 2026-08 -- §22 left this funnel-stage event unguarded, so a duplicated
       // postMessage could inflate it even though generate_lead itself stayed
       // protected).
+      //
+      // PAGE-VIEW DEDUPE (corrected 2026-08, final measurement-integrity
+      // patch): a MULTI-PAGE Tally form fires Tally.FormPageView once per
+      // page the respondent reaches (page 1, then page 2 when they advance,
+      // etc.) -- Tally's own docs describe it firing "every time the
+      // respondent navigates to a page of the form." The first correction
+      // pass used a single boolean (pageViewFired), which recorded page 1 and
+      // then SUPPRESSED every later page, making payload.page tell us only
+      // "the form rendered" and defeating drop-off/funnel-progression
+      // analysis entirely. Replaced with seenTallyPages, a set keyed by the
+      // normalized page number: each DISTINCT page number is recorded (and
+      // fires tally_form_page_view) exactly once during this page load; if
+      // the respondent navigates back to a page already seen (e.g. page 2 ->
+      // page 1 -> page 2 again), no duplicate event is emitted for that page
+      // number, but a genuinely NEW page number (e.g. reaching page 3 for the
+      // first time) still fires. This is per-page-LOAD, not per-session --
+      // reloading the embed (e.g. navigating away and back) legitimately
+      // starts a fresh seenTallyPages set, matching how loadedFired/
+      // submittedFired/leadFired already reset per page load. NT_TALLY_FORM_ID
+      // has not changed, and Tally field names above have not changed.
       // =====================================================================
       var NT_TALLY_FORM_ID = 'Y5MMAN';
-      var loadedFired = false, pageViewFired = false, submittedFired = false, leadFired = false;
+      var loadedFired = false, submittedFired = false, leadFired = false;
+      var seenTallyPages = {}; // page-number dedupe set for Tally.FormPageView
 
       function nonPiiMeta() {
-        // Explicitly enumerated allow-list. Only these keys are ever attached
-        // to a Tally lifecycle/lead event. None of them can contain
-        // respondent-entered data: origin_page/service/market/cta/
-        // landing_page/traffic_source/utm_* all come from NT_CTX (derived
-        // solely from URL query params, same-origin referrer path, and a
-        // hostname-bucket classification of document.referrer -- see the
-        // attribution block above), computed long before any form
-        // interaction. page_path is added separately by track() itself from
-        // window.location. The Tally postMessage payload's `fields`/answer
-        // data (name, email, phone, company, project description, uploaded
-        // file names) is NEVER read by this handler.
+        // Explicitly enumerated allow-list of KEY NAMES only attaches to a
+        // Tally lifecycle/lead event -- but a key-name allow-list alone does
+        // NOT guarantee PII-free VALUES, since origin_page/service/market/cta
+        // originate from visitor-controlled URL query params (e.g. a crafted
+        // link like "?cta=john@example.com"). Corrected 2026-08 (final
+        // measurement-integrity patch): every value below is now passed
+        // through sanitizeToken()/sanitizePath() (defined earlier in this
+        // script) BEFORE being attached, so an out-of-pattern value becomes
+        // an empty string rather than being forwarded to GA4/Plausible
+        // verbatim. This is what makes the no-PII guarantee actually hold for
+        // VALUES, not just for key names. page_path is added separately by
+        // track() itself from window.location (browser-normalized, not
+        // visitor-suppliable as arbitrary text). The Tally postMessage
+        // payload's `fields`/answer data (name, email, phone, company,
+        // project description, uploaded file names) is NEVER read by this
+        // handler. utm_source/utm_medium/utm_campaign are deliberately NOT
+        // included here -- per this patch they go to Tally (as hidden fields,
+        // via NT_CTX/buildTallyHiddenFieldQS(), unchanged) for lead
+        // attribution, but are not forwarded into GA4/Plausible lifecycle
+        // metadata.
         return {
-          origin_page: NT_CTX.origin_page,
-          service: NT_CTX.service,
-          market: NT_CTX.market,
-          cta: NT_CTX.cta,
-          landing_page: NT_CTX.landing_page,
-          traffic_source: NT_CTX.traffic_source
+          origin_page: sanitizePath(NT_CTX.origin_page) || 'direct',
+          service: sanitizeToken(NT_CTX.service),
+          market: sanitizeToken(NT_CTX.market),
+          cta: sanitizeToken(NT_CTX.cta),
+          landing_page: sanitizePath(NT_CTX.landing_page),
+          traffic_source: NT_CTX.traffic_source // fixed internal bucket, already safe
         };
       }
 
@@ -521,13 +594,20 @@
         }
 
         if (msg.event === 'Tally.FormPageView') {
-          if (pageViewFired) { return; }
-          pageViewFired = true;
+          // Normalize payload.page to a safe non-negative integer before
+          // using it as a dedupe key or emitting it -- see PAGE-VIEW DEDUPE
+          // in the block comment above.
+          var rawPage = msg.payload.page;
+          var pageNum = (typeof rawPage === 'number' && isFinite(rawPage) && rawPage >= 0)
+            ? Math.floor(rawPage) : null;
+          if (pageNum === null) { return; } // unrecognized shape -- don't guess
+          if (seenTallyPages[pageNum]) { return; } // already recorded this page number
+          seenTallyPages[pageNum] = true;
           // page_number is Tally's own non-PII payload field (an integer page
           // index), never respondent answer data.
           track('tally_form_page_view', Object.assign({
             event_category: 'engagement', form_name: 'tally_quote_form',
-            page_number: typeof msg.payload.page === 'number' ? msg.payload.page : ''
+            page_number: pageNum
           }, nonPiiMeta()));
           return;
         }
