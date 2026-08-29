@@ -78,8 +78,13 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div class="stat-card fade-in">
-          <span class="stat-number text-cyan-300 text-3xl font-bold">500-Mile</span>
-          <div class="stat-label text-gray-400 mt-2">Dispatch Radius</div>
+          <!-- PR #57: was "500-Mile / Dispatch Radius" -- a fixed-radius
+               guarantee this page cannot support and the same claim class
+               already removed from /capability-statement/ (PR #54). Replaced
+               with a factual operating-base label matching the governing
+               project-based coverage model on /government/. -->
+          <span class="stat-number text-cyan-300 text-3xl font-bold">West Texas</span>
+          <div class="stat-label text-gray-400 mt-2">Operating Base</div>
         </div>
         <div class="stat-card fade-in">
           {%- comment -%}
@@ -123,14 +128,15 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
         
         <div class="quote-block">
           <p class="text-cyan-300 font-medium italic text-lg">
-            "We show up, we deliver clean work, and we close out on schedule. That is the standard at Nova Titan."
+            "We show up prepared, deliver clean work, and manage closeout to the project's requirements. That is the standard at Nova Titan."
           </p>
           <p class="text-gray-400 text-sm mt-2">&mdash; Traivone Smith, CEO</p>
         </div>
         
         <p class="text-gray-300 leading-relaxed">
-          Based in Lubbock, Texas, Nova Titan Systems serves the West Texas, Houston, and Dallas-Fort Worth markets 
-          with a 500-mile dispatch radius. The company is registered in SAM.gov under
+          Based in Lubbock, Texas, Nova Titan Systems serves West Texas, Houston,
+          and Dallas-Fort Worth, with additional markets evaluated on a
+          project-by-project basis. The company is registered in SAM.gov under
           CAGE Code 170W6 and UEI CZ8BLZMSKZ66, with primary NAICS 238210 &mdash;
           Electrical Contractors and Other Wiring Installation Contractors.
           {%- comment -%}
@@ -161,8 +167,22 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
       
       <div class="grid lg:grid-cols-2 gap-8">
         <div class="card rounded-xl p-6 fade-in">
-          <h3 class="text-xl font-semibold text-cyan-300 mb-6">Federal &amp; State Registrations</h3>
+          <!-- PR #57: renamed from "Federal & State Registrations" to
+               "Government Registrations & Identifiers" -- SBA HUBZone
+               certification is added below as a verified credential, and
+               "Owner-Operated Small Business" (a descriptive fact, not a
+               registration/identifier) is removed from this list. It is not
+               deleted from the page; it may live elsewhere as descriptive
+               copy in a future change. -->
+          <h3 class="text-xl font-semibold text-cyan-300 mb-6">Government Registrations &amp; Identifiers</h3>
           <div class="space-y-4">
+            <div class="flex items-start">
+              <i class="fas fa-certificate text-green-400 mr-3 mt-1"></i>
+              <div>
+                <strong class="text-white">SBA-Certified HUBZone Small Business</strong> &mdash; <span class="text-green-300">Active</span>
+                <div class="text-sm text-gray-400">Effective 06/05/2026 &bull; Renewal 06/05/2029</div>
+              </div>
+            </div>
             <div class="flex items-start">
               <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
               <div>
@@ -180,13 +200,6 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
             <div class="flex items-start">
               <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
               <div>
-                <strong class="text-white">Owner-Operated Small Business</strong> &mdash; <span class="text-green-300">SAM.gov registered (UEI CZ8BLZMSKZ66)</span>
-                <div class="text-sm text-gray-400">Lubbock, TX — CAGE 170W6</div>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
-              <div>
                 <strong class="text-white">Primary NAICS</strong> &mdash; <span class="text-cyan-300 font-mono">238210</span>
                 <div class="text-sm text-gray-400">Electrical Contractors and Other Wiring Installation Contractors</div>
               </div>
@@ -196,12 +209,24 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
         </div>
         
         <div class="card rounded-xl p-6 fade-in">
-          <h3 class="text-xl font-semibold text-green-300 mb-6">Professional Certifications</h3>
+          <!-- PR #57: renamed from "Professional Certifications" to
+               "Professional Credentials & Platform Experience" -- the
+               Fortinet credential is explicitly Person-attributed (mirrors
+               the existing /certifications/ pattern). "CloudWork Pro Member"
+               is removed: no corroborating evidence exists anywhere in the
+               site's structured data or repo for that specific claim, unlike
+               WorkMarket (corroborated in the sitewide Organization schema)
+               and Verkada (corroborated on /certifications/). This is not a
+               declaration that the claim is false -- it can be restored in a
+               separate, evidence-backed change if primary evidence is
+               produced. -->
+          <h3 class="text-xl font-semibold text-green-300 mb-6">Professional Credentials &amp; Platform Experience</h3>
           <div class="space-y-4">
             <div class="flex items-start">
               <i class="fas fa-certificate text-purple-400 mr-3 mt-1"></i>
               <div>
                 <strong class="text-white">Fortinet Certified Associate (FCA)</strong>
+                <span class="block text-xs font-normal text-gray-400 mt-1">Founder credential &mdash; Traivone Smith</span>
                 <div class="text-sm text-gray-400">Cybersecurity &mdash; Achieved April 2025, Valid through April 2027</div>
                 <div class="text-xs text-gray-500">Certification ID: 7233163615TS</div>
               </div>
@@ -218,13 +243,6 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
               <div>
                 <strong class="text-white">WorkMarket Verified Vendor</strong>
                 <div class="text-sm text-gray-400">Field Services Platform</div>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <i class="fas fa-cloud text-cyan-400 mr-3 mt-1"></i>
-              <div>
-                <strong class="text-white">CloudWork Pro Member</strong>
-                <div class="text-sm text-gray-400">Enterprise Field Services</div>
               </div>
             </div>
           </div>
@@ -265,31 +283,28 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
       
       <div class="timeline">
         <div class="timeline-item">
+          <!-- PR #57: replaced "Active bidding... NASA JSC, Garden City ISD"
+               -- a current-tense, unverified named-opportunity claim with no
+               place on a permanent About page -- with the verified HUBZone
+               certification milestone. Also removed the "2025 -- Enterprise
+               Field Services Partnerships" card ("Completed work... across
+               multiple states" / "Multi-State Operations"): current
+               repository evidence creates unresolved attribution/date
+               ambiguity around several enterprise projects and pre-company
+               work relative to the September 2025 founding date. Do not
+               restore either claim until the case-study attribution audit is
+               complete. -->
           <div class="card rounded-xl p-6 fade-in" style="animation-delay: 0.1s;">
-            <h3 class="text-lg font-semibold text-cyan-300 mb-2">2026 &mdash; Government &amp; Commercial Expansion</h3>
+            <h3 class="text-lg font-semibold text-cyan-300 mb-2">2026 &mdash; HUBZone Certification &amp; Government Market Expansion</h3>
             <p class="text-gray-300 mb-3">
-              Active bidding on Division 27/28 low-voltage and fire alarm rough-in projects for NASA JSC, Garden City ISD, and commercial 
-              facilities across West Texas, Houston, and DFW. SAM.gov registered, UEI CZ8BLZMSKZ66.
+              Nova Titan Systems became an SBA-Certified HUBZone Small Business effective June 5, 2026 and
+              continued pursuing Division 27/28 commercial and public-sector opportunities while expanding
+              structured cabling, security infrastructure, and field-execution work across Texas.
             </p>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-sm">Government Bids</span>
-              <span class="bg-green-500/20 text-green-300 px-2 py-1 rounded text-sm">Div 28 FA Rough-In</span>
-              <span class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-sm">Owner-Operated Business</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="card rounded-xl p-6 fade-in" style="animation-delay: 0.2s;">
-            <h3 class="text-lg font-semibold text-cyan-300 mb-2">2025 &mdash; Enterprise Field Services Partnerships</h3>
-            <p class="text-gray-300 mb-3">
-              Established partnerships with enterprise clients including AVASO Technology Solutions and 
-              ABA Moriah Corporation. Delivered field service projects across multiple states. 
-              Completed work in retail, healthcare, distribution, and commercial office environments.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-sm">Enterprise Growth</span>
-              <span class="bg-green-500/20 text-green-300 px-2 py-1 rounded text-sm">Multi-State Operations</span>
+              <span class="bg-green-500/20 text-green-300 px-2 py-1 rounded text-sm">SBA-Certified HUBZone</span>
+              <span class="bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded text-sm">Government Market</span>
+              <span class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-sm">Division 27/28</span>
             </div>
           </div>
         </div>
@@ -318,7 +333,7 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold glow mb-4">Our Operating Principles</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto">The values that drive how Nova Titan Systems operates on every project</p>
+        <p class="text-gray-300 max-w-2xl mx-auto">The principles that guide Nova Titan Systems' project delivery</p>
       </div>
       
       <div class="grid md:grid-cols-3 gap-8">
@@ -328,14 +343,21 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
           </div>
           <h3 class="text-xl font-semibold text-cyan-300 mb-3">Reliable Delivery</h3>
           <p class="text-gray-300">
-            Show up on time, deliver clean work, and close out on schedule. Every project has
-            a named point of accountability and transparent communication from start to finish.
             {%- comment -%}
               PHASE 2: "direct CEO oversight" REDUCED. Ownership accountability is a
               real differentiator, but phrased this way it reads solo-operator to a GC
               estimator evaluating whether a sub can staff a job. The commitment is
               retained; the founder-centric framing is not.
+
+              PR #57 CORRECTION (2026-08): "close out on schedule" and "Every
+              project" removed. Both read as unsupported universal/SLA-style
+              guarantees (same claim class as the removed 500-mile/same-day
+              language). Reworded to describe process without promising a
+              specific outcome on every project.
             {%- endcomment -%}
+            Clear scheduling, clean work, and closeout managed to project
+            requirements. Projects have a named point of accountability and
+            transparent communication throughout the work.
           </p>
         </div>
         
@@ -352,9 +374,14 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
               tested/certified USING Fluke DSX test equipment -- which is what the
               /partners/ card actually describes ("DSX cable certification &
               testing"). Reworded to the equipment-based fact.
+
+              PR #57 CORRECTION (2026-08): "on every job" removed -- an
+              unsupported universal guarantee. Closeout packages are now scoped
+              to project requirements rather than promised on every job.
             {%- endcomment -%}
-            Professional installations built to code and spec. Cable certification tested with Fluke DSX equipment, proper documentation, 
-            and clean closeout packages on every job.
+            Professional installations built to code and project specification.
+            Cable performance testing using Fluke DSX equipment where required,
+            proper documentation, and closeout packages aligned to project scope.
           </p>
         </div>
         
@@ -364,8 +391,15 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
           </div>
           <h3 class="text-xl font-semibold text-purple-300 mb-3">Rapid Response</h3>
           <p class="text-gray-300">
-            Same-day dispatch capability with a 500-mile radius from Lubbock. 
-            Quote requests answered within 1 business day. Emergency support available.
+            <!-- PR #57: removed "Same-day dispatch... 500-mile radius...
+                 Emergency support available" -- a compounded fixed-radius/
+                 same-day/emergency-support guarantee with no scope qualifier.
+                 Replaced with a response target that does not assert a hard
+                 SLA. -->
+            We aim to acknowledge quote requests within one business day.
+            Scheduling and field deployment are coordinated to project scope,
+            location, and technician availability. Urgent requests are
+            evaluated based on available coverage.
           </p>
         </div>
       </div>
@@ -379,8 +413,9 @@ description: "Nova Titan Systems LLC is a Division 27/28 commercial low-voltage 
         Ready to Bid Your Project?
       </h2>
       <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-        Submit a quote request and Nova Titan Systems will respond within 1 business day with scope review 
-        and pricing for your fire alarm rough-in coordination, low-voltage, or structured cabling project.
+        Submit a quote request for fire alarm rough-in coordination, low-voltage,
+        or structured cabling. Nova Titan Systems will review the scope and follow
+        up with pricing, questions, or next steps.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="/quote/" class="btn-grad text-gray-900 font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center">
