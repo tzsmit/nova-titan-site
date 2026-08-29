@@ -396,6 +396,7 @@ layout: default
 </article>
 
 <!-- Schema.org Case Study Markup -->
+{% if case_study.publish_status == "published" %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -421,3 +422,11 @@ layout: default
   "keywords": "{{ case_study.keywords }}"
 }
 </script>
+{% endif %}
+<!-- SCHEMA GUARD (2026-08 case-study evidence audit v2): a case study whose
+     publish_status is not "published" (e.g. quarantined or
+     retired_preformation) must never emit a Nova Titan Systems LLC-authored
+     Article schema. The underlying page for such a record is also marked
+     noindex/sitemap:false in its own front matter, so this guard is a
+     defense-in-depth measure against stale/incorrect structured data if the
+     page is ever crawled or rendered directly. -->

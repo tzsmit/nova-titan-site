@@ -10,6 +10,11 @@
       url: "/services/low-voltage-subcontractor-amarillo-tx/"
   has_page: false  # no detail page built — index card renders without CTA link
   featured: false
+  # QUARANTINED (2026-08 case-study evidence audit v2): pending independent
+  # verification of ServicePoint ticket S-378821, project date, buyer
+  # relationship and entity attribution. Preserved for future evidence
+  # recovery. Not rendered publicly and does not emit LLC-authored schema.
+  publish_status: "quarantined"
   title: "Commercial IT Equipment Services for Federal Contractor"
   subtitle: "Equipment Management Services Through Prime Contractor Partnership"
   client: "Core Technology Solutions (Prime Contractor)"
@@ -76,7 +81,14 @@
       url: "/services/security-camera-infrastructure-lubbock-tx/"
     - label: "Division 27/28 Service Scope"
       url: "/services/"
-  featured: true
+  featured: false
+  # RETIRED FROM PUBLIC LLC PAST PERFORMANCE (2026-08 case-study evidence
+  # audit v2): verified field engagement dated 2025-07-18, before formation
+  # of Nova Titan Systems LLC on 2025-09-17. Preserved for historical
+  # evidence but not published as LLC past performance. Not moved to
+  # /leadership/ in this pass -- a single non-recurring job does not justify
+  # a predecessor-entity disclosure apparatus.
+  publish_status: "retired_preformation"
   title: "Enterprise-Scale IT Infrastructure Support for Major Logistics Hub"
   subtitle: "Access Control Infrastructure Deployment for Amazon (Subcontractor under Velociti)"
   client: "Velociti"
@@ -140,10 +152,16 @@
     - label: "Low-Voltage Subcontractor — Lubbock, TX"
       url: "/services/low-voltage-subcontractor-lubbock-tx/"
   featured: true
-  title: "Nationwide Restaurant Chain Infrastructure Rollout"
-  subtitle: "Multi-Site Network Deployment for 7 BREW Expansion"
+  # PUBLISHED / REBUILT (2026-08 case-study evidence audit v2): verified
+  # engagement dated 2025-10-02, corroborated internally by Granite Ticket
+  # 5959515 already present below. Narrowed to the single documented
+  # engagement -- prior "nationwide"/"multi-site" framing was drafted
+  # narrative, not evidenced, and has been removed.
+  publish_status: "published"
+  title: "Restaurant Network Stack Deployment"
+  subtitle: "Field Execution for 7 BREW Through Granite Telecommunications"
   client: "Granite Telecommunications (Prime Contractor)"
-  end_client: "7 BREW (Multi-Location Rollout)"
+  end_client: "7 BREW"
   # RELATIONSHIP DISCLOSURE (2026-08 audit): Nova Titan was engaged BY Granite
   # Telecommunications as the field execution subcontractor. 7 BREW was the end
   # client of the prime, NOT a direct Nova Titan customer. This must stay visible
@@ -152,19 +170,19 @@
   location: "Lubbock, TX 79424"
   location_city: "Lubbock, TX"
   location_state: "Texas"
-  date: "October 2024"
+  date: "October 2, 2025"
   # ISO-8601 form for schema.org datePublished (human string above is for display)
-  date_iso: "2024-10-01"
-  project_type: "Multi-Site Enterprise Deployment"
+  date_iso: "2025-10-02"
+  project_type: "Network Field Execution"
   
   government_type: "Commercial"
   service_type: "Network Infrastructure"
   industry: "Restaurant/Retail"
   region: "Texas"
   
-  challenge: "A rapidly expanding drive-thru coffee chain was opening new stores on a fixed construction schedule, and each store needed its network stack live before the point-of-sale and drive-thru systems could be commissioned. Store openings are unforgiving: the equipment delivery, the electrical rough-in and the franchise opening date are all fixed before the low-voltage crew arrives, so any cabling or configuration delay pushes the opening itself. Work had to be sequenced around other trades still finishing the building, and any work at an already-operating location had to avoid business-hour interruption."
+  challenge: "7 BREW required network stack installation at a new Lubbock, TX location before the store could open. Nova Titan Systems was engaged by Granite Telecommunications as the field execution subcontractor for the low-voltage and network scope."
   
-  solution: "Nova Titan Systems was engaged by Granite Telecommunications as the field execution subcontractor for the low-voltage and network scope. Work included receiving and staging the delivered network equipment, terminating and dressing the network stack, configuring and validating the routers, switches and wireless access points to the prime contractor's provided configuration, verifying circuit hand-off, and confirming each drop before turning the site over. Every site was closed out with the prime's ticketing workflow, including photo documentation and confirmation of live connectivity for the store systems."
+  solution: "Nova Titan Systems received and staged the delivered network equipment, terminated and dressed the network stack, and configured and validated the routers, switches and wireless access points to the prime contractor's provided configuration. Circuit hand-off was verified and connectivity confirmed before the site was turned over. The engagement was closed out through the prime's ticketing workflow, including photo documentation."
   
   services:
     - "Network stack termination, mounting and cable dressing"
@@ -172,41 +190,37 @@
     - "Wireless access point placement, mounting and validation"
     - "Circuit hand-off verification and port-level connectivity testing"
     - "Equipment receiving and on-site staging"
-    - "Multi-site scheduling coordinated to store construction and opening dates"
     - "Photo documentation and ticketed closeout per prime contractor workflow"
   
-  # RESULTS DISCIPLINE (2026-08 audit): Every line below is an outcome that can
-  # be substantiated from the project record / prime contractor ticket. Do NOT
-  # add invented percentages, dollar savings, uptime figures or store counts.
+  # RESULTS DISCIPLINE (2026-08 audit v2): Every line below is an outcome that
+  # can be substantiated from the project record / Granite Ticket 5959515.
+  # Do NOT add invented percentages, dollar savings, uptime figures, store
+  # counts, or recurrence claims not independently evidenced.
   results:
-    - "Network infrastructure delivered and validated at each assigned location"
-    - "No business-hour interruption at operating locations"
-    - "Store systems commissioned on the schedule set by the prime contractor"
-    - "Closeout documentation accepted through the prime's ticketing process"
-    - "Continued to receive follow-on field assignments from the same prime contractor"
+    - "Completed the assigned network-stack deployment in Lubbock, TX"
+    - "Validated connectivity against the prime contractor's requirements"
+    - "Completed ticketed closeout under Granite Ticket 5959515"
+    - "Completed the assigned work without a reported service interruption"
   
-  impact: "Store-opening low-voltage work is judged almost entirely on schedule reliability and clean closeout documentation, because the general contractor and the franchisee have already committed to an opening date. This project is representative of how Nova Titan is typically engaged: a prime contractor or enterprise platform owns the customer relationship and the configuration standard, and Nova Titan supplies the local licensed-trade-adjacent field execution, the coordination with other trades on site, and the documented turnover the prime needs to bill the job."
+  impact: "This project is representative of how Nova Titan is typically engaged for store-opening low-voltage work: a prime contractor owns the customer relationship and configuration standard, and Nova Titan supplies the on-site field execution and the documented turnover the prime needs to bill the job."
   
   # First-party field lessons — the kind of non-commodity detail that only comes
   # from having actually done the work. Rendered as "Field Notes" on the page.
   field_notes:
     - "On a fixed store-opening date the schedule risk is almost never the cabling itself — it is equipment arriving late or the electrical rough-in not being ready for the low-voltage crew. Confirming material on site and pathway readiness before mobilizing is what protects the opening date."
-    - "Multi-site rollouts fail on documentation far more often than on installation. When the prime is billing per site, a site is not finished until the photos and the ticket closeout are accepted, so closeout is scheduled as part of the work, not after it."
     - "Working through a prime contractor's configuration standard means the field crew must validate against a spec it did not author. Port-level verification before turnover prevents a return trip that no one has budgeted."
   
   metrics:
-    timeline: "1 week"
-    services_count: 7
-    locations_covered: "Multiple"
-    downtime: "Zero"
+    services_count: 6
+    timeline: "Single assignment"
   
-  technical_specs: "Network stack deployment, enterprise wireless infrastructure, secure routing, Granite Ticket 5959515"
+  technical_specs: "Network stack deployment, secure routing, Granite Ticket 5959515"
   
   icon: "fas fa-coffee"
   color: "purple"
   
-  meta_description: "Nova Titan Systems deployed multi-site network infrastructure for 7 BREW restaurant chain expansion in Lubbock, TX with zero business disruption."
-  keywords: "multi-site network deployment, restaurant IT infrastructure, Granite Telecommunications, enterprise wireless, West Texas IT"
+  meta_description: "Nova Titan Systems completed a network stack deployment for a 7 BREW location in Lubbock, TX as a field execution subcontractor for Granite Telecommunications."
+  keywords: "network stack deployment, restaurant IT infrastructure, Granite Telecommunications, West Texas IT contractor"
 
 - id: va-healthcare
   # Proof -> money-page links (2026-08 audit, sec.13/sec.15)
@@ -216,6 +230,13 @@
     - label: "Low-Voltage Subcontractor — Midland & Odessa, TX"
       url: "/services/low-voltage-subcontractor-midland-odessa-tx/"
   featured: false
+  # QUARANTINED (2026-08 case-study evidence audit v2): the CSA/Higi
+  # relationship is real and recurring, but this record aggregates pre- and
+  # post-formation work. Quarantined until the Nova Titan Systems LLC
+  # post-2025-09-17 assignment subset is itemized and a clean rebuild can be
+  # produced. Preserved for that future rebuild; not rendered publicly and
+  # does not emit LLC-authored schema.
+  publish_status: "quarantined"
   title: "Healthcare Equipment Support Through Commercial Contractor"
   subtitle: "Medical Equipment Maintenance Services via CSA Solutions"
   client: "CSA Solutions (Prime Contractor)"
@@ -278,63 +299,68 @@
   related_services:
     - label: "Field & Smart Hands Services"
       url: "/services/"
-    - label: "Low-Voltage Subcontractor — Midland & Odessa, TX"
-      url: "/services/low-voltage-subcontractor-midland-odessa-tx/"
+    - label: "Low-Voltage Subcontractor — Lubbock, TX"
+      url: "/services/low-voltage-subcontractor-lubbock-tx/"
   has_page: false  # no detail page built — index card renders without CTA link
   featured: false
-  title: "Commercial IT Deployment Support Through Technology Partner"
-  subtitle: "Smart Hands IT Support for Commercial Contractor Operations"
+  # PUBLISHED / FULL REBUILD (2026-08 case-study evidence audit v2): the
+  # original May-November 2024 range mixed pre- and post-formation work.
+  # Rebuilt using ONLY the nine documented post-formation (>= 2025-09-17)
+  # assignments: 2025-11-04, 11-05, 11-06 (x2), 11-20, 12-02, 12-12, 12-18,
+  # 12-22. Midland and Odessa are dropped because those cities only appear
+  # in pre-formation records (2025-05-08 Odessa, 2025-09-08 Midland).
+  publish_status: "published"
+  title: "Field Service Support for Commercial Retail Operations"
+  subtitle: "Smart Hands Assignments for Office Depot Through AVASO Technology Solutions"
   client: "AVASO Technology Solutions Inc (Prime Contractor)"
-  end_client: "Office Depot (Commercial Operations)"
+  end_client: "Office Depot"
   # RELATIONSHIP DISCLOSURE (2026-08 audit, §13)
   relationship_disclosure: "Nova Titan Systems performed this work as a field services subcontractor engaged by AVASO Technology Solutions Inc. Office Depot was the prime contractor's end client, not a direct Nova Titan Systems customer. Brand names are referenced solely to describe the scope of work performed."
-  location: "West Texas and New Mexico (Lubbock, Midland, Odessa, Roswell)"
-  location_city: "Lubbock, Midland, Odessa, Roswell"
+  location: "Lubbock, TX and Roswell, NM"
+  location_city: "Lubbock, TX; Roswell, NM"
   location_state: "Texas, New Mexico"
-  date: "May 2024 - November 2024"
+  date: "November 2025 - December 2025"
   # ISO-8601 form for schema.org datePublished (human string above is for display)
-  date_iso: "2024-05-01"
-  project_type: "Commercial Contractor Support / IT Deployment"
+  date_iso: "2025-11-04"
+  project_type: "Commercial Field Service Support"
   
   government_type: "Commercial"
   service_type: "IT Smart Hands"
-  industry: "Commercial Supply Chain"
+  industry: "Commercial Retail Operations"
   region: "Multi-State"
   
-  challenge: "A commercial contractor required rapid-response IT smart hands support across multiple locations in rural West Texas and New Mexico. Projects ranged from desktop deployment to network equipment installation and server maintenance with tight turnaround requirements."
+  challenge: "Office Depot locations in Lubbock, TX and Roswell, NM required on-site field service support, coordinated through AVASO Technology Solutions Inc."
   
-  solution: "Nova Titan Systems provided on-demand IT smart hands support as a regional partner for AVASO Technology Solutions. Our West Texas presence enabled 4-hour response times for urgent commercial deployments across the region."
+  solution: "Nova Titan Systems completed nine documented field-service assignments for Office Depot locations through AVASO Technology Solutions during November and December 2025, providing on-site smart hands support and completing each assignment through AVASO's ticketed workflow."
   
   services:
-    - "IT smart hands support and rapid response"
-    - "Desktop deployment and configuration"
-    - "Network equipment installation"
-    - "Server maintenance and troubleshooting"
-    - "Commercial contractor logistics support"
-    - "Multi-location coverage across rural areas"
+    - "On-site smart hands support"
+    - "Field-service assignment execution"
+    - "Documented ticketed closeout per AVASO workflow"
   
+  # RESULTS DISCIPLINE (2026-08 audit v2): every line below is tied to the
+  # nine dated post-formation assignments. Do NOT add invented response-time,
+  # on-time-rate or timeline figures.
   results:
-    - "Completed 6+ commercial IT deployments"
-    - "Maintained 100% on-time completion rate"
-    - "Delivered consistent regional IT support"
-    - "Established regional coverage capability for AVASO"
-    - "Enabled commercial contractor to serve rural locations"
+    - "Completed nine documented field-service assignments for Office Depot locations through AVASO Technology Solutions"
+    - "Assignments completed in Lubbock, TX and Roswell, NM during November and December 2025"
+    - "Represents a repeat, multi-assignment engagement with AVASO Technology Solutions"
   
-  impact: "By providing reliable IT deployment support for commercial contractors in rural areas, we help ensure that businesses in underserved regions receive the same rapid, professional IT support available in major cities."
+  impact: "This project reflects Nova Titan's role as a field-service subcontractor for AVASO Technology Solutions: AVASO owns the Office Depot customer relationship, and Nova Titan provides the on-site field execution and documented closeout AVASO needs across its assigned locations."
   
   metrics:
-    timeline: "7 months"
-    projects_completed: "6+"
-    on_time_rate: "100%"
-    response_time: "4 hours"
+    services_count: 3
+    timeline: "Nov–Dec 2025"
+    projects_completed: "9 documented assignments"
+    locations_covered: 2
   
-  technical_specs: "ATS case management system, multi-location field technician dispatch, commercial contractor support"
+  technical_specs: "Field-service ticketing workflow via AVASO Technology Solutions Inc; 9 documented assignments across Lubbock, TX and Roswell, NM (Nov-Dec 2025)"
   
   icon: "fas fa-hands-helping"
   color: "green"
   
-  meta_description: "Nova Titan Systems provides rapid-response IT smart hands support for commercial contractors across rural West Texas and New Mexico."
-  keywords: "commercial IT support, smart hands technician, contractor support, rural IT services, AVASO partner"
+  meta_description: "Nova Titan Systems completed nine documented field-service assignments for Office Depot locations in Lubbock, TX and Roswell, NM through AVASO Technology Solutions during November-December 2025."
+  keywords: "field service support, smart hands technician, AVASO Technology Solutions, Office Depot field service, Lubbock IT contractor, Roswell NM IT contractor"
 
 - id: abc-supply-migration
   # Proof -> money-page links (2026-08 audit, sec.13/sec.15)
@@ -344,56 +370,59 @@
     - label: "Low-Voltage Subcontractor — Lubbock, TX"
       url: "/services/low-voltage-subcontractor-lubbock-tx/"
   featured: false
-  title: "Mission-Critical Network Upgrade for Supply Chain Operations"
-  subtitle: "Zero-Downtime LAN Migration for ABC Supply"
+  # PUBLISHED / REBUILD (2026-08 case-study evidence audit v2): verified
+  # engagement dated 2025-09-26. Title/subtitle and every quantified claim
+  # below were drafted narrative, not evidenced -- narrowed to the single
+  # documented LAN migration. The Spectrum contract numbers previously in
+  # technical_specs had no authoritative source and have been removed.
+  publish_status: "published"
+  title: "LAN Migration for Commercial Supply Facility"
+  subtitle: "Network Field Execution for ABC Supply Through ASD / Spectrum"
   client: "ASD (Applied System Designs) / Spectrum"
-  end_client: "ABC Supply (National Building Materials Distributor)"
+  end_client: "ABC Supply"
   # RELATIONSHIP DISCLOSURE (2026-08 audit, §13)
   relationship_disclosure: "Nova Titan Systems performed this work as a field execution subcontractor engaged by ASD (Applied System Designs) / Spectrum. ABC Supply was the prime contractor's end client, not a direct Nova Titan Systems customer. Brand names are referenced solely to describe the scope of work performed."
   location: "Lubbock, TX 79404"
   location_city: "Lubbock, TX"
   location_state: "Texas"
-  date: "September 2024"
+  date: "September 26, 2025"
   # ISO-8601 form for schema.org datePublished (human string above is for display)
-  date_iso: "2024-09-01"
-  project_type: "Enterprise Network Infrastructure"
+  date_iso: "2025-09-26"
+  project_type: "Network Field Execution"
   
   government_type: "Commercial"
   service_type: "Network Infrastructure"
   industry: "Supply Chain/Distribution"
   region: "Texas"
   
-  challenge: "ABC Supply, a major national building materials distributor, required LAN migration and network infrastructure upgrades with absolute zero downtime tolerance. The project required hard start times and precise coordination to avoid disrupting 24/7 supply chain operations."
+  challenge: "ABC Supply required a scheduled LAN migration at its Lubbock, TX facility. Nova Titan Systems was engaged as a field execution subcontractor by ASD (Applied System Designs) / Spectrum to perform the on-site migration work."
   
-  solution: "Nova Titan Systems executed a carefully orchestrated two-phase LAN migration with hard start times, ensuring seamless transition from legacy network infrastructure to upgraded systems. The project required advanced planning, after-hours coordination, and rapid execution to maintain continuous operations."
+  solution: "Nova Titan Systems performed the LAN migration, including cutover support, connectivity validation, and documented field closeout through the prime contractor's workflow."
   
   services:
-    - "LAN migration with hard start time requirements"
-    - "Network infrastructure upgrades"
-    - "Enterprise IT coordination"
-    - "After-hours deployment"
-    - "Pre-migration testing and validation"
-    - "Post-migration verification and support"
+    - "LAN migration field execution"
+    - "Cutover support and coordination"
+    - "Pre- and post-migration connectivity validation"
+    - "Documented field closeout per prime contractor workflow"
   
+  # RESULTS DISCIPLINE (2026-08 audit v2): every line below is tied to the
+  # single documented 2025-09-26 assignment. Do NOT add invented uptime,
+  # disruption or phase-count claims.
   results:
-    - "Achieved 100% uptime during critical network migration"
-    - "Completed both project phases on schedule with hard start times"
-    - "Zero disruption to 24/7 supply chain operations"
-    - "Demonstrated enterprise-scale project management capability"
-    - "Established capability for mission-critical infrastructure upgrades"
+    - "Completed the assigned LAN migration scope in Lubbock, TX"
+    - "Validated network connectivity following the migration"
+    - "Provided field execution and closeout through the prime contractor workflow"
   
-  impact: "This project showcased our ability to execute complex, time-sensitive enterprise IT projects in West Texas, ensuring that regional supply chain operations maintain the same level of network reliability as major metropolitan facilities."
+  impact: "This project reflects Nova Titan's role as a field execution subcontractor for enterprise network migrations: the prime contractor owns the customer relationship and migration plan, and Nova Titan supplies the on-site execution and documented closeout the prime needs to bill the job."
   
   metrics:
-    timeline: "2 phases"
-    uptime: "100%"
-    services_count: 6
-    disruption: "Zero"
+    services_count: 4
+    timeline: "Single assignment"
   
-  technical_specs: "Spectrum Network Services contracts 25S18009, 25S18007, hard start time coordination, enterprise LAN architecture"
+  technical_specs: "LAN migration field execution, ASD / Spectrum prime contractor coordination"
   
   icon: "fas fa-network-wired"
   color: "cyan"
   
-  meta_description: "Nova Titan Systems executed zero-downtime LAN migration for ABC Supply's Lubbock facility, ensuring continuous 24/7 supply chain operations."
-  keywords: "zero downtime network migration, enterprise LAN upgrade, supply chain IT, Lubbock IT contractor, mission-critical infrastructure"
+  meta_description: "Nova Titan Systems performed a LAN migration for ABC Supply's Lubbock, TX facility as a field execution subcontractor for ASD (Applied System Designs) / Spectrum."
+  keywords: "LAN migration, network field execution, supply chain IT, Lubbock IT contractor, ASD Spectrum subcontractor"

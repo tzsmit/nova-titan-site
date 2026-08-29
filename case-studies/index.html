@@ -23,7 +23,7 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto fade-in">
         <div class="card rounded-xl p-4 text-center">
           <div class="text-3xl font-bold text-cyan-300 mb-1">SAM.gov</div>
-          <div class="text-sm text-gray-400">Active Since 2024</div>
+          <div class="text-sm text-gray-400">Registration Active</div>
         </div>
         <div class="card rounded-xl p-4 text-center">
           <div class="text-3xl font-bold text-green-300 mb-1">Healthcare</div>
@@ -68,31 +68,19 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
     <div class="flex flex-wrap gap-3 justify-center">
       <button class="filter-btn active" data-filter="all">
         <i class="fas fa-th mr-2"></i>
-        All Projects (6)
+        All Projects (3)
       </button>
       <button class="filter-btn" data-filter="commercial">
         <i class="fas fa-briefcase mr-2"></i>
-        Commercial (6)
+        Commercial (3)
       </button>
       <button class="filter-btn" data-filter="infrastructure">
         <i class="fas fa-network-wired mr-2"></i>
         Infrastructure
       </button>
-      <button class="filter-btn" data-filter="healthcare">
-        <i class="fas fa-heartbeat mr-2"></i>
-        Healthcare
-      </button>
-      <button class="filter-btn" data-filter="security">
-        <i class="fas fa-shield-alt mr-2"></i>
-        Security
-      </button>
       <button class="filter-btn" data-filter="texas">
         <i class="fas fa-map-marker-alt mr-2"></i>
         Texas
-      </button>
-      <button class="filter-btn" data-filter="new-mexico">
-        <i class="fas fa-map-marker-alt mr-2"></i>
-        New Mexico
       </button>
     </div>
   </div>
@@ -107,14 +95,14 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
         Featured Projects
       </h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
-        Flagship projects showcasing our capabilities across commercial enterprise security, healthcare IT, and multi-site deployments
+        Flagship projects showcasing our capabilities in network infrastructure field execution for commercial enterprise clients
       </p>
     </div>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 case-studies-grid">
       
       {% for study in site.data.case_studies %}
-      {% if study.featured %}
+      {% if study.featured and study.publish_status == "published" %}
       
       <article class="case-study-card card rounded-2xl p-6 fade-in group hover:border-{{ study.color }}-400/40 transition-all cursor-pointer" 
                data-categories="{{ study.government_type | downcase }} {{ study.service_type | downcase | replace: ' ', '-' }} {{ study.industry | downcase | replace: '/', '-' | replace: ' ', '-' }} {{ study.region | downcase | replace: ' ', '-' }}">
@@ -193,14 +181,14 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-white mb-4">All Case Studies</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
-        Additional projects demonstrating year-round healthcare IT support, commercial contractor services, and enterprise network deployments
+        Additional projects demonstrating commercial field-service and network infrastructure support
       </p>
     </div>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 case-studies-grid">
       
       {% for study in site.data.case_studies %}
-      {% unless study.featured %}
+      {% if study.publish_status == "published" and study.featured != true %}
       
       <article class="case-study-card card rounded-2xl p-6 fade-in group hover:border-{{ study.color }}-400/40 transition-all cursor-pointer" 
                data-categories="{{ study.government_type | downcase }} {{ study.service_type | downcase | replace: ' ', '-' }} {{ study.industry | downcase | replace: '/', '-' | replace: ' ', '-' }} {{ study.region | downcase | replace: ' ', '-' }}">
@@ -266,7 +254,7 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
         
       </article>
       
-      {% endunless %}
+      {% endif %}
       {% endfor %}
       
     </div>
