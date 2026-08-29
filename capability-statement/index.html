@@ -264,7 +264,7 @@
           <i class="fas fa-building mr-3"></i>Company Overview
         </h2>
         <p class="text-gray-300 text-lg leading-relaxed">
-          Nova Titan Systems LLC is a <strong class="text-green-400">SBA-Certified HUBZone Small Business</strong> and <strong class="text-cyan-400">Division 27 low-voltage infrastructure contractor</strong> headquartered in <strong class="text-cyan-400">Lubbock, Texas</strong>. We provide structured cabling, network infrastructure, wireless access point support, security camera cabling, access control cabling, and field technology services for commercial, education, healthcare, government, and industrial clients across West Texas and the broader Texas market. Nova Titan provides field execution, project coordination, and closeout support. SAM.gov active. UEI: CZ8BLZMSKZ66 &bull; CAGE: 170W6.
+          Nova Titan Systems LLC is a <strong class="text-green-400">SBA-Certified HUBZone Small Business</strong> and <strong class="text-cyan-400">Division 27 low-voltage infrastructure contractor</strong> headquartered in <strong class="text-cyan-400">Lubbock, Texas</strong>, with a West Texas operating base and project-based Texas and regional field coverage. We provide structured cabling, network infrastructure, wireless access point support, security camera cabling, access control cabling, and field technology services for commercial, education, healthcare, government, and industrial clients across West Texas and the broader Texas market. Nova Titan provides field execution and project coordination, with testing, labeling, and closeout documentation delivered as required by project scope and award. SAM.gov Registration: Active. UEI: CZ8BLZMSKZ66 &bull; CAGE: 170W6.
         </p>
       </div>
 
@@ -273,7 +273,7 @@
         <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-8">
           Performance Metrics
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           <div class="metric-card">
             <div class="text-3xl font-bold text-cyan-400 mb-2">18</div>
             <div class="text-sm text-gray-400">Months Operating</div>
@@ -290,10 +290,16 @@
             <div class="text-3xl font-bold text-purple-400 mb-2">100%</div>
             <div class="text-sm text-gray-400">On-Time Delivery</div>
           </div>
-          <div class="metric-card">
-            <div class="text-3xl font-bold text-cyan-400 mb-2">500mi</div>
-            <div class="text-sm text-gray-400">Dispatch Radius</div>
-          </div>
+          <!-- ENTITY/PROCUREMENT RECONCILIATION (2026-08, PR #54): this metric
+               card previously read "500mi / Dispatch Radius", presented as a
+               bare, unqualified figure with no scheduling caveat -- a stronger
+               overclaim than the fixed-radius wording already corrected on
+               /certifications/ (PR #53), which reads "Project-based regional
+               coverage -- scheduling depends on scope, location, and
+               technician availability." No caveated replacement metric card
+               was substituted here; the qualitative coverage statement now
+               lives in the Company Overview paragraph and the differentiator
+               card below instead of a headline number. -->
           <!-- ENTITY PASS (2026-08, post-#47): this metric card read "FCA /
                Founder: Fortinet FCA". Capability/qualification context MAY carry
                the founder credential, but as a headline metric it competed with
@@ -358,7 +364,16 @@
           <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-shield-alt"></i></div>
           <h3 class="text-2xl font-bold text-purple-300 mb-4">Security &amp;<br>Network Health</h3>
           <ul class="space-y-3 text-gray-300">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Fortinet Firewall Deployment &amp; Configuration</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Fortinet Firewall Hardware Deployment &amp; Field Implementation Support</li>
+            <!-- ENTITY/PROCUREMENT RECONCILIATION (2026-08, PR #54): narrowed from
+                 "Fortinet Firewall Deployment & Configuration" to this hardware
+                 deployment/field-implementation framing. This describes a
+                 low-voltage/field-execution service capability, not a company-
+                 level Fortinet certification (which does not exist -- only the
+                 founder holds a Person-level Fortinet FCA credential, modelled
+                 separately on /certifications/ and _includes/head.html) and not
+                 a reintroduction of the retired cybersecurity-consulting
+                 positioning. -->
             <li><i class="fas fa-check text-green-400 mr-2"></i>Network Hardware Installation &amp; Cabling Terminations</li>
             <li><i class="fas fa-check text-green-400 mr-2"></i>Network Health Checks &amp; Support Coordination</li>
             
@@ -394,7 +409,7 @@
             <i class="fas fa-certificate text-green-400 text-2xl mr-4 mt-1"></i>
             <div>
               <h3 class="text-xl font-bold text-green-300 mb-2">SBA-Certified HUBZone</h3>
-              <p class="text-gray-400">Eligible for HUBZone set-aside and sole-source contracts. Effective 06/05/2026, Renewal 06/05/2029.</p>
+              <p class="text-gray-400">Eligible to compete for HUBZone opportunities where applicable. Effective 06/05/2026, Renewal 06/05/2029.</p>
             </div>
           </div>
         </div>
@@ -403,7 +418,7 @@
             <i class="fas fa-flag-usa text-purple-400 text-2xl mr-4 mt-1"></i>
             <div>
               <h3 class="text-xl font-bold text-purple-300 mb-2">Government Contractor Ready</h3>
-              <p class="text-gray-400">SAM.gov active, Davis-Bacon compliant, certified payroll capable, TIPS/CMBL registered for Texas cooperative purchasing.</p>
+              <p class="text-gray-400">SAM.gov active. Prevailing-wage and payroll-documentation requirements are reviewed and incorporated when applicable, with qualified subcontractor support where required. Registered on the Texas CMBL and TIPS eBid supplier network.</p>
             </div>
           </div>
         </div>
@@ -427,22 +442,34 @@
         Certifications, Registrations &amp; NAICS Codes
       </h2>
 
-      <!-- Certifications row -->
+      <!--
+        ENTITY/PROCUREMENT RECONCILIATION (2026-08, PR #54): this three-card
+        row previously stated "HUBZone set-aside & sole-source eligible" (the
+        automatic-entitlement overstatement removed elsewhere on this page
+        and on /certifications/ + /government/); "Active through March 6,
+        2027" for SAM.gov (no primary SAM.gov record in this repo supports
+        that specific expiration date -- only "Active" is asserted
+        authoritatively); and "TIPS / CMBL... Cooperative purchasing active...
+        TX Comptroller registered (CMBL)" -- CMBL is a Texas Comptroller bidder
+        list (evidenced), but TIPS was mischaracterized as an active
+        cooperative-purchasing contract. Current evidence supports only an
+        active TIPS eBid SUPPLIER REGISTRATION, not an awarded TIPS contract.
+      -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
         <div class="card rounded-xl p-5 border-2 border-green-400/40">
           <div class="text-green-300 font-bold text-lg mb-1"><i class="fas fa-certificate mr-2"></i>SBA-Certified HUBZone</div>
           <div class="text-sm text-gray-400">Effective: 06/05/2026 &bull; Renewal: 06/05/2029</div>
-          <div class="text-xs text-green-400 mt-2">HUBZone set-aside &amp; sole-source eligible</div>
+          <div class="text-xs text-green-400 mt-2">Eligible to compete for HUBZone opportunities where applicable</div>
         </div>
         <div class="card rounded-xl p-5 border-2 border-cyan-400/40">
-          <div class="text-cyan-300 font-bold text-lg mb-1"><i class="fas fa-check-circle mr-2"></i>SAM.gov Active</div>
-          <div class="text-sm text-gray-400">Active through March 6, 2027</div>
-          <div class="text-xs text-cyan-400 mt-2">UEI: CZ8BLZMSKZ66 &bull; CAGE: 170W6</div>
+          <div class="text-cyan-300 font-bold text-lg mb-1"><i class="fas fa-check-circle mr-2"></i>SAM.gov Registration: Active</div>
+          <div class="text-sm text-gray-400">UEI: CZ8BLZMSKZ66 &bull; CAGE: 170W6</div>
+          <div class="text-xs text-cyan-400 mt-2">Registration and certification details should be verified through the applicable federal source</div>
         </div>
         <div class="card rounded-xl p-5 border-2 border-purple-400/40">
           <div class="text-purple-300 font-bold text-lg mb-1"><i class="fas fa-shopping-cart mr-2"></i>TIPS / CMBL</div>
-          <div class="text-sm text-gray-400">Cooperative purchasing active</div>
-          <div class="text-xs text-purple-400 mt-2">TX Comptroller registered (CMBL)</div>
+          <div class="text-sm text-gray-400">Texas CMBL — listed/member</div>
+          <div class="text-xs text-purple-400 mt-2">TIPS eBid supplier registration — active</div>
         </div>
       </div>
 
@@ -450,21 +477,20 @@
         <div class="card rounded-xl p-6">
           <h3 class="text-xl font-bold text-cyan-300 mb-4">Primary NAICS</h3>
           <ul class="space-y-2 text-gray-300">
-            <li><strong class="text-cyan-400">238210</strong> - Electrical Contractors &amp; LV Wiring <span class="text-xs bg-cyan-700/30 text-cyan-300 px-2 py-0.5 rounded ml-1">PRIMARY</span></li>
-            <li><strong class="text-cyan-400">541512</strong> - Computer Systems Design Services</li>
-            <li><strong class="text-cyan-400">541513</strong> - Computer Facilities Management</li>
-            <li><strong class="text-cyan-400">541519</strong> - Other IT Services</li>
-            <li><strong class="text-cyan-400">541611</strong> - Admin. Management Consulting</li>
+            <li><strong class="text-cyan-400">238210</strong> - Electrical Contractors &amp; Other Wiring Installation Contractors <span class="text-xs bg-cyan-700/30 text-cyan-300 px-2 py-0.5 rounded ml-1">PRIMARY</span></li>
           </ul>
+          <p class="text-xs text-gray-500 mt-4">
+            Solicitation-specific NAICS classifications should be confirmed against the requirement and Nova Titan's current registration information.
+          </p>
         </div>
         <div class="card rounded-xl p-6">
-          <h3 class="text-xl font-bold text-green-300 mb-4">Contract Vehicles</h3>
+          <h3 class="text-xl font-bold text-green-300 mb-4">Procurement Registrations &amp; Bid Networks</h3>
           <ul class="space-y-2 text-gray-300">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>HUBZone set-aside &amp; sole-source eligible</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>SAM.gov active — federal &amp; state ready</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>TIPS / Choice Partners cooperative purchasing</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>CMBL — Texas Comptroller registered</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Davis-Bacon / certified payroll capable</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Eligible to compete for HUBZone opportunities where applicable</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>SAM.gov Registration: Active — federal &amp; state ready</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>TIPS eBid supplier registration — active</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Texas CMBL — Centralized Master Bidders List, listed/member</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Prevailing-wage / payroll-documentation requirements reviewed and incorporated when applicable, with qualified subcontractor support where required</li>
           </ul>
         </div>
       </div>

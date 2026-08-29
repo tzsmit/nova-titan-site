@@ -180,8 +180,18 @@ exclude:
   # ci-proposed/ published a full copy of a CI workflow -- including its
   # banned-phrase list -- on the live site.
   - ci-proposed
-  # Developer scripts (crawl_conversion_surfaces.py). Not referenced by any page.
+  # Developer scripts (crawl_conversion_surfaces.py, generate_capability_statement_pdf.py).
+  # Not referenced by any page.
   - tools
+  # Canonical HTML SOURCE for the generated capability-statement PDF (PR #54).
+  # This is a build input for tools/generate_capability_statement_pdf.py, not a
+  # public page -- it has no <h1>, no meta description, and is not meant to be
+  # crawled/indexed. Without this exclusion Jekyll copies it verbatim into
+  # _site/assets/docs/source/ and publishes it at HTTP 200 with zero SEO
+  # metadata, which fails the money-page/H1 CI gates and creates an orphaned,
+  # low-quality indexable URL. Excluded from the BUILD ONLY; the file remains
+  # in the repository as the editable source of truth.
+  - assets/docs/source
   #
   # NOT excluded in this pass, deliberately:
   #   assets/js/download-handler.js -- dead code, but it lives under assets/ and
