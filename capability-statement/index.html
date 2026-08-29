@@ -150,7 +150,7 @@
         "@type": "Service",
         "serviceType": "Structured Cabling & Network Infrastructure",
         "provider": { "@id": "https://novatitan.net/#organization" },
-        "areaServed": ["West Texas", "Lubbock", "United States"]
+        "areaServed": ["West Texas", "Lubbock", "Texas"]
       },
       {
         "@type": "Service",
@@ -268,51 +268,35 @@
         </p>
       </div>
 
-      <!-- Performance Metrics -->
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold text-center text-cyan-300 glow mb-8">
-          Performance Metrics
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          <div class="metric-card">
-            <div class="text-3xl font-bold text-cyan-400 mb-2">18</div>
-            <div class="text-sm text-gray-400">Months Operating</div>
-          </div>
-          <div class="metric-card">
-            <div class="text-3xl font-bold text-green-400 mb-2">5+</div>
-            <div class="text-sm text-gray-400">States Served</div>
-          </div>
-          <div class="metric-card">
-            <div class="text-3xl font-bold text-yellow-400 mb-2">5.0⭐</div>
-            <div class="text-sm text-gray-400">Client Rating</div>
-          </div>
-          <div class="metric-card">
-            <div class="text-3xl font-bold text-purple-400 mb-2">100%</div>
-            <div class="text-sm text-gray-400">On-Time Delivery</div>
-          </div>
-          <!-- ENTITY/PROCUREMENT RECONCILIATION (2026-08, PR #54): this metric
-               card previously read "500mi / Dispatch Radius", presented as a
-               bare, unqualified figure with no scheduling caveat -- a stronger
-               overclaim than the fixed-radius wording already corrected on
-               /certifications/ (PR #53), which reads "Project-based regional
-               coverage -- scheduling depends on scope, location, and
-               technician availability." No caveated replacement metric card
-               was substituted here; the qualitative coverage statement now
-               lives in the Company Overview paragraph and the differentiator
-               card below instead of a headline number. -->
-          <!-- ENTITY PASS (2026-08, post-#47): this metric card read "FCA /
-               Founder: Fortinet FCA". Capability/qualification context MAY carry
-               the founder credential, but as a headline metric it competed with
-               company capability numbers and implied a company certification.
-               Restated as the primary NAICS code, which is what a procurement
-               reader scans this strip for. The founder credential is stated in
-               qualification prose on /certifications/ and /about/. -->
-          <div class="metric-card">
-            <div class="text-2xl font-bold text-green-400 mb-2">238210</div>
-            <div class="text-sm text-gray-400">Primary NAICS</div>
-          </div>
-        </div>
-      </div>
+      <!-- ENTITY/PROCUREMENT RECONCILIATION (2026-08, PR #54 follow-up):
+           the "Performance Metrics" section previously here (18 Months
+           Operating / 5+ States Served / 5.0 Client Rating / 100% On-Time
+           Delivery / 238210 Primary NAICS) has been REMOVED, not corrected,
+           per governing-reviewer request on PR #54.
+
+           Removal reasons:
+             - "18 Months Operating" was inconsistent with the canonical
+               founding date of 2025-09-17 (_includes/head.html) as of the
+               current site date.
+             - "5+ States Served" conflicted with the governing post-PR #52
+               coverage model: West Texas primary operating base, with
+               documented project activity in Texas and New Mexico, and
+               additional markets qualified per opportunity (see
+               /government/) -- not a 5-state footprint.
+             - "100% On-Time Delivery" is an unsupported absolute guarantee,
+               the same class of claim already removed from
+               /government/, /certifications/, and the Midland/Odessa
+               service page.
+             - "5.0 Client Rating" has no authoritative source in the
+               current fact graph and should not be presented as a
+               universal company metric.
+             - "238210 Primary NAICS" duplicated the NAICS figure already
+               shown in the Government & Registrations facts section below
+               on this same page, so it added no information on removal.
+
+           No replacement metrics were invented. If verifiable performance
+           statistics become available, add them with a cited source rather
+           than restoring placeholder figures. -->
     </div>
   </section>
 
