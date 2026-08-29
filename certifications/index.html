@@ -32,22 +32,36 @@ extra_head: |
        Because that node shares this @id, Google merges the two. To avoid
        DUPLICATE identifiers on the merged entity, this block no longer restates
        UEI, CAGE, NAICS Primary or SAM.gov status at all -- it contributes only
-       the supplementary NAICS list and the founder link. Nothing factual was
-       lost; the visible SAM.gov/UEI/CAGE copy on this page is unchanged.
+       the founder link. Nothing factual was lost; the visible SAM.gov/UEI/CAGE
+       copy on this page is unchanged.
 
        Organization hasCredential is now intentionally ABSENT: Nova Titan holds
        no awarded occupational credential of its own. HUBZone is an SBA
        certification and is modelled on the authoritative node in
        _includes/head.html -- it is deliberately NOT touched here.
-       Do NOT move the founder's Fortinet credential back onto this node. -->
+       Do NOT move the founder's Fortinet credential back onto this node.
+
+       ENTITY/PROCUREMENT RECONCILIATION (2026-08, PR #53): this block
+       previously also asserted an "NAICS Additional" PropertyValue listing
+       541512, 541513, 541519, 541611, 541690, 561621. That property has been
+       REMOVED. The repo does not contain authoritative evidence confirming
+       those codes remain part of Nova Titan's active SAM.gov registration or
+       classification set, and several of the associated descriptions were
+       legacy IT-consulting/managed-services framing inconsistent with current
+       Division 27/28 low-voltage positioning (the same class of content
+       removed from /government/ and _includes/schema-org.html in PR #52).
+       This is NOT a declaration that those codes are absent from SAM.gov --
+       only that this page should not present an unverified classification
+       claim as an active fact. If external registration evidence later
+       confirms a specific code and current delivery scope supports it, it can
+       be restored in a separate, evidence-backed change. The authoritative
+       node in _includes/head.html continues to carry the verified primary
+       NAICS 238210 and is unaffected by this change. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["ElectricalContractor", "LocalBusiness"],
     "@id": "https://novatitan.net/#organization",
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "NAICS Additional", "value": "541512, 541513, 541519, 541611, 541690, 561621" }
-    ],
     "founder": { "@id": "https://novatitan.net/#founder" }
   }
   </script>
@@ -194,7 +208,7 @@ extra_head: |
             <i class="fas fa-certificate text-green-400 mr-3 mt-1"></i>
             <div>
               <strong class="text-white">SBA HUBZone Certification:</strong> <span class="text-green-300">Active</span><br>
-              <span class="text-sm text-gray-400">Effective 2026-06-05 &bull; Renewal 2029-06-05 &bull; Eligible for HUBZone set-aside awards</span>
+              <span class="text-sm text-gray-400">Effective 2026-06-05 &bull; Renewal 2029-06-05 &bull; Eligible to compete for HUBZone opportunities where applicable</span>
             </div>
           </li>
           <li class="flex items-start">
@@ -243,7 +257,7 @@ extra_head: |
           <li class="flex items-start">
             <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
             <div>
-              <strong class="text-white">Business Type:</strong> <span class="text-green-300">Owner-Operated Small Business &mdash; CEO-led field execution</span><br>
+              <strong class="text-white">Business Type:</strong> <span class="text-green-300">Owner-Operated Small Business</span><br>
               <span class="text-sm text-gray-400">Lubbock, TX &mdash; SAM.gov Active, CAGE 170W6</span>
             </div>
           </li>
@@ -275,10 +289,6 @@ extra_head: |
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-              <strong>CEO-Led Field Execution</strong>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
               <strong>Project-Based Delivery — No Retainer Required</strong>
             </li>
             <li class="flex items-start">
@@ -303,7 +313,7 @@ extra_head: |
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-              <strong>500-Mile Dispatch Radius</strong> — Same-day support available
+              <strong>Project-based regional coverage</strong> — scheduling depends on scope, location, and technician availability
             </li>
           </ul>
         </div>
@@ -312,7 +322,7 @@ extra_head: |
       <div class="mt-8 bg-gray-800/50 rounded-lg p-6 border-l-4 border-purple-400">
         <p class="text-sm text-gray-300">
           <i class="fas fa-info-circle text-purple-400 mr-2"></i>
-          <strong class="text-white">SBA-Certified HUBZone &bull; SAM.gov Registered:</strong> Nova Titan Systems LLC is SBA-Certified HUBZone (eff. 2026-06-05) and registered on SAM.gov (UEI CZ8BLZMSKZ66, CAGE 170W6). Eligible for HUBZone set-aside and sole-source awards. NAICS 238210 primary. All credentials verifiable at SAM.gov.
+          <strong class="text-white">SBA-Certified HUBZone &bull; SAM.gov Registered:</strong> Nova Titan Systems LLC is SBA-Certified HUBZone (eff. 2026-06-05) and registered on SAM.gov (UEI CZ8BLZMSKZ66, CAGE 170W6). HUBZone certification may support participation in applicable HUBZone procurement opportunities. Primary NAICS 238210. Registration and certification details should be verified through the applicable federal source.
         </p>
       </div>
     </div>
@@ -323,8 +333,25 @@ extra_head: |
 <section class="content py-16 bg-gray-900/50">
   <div class="max-w-7xl mx-auto px-6">
     <h2 class="text-4xl font-bold text-cyan-300 glow mb-12 text-center">NAICS Codes</h2>
+    {%- comment -%}
+      ENTITY/PROCUREMENT RECONCILIATION (2026-08, PR #53): removed the
+      secondary NAICS rows (541519, 541512, 541513, 238990, 541611, 541690,
+      561621). The repo does not contain authoritative evidence that those
+      codes remain part of Nova Titan's active SAM.gov registration or
+      classification set, and the visible section intro previously asserted
+      -- as a fact -- that the full listed set was "registered in SAM.gov,"
+      which this page cannot currently substantiate for anything beyond the
+      verified primary code. Several of the removed descriptions were also
+      legacy IT-consulting/managed-services framing, matching the same class
+      of content already removed from /government/ in PR #52. This is a
+      verification-status and current-positioning decision, not a claim that
+      the removed codes are absent from SAM.gov -- if external registration
+      evidence later confirms a specific code and current delivery scope
+      supports publishing it, it can be restored in a separate,
+      evidence-backed change. Do not replace with speculative codes.
+    {%- endcomment -%}
     <p class="text-center text-gray-300 mb-8 max-w-3xl mx-auto">
-      North American Industry Classification System codes registered in SAM.gov for federal procurement
+      Primary North American Industry Classification System classification used for Nova Titan's current contractor positioning
     </p>
     
     <div class="card rounded-xl p-8 overflow-x-auto">
@@ -336,148 +363,48 @@ extra_head: |
           </tr>
         </thead>
         <tbody class="text-gray-300">
-          <tr class="border-b border-gray-800">
+          <tr>
             <td class="py-4 pr-4">
               <span class="font-mono font-bold text-cyan-400">238210</span>
               <span class="ml-2 text-xs bg-cyan-600/30 text-cyan-300 px-2 py-1 rounded">PRIMARY</span>
             </td>
             <td class="py-4">
-              <div class="font-semibold text-white mb-1">Electrical Contractors and Wiring Installation</div>
-              <div class="text-sm text-gray-400">Network cabling, structured wiring, low-voltage, fiber optic, and communications wiring installation</div>
-            </td>
-          </tr>
-          <tr class="border-b border-gray-800">
-            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541519</span></td>
-            <td class="py-4">
-              <div class="font-semibold text-white mb-1">Other Computer Related Services</div>
-              <div class="text-sm text-gray-400">IT support, helpdesk, hardware installation, technical training, field services</div>
-            </td>
-          </tr>
-          <tr class="border-b border-gray-800">
-            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541512</span></td>
-            <td class="py-4">
-              <div class="font-semibold text-white mb-1">Computer Systems Design Services</div>
-              <div class="text-sm text-gray-400">IT consulting, systems integration, and solution design</div>
-            </td>
-          </tr>
-          <tr class="border-b border-gray-800">
-            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541513</span></td>
-            <td class="py-4">
-              <div class="font-semibold text-white mb-1">Computer Facilities Management Services</div>
-              <div class="text-sm text-gray-400">Data center management, IT infrastructure oversight, managed services</div>
-            </td>
-          </tr>
-          <tr class="border-b border-gray-800">
-            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">238990</span></td>
-            <td class="py-4">
-              <div class="font-semibold text-white mb-1">All Other Specialty Trade Contractors</div>
-              <div class="text-sm text-gray-400">Specialized technology installation, smart building, equipment deployment</div>
-            </td>
-          </tr>
-
-
-          <tr class="border-b border-gray-800">
-            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541611</span></td>
-            <td class="py-4">
-              <div class="font-semibold text-white mb-1">Administrative and General Management Consulting</div>
-              <div class="text-sm text-gray-400">Technology strategy, digital transformation, IT governance</div>
-            </td>
-          </tr>
-          <tr class="border-b border-gray-800">
-            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">541690</span></td>
-            <td class="py-4">
-              <div class="font-semibold text-white mb-1">Other Scientific and Technical Consulting</div>
-              <div class="text-sm text-gray-400">Technology assessments and infrastructure advisory supporting low-voltage scope</div>
-            </td>
-          </tr>
-          <tr>
-            <td class="py-4 pr-4"><span class="font-mono font-bold text-white">561621</span></td>
-            <td class="py-4">
-              <div class="font-semibold text-white mb-1">Security Systems Services</div>
-              <div class="text-sm text-gray-400">Security infrastructure cabling, network support for access control and surveillance platforms <em class="text-yellow-400/70 text-xs">(device installation via licensed partners)</em></div>
+              <div class="font-semibold text-white mb-1">Electrical Contractors and Other Wiring Installation Contractors</div>
+              <div class="text-sm text-gray-400">Structured cabling, communications wiring, low-voltage infrastructure, fiber, and related commercial installation scope</div>
             </td>
           </tr>
         </tbody>
       </table>
+      <p class="text-xs text-gray-500 mt-6">
+        <i class="fas fa-info-circle mr-1"></i>
+        Solicitation-specific NAICS classifications should be confirmed against the requirement and Nova Titan's current registration information.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- PSC Codes -->
+<!-- Procurement Classifications (replaces legacy PSC grid) -->
 <section class="content py-16">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-purple-300 glow mb-12 text-center">Federal Product Service Codes (PSC)</h2>
-    <p class="text-center text-gray-300 mb-8 max-w-3xl mx-auto">
-      Product Service Codes for federal procurement across IT, telecommunications, and field services
-    </p>
-    
-    <div class="card rounded-xl p-8">
-      <div class="grid md:grid-cols-3 gap-6">
-        <div>
-          <h3 class="text-lg font-bold text-purple-300 mb-4">IT Services & Systems</h3>
-          <ul class="space-y-2 text-gray-300 text-sm">
-            <li><span class="font-mono text-purple-400 font-bold">DA01</span> - Systems Analysis</li>
-            <li><span class="font-mono text-purple-400 font-bold">DA10</span> - IT Project Management</li>
-            <li><span class="font-mono text-purple-400 font-bold">DB01</span> - Programming</li>
-            <li><span class="font-mono text-purple-400 font-bold">DB02</span> - Implementation Services</li>
-            <li><span class="font-mono text-purple-400 font-bold">DB10</span> - Software Development</li>
-            <li><span class="font-mono text-purple-400 font-bold">DD01</span> - Systems Development</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-lg font-bold text-cyan-300 mb-4">Network & Infrastructure</h3>
-          <ul class="space-y-2 text-gray-300 text-sm">
-            <li><span class="font-mono text-cyan-400 font-bold">DC01</span> - Facility O&M (Non-Continuous)</li>
-            <li><span class="font-mono text-cyan-400 font-bold">DC10</span> - Continuous Maintenance</li>
-            <li><span class="font-mono text-cyan-400 font-bold">DF01</span> - Telecom/Network Admin</li>
-            <li><span class="font-mono text-cyan-400 font-bold">DF10</span> - Telecom Services</li>
-            <li><span class="font-mono text-cyan-400 font-bold">DK01</span> - Computer Network Services</li>
-            <li><span class="font-mono text-cyan-400 font-bold">DK10</span> - AIS Design/Integration</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-lg font-bold text-green-300 mb-4">Support & Security</h3>
-          <ul class="space-y-2 text-gray-300 text-sm">
-            <li><span class="font-mono text-green-400 font-bold">DG01</span> - Computer Network Support</li>
-            <li><span class="font-mono text-green-400 font-bold">DG10</span> - IT Support Services</li>
-            <li><span class="font-mono text-green-400 font-bold">DG11</span> - IT Help Desk</li>
-            <li><span class="font-mono text-green-400 font-bold">DH01</span> - Data/Information Mgmt</li>
-            <li><span class="font-mono text-green-400 font-bold">DH10</span> - Cyber Security & Backup</li>
-            <li><span class="font-mono text-green-400 font-bold">DJ01</span> - Annual Maintenance</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-lg font-bold text-orange-300 mb-4">Cloud & Processing</h3>
-          <ul class="space-y-2 text-gray-300 text-sm">
-            <li><span class="font-mono text-orange-400 font-bold">DE01</span> - Processing & Storage</li>
-            <li><span class="font-mono text-orange-400 font-bold">DE02</span> - Voice Services</li>
-            <li><span class="font-mono text-orange-400 font-bold">DE10</span> - IT Strategy & Architecture</li>
-            <li><span class="font-mono text-orange-400 font-bold">DE11</span> - Telecom Network Mgmt</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-lg font-bold text-red-300 mb-4">Installation & Maintenance</h3>
-          <ul class="space-y-2 text-gray-300 text-sm">
-            <li><span class="font-mono text-red-400 font-bold">L058</span> - Electronic Equipment Install</li>
-            <li><span class="font-mono text-red-400 font-bold">L060</span> - Communications Equipment Install</li>
-            <li><span class="font-mono text-red-400 font-bold">N063</span> - Electronic Equipment Repair</li>
-            <li><span class="font-mono text-red-400 font-bold">N074</span> - Communications Equip Repair</li>
-            <li><span class="font-mono text-red-400 font-bold">J063</span> - IT & Telecom Equipment Maint</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-lg font-bold text-blue-300 mb-4">Additional Codes</h3>
-          <ul class="space-y-2 text-gray-300 text-sm">
-            <li><span class="font-mono text-blue-400 font-bold">DJ10</span> - Warranty Services</li>
-            <li class="text-gray-500 text-xs italic">+ Additional PSC codes as registered</li>
-          </ul>
-        </div>
-      </div>
+    {%- comment -%}
+      ENTITY/PROCUREMENT RECONCILIATION (2026-08, PR #53): removed the entire
+      "Federal Product Service Codes (PSC)" section and its 26-code
+      IT/cyber/software-oriented grid (Systems Analysis, IT Project
+      Management, Programming, Software Development, IT Support, Help Desk,
+      Cyber Security & Backup, IT Strategy & Architecture, Cloud/Processing,
+      etc.). No file in this repository ties that PSC inventory to current
+      registration or procurement facts, and most of it reinforces a retired
+      IT/cyber positioning. Replaced with a single compact informational
+      card rather than a new speculative PSC list, mirroring the PSC-grid
+      removal already applied to /government/ in PR #52 ("The PSC grid is
+      removed rather than speculatively replaced"). Do not reintroduce a PSC
+      code list without evidence.
+    {%- endcomment -%}
+    <div class="card rounded-xl p-8 max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-purple-300 glow mb-4">Procurement Classifications</h2>
+      <p class="text-gray-300">
+        Primary NAICS 238210 is shown above. Solicitation-specific NAICS and PSC classifications should be confirmed against the requirement and Nova Titan's current registration information before proposal submission.
+      </p>
     </div>
   </div>
 </section>
