@@ -701,11 +701,22 @@
       Replaced with the /leadership/ page, which IS the company's own
       authoritative page about this person. The founder Person entity is retained
       in full -- only the unverified external URL is dropped.
+
+      PR #56 CORRECTION (2026-08): this sub-object previously had no @id and
+      used jobTitle "Chief Executive Officer", making it a second, lightweight
+      Person description competing with the full Person entity declared on
+      /certifications/ and referenced by /leadership/ (@id #founder, jobTitle
+      "Founder & Chief Executive Officer", carries knowsAbout/hasCredential).
+      Added the shared @id so this reference resolves to the SAME canonical
+      Person node instead of describing a second one, and aligned jobTitle to
+      match. No new sameAs/LinkedIn/GitHub added here -- that remains an owner
+      action on the canonical Person node only.
     {%- endcomment -%}
     "founder": {
       "@type": "Person",
+      "@id": "https://novatitan.net/#founder",
       "name": "Traivone Smith",
-      "jobTitle": "Chief Executive Officer",
+      "jobTitle": "Founder & Chief Executive Officer",
       "url": "https://novatitan.net/leadership/"
     },
     "address": {
@@ -721,6 +732,21 @@
       "latitude": 33.5779,
       "longitude": -101.8552
     },
+    {%- comment -%}
+      PR #56 CORRECTION (2026-08): removed the trailing
+      { "@type": "Country", "name": "United States" } entry. This is the
+      single authoritative, sitewide Organization node -- asserting
+      Country-level areaServed here told every crawler Nova Titan serves the
+      entire United States, which contradicts the West Texas operating
+      base / named-Texas-market / project-qualified-additional-markets model
+      already established on /government/ and /certifications/. Documented
+      out-of-Texas project history (see /partners/enterprise/, case studies)
+      does not by itself justify a country-wide Organization-level service
+      claim. Do NOT re-add "United States" or "nationwide"/"national" here.
+      New Mexico is also deliberately NOT added -- it is documented as
+      project-based activity on /government/, not a standing service area of
+      this sitewide entity.
+    {%- endcomment -%}
     "areaServed": [
       { "@type": "City", "name": "Lubbock", "containedInPlace": { "@type": "State", "name": "Texas" } },
       { "@type": "City", "name": "Midland", "containedInPlace": { "@type": "State", "name": "Texas" } },
@@ -728,8 +754,7 @@
       { "@type": "City", "name": "Amarillo", "containedInPlace": { "@type": "State", "name": "Texas" } },
       { "@type": "City", "name": "Houston", "containedInPlace": { "@type": "State", "name": "Texas" } },
       { "@type": "AdministrativeArea", "name": "Dallas-Fort Worth Metroplex", "containedInPlace": { "@type": "State", "name": "Texas" } },
-      { "@type": "State", "name": "Texas" },
-      { "@type": "Country", "name": "United States" }
+      { "@type": "State", "name": "Texas" }
     ],
     "priceRange": "$$",
     "currenciesAccepted": "USD",
