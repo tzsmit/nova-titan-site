@@ -1,0 +1,436 @@
+<!--
+  CANONICAL SOURCE — Nova Titan Systems Capability Statement (2026)
+  ===================================================================
+
+  MAINTAINER NOTE (read before editing):
+
+  - This file is the SINGLE canonical, version-controlled source for the
+    public capability-statement PDF. It replaces the prior binary-only PDF,
+    for which no editable source (Word/Google Doc/InDesign) could be located
+    after a direct search of Drive and the File Library (2026-08 audit).
+
+  - GENERATE ONCE, then COPY THE SAME BYTES to all four public aliases:
+      1. assets/capability-statement/novatitan-capability-statement.pdf
+      2. assets/docs/nova-titan-systems-capability-statement-2026.pdf
+      3. assets/docs/nova-titan-systems-capability-statement-hubzone-2026.pdf
+      4. assets/docs/nova-titan-systems-federal-capability-statement.pdf
+    Do NOT regenerate each alias independently -- independent PDF generation
+    runs can produce different internal metadata/timestamps even from
+    identical HTML, which would break the required byte-identical invariant
+    enforced by .github/workflows/seo-qa.yml (gate #9/#9b/#9c).
+
+  - Generation script: tools/generate_capability_statement_pdf.py
+    Usage: python3 tools/generate_capability_statement_pdf.py
+
+  - LAYOUT NOTE: this template intentionally uses a single-column, stacked
+    section layout rather than CSS flexbox/multi-column. WeasyPrint does not
+    reliably fragment flex/multi-column layouts across page boundaries --
+    an earlier two-column attempt produced large blank gaps and spread onto
+    3 pages. Single-column stacked sections paginate predictably and keep
+    this to one page at the current content length.
+
+  - WHEN GOVERNING FACTS CHANGE (HUBZone dates, SAM status, NAICS, etc.),
+    update the authoritative facts in _includes/head.html FIRST, then bring
+    this source into agreement, then regenerate and re-copy to all aliases.
+
+  - Do NOT put internal pricing, margin, or non-public information in this
+    file -- it is a public buyer-facing document.
+
+  - Every factual claim in this document must be traceable to one of:
+      _includes/head.html (canonical Organization node)
+      /government/index.html (corrected 2026-08, PR #52)
+      /certifications/index.html (corrected 2026-08, PR #53)
+    or direct primary evidence reviewed at the time of writing (see inline
+    comments below for CMBL/TIPS evidence basis). Unverifiable claims are
+    omitted rather than asserted speculatively -- this is the standing
+    governing rule for this document (2026-08, PR #54).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nova Titan Systems LLC — Capability Statement</title>
+<style>
+  @page {
+    size: Letter;
+    margin: 0.42in 0.6in 0.38in 0.6in;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+    color: #1a1a2e;
+    font-size: 8.4pt;
+    line-height: 1.26;
+    margin: 0;
+  }
+  h1, h2, h3, p, ul { margin: 0; padding: 0; }
+  .header {
+    display: table;
+    width: 100%;
+    border-bottom: 3px solid #0d6d8c;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
+  .header-left, .header-right {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .header-right { text-align: right; }
+  .company-name {
+    font-size: 16.5pt;
+    font-weight: bold;
+    color: #0d6d8c;
+    letter-spacing: 0.4px;
+  }
+  .tagline {
+    font-size: 8.5pt;
+    color: #444;
+    font-style: italic;
+    margin-top: 1px;
+  }
+  .contact-block {
+    font-size: 7.8pt;
+    color: #333;
+    line-height: 1.45;
+  }
+  .badge-row {
+    margin: 4px 0 6px 0;
+  }
+  .badge {
+    display: inline-block;
+    background: #0d6d8c;
+    color: #fff;
+    font-size: 7.3pt;
+    font-weight: bold;
+    padding: 2.5px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin: 0 4px 3px 0;
+  }
+  .badge.alt { background: #1a7a4c; }
+  .badge.gray { background: #555; }
+  .section {
+    margin-bottom: 5px;
+  }
+  .section-title {
+    font-size: 9.2pt;
+    font-weight: bold;
+    color: #0d6d8c;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-bottom: 1.3px solid #cfe3ea;
+    padding-bottom: 1.5px;
+    margin-bottom: 3px;
+  }
+  .overview-p { margin-bottom: 1px; }
+  ul.cap-list {
+    margin: 0;
+    padding-left: 13px;
+    columns: 2;
+    column-gap: 18px;
+  }
+  ul.cap-list li {
+    margin-bottom: 2px;
+    font-size: 7.85pt;
+    break-inside: avoid;
+  }
+  ul.cap-list li strong { color: #0d6d8c; }
+  .footnote {
+    font-size: 7pt;
+    color: #666;
+    font-style: italic;
+    margin-top: 2px;
+  }
+  /* Facts strip: Company Snapshot + Certifications + NAICS + Procurement,
+     laid out as a 4-column table so it fragments reliably. */
+  .facts-strip {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-top: 1px solid #d7e6ea;
+    border-bottom: 1px solid #d7e6ea;
+    padding: 4px 0;
+    margin-bottom: 5px;
+  }
+  .facts-col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 8px;
+    border-left: 1px solid #e3edf0;
+    font-size: 7.5pt;
+  }
+  .facts-col:first-child { border-left: none; padding-left: 0; }
+  .facts-col-title {
+    font-size: 7.9pt;
+    font-weight: bold;
+    color: #0d6d8c;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+  .fact-row { margin-bottom: 2px; }
+  .fact-label { color: #555; font-weight: bold; }
+  .fact-value { color: #1a1a2e; }
+  .naics-code {
+    font-family: "Liberation Mono", monospace;
+    font-weight: bold;
+    color: #0d6d8c;
+    font-size: 12pt;
+  }
+  .naics-primary-tag {
+    background: #0d6d8c;
+    color: #fff;
+    font-size: 6.6pt;
+    font-weight: bold;
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  .diff-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .diff-row { display: table-row; }
+  .diff-cell {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 0 8px 3px 0;
+    font-size: 7.85pt;
+  }
+  .diff-cell .diff-title {
+    font-weight: bold;
+    color: #1a7a4c;
+    display: block;
+    margin-bottom: 1px;
+  }
+  .scope-note {
+    background: #fdf6e8;
+    border: 1px solid #ecd9a8;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 7.3pt;
+    color: #6b5423;
+    margin-top: 3px;
+    margin-bottom: 4px;
+  }
+  .footer {
+    border-top: 2px solid #0d6d8c;
+    margin-top: 2px;
+    padding-top: 4px;
+    font-size: 7.1pt;
+    color: #444;
+    display: table;
+    width: 100%;
+  }
+  .footer-left { display: table-cell; }
+  .footer-right {
+    display: table-cell;
+    text-align: right;
+    color: #0d6d8c;
+    font-weight: bold;
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <div class="company-name">NOVA TITAN SYSTEMS LLC</div>
+      <div class="tagline">Division 27/28 Low-Voltage Infrastructure &amp; Field Execution</div>
+    </div>
+    <div class="header-right">
+      <div class="contact-block">
+        3223 S Loop 289, Ste 600 &bull; Lubbock, TX 79423<br>
+        (806) 370-0624 &bull; traivonesmith@novatitan.net<br>
+        novatitan.net
+      </div>
+    </div>
+  </div>
+
+  <div class="badge-row">
+    <span class="badge">SBA-Certified HUBZone Small Business</span>
+    <span class="badge alt">SAM.gov Registration: Active</span>
+    <span class="badge gray">UEI CZ8BLZMSKZ66</span>
+    <span class="badge gray">CAGE 170W6</span>
+    <span class="badge gray">NAICS 238210</span>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Company Overview</div>
+    <p class="overview-p">
+      Nova Titan Systems LLC is a Division 27/28 low-voltage infrastructure
+      contractor and field-execution provider based in Lubbock, Texas,
+      serving commercial, education, healthcare, government, and industrial
+      clients across West Texas and the broader Texas market. Nova Titan
+      provides field execution and project coordination for structured
+      cabling, network physical infrastructure, and security-related
+      low-voltage scope.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Core Capabilities</div>
+    <ul class="cap-list">
+      <li><strong>Structured Cabling</strong> — Cat5e / Cat6 / Cat6A / fiber, horizontal and backbone cabling, terminations, performance testing, labeling per TIA-568</li>
+      <li><strong>MDF / IDF / Rack Buildout</strong> — telecom room buildout, rack installation, patch panels, cable management, telecom bonding/grounding, backboards</li>
+      <li><strong>Network Physical Infrastructure</strong> — patch panel support, network closet remediation, cabling for network switches and equipment (physical-layer support; configuration coordination as required)</li>
+      <li><strong>Wireless Access Point Support</strong> — WAP cabling, mounting support, AP-on-a-stick survey capability, coverage assessment, coordination with network engineers</li>
+      <li><strong>Security-Camera Physical Infrastructure</strong> — IP and analog camera cabling, NVR physical-layer rough-in, coordination with licensed integrators</li>
+      <li><strong>Access-Control Cabling / Rough-In</strong> — card reader cabling, door contact and PIR cabling, ACP homerun cabling, IDF/ACP coordination (cabling and physical-layer scope only)</li>
+      <li><strong>Field Technology / Smart Hands</strong> — site surveys, kiosk data cabling, remote-engineer-assisted installs, hardware swap support, dispatch and documentation coordination</li>
+      <li><strong>Fortinet Firewall Hardware Deployment</strong> — physical installation and field implementation support for Fortinet firewall hardware as part of a broader low-voltage/network infrastructure scope</li>
+      <li><strong>Division 28 Fire-Alarm Coordination</strong> — adjacent low-voltage support and project coordination for fire-alarm scopes; regulated fire-alarm programming, testing, and tagging performed only by properly licensed Texas fire-alarm subcontractors engaged at award</li>
+    </ul>
+    <p class="footnote">
+      Testing, labeling, photos, as-built information, and closeout
+      documentation are provided as required by the project scope and award
+      — not represented as a uniform deliverable on every engagement.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Differentiators</div>
+    <div class="diff-grid">
+      <div class="diff-row">
+        <div class="diff-cell">
+          <span class="diff-title">West Texas Operating Base</span>
+          Headquartered in Lubbock with project-based field coverage across
+          West Texas and the broader Texas market. Scheduling depends on
+          scope, location, and technician availability.
+        </div>
+        <div class="diff-cell">
+          <span class="diff-title">SBA-Certified HUBZone Small Business</span>
+          Eligible to compete for HUBZone opportunities where applicable.
+          HUBZone certification may support participation in applicable
+          HUBZone procurement opportunities, subject to the solicitation and
+          acquisition requirements. Effective 2026-06-05 &bull; Renewal 2029-06-05.
+        </div>
+      </div>
+      <div class="diff-row">
+        <div class="diff-cell">
+          <span class="diff-title">Prime Contractor / Subcontractor Support</span>
+          Nova Titan supports prime contractors as a Division 27/28
+          subcontractor and may pursue direct opportunities where scope,
+          eligibility, and award requirements are satisfied.
+        </div>
+        <div class="diff-cell">
+          <span class="diff-title">Lean, Coordinated Field Execution</span>
+          Lean project coordination with scope-specific field execution and
+          documented closeout.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Government &amp; Prevailing-Wage Readiness</div>
+    <p class="overview-p">
+      Prevailing-wage and payroll-documentation requirements are reviewed and
+      incorporated when applicable to the solicitation or award, with
+      qualified subcontractor support engaged where required. SAM.gov
+      registration is active and government/state procurement inquiries are
+      welcomed for scope consistent with current registration and
+      qualifications.
+    </p>
+  </div>
+
+  <!-- FACTS STRIP: Company Snapshot | Certifications | Procurement Reg. | NAICS -->
+  <div class="facts-strip">
+    <div class="facts-col">
+      <div class="facts-col-title">Company Snapshot</div>
+      <div class="fact-row"><span class="fact-label">Founded:</span> <span class="fact-value">Sep 17, 2025</span></div>
+      <div class="fact-row"><span class="fact-label">Owner:</span> <span class="fact-value">Traivone Smith</span></div>
+      <div class="fact-row"><span class="fact-label">HQ:</span> <span class="fact-value">Lubbock, TX</span></div>
+      <div class="fact-row"><span class="fact-label">Size:</span> <span class="fact-value">Small Business</span></div>
+      <div class="fact-row"><span class="fact-label">Phone:</span> <span class="fact-value">(806) 370-0624</span></div>
+    </div>
+    <div class="facts-col">
+      <div class="facts-col-title">Certifications &amp; Registrations</div>
+      <div class="fact-row">
+        <span class="fact-value"><strong>SBA-Certified HUBZone Small Business</strong><br>
+        Effective 06/05/2026 &bull; Renewal 06/05/2029</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-value"><strong>SAM.gov Registration</strong><br>
+        Active &bull; UEI: CZ8BLZMSKZ66 &bull; CAGE: 170W6</span>
+      </div>
+      <!--
+        Person-level credential only (never Organization-level).
+        Achievement 2025-04-22, valid through 2027-04-22,
+        validation ID 7233163615TS — matches _includes/head.html and
+        /certifications/index.html. Do not restate this as a company
+        certification or as evidence of a managed-security/SOC practice.
+      -->
+      <div class="fact-row">
+        <span class="fact-value"><strong>Traivone Smith</strong> — Fortinet Certified
+        Associate in Cybersecurity<br>
+        Achievement 2025-04-22 &bull; Valid through 2027-04-22 &bull; ID 7233163615TS</span>
+      </div>
+    </div>
+    <div class="facts-col">
+      <!--
+        Evidence basis (2026-08, PR #54):
+        - CMBL: directly evidenced by a Texas Parks & Wildlife procurement
+          notice email identifying the recipient as "a member of the
+          Centralized Master Bidders List (CMBL)." Treated as supported.
+        - TIPS: TIPS eBid System email confirmed supplier registration was
+          activated, followed by matching bid-opportunity notices. This
+          evidences an ACTIVE SUPPLIER REGISTRATION only -- it does NOT
+          evidence an awarded TIPS cooperative contract. Wording below is
+          deliberately scoped to "supplier registration," not "contract,"
+          "cooperative contract," or "contract vehicle."
+      -->
+      <div class="facts-col-title">Procurement Registrations &amp; Bid Networks</div>
+      <div class="fact-row">
+        <span class="fact-value"><strong>Texas CMBL</strong><br>
+        Centralized Master Bidders List — listed/member</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-value"><strong>TIPS eBid Supplier Registration</strong><br>
+        Active</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-value"><strong>Service Area</strong><br>
+        West Texas operating base (Lubbock, Midland/Odessa, Abilene, Big
+        Spring, Amarillo, Brownfield) with project-based Texas and regional
+        field coverage.</span>
+      </div>
+    </div>
+    <div class="facts-col">
+      <div class="facts-col-title">NAICS Code</div>
+      <div class="fact-row">
+        <span class="naics-code">238210</span><span class="naics-primary-tag">PRIMARY</span>
+      </div>
+      <div class="fact-row" style="margin-top:3px;">
+        Electrical Contractors and Other Wiring Installation Contractors
+      </div>
+      <p class="footnote" style="margin-top:5px;">
+        Solicitation-specific NAICS classifications should be confirmed
+        against the requirement and Nova Titan's current registration
+        information.
+      </p>
+    </div>
+  </div>
+
+  <div class="scope-note">
+    <strong>Division 28 / Fire-Alarm Scope Boundary:</strong> Nova Titan
+    provides Division 28 security-infrastructure support, including access
+    control cabling, security-camera cabling, and physical-layer rough-in.
+    Regulated fire-alarm programming, testing, and tagging are performed by
+    properly licensed Texas fire-alarm subcontractors engaged at award.
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      Nova Titan Systems LLC &bull; UEI: CZ8BLZMSKZ66 &bull; CAGE: 170W6 &bull;
+      NAICS: 238210 (Primary) &bull; SAM.gov Registration: Active &bull;
+      SBA-Certified HUBZone Small Business
+    </div>
+    <div class="footer-right">novatitan.net/government &bull; novatitan.net/quote</div>
+  </div>
+
+</body>
+</html>
