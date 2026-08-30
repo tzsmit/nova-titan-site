@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Case Studies | Field Service Projects | Nova Titan"
-description: "Field service projects spanning low-voltage infrastructure and cybersecurity. Structured cabling, network deployment, and field services case studies."
-keywords: "commercial IT case studies, enterprise IT projects, healthcare IT services, rural infrastructure deployment, digital equity projects, West Texas IT contractor, government-ready IT services"
+description: "Documented commercial field-execution projects: network stack deployment, LAN migration, and smart hands support delivered as a subcontractor to prime contractors in Texas and New Mexico."
+keywords: "commercial network field execution, LAN migration case study, smart hands technician, subcontractor field execution, West Texas IT contractor, Lubbock TX network deployment"
 ---
 
 <!-- Case Studies Main Page -->
@@ -16,26 +16,26 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
         Delivering Results
       </h1>
       <p class="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 fade-in">
-        Real-world commercial and government-ready IT infrastructure projects demonstrating our commitment to reliable field execution
+        Real-world commercial field-execution projects demonstrating our commitment to reliable, documented on-site delivery
       </p>
       
       <!-- Key Stats -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto fade-in">
         <div class="card rounded-xl p-4 text-center">
           <div class="text-3xl font-bold text-cyan-300 mb-1">SAM.gov</div>
-          <div class="text-sm text-gray-400">Active Since 2024</div>
+          <div class="text-sm text-gray-400">Registration Active</div>
         </div>
         <div class="card rounded-xl p-4 text-center">
-          <div class="text-3xl font-bold text-green-300 mb-1">Healthcare</div>
-          <div class="text-sm text-gray-400">Medical IT</div>
+          <div class="text-3xl font-bold text-green-300 mb-1">3</div>
+          <div class="text-sm text-gray-400">Published Case Studies</div>
         </div>
         <div class="card rounded-xl p-4 text-center">
-          <div class="text-3xl font-bold text-purple-300 mb-1">Rural</div>
-          <div class="text-sm text-gray-400">Community Focus</div>
+          <div class="text-3xl font-bold text-purple-300 mb-1">TX + NM</div>
+          <div class="text-sm text-gray-400">Documented Project Locations</div>
         </div>
         <div class="card rounded-xl p-4 text-center">
-          <div class="text-3xl font-bold text-orange-300 mb-1">5+ States</div>
-          <div class="text-sm text-gray-400">Service Coverage</div>
+          <div class="text-3xl font-bold text-orange-300 mb-1">Commercial</div>
+          <div class="text-sm text-gray-400">Field Execution</div>
         </div>
       </div>
       
@@ -68,31 +68,19 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
     <div class="flex flex-wrap gap-3 justify-center">
       <button class="filter-btn active" data-filter="all">
         <i class="fas fa-th mr-2"></i>
-        All Projects (6)
+        All Projects (3)
       </button>
       <button class="filter-btn" data-filter="commercial">
         <i class="fas fa-briefcase mr-2"></i>
-        Commercial (6)
+        Commercial (3)
       </button>
       <button class="filter-btn" data-filter="infrastructure">
         <i class="fas fa-network-wired mr-2"></i>
         Infrastructure
       </button>
-      <button class="filter-btn" data-filter="healthcare">
-        <i class="fas fa-heartbeat mr-2"></i>
-        Healthcare
-      </button>
-      <button class="filter-btn" data-filter="security">
-        <i class="fas fa-shield-alt mr-2"></i>
-        Security
-      </button>
       <button class="filter-btn" data-filter="texas">
         <i class="fas fa-map-marker-alt mr-2"></i>
         Texas
-      </button>
-      <button class="filter-btn" data-filter="new-mexico">
-        <i class="fas fa-map-marker-alt mr-2"></i>
-        New Mexico
       </button>
     </div>
   </div>
@@ -107,14 +95,14 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
         Featured Projects
       </h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
-        Flagship projects showcasing our capabilities across commercial enterprise security, healthcare IT, and multi-site deployments
+        Flagship projects showcasing our capabilities in network infrastructure field execution for commercial enterprise clients
       </p>
     </div>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 case-studies-grid">
       
       {% for study in site.data.case_studies %}
-      {% if study.featured %}
+      {% if study.featured and study.publish_status == "published" %}
       
       <article class="case-study-card card rounded-2xl p-6 fade-in group hover:border-{{ study.color }}-400/40 transition-all cursor-pointer" 
                data-categories="{{ study.government_type | downcase }} {{ study.service_type | downcase | replace: ' ', '-' }} {{ study.industry | downcase | replace: '/', '-' | replace: ' ', '-' }} {{ study.region | downcase | replace: ' ', '-' }}">
@@ -193,14 +181,14 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-white mb-4">All Case Studies</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">
-        Additional projects demonstrating year-round healthcare IT support, commercial contractor services, and enterprise network deployments
+        Additional projects demonstrating commercial field-service and network infrastructure support
       </p>
     </div>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 case-studies-grid">
       
       {% for study in site.data.case_studies %}
-      {% unless study.featured %}
+      {% if study.publish_status == "published" and study.featured != true %}
       
       <article class="case-study-card card rounded-2xl p-6 fade-in group hover:border-{{ study.color }}-400/40 transition-all cursor-pointer" 
                data-categories="{{ study.government_type | downcase }} {{ study.service_type | downcase | replace: ' ', '-' }} {{ study.industry | downcase | replace: '/', '-' | replace: ' ', '-' }} {{ study.region | downcase | replace: ' ', '-' }}">
@@ -266,7 +254,7 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
         
       </article>
       
-      {% endunless %}
+      {% endif %}
       {% endfor %}
       
     </div>
@@ -378,8 +366,8 @@ keywords: "commercial IT case studies, enterprise IT projects, healthcare IT ser
       Your Project Could Be Next
     </h2>
     <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-      Whether you're a federal agency, state government, or commercial enterprise, Nova Titan Systems has the 
-      expertise and credentials to deliver mission-critical IT infrastructure in underserved communities.
+      Nova Titan Systems supports prime contractors and commercial enterprises as a field-execution 
+      subcontractor, with documented project delivery in Texas and New Mexico.
     </p>
     <div class="flex flex-wrap gap-4 justify-center mb-8">
       <a href="/quote/" class="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-lg inline-flex items-center transition-all">
@@ -444,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function() {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Case Studies - Nova Titan Systems",
-  "description": "Commercial and government-ready IT infrastructure case studies from Nova Titan Systems. Documented field service projects.",
+  "description": "Documented commercial field-execution case studies from Nova Titan Systems, delivered as a subcontractor to prime contractors in Texas and New Mexico.",
   "url": "https://novatitan.net/case-studies/",
   "publisher": {
     "@type": "Organization",
