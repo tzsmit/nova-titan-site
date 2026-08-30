@@ -15,6 +15,13 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python test dependencies
+        run: pip install --quiet pytest
+
       - name: Build site
         run: bundle exec jekyll build
 
@@ -326,6 +333,29 @@ jobs:
               print("SEO QA FAILURES:"); [print("  -",f) for f in sorted(set(fail))]; sys.exit(1)
           print("Sitemap/schema/link/legacy checks passed.")
           PY
+
+      # ---------------------------------------------------------------------
+      # PR #59 — IndexNow. Deterministic, network-free unit tests for the
+      # URL-selection logic in tools/indexnow_lib.py (never calls the real
+      # IndexNow endpoint from CI), plus a hygiene check that the committed
+      # key-verification file is exactly the one the submission script and
+      # documentation expect. IndexNow itself is a POST-deploy, separate
+      # workflow (.github/workflows/indexnow.yml) that can never fail this
+      # build or the site deployment — see that file's header comment.
+      # ---------------------------------------------------------------------
+      - name: IndexNow — deterministic unit tests
+        run: python3 -m pytest tools/test_indexnow_lib.py -v
+
+      - name: IndexNow — key file hygiene
+        run: |
+          set -euo pipefail
+          KEYFILES=$(find . -maxdepth 1 -regextype posix-extended \
+            -regex './[a-zA-Z0-9-]{8,128}\.txt' | grep -v '^\./\(robots\|humans\|security\)\.txt$' || true)
+          COUNT=$(echo -n "$KEYFILES" | grep -c . || true)
+          test "$COUNT" = "1" || { echo "FAIL: expected exactly 1 IndexNow key file at repo root, found: $KEYFILES"; exit 1; }
+          KEYFILE=$(echo "$KEYFILES" | head -1)
+          test -f "_site/$(basename "$KEYFILE")" || { echo "FAIL: key file not present in built _site/"; exit 1; }
+          echo "  ok  IndexNow key file: $KEYFILE"
 
       # External links only. Network flakiness must not fail the build, but
       # same-origin breakage is already a hard failure above.

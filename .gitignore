@@ -20,3 +20,8 @@ nova-titan-site/
 # Local bundler artifacts (do not commit)
 vendor/
 .bundle/
+
+# Python test artifacts (tools/test_indexnow_lib.py, PR #59)
+__pycache__/
+.pytest_cache/
+*.pyc

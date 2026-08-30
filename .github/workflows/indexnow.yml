@@ -1,0 +1,87 @@
+name: IndexNow (post-deploy crawl notification)
+
+# --------------------------------------------------------------------------
+# PR #59 — AI Search Discovery / IndexNow / Crawl Measurement
+#
+# WHAT THIS IS: a best-effort notification to Bing's IndexNow protocol that
+# some subset of novatitan.net's PUBLIC, INDEXABLE pages changed, so Bing
+# (and IndexNow's other participating engines: Yandex, Naver, Seznam.cz,
+# Yep) can re-crawl sooner than their normal schedule. Bing's own index is
+# also a known upstream input to some AI answer engines (e.g. Copilot),
+# which is the sole reason this is in scope for the 2026 AI-search brief.
+#
+# WHAT THIS IS NOT:
+#   - This is NOT Google's indexing API. It has no effect on Google Search,
+#     AI Overviews, or AI Mode.
+#   - This does NOT directly notify OpenAI/ChatGPT. ChatGPT Search uses its
+#     own independent crawler (OAI-SearchBot); see INDEXNOW.md and §8/§9 of
+#     the governing brief for why no OAI-SearchBot-specific change was made.
+#
+# NON-NEGOTIABLE SAFETY REQUIREMENT (brief §6/§24):
+# IndexNow failure must NEVER fail the site deployment. This workflow is
+# ENTIRELY SEPARATE from both the Pages deployment and from the SEO QA hard
+# gate (seo-qa.yml) -- it triggers only AFTER GitHub Pages reports the
+# deployment as already complete, and every step that talks to the network
+# is `continue-on-error: true` as a second, redundant layer of protection on
+# top of tools/submit_indexnow.py's own internal try/except-and-exit-0
+# behavior. A red run of THIS workflow can never block a merge, a deploy,
+# or any other workflow.
+# --------------------------------------------------------------------------
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    # Only proceed for a SUCCESSFUL production deploy of main. A failed or
+    # in-progress Pages build must not trigger a submission of (possibly
+    # stale, possibly not-yet-live) URLs.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+
+      - name: Set up Ruby (to build the same _site IndexNow reads from)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Determine before/after commits
+        id: shas
+        run: |
+          AFTER="${{ github.event.workflow_run.head_sha }}"
+          if [ -z "$AFTER" ]; then AFTER="$(git rev-parse HEAD)"; fi
+          BEFORE="$(git rev-parse "${AFTER}~1" 2>/dev/null || echo '')"
+          echo "after=$AFTER" >> "$GITHUB_OUTPUT"
+          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
+
+      - name: Submit changed URLs to IndexNow
+        continue-on-error: true
+        env:
+          INDEXNOW_BEFORE_SHA: ${{ steps.shas.outputs.before }}
+          INDEXNOW_AFTER_SHA: ${{ steps.shas.outputs.after }}
+        run: python3 tools/submit_indexnow.py
+
+      - name: Result note
+        if: always()
+        run: |
+          echo "IndexNow submission attempted. This workflow's outcome does" \
+               "not affect and was not affected by the site deployment."
