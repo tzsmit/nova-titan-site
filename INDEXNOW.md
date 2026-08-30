@@ -1,6 +1,7 @@
-# IndexNow — Crawl-Notification Protocol (PR #59)
+# IndexNow — Crawl-Notification Protocol (PR #59, hotfixed in PR #60)
 
-**Last verified:** 2026-08-30, against `main` post-PR #58 (`e816e45`).
+**Last verified:** 2026-08-30, against `main` post-PR #59 merge
+(`e43a82c58458679bb55c6793790582f395f0427f`).
 
 ## What this is (and is not)
 
@@ -88,8 +89,9 @@ push to main
    ▼
 GitHub Pages workflow "pages build and deployment" (existing, unmodified)
    │  (this is GitHub's own managed workflow — not a file in this repo;
-   │   API path: dynamic/pages/pages-build-deployment -- see the NAME vs.
-   │   PATH note below the "Why a workflow_run trigger" heading)
+   │   API path: dynamic/pages/pages-build-deployment -- see the
+   │   "Workflow DEFINITION name vs. RUN-RECORD display name" note below
+   │   the "Why a workflow_run trigger" heading)
    ▼
    success ──────────────────────────────────────────────┐
    │                                                       │
@@ -149,30 +151,75 @@ deployment is driven by GitHub's own managed Pages workflow — there is no
 dependency onto. `workflow_run` is the documented mechanism for triggering
 a workflow in a **different** workflow file after another one completes.
 
-**Workflow NAME vs. API PATH (PR #59 review follow-up, 2026-08, second
-review round -- this was a real merge blocker, fixed here):**
-`workflow_run.workflows` in `.github/workflows/indexnow.yml` filters by the
-triggering workflow's **name**, not by any path-like identifier. Confirmed
-directly against this repo's live GitHub Actions API
-(`gh api repos/tzsmit/nova-titan-site/actions/runs`) on a real, successful
-production deployment:
+**Workflow DEFINITION name vs. RUN-RECORD display name (PR #60 hotfix,
+2026-08 -- supersedes the PR #59 round-2 interpretation below, which was
+live-production-DISPROVEN):**
 
-| Field | Value |
-| --- | --- |
-| Workflow **name** (what `workflow_run.workflows` must match) | `pages build and deployment` |
-| GitHub API/dashboard **path** (NOT what `workflow_run.workflows` matches) | `dynamic/pages/pages-build-deployment` |
+`workflow_run.workflows` in `.github/workflows/indexnow.yml` filters by a
+workflow's **registered definition name** — the `name` field returned by
+the GitHub Actions **workflow-definition** endpoint
+(`GET /repos/{owner}/{repo}/actions/workflows`) — **not** by the cosmetic
+display label shown on individual **run records** (`GET
+/repos/{owner}/{repo}/actions/runs`, or the run-scoped variant
+`.../actions/workflows/{id}/runs`). For GitHub's own managed Pages
+workflow in this repo, those two endpoints report **two different values**
+for the identical workflow (`workflow_id: 179842344`, `path:
+dynamic/pages/pages-build-deployment`):
 
-The trigger was previously written as `workflows: ["pages-build-deployment"]`
-— the path basename, not the actual workflow name. That value would **never
-have matched** a real deployment, so this workflow would silently never
-have fired in production despite passing CI (CI cannot execute this
-workflow_run-triggered job during a PR at all, so nothing short of
-comparing against the live API could have caught this). It is now
-corrected to `workflows: ["pages build and deployment"]`, with an added
-`branches: [main]` filter under `workflow_run` as defense-in-depth
-alongside the existing job-level `head_branch == 'main'` / `conclusion ==
-'success'` gate (which remains unchanged and is still the primary
-production-safety condition).
+| Endpoint | Field returned | Value |
+| --- | --- | --- |
+| Workflow **definition** (`.../actions/workflows`) — **what `workflow_run.workflows` must match** | `name` | `pages-build-deployment` |
+| Individual **run record** (`.../actions/runs`) — cosmetic UI label only, NOT a match target | `name` | `pages build and deployment` |
+| Both endpoints (unambiguous, unaffected by this issue) | `path` | `dynamic/pages/pages-build-deployment` |
+
+**PR #59 round 2 got this backwards.** It queried the run-listing endpoint
+on a real deployment, saw `name: "pages build and deployment"`, concluded
+that was "the actual workflow name," and changed the trigger from
+`workflows: ["pages-build-deployment"]` to `workflows: ["pages build and
+deployment"]` — reasoning that the hyphenated form was merely "the path
+basename" and could never match. That reasoning was itself independently
+verified (27/27 tests, Jekyll build, SEO-QA replication) and approved, and
+PR #59 was merged on that basis.
+
+**Live production then disproved it.** After PR #59 merged
+(`e43a82c58458679bb55c6793790582f395f0427f`) and the real Pages deployment
+completed successfully (run `33325949629`, `conclusion: success`,
+`2026-08-30T17:41:59Z`), the IndexNow workflow recorded **zero**
+`workflow_run`-triggered runs after 20+ minutes of polling — exactly the
+failure mode round 2 was supposed to prevent. Re-querying the
+workflow-**definition** endpoint (as opposed to the run-listing endpoint)
+showed the registered `name` for that workflow is `pages-build-deployment`
+(hyphenated) — the value round 2 removed. This is also corroborated by a
+currently-maintained, purpose-built third-party GitHub Action for this
+exact integration pattern (GitHub Pages → IndexNow via `workflow_run`),
+[`jakob-bagterp/index-now-submit-sitemap-urls-action`](https://jakob-bagterp.github.io/index-now-for-python/user-guide/github-actions/automated-workflows/#github-pages),
+whose documented working example uses:
+```yaml
+on:
+  workflow_run:
+    workflows: [pages-build-deployment]
+    types: [completed]
+```
+
+**Resolution (PR #60):** the trigger is restored to
+`workflows: ["pages-build-deployment"]` — the registered workflow-definition
+name. The `branches: [main]` filter under `workflow_run` (added in round 2
+as defense-in-depth) is unchanged and retained, alongside the existing
+job-level `head_branch == 'main'` / `conclusion == 'success'` gate (also
+unchanged, and still the primary production-safety condition). No other
+part of this workflow — the exact-deployed-SHA checkout, `fetch-depth: 2`,
+`continue-on-error` failure isolation, or `workflow_dispatch` — was touched
+by this hotfix.
+
+**Real end-to-end acceptance test for this fix:** unlike round 2 (which
+could only be verified by reasoning about the live API, since
+`workflow_run`-triggered jobs cannot execute during a PR's own CI), this
+fix's true test is the next successful Pages deployment on `main` *after
+this hotfix itself merges* — i.e., the merge of PR #60 is the real trigger
+event. A manual `workflow_dispatch` run is **not** a valid test of this
+fix: it exercises the Python submission plumbing but bypasses the
+`workflow_run.workflows` filter entirely, so it would tell us nothing about
+whether the automatic Pages→IndexNow handoff actually works.
 
 ### Why URL selection is git-diff-driven, not "resubmit the whole sitemap every time"
 
