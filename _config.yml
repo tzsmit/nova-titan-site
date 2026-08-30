@@ -192,6 +192,13 @@ exclude:
   # low-quality indexable URL. Excluded from the BUILD ONLY; the file remains
   # in the repository as the editable source of truth.
   - assets/docs/source
+  # PR #59 REVIEW FOLLOW-UP (2026-08). Internal developer documentation for
+  # the IndexNow implementation -- not a public page, has no layout/H1/meta
+  # description, and was never intended to be served. Unlike the IndexNow key
+  # file below, this one has NO reason to remain publicly reachable, so a
+  # full `exclude:` (not just `sitemap: false`) is correct here: it must not
+  # be copied into _site/ at all.
+  - INDEXNOW.md
   #
   # NOT excluded in this pass, deliberately:
   #   assets/js/download-handler.js -- dead code, but it lives under assets/ and
@@ -295,6 +302,21 @@ defaults:
       sitemap: false
   - scope:
       path: "assets/docs/nova-titan-systems-federal-capability-statement.pdf"
+    values:
+      sitemap: false
+  # --- IndexNow key-verification file: keep publicly served (HTTP 200 at the
+  #     repo-root path is REQUIRED by the IndexNow protocol -- Bing fetches it
+  #     to prove domain ownership), but keep it OUT of sitemap.xml. It carries
+  #     no front matter, so without this it is a Jekyll "static file" and
+  #     jekyll-sitemap would otherwise include it in the sitemap by default;
+  #     the URL-selection logic in tools/indexnow_lib.py also has a direct
+  #     file->URL mapping path, so an unintended sitemap entry here could
+  #     cause the tool to submit its own verification-key URL to IndexNow.
+  #     Same `sitemap: false`-via-`defaults` mechanism as the PDF aliases
+  #     above (static files cannot carry their own front matter). See
+  #     INDEXNOW.md and PR #59 review follow-up (2026-08).
+  - scope:
+      path: "0241145aa37aab753ad44f042523ea8b.txt"
     values:
       sitemap: false
 
