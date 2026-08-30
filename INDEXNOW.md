@@ -49,6 +49,25 @@ connection.
   There is no equivalent of an API secret to protect here.
 - **How it was generated:** a random 32-character lowercase-hex string,
   satisfying the spec's 8–128 character `[a-zA-Z0-9-]` requirement.
+- **Jekyll build hygiene (PR #59 review follow-up, 2026-08):** this file has
+  no YAML front matter, so Jekyll treats it as a plain **static file** and
+  copies it into `_site/` verbatim (this is required -- the key must stay
+  publicly reachable at the site root). Without further configuration,
+  `jekyll-sitemap` would ALSO include static files in `sitemap.xml` by
+  default, and `tools/indexnow_lib.py`'s changed-file mapper has a direct
+  file→URL matching path (`"/" + f` against sitemap membership) -- so an
+  unguarded key file could theoretically cause the tool to submit its own
+  verification-key URL to IndexNow. `_config.yml`'s `defaults:` block sets
+  `sitemap: false` scoped exactly to this filename (the same mechanism
+  already used for the three historical capability-statement PDF aliases,
+  since static files cannot carry their own front matter). The key file
+  therefore remains at HTTP 200 for Bing's ownership check, but is never a
+  `sitemap.xml` entry and can never be selected for submission.
+  `.github/workflows/seo-qa.yml`'s "IndexNow — key file hygiene" step
+  hard-gates all three invariants: the key file is deployed, its URL is
+  absent from `sitemap.xml`, and this document itself (`INDEXNOW.md`,
+  internal developer documentation, listed under `_config.yml`'s
+  `exclude:`) never appears in `_site/`.
 - **How it's managed going forward:** the key is a single source of
   truth read by three places, which must always agree:
   1. the file itself (`{key}.txt` at repo root),
@@ -81,7 +100,7 @@ GitHub Pages "pages-build-deployment" (existing, unmodified)
                                                  job: continue-on-error: true
                                                     │
                                                     ▼
-                                                 checkout main, jekyll build
+                                     checkout EXACT deployed SHA†, jekyll build
                                                     │
                                                     ▼
                                                  tools/submit_indexnow.py
@@ -104,6 +123,20 @@ GitHub Pages "pages-build-deployment" (existing, unmodified)
                                                     ▼
                                                  log result, exit 0 regardless
 ```
+
+† **Checkout ref (PR #59 review follow-up, 2026-08):** for the `workflow_run`
+trigger, the checkout step pins `ref:` to
+`github.event.workflow_run.head_sha` -- the exact commit the triggering Pages
+deployment built -- NOT the `main` branch tip. Checking out `main` here was a
+race condition: if a newer commit landed on `main` between the deploy
+completing and this job starting, the job would build `sitemap.xml` from the
+newer commit while still diffing from the older, already-deployed SHA,
+producing a changed-URL set that didn't correspond to what was actually just
+deployed. `workflow_dispatch` (manual runs) has no specific deployment to pin
+to, so it continues to use the current `main` tip. `fetch-depth: 2` is
+unchanged and remains sufficient: checking out a specific SHA at depth 2
+still fetches that commit's immediate parent, which is what the "Determine
+before/after commits" step needs to resolve `${AFTER}~1`.
 
 ### Why a `workflow_run` trigger on `pages-build-deployment`
 
@@ -133,17 +166,30 @@ by the receiving engines. `tools/indexnow_lib.py` instead:
    URL that isn't in the sitemap can never be selected, full stop.
 4. Applies a second, defense-in-depth denylist
    (`DENYLIST_PATH_SUBSTRINGS`) that explicitly blocks `/thank-you/`,
-   `/apply-tech/`, `/amazon-security/`, `/va-healthcare/`, `/dyess-afb/`
-   even in the hypothetical case of a future sitemap-generation
-   regression.
+   `/apply-tech/`, `/amazon-security/`, `/va-healthcare/`, `/dyess-afb/`,
+   and the IndexNow key-verification file's own URL (PR #59 review
+   follow-up, 2026-08) even in the hypothetical case of a future
+   sitemap-generation regression.
 5. Only when a change touches a shared template/layout/config file
-   (`_includes/`, `_layouts/`, `assets/css/`, `_config.yml`) does it fall
-   back to the full (currently ~35-URL) sitemap — because in that case
-   every page's rendered output could plausibly have changed, and that is
-   an officially-justified exception, not routine noise.
+   (`_includes/`, `_layouts/`, `assets/css/`, `_config.yml`) — **or one of
+   three explicitly-verified sitewide `_data/*.yml` files** (PR #59 review
+   follow-up, 2026-08): `_data/nav.yml` (consumed by `_includes/header.html`
+   on every page), `_data/testimonials.yml` and
+   `_data/testimonials_stats.yml` (both consumed by `_includes/head.html`'s
+   AggregateRating/Review JSON-LD on every page) — does it fall back to the
+   full (currently ~35-URL) sitemap, because in either case every page's
+   rendered output could plausibly have changed, and that is an
+   officially-justified exception, not routine noise. This is an explicit,
+   individually-verified allowlist, **not** a blanket "treat all `_data/*`
+   as global" rule: `_data/home.yml` is confirmed dormant (nothing in the
+   repo references `site.data.home`) and deliberately does NOT trigger this
+   path; `_data/case_studies.yml` keeps its own narrower, more precise
+   mapping (to `/case-studies/*` only) rather than being added here.
 
-This is verified by 20 deterministic, network-free unit tests in
-`tools/test_indexnow_lib.py` (run via `python3 -m pytest
+This is verified by 27 deterministic, network-free unit tests (20 original +
+7 added in the 2026-08 review follow-up, covering the sitewide `_data/*.yml`
+triggers, the `_data/home.yml` negative case, and the key-file denylist
+entry) in `tools/test_indexnow_lib.py` (run via `python3 -m pytest
 tools/test_indexnow_lib.py -v`, wired into `seo-qa.yml` as a hard gate).
 
 ### Failure isolation (non-negotiable per the governing brief)

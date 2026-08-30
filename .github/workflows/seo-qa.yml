@@ -354,8 +354,29 @@ jobs:
           COUNT=$(echo -n "$KEYFILES" | grep -c . || true)
           test "$COUNT" = "1" || { echo "FAIL: expected exactly 1 IndexNow key file at repo root, found: $KEYFILES"; exit 1; }
           KEYFILE=$(echo "$KEYFILES" | head -1)
-          test -f "_site/$(basename "$KEYFILE")" || { echo "FAIL: key file not present in built _site/"; exit 1; }
-          echo "  ok  IndexNow key file: $KEYFILE"
+          KEYBASENAME=$(basename "$KEYFILE")
+
+          # (a) key file must still be publicly deployed -- required by the
+          # IndexNow protocol (Bing fetches https://<host>/<key>.txt to prove
+          # domain ownership).
+          test -f "_site/$KEYBASENAME" || { echo "FAIL: key file not present in built _site/"; exit 1; }
+          echo "  ok  IndexNow key file deployed: $KEYFILE"
+
+          # (b) PR #59 review follow-up (2026-08): the key file has no front
+          # matter, so Jekyll treats it as a static file that jekyll-sitemap
+          # would include by default. _config.yml now sets `sitemap: false`
+          # for it via `defaults:` -- assert that actually held, because the
+          # URL-selection logic in tools/indexnow_lib.py has a direct
+          # file->URL mapping path that could otherwise submit the
+          # verification-key URL itself to IndexNow.
+          ! grep -q "$KEYBASENAME" _site/sitemap.xml || { echo "FAIL: IndexNow key URL leaked into _site/sitemap.xml"; exit 1; }
+          echo "  ok  IndexNow key URL absent from sitemap.xml"
+
+          # (c) INDEXNOW.md is internal developer documentation, not a public
+          # page. _config.yml now lists it under `exclude:` -- assert it never
+          # gets copied into the public build.
+          test ! -f _site/INDEXNOW.md || { echo "FAIL: _site/INDEXNOW.md exists -- internal dev doc must not be published"; exit 1; }
+          echo "  ok  INDEXNOW.md absent from _site/"
 
       # External links only. Network flakiness must not fail the build, but
       # same-origin breakage is already a hard failure above.

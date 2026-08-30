@@ -49,10 +49,24 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
+      # PR #59 REVIEW FOLLOW-UP (2026-08): checkout the EXACT SHA the
+      # triggering deployment built, not the branch tip. `ref: main` here was
+      # a race condition -- if another commit landed on `main` between the
+      # Pages deploy completing and this job actually starting, the job would
+      # build sitemap.xml from a NEWER commit while `github.event.workflow_run
+      # .head_sha` (used below to compute the git diff) still pointed at the
+      # OLDER, already-deployed commit. That mismatch could select a stale
+      # set of "changed" URLs relative to what was actually just deployed.
+      # `workflow_dispatch` (manual runs) has no specific deployment to pin
+      # to, so it continues to use the current `main` tip by design.
+      # `fetch-depth: 2` is kept: checking out a specific SHA with depth 2
+      # still fetches that commit plus its parent, which is exactly what the
+      # "Determine before/after commits" step below needs to resolve
+      # `${AFTER}~1`.
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || 'main' }}
           fetch-depth: 2
 
       - name: Set up Ruby (to build the same _site IndexNow reads from)

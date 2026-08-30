@@ -53,6 +53,51 @@ def test_global_template_change_detected():
     assert not is_global_template_change(["README.md"])
 
 
+# --- PR #59 review follow-up (Finding 2): sitewide _data/*.yml triggers ----
+
+def test_nav_data_change_is_global():
+    # _data/nav.yml is consumed by _includes/header.html (site nav, every
+    # page) -- a change here can affect every rendered page's nav.
+    assert is_global_template_change(["_data/nav.yml"])
+
+
+def test_testimonials_data_change_is_global():
+    # _data/testimonials.yml is consumed by _includes/head.html
+    # (AggregateRating/Review JSON-LD emitted on every page).
+    assert is_global_template_change(["_data/testimonials.yml"])
+
+
+def test_testimonials_stats_data_change_is_global():
+    # _data/testimonials_stats.yml is consumed by _includes/head.html
+    # alongside _data/testimonials.yml (same include, same JSON-LD block).
+    assert is_global_template_change(["_data/testimonials_stats.yml"])
+
+
+def test_home_data_change_is_not_global():
+    # _data/home.yml is verified dormant -- nothing in the repo references
+    # `site.data.home`. It must NOT trigger global resubmission just because
+    # it lives in _data/ alongside the three sitewide files above.
+    assert not is_global_template_change(["_data/home.yml"])
+
+
+def test_sitewide_data_change_selects_full_sitemap_end_to_end():
+    # End-to-end: a change to one of the three verified sitewide data files
+    # must select the full (small) sitemap via select_paths_to_submit, the
+    # same path as an _includes/ or _config.yml change -- otherwise a real
+    # sitewide content change (e.g. editing site nav) would currently select
+    # ZERO URLs, a silent under-notification bug.
+    selected = select_paths_to_submit(["_data/nav.yml"], SAMPLE_SITEMAP_URLS)
+    sitemap_paths = sitemap_paths_from_urls(SAMPLE_SITEMAP_URLS)
+    assert selected == sitemap_paths
+
+
+def test_home_data_change_selects_nothing_end_to_end():
+    # Negative counterpart: _data/home.yml is dormant, so a change to it
+    # alone (no other changed files) must select nothing at all.
+    selected = select_paths_to_submit(["_data/home.yml"], SAMPLE_SITEMAP_URLS)
+    assert selected == set()
+
+
 def test_direct_html_file_maps_to_pretty_path():
     sitemap_paths = sitemap_paths_from_urls(SAMPLE_SITEMAP_URLS)
     selected = map_changed_files_to_paths(
@@ -144,6 +189,33 @@ def test_select_paths_to_submit_suppressed_case_study_never_selected_even_if_in_
 def test_select_paths_to_submit_no_change_selects_nothing():
     selected = select_paths_to_submit(["README.md"], SAMPLE_SITEMAP_URLS)
     assert selected == set()
+
+
+def test_select_paths_to_submit_key_file_never_selected_even_if_sitemap_leaks_it():
+    # Defense-in-depth (PR #59 review follow-up, 2026-08): the PRIMARY control
+    # keeping the IndexNow key file out of submissions is _config.yml's
+    # `sitemap: false` scoped to it, which should keep it out of
+    # sitemap.xml entirely (asserted separately in .github/workflows/
+    # seo-qa.yml's "IndexNow — key file hygiene" step). This test proves the
+    # SECONDARY control: even in the adversarial case of a future
+    # sitemap-generation regression that leaked the key URL into
+    # sitemap.xml, and even a global template/config change that would
+    # otherwise resubmit the full sitemap, the denylist in
+    # DENYLIST_PATH_SUBSTRINGS still strips the key URL end-to-end -- the
+    # same pattern already relied on for the suppressed case studies.
+    key_path = "/0241145aa37aab753ad44f042523ea8b.txt"
+    key_url = "https://novatitan.net" + key_path
+    poisoned_sitemap = SAMPLE_SITEMAP_URLS + [key_url]
+
+    # An unrelated change must never select the (poisoned) key URL.
+    selected = select_paths_to_submit(["services/index.html"], poisoned_sitemap)
+    assert key_path not in selected
+
+    # Even a global template/config change (which would otherwise resubmit
+    # the full sitemap, including the leaked key URL) must still have the
+    # key URL stripped by the denylist before submission.
+    selected_global = select_paths_to_submit(["_config.yml"], poisoned_sitemap)
+    assert key_path not in selected_global
 
 
 def test_paths_to_absolute_urls():

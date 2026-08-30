@@ -35,7 +35,8 @@ utility page (/thank-you/, /apply-tech/).
 A second, explicit denylist below is defense-in-depth ONLY: it should never
 actually trigger given the sitemap-membership check, but it exists so a
 future regression in sitemap generation cannot silently reintroduce a
-suppressed URL into an IndexNow submission.
+suppressed URL -- or the IndexNow key-verification file's own URL -- into an
+IndexNow submission.
 """
 from __future__ import annotations
 
@@ -54,6 +55,14 @@ DENYLIST_PATH_SUBSTRINGS = (
     "/amazon-security/",
     "/va-healthcare/",
     "/dyess-afb/",
+    # PR #59 review follow-up (2026-08): the IndexNow key-verification file
+    # itself. The primary control keeping it out of submissions is
+    # _config.yml's `sitemap: false` (it should never be a sitemap member at
+    # all -- see INDEXNOW.md). This denylist entry is the same
+    # defense-in-depth pattern as the suppressed case studies above: it
+    # guarantees that even a future sitemap-generation regression could never
+    # cause this tool to submit its own verification-key URL to IndexNow.
+    "/0241145aa37aab753ad44f042523ea8b.txt",
 )
 
 # Files whose change means "a shared template/asset changed" -- in that case
@@ -70,6 +79,28 @@ GLOBAL_TEMPLATE_EXACT = (
     "_config.yml",
 )
 
+# PR #59 review follow-up (2026-08): explicit, individually-verified list of
+# `_data/*.yml` files that are consumed by SHARED, sitewide includes (i.e. a
+# change here can affect every rendered page, the same justification as
+# GLOBAL_TEMPLATE_PREFIXES/EXACT above). This is deliberately NOT a blanket
+# "treat all _data/* as global" rule -- each entry below was confirmed by
+# grepping its consuming include before being added:
+#   - _data/nav.yml               <- _includes/header.html (site nav, every
+#                                     page includes header.html via
+#                                     _layouts/default.html)
+#   - _data/testimonials.yml      <- _includes/head.html (AggregateRating/
+#   - _data/testimonials_stats.yml   Review JSON-LD, every page includes
+#                                     head.html via _layouts/default.html)
+# `_data/home.yml` is DELIBERATELY EXCLUDED: verified (grep, 2026-08) that
+# nothing in the repo references `site.data.home` -- it is dormant/unused
+# legacy data with no template consumer, so it must not trigger a global
+# resubmission.
+SITEWIDE_DATA_FILES = (
+    "_data/nav.yml",
+    "_data/testimonials.yml",
+    "_data/testimonials_stats.yml",
+)
+
 # Source files that drive generated pages via Liquid data/collections, where
 # the changed source file does not map 1:1 onto a single output path.
 CASE_STUDIES_DATA_FILE = "_data/case_studies.yml"
@@ -77,11 +108,14 @@ POSTS_DIR_PREFIX = "_posts/"
 
 
 def is_global_template_change(changed_files: list[str]) -> bool:
-    """True if a change touches a shared layout/include/config that could
-    affect any page's rendered output, justifying full-sitemap resubmission.
+    """True if a change touches a shared layout/include/config/sitewide-data
+    file that could affect any page's rendered output, justifying
+    full-sitemap resubmission.
     """
     for f in changed_files:
         if f in GLOBAL_TEMPLATE_EXACT:
+            return True
+        if f in SITEWIDE_DATA_FILES:
             return True
         if any(f.startswith(prefix) for prefix in GLOBAL_TEMPLATE_PREFIXES):
             return True
