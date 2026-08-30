@@ -30,8 +30,19 @@ name: IndexNow (post-deploy crawl notification)
 
 on:
   workflow_run:
-    workflows: ["pages-build-deployment"]
+    # PR #59 review follow-up (2026-08, second review round): `workflow_run.
+    # workflows` filters by the triggering workflow's NAME, not by the
+    # dashboard/API path basename. A real successful Nova Titan Pages
+    # deployment reports:
+    #   name: "pages build and deployment"
+    #   path: "dynamic/pages/pages-build-deployment"
+    # This value was previously the PATH basename ("pages-build-deployment"),
+    # which never matches the actual workflow name -- so this workflow would
+    # NEVER have fired on a real deploy. See INDEXNOW.md for the verified
+    # name/path distinction and how it was confirmed against the live API.
+    workflows: ["pages build and deployment"]
     types: [completed]
+    branches: [main]
   workflow_dispatch: {}
 
 permissions:

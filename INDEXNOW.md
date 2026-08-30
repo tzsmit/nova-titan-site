@@ -86,8 +86,10 @@ connection.
 push to main
    │
    ▼
-GitHub Pages "pages-build-deployment" (existing, unmodified)
-   │  (this is GitHub's own managed workflow — not a file in this repo)
+GitHub Pages workflow "pages build and deployment" (existing, unmodified)
+   │  (this is GitHub's own managed workflow — not a file in this repo;
+   │   API path: dynamic/pages/pages-build-deployment -- see the NAME vs.
+   │   PATH note below the "Why a workflow_run trigger" heading)
    ▼
    success ──────────────────────────────────────────────┐
    │                                                       │
@@ -138,17 +140,39 @@ unchanged and remains sufficient: checking out a specific SHA at depth 2
 still fetches that commit's immediate parent, which is what the "Determine
 before/after commits" step needs to resolve `${AFTER}~1`.
 
-### Why a `workflow_run` trigger on `pages-build-deployment`
+### Why a `workflow_run` trigger on the GitHub Pages workflow
 
 GitHub Pages for this repo uses the **legacy** build type (`gh api
 repos/tzsmit/nova-titan-site/pages` → `"build_type": "legacy"`), so
-deployment is driven by GitHub's own managed `pages-build-deployment`
-workflow — there is no `deploy` job in this repository's own workflow
-files to hook a `needs:` dependency onto. `workflow_run` is the documented
-mechanism for triggering a workflow in a **different** workflow file after
-another one completes, and is explicitly documented (including a
-GitHub-Pages-specific example naming `pages-build-deployment` verbatim) as
-the correct way to chain a post-deploy IndexNow submission.
+deployment is driven by GitHub's own managed Pages workflow — there is no
+`deploy` job in this repository's own workflow files to hook a `needs:`
+dependency onto. `workflow_run` is the documented mechanism for triggering
+a workflow in a **different** workflow file after another one completes.
+
+**Workflow NAME vs. API PATH (PR #59 review follow-up, 2026-08, second
+review round -- this was a real merge blocker, fixed here):**
+`workflow_run.workflows` in `.github/workflows/indexnow.yml` filters by the
+triggering workflow's **name**, not by any path-like identifier. Confirmed
+directly against this repo's live GitHub Actions API
+(`gh api repos/tzsmit/nova-titan-site/actions/runs`) on a real, successful
+production deployment:
+
+| Field | Value |
+| --- | --- |
+| Workflow **name** (what `workflow_run.workflows` must match) | `pages build and deployment` |
+| GitHub API/dashboard **path** (NOT what `workflow_run.workflows` matches) | `dynamic/pages/pages-build-deployment` |
+
+The trigger was previously written as `workflows: ["pages-build-deployment"]`
+— the path basename, not the actual workflow name. That value would **never
+have matched** a real deployment, so this workflow would silently never
+have fired in production despite passing CI (CI cannot execute this
+workflow_run-triggered job during a PR at all, so nothing short of
+comparing against the live API could have caught this). It is now
+corrected to `workflows: ["pages build and deployment"]`, with an added
+`branches: [main]` filter under `workflow_run` as defense-in-depth
+alongside the existing job-level `head_branch == 'main'` / `conclusion ==
+'success'` gate (which remains unchanged and is still the primary
+production-safety condition).
 
 ### Why URL selection is git-diff-driven, not "resubmit the whole sitemap every time"
 
@@ -198,8 +222,9 @@ IndexNow failure can **never** fail the site deployment:
 
 - The IndexNow workflow is a completely separate file
   (`.github/workflows/indexnow.yml`) from both `seo-qa.yml` and the
-  GitHub-managed `pages-build-deployment` workflow. It has no `needs:`
-  relationship that could block either.
+  GitHub-managed `pages build and deployment` workflow (API path:
+  `dynamic/pages/pages-build-deployment`). It has no `needs:` relationship
+  that could block either.
 - It only *starts* after Pages reports `conclusion == 'success'` — a
   failed Pages build never even triggers it, so there's no risk of it
   racing a broken deploy.
