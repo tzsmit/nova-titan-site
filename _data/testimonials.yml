@@ -1,5 +1,6 @@
 # Nova Titan Systems - Real Client Testimonials
-# Sources: Google Reviews, Cloudwork PRO, WorkMarket
+# Sources: Google Reviews, WorkMarket
+# Only post-formation (2025-09-17) reviews with unambiguous dates are included.
 
 # Google Reviews (5-star ratings)
 - name: "Recent Client"
@@ -10,65 +11,6 @@
   date: "2025-10"
   review: "If you don't use this company, you've made a foolish choice. They are professional, affordable, and they don't cut corners!"
   verified: true
-
-- name: "Taevia Lawson"
-  role: "Client"
-  location: "West Texas"
-  rating: 5
-  source: "Google"
-  date: "2025-09"
-  review: "Very professional! Very knowledgeable in the work he does! I will refer to anyone who is in need of this type of work!"
-  verified: true
-
-- name: "Fernando Aguilar"
-  role: "Client"
-  location: "West Texas"
-  rating: 5
-  source: "Google"
-  date: "2025-08"
-  review: "Very good at what they do, helpful and considerate and explains to u."
-  verified: true
-
-- name: "Donald West"
-  role: "Client"
-  location: "West Texas"
-  rating: 5
-  source: "Google"
-  date: "2025-07"
-  review: "Efficient and easy to work with. Made sure I was taken care of."
-  verified: true
-
-- name: "Paul Bernal (SoleBernal)"
-  role: "Client"
-  location: "West Texas"
-  rating: 5
-  source: "Google"
-  date: "2025-06"
-  review: "Clear and understandable. My child even understands!"
-  verified: true
-
-- name: "Tasha Lawson"
-  role: "Client"
-  location: "West Texas"
-  rating: 5
-  source: "Google"
-  date: "2025-05"
-  review: "Five star service! Professional and reliable technology solutions."
-  verified: true
-
-# Cloudwork PRO Reviews (Enterprise Platform)
-- name: "Nova Titan Systems"
-  role: "Cloudwork PRO Verified Provider"
-  location: "Lubbock, TX"
-  rating: 5
-  source: "Cloudwork PRO"
-  date: "2025-09"
-  review: "100% positive rating with 100% on-time completion. 2 jobs completed by company, 2 jobs completed. Average rating: 5/5 stars across Quality of Work, Following Instructions, and Communication."
-  verified: true
-  stats:
-    completed_jobs: 2
-    on_time_percentage: 100
-    positive_rating: 100
 
 # WorkMarket Reviews (Field Service Platform)
 - name: "Geeks On Site"
@@ -90,46 +32,6 @@
   review: "Excellent service for LAN Migration with hard start time requirements. Perfect execution on quality, professionalism, and communication. Completed multiple LAN migration projects with excellence."
   verified: true
   job_type: "LAN Migration - Hard Start Time"
-
-- name: "ABA Moriah Corporation"
-  role: "Client - Network Equipment Setup"
-  location: "Commercial Service"
-  rating: 5
-  source: "WorkMarket"
-  date: "2025-08-07"
-  review: "Excellent service for Zebra 140 140xi4 network card installation and setup. Outstanding quality, professionalism, and communication."
-  verified: true
-  job_type: "Zebra 140 140xi4 - Install And Setup Network Card"
-
-- name: "Kinettix"
-  role: "Client - 5G Radio Service"
-  location: "Commercial Service"
-  rating: 4
-  source: "WorkMarket"
-  date: "2025-08-11"
-  review: "Satisfied with power cycle 5G radio service. Good quality, professionalism, and communication."
-  verified: true
-  job_type: "FSDP-3023-246865 - Power Cycle 5G Radio"
-
-- name: "CSA Solutions"
-  role: "Client - Equipment Repair"
-  location: "Commercial Service"
-  rating: 4
-  source: "WorkMarket"
-  date: "2025-08-18"
-  review: "Satisfied with repair service. Good quality, professionalism, and communication for equipment repair."
-  verified: true
-  job_type: "90550 - Repair"
-
-- name: "AVASO Technology Solutions Inc"
-  role: "Client - Smart Hands Support"
-  location: "Commercial Service"
-  rating: 4
-  source: "WorkMarket"
-  date: "2025-09-08"
-  review: "Satisfied with ODP PPT smart hands support. Good quality, professionalism, and communication."
-  verified: true
-  job_type: "ODP - PPT - Smart Hands Support"
 
 - name: "Granite Telecommunications"
   role: "Client - Network Stack"
