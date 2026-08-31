@@ -844,8 +844,7 @@
       { "@type": "PropertyValue", "name": "HUBZone Status", "value": "SBA-Certified HUBZone Small Business" },
       { "@type": "PropertyValue", "name": "HUBZone Effective", "value": "2026-06-05" },
       { "@type": "PropertyValue", "name": "HUBZone Renewal", "value": "2029-06-05" },
-      { "@type": "PropertyValue", "name": "Business Type", "value": "SBA-Certified HUBZone Small Business — SAM.gov Registered (UEI CZ8BLZMSKZ66)" },
-      { "@type": "PropertyValue", "name": "Certifications", "value": "SBA HUBZone, DSBS Verified, WorkMarket Verified" }
+      { "@type": "PropertyValue", "name": "Business Type", "value": "SBA-Certified HUBZone Small Business — SAM.gov Registered (UEI CZ8BLZMSKZ66)" }
       {%- comment -%}
         FINAL PASS (2026-08): "Fortinet Certified Associate" was listed among the
         ORGANIZATION's Certifications on every page. The Fortinet credential
@@ -866,6 +865,12 @@
         fully traversable by search engines.
 
         Do NOT re-add a founder-credential PropertyValue to this sitewide node.
+
+        PR #61 CORRECTION (2026-08): removed the "Certifications" PropertyValue
+        ("SBA HUBZone, DSBS Verified, WorkMarket Verified"). HUBZone already has
+        its own dedicated PropertyValues above; WorkMarket platform activity is
+        not an organizational certification; and DSBS should not be bundled into
+        a generic Certifications claim without primary evidence on file.
       {%- endcomment -%}
     ],
     "hasOfferCatalog": {
@@ -942,46 +947,15 @@
   }
   </script>
 
-  <!-- AggregateRating Schema for Testimonials -->
-  {% if page.url == '/testimonials/' or page.url == '/testimonials/index.html' %}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "{{ site.url }}/#organization",
-    "name": "Nova Titan Systems LLC",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "{{ site.data.testimonials_stats.average_rating }}",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "{{ site.data.testimonials_stats.total_reviews }}",
-      "reviewCount": "{{ site.data.testimonials_stats.total_reviews }}"
-    },
-    "review": [
-      {% for testimonial in site.data.testimonials limit:10 %}
-        {% if testimonial.name %}
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "{{ testimonial.name }}"
-        },
-        "datePublished": "{{ testimonial.date }}",
-        "reviewBody": "{{ testimonial.review | escape }}",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "{{ testimonial.rating }}",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
-      }{% unless forloop.last %},{% endunless %}
-        {% endif %}
-      {% endfor %}
-    ]
-  }
-  </script>
-  {% endif %}
+  {%- comment -%}
+    PR #61 CORRECTION (2026-08): removed the company-controlled
+    LocalBusiness AggregateRating/Review JSON-LD block previously emitted on
+    /testimonials/ (sourced from _data/testimonials*.yml). Sourced reviews
+    remain visible on the testimonials page itself, but a self-published
+    aggregateRating/review graph is not published from this dataset.
+    Do NOT re-add an AggregateRating/Review block sourced from
+    _data/testimonials*.yml.
+  {%- endcomment -%}
 
   <!-- Base Styles -->
   <style>

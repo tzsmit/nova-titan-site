@@ -133,7 +133,7 @@ redirect_from:
         <div class="card rounded-xl p-4 text-center fade-in">
           <div class="text-2xl mb-2 text-cyan-400"><i class="fas fa-id-card"></i></div>
           <p class="text-xs font-semibold text-cyan-300">CAGE 170W6</p>
-          <p class="text-xs text-gray-400 mt-1">Government Ready</p>
+          <p class="text-xs text-gray-400 mt-1">CAGE Code</p>
         </div>
         <div class="card rounded-xl p-4 text-center fade-in">
           <div class="text-2xl mb-2 text-purple-400"><i class="fas fa-industry"></i></div>
@@ -157,8 +157,8 @@ redirect_from:
 
         <div class="card rounded-xl p-4 text-center fade-in">
           <div class="text-2xl mb-2 text-orange-400"><i class="fas fa-map-marked-alt"></i></div>
-          <p class="text-xs font-semibold text-orange-300">500-Mile Radius</p>
-          <p class="text-xs text-gray-400 mt-1">Statewide Coverage</p>
+          <p class="text-xs font-semibold text-orange-300">West Texas</p>
+          <p class="text-xs text-gray-400 mt-1">Operating Base</p>
         </div>
       </div>
 
@@ -167,15 +167,18 @@ redirect_from:
           <h3 class="text-sm font-semibold text-cyan-300 mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Service Coverage</h3>
           <ul class="text-xs text-gray-400 space-y-1">
             <li><i class="fas fa-check text-green-400 mr-2"></i>West Texas — Lubbock, Midland, Odessa, Amarillo</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Houston metro &amp; DFW metro</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>500-mile dispatch radius statewide</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Houston &amp; DFW — active markets</li>
+            <!-- PR #61 CORRECTION (2026-08): replaced "500-mile dispatch radius
+                 statewide" with the canonical project-by-project coverage
+                 model. -->
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Additional markets — project-by-project</li>
           </ul>
         </div>
         <div class="card rounded-xl p-4 fade-in">
           <h3 class="text-sm font-semibold text-cyan-300 mb-2"><i class="fas fa-handshake mr-2"></i>Cooperative &amp; Procurement</h3>
           <ul class="text-xs text-gray-400 space-y-1">
 
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Primary NAICS 238210 &bull; Secondary: 541512, 541513, 541519, 541611, 541690</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Primary NAICS 238210</li>
           </ul>
         </div>
       </div>
@@ -341,10 +344,13 @@ redirect_from:
             <i class="fas fa-bolt text-2xl text-gray-900"></i>
           </div>
           <h3 class="text-xl font-semibold text-cyan-300 mb-3">Rapid Response</h3>
-          <p class="text-gray-300 mb-4">Same-day dispatch with clear next steps on every project.</p>
+          <!-- PR #61 CORRECTION (2026-08): removed the same-day-dispatch/500-mile
+               radius guarantee and replaced with the canonical acknowledgment-
+               based response model used sitewide. -->
+          <p class="text-gray-300 mb-4">We aim to acknowledge quote requests within one business day. Scheduling and field deployment are coordinated to project scope, location, and technician availability.</p>
           <ul class="text-sm text-gray-400 space-y-1">
-            <li><i class="fas fa-check text-green-400 mr-2"></i>500-mile dispatch radius</li>
-            <li><i class="fas fa-check text-green-400 mr-2"></i>Same-day emergency support</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Urgent requests evaluated based on available coverage</li>
+            <li><i class="fas fa-check text-green-400 mr-2"></i>Scheduling confirmed per project</li>
           </ul>
         </article>
 
@@ -352,8 +358,11 @@ redirect_from:
           <div class="service-icon">
             <i class="fas fa-shield-alt text-2xl text-gray-900"></i>
           </div>
-          <h3 class="text-xl font-semibold text-cyan-300 mb-3">Security-First Design</h3>
-          <p class="text-gray-300 mb-4">Fortinet firewalls and network segmentation built into every deployment.</p>
+          <h3 class="text-xl font-semibold text-cyan-300 mb-3">Network Hardware &amp; Security</h3>
+          <!-- PR #61 CORRECTION (2026-08): removed the universal "built into every
+               deployment" claim; FortiGate firewall/segmentation work is scoped
+               to the project where included. -->
+          <p class="text-gray-300 mb-4">FortiGate firewall installation, network-hardware deployment, and segmentation support where included in the commercial project scope.</p>
           <!-- ENTITY PASS (2026-08, post-#47): first bullet read "Founder
                credential: Fortinet Certified Associate (FCA)". This is a
                homepage service-benefit card; it should state what Nova Titan
@@ -369,7 +378,9 @@ redirect_from:
             <i class="fas fa-receipt text-2xl text-gray-900"></i>
           </div>
           <h3 class="text-xl font-semibold text-cyan-300 mb-3">Transparent Pricing</h3>
-          <p class="text-gray-300 mb-4">Fixed-price proposals with scoped deliverables. No surprises.</p>
+          <!-- PR #61 CORRECTION (2026-08): removed universal "fixed-price" claim;
+               proposals are scope-based with defined deliverables. -->
+          <p class="text-gray-300 mb-4">Scope-based proposals with defined deliverables.</p>
           <ul class="text-sm text-gray-400 space-y-1">
             <li><i class="fas fa-check text-green-400 mr-2"></i>Site-survey-based quotes</li>
             <li><i class="fas fa-check text-green-400 mr-2"></i>Itemized, transparent invoicing</li>
@@ -394,68 +405,20 @@ redirect_from:
     </div>
   </section>
 
-  <!-- RECENT RATINGS -->
+  <!-- DOCUMENTED PROJECT EVIDENCE -->
+  <!-- PR #61 CORRECTION (2026-08): removed three hardcoded "Recent Client
+       Success Stories" cards dated 09/02/2025, 09/08/2025, and 09/10/2025.
+       Nova Titan Systems LLC formed 2025-09-17; these pre-formation dates
+       cannot be presented as Nova Titan LLC customer proof. Replaced with a
+       neutral evidence pointer to /case-studies/. -->
   <section class="content py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-cyan-300 glow mb-8 text-center">Recent Client Success Stories</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <article class="card rounded-xl p-6 fade-in">
-          <div class="flex items-start mb-3">
-            <i class="fas fa-star text-yellow-400 text-lg mr-2 mt-1"></i>
-            <div>
-              <h3 class="text-cyan-300 font-semibold">JCP Odessa, TX (Equipment Move/Removal)</h3>
-              <p class="text-gray-400 text-sm">ASD &bull; 09/02/2025</p>
-            </div>
-          </div>
-          <div class="mb-3">
-            <span class="inline-block bg-green-500/20 text-green-300 px-2 py-1 rounded text-sm">
-              <i class="fas fa-thumbs-up mr-1"></i>Excellent
-            </span>
-            <span class="text-sm text-gray-400 ml-2">Quality &bull; Professionalism &bull; Communication</span>
-          </div>
-          <blockquote class="text-gray-300 italic border-l-4 border-cyan-400 pl-4">
-            "Professional equipment handling and removal service. Completed efficiently with excellent coordination."
-          </blockquote>
-        </article>
-
-        <article class="card rounded-xl p-6 fade-in">
-          <div class="flex items-start mb-3">
-            <i class="fas fa-star text-yellow-400 text-lg mr-2 mt-1"></i>
-            <div>
-              <h3 class="text-cyan-300 font-semibold">ODP - PPT - Smart Hands Support</h3>
-              <p class="text-gray-400 text-sm">AVASO Technology Solutions Inc &bull; 09/08/2025</p>
-            </div>
-          </div>
-          <div class="mb-3">
-            <span class="inline-block bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-sm">
-              <i class="fas fa-check mr-1"></i>Satisfied
-            </span>
-            <span class="text-sm text-gray-400 ml-2">Quality &bull; Professionalism &bull; Communication</span>
-          </div>
-          <blockquote class="text-gray-300 italic border-l-4 border-blue-400 pl-4">
-            "Reliable smart hands support service. Provided consistent assistance with technical tasks."
-          </blockquote>
-        </article>
-
-        <article class="card rounded-xl p-6 fade-in">
-          <div class="flex items-start mb-3">
-            <i class="fas fa-star text-yellow-400 text-lg mr-2 mt-1"></i>
-            <div>
-              <h3 class="text-cyan-300 font-semibold">Printronix P7220 install control panel and clean shuttle</h3>
-              <p class="text-gray-400 text-sm">ABA Moriah Corporation &bull; 09/10/2025</p>
-            </div>
-          </div>
-          <div class="mb-3">
-            <span class="inline-block bg-green-500/20 text-green-300 px-2 py-1 rounded text-sm">
-              <i class="fas fa-thumbs-up mr-1"></i>Excellent
-            </span>
-            <span class="text-sm text-gray-400 ml-2">Quality &bull; Professionalism &bull; Communication</span>
-          </div>
-          <blockquote class="text-gray-300 italic border-l-4 border-cyan-400 pl-4">
-            "Professional printer installation and maintenance service. Thorough work with excellent attention to detail."
-          </blockquote>
-        </article>
-      </div>
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-cyan-300 glow mb-4">Documented Project Evidence</h2>
+      <p class="text-gray-300 max-w-2xl mx-auto mb-8">See evidence-reconciled examples of Nova Titan's commercial field execution and closeout work.</p>
+      <a href="/case-studies/" class="btn-grad text-gray-900 font-semibold py-3 px-6 rounded-lg inline-flex items-center">
+        <i class="fas fa-folder-open mr-2"></i>
+        View Case Studies
+      </a>
     </div>
   </section>
 
@@ -471,15 +434,16 @@ redirect_from:
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         <!-- Fortinet -->
+        <!-- PR #61 CORRECTION (2026-08): removed the "FCA Certified" badge from
+             this company technology tile. Fortinet FCA is a PERSON credential
+             (Traivone Smith), documented on /certifications/ and /about/, and
+             must not be presented as a company badge here. -->
         <div class="card rounded-xl p-6 text-center fade-in">
           <div class="mb-3 flex items-center justify-center h-14">
             <img src="/assets/img/logos/fortinet.svg" alt="Fortinet Logo" class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" loading="lazy" width="150" height="50">
           </div>
           <h3 class="text-sm font-semibold text-purple-300 mb-1">Fortinet</h3>
           <p class="text-xs text-gray-400">FortiGate firewalls &amp; security</p>
-          <span class="mt-2 inline-block text-xs text-purple-300 bg-purple-900/30 px-2 py-0.5 rounded-full">
-            <i class="fas fa-certificate mr-1"></i>FCA Certified
-          </span>
         </div>
 
         <!-- Fluke Networks -->
@@ -582,25 +546,18 @@ redirect_from:
           <div class="text-2xl mb-2 text-orange-400"><i class="fas fa-warehouse"></i></div>
           <p class="text-sm font-semibold text-gray-300">Warehouse &amp; Distribution</p>
         </div>
+        <!-- PR #61 CORRECTION (2026-08): removed brand-name tiles (Walmart, 7
+             Brew, Amazon, JCPenney, Office Depot) as homepage company proof.
+             These are entity-ambiguous / not established as direct Nova Titan
+             LLC customer relationships. Evidence-reconciled examples live on
+             /case-studies/. -->
         <div class="card rounded-lg p-4 text-center fade-in">
-          <div class="text-2xl mb-2 text-red-400"><i class="fas fa-shopping-cart"></i></div>
-          <p class="text-sm font-semibold text-gray-300">Walmart</p>
+          <div class="text-2xl mb-2 text-red-400"><i class="fas fa-shield-halved"></i></div>
+          <p class="text-sm font-semibold text-gray-300">Multi-Site Rollouts</p>
         </div>
         <div class="card rounded-lg p-4 text-center fade-in">
-          <div class="text-2xl mb-2 text-yellow-400"><i class="fas fa-coffee"></i></div>
-          <p class="text-sm font-semibold text-gray-300">7 Brew</p>
-        </div>
-        <div class="card rounded-lg p-4 text-center fade-in">
-          <div class="text-2xl mb-2 text-pink-400"><i class="fas fa-box"></i></div>
-          <p class="text-sm font-semibold text-gray-300">Amazon</p>
-        </div>
-        <div class="card rounded-lg p-4 text-center fade-in">
-          <div class="text-2xl mb-2 text-indigo-400"><i class="fas fa-tshirt"></i></div>
-          <p class="text-sm font-semibold text-gray-300">JCPenney</p>
-        </div>
-        <div class="card rounded-lg p-4 text-center fade-in">
-          <div class="text-2xl mb-2 text-teal-400"><i class="fas fa-briefcase"></i></div>
-          <p class="text-sm font-semibold text-gray-300">Office Depot</p>
+          <div class="text-2xl mb-2 text-yellow-400"><i class="fas fa-video"></i></div>
+          <p class="text-sm font-semibold text-gray-300">Security &amp; Camera Infrastructure</p>
         </div>
       </div>
 
@@ -642,7 +599,7 @@ redirect_from:
       </div>
       <p class="text-sm text-gray-400 mt-6">
         <i class="fas fa-shield-halved mr-2"></i>
-        Project-based delivery &bull; No monthly retainers &bull; Same-day dispatch &bull; Owner-led operations
+        Project-based delivery &bull; No monthly retainers &bull; Quote acknowledgment target: one business day &bull; Owner-led operations
       </p>
     </div>
   </section>

@@ -20,7 +20,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install Python test dependencies
-        run: pip install --quiet pytest
+        run: pip install --quiet pytest pyyaml
 
       - name: Build site
         run: bundle exec jekyll build
@@ -211,12 +211,36 @@ jobs:
                       fail.append(f"non-canonical host link {m} on {p}")
 
           # --- retired positioning must not reappear on live pages ---
+          # PR #61 (review 5063343564): the scan below strips HTML comments
+          # before matching, because dated audit-trail comments deliberately
+          # QUOTE retired phrases as a record of what was removed and why
+          # ("Before: ... After: ..."). Scanning raw HTML would make every
+          # future audit comment a false positive. The SEPARATE hidden
+          # keyword-stuffed-comment detector a few lines below still runs
+          # against the RAW (uncommented-out) HTML and must not be touched.
+          def strip_comments(html):
+              return re.sub(r'<!--.*?-->', '', html, flags=re.S)
+
           banned=[r'24/7 (Government )?IT Support', r'Nationwide managed IT',
-                  r'security awareness training', r'href="/plans/"', r'CAGE: Pending']
+                  r'security awareness training', r'href="/plans/"', r'CAGE: Pending',
+                  # PR #61 (review 5063343564) regression list --------------
+                  r'500-mile dispatch radius', r'500-mile radius',
+                  r'Statewide Coverage', r'Statewide dispatch capability',
+                  r'Nationwide deployment capabilities',
+                  r'Nationwide Coverage Available', r'Nationwide Availability',
+                  r'Same-day dispatch', r'Same-day mobilization',
+                  r'Fixed-price proposals', r'Transparent Fixed-Price Quoting',
+                  r'WorkMarket verified vendor', r'CloudWork Pro',
+                  r'D-U-N-S Verified', r'Black-Owned Small Disadvantaged Business',
+                  r'pursuing government contracting certifications',
+                  r'Ongoing IT Support Plans', r'professional Wi-Fi security audits',
+                  r'West Texas IT Experts', r'IT consulting,? cybersecurity audits',
+                  r'response within 1 business day']
           for p,h in pages.items():
               if 'http-equiv="refresh"' in h: continue
+              visible = strip_comments(h)
               for b in banned:
-                  if re.search(b,h,re.I): fail.append(f"RETIRED positioning '{b}' reappeared on {p}")
+                  if re.search(b,visible,re.I): fail.append(f"RETIRED positioning '{b}' reappeared on {p}")
 
           # --- visible empty metric cards (blank value above a label) ---
           for p,h in pages.items():
@@ -328,6 +352,52 @@ jobs:
           home=pages.get(site+'/index.html','')
           for ev in need:
               if ev not in home: fail.append(f"analytics event '{ev}' missing from homepage")
+
+          # --- PR #61 (review 5063343564): testimonial formation-date gate --
+          # Nova Titan Systems LLC formed 2025-09-17. Any testimonial dated
+          # before formation, or carrying an AMBIGUOUS month-only "2025-09"
+          # (which could resolve to a pre-formation day), must fail the build.
+          # "2025-10" and later month-only dates are unambiguously post-
+          # formation and are allowed.
+          FORMATION = collections.namedtuple('D', ['y','m','d'])(2025,9,17)
+          import yaml as _yaml
+          try:
+              tdata = _yaml.safe_load(open('_data/testimonials.yml',encoding='utf-8')) or []
+          except Exception as e:
+              fail.append(f"could not parse _data/testimonials.yml: {e}")
+              tdata = []
+          for entry in tdata:
+              d = str(entry.get('date','')).strip()
+              m_full = re.match(r'^(\d{4})-(\d{2})-(\d{2})$', d)
+              m_month = re.match(r'^(\d{4})-(\d{2})$', d)
+              if m_full:
+                  y,mo,day = (int(x) for x in m_full.groups())
+                  if (y,mo,day) < (FORMATION.y,FORMATION.m,FORMATION.d):
+                      fail.append(f"testimonial dated {d} is BEFORE formation (2025-09-17): {entry.get('name')}")
+              elif m_month:
+                  y,mo = (int(x) for x in m_month.groups())
+                  if y == 2025 and mo == 9:
+                      fail.append(f"testimonial has AMBIGUOUS month-only date '{d}' spanning formation (2025-09-17): {entry.get('name')}")
+                  elif (y,mo) < (2025,10):
+                      fail.append(f"testimonial dated {d} is BEFORE formation (2025-09-17): {entry.get('name')}")
+              else:
+                  fail.append(f"testimonial has unparseable date '{d}': {entry.get('name')}")
+
+          # --- PR #61 (review 5063343564): five named built-output assertions ---
+          testimonials_html = pages.get(site+'/testimonials/index.html','')
+          if 'CloudWork Pro' in testimonials_html or 'Cloudwork PRO' in testimonials_html.lower().replace('cloudwork pro','CloudWork Pro') or re.search(r'cloudwork\s*pro', testimonials_html, re.I):
+              fail.append("testimonials output contains CloudWork/Cloudwork PRO reference")
+          if re.search(r'"@type"\s*:\s*"LocalBusiness"', testimonials_html) and re.search(r'aggregateRating', testimonials_html, re.I):
+              fail.append("testimonials page carries a LocalBusiness AggregateRating block")
+          humans_txt = open('humans.txt', encoding='utf-8').read() if os.path.exists('humans.txt') else ''
+          if re.search(r'Black-?Owned|Small\s+Disadvantaged\s+Business', humans_txt, re.I):
+              fail.append("humans.txt contains a Black-Owned / Small Disadvantaged Business claim")
+          for p,h in pages.items():
+              if re.search(r'500[- ]mile', strip_comments(h), re.I):
+                  fail.append(f"built output contains 500-mile coverage language on {p}")
+          services_html = pages.get(site+'/services/index.html','')
+          if re.search(r'^\s*s\s+FA\s+subcontractors\s+at\s+award\.\s*-->', services_html, re.M):
+              fail.append("services/index.html has a stray trailing comment fragment")
 
           if fail:
               print("SEO QA FAILURES:"); [print("  -",f) for f in sorted(set(fail))]; sys.exit(1)
