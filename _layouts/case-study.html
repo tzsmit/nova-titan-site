@@ -153,7 +153,7 @@ layout: default
               </div>
               <h2 class="text-2xl font-bold text-white">Field Notes</h2>
             </div>
-            <p class="text-gray-400 text-sm mb-5">What this job actually taught us, from the crew that performed it.</p>
+            <p class="text-gray-400 text-sm mb-5">Observations from the assigned scope and project records.</p>
             <ul class="space-y-4">
               {% for note in case_study.field_notes %}
               <li class="flex items-start text-gray-300">
@@ -177,30 +177,8 @@ layout: default
           </div>
           {% endif %}
 
-          <!-- FIELD NOTES — first-party observations (2026-08 audit, §13).
-               This is the non-commodity, firsthand content that distinguishes a
-               real case study from "successful installation" filler, and it is
-               the kind of original material Google's generative-AI guidance
-               rewards. Only rendered when the case study actually has notes. -->
-          {% if case_study.field_notes and case_study.field_notes.size > 0 %}
-          <div class="card rounded-2xl p-8 fade-in">
-            <div class="flex items-center mb-6">
-              <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center mr-4">
-                <i class="fas fa-clipboard-check text-xl text-white"></i>
-              </div>
-              <h2 class="text-2xl font-bold text-white">Field Notes</h2>
-            </div>
-            <p class="text-sm text-gray-400 mb-4">Firsthand observations from performing this scope.</p>
-            <ul class="space-y-4">
-              {% for note in case_study.field_notes %}
-              <li class="flex items-start text-gray-300 leading-relaxed">
-                <i class="fas fa-hard-hat text-amber-400 mr-3 mt-1"></i>
-                <span>{{ note }}</span>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
+          {% include project-phases.html phases=case_study.phases %}
+          {% include project-gallery.html case_study_id=case_study.id %}
 
           <!-- Community Impact -->
           <div class="card rounded-2xl p-8 bg-gradient-to-br from-cyan-900/30 via-purple-900/30 to-blue-900/30 border-2 border-cyan-400/20 fade-in">
@@ -334,8 +312,8 @@ layout: default
       
       <div class="grid md:grid-cols-3 gap-6">
         {% for study in site.data.case_studies %}
-          {% if study.id != page.case_study_id and study.featured %}
-          <a href="/case-studies/{{ study.id }}/" class="card rounded-xl p-6 hover:border-{{ study.color }}-400/40 transition-all group fade-in">
+          {% if study.id != page.case_study_id and study.featured and study.publish_status == "published" %}
+          {% unless study.has_page == false %}<a href="/case-studies/{{ study.id }}/"{% else %}<div{% endunless %} class="card rounded-xl p-6 hover:border-{{ study.color }}-400/40 transition-all group fade-in">
             <div class="w-12 h-12 bg-gradient-to-br from-{{ study.color }}-500 to-{{ study.color }}-600 rounded-lg flex items-center justify-center mb-4">
               <i class="{{ study.icon }} text-xl text-white"></i>
             </div>
@@ -349,7 +327,7 @@ layout: default
               <span class="text-gray-500">{{ study.location_city }}</span>
               <span class="text-{{ study.color }}-400 font-semibold">{{ study.government_type }}</span>
             </div>
-          </a>
+          {% unless study.has_page == false %}</a>{% else %}</div>{% endunless %}
           {% endif %}
         {% endfor %}
       </div>

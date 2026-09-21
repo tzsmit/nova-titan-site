@@ -1,0 +1,20 @@
+{% assign project_photos = site.data.work_gallery | where: "case_study_id", include.case_study_id %}
+{% assign visible_photos = project_photos | where: "sensitive_review_status", "approved" %}
+{% if visible_photos.size > 0 %}
+<section class="card rounded-2xl p-8" aria-label="Project photographs">
+  <h2 class="text-2xl font-bold text-white mb-6">Project Photographs</h2>
+  <div class="project-photo-grid">
+  {% for photo in visible_photos %}
+    <figure>
+      <a href="{{ photo.fallback_path | relative_url }}" aria-label="View full photograph: {{ photo.alt_text | escape }}">
+        <picture>
+          <source type="image/webp" srcset="{{ photo.small_path | relative_url }} {{ photo.small_width }}w, {{ photo.image_path | relative_url }} {{ photo.width }}w" sizes="(max-width: 640px) 85vw, 320px">
+          <img src="{{ photo.fallback_path | relative_url }}" alt="{{ photo.alt_text | escape }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" decoding="async">
+        </picture>
+      </a>
+      <figcaption class="text-sm text-gray-300 mt-3">{{ photo.caption | escape }}</figcaption>
+    </figure>
+  {% endfor %}
+  </div>
+</section>
+{% endif %}

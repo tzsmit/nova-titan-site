@@ -1026,4 +1026,7 @@
 
   <!-- Procurement schema for government/partner pages -->
   {% include schema-org.html %}
+  {% if page.layout == "case-study" %}
+  <style>.project-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}.project-photo-grid figure{margin:0;min-width:0}.project-photo-grid img{display:block;width:100%;height:auto;border-radius:.75rem}.project-phases p{overflow-wrap:anywhere}@media(max-width:640px){.project-photo-grid{grid-template-columns:1fr}}</style>
+  {% endif %}
 </head>

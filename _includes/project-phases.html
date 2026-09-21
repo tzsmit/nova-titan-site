@@ -1,0 +1,14 @@
+{% if include.phases and include.phases.size > 0 %}
+<section class="card rounded-2xl p-8 project-phases" aria-label="Project phases">
+  <h2 class="text-2xl font-bold text-white mb-6">Project Phases</h2>
+  <ol class="space-y-4">
+  {% for phase in include.phases %}
+    <li class="border-t border-gray-700 pt-4">
+      <h3 class="text-lg font-semibold text-white">{{ phase.name | escape }}</h3>
+      <p class="text-sm text-cyan-300 mb-2">{{ phase.status | escape }}</p>
+      <p class="text-gray-300">{{ phase.detail | escape }}</p>
+    </li>
+  {% endfor %}
+  </ol>
+</section>
+{% endif %}
