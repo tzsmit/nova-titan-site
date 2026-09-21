@@ -8,7 +8,7 @@
 
   <!-- SEO Tags (jekyll-seo-tag plugin — outputs og:title, og:description, og:image, og:url, twitter:card, canonical, etc.) -->
   {% seo title=false %}
-  {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+  {% if page.noindex or site.private_brownwood_preview %}<meta name="robots" content="noindex">{% endif %}
 
   <!-- Explicit Open Graph / Social Share Tags (override jekyll-seo-tag for reliability) -->
   {% assign og_image_url = site.url | append: "/assets/images/nova-titan-og-image.png" %}
@@ -1026,7 +1026,6 @@
 
   <!-- Procurement schema for government/partner pages -->
   {% include schema-org.html %}
-  {% if page.layout == "case-study" %}
-  <style>.project-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}.project-photo-grid figure{margin:0;min-width:0}.project-photo-grid img{display:block;width:100%;height:auto;border-radius:.75rem}.project-phases p{overflow-wrap:anywhere}@media(max-width:640px){.project-photo-grid{grid-template-columns:1fr}}</style>
-  {% endif %}
+  {% include project-image-schema.html %}
+  <style>#project-photos,.project-photo-phase{scroll-margin-top:120px}.project-photo-grid,.field-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}.field-project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.project-photo-card{margin:0;min-width:0;border:1px solid #26354a;border-radius:.8rem;overflow:hidden;background:#111827}.project-photo-card a{display:block;background:#090e18}.project-photo-card img{display:block;width:100%;height:340px;object-fit:contain}.project-photo-card figcaption{padding:1rem}.project-photo-phase+.project-photo-phase{margin-top:2.25rem}.project-phases p{overflow-wrap:anywhere}@media(max-width:1024px){.field-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.project-photo-grid,.field-project-grid{grid-template-columns:1fr}.project-photo-card img{height:360px}}</style>
 </head>

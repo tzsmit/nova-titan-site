@@ -146,6 +146,11 @@ collections:
 # NOTE: do NOT use a blanket "*.md" exclude — it also excludes _posts/*.md
 # and silently prevents blog posts from building (SEO audit 2026-07).
 exclude:
+  # Draft customer proof and assets must not reach production before clearance.
+  - _preview
+  - case-studies/brownwood-retail-network-system-set
+  - assets/images/work/brownwood-retail
+  - BROWNWOOD_PUBLICATION.md
   - Gemfile
   - Gemfile.lock
   - node_modules

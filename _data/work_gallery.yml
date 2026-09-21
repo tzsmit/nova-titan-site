@@ -154,3 +154,140 @@
   use_on_services: true
   sensitive_review_status: "approved"
   sensitive_notes: "Empty rack in a small office/equipment room. No sensitive data visible. Paper on wall in background is too small to read."
+
+# Approved Brownwood photographs; case publication remains separately controlled.
+- case_study_id: brownwood-retail-network-system-set
+  phase: cable-terms
+  title: Casework cable routing
+  image_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-casework-cable-routing.webp
+  fallback_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-casework-cable-routing.jpg
+  small_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-casework-cable-routing-400.webp
+  small_width: 400
+  width: 1350
+  height: 1800
+  alt_text: Communications cable coiled inside retail casework during cable termination work in Brownwood, Texas
+  caption: Cable slack retained inside casework during the cable-termination phase.
+  location_keyword: Brownwood, Texas
+  service_keyword: commercial structured cabling and retail network infrastructure
+  sensitive_review_status: approved
+  use_on_field_work: true
+- case_study_id: brownwood-retail-network-system-set
+  phase: cable-terms
+  title: Communications outlet
+  image_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-communications-outlet.webp
+  fallback_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-communications-outlet.jpg
+  small_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-communications-outlet-400.webp
+  small_width: 400
+  width: 1350
+  height: 1800
+  alt_text: Multiport communications wall plate during retail cable termination work in Brownwood
+  caption: Wall-plate and outlet condition documented during cable termination.
+  location_keyword: Brownwood, Texas
+  service_keyword: commercial structured cabling and retail network infrastructure
+  sensitive_review_status: approved
+  use_on_field_work: true
+- case_study_id: brownwood-retail-network-system-set
+  phase: cable-terms
+  title: Cabinet pathway coordination
+  image_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-telecom-cabinet-pathway.webp
+  fallback_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-telecom-cabinet-pathway.jpg
+  small_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-telecom-cabinet-pathway-400.webp
+  small_width: 400
+  width: 576
+  height: 1024
+  alt_text: Conduit reaching the top of a retail telecom cabinet in Brownwood, Texas
+  caption: Pathway condition at the cabinet, documented for coordination with other trades.
+  location_keyword: Brownwood, Texas
+  service_keyword: commercial structured cabling and retail network infrastructure
+  sensitive_review_status: approved
+  use_on_field_work: false
+- case_study_id: brownwood-retail-network-system-set
+  phase: cable-terms
+  title: Spare cable staging
+  image_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-telecom-spare-cable.webp
+  fallback_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-telecom-spare-cable.jpg
+  small_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-telecom-spare-cable-400.webp
+  small_width: 400
+  width: 576
+  height: 1024
+  alt_text: Coiled spare communications cable at a retail telecom cabinet in Brownwood
+  caption: Spare cable retained at the cabinet during field coordination.
+  location_keyword: Brownwood, Texas
+  service_keyword: commercial structured cabling and retail network infrastructure
+  sensitive_review_status: approved
+  use_on_field_work: false
+- case_study_id: brownwood-retail-network-system-set
+  phase: rack-equipment
+  title: Patch-panel rack progress
+  image_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-patch-panel-rack.webp
+  fallback_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-patch-panel-rack.jpg
+  small_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-patch-panel-rack-400.webp
+  small_width: 400
+  width: 576
+  height: 1024
+  alt_text: Retail telecom cabinet with patch panels before equipment setup in Brownwood, Texas
+  caption: Rack and patch-panel condition before later equipment setup.
+  location_keyword: Brownwood, Texas
+  service_keyword: commercial structured cabling and retail network infrastructure
+  sensitive_review_status: approved
+  use_on_field_work: true
+- case_study_id: brownwood-retail-network-system-set
+  phase: rack-equipment
+  title: Network equipment and patching
+  image_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-network-rack.webp
+  fallback_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-network-rack.jpg
+  small_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-network-rack-400.webp
+  small_width: 400
+  width: 576
+  height: 1024
+  alt_text: Retail network rack with equipment and patch cords during setup in Brownwood, Texas
+  caption: Later rack condition with network equipment and patching in place.
+  location_keyword: Brownwood, Texas
+  service_keyword: commercial structured cabling and retail network infrastructure
+  sensitive_review_status: approved
+  use_on_field_work: true
+- case_study_id: brownwood-retail-network-system-set
+  phase: system-set
+  title: Checkout workstation setup
+  image_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-workstation.webp
+  fallback_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-workstation.jpg
+  small_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-workstation-400.webp
+  small_width: 400
+  width: 768
+  height: 1024
+  alt_text: Retail checkout workstation with monitor, keyboard and receipt printer during System Set in Brownwood
+  caption: Workstation and receipt-printer setup documented during System Set.
+  location_keyword: Brownwood, Texas
+  service_keyword: commercial structured cabling and retail network infrastructure
+  sensitive_review_status: approved
+  use_on_field_work: true
+- case_study_id: brownwood-retail-network-system-set
+  phase: system-set
+  title: Checkout device cabling
+  image_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-device-cabling.webp
+  fallback_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-device-cabling.jpg
+  small_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-device-cabling-400.webp
+  small_width: 400
+  width: 1200
+  height: 1600
+  alt_text: Power distribution and device cabling inside a retail checkout drawer in Brownwood
+  caption: Device cabling and power arrangement beneath the checkout workstation.
+  location_keyword: Brownwood, Texas
+  service_keyword: commercial structured cabling and retail network infrastructure
+  sensitive_review_status: approved
+  use_on_field_work: true
+- case_study_id: brownwood-retail-network-system-set
+  phase: system-set
+  title: Payment-device mounting
+  image_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-payment-device-mount.webp
+  fallback_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-payment-device-mount.jpg
+  small_path: /assets/images/work/brownwood-retail/nova-titan-brownwood-retail-payment-device-mount-400.webp
+  small_width: 400
+  width: 576
+  height: 1024
+  alt_text: Side view of a payment-device mount and cabling at a retail checkout in Brownwood
+  caption: Payment-device mounting and cabling during System Set; later correction and acceptance remain separate.
+  location_keyword: Brownwood, Texas
+  service_keyword: commercial structured cabling and retail network infrastructure
+  sensitive_review_status: approved
+  use_on_field_work: false

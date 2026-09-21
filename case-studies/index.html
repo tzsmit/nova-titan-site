@@ -102,7 +102,10 @@ keywords: "commercial network field execution, LAN migration case study, smart h
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 case-studies-grid">
       
       {% for study in site.data.case_studies %}
-      {% if study.featured and study.publish_status == "published" %}
+      {% assign show_featured = false %}
+      {% if study.featured and study.publish_status == "published" %}{% assign show_featured = true %}{% endif %}
+      {% if site.private_brownwood_preview and study.id == "brownwood-retail-network-system-set" %}{% assign show_featured = true %}{% endif %}
+      {% if show_featured %}
       
       <article class="case-study-card card rounded-2xl p-6 fade-in group hover:border-{{ study.color }}-400/40 transition-all cursor-pointer" 
                data-categories="{{ study.government_type | downcase }} {{ study.service_type | downcase | replace: ' ', '-' }} {{ study.industry | downcase | replace: '/', '-' | replace: ' ', '-' }} {{ study.region | downcase | replace: ' ', '-' }}">

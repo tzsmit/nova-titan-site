@@ -1,0 +1,14 @@
+{% assign brownwood_proof = site.data.case_studies | where: "id", "brownwood-retail-network-system-set" | first %}
+{% assign show_brownwood_proof = false %}
+{% if brownwood_proof.publish_status == "published" %}{% assign show_brownwood_proof = true %}{% endif %}
+{% if site.private_brownwood_preview %}{% assign show_brownwood_proof = true %}{% endif %}
+{% if show_brownwood_proof %}
+<section class="content py-8"><div class="max-w-6xl mx-auto px-6">
+  <div class="card rounded-xl p-6">
+    <p class="text-sm text-cyan-300 mb-2">Retail project evidence</p>
+    <h2 class="text-2xl font-bold text-white mb-3">Brownwood retail network infrastructure</h2>
+    <p class="text-gray-300 mb-4">See how Nova Titan coordinated phased infrastructure and System Set delivery through a prime contractor. Lubbock / West Texas is our service base; Brownwood is this project’s location.</p>
+    <a class="text-cyan-300 hover:underline" href="/case-studies/brownwood-retail-network-system-set/">View the Brownwood project</a>
+  </div>
+</div></section>
+{% endif %}
