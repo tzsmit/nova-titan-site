@@ -35,7 +35,7 @@
       });
     });
     // A mobile menu must not reopen unexpectedly after a desktop resize.
-    var desktop = window.matchMedia('(min-width: 1024px)');
+    var desktop = window.matchMedia('(min-width: 1280px)');
     desktop.addEventListener('change', function () {
       disclosures.forEach(function (detail) { close(detail, false); });
     });

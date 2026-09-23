@@ -18,7 +18,7 @@
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-6">
+      <div class="desktop-navigation items-center space-x-6">
         {% for item in site.data.nav %}
           {% assign current_path = page.url %}
           {% assign is_active = false %}
@@ -70,7 +70,7 @@
     </div>
 
     <!-- Mobile Navigation -->
-    <details id="mobileNav" class="mobile-navigation lg:hidden">
+    <details id="mobileNav" class="mobile-navigation">
       <summary id="menuBtn" class="hamburger" aria-label="Navigation menu">
         <span></span><span></span><span></span>
       </summary>
@@ -308,7 +308,7 @@
   }
   
   /* Responsive adjustments */
-  @media (max-width: 1023px) {
+  @media (max-width: 1279px) {
     .nav-link-main {
       padding: 0.75rem 0;
       font-size: 1.125rem;
@@ -337,8 +337,14 @@
   .mobile-navigation > summary::-webkit-details-marker { display:none; }
   .mobile-navigation > summary { position:absolute; right:1rem; top:34px; }
   #mobileMenu { max-height:calc(100dvh - 6rem); }
-  @media (min-width:1024px) { .mobile-navigation { display:none; } }
-  @media (max-width:1023px) { .nav-container .glow { max-width:170px; } }
+  .desktop-navigation { display:none; }
+  .nav-container picture { flex-shrink:0; }
+  .nav-item-wrapper > summary { white-space:nowrap; }
+  @media (min-width:1280px) {
+    .desktop-navigation { display:flex; }
+    .mobile-navigation { display:none; }
+  }
+  @media (max-width:1279px) { .nav-container .glow { max-width:170px; } }
 
 </style>
 
