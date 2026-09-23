@@ -18,7 +18,7 @@
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-6" role="menubar">
+      <div class="hidden lg:flex items-center space-x-6">
         {% for item in site.data.nav %}
           {% assign current_path = page.url %}
           {% assign is_active = false %}
@@ -37,48 +37,44 @@
           
           {% if item.submenu %}
             <!-- Navigation item with dropdown -->
-            <div class="nav-item-wrapper" role="menuitem" aria-haspopup="true">
-              <a href="{{ item.url }}" 
-                 class="nav-link-main {% if is_active %}active{% endif %}"
-                 aria-expanded="false">
+            <details class="nav-item-wrapper">
+              <summary class="nav-link-main {% if is_active %}active{% endif %}">
                 {{ item.name }} <i class="fas fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
-              </a>
+              </summary>
               <!-- Dropdown Menu -->
-              <div class="dropdown-menu" role="menu" aria-label="{{ item.name }} submenu">
+              <div class="dropdown-menu">
+                <a href="{{ item.url }}" class="dropdown-link">{{ item.name }} overview</a>
                 {% for subitem in item.submenu %}
-                  <a href="{{ subitem.url }}" class="dropdown-link" role="menuitem">
+                  <a href="{{ subitem.url }}" class="dropdown-link">
                     {{ subitem.name }}
                   </a>
                 {% endfor %}
               </div>
-            </div>
+            </details>
           {% else %}
             <!-- Regular navigation link -->
             <a href="{{ item.url }}" 
                class="nav-link-main {% if is_active %}active{% endif %}"
-               role="menuitem"
+
                {% if is_active %}aria-current="page"{% endif %}>
               {{ item.name }}
             </a>
           {% endif %}
         {% endfor %}
-        <a href="/quote/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm" role="button">
+        <a href="/quote/" class="btn-grad text-gray-900 font-semibold py-2 px-4 rounded-lg text-sm">
           <i class="fas fa-file-invoice mr-1" aria-hidden="true"></i>Get a Quote
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="menuBtn" 
-              class="lg:hidden hamburger" 
-              aria-label="Toggle navigation menu" 
-              aria-expanded="false"
-              aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
+
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobileMenu" class="lg:hidden hidden pb-4" role="menu" aria-label="Mobile navigation">
+    <details id="mobileNav" class="mobile-navigation lg:hidden">
+      <summary id="menuBtn" class="hamburger" aria-label="Navigation menu">
+        <span></span><span></span><span></span>
+      </summary>
+      <div id="mobileMenu" class="pb-4">
       <div class="flex flex-col space-y-2">
         {% for item in site.data.nav %}
           {% assign current_path = page.url %}
@@ -98,7 +94,7 @@
           
           <a href="{{ item.url }}" 
              class="nav-link-main {% if is_active %}active{% endif %}"
-             role="menuitem"
+
              {% if is_active %}aria-current="page"{% endif %}>
             {{ item.name }}
           </a>
@@ -107,16 +103,17 @@
               {% for subitem in item.submenu %}
                 <a href="{{ subitem.url }}" 
                    class="text-sm text-gray-400 hover:text-cyan-300 py-1 transition-colors"
-                   role="menuitem">
+                  >
                   {{ subitem.name }}
                 </a>
               {% endfor %}
             </div>
           {% endif %}
         {% endfor %}
-        <a href="/quote/" class="nav-link-main" role="menuitem">Get a Quote</a>
+        <a href="/quote/" class="nav-link-main">Get a Quote</a>
       </div>
-    </div>
+      </div>
+    </details>
   </div>
 </nav>
 
@@ -178,7 +175,7 @@
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(0, 212, 255, 0.1);
     padding: 0.5rem 0;
-    margin-top: 0.5rem;
+    margin-top: 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -187,9 +184,7 @@
     pointer-events: none;
   }
   
-  .nav-item-wrapper:hover .dropdown-menu,
-  .nav-item-wrapper:focus-within .dropdown-menu,
-  .nav-item-wrapper.open .dropdown-menu {
+  .nav-item-wrapper[open] .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -256,8 +251,8 @@
   
   /* Hamburger Menu */
   .hamburger { 
-    width: 36px; 
-    height: 28px; 
+    width: 44px;
+    height: 44px;
     position: relative; 
     cursor: pointer;
     background: transparent;
@@ -285,13 +280,13 @@
   .hamburger span:nth-child(2) { top: 12px; } 
   .hamburger span:nth-child(3) { top: 20px; }
   
-  .hamburger.active span:nth-child(1) { top: 12px; transform: rotate(45deg); }
-  .hamburger.active span:nth-child(2) { opacity: 0; }
-  .hamburger.active span:nth-child(3) { top: 12px; transform: rotate(-45deg); }
+  .mobile-navigation[open] .hamburger span:nth-child(1) { top: 12px; transform: rotate(45deg); }
+  .mobile-navigation[open] .hamburger span:nth-child(2) { opacity: 0; }
+  .mobile-navigation[open] .hamburger span:nth-child(3) { top: 12px; transform: rotate(-45deg); }
 
   /* Mobile Menu Improvements */
   #mobileMenu {
-    max-height: calc(100vh - 4rem);
+    max-height: calc(100vh - 6rem);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -336,10 +331,15 @@
     }
   }
   
-  /* Prevent body scroll when mobile menu open */
-  body.menu-open {
-    overflow: hidden;
-  }
+  /* Native disclosures keep navigation usable when JavaScript is unavailable. */
+  .nav-item-wrapper > summary, .mobile-navigation > summary { list-style:none; cursor:pointer; }
+  .nav-item-wrapper > summary::-webkit-details-marker,
+  .mobile-navigation > summary::-webkit-details-marker { display:none; }
+  .mobile-navigation > summary { position:absolute; right:1rem; top:34px; }
+  #mobileMenu { max-height:calc(100dvh - 6rem); }
+  @media (min-width:1024px) { .mobile-navigation { display:none; } }
+  @media (max-width:1023px) { .nav-container .glow { max-width:170px; } }
+
 </style>
 
 <script>
@@ -367,30 +367,4 @@
     setTimeout(protectNav, 2000);
   })();
 
-  // Dropdown click-to-toggle for desktop nav
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.nav-item-wrapper > a').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        var wrapper = this.parentElement;
-        var isOpen = wrapper.classList.contains('open');
-        // Close all other open dropdowns
-        document.querySelectorAll('.nav-item-wrapper.open').forEach(function(el) {
-          el.classList.remove('open');
-        });
-        if (!isOpen) {
-          e.preventDefault();
-          wrapper.classList.add('open');
-        }
-        // If already open, the second click navigates to the page
-      });
-    });
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.nav-item-wrapper')) {
-        document.querySelectorAll('.nav-item-wrapper.open').forEach(function(el) {
-          el.classList.remove('open');
-        });
-      }
-    });
-  });
 </script>

@@ -1,164 +1,47 @@
-/**
- * Nova Titan Systems - Navigation Script
- * Handles mobile menu toggle and navigation behavior
- * Loads after Particles to prevent conflicts
- * (GSAP/ScrollTrigger were removed in the 2026-08 performance audit — they were
- *  loaded sitewide but never actually animated anything.)
- */
-
-(function() {
+/** Progressive navigation enhancements. Native details work without this script. */
+(function () {
   'use strict';
-
-  // Initialize on DOM ready
-  document.addEventListener('DOMContentLoaded', function() {
-    initMobileMenu();
-    initStickyNav();
-    initSmoothScroll();
-  });
-
-  /**
-   * Mobile Menu Toggle
-   */
-  function initMobileMenu() {
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    if (!menuBtn || !mobileMenu) {
-      console.warn('Mobile menu elements not found');
-      return;
-    }
-
-    // Toggle menu on button click
-    menuBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const isOpen = !mobileMenu.classList.contains('hidden');
-      
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-        closeMenu();
-      }
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeMenu();
-      }
-    });
-
-    // Close menu when clicking a link
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        closeMenu();
-      });
-    });
-
-    function openMenu() {
-      mobileMenu.classList.remove('hidden');
-      menuBtn.classList.add('active');
-      menuBtn.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('menu-open');
-    }
-
-    function closeMenu() {
-      mobileMenu.classList.add('hidden');
-      menuBtn.classList.remove('active');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-open');
-    }
-  }
-
-  /**
-   * Sticky Navigation Enhancement
-   * NOTE: The nav must ALWAYS remain visible. Never hide/translate the nav on scroll.
-   * Only a subtle shadow is added after scrolling past the hero area.
-   */
-  function initStickyNav() {
+  document.addEventListener('DOMContentLoaded', function () {
     var nav = document.querySelector('.nav-container');
     if (!nav) return;
-
-    // Ensure the nav is always visible and never transformed off-screen
-    nav.style.transform = 'none';
-    nav.style.opacity = '1';
-    nav.style.visibility = 'visible';
-    nav.style.display = '';
-
-    window.addEventListener('scroll', function() {
-      var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      
-      // Only toggle shadow — never hide/translate the nav
-      if (currentScroll > 50) {
-        nav.classList.add('shadow-2xl');
-      } else {
-        nav.classList.remove('shadow-2xl');
-      }
-    }, { passive: true });
-  }
-
-  /**
-   * Smooth Scroll for Anchor Links
-   */
-  function initSmoothScroll() {
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    
-    anchorLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        // Skip if it's just "#"
-        if (href === '#') return;
-        
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          
-          // Calculate offset for fixed header (h-24 = 96px)
-          const headerHeight = 96;
-          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
+    var disclosures = Array.from(nav.querySelectorAll('details'));
+    function close(detail, restoreFocus) {
+      if (!detail.open) return;
+      detail.open = false;
+      if (restoreFocus) detail.querySelector('summary').focus();
+    }
+    disclosures.forEach(function (detail) {
+      detail.addEventListener('toggle', function () {
+        if (detail.open) disclosures.forEach(function (other) {
+          if (other !== detail) close(other, false);
+        });
+      });
+      detail.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && detail.open) {
+          event.preventDefault();
+          close(detail, true);
         }
       });
+      detail.addEventListener('focusout', function (event) {
+        if (!detail.contains(event.relatedTarget)) close(detail, false);
+      });
+      detail.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () { close(detail, false); });
+      });
     });
-  }
-
-  /**
-   * Handle active navigation state
-   * NOTE: Active state is primarily handled by Jekyll/Liquid templating in header.html
-   * This function provides additional client-side enhancement if needed
-   */
-  function updateActiveNav() {
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-link-main');
-    
-    navLinks.forEach(link => {
-      const linkPath = link.getAttribute('href');
-      
-      // Check if this link should be active
-      const isActive = currentPath === linkPath || 
-                      (linkPath !== '/' && currentPath.startsWith(linkPath));
-      
-      // Ensure active class is present (Jekyll should handle this, but reinforce)
-      if (isActive && !link.classList.contains('active')) {
-        link.classList.add('active');
-      }
+    document.addEventListener('click', function (event) {
+      disclosures.forEach(function (detail) {
+        if (!detail.contains(event.target)) close(detail, false);
+      });
     });
-  }
-
-  // Update active nav on load (backup to Jekyll templating)
-  document.addEventListener('DOMContentLoaded', updateActiveNav);
+    // A mobile menu must not reopen unexpectedly after a desktop resize.
+    var desktop = window.matchMedia('(min-width: 1024px)');
+    desktop.addEventListener('change', function () {
+      disclosures.forEach(function (detail) { close(detail, false); });
+    });
+    function updateShadow() { nav.classList.toggle('shadow-2xl', window.scrollY > 50); }
+    window.addEventListener('scroll', updateShadow, { passive: true });
+    updateShadow();
+    // Native hash navigation preserves focus/history and avoids forced smooth motion.
+  });
 })();

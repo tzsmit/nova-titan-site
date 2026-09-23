@@ -2,17 +2,15 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {% include head.html %}
   <body class="text-white {{ page.body_class | default: '' }}">
-    <!-- Matrix Background Effect -->
-    <div class="matrix-bg"></div>
-    
-    <!-- Particle.js Container -->
-    <div id="particles-js"></div>
+    <a href="#content" class="skip-link">Skip to main content</a>
+    <!-- Decorative brand grid -->
+    <div class="matrix-bg" aria-hidden="true"></div>
     
     <!-- Header/Navigation -->
     {% include header.html %}
     
     <!-- Main Content -->
-    <main id="content" class="content">
+    <main id="content" class="content" tabindex="-1">
       {{ content }}
       {% include project-intake.html %}
     </main>

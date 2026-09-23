@@ -33,11 +33,12 @@ class Answers(HTMLParser):
         if t=='details':self.in_details=False
     def handle_data(self,d):
         if self.in_details:self.text.append(d)
-visible=' '.join(' '.join(Answers(raw).text).split())
+faq_content=re.search(r'<main\b[^>]*>(.*?)</main>',raw,re.S).group(1)
+visible=' '.join(' '.join(Answers(faq_content).text).split())
 for q in faq['mainEntity']:
     assert q['name'] in visible,q['name']
     assert q['acceptedAnswer']['text'] in visible,q['name']
-assert len(faq['mainEntity'])==len(re.findall(r'<details\b',raw))
+assert len(faq['mainEntity'])==len(re.findall(r'<details\b',faq_content))
 intake=json.loads(Path('_data/project_intake.json').read_text(encoding='utf8'))
 for url in intake:
     raw=(root/url.lstrip('/')/'index.html').read_text(encoding='utf8')
