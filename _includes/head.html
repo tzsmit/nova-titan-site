@@ -303,6 +303,14 @@
         try { host = new URL(document.referrer).hostname.toLowerCase(); }
         catch (e) { return 'direct'; }
         if (!host || host === window.location.hostname) { return 'direct'; }
+        // Only identifiable referring domains are classified; absent referrers remain direct.
+        // Exact hostname / subdomain matching prevents lookalike-domain attribution.
+        function fromDomain(domain) { return host === domain || host.endsWith('.' + domain); }
+        if (fromDomain('chatgpt.com') || host === 'chat.openai.com') { return 'chatgpt_referral'; }
+        if (fromDomain('perplexity.ai')) { return 'perplexity_referral'; }
+        if (fromDomain('claude.ai')) { return 'claude_referral'; }
+        if (host === 'gemini.google.com') { return 'gemini_referral'; }
+        if (host === 'copilot.microsoft.com') { return 'copilot_referral'; }
         if (host.indexOf('google.') !== -1) { return 'google_organic'; }
         if (host.indexOf('bing.com') !== -1) { return 'bing_organic'; }
         if (host.indexOf('buildingconnected.com') !== -1) { return 'buildingconnected'; }
@@ -1027,5 +1035,30 @@
   <!-- Procurement schema for government/partner pages -->
   {% include schema-org.html %}
   {% include project-image-schema.html %}
-  <style>#project-photos,.project-photo-phase{scroll-margin-top:120px}.project-photo-grid,.field-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}.field-project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.project-photo-card{margin:0;min-width:0;border:1px solid #26354a;border-radius:.8rem;overflow:hidden;background:#111827}.project-photo-card a{display:block;background:#090e18}.project-photo-card img{display:block;width:100%;height:340px;object-fit:contain}.project-photo-card figcaption{padding:1rem}.project-photo-phase+.project-photo-phase{margin-top:2.25rem}.project-phases p{overflow-wrap:anywhere}@media(max-width:1024px){.field-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.project-photo-grid,.field-project-grid{grid-template-columns:1fr}.project-photo-card img{height:360px}}</style>
+  <style>
+  #project-photos,.project-photo-phase{scroll-margin-top:110px}
+  .phase-navigation{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.5rem 0 2.5rem}
+  .phase-navigation a{padding:.65rem 1rem;border:1px solid #34465e;border-radius:2rem;color:#a5f3fc;font-size:.9rem}
+  .phase-navigation a:hover,.phase-navigation a:focus-visible{background:#164e63;color:white}
+  .phase-heading{display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:1.5rem}
+  .phase-number{font-size:3rem;font-weight:700;line-height:1;color:#22d3ee;opacity:.7}
+  .project-photo-grid,.field-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+  .field-project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .field-project-grid>div{display:flex;flex-direction:column;min-width:0}
+  .field-project-grid .project-photo-card{flex:1}
+  .project-enquiry .btn-grad,.field-project-grid~p .btn-grad{padding:.85rem 1.4rem;line-height:1.4}
+  .project-photo-card{margin:0;min-width:0;border:1px solid #26354a;border-radius:.8rem;overflow:hidden;background:#111827}
+  .project-photo-card a{display:block;background:#090e18}
+  .project-photo-card img{display:block;width:100%;height:390px;object-fit:contain}
+  .field-project-grid .project-photo-card img{height:300px}
+  .project-photo-card figcaption{padding:1rem 1.25rem}
+  .photo-date{display:block;color:#9ca3af;font-size:.8rem;margin-bottom:.4rem}
+  .field-phase-label{font-size:.9rem;font-weight:600;color:#a5f3fc;margin:0 0 .75rem}
+  .project-photo-phase+.project-photo-phase{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid #26354a}
+  .phase-status{padding:1.25rem;border-left:3px solid #22d3ee;background:#111827;color:#cbd5e1}
+  .project-enquiry{margin-top:2.5rem;padding:2rem;background:#0c2633;border:1px solid #155e75;border-radius:1rem}
+  .project-phases p{overflow-wrap:anywhere}
+  @media(max-width:1024px){.field-project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.field-project-grid .project-photo-card img{height:240px}}
+  @media(max-width:640px){.project-photo-grid,.field-project-grid{grid-template-columns:1fr}.project-photo-card img,.field-project-grid .project-photo-card img{height:auto;max-height:440px}.phase-heading{gap:.8rem}.phase-number{font-size:2rem}.project-enquiry{padding:1.25rem}}
+  </style>
 </head>
