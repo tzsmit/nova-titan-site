@@ -1,0 +1,24 @@
+private_brownwood_preview: true
+url: http://127.0.0.1:4173
+exclude:
+- _preview
+- BROWNWOOD_PUBLICATION.md
+- Gemfile
+- Gemfile.lock
+- node_modules
+- vendor
+- .git
+- .gitignore
+- README.md
+- GBP_PHOTO_UPLOAD_PLAN.md
+- POST_LAUNCH_SEO_ACTIONS.md
+- rejected_photos_notes.md
+- _batch2_review
+- nova-titan-site
+- vendor
+- .bundle
+- REDIRECTS.md
+- ci-proposed
+- tools
+- assets/docs/source
+- INDEXNOW.md

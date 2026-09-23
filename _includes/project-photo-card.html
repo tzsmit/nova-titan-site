@@ -1,0 +1,10 @@
+{% assign photo = include.photo %}
+<figure class="project-photo-card">
+  <a href="{{ photo.fallback_path | relative_url }}" aria-label="View full photograph: {{ photo.alt_text | escape }}">
+    <picture>
+      <source type="image/webp" srcset="{{ photo.small_path | relative_url }} {{ photo.small_width }}w, {{ photo.image_path | relative_url }} {{ photo.width }}w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 540px">
+      <img src="{{ photo.fallback_path | relative_url }}" alt="{{ photo.alt_text | escape }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy" decoding="async">
+    </picture>
+  </a>
+  <figcaption>{% if photo.date_iso %}<time class="photo-date" datetime="{{ photo.date_iso }}">{{ photo.date_label | escape }}</time>{% endif %}<p class="text-cyan-300 font-semibold">{{ photo.title | escape }}</p><p class="text-sm text-gray-300 mt-2">{{ photo.caption | escape }}</p></figcaption>
+</figure>

@@ -1,3 +1,87 @@
+# Brownwood publication approved September 23, 2026.
+- id: brownwood-retail-network-system-set
+  has_page: true
+  featured: true
+  publish_status: published
+  title: Brownwood Retail Network Infrastructure & System Set
+  subtitle: Managed field delivery through a prime-contractor engagement
+  client: Commercial prime contractor
+  end_client: Retail store
+  relationship_disclosure: Nova Titan Systems managed its assigned scope through a prime contractor. The retail
+    operator was the prime contractor's end client, not a direct Nova Titan customer. Field resources were assigned
+    for the project.
+  location: Brownwood, Texas
+  location_city: Brownwood, TX
+  location_state: Texas
+  date: '2026'
+  date_iso: '2026-09-23'
+  project_type: Phased retail network delivery
+  government_type: Commercial
+  service_type: Network Infrastructure
+  industry: Retail
+  region: Texas
+  challenge: A retail store buildout required network infrastructure and equipment installation across several project
+    phases. Construction readiness, equipment availability and prime-contractor direction shaped the sequence of
+    field work.
+  solution: Nova Titan coordinated its assigned low-voltage and System Set scope, project-specific field resources,
+    customer communication and photo documentation. Infrastructure work and equipment setup were managed as distinct
+    milestones, with later device corrections and final coordination tracked separately.
+  services:
+  - Project and field-resource coordination
+  - Structured cabling and network infrastructure support
+  - Rack and equipment installation support
+  - Retail workstation and peripheral System Set support
+  - Photo documentation and prime-contractor closeout coordination
+  results:
+  - System Set milestone completed and documented
+  - Project photographs retained as evidence of assigned field work
+  - Follow-on scanner and pinpad replacement completed; final printer coordination and project acceptance tracked separately
+  impact: 'This project shows how Nova Titan supports retail buildouts through managed field delivery: one company
+    coordinates its assigned scope, resources and evidence while the prime contractor directs customer requirements
+    and acceptance.'
+  field_notes:
+  - Construction-dependent pathways must be ready before affected infrastructure work can proceed. A blocked dependency
+    is documented and coordinated with the prime.
+  - Completing an equipment setup milestone does not establish completion of later correction visits. Each phase
+    needs its own scope and acceptance record.
+  - Photos show visible installation progress. They do not substitute for specified test reports, signed service
+    records or customer acceptance.
+  metrics:
+    services_count: 5
+    timeline: Phased delivery
+  phases:
+  - id: rough-in
+    name: Rough-In
+    dates: July 14–16, 2026
+    status: Assigned rough-in phase completed
+    detail: Cable routes, overhead drops and retained cable slack documented before finish-out. The photographs shown here were captured July 16.
+  - id: cable-terms
+    name: Cable Terms
+    dates: August 31–September 1, 2026 photo sequence
+    status: Termination and rack preparation
+    detail: Communications outlets, casework cable routing and rack preparation belong to the Cable Terms phase. These images show the transition from staged cable to termination work.
+  - id: system-set
+    name: System Set
+    dates: September 3–15, 2026 photo sequence
+    status: System Set milestone completed
+    detail: Network equipment, patching, checkout workstations and peripherals were documented during System Set. Selected photographs below are from September 8 and 15.
+  - id: follow-on
+    name: Follow-on return and Vendor Meet
+    dates: September 22 return completed; Vendor Meet pending
+    status: Separate follow-on scope
+    detail: Scanner and pinpad replacement is complete. Manager's Office printer work remains for the Vendor Meet. Earlier phase photos do not represent that return visit or final project acceptance.
+  related_services:
+  - label: Structured Cabling & Network Infrastructure — Lubbock
+    url: /services/structured-cabling-lubbock-tx/
+  - label: Low-Voltage Subcontractor — Lubbock
+    url: /services/low-voltage-subcontractor-lubbock-tx/
+  icon: fas fa-network-wired
+  color: cyan
+  meta_description: Retail cabling, rack preparation and checkout System Set photos from Brownwood, Texas, showing
+    Nova Titan managed field delivery through a prime contractor.
+  keywords: retail network infrastructure Brownwood TX, structured cabling, retail system set, managed field delivery,
+    low-voltage subcontractor Lubbock
+
 # Nova Titan Systems - Case Studies Data
 # Professional project case studies demonstrating government and commercial capabilities
 

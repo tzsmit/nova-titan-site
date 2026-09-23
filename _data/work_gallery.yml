@@ -154,3 +154,209 @@
   use_on_services: true
   sensitive_review_status: "approved"
   sensitive_notes: "Empty rack in a small office/equipment room. No sensitive data visible. Paper on wall in background is too small to read."
+
+# Brownwood project sequence. Additional candidates are private-preview only until approved.
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "rough-in"
+  title: "Open-ceiling rough-in"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-store-interior.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-store-interior.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-store-interior-400.webp"
+  small_width: 400
+  width: 1600
+  height: 1200
+  alt_text: "Open retail interior with overhead cable drops during the July rough-in phase in Brownwood, Texas"
+  caption: "Overhead cabling and drops before ceiling finish-out."
+  date_iso: "2026-07-16"
+  date_label: "July 16, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: true
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "rough-in"
+  title: "Cable bundles ready for termination"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-cable-bundles.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-cable-bundles.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-cable-bundles-400.webp"
+  small_width: 300
+  width: 1200
+  height: 1600
+  alt_text: "Coiled low-voltage cable bundles at the telecom-room wall during retail rough-in"
+  caption: "Cable slack retained for the later termination phase."
+  date_iso: "2026-07-16"
+  date_label: "July 16, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: false
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "rough-in"
+  title: "Wall drop and pathway coordination"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-wall-drop.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-wall-drop.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-wall-drop-400.webp"
+  small_width: 300
+  width: 1200
+  height: 1600
+  alt_text: "Low-voltage cable drop beside wall pathways during Brownwood retail rough-in"
+  caption: "Wall-drop condition at rough-in closeout; surrounding conduit is shown for context."
+  date_iso: "2026-07-16"
+  date_label: "July 16, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: false
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "rough-in"
+  title: "Floor-box cable staging"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-floor-box.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-floor-box.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-rough-in-floor-box-400.webp"
+  small_width: 300
+  width: 1201
+  height: 1600
+  alt_text: "Communications cable coiled inside a floor box during Brownwood retail rough-in"
+  caption: "Cable staged inside the floor box for later fit-out."
+  date_iso: "2026-07-16"
+  date_label: "July 16, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: false
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "cable-terms"
+  title: "Rack and patch panels during Cable Terms"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-patch-panel-rack.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-patch-panel-rack.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-patch-panel-rack-400.webp"
+  small_width: 400
+  width: 576
+  height: 1024
+  alt_text: "Retail telecom cabinet and patch panels during the Cable Terms phase in Brownwood"
+  caption: "Patch-panel rack prepared for later equipment installation."
+  date_iso: "2026-09-01"
+  date_label: "September 1, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: true
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "cable-terms"
+  title: "Cable organization inside the cabinet"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-cabinet-cable-organization.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-cabinet-cable-organization.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-cabinet-cable-organization-400.webp"
+  small_width: 300
+  width: 1200
+  height: 1600
+  alt_text: "Bundled communications cables and retained service loops inside the retail network cabinet"
+  caption: "Cable bundles and retained service loops inside the cabinet."
+  date_iso: "2026-09-01"
+  date_label: "September 1, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: false
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "cable-terms"
+  title: "Communications outlet"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-communications-outlet.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-communications-outlet.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-communications-outlet-400.webp"
+  small_width: 400
+  width: 1350
+  height: 1800
+  alt_text: "Multiport communications wall plate during retail cable termination work in Brownwood"
+  caption: "Outlet condition recorded during Cable Terms."
+  date_iso: "2026-08-31"
+  date_label: "August 31, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: false
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "cable-terms"
+  title: "Casework cable routing"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-casework-cable-routing.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-casework-cable-routing.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-casework-cable-routing-400.webp"
+  small_width: 400
+  width: 1350
+  height: 1800
+  alt_text: "Communications cable coiled inside retail casework during cable termination work in Brownwood, Texas"
+  caption: "Cable retained inside casework before workstation equipment setup."
+  date_iso: "2026-08-31"
+  date_label: "August 31, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: false
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "system-set"
+  title: "Checkout equipment across the counter"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-overview.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-overview.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-overview-400.webp"
+  small_width: 400
+  width: 1024
+  height: 768
+  alt_text: "Multiple checkout workstations and receipt printers during retail System Set in Brownwood, Texas"
+  caption: "Checkout workstations and peripherals in place during System Set."
+  date_iso: "2026-09-15"
+  date_label: "September 15, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: true
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "system-set"
+  title: "Network equipment and patching"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-network-rack.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-network-rack.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-network-rack-400.webp"
+  small_width: 400
+  width: 576
+  height: 1024
+  alt_text: "Retail network rack with equipment and patch cords during System Set in Brownwood, Texas"
+  caption: "Equipment and patching in the rack during System Set."
+  date_iso: "2026-09-08"
+  date_label: "September 8, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: false
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "system-set"
+  title: "Checkout workstation setup"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-workstation.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-workstation.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-workstation-400.webp"
+  small_width: 400
+  width: 768
+  height: 1024
+  alt_text: "Retail checkout workstation with monitor, keyboard and receipt printer during System Set in Brownwood"
+  caption: "Workstation and receipt-printer setup documented during System Set."
+  date_iso: "2026-09-15"
+  date_label: "September 15, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: false
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "system-set"
+  title: "Checkout device cabling"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-device-cabling.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-device-cabling.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-brownwood-retail-checkout-device-cabling-400.webp"
+  small_width: 400
+  width: 1200
+  height: 1600
+  alt_text: "Power distribution and device cabling inside a retail checkout drawer in Brownwood"
+  caption: "Device cabling and power arrangement beneath a checkout workstation."
+  date_iso: "2026-09-15"
+  date_label: "September 15, 2026"
+  location_keyword: "Brownwood, Texas"
+  service_keyword: "commercial structured cabling and retail network infrastructure"
+  sensitive_review_status: "approved"
+  use_on_field_work: false

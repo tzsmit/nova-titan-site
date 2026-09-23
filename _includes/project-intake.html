@@ -1,0 +1,10 @@
+{% assign intake = site.data.project_intake[page.url] %}
+{% if intake %}
+<section class="content py-12 bg-gray-900/50" aria-labelledby="project-intake-title"><div class="max-w-4xl mx-auto px-6">
+  <h2 id="project-intake-title" class="text-2xl font-bold text-cyan-300 mb-4">{{ intake.heading | escape }}</h2>
+  <p class="text-gray-300 mb-6">{{ intake.answer | escape }}</p>
+  <ul class="space-y-3 text-gray-300" style="list-style:disc;padding-left:1.25rem">{% for input in intake.inputs %}<li>{{ input | escape }}</li>{% endfor %}</ul>
+  <p class="text-sm text-gray-400 mt-6">{{ intake.boundary | escape }}</p>
+  <div class="flex flex-wrap gap-4 mt-6"><a href="/quote/?cta=service_scope_inputs&amp;market={{ intake.market }}&amp;service={{ intake.service }}" class="btn-grad inline-flex rounded-lg px-6 py-3 font-semibold text-gray-900">Send scope / request pricing</a><a href="/field-work/" class="inline-flex px-6 py-3 text-cyan-300 hover:underline">Review field-work photographs</a></div>
+</div></section>
+{% endif %}

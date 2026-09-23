@@ -25,6 +25,12 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build
 
+      - name: Sitewide metadata, FAQ and intake consistency
+        run: python tools/check_sitewide_search.py
+
+      - name: Referral classification
+        run: node tools/test_referrer_classification.cjs
+
       # ---------------------------------------------------------------------
       # HARD GATE. Everything below FAILS the build. Previously the internal
       # link check was advisory only, which is how the defects found in the

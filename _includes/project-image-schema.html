@@ -1,0 +1,17 @@
+{% assign schema_photos = site.data.work_gallery | where: "sensitive_review_status", "approved" %}
+{% if site.private_brownwood_preview %}{% assign schema_photos = site.data.work_gallery %}{% endif %}
+{% if page.case_study_id %}{% assign schema_photos = schema_photos | where: "case_study_id", page.case_study_id %}
+{% elsif page.url == "/field-work/" %}{% assign schema_photos = schema_photos | where: "use_on_field_work", true %}
+{% else %}{% assign schema_photos = "" | split: "," %}{% endif %}
+{% assign visible_schema_photos = "" | split: "," %}
+{% for photo in schema_photos %}
+{% assign photo_project = site.data.case_studies | where: "id", photo.case_study_id | first %}
+{% assign schema_project_visible = false %}
+{% if photo_project.publish_status == "published" %}{% assign schema_project_visible = true %}{% endif %}
+{% if site.private_brownwood_preview and photo.case_study_id == "brownwood-retail-network-system-set" %}{% assign schema_project_visible = true %}{% endif %}
+{% if schema_project_visible %}{% assign single_schema_photo = schema_photos | where: "image_path", photo.image_path %}{% assign visible_schema_photos = visible_schema_photos | concat: single_schema_photo %}{% endif %}
+{% endfor %}
+{% assign schema_photos = visible_schema_photos %}
+{% if schema_photos.size > 0 %}
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{% for photo in schema_photos %}{"@type":"ImageObject","@id":{{ photo.image_path | absolute_url | jsonify }},"contentUrl":{{ photo.image_path | absolute_url | jsonify }},"thumbnailUrl":{{ photo.small_path | absolute_url | jsonify }},"name":{{ photo.title | jsonify }},"description":{{ photo.alt_text | jsonify }},"caption":{{ photo.caption | jsonify }},"width":{{ photo.width }},"height":{{ photo.height }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}</script>
+{% endif %}

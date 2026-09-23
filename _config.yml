@@ -14,7 +14,11 @@ logo: /assets/images/low-voltage-contractor-lubbock-logo.png
 # built output declare `"publisher": {"@type":"Organization","name":"Traivone Smith"}`
 # -- i.e. it told Google the PUBLISHING ORGANIZATION is a person. Set to the
 # company. The founder remains a first-class Person entity at /leadership/.
-author: "Nova Titan Systems LLC"
+author:
+  name: "Nova Titan Systems LLC"
+  type: "Organization"
+  url: "https://novatitan.net/about/"
+  twitter: "novatitan1"
 phone: "(806) 370-0624"
 email: "traivonesmith@novatitan.net"
 
@@ -88,12 +92,12 @@ company:
       - "Houston, TX"
       - "Dallas-Fort Worth, TX"
       - "Texas (Statewide)"
-      - "United States (Nationwide for Enterprise Clients)"
+      - "Additional markets subject to project qualification"
   business_attributes:
-    response_time: "Same-day dispatch available for West Texas"
-    coverage: "Local + Nationwide Extended"
+    response_time: "Quote-request acknowledgment target: one business day"
+    coverage: "West Texas; other Texas markets by confirmed project scope"
     experience: "Active in West Texas, Houston, and DFW markets"
-    availability: "Same-day dispatch available"
+    availability: "Field resources assigned by project; schedule confirmed before mobilization"
 
 # ============================================================================
 # REDIRECT ARCHITECTURE — SINGLE SOURCE OF TRUTH
@@ -146,6 +150,9 @@ collections:
 # NOTE: do NOT use a blanket "*.md" exclude — it also excludes _posts/*.md
 # and silently prevents blog posts from building (SEO audit 2026-07).
 exclude:
+  # Private previews and release documentation must not reach production.
+  - _preview
+  - BROWNWOOD_PUBLICATION.md
   - Gemfile
   - Gemfile.lock
   - node_modules
