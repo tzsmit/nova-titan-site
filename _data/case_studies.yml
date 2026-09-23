@@ -34,7 +34,7 @@
   results:
   - System Set milestone completed and documented
   - Project photographs retained as evidence of assigned field work
-  - Remaining equipment correction and final acceptance tracked separately from the completed milestone
+  - Follow-on scanner and pinpad replacement completed; final printer coordination and project acceptance tracked separately
   impact: 'This project shows how Nova Titan supports retail buildouts through managed field delivery: one company
     coordinates its assigned scope, resources and evidence while the prime contractor directs customer requirements
     and acceptance.'
@@ -64,7 +64,8 @@
     detail: Checkout workstations, peripheral mounting and device cabling documented during System Set.
   - name: Follow-on correction and final acceptance
     status: Separate scope
-    detail: The photo sequence does not claim completion of later device corrections or final project acceptance.
+    detail: The follow-on scanner and pinpad replacement is complete. Manager's Office printer work remains for the
+      Vendor Meet. The photo sequence documents the earlier phases and does not establish final project acceptance.
   related_services:
   - label: Structured Cabling & Network Infrastructure — Lubbock
     url: /services/structured-cabling-lubbock-tx/
