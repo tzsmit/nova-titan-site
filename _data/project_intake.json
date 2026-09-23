@@ -1,0 +1,86 @@
+{
+  "/services/low-voltage-subcontractor-lubbock-tx/": {
+    "heading": "What to send for a Lubbock proposal",
+    "market": "lubbock",
+    "service": "low_voltage",
+    "answer": "Send the drawings or scope, quantities, site address and required date. Nova Titan manages delivery and assigns field resources for the approved project.",
+    "inputs": [
+      "Identify cable type, drops, rack locations and who provides pathways and materials.",
+      "Confirm the occupied areas, work windows and local site-access contact.",
+      "Specify testing, labeling, as-builts and closeout requirements."
+    ],
+    "boundary": "Travel, specialty equipment, testing and changes are addressed in the proposal. A requested date becomes a commitment only after scope and field availability are confirmed."
+  },
+  "/services/low-voltage-subcontractor-amarillo-tx/": {
+    "heading": "What to send for a Amarillo / Texas Panhandle proposal",
+    "market": "amarillo",
+    "service": "low_voltage",
+    "answer": "Send the drawings or scope, quantities, site address and required date. Nova Titan manages delivery and assigns field resources for the approved project.",
+    "inputs": [
+      "Identify cable type, drops, rack locations and who provides pathways and materials.",
+      "Include the exact site location, access window and travel or lodging requirements.",
+      "Specify testing, labeling, as-builts and closeout requirements."
+    ],
+    "boundary": "Travel, specialty equipment, testing and changes are addressed in the proposal. A requested date becomes a commitment only after scope and field availability are confirmed."
+  },
+  "/services/low-voltage-subcontractor-midland-odessa-tx/": {
+    "heading": "What to send for a Midland / Odessa proposal",
+    "market": "midland_odessa",
+    "service": "low_voltage",
+    "answer": "Send the drawings or scope, quantities, site address and required date. Nova Titan manages delivery and assigns field resources for the approved project.",
+    "inputs": [
+      "Identify cable type, drops, rack locations and who provides pathways and materials.",
+      "Identify site orientation, escort, PPE and access restrictions before scheduling.",
+      "Specify testing, labeling, as-builts and closeout requirements."
+    ],
+    "boundary": "Travel, specialty equipment, testing and changes are addressed in the proposal. A requested date becomes a commitment only after scope and field availability are confirmed."
+  },
+  "/services/low-voltage-subcontractor-houston-tx/": {
+    "heading": "What to send for a Houston proposal",
+    "market": "houston",
+    "service": "low_voltage",
+    "answer": "Send the drawings or scope, quantities, site address and required date. Nova Titan manages delivery and assigns field resources for the approved project.",
+    "inputs": [
+      "Identify cable type, drops, rack locations and who provides pathways and materials.",
+      "Include construction milestones, access restrictions and material readiness; field coverage is confirmed for each project.",
+      "Specify testing, labeling, as-builts and closeout requirements."
+    ],
+    "boundary": "Travel, specialty equipment, testing and changes are addressed in the proposal. A requested date becomes a commitment only after scope and field availability are confirmed."
+  },
+  "/services/low-voltage-subcontractor-dfw/": {
+    "heading": "What to send for a Dallas–Fort Worth proposal",
+    "market": "dfw",
+    "service": "low_voltage",
+    "answer": "Send the drawings or scope, quantities, site address and required date. Nova Titan manages delivery and assigns field resources for the approved project.",
+    "inputs": [
+      "Identify cable type, drops, rack locations and who provides pathways and materials.",
+      "List each site separately with its address, quantities and requested work window for phased or multi-site work.",
+      "Specify testing, labeling, as-builts and closeout requirements."
+    ],
+    "boundary": "Travel, specialty equipment, testing and changes are addressed in the proposal. A requested date becomes a commitment only after scope and field availability are confirmed."
+  },
+  "/services/security-camera-infrastructure-lubbock-tx/": {
+    "heading": "What to send for camera infrastructure pricing",
+    "market": "lubbock",
+    "service": "security_camera_infrastructure",
+    "answer": "Send the camera-location drawing, device count, cable requirements and rack or NVR location so we can define the physical infrastructure scope.",
+    "inputs": [
+      "Identify equipment models, PoE requirements, mounting heights and lift/access needs.",
+      "Confirm who supplies devices, mounts, switches and materials.",
+      "Identify the integrator responsible for system design, programming, monitoring and acceptance."
+    ],
+    "boundary": "Regulated installation and specialty system work require the appropriate qualified or licensed party; those responsibilities are confirmed before award."
+  },
+  "/services/fire-alarm-subcontractor-texas/": {
+    "heading": "What is needed to scope Division 28 coordination?",
+    "market": "texas",
+    "service": "fire_alarm_rough_in",
+    "answer": "Provide the current fire-alarm drawings, specification, device schedule and construction milestones so responsibilities can be established before pricing.",
+    "inputs": [
+      "Name the fire-alarm contractor and identify the approved design and revision.",
+      "Separate pathway and rough-in coordination from regulated installation, programming, testing and tagging.",
+      "Identify material responsibility, site access, inspections and required closeout."
+    ],
+    "boundary": "Regulated fire-alarm work is assigned to properly licensed Texas partners. No system acceptance, programming or inspection date is promised before scope and resources are confirmed."
+  }
+}

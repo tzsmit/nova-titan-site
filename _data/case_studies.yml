@@ -49,23 +49,26 @@
     services_count: 5
     timeline: Phased delivery
   phases:
+  - id: rough-in
+    name: Rough-In
+    dates: July 14–16, 2026
+    status: Assigned rough-in phase completed
+    detail: Cable routes, overhead drops and retained cable slack documented before finish-out. The photographs shown here were captured July 16.
   - id: cable-terms
-    name: Cable termination and pathway coordination
-    status: Earlier field work
-    detail: Casework cable slack, communications outlets and cabinet pathways documented during the earlier phase.
-      Pathway photos record conditions and trade coordination; they do not attribute electrical work to Nova Titan.
-  - id: rack-equipment
-    name: Rack preparation and equipment setup
-    status: Progress sequence
-    detail: Compare the rack with patch panels to the later equipment and patch-cord arrangement.
+    name: Cable Terms
+    dates: August 31–September 1, 2026 photo sequence
+    status: Termination and rack preparation
+    detail: Communications outlets, casework cable routing and rack preparation belong to the Cable Terms phase. These images show the transition from staged cable to termination work.
   - id: system-set
-    name: Retail workstation System Set
-    status: Milestone documented
-    detail: Checkout workstations, peripheral mounting and device cabling documented during System Set.
-  - name: Follow-on correction and final acceptance
-    status: Separate scope
-    detail: The follow-on scanner and pinpad replacement is complete. Manager's Office printer work remains for the
-      Vendor Meet. The photo sequence documents the earlier phases and does not establish final project acceptance.
+    name: System Set
+    dates: September 3–15, 2026 photo sequence
+    status: System Set milestone completed
+    detail: Network equipment, patching, checkout workstations and peripherals were documented during System Set. Selected photographs below are from September 8 and 15.
+  - id: follow-on
+    name: Follow-on return and Vendor Meet
+    dates: September 22 return completed; Vendor Meet pending
+    status: Separate follow-on scope
+    detail: Scanner and pinpad replacement is complete. Manager's Office printer work remains for the Vendor Meet. Earlier phase photos do not represent that return visit or final project acceptance.
   related_services:
   - label: Structured Cabling & Network Infrastructure — Lubbock
     url: /services/structured-cabling-lubbock-tx/

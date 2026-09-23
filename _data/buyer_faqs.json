@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Coverage and delivery",
+    "items": [
+      {
+        "question": "What areas do you serve?",
+        "answer": "Lubbock and West Texas are our operating base. Houston, Dallas–Fort Worth and additional markets are handled project-by-project based on scope, location and field-resource availability.",
+        "link": "/services/",
+        "label": "View services and markets"
+      },
+      {
+        "question": "Who carries out the field work?",
+        "answer": "Nova Titan manages customer communication, scope, scheduling and closeout. Qualified field resources are assigned project-by-project. The assigned resource, required equipment and work window are confirmed before a visit."
+      },
+      {
+        "question": "How quickly can you respond to an urgent request?",
+        "answer": "We aim to acknowledge quote requests within one business day. For urgent work, include the site address, issue, affected equipment and access window. We confirm available field coverage before committing to a visit."
+      },
+      {
+        "question": "Can we discuss the scope before requesting a quote?",
+        "answer": "Yes. A free 15-minute consultation can help establish the scope, site conditions and next step. A consultation does not reserve a technician or a start date.",
+        "link": "/contact/",
+        "label": "Contact Nova Titan"
+      }
+    ]
+  },
+  {
+    "title": "Scope and pricing",
+    "items": [
+      {
+        "question": "What services does Nova Titan provide?",
+        "answer": "Commercial structured cabling, rack and network-equipment installation, access-point deployment, camera and access-control infrastructure, site surveys, smart hands and project closeout. Fire-alarm work is scoped separately, with regulated work assigned to properly licensed partners.",
+        "link": "/services/",
+        "label": "Review the service scope"
+      },
+      {
+        "question": "What do you need to price a project?",
+        "answer": "Send the site address, plans or scope of work, quantities, cable and equipment requirements, pathway conditions, required tests, closeout documents and requested dates. Identify who supplies materials, lifts and active equipment.",
+        "link": "/quote/?cta=faq_pricing",
+        "label": "Send plans / request pricing"
+      },
+      {
+        "question": "How much does a project cost?",
+        "answer": "Pricing follows the approved scope and site conditions. Travel, specialty equipment, materials and after-hours work are addressed in the proposal. Payment and deposit terms are stated in the applicable proposal, work order or agreement."
+      },
+      {
+        "question": "Is cable certification included?",
+        "answer": "Testing and certification follow the approved scope. If permanent-link certification is required, specify the cable standard and report format. We confirm the required tester and assigned field resource before committing to the deliverable."
+      },
+      {
+        "question": "What happens if the scope changes onsite?",
+        "answer": "An unusable pathway, additional drop, missing equipment or changed access condition can affect cost and schedule. We document the issue and obtain a written change decision before proceeding with added work."
+      }
+    ]
+  },
+  {
+    "title": "Equipment and qualification",
+    "items": [
+      {
+        "question": "What network or payment equipment can you support?",
+        "answer": "Send the make, model, required task and configuration or integrator instructions. Equipment mounting, cabling, swaps and connectivity checks are evaluated against the assigned resource’s verified capabilities. Platform-specific programming and certification are confirmed separately."
+      },
+      {
+        "question": "What is included in camera infrastructure work?",
+        "answer": "The agreed scope can cover data cabling, PoE infrastructure, rack work and mounting coordination. Camera programming, monitoring and regulated installation requirements are identified before award and assigned to the appropriate qualified or licensed party.",
+        "link": "/services/security-camera-infrastructure-lubbock-tx/",
+        "label": "Review camera infrastructure scope"
+      },
+      {
+        "question": "What insurance and credentials can you provide?",
+        "answer": "Nova Titan maintains General Liability and Workers’ Compensation coverage. Current certificates and company credentials are available for onboarding. Project-specific license, insurance and personnel requirements are verified before assignment; business registration alone is not a trade license.",
+        "link": "/certifications/",
+        "label": "Review company and founder credentials"
+      },
+      {
+        "question": "Do you support government buyers and prime contractors?",
+        "answer": "Nova Titan is a SAM.gov-registered, SBA-certified HUBZone small business. Buyers can review the capability statement and send the solicitation, required scope, site/access requirements and due date for qualification.",
+        "link": "/government/",
+        "label": "Government contracting information"
+      }
+    ]
+  }
+]
