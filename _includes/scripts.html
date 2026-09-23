@@ -22,60 +22,7 @@
      `extra_scripts`, never sitewide.
      ============================================================================ -->
 
-<!-- 1. Vendor Libraries -->
-<script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-<!-- 2. Particles.js Configuration
-     Particle canvas is intentionally skipped on mobile/reduced-motion and on
-     conversion-critical pages (see PARTICLE_EXCLUDED_PATHS) to protect mobile
-     CPU cost and INP on the pages that actually produce inquiries. -->
-<script>
-  (function () {
-    // Money/conversion pages where a full-screen animated canvas costs mobile
-    // CPU without adding value. Keep this list conservative.
-    var PARTICLE_EXCLUDED_PATHS = ['/quote/', '/contact/', '/thank-you/'];
-
-    function particlesAllowed() {
-      if (PARTICLE_EXCLUDED_PATHS.indexOf(window.location.pathname) !== -1) return false;
-      // Respect user motion preference.
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
-      // Skip the animation loop on small screens (mobile CPU / battery).
-      if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) return false;
-      return true;
-    }
-
-    window.addEventListener('load', function () {
-      var container = document.getElementById('particles-js');
-      if (!container) return;
-
-      if (!particlesAllowed()) {
-        // Remove the empty canvas host so it cannot capture pointer events.
-        container.style.display = 'none';
-        return;
-      }
-
-      if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-          particles: {
-            number: { value: 80, density: { enable: true, value_area: 1000 } },
-            color: { value: ['#00d4ff', '#00ff88', '#b300ff', '#ff0066'] },
-            shape: { type: 'circle' },
-            opacity: { value: .3, random: true },
-            size: { value: 3, random: true },
-            line_linked: { enable: true, distance: 120, color: '#00d4ff', opacity: .25, width: 1 },
-            move: { enable: true, speed: 1.8, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
-          },
-          interactivity: {
-            detect_on: 'canvas',
-            events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
-            modes: { repulse: { distance: 80, duration: 0.4 }, push: { particles_nb: 3 } }
-          },
-          retina_detect: true
-        });
-      }
-    });
-  })();
-</script>
+<!-- Decorative particle dependency removed: the brand grid remains static. -->
 
 <!-- 3. Content reveal (vanilla — replaces the disabled GSAP block)
      Previously this required GSAP + ScrollTrigger to be present just to set
@@ -101,6 +48,7 @@
 
 <!-- 4. Navigation Script -->
 <script defer src="/assets/js/nav.js"></script>
+<script defer src="/assets/js/quote-context.js"></script>
 
 <!-- 5. Page-specific scripts -->
 {% if page.extra_scripts %}
