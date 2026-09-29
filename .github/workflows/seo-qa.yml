@@ -20,13 +20,16 @@ jobs:
           python-version: '3.12'
 
       - name: Install Python test dependencies
-        run: pip install --quiet pytest pyyaml
+        run: pip install --quiet pytest pyyaml pypdf
 
       - name: Build site
         run: bundle exec jekyll build
 
       - name: Sitewide metadata, FAQ and intake consistency
         run: python tools/check_sitewide_search.py
+
+      - name: Company-only public identity and document metadata
+        run: python tools/check_public_identity.py
 
       - name: Referral classification
         run: node tools/test_referrer_classification.cjs

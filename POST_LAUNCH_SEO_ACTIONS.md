@@ -263,8 +263,8 @@ Every 90 days:
 | CAGE | 170W6 |
 | NAICS Primary | 238210 |
 | Phone | (806) 370-0624 |
-| Email | traivonesmith@novatitan.net |
-| Calendly | https://calendly.com/traivonesmith-novatitan/free-15-minute-consultation-nova-titan-systems |
+| Email | info@novatitan.net |
+| Calendly | /contact/#consultation |
 
 ---
 

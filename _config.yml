@@ -1,3 +1,5 @@
+# Public identity: company only. Do not publish owner bios, portraits, personal
+# contacts, individual credentials or Person/founder metadata. Use info@novatitan.net.
 # Site Settings
 title: "Nova Titan Systems"
 description: "Nova Titan Systems LLC — Division 27/28 low-voltage subcontractor serving West Texas, Houston, and DFW. Structured cabling, access control, security cameras, and Division 28 fire alarm rough-in coordination (regulated FA work by licensed TX partners at award). SAM.gov active."
@@ -9,18 +11,15 @@ image: /assets/images/nova-titan-og-image.png
 logo: /assets/images/low-voltage-contractor-lubbock-logo.png
 
 # Author/Business Info
-# PHASE 2 (2026-08): was `author: "Traivone Smith"`. jekyll-seo-tag renders the
 # site-level `author` into the WebSite publisher/Organization node, which made the
-# built output declare `"publisher": {"@type":"Organization","name":"Traivone Smith"}`
 # -- i.e. it told Google the PUBLISHING ORGANIZATION is a person. Set to the
-# company. The founder remains a first-class Person entity at /leadership/.
 author:
   name: "Nova Titan Systems LLC"
   type: "Organization"
   url: "https://novatitan.net/about/"
   twitter: "novatitan1"
 phone: "(806) 370-0624"
-email: "traivonesmith@novatitan.net"
+email: "info@novatitan.net"
 
 # Company Metadata (for Procurement & Commercial Discovery)
 company:
@@ -337,12 +336,8 @@ twitter:
 # left the contradiction live in the page; this is the actual root cause.
 #
 # Removed:
-#   - https://github.com/tzsmit                     personal dev profile; live
 #     content describes Nova Titan as a cybersecurity consultancy (CloudWarden,
 #     quantum-safe, AI security, 24/7 monitoring) and contradicts the Division
-#     27/28 contractor entity. Retained on the Person entity at /leadership/.
-#   - https://www.linkedin.com/in/traivone-smith-... personal /in/ profile;
-#     belongs to the Person entity, not the company.
 social:
   name: Nova Titan Systems
   links:

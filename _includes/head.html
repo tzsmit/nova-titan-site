@@ -646,7 +646,7 @@
     "description": "Division 27/28 commercial low-voltage subcontractor. SAM.gov active, NAICS 238210. Structured cabling, access control, security cameras, and Division 28 fire alarm rough-in coordination (regulated FA work by licensed TX partners at award) serving West Texas, Houston, and DFW.",
     "url": "{{ site.url }}",
     "telephone": "+1-806-370-0624",
-    "email": "traivonesmith@novatitan.net",
+    "email": "info@novatitan.net",
     "logo": {
       "@type": "ImageObject",
       "url": "{{ site.url }}/assets/images/low-voltage-contractor-lubbock-logo.png",
@@ -681,36 +681,6 @@
       /government/ and /leadership/ say "September 2025" and remain consistent.
     {%- endcomment -%}
     "foundingDate": "2025-09-17",
-    {%- comment -%}
-      PHASE 2 CORRECTION (2026-08): the founder Person's "url" was the owner's
-      PERSONAL LinkedIn (/in/...). This block is emitted on EVERY page, so the
-      Organization entity asserted that personal profile sitewide -- the same
-      person<->company identity claim that justified removing GitHub from the
-      footer and from the Person sameAs. Removing the rel="me" anchor from the
-      footer while leaving this in JSON-LD would have left the assertion live in
-      the strongest possible place (structured data, all 34 built pages).
-
-      Replaced with the /leadership/ page, which IS the company's own
-      authoritative page about this person. The founder Person entity is retained
-      in full -- only the unverified external URL is dropped.
-
-      PR #56 CORRECTION (2026-08): this sub-object previously had no @id and
-      used jobTitle "Chief Executive Officer", making it a second, lightweight
-      Person description competing with the full Person entity declared on
-      /certifications/ and referenced by /leadership/ (@id #founder, jobTitle
-      "Founder & Chief Executive Officer", carries knowsAbout/hasCredential).
-      Added the shared @id so this reference resolves to the SAME canonical
-      Person node instead of describing a second one, and aligned jobTitle to
-      match. No new sameAs/LinkedIn/GitHub added here -- that remains an owner
-      action on the canonical Person node only.
-    {%- endcomment -%}
-    "founder": {
-      "@type": "Person",
-      "@id": "https://novatitan.net/#founder",
-      "name": "Traivone Smith",
-      "jobTitle": "Founder & Chief Executive Officer",
-      "url": "https://novatitan.net/leadership/"
-    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "3223 S Loop 289, Suite 600",
@@ -760,37 +730,7 @@
         "closes": "17:00"
       }
     ],
-    {%- comment -%}
-      ORGANIZATION sameAs \u2014 COMPANY-OWNED PROFILES ONLY (Phase 2, 2026-08)
 
-      schema.org sameAs on an Organization asserts "this URL is another
-      authoritative reference to THIS COMPANY." It is an entity-equivalence
-      claim, not a link list. Two entries were removed because they described a
-      PERSON, not the company:
-
-      1. https://github.com/tzsmit  -- REMOVED.
-         This is the owner's personal developer profile. Verified 2026-08 by
-         fetching the live profile: it describes Nova Titan as a cybersecurity
-         consultancy and prominently promotes CloudWarden (27 mentions),
-         cybersecurity (37), quantum-safe security (24), AI security, cloud
-         security, OT/ICS security and 24/7 monitoring. Declaring that page
-         entity-equivalent to this Organization handed Google a directly
-         CONTRADICTORY description of the company's line of business, competing
-         with the Division 27/28 contractor identity the site asserts. This is
-         the single strongest conflicting entity signal found in Phase 2.
-         The profile itself is legitimate and is NOT being changed by this PR --
-         it simply is not a company-equivalence source. It now lives on the
-         Person entity at /leadership/, which is where it is accurate.
-
-      2. https://www.linkedin.com/in/traivone-smith-969b60327  -- MOVED.
-         An /in/ URL is a personal LinkedIn profile. Belongs on the Person
-         entity, not the Organization. Moved to /leadership/.
-
-      Remaining entries are all genuine Nova Titan company profiles.
-      A verified company LinkedIn page (/company/...) and a stable Google
-      Business Profile URL are desirable additions but do not exist yet -- they
-      are returned as OWNER ACTIONS rather than invented here.
-    {%- endcomment -%}
     "sameAs": [
       "https://www.tiktok.com/@novatitan1",
       "https://www.facebook.com/NovaTitanSystems/",
@@ -832,33 +772,7 @@
       { "@type": "PropertyValue", "name": "HUBZone Effective", "value": "2026-06-05" },
       { "@type": "PropertyValue", "name": "HUBZone Renewal", "value": "2029-06-05" },
       { "@type": "PropertyValue", "name": "Business Type", "value": "SBA-Certified HUBZone Small Business — SAM.gov Registered (UEI CZ8BLZMSKZ66)" }
-      {%- comment -%}
-        FINAL PASS (2026-08): "Fortinet Certified Associate" was listed among the
-        ORGANIZATION's Certifications on every page. The Fortinet credential
-        belongs to the founder (Person), not the company, so #47 restated it as a
-        "Founder Credential" PropertyValue instead of an Org certification.
 
-        ENTITY PASS (2026-08, post-#47): that "Founder Credential" property has
-        now been REMOVED. This node is emitted sitewide, so the property existed
-        only to advertise a personal credential on all ~35 pages -- exactly the
-        overexposure the attribution fix was not meant to create. It also
-        restated, in Organization-scoped structured data, a fact that is already
-        modelled correctly and machine-readably on the founder Person node.
-
-        The credential is asserted ONCE, properly typed, on the Person entity
-        @id https://novatitan.net/#founder (declared on /certifications/, and
-        referenced by /leadership/). The Organization links to that Person via
-        the "founder" property on /certifications/, so the relationship is still
-        fully traversable by search engines.
-
-        Do NOT re-add a founder-credential PropertyValue to this sitewide node.
-
-        PR #61 CORRECTION (2026-08): removed the "Certifications" PropertyValue
-        ("SBA HUBZone, DSBS Verified, WorkMarket Verified"). HUBZone already has
-        its own dedicated PropertyValues above; WorkMarket platform activity is
-        not an organizational certification; and DSBS should not be bundled into
-        a generic Certifications claim without primary evidence on file.
-      {%- endcomment -%}
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

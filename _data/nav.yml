@@ -28,7 +28,7 @@
   submenu:
     - name: Company Overview
       url: /about/overview/
-    - name: Leadership Team
+    - name: Project Accountability
       url: /leadership/
     - name: Certifications
       url: /certifications/

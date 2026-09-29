@@ -1,106 +1,13 @@
 ---
 layout: default
 title: "Certifications & Registrations | Nova Titan Systems"
-description: "Nova Titan Systems certifications: SAM.gov active, founder Fortinet FCA, CAGE 170W6, NAICS 238210. Division 27/28 low-voltage subcontractor. UEI CZ8BLZMSKZ66."
-keywords: "SAM.gov registration, UEI CZ8BLZMSKZ66, CAGE 170W6, NAICS 238210, Division 27/28 contractor, low-voltage subcontractor certifications, founder Fortinet FCA, commercial subcontractor Texas"
+description: "Nova Titan Systems certifications: SAM.gov active, CAGE 170W6, NAICS 238210. Division 27/28 low-voltage subcontractor. UEI CZ8BLZMSKZ66."
+keywords: "SAM.gov registration, UEI CZ8BLZMSKZ66, CAGE 170W6, NAICS 238210, Division 27/28 contractor, low-voltage subcontractor certifications, commercial subcontractor Texas"
 extra_head: |
-  <!-- ENTITY CONSISTENCY (2026-08 SEO audit):
-       This page used to emit a SECOND, standalone Organization block with no
-       @id. That created a competing Nova Titan entity whose facts drifted from
-       the authoritative graph in _includes/head.html (it carried
-       foundingDate "2025" vs the global "2025-09", a different description, and
-       a truncated sameAs list). It also used two properties that do not exist in
-       schema.org ("certifications", "naics"), so they conveyed nothing.
 
-       It now REFERENCES the single authoritative entity by @id, so Google merges
-       these facts into the one Nova Titan node instead of guessing between two.
-       Do not reintroduce a second Organization block.
 
-       SEMANTIC CORRECTION (2026-08, post-#47): this node previously carried
-         hasCredential: "SAM.gov Registered Entity (UEI CZ8BLZMSKZ66)"
-       schema.org hasCredential expects an EducationalOccupationalCredential --
-       an *awarded* qualification. A SAM.gov entity registration is neither
-       awarded nor occupational; it is an entity record keyed by an identifier.
-       Modelling it as a credential mis-signalled the company as holding a
-       government qualification it was never granted.
 
-       The registration is now expressed with the correct vocabulary on the
-       AUTHORITATIVE node in _includes/head.html:
-         - identifier          -> UEI and CAGE as PropertyValue with propertyID
-         - additionalProperty  -> "SAM.gov Registration: Active"
 
-       Because that node shares this @id, Google merges the two. To avoid
-       DUPLICATE identifiers on the merged entity, this block no longer restates
-       UEI, CAGE, NAICS Primary or SAM.gov status at all -- it contributes only
-       the founder link. Nothing factual was lost; the visible SAM.gov/UEI/CAGE
-       copy on this page is unchanged.
-
-       Organization hasCredential is now intentionally ABSENT: Nova Titan holds
-       no awarded occupational credential of its own. HUBZone is an SBA
-       certification and is modelled on the authoritative node in
-       _includes/head.html -- it is deliberately NOT touched here.
-       Do NOT move the founder's Fortinet credential back onto this node.
-
-       ENTITY/PROCUREMENT RECONCILIATION (2026-08, PR #53): this block
-       previously also asserted an "NAICS Additional" PropertyValue listing
-       541512, 541513, 541519, 541611, 541690, 561621. That property has been
-       REMOVED. The repo does not contain authoritative evidence confirming
-       those codes remain part of Nova Titan's active SAM.gov registration or
-       classification set, and several of the associated descriptions were
-       legacy IT-consulting/managed-services framing inconsistent with current
-       Division 27/28 low-voltage positioning (the same class of content
-       removed from /government/ and _includes/schema-org.html in PR #52).
-       This is NOT a declaration that those codes are absent from SAM.gov --
-       only that this page should not present an unverified classification
-       claim as an active fact. If external registration evidence later
-       confirms a specific code and current delivery scope supports it, it can
-       be restored in a separate, evidence-backed change. The authoritative
-       node in _includes/head.html continues to carry the verified primary
-       NAICS 238210 and is unaffected by this change. -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["ElectricalContractor", "LocalBusiness"],
-    "@id": "https://novatitan.net/#organization",
-    "founder": { "@id": "https://novatitan.net/#founder" }
-  }
-  </script>
-  <!-- FINAL PASS (2026-08) -- FORTINET CREDENTIAL IS A PERSON CREDENTIAL.
-       The Fortinet certificate PDF served at
-       /assets/certs/fortinet-certified-associate-cybersecurity.pdf certifies
-       "Traivone Smith" -- NOT Nova Titan Systems LLC -- as a Fortinet Certified
-       Associate in Cybersecurity (achieved 2025-04-22, valid through
-       2027-04-22, validation number 7233163615TS).
-
-       It was previously attached to hasCredential on the ORGANIZATION node,
-       which asserted to Google that the company itself holds a Fortinet
-       certification. That is a Person-vs-Organization attribution error, and it
-       also re-implied a retired cybersecurity service line.
-
-       The credential now lives on the founder Person entity below, which
-       declares the stable @id https://novatitan.net/#founder and is referenced
-       from the Organization via "founder". The genuine certificate PDF is
-       untouched and still linked from the credential card on this page. -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://novatitan.net/#founder",
-    "name": "Traivone Smith",
-    "jobTitle": "Founder & Chief Executive Officer",
-    "worksFor": { "@id": "https://novatitan.net/#organization" },
-    "hasCredential": {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Fortinet Certified Associate (FCA) — Cybersecurity",
-      "credentialCategory": "certification",
-      "identifier": "7233163615TS",
-      "validFrom": "2025-04-22",
-      "expires": "2027-04-22",
-      "url": "https://novatitan.net/assets/certs/fortinet-certified-associate-cybersecurity.pdf",
-      "recognizedBy": { "@type": "Organization", "name": "Fortinet" }
-    }
-  }
-  </script>
   <!-- Breadcrumb Schema -->
   <script type="application/ld+json">
   {
@@ -150,12 +57,12 @@ image: "/assets/images/nova-titan-og-image.png"
       <h1 class="text-5xl sm:text-6xl font-bold text-green-300 glow mb-6">
         Certifications & Registrations
       </h1>
-      <p class="text-2xl text-gray-300 mb-8">SBA-Certified HUBZone &bull; SAM.gov Registered &bull; CAGE 170W6 &bull; Founder: Fortinet FCA</p>
+      <p class="text-2xl text-gray-300 mb-8">SBA-Certified HUBZone &bull; SAM.gov Registered &bull; CAGE 170W6</p>
       <p class="text-lg text-gray-400 max-w-3xl mx-auto">
         Nova Titan Systems LLC is an <strong class="text-green-300">SBA-Certified HUBZone small business</strong> and
         <strong class="text-green-300">SAM.gov-registered</strong> Division 27/28 low-voltage subcontractor
         delivering structured cabling, access control, security cameras, and fire alarm rough-in coordination for commercial construction across Texas.
-        Founder: Fortinet FCA, CAGE 170W6, NAICS 238210.
+        CAGE 170W6, NAICS 238210.
       </p>
     </div>
 
@@ -258,7 +165,7 @@ image: "/assets/images/nova-titan-og-image.png"
           <li class="flex items-start">
             <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
             <div>
-              <strong class="text-white">Business Type:</strong> <span class="text-green-300">Owner-Operated Small Business</span><br>
+              <strong class="text-white">Business Type:</strong> <span class="text-green-300">Small Business</span><br>
               <span class="text-sm text-gray-400">Lubbock, TX &mdash; SAM.gov Active, CAGE 170W6</span>
             </div>
           </li>
@@ -286,7 +193,7 @@ image: "/assets/images/nova-titan-og-image.png"
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
-              <strong>Owner-Operated Small Business</strong>
+              <strong>Small Business</strong>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
@@ -413,37 +320,12 @@ image: "/assets/images/nova-titan-og-image.png"
 <!-- TECHNICAL CERTIFICATIONS -->
 <section class="content py-16">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-purple-300 glow mb-12 text-center">Technical Certifications & Training</h2>
+    <h2 class="text-4xl font-bold text-purple-300 glow mb-12 text-center">Platform Experience</h2>
     <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-      Professional platform certifications demonstrating deployment-ready technical capabilities
+      Scope-specific field experience with commercial network and security infrastructure
     </p>
     
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Fortinet Certified -->
-      <div class="card rounded-xl p-8 border-2 border-purple-400/30 fade-in">
-        <div class="text-5xl text-purple-400 mb-4 text-center">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3 class="text-xl font-bold text-white mb-3 text-center">Fortinet Certified Associate <span class="block text-xs font-normal text-gray-400 mt-1">Founder credential &mdash; Traivone Smith</span></h3>
-        <p class="text-purple-300 font-semibold text-center mb-4">Cybersecurity</p>
-        <div class="bg-gray-800/50 rounded-lg p-4 mb-4">
-          <p class="text-gray-300 text-sm mb-2">
-            <strong class="text-white">Achieved:</strong> April 22, 2025
-          </p>
-          <p class="text-gray-300 text-sm mb-2">
-            <strong class="text-white">Valid Until:</strong> April 22, 2027
-          </p>
-          <p class="text-gray-300 text-sm">
-            <strong class="text-white">Certification ID:</strong> <span class="font-mono text-xs">7233163615TS</span>
-          </p>
-        </div>
-        <div class="text-center">
-          <a href="/assets/certs/fortinet-certified-associate-cybersecurity.pdf" target="_blank" class="inline-flex items-center text-purple-300 hover:text-purple-200 text-sm">
-            <i class="fas fa-certificate mr-2"></i>View Certificate
-          </a>
-        </div>
-      </div>
-
+    <div class="grid md:grid-cols-2 gap-8">
       <!-- Verkada Platform — Field-Qualified Installer -->
       <div class="card rounded-xl p-8 fade-in">
         <div class="text-5xl text-cyan-400 mb-4 text-center">
@@ -533,7 +415,7 @@ image: "/assets/images/nova-titan-og-image.png"
     </div>
     <p class="text-sm text-gray-400 mt-6">
       <i class="fas fa-certificate mr-2"></i>
-      SBA-Certified HUBZone &bull; UEI: CZ8BLZMSKZ66 &bull; CAGE 170W6 &bull; SAM.gov Active &bull; Owner-Operated
+      SBA-Certified HUBZone &bull; UEI: CZ8BLZMSKZ66 &bull; CAGE 170W6 &bull; SAM.gov Active &bull; Small Business
     </p>
   </div>
 </section>
