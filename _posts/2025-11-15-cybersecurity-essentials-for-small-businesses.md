@@ -5,7 +5,10 @@ title: "Cybersecurity Essentials for Small Businesses in West Texas"
 date: 2025-11-15 10:00:00 -0600
 categories: [cybersecurity, small-business, west-texas]
 tags: [security, networking, lubbock, small-business-it]
-author: "Nova Titan Systems"
+author:
+  name: "Nova Titan Systems LLC"
+  type: "Organization"
+  url: "https://novatitan.net/about/"
 description: "Essential cybersecurity practices every small business in Lubbock and West Texas should implement to protect against cyber threats."
 ---
 

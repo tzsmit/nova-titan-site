@@ -11,7 +11,7 @@ Nova Titan Systems LLC is a Division 27/28 low-voltage subcontractor serving gen
 All regulated fire alarm programming, testing, and tagging is performed by properly licensed Texas fire alarm subcontractors engaged at award. Nova Titan's scope is limited to Division 28 rough-in (conduit, pathway, and device location coordination).
 
 **Headquarters**: Lubbock, TX 79423 | **Dispatch Radius**: 500 miles  
-**Phone**: (806) 370-0624 | **Email**: traivonesmith@novatitan.net  
+**Phone**: (806) 370-0624 | **Email**: info@novatitan.net
 **Website**: [https://novatitan.net](https://novatitan.net)
 
 ---

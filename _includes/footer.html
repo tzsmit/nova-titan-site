@@ -23,30 +23,13 @@
         </p>
         
         <!-- Certifications -->
-        {%- comment -%}
-          CRO / ENTITY PASS (2026-08, post-#47): this badge row used to lead with
-          "Fortinet Certified" (a company-level claim), which #47 corrected to
-          "Founder: Fortinet FCA". That fixed the attribution but left a PERSONAL
-          credential advertised in the SITEWIDE footer on every page.
 
-          The founder credential is supporting proof of technical background, not
-          a company capability signal, and repeating it site-wide pushed a
-          personal certification ahead of what Nova Titan actually sells. The
-          badge is removed from the footer entirely.
-
-          It remains prominent where it is contextually correct:
-            /certifications/  (founder credential card + Person JSON-LD #founder)
-            /about/           (Professional Certifications + founding timeline)
-            /faqs/            (credential Q&A)
-          The Organization still references the founder Person via "founder".
-          Do NOT re-add a Fortinet or founder-credential badge here.
-        {%- endcomment -%}
         <div class="flex flex-wrap gap-2 mb-4">
           <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">
             <i class="fas fa-flag-usa mr-1"></i>SAM.gov Registered
           </span>
           <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">
-            <i class="fas fa-users mr-1"></i>Owner-Operated Business
+            <i class="fas fa-users mr-1"></i>Small Business
           </span>
         </div>
         
@@ -96,8 +79,8 @@
           </div>
           <div class="flex items-center">
             <i class="fas fa-envelope text-cyan-400 w-4 mr-3"></i>
-            <a href="mailto:traivonesmith@novatitan.net" 
-               class="text-gray-300 hover:text-cyan-300 transition">traivonesmith@novatitan.net</a>
+            <a href="mailto:info@novatitan.net"
+               class="text-gray-300 hover:text-cyan-300 transition">info@novatitan.net</a>
           </div>
           <div class="flex items-center">
             <i class="fas fa-map-marker-alt text-cyan-400 w-4 mr-3"></i>
@@ -127,30 +110,7 @@
 
         <!-- Social Icons -->
         <div class="flex items-center space-x-4">
-          {%- comment -%}
-            PHASE 2 (2026-08): the owner's personal GitHub link was removed from the
-            SITEWIDE footer. It carried rel="noopener noreferrer me" -- and rel="me"
-            is a machine-readable identity claim, so on all 62 pages the company site
-            was asserting that a personal developer profile (which describes Nova
-            Titan as a cybersecurity consultancy) is an identity of this company.
-            Company social profiles remain below. The profile itself is untouched and
-            still appears on the founder's Person entity at /leadership/.
 
-            PHASE 2 CORRECTION (2026-08): the owner's PERSONAL LinkedIn (/in/...)
-            was removed from this SITEWIDE footer for exactly the same reason. It
-            also carried rel="noopener noreferrer me", so removing GitHub while
-            leaving LinkedIn kept the identical person<->company identity assertion
-            live on every page. A personal /in/ profile is an identity of the
-            FOUNDER, not of Nova Titan Systems LLC, and belongs on the Person
-            entity at /leadership/ -- not in the company footer.
-
-            It was NOT replaced with a company LinkedIn page: no verified Nova Titan
-            company LinkedIn URL exists, and inventing one would assert a profile
-            that does not exist. Creating it is an owner action.
-
-            rel="me" is retained ONLY below, on genuine COMPANY-owned profiles,
-            where the person<->company assertion is factually correct.
-          {%- endcomment -%}
           <a href="https://www.tiktok.com/@novatitan1" 
              target="_blank" 
              rel="noopener noreferrer me" 

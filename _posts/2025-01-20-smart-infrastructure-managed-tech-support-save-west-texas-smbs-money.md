@@ -6,7 +6,10 @@ date: 2025-01-20 10:00:00 -0600
 categories: [Technology, Small Business, West Texas]
 tags: [infrastructure, managed it, small business support, Lubbock TX, cost savings, network optimization]
 excerpt: "Discover how modern technology infrastructure and professional managed IT support help West Texas small businesses cut costs, reduce downtime, and gain competitive advantage in Lubbock, Midland, and beyond."
-author: "Traivone Smith"
+author:
+  name: "Nova Titan Systems LLC"
+  type: "Organization"
+  url: "https://novatitan.net/about/"
 image: /assets/img/blog/west-texas-smb-tech-featured.jpg
 ---
 
@@ -412,7 +415,7 @@ The longer you wait to modernize your technology infrastructure and adopt proact
 
 ### Next Steps:
 
-1. **Schedule your free 30-minute consultation:** [Book Now](/quote/)
+1. **Schedule your free 30-minute consultation:** [Contact Us](/quote/)
 2. **Explore our service offerings:** [View Solutions](/services/)
 3. **Compare our managed support plans:** [See Plans](/quote/)
 4. **Call us directly:** **(806) 370-0624**
@@ -443,7 +446,7 @@ Don't wait for the next technology disaster to force your hand. Make the smart i
 
 ## About Nova Titan Systems
 
-Nova Titan Systems is a Lubbock-based technology solutions provider specializing in infrastructure installations, managed IT support, and cloud security for homes and small businesses across West Texas. Founded by Traivone Smith, a Computer Science student (InfoSec focus) and OCI Foundations certified professional, we bring enterprise-grade expertise to West Texas SMBs at affordable, transparent pricing.
+Nova Titan Systems LLC coordinates commercial low-voltage and network infrastructure projects from Lubbock, Texas. Field resources, testing and closeout requirements are confirmed for each approved scope.
 
 **Our Service Pillars:**
 - **Infrastructure & Installations** - Professional network setup, smart home automation, AV systems
@@ -463,4 +466,4 @@ Nova Titan Systems is a Lubbock-based technology solutions provider specializing
 *Published: January 20, 2025*  
 *Category: Technology, Small Business, West Texas*  
 *Reading Time: 12 minutes*  
-*Author: Traivone Smith, Founder & Technology Consultant*
+*Published by Nova Titan Systems LLC*
