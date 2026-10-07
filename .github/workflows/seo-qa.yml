@@ -369,12 +369,12 @@ jobs:
               if ev not in home: fail.append(f"analytics event '{ev}' missing from homepage")
 
           # --- PR #61 (review 5063343564): testimonial formation-date gate --
-          # Nova Titan Systems LLC formed 2025-09-17. Any testimonial dated
+          # Nova Titan Systems LLC formed 2025-09-16. Any testimonial dated
           # before formation, or carrying an AMBIGUOUS month-only "2025-09"
           # (which could resolve to a pre-formation day), must fail the build.
           # "2025-10" and later month-only dates are unambiguously post-
           # formation and are allowed.
-          FORMATION = collections.namedtuple('D', ['y','m','d'])(2025,9,17)
+          FORMATION = collections.namedtuple('D', ['y','m','d'])(2025,9,16)
           import yaml as _yaml
           try:
               tdata = _yaml.safe_load(open('_data/testimonials.yml',encoding='utf-8')) or []
@@ -388,13 +388,13 @@ jobs:
               if m_full:
                   y,mo,day = (int(x) for x in m_full.groups())
                   if (y,mo,day) < (FORMATION.y,FORMATION.m,FORMATION.d):
-                      fail.append(f"testimonial dated {d} is BEFORE formation (2025-09-17): {entry.get('name')}")
+                      fail.append(f"testimonial dated {d} is BEFORE formation (2025-09-16): {entry.get('name')}")
               elif m_month:
                   y,mo = (int(x) for x in m_month.groups())
                   if y == 2025 and mo == 9:
-                      fail.append(f"testimonial has AMBIGUOUS month-only date '{d}' spanning formation (2025-09-17): {entry.get('name')}")
+                      fail.append(f"testimonial has AMBIGUOUS month-only date '{d}' spanning formation (2025-09-16): {entry.get('name')}")
                   elif (y,mo) < (2025,10):
-                      fail.append(f"testimonial dated {d} is BEFORE formation (2025-09-17): {entry.get('name')}")
+                      fail.append(f"testimonial dated {d} is BEFORE formation (2025-09-16): {entry.get('name')}")
               else:
                   fail.append(f"testimonial has unparseable date '{d}': {entry.get('name')}")
 
