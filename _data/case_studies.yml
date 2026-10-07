@@ -14,7 +14,7 @@
   location_city: Brownwood, TX
   location_state: Texas
   date: '2026'
-  date_iso: '2026-09-23'
+  date_iso: '2026-10-07'
   project_type: Phased retail network delivery
   government_type: Commercial
   service_type: Network Infrastructure
@@ -35,7 +35,7 @@
   results:
   - System Set milestone completed and documented
   - Project photographs retained as evidence of assigned field work
-  - Follow-on scanner and pinpad replacement completed; final printer coordination and project acceptance tracked separately
+  - Follow-on field scope completed October 1; phase photographs retained separately from customer acceptance records
   impact: 'This project shows how Nova Titan supports retail buildouts through managed field delivery: one company
     coordinates its assigned scope, resources and evidence while the prime contractor directs customer requirements
     and acceptance.'
@@ -67,9 +67,9 @@
     detail: Network equipment, patching, checkout workstations and peripherals were documented during System Set. Selected photographs below are from September 8 and 15.
   - id: follow-on
     name: Follow-on return and Vendor Meet
-    dates: September 22 return completed; Vendor Meet pending
-    status: Separate follow-on scope
-    detail: Scanner and pinpad replacement is complete. Manager's Office printer work remains for the Vendor Meet. Earlier phase photos do not represent that return visit or final project acceptance.
+    dates: September 22 return and October 1 Vendor Meet completed
+    status: Assigned follow-on field scope completed
+    detail: The September return and October 1 Vendor Meet field work are complete. The final visit included the assigned printer, traffic-counter and broadband follow-on work. The selected final-visit photograph shows the installed ceiling device; photographs do not substitute for specified test records or customer acceptance.
   related_services:
   - label: Structured Cabling & Network Infrastructure — Lubbock
     url: /services/structured-cabling-lubbock-tx/
@@ -168,7 +168,7 @@
   featured: false
   # RETIRED FROM PUBLIC LLC PAST PERFORMANCE (2026-08 case-study evidence
   # audit v2): verified field engagement dated 2025-07-18, before formation
-  # of Nova Titan Systems LLC on 2025-09-17. Preserved for historical
+  # of Nova Titan Systems LLC on 2025-09-16. Preserved for historical
   # evidence but not published as LLC past performance. Not moved to
   # /leadership/ in this pass -- a single non-recurring job does not justify
   # a predecessor-entity disclosure apparatus.
@@ -317,7 +317,7 @@
   # QUARANTINED (2026-08 case-study evidence audit v2): the CSA/Higi
   # relationship is real and recurring, but this record aggregates pre- and
   # post-formation work. Quarantined until the Nova Titan Systems LLC
-  # post-2025-09-17 assignment subset is itemized and a clean rebuild can be
+  # post-2025-09-16 assignment subset is itemized and a clean rebuild can be
   # produced. Preserved for that future rebuild; not rendered publicly and
   # does not emit LLC-authored schema.
   publish_status: "quarantined"
@@ -389,7 +389,7 @@
   featured: false
   # PUBLISHED / FULL REBUILD (2026-08 case-study evidence audit v2): the
   # original May-November 2024 range mixed pre- and post-formation work.
-  # Rebuilt using ONLY the nine documented post-formation (>= 2025-09-17)
+  # Rebuilt using ONLY the nine documented post-formation (>= 2025-09-16)
   # assignments: 2025-11-04, 11-05, 11-06 (x2), 11-20, 12-02, 12-12, 12-18,
   # 12-22. Midland and Odessa are dropped because those cities only appear
   # in pre-formation records (2025-05-08 Odessa, 2025-09-08 Midland).

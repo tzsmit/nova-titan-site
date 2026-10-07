@@ -360,3 +360,21 @@
   service_keyword: "commercial structured cabling and retail network infrastructure"
   sensitive_review_status: "approved"
   use_on_field_work: false
+
+- case_study_id: "brownwood-retail-network-system-set"
+  phase: "follow-on"
+  title: "Final-visit device installation"
+  image_path: "/assets/images/work/brownwood-retail/nova-titan-retail-final-device-installation.webp"
+  fallback_path: "/assets/images/work/brownwood-retail/nova-titan-retail-final-device-installation.jpg"
+  small_path: "/assets/images/work/brownwood-retail/nova-titan-retail-final-device-installation-400.webp"
+  small_width: 400
+  width: 576
+  height: 610
+  alt_text: "Ceiling-mounted retail device installed during the final West Texas field visit"
+  caption: "Installed ceiling device documented during the October 1 final field visit."
+  date_iso: "2026-10-01"
+  date_label: "October 1, 2026"
+  location_keyword: "West Texas"
+  service_keyword: "retail low-voltage field support"
+  sensitive_review_status: "approved"
+  use_on_field_work: false
