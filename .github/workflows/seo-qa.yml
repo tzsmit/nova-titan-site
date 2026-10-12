@@ -40,6 +40,16 @@ jobs:
       - name: Customer paths, local assets and keyboard entry points
         run: python tools/check_customer_paths.py
 
+      - name: Accessibility structure and stylesheet regression
+        run: python tools/check_accessibility_basics.py
+
+      - name: Save built site for accessibility review
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-review-site
+          path: _site/
+          retention-days: 7
+
       # ---------------------------------------------------------------------
       # HARD GATE. Everything below FAILS the build. Previously the internal
       # link check was advisory only, which is how the defects found in the
