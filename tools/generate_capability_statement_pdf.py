@@ -53,7 +53,10 @@ def main() -> int:
         return 1
 
     print(f"Generating PDF from canonical source: {SOURCE_HTML}")
-    HTML(filename=str(SOURCE_HTML)).write_pdf(str(CANONICAL_OUTPUT))
+    HTML(filename=str(SOURCE_HTML)).write_pdf(
+        str(CANONICAL_OUTPUT), pdf_variant="pdf/ua-1", pdf_tags=True,
+        dpi=300, optimize_images=True
+    )
     print(f"  -> wrote {CANONICAL_OUTPUT}")
 
     canonical_bytes = CANONICAL_OUTPUT.read_bytes()

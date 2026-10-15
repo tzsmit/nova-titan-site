@@ -20,7 +20,10 @@ jobs:
           python-version: '3.12'
 
       - name: Install Python test dependencies
-        run: pip install --quiet pytest pyyaml pypdf
+        run: pip install --quiet pytest pyyaml pypdf "weasyprint==70.0"
+
+      - name: Generate tagged capability statement from canonical source
+        run: python tools/generate_capability_statement_pdf.py
 
       - name: Build site
         run: bundle exec jekyll build
