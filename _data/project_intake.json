@@ -1,15 +1,16 @@
 {
   "/services/low-voltage-subcontractor-lubbock-tx/": {
-    "heading": "What to send for a Lubbock proposal",
+    "heading": "What to send for a Lubbock low-voltage quote",
     "market": "lubbock",
     "service": "low_voltage",
-    "answer": "Send the drawings or scope, quantities, site address and required date. Nova Titan manages delivery and assigns field resources for the approved project.",
+    "answer": "Start with the site address, plans or a written scope, and the bid due date or requested work window. A marked-up plan is useful when the final drawings are still in progress.",
     "inputs": [
-      "Identify cable type, drops, rack locations and who provides pathways and materials.",
-      "Confirm the occupied areas, work windows and local site-access contact.",
-      "Specify testing, labeling, as-builts and closeout requirements."
+      "List the approximate drop and device counts, the cable type if specified, and the rack or telecom-room locations.",
+      "Identify who supplies pathways, lifts, materials and active equipment. Flag any electrical interfaces or other-trade dependencies.",
+      "Note occupied areas, ceiling or pathway restrictions, available work windows and the site access contact.",
+      "List required testing, labels, photos, marked-up drawings and the turnover reviewer."
     ],
-    "boundary": "Travel, specialty equipment, testing and changes are addressed in the proposal. A requested date becomes a commitment only after scope and field availability are confirmed."
+    "boundary": "Travel, specialty equipment and changes are priced when they apply. A requested date is confirmed against scope, site readiness and field availability."
   },
   "/services/low-voltage-subcontractor-amarillo-tx/": {
     "heading": "What to send for a Amarillo / Texas Panhandle proposal",
