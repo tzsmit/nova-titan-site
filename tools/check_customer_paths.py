@@ -2,7 +2,7 @@
 """Check the generated customer journey without making requests or submitting forms."""
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urljoin, urlsplit, unquote
+from urllib.parse import parse_qsl, urljoin, urlsplit, unquote
 import sys
 
 site = Path(sys.argv[1] if len(sys.argv) > 1 else '_site').resolve()
@@ -38,6 +38,10 @@ for path, doc in content.items():
         target = target.resolve()
         if not target.is_relative_to(site) or not target.is_file():
             errors.append(f'{relative}: missing local target {ref}')
+        elif url.path == '/quote/' and not url.query and url.fragment.startswith('nt-quote?'):
+            context = parse_qsl(url.fragment.removeprefix('nt-quote?'))
+            if not context or any(key not in {'origin_page', 'service', 'market', 'cta'} for key, _ in context):
+                errors.append(f'{relative}: invalid quote context {ref}')
         elif url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:
             errors.append(f'{relative}: missing fragment {ref}')
         checked += 1
