@@ -231,6 +231,16 @@
         try { return new URLSearchParams(window.location.search).get(name) || ''; }
         catch (e) { return ''; }
       }
+      // Internal links send attribution in a fragment, so search engines see
+      // one quote page. Continue accepting existing shared query-string links.
+      var quoteContextPrefix = '#nt-quote?';
+      var quoteContext = window.location.pathname === '/quote/' &&
+        window.location.hash.indexOf(quoteContextPrefix) === 0
+        ? new URLSearchParams(window.location.hash.slice(quoteContextPrefix.length))
+        : new URLSearchParams();
+      function quoteParam(name) {
+        return qp(name) || quoteContext.get(name) || '';
+      }
       function sameOriginReferrerPath() {
         try {
           if (!document.referrer) { return ''; }
@@ -334,10 +344,10 @@
       // from this object via sanitizeToken()/sanitizePath() -- see that
       // function for the enforcement point.
       var NT_CTX = {
-        origin_page: qp('origin_page') || sameOriginReferrerPath() || 'direct',
-        service: qp('service'),
-        market: qp('market'),
-        cta: qp('cta'),
+        origin_page: quoteParam('origin_page') || sameOriginReferrerPath() || 'direct',
+        service: quoteParam('service'),
+        market: quoteParam('market'),
+        cta: quoteParam('cta'),
         landing_page: NT_FIRST_TOUCH.landing_page || '',
         traffic_source: NT_FIRST_TOUCH.traffic_source || '',
         utm_source: NT_FIRST_TOUCH.utm_source || '',

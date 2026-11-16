@@ -1,6 +1,7 @@
 /* Preserve enquiry context without intercepting navigation or reading form answers. */
 (function () {
   'use strict';
+  var quoteContextPrefix = '#nt-quote?';
   var fields = ['origin_page', 'landing_page', 'traffic_source', 'service', 'market',
     'cta', 'utm_source', 'utm_medium', 'utm_campaign'];
 
@@ -27,6 +28,12 @@
     return null;
   }
 
+  function quoteParams(url) {
+    return url.hash.indexOf(quoteContextPrefix) === 0
+      ? new URLSearchParams(url.hash.slice(quoteContextPrefix.length))
+      : url.searchParams;
+  }
+
   // Only infer a service when the page's explicit quote links agree. A page
   // advertising several services must not silently pick one for a generic CTA.
   function pageDefaults(hrefs, pageHref) {
@@ -34,8 +41,9 @@
     hrefs.forEach(function (href) {
       var link = target(href, page);
       if (!link || link.direct) { return; }
+      var params = quoteParams(link.url);
       Object.keys(candidates).forEach(function (key) {
-        var value = clean(key, link.url.searchParams.get(key));
+        var value = clean(key, params.get(key));
         if (value) { candidates[key].add(value); }
       });
     });
@@ -49,7 +57,14 @@
   function enrich(href, pageHref, hiddenQS, defaults, surface) {
     var page = new URL(pageHref), link = target(href, page);
     if (!link) { return href; }
-    var context = new URLSearchParams(hiddenQS || ''), params = link.url.searchParams;
+    // Leave existing deep links and section anchors intact. Don't change
+    // attribution by navigating between links on the quote page itself.
+    if (!link.direct && (page.pathname === '/quote/' || link.url.search ||
+        (link.url.hash && link.url.hash.indexOf(quoteContextPrefix) !== 0))) {
+      return href;
+    }
+    var context = new URLSearchParams(hiddenQS || '');
+    var params = link.direct ? link.url.searchParams : quoteParams(link.url);
     var allowed = link.direct ? fields : ['origin_page', 'service', 'market', 'cta'];
     allowed.forEach(function (key) {
       // Explicit CTA/service values remain authoritative, including static fallback labels.
@@ -65,7 +80,8 @@
       value = clean(key, value);
       if (value) { params.set(key, value); }
     });
-    return link.direct ? link.url.href : link.url.pathname + link.url.search + link.url.hash;
+    if (link.direct) { return link.url.href; }
+    return link.url.pathname + quoteContextPrefix + params.toString();
   }
 
   function enhancePage() {
