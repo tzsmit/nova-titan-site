@@ -6,7 +6,8 @@ on:
 
 jobs:
   seo-qa:
-    runs-on: ubuntu-latest
+    # Ruby 3.2's locked protobuf extension does not build on Ubuntu 26.04.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 

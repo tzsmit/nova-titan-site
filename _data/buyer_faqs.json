@@ -36,7 +36,7 @@
       {
         "question": "What do you need to price a project?",
         "answer": "Send the site address, plans or scope of work, quantities, cable and equipment requirements, pathway conditions, required tests, closeout documents and requested dates. Identify who supplies materials, lifts and active equipment.",
-        "link": "/quote/?cta=faq_pricing",
+        "link": "/quote/#nt-quote?cta=faq_pricing",
         "label": "Send plans / request pricing"
       },
       {

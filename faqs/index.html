@@ -20,7 +20,7 @@ description: "Answers about Nova Titan's project delivery, service areas, cablin
     {% endfor %}
   </section>
 {% endfor %}
-<a href="/quote/?cta=faq_bottom" class="btn-grad inline-flex rounded-lg px-6 py-3 font-semibold text-gray-900">Send plans / request a quote</a>
+<a href="/quote/#nt-quote?cta=faq_bottom" class="btn-grad inline-flex rounded-lg px-6 py-3 font-semibold text-gray-900">Send plans / request a quote</a>
 </div></section>
 {% assign all_questions = site.data.buyer_faqs | map: "items" %}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% assign sep = "" %}{% for group in site.data.buyer_faqs %}{% for item in group.items %}{{ sep }}{"@type":"Question","name":{{ item.question | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ item.answer | jsonify }}}}{% assign sep = "," %}{% endfor %}{% endfor %}]}</script>
