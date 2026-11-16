@@ -18,6 +18,8 @@ for path in root.rglob('*.html'):
     duplicates={k:v for k,v in counts.items() if k and k.startswith(('og:','twitter:')) and v>1}
     assert not duplicates,(str(path),duplicates)
     assert sum(t=='link' and a.get('rel')=='canonical' for t,a in page.tags)==1,path
+    assert not any(t=='a' and a.get('href','').startswith(('/quote/?','https://novatitan.net/quote/?'))
+                   for t,a in page.tags),path
     for block in re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>',raw,re.S):json.loads(block)
     checked+=1
 
@@ -43,7 +45,7 @@ intake=json.loads(Path('_data/project_intake.json').read_text(encoding='utf8'))
 for url in intake:
     raw=(root/url.lstrip('/')/'index.html').read_text(encoding='utf8')
     assert raw.count('id="project-intake-title"')==1,url
-    assert '/quote/?cta=service_scope_inputs' in raw,url
+    assert '/quote/#nt-quote?cta=service_scope_inputs' in raw,url
 config=Path('_config.yml').read_text(encoding='utf8')
 for held_path in ['case-studies/brownwood-retail-network-system-set', 'assets/images/work/brownwood-retail']:
     if re.search(r'^\s+-\s+'+re.escape(held_path)+r'\s*$',config,re.M):
